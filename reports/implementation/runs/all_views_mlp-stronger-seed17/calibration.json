@@ -1,0 +1,47 @@
+{
+  "calibration": {
+    "bias": -1.4640791765536568e-05,
+    "role": "calibration",
+    "scale": 1.0004086982997078,
+    "steps": 20
+  },
+  "calibration_groups": [
+    "LA_0073",
+    "LA_0075",
+    "LA_0105"
+  ],
+  "calibration_ids": [
+    "LA_D_1842990",
+    "LA_D_4497485",
+    "LA_D_3631999",
+    "LA_D_2930504",
+    "LA_D_4663919",
+    "LA_D_5792148",
+    "LA_D_4004968",
+    "LA_D_1317619"
+  ],
+  "checkpoint_sha256": "d1c581cbc9b19876d6a49f520bcfec665d063dbc75a58ce5ce8987ff4fc94d12",
+  "index_sha256": "3061fb7ee9344dd4b5f81d669470eeb89441a7382131d8a4ab81fa1d2a5ecf56",
+  "manifest_sha256": "3150d708aac29948253e6fc415257a0ad1865c56cde33f20c7dacfc20ca01b59",
+  "probability_scope": "integration dev prior only; no arbitrary deployment posterior claim",
+  "status": "calibrated_smoke",
+  "threshold": {
+    "actual_dev_fpr": 0.0,
+    "low_fpr_estimate_supported": false,
+    "n_dev_bonafide": 4,
+    "role": "fusion_val",
+    "target_dev_fpr": 0.01,
+    "threshold": 1.0
+  },
+  "train_and_val_groups": [
+    "LA_0069",
+    "LA_0070",
+    "LA_0072",
+    "LA_0074",
+    "LA_0076",
+    "LA_0077",
+    "LA_0078",
+    "LA_0100",
+    "LA_0106"
+  ]
+}

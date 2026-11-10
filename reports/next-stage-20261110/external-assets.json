@@ -1,0 +1,1642 @@
+{
+  "all_referenced_assets_exist": true,
+  "assets": [
+    {
+      "bytes": 4248994,
+      "exists": true,
+      "expert": "aasist",
+      "included_in_bundle": false,
+      "kind": "checkpoint",
+      "path": "${EXPERT_ROOT}/TTA/outputs/source/aasist-full-asvspoof2019train-random/checkpoints/best.pt",
+      "sha256": "798de0ee199a6d5cb1de98812a5c9d1bbe1d184f76518a44ea633cf41e804fb6",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "bytes": 3799687746,
+      "exists": true,
+      "expert": "ssl_aasist",
+      "included_in_bundle": false,
+      "kind": "checkpoint",
+      "path": "${EXPERT_ROOT}/TTA/outputs/source/ssl-aasist-full-asvspoof2019train-random/checkpoints/best.pt",
+      "sha256": "dbf1d5b5229ffe5b904e5a7bef2c0a42181c9be6e7195d1c5c5b84a6a01ec6df",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "bytes": 3808868242,
+      "exists": true,
+      "expert": "ssl_aasist",
+      "included_in_bundle": false,
+      "kind": "frontend",
+      "path": "${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt",
+      "sha256": "b08927597f2c9eb2ebd7dcc3ac78ee4b5f6021cbac4b3a6c5a9deec445d80ed9",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "bytes": 70533930,
+      "exists": true,
+      "expert": "rawnet2",
+      "included_in_bundle": false,
+      "kind": "checkpoint",
+      "path": "${EXPERT_ROOT}/detectionLib/models/model_RawNet2_WCE_100_32_0.0001/epoch_70_0.0010673372435522916.pth",
+      "sha256": "1c4ff70338afbf1a688554ed2a65dfb92ee1ff0cbfef035f042e710b2399ed2c",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7712846.flac",
+      "request": "LA_D_7712846",
+      "sha256": "3840917fbfad4d280cf9f7e0b158e182d821e81b197c59630de248abbac397f2",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1292057.flac",
+      "request": "LA_D_1292057",
+      "sha256": "bbf313a80104a585e6a76b319cf11806373acfeef876c002a86b0b6518b63554",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1541519.flac",
+      "request": "LA_D_1541519",
+      "sha256": "613ee12a2d5ab8a5ced9cade56ddd6cce01d3b08c9338d81c80b68d53fb887d5",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3614949.flac",
+      "request": "LA_D_3614949",
+      "sha256": "78ec4804dba07d37bcd0d91bc0fd101ce4f40f20c10b84ab34c67788f51ba942",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1842990.flac",
+      "request": "LA_D_1842990",
+      "sha256": "3a139e0faa8ba663007ac2c63ab12c4348fd22c931a929f1beadfcb477f6a27d",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4497485.flac",
+      "request": "LA_D_4497485",
+      "sha256": "eb7305eaae9121954b62896f3473b6b5580124cf1da7d1dbca2f83d03d8826c5",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7514976.flac",
+      "request": "LA_D_7514976",
+      "sha256": "c58f91921d9830afd9149a36325f21e23e522206df63e23fff25192328efb905",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1674536.flac",
+      "request": "LA_D_1674536",
+      "sha256": "52a3ecce22e4a5cf768c139b92328eeed13f99056430bf79e9ede166ee654b40",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1982159.flac",
+      "request": "LA_D_1982159",
+      "sha256": "bdbf3b39cd98c5b9449def6dbe9a9d5094011a4739684fefffe6b778ff028300",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_9547696.flac",
+      "request": "LA_D_9547696",
+      "sha256": "fb82cc5f82b5b9550a05578293aaa14c4721fa9736148bf7cf7fff4184eec598",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3631999.flac",
+      "request": "LA_D_3631999",
+      "sha256": "2cd0a539c9368afe575a132c243ff42047871b0a5b850d68dae31a40b2e2904f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2930504.flac",
+      "request": "LA_D_2930504",
+      "sha256": "095612409db4c23a5a00d340205357634e3f842c0865a93bbe989e755bc882e3",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1361417.flac",
+      "request": "LA_D_1361417",
+      "sha256": "f715fdff1d3ba6f8357d95db3b3934d7e71f5dcb47d2ca7e120eabab2ccad3f7",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3995855.flac",
+      "request": "LA_D_3995855",
+      "sha256": "48958e589944a671bba22a4ffa515ef3a2c3a9a4d659d6bd7786aa8993ddab08",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2462521.flac",
+      "request": "LA_D_2462521",
+      "sha256": "bf90fd45ba321fa51eedf039d9342b57883a72605e23f5d524c776151d693cb5",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7281015.flac",
+      "request": "LA_D_7281015",
+      "sha256": "f07b7203e1a53bb47aaa67be16bf43902277a860eaeb2ed4ac04285b07c3c089",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4663919.flac",
+      "request": "LA_D_4663919",
+      "sha256": "2d1c4d83f4d65240bc9b1c36651654f5dccecdbdab90d73055cd94822b0223b6",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_5792148.flac",
+      "request": "LA_D_5792148",
+      "sha256": "899410f83d8d0247d16d2bf3a0c0e6b8b670f69bc3d0d36509bf05aba267a947",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1299580.flac",
+      "request": "LA_D_1299580",
+      "sha256": "4f6727826090430957db401c67ed050da39f6f5ffc09217a99cea9c3d807de44",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_5013159.flac",
+      "request": "LA_D_5013159",
+      "sha256": "d366325010735e10540984edc0dcdf1da9fced5545cf46e0610174a233fee276",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7518137.flac",
+      "request": "LA_D_7518137",
+      "sha256": "ceaad9ab1e436e6f626cccb03b48bc850c344b7e85b2572f5da2e6781f815e5f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4196303.flac",
+      "request": "LA_D_4196303",
+      "sha256": "cf1e968c97a35526295a640706cb027859816f1450de20cc6e640e67a08a8331",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4004968.flac",
+      "request": "LA_D_4004968",
+      "sha256": "0b86ac379e94fc4b6e3b7b32eddec3ec08a11c9f88f16c6e93f50925334b1865",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1317619.flac",
+      "request": "LA_D_1317619",
+      "sha256": "cad185c9feba40ff203c427da4d5c1114a545cf5b65e78c2a650abaa67ef7dfb",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-aae7ee8db67faae026d7.wav",
+      "request": "record-aae7ee8db67faae026d7",
+      "sha256": "98787d01609999d0eccbb539d3eac6deb7256f84d7112bc606898a884e51debc",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-78d7f2c7002ca5d2d208.wav",
+      "request": "record-78d7f2c7002ca5d2d208",
+      "sha256": "d98a5a7e512f83a292a3648a5d76cd0915704230d71ec055091b6cc3b363151d",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-f02079910486520d9fba.wav",
+      "request": "record-f02079910486520d9fba",
+      "sha256": "6e9553d6878f572bf16f0eca589c5e5b484c0cafea891f661af42e2561456f12",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-31cb92bd151654ba1bd6.wav",
+      "request": "record-31cb92bd151654ba1bd6",
+      "sha256": "404deb5e2e9b4774b4584af738d3a656373dfd6323c3fbbcfceaaeb86b3281fd",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-2af77f5396237a0ce926.wav",
+      "request": "record-2af77f5396237a0ce926",
+      "sha256": "d56632bb67a5ab1670a0f282037d272a6b38b3cd6c0b1db8726d2b6805e1e3f5",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-ab902f6f4f836207a699.wav",
+      "request": "record-ab902f6f4f836207a699",
+      "sha256": "cd39dd7fb12583aadda7f725cef7b5ce9e560af1aa5d84ff82ba65f1d9689413",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-153dac2a5d9c3e07ed99.wav",
+      "request": "record-153dac2a5d9c3e07ed99",
+      "sha256": "8141ac0622592f6bc8ce6b4fab57f2a39acf61b6dca5620670a464cd507c9c3c",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-3f39b39af359106baa9a.wav",
+      "request": "record-3f39b39af359106baa9a",
+      "sha256": "c6506b7f7ae62722fe929bbf4deb3dc1eca81726a2b5d920d4e67ef46b327bc3",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-d751c402b148c2ca96d1.wav",
+      "request": "record-d751c402b148c2ca96d1",
+      "sha256": "497cf22dcad2064b1922e71b936b09cfd59ea3bcca12a56a99aa392982ae2908",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-720de76365219cb44a09.wav",
+      "request": "record-720de76365219cb44a09",
+      "sha256": "3c76edcea53dfe03c1d15bb8e46ab6c19c798b8b903ab8cd98c067404aa0546a",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-bf4c2adfa04035955b43.wav",
+      "request": "record-bf4c2adfa04035955b43",
+      "sha256": "907905459c4232d3077282a8b71bd431541e1f1cb8d798c598af87c1fb600104",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-d0e8bc2a6027dc8a77ff.wav",
+      "request": "record-d0e8bc2a6027dc8a77ff",
+      "sha256": "191cbc1e492b8dccd78b3e3933a7443a19578df9530ce36d1a2e734da94acd75",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-c940d09b4ee0a8f441e3.wav",
+      "request": "record-c940d09b4ee0a8f441e3",
+      "sha256": "73af4c102337684aa985b206ed3140d1934cf06d98f6a075b6d97a71c5b0c139",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-aa68e30db494774d2812.wav",
+      "request": "record-aa68e30db494774d2812",
+      "sha256": "b0569baa52c90ccf08e6d31edf99cc7343c848327632ef899c8da668b84ba47c",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-9e7957f305cc02d9beb3.wav",
+      "request": "record-9e7957f305cc02d9beb3",
+      "sha256": "8a658e70848dbbde6008dfc7e593d668fcbf35b89e6e0a8bbd5a7fe86895ec4e",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-20912d7d1ad805eb8c2a.wav",
+      "request": "record-20912d7d1ad805eb8c2a",
+      "sha256": "69b00228c35e8aec94a840ed4b716a69186ad2433bda1adbe1550c5f396f61b9",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-cbf3309b2578fb4d8daa.wav",
+      "request": "record-cbf3309b2578fb4d8daa",
+      "sha256": "627ef41571e1ef3e9ec09b806f8736b94193e00e648a1cdb4ebcf2de61ccbae6",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-86c793feb6870e6a3913.wav",
+      "request": "record-86c793feb6870e6a3913",
+      "sha256": "d1e966d0bb2dda89dd6a09791b05068ec77082efedcfe5666a701e6af04d7293",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-f5e1326c4665980360a1.wav",
+      "request": "record-f5e1326c4665980360a1",
+      "sha256": "aee08ca2bc81b228ba524188327cd8e86e76f8207c0dd6e8a07095990a980e3d",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-159da0c75b22c10cb5d8.wav",
+      "request": "record-159da0c75b22c10cb5d8",
+      "sha256": "e663ca3e5af90a009119d4be04ae1ca01002b254b96bd98c168b9252dad99631",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-d084fa6874c7e37f06eb.wav",
+      "request": "record-d084fa6874c7e37f06eb",
+      "sha256": "6104e8a0773ff7124479e34fb91e972cdcde0518a1f7896c8d77b60c0fab5fac",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-634f7d846b27c0d67d18.wav",
+      "request": "record-634f7d846b27c0d67d18",
+      "sha256": "f094fdd9c3a2babd0603cc780eee6dea7d56452286e21839d5b89292c61c93dd",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-6bbad178e181930fb0ab.wav",
+      "request": "record-6bbad178e181930fb0ab",
+      "sha256": "842771607e4137316ec885fc1e36d4d0db4c7f2d66c2a44f5d3a6ea2719f67eb",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "reports/implementation/external/current_audio/record-90a4ab37f7b2d96dcde7.wav",
+      "request": "record-90a4ab37f7b2d96dcde7",
+      "sha256": "6c8051afe30875a6c0d0b096c78bb59094f74a889245509392592756e6ce02fd",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8272605.flac",
+      "request": "LA_D_8272605",
+      "sha256": "605fb83e0e5fcb6a997ce03d3ad81b7f8d8f24c13e0d240db247ae3a99ccb367",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6735956.flac",
+      "request": "LA_D_6735956",
+      "sha256": "9d9d8d44575f692cda78891f170236ca8d851f02b69ae2074f1def1cc4eef423",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7200791.flac",
+      "request": "LA_D_7200791",
+      "sha256": "7dbf6501d459efb792d5ef08de4f99419219ec6eb93bae5ccf1f910b7dbf3fb4",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3173565.flac",
+      "request": "LA_D_3173565",
+      "sha256": "5fcac75176b064e57cf081185e29baa35658118f9b978c1e5612f6909f77573b",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2748583.flac",
+      "request": "LA_D_2748583",
+      "sha256": "a5ecd54957ebd55c54a02dfbb5ed4e8b543cb2108bb8e30a2f511e968d4c2315",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7160142.flac",
+      "request": "LA_D_7160142",
+      "sha256": "c2f5f79785d1f0f6826fac0ca73537addf96210be8ba94fab6f4898e7aa71a35",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8568451.flac",
+      "request": "LA_D_8568451",
+      "sha256": "d1b5b923b9f7f03e199d3838e93beada1b62e721963a7f206a3f29dbb4aa001f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1622941.flac",
+      "request": "LA_D_1622941",
+      "sha256": "6aed4b19c114d1b6dba8cb489681eef0d3f4547f004f02252b36152d06e49b57",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6948624.flac",
+      "request": "LA_D_6948624",
+      "sha256": "6eb0b2f0293d8c00f197d9cea601a0695d2fbe5a1d78cc317f1b2144ca4c4807",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3884812.flac",
+      "request": "LA_D_3884812",
+      "sha256": "ba657f385c64513f8cab70831102badea6df32819cd262fff96792277dcd2323",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2609323.flac",
+      "request": "LA_D_2609323",
+      "sha256": "168ab203270fc4180c32eac51a3fd74ae06218554bf9def0c63ca47fe9dbc13e",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3324013.flac",
+      "request": "LA_D_3324013",
+      "sha256": "40d6c197f6408b5276c3cf80215f0280a04983acf064a2d3a6c4ae6da19b9447",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1173765.flac",
+      "request": "LA_D_1173765",
+      "sha256": "43a38a4355d153fc637ac84e299a0ecf9a8f48f9e9fdabbf9306092ea9134bd0",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3367868.flac",
+      "request": "LA_D_3367868",
+      "sha256": "7591f5ac82803b536758e6f2d51f986dd30f8a88963b23f1a53cfe33a340edb4",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_5075029.flac",
+      "request": "LA_D_5075029",
+      "sha256": "c23f2e2434ef51ad878005363ace4c04039c7db23ca1685292eb7155d39ff60f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2874104.flac",
+      "request": "LA_D_2874104",
+      "sha256": "5071d4852a1b856ed0a000a643d66971093ad8692ef5d7fc4ed0c87c03cb4cca",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6520984.flac",
+      "request": "LA_D_6520984",
+      "sha256": "01c8928b6a11721116f8270bd2f78f0a5bff8fa48174811643715aaec9327649",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8923577.flac",
+      "request": "LA_D_8923577",
+      "sha256": "adcdaaad0e4b5cb57cacf870cde2d227bb329950e3ab8d41c0b1101d2e0653a8",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2658622.flac",
+      "request": "LA_D_2658622",
+      "sha256": "11201e06372cd5b29a02da189132c76973fec6d39a7149678061da2e66960bb8",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2442363.flac",
+      "request": "LA_D_2442363",
+      "sha256": "2cf030297bc70a64bf182822a4cd31992b92c3cdfb83992d80c90007f7fb483b",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_9679656.flac",
+      "request": "LA_D_9679656",
+      "sha256": "2c3bbb1eb3970e20a3f9b08bb4ad45d5c311feee5dfb7a0c050e5f712d9eb625",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_5303690.flac",
+      "request": "LA_D_5303690",
+      "sha256": "6c56db74e3f9c13f292f8e03a9a261fe48ab88f30a7836b4d5443387325ec039",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6935031.flac",
+      "request": "LA_D_6935031",
+      "sha256": "71f8f17be2b4a01219833f96a61e3b57c1b9d68355d81927632aa385b4c71d02",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3259137.flac",
+      "request": "LA_D_3259137",
+      "sha256": "15fa0d78c1461e658e6f00de76ad8515230b4add929545981a74b1957049daf9",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1239754.flac",
+      "request": "LA_D_1239754",
+      "sha256": "f73bfa4350e1ce43ffb1faf36f5fe86329ff04dc9d36794129fdf73fda7c1410",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8011201.flac",
+      "request": "LA_D_8011201",
+      "sha256": "fc2a24b9c795eed9881b1f939033c3b8e2f3712a701f4202b6229299f88674fc",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1969568.flac",
+      "request": "LA_D_1969568",
+      "sha256": "aacc3b200bd2d5c9115cb44a5f415fda4b625843de8987b171e5b73c68ca7666",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4199273.flac",
+      "request": "LA_D_4199273",
+      "sha256": "53a9aeb5793832d2ea51c627fc9ac029e05e8c1d788117ff5b92d426589655f2",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3443703.flac",
+      "request": "LA_D_3443703",
+      "sha256": "b4b9b6082d454fad02c736a4217241387f768db14f902c10cdd5a6c8be591211",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6427284.flac",
+      "request": "LA_D_6427284",
+      "sha256": "77eee68b1b8e74aec889b14e35b7d239f02f9048ad2cc9050969104f17fde781",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4248918.flac",
+      "request": "LA_D_4248918",
+      "sha256": "94542e47d18cdac7dcbaa2323c9218e58b454d3032a70d671ad946eccdbc710e",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_5324750.flac",
+      "request": "LA_D_5324750",
+      "sha256": "15e2f55c2afb4471fd9f2a2a6f93207260b3c368363901a33ad419870f75057c",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1072893.flac",
+      "request": "LA_D_1072893",
+      "sha256": "f856a3612bd91a97d42fd081310c2d07ffb892d6830f160bf54c867310b5225a",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1738100.flac",
+      "request": "LA_D_1738100",
+      "sha256": "b64c9a4be56bb554f1bbc1f59f452c362a8366dadb50004bb59fbfc716f17f56",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_9980740.flac",
+      "request": "LA_D_9980740",
+      "sha256": "c0527236f7917a8ba71b5eec8f8542a9e8c0cd8fb8bbf411ce839b6a22033d01",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8172352.flac",
+      "request": "LA_D_8172352",
+      "sha256": "20fc3c674741c4e8350d35267fb17f3dc491da3f22b4c3afc5618d37a88341bc",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3000565.flac",
+      "request": "LA_D_3000565",
+      "sha256": "526bb78ce61f613fae2a9af474ab9cd82b4264f91af5ad50ef0dbe6eafbc0d46",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1135973.flac",
+      "request": "LA_D_1135973",
+      "sha256": "91cafd6920bd6d46d0629c43a6fa80754ce58ad46ff4af7d97c86dfeb2879c09",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7122184.flac",
+      "request": "LA_D_7122184",
+      "sha256": "be7a04bcfb05f8381a37f97efd457fe14be9bce0e30d2e4c71d38145af97c6ed",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1293430.flac",
+      "request": "LA_D_1293430",
+      "sha256": "01d52821cc976ed50ac5f7b0422a4d47f3e0609fbcab65ed1a8854e4578c0cd5",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3746211.flac",
+      "request": "LA_D_3746211",
+      "sha256": "892db4a8cea4a1d4a3f2aa6682e0f85b6f43796b0e60a3f2e4b8ae5215f23858",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4488859.flac",
+      "request": "LA_D_4488859",
+      "sha256": "bb713073bbe63055d2ce1af2300553be6c68a0539e8cdca1897f016801f68fa1",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2923426.flac",
+      "request": "LA_D_2923426",
+      "sha256": "7acb30bd793d944b4d746c575733da10cb8a1eb4b3d71319d457a9f257f93f1d",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3144528.flac",
+      "request": "LA_D_3144528",
+      "sha256": "198e19ec22fe55992b2993e04e26d2b2a8f3e433ecbb34635c6a1bde7cd7fc53",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1541720.flac",
+      "request": "LA_D_1541720",
+      "sha256": "ed4e5398c2740964d7423df72cb478e69b1f56ffc86be1c23f4cd0d6d228cf9b",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1609660.flac",
+      "request": "LA_D_1609660",
+      "sha256": "ae78e84fe2244103385ce76c5968920846bda8dd7d2c72a713c3e52ffd2a1f1a",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_5673436.flac",
+      "request": "LA_D_5673436",
+      "sha256": "c375b0c2a879da6d2682c212dc58622dbfbac00774260f8108477b7308fa34d0",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7750829.flac",
+      "request": "LA_D_7750829",
+      "sha256": "e537a4fc8c5e29feec8e7384754e71bc1bf1cbb6d611781d6042b67b8a798427",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1119156.flac",
+      "request": "LA_D_1119156",
+      "sha256": "83e6573d4cca7b9483865cad31203359374d74f814574c605e34a6d18de08df4",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2192025.flac",
+      "request": "LA_D_2192025",
+      "sha256": "6262d54450e1fd17fd895c86edd83581961bcc3ca80ffd4d70796cdc0f41158f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6458272.flac",
+      "request": "LA_D_6458272",
+      "sha256": "d728ca480464f536168bd7126c5851b8f7ed9ed48cb4c3aa18cb7a117304025a",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_9653036.flac",
+      "request": "LA_D_9653036",
+      "sha256": "1e5d8888d81308f624718abfc0906cd1fb1c6b1bf66ae4a9d93a646f3867f04e",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7870160.flac",
+      "request": "LA_D_7870160",
+      "sha256": "ef0191d603ba784658cfa6cd3a0950356bce76c220dd7376bd00fde5e9cc6d0e",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7688135.flac",
+      "request": "LA_D_7688135",
+      "sha256": "274e70f9de11261e92c8c16eb70c5bc0cdfae6e7c2e8dda8e07d826ca8552649",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8126437.flac",
+      "request": "LA_D_8126437",
+      "sha256": "029283720346b88da4fb07c16a919943ff63cc23b4c1ec984790dabfce6e3785",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_9672147.flac",
+      "request": "LA_D_9672147",
+      "sha256": "45fe26459bc22316d35ee0d1c195baf9b1aba23623c3bd741bb07f04069c7a96",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_9682441.flac",
+      "request": "LA_D_9682441",
+      "sha256": "d107bb63d048ec48ffc8ce0236d7d29743cb64a5a0d4df9bcd22cc02c0820a09",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8788522.flac",
+      "request": "LA_D_8788522",
+      "sha256": "622f545f0207795cb935efb14abb2decb9832f69a99e42b30d53ab02e6d32919",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2265315.flac",
+      "request": "LA_D_2265315",
+      "sha256": "383672e0de0def2c6253de4d00889558548c7143df14bc6d9009ce608f4d6813",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7616930.flac",
+      "request": "LA_D_7616930",
+      "sha256": "7cabc0ce83f18e2638389a1944bfa4f034e0305d78812102e9f74c6b7f749a98",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_9954386.flac",
+      "request": "LA_D_9954386",
+      "sha256": "8bd0374b7b2bc8ce14a65b00af3ef0003a557d528e818d132d2ac6b7624943f0",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8770467.flac",
+      "request": "LA_D_8770467",
+      "sha256": "f860b1cacc3f8f28f8ea58f8531a9191ffc04a4ab09e5462cc236e96c9e38ddd",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7783712.flac",
+      "request": "LA_D_7783712",
+      "sha256": "4939e0cc1809db1fa0ec4f68427eb43d9b549feaf9141538b26192a4f1fb6337",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3820911.flac",
+      "request": "LA_D_3820911",
+      "sha256": "0d5c0c0f3f53ab7695fd3dddbe629043314d8c757ef5132c49641052dbe40bd0",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7974536.flac",
+      "request": "LA_D_7974536",
+      "sha256": "529cad2343c80fb841cc01404071c2c74c445008283c11fc5dae96143fe8dcb4",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3063506.flac",
+      "request": "LA_D_3063506",
+      "sha256": "9c782c150d9faca9bb95447bae4247888148240844004666a886c6b0741e8ba2",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6439730.flac",
+      "request": "LA_D_6439730",
+      "sha256": "df83267daeaf98bf53cafdd3784216716aa2c39b10ea2b2acae65eab58e8dc89",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_5579170.flac",
+      "request": "LA_D_5579170",
+      "sha256": "bb3ad433c3a40fb7b0d3fd6dacc6457f8b9c50b2d1946d02bed350d098c9f773",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7039466.flac",
+      "request": "LA_D_7039466",
+      "sha256": "613406fb70ee744d848aa18fb40ce18be235cb7fbd08e2044b341bde26634ee4",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4593298.flac",
+      "request": "LA_D_4593298",
+      "sha256": "1ba49a99e0f259961402a08e85d9a80f5cb398936cbe62ef3416aabb3e56c7f2",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7724772.flac",
+      "request": "LA_D_7724772",
+      "sha256": "0d9e011871f63e6a70a9c3fe6c06c4ef6fbc47917780a2287d7e5a3320cdfb49",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7225984.flac",
+      "request": "LA_D_7225984",
+      "sha256": "410e01fd3446d6c90563479a47f04abd03b85f402d06c7c697e89d4aa2b713d1",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4203374.flac",
+      "request": "LA_D_4203374",
+      "sha256": "6fef0d3be17e23c01c7451aaa789ec4c67922d866d0a902e3e8b84b34016fab4",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7622887.flac",
+      "request": "LA_D_7622887",
+      "sha256": "b3fdd3aef69edf9809eecea1ae3326ea6a5ad08e250f84ba85ef117ac23bb58f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3467485.flac",
+      "request": "LA_D_3467485",
+      "sha256": "58e6e914e7b2c09b337baee8cc0a164189f74d4eb9ddb6437c5be72c82a2aaef",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_5192033.flac",
+      "request": "LA_D_5192033",
+      "sha256": "dbe56e456891d303ee39f72f322c1e83f1a0d65e6860b3ad8f77155013302aeb",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2718909.flac",
+      "request": "LA_D_2718909",
+      "sha256": "489d0685449719435d654f8b18d4c60794b5a660d60613c0eead6d2af347ff7f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6568228.flac",
+      "request": "LA_D_6568228",
+      "sha256": "69885a73345bb2390bb6a6ee8cc598e4093791c23dde84b64ef268d18acce5b2",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4723558.flac",
+      "request": "LA_D_4723558",
+      "sha256": "57f38f2ed0501935398332d5d4c30b5d37b849de4d1dbfdf695766c548ca923c",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4725187.flac",
+      "request": "LA_D_4725187",
+      "sha256": "218db2fc4dfd22af17f46bddafa897178a11ce4911f7e89373475abf4b38506f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4620892.flac",
+      "request": "LA_D_4620892",
+      "sha256": "3e7f0dc1ae3826b1c937a1104ccaf5e16bbd7e39301866352073d838e91a0400",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7986044.flac",
+      "request": "LA_D_7986044",
+      "sha256": "c706dd76a8742db39611d8e9179184a4bd1246c981f266df10e07915e39b8b98",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4293112.flac",
+      "request": "LA_D_4293112",
+      "sha256": "6da63a2760d8dd6e82ceb2b1aeef8e16d5d1f9fb42954f88cf3944c3341ab990",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3496584.flac",
+      "request": "LA_D_3496584",
+      "sha256": "30464698edea929afe44d12f8d686c8d714756d3cc4eb90e637f85cc3e8b4b8c",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1758018.flac",
+      "request": "LA_D_1758018",
+      "sha256": "52761aadabfbc4b49d086469c43c93225f5a015e2e56c5332c81b6ef78a93574",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8840275.flac",
+      "request": "LA_D_8840275",
+      "sha256": "1f7aa7d3ab48e221b6a2a4f64d9f78533876b2dfd56bbb351d85e989e1a35320",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_9027095.flac",
+      "request": "LA_D_9027095",
+      "sha256": "b5fbf53e25a04a6d34ada41da6a4082c3d9b86542adf4bdec7f03b1683721e9c",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8259778.flac",
+      "request": "LA_D_8259778",
+      "sha256": "b647b3b8cdad379ede3bf9116b1d97074c7ab3fcadb476917d605067c3449b3f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8750703.flac",
+      "request": "LA_D_8750703",
+      "sha256": "1a915d1385ca6f1f2e5a4c2327879db94235fd58595458c195f5926c23e1322d",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6682623.flac",
+      "request": "LA_D_6682623",
+      "sha256": "322784a6676e98417b22b36eb616e5b0e5e67382d7a592105a2e429e6734aab7",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7559885.flac",
+      "request": "LA_D_7559885",
+      "sha256": "ada5133f61e4dea536fbf560b1e63717df373701e78b1b547833821d389c6fb3",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_7771236.flac",
+      "request": "LA_D_7771236",
+      "sha256": "5b6f12bb43511c83147b5ccce96bb3d848d3fa4e9332c802e1f4c8482bf4ce0a",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3163255.flac",
+      "request": "LA_D_3163255",
+      "sha256": "35544d21fae24cdf99bd6436ffd583b11a23e1a3540c9c87d5e0ea4e540e7fca",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_2630833.flac",
+      "request": "LA_D_2630833",
+      "sha256": "0c08296c25e51cf3004f84e8bd47e0b5918c78e6a5caf128eed8f8c7567dc939",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3081203.flac",
+      "request": "LA_D_3081203",
+      "sha256": "20cb114ce3463f2f3daf0f862fbef8125cb83a96f44f5d866de9ff174994bc64",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_8590450.flac",
+      "request": "LA_D_8590450",
+      "sha256": "1bba5521a051d165d762dc4d5489332408f74a8f437908c27dd43f658c604c3f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6189044.flac",
+      "request": "LA_D_6189044",
+      "sha256": "888428f5ef1192c429a45bf6f34bf7039f353c6969843eb6f3d975a62da9f709",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3082795.flac",
+      "request": "LA_D_3082795",
+      "sha256": "6c22e7d46539450de39ab88b36a7af0e25e88e11e601d100e623abf1ac9600bf",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_3229215.flac",
+      "request": "LA_D_3229215",
+      "sha256": "528f1eee811323a6b96a0d68168e23391b486b8e24dc16b26152de4acd472eb7",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_4258684.flac",
+      "request": "LA_D_4258684",
+      "sha256": "ef3a5d0c7d640c48bcb71b96adc599d431eec119585d73ff770910d198e49d02",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6853824.flac",
+      "request": "LA_D_6853824",
+      "sha256": "df1460151c71db77745e223adc940e69ff8ecafa4d268954c508c418684ffe32",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_6316752.flac",
+      "request": "LA_D_6316752",
+      "sha256": "6bd184ae024370eec206546da6889a3fe21165e1a40aa82e3d5ca6174d8ac2db",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_9517414.flac",
+      "request": "LA_D_9517414",
+      "sha256": "eea05c000b78423e3475928a1ef4d4dae644d4673944ce04149645c514c1c2ea",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/LA_D_1339468.flac",
+      "request": "LA_D_1339468",
+      "sha256": "5962f15bb65fc62c6f2c578b5147a730397be978f9409bdfbe399bb8f3a98ca6",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-b926b6a430f44a94bdcd.flac",
+      "request": "record-b926b6a430f44a94bdcd",
+      "sha256": "5db2e6b1a9b82f55f191387c737e79084f038a24f0b1eb6e3f84b53ab99f2db1",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-bd9262d258771417414b.flac",
+      "request": "record-bd9262d258771417414b",
+      "sha256": "e2720518bdea78a17e447e449580dfefa6c79708f06d1a26a7d2946832c1f679",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-fe7bf2583a7552352fcf.flac",
+      "request": "record-fe7bf2583a7552352fcf",
+      "sha256": "d3ee6b4306734bc184729a04c76bb67b42f3d70420729351662a97dcd5bc1090",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-d7a8685365c8defccbf6.flac",
+      "request": "record-d7a8685365c8defccbf6",
+      "sha256": "5e08e086a4f8afd2e7d8668be2d2e3b30fd20601a37549f93986109490370073",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-6885359ec88562ae29b4.flac",
+      "request": "record-6885359ec88562ae29b4",
+      "sha256": "919715c532475396d04af8bfbce20b80f6e4b47543687b70eea2384a41f20f8c",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-2610e8ebfbb7f026edb2.flac",
+      "request": "record-2610e8ebfbb7f026edb2",
+      "sha256": "0e52ca396b7512d43ba96113ec0992c47222464b132b51434a2a722b85f044a0",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-f87fbb03073bfe09ee4c.flac",
+      "request": "record-f87fbb03073bfe09ee4c",
+      "sha256": "5e5d89b543f8a5619f92c1a1173c20c93aed61d1b94b650e25b97147707d3597",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-6f43e3c1c3598a91675a.flac",
+      "request": "record-6f43e3c1c3598a91675a",
+      "sha256": "4a42d35033889374e752aa690b5dacb86bf977d430dcbc3271cafb86741f3ab8",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-93fd6913da1ab708acac.flac",
+      "request": "record-93fd6913da1ab708acac",
+      "sha256": "4363313f2ea26c024a0e757ea70dc226694a325d3f843d5a6b93d477fd4902ce",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-4579356628f0e40aeaf3.flac",
+      "request": "record-4579356628f0e40aeaf3",
+      "sha256": "f278dc9cca827929a19c8773400814d8260c02aacecd2317dca7c2ea0094be40",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-8f8b4fb50977ecc69b97.flac",
+      "request": "record-8f8b4fb50977ecc69b97",
+      "sha256": "d5ac5cb1afb5e208d359146717b684a7734c33ee14e237fc4a49aecc00fb04f0",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-2c6a7684ec36ca30463e.flac",
+      "request": "record-2c6a7684ec36ca30463e",
+      "sha256": "fda0f5eacb34f407669c5c7c42702eab8a6598ff774d3bb648eee0ce71a96ead",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-6e39e94494bbab0a6f8f.flac",
+      "request": "record-6e39e94494bbab0a6f8f",
+      "sha256": "4cfae21a12d07c2e3f260ce50a0e190fc317a4a73ab5ef299ec60d7f4d63770c",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-80e0740db67ab7a6e563.flac",
+      "request": "record-80e0740db67ab7a6e563",
+      "sha256": "8010cd73af958f7fad4c0198352e80a99c0269be6140cadaae287c03f722f00f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-a572acbb47cba2c17b30.flac",
+      "request": "record-a572acbb47cba2c17b30",
+      "sha256": "31dab8d2c41696860e604f0eea886a659e0ce288e3ba6539119e0694bb8b31d0",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-5061d1a969d5a098e1a7.flac",
+      "request": "record-5061d1a969d5a098e1a7",
+      "sha256": "d77e4079304a6e3fe8958828507641e70458a8fb3ecd6a810903a091d3715a22",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-7d6e678d623e84c75c74.flac",
+      "request": "record-7d6e678d623e84c75c74",
+      "sha256": "2971221bb25f7aa3ff0f6c53e62c6f26aafd317686a7b07f22269c1180f3eb2f",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-3a574ff0f3b5bd7cd6d8.flac",
+      "request": "record-3a574ff0f3b5bd7cd6d8",
+      "sha256": "ab7fcefbbcccfaf323c995fc776fb075be1c9caa043ecb11a7227d6564a32120",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-86dbcc82994e50180032.flac",
+      "request": "record-86dbcc82994e50180032",
+      "sha256": "15c7649abae69d9ea55ee44acb6a108987987a1aae44931b90819af5d16009b9",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-23f88e1a03d794dcd736.flac",
+      "request": "record-23f88e1a03d794dcd736",
+      "sha256": "96306b71bb655d543f122837f1e9b91da2d195f4f7452d14ddf1c91b26a01565",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-b7b9ee1e48e3142f8346.flac",
+      "request": "record-b7b9ee1e48e3142f8346",
+      "sha256": "20198ed87784141d40ef8cd754f7c8ddec6a00c1c07518d16f9590596c9bbd55",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-10ef70b091eac689b570.flac",
+      "request": "record-10ef70b091eac689b570",
+      "sha256": "6a41cd50f3ad40f5a589c3e61f5f80618a923d1d9d37cd880acef78c8edd8c90",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-2b13b764ec3bdeb958a1.flac",
+      "request": "record-2b13b764ec3bdeb958a1",
+      "sha256": "c5de06eb0a30e5d54f28f789fada2488f0e93099a5840e9952815772d86cf529",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    },
+    {
+      "exists": true,
+      "included_in_bundle": false,
+      "kind": "original_or_derived_audio",
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_dev/flac/record-18258afcf20f2ee8748b.flac",
+      "request": "record-18258afcf20f2ee8748b",
+      "sha256": "35931ef6dc184c7ea1a98ce7c9f3e2b72dbd908926fb0cb9c8ce51eec45e2af4",
+      "scope": "external/private asset; not included in this shareable ZIP"
+    }
+  ],
+  "redistribution": "External expert weights and original large corpora are SHA256 catalogued, not claimed to be tar members",
+  "upstream_manifest_audio_existence": {
+    "fit": {
+      "entries": 25380,
+      "manifest": "reports/next-stage-20261110/upstream-evidence/aasist/fit.jsonl",
+      "missing_audio_paths": []
+    },
+    "source_val": {
+      "entries": 5654,
+      "manifest": "reports/next-stage-20261110/upstream-evidence/aasist/source_val.jsonl",
+      "missing_audio_paths": []
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Base runtime; mirrors project.dependencies in pyproject.toml.
+-r requirements-reference.txt
+scipy>=1.10,<2
+soundfile>=0.12,<1
+scikit-learn>=1.2,<2
+psutil>=5,<8
+# Preserve audited fairseq environment; do not upgrade it through this file.

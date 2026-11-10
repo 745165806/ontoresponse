@@ -1,0 +1,14 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "scripts.run_pilot",
+    "--config",
+    "configs/pilot-20261110.yaml"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:06:55.442090+00:00",
+  "elapsed_seconds": 770.0905525684357,
+  "log": "reports/codex-next-stage-20261110/pilot-execute.log",
+  "cwd": "${PROJECT_ROOT}"
+}

@@ -1,0 +1,10 @@
+{
+  "best_nonontology": {
+    "capacity": "stronger",
+    "model": "all_views_mlp"
+  },
+  "candidate_test_access": false,
+  "checkpoint": "reports/implementation/runs/all_views_mlp-stronger-seed17/model.pt",
+  "criterion": "mean EER across 3 seeds, tie mean NLL; fixed seed17 deployment demo",
+  "role": "fusion_val"
+}

@@ -1,0 +1,42 @@
+{
+  "best_step": 20,
+  "budget": "same lr=0.001, AdamW, <=20 full-batch steps; single prespecified width or count-matched width",
+  "capacity": "fixed",
+  "checkpoint": "reports/implementation/runs/missing_probe-fixed-seed43/model.pt",
+  "checkpoint_sha256": "a0b10a7f606eb01110fe26b946dd89a5607acd4ec11f4d16554cd220b07b8899",
+  "duration_seconds": 0.3023389809532091,
+  "level": "real_data_integration_pretrained",
+  "limitation": "bounded pipeline check; dev overlaps public/local expert selection; no generalization claim",
+  "model": "missing_probe",
+  "optimizer_steps": 20,
+  "parameters": 224385,
+  "save_load_exact": true,
+  "seed": 43,
+  "selection_rule": "min fusion_val EER; tie min source-weighted BCE; no test used",
+  "status": "trained_smoke",
+  "train_origins": 8,
+  "train_requests": 8,
+  "train_version_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "val_metrics": {
+    "auroc": 1.0,
+    "bonafide": 4,
+    "brier": 3.34873293468263e-05,
+    "eer": 0.0,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 8,
+    "nll": 0.0052628516649550075,
+    "spoof": 4,
+    "spoof_auprc": 1.0
+  },
+  "val_requests": 8,
+  "width": 64
+}

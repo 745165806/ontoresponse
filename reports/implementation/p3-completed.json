@@ -1,0 +1,18 @@
+{
+  "models": [
+    "score_lr",
+    "score_mlp",
+    "original_mlp",
+    "tta_stats",
+    "all_views_mlp",
+    "response_mlp",
+    "no_delta_mlp"
+  ],
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "status": "trained_real_cache_smoke",
+  "steps": 20
+}

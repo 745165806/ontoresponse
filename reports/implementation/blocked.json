@@ -1,0 +1,9 @@
+{
+  "research_holdout": "BLOCKED: expert source_val exactly overlaps 2 fusion_val and 2 calibration recordings for AASIST and SSL; RawNet2 supervision unknown; cross-speaker source map incomplete",
+  "GPU": "BLOCKED: user reports four A6000 GPUs, but /dev/nvidia* is absent in this execution session; CPU-only work completed",
+  "SHACL": "BLOCKED: rdflib and pyshacl missing; dependency download to temporary directory failed under network restrictions; no skip counted as pass",
+  "ASV2021DF_official_full": "NOT_RUN: default bounded budget does not authorize full extraction; official source overlap mapping not present",
+  "ASV2021DF_overlap_removed_subset": "BLOCKED: recording-level 2019/2021 -> VCTK/VCC source map not pinned",
+  "ASV5": "BLOCKED: local protocols archive exists but complete audio and official Track1 tool version not audited; no automatic download",
+  "formal_efficacy": "NOT_ESTABLISHED: only 24 development and 8 external origins; formal source-independent multi-seed experiment remains"
+}

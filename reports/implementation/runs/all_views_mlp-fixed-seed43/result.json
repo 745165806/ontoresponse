@@ -1,0 +1,42 @@
+{
+  "best_step": 20,
+  "budget": "same lr=0.001, AdamW, <=20 full-batch steps; single prespecified width or count-matched width",
+  "capacity": "fixed",
+  "checkpoint": "reports/implementation/runs/all_views_mlp-fixed-seed43/model.pt",
+  "checkpoint_sha256": "380e56605f18ce235d475fc2ebb89f9a77b8fdef7d994b151f16445677481d44",
+  "duration_seconds": 0.24040722998324782,
+  "level": "real_data_integration_pretrained",
+  "limitation": "bounded pipeline check; dev overlaps public/local expert selection; no generalization claim",
+  "model": "all_views_mlp",
+  "optimizer_steps": 20,
+  "parameters": 611073,
+  "save_load_exact": true,
+  "seed": 43,
+  "selection_rule": "min fusion_val EER; tie min source-weighted BCE; no test used",
+  "status": "trained_smoke",
+  "train_origins": 8,
+  "train_requests": 8,
+  "train_version_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "val_metrics": {
+    "auroc": 1.0,
+    "bonafide": 4,
+    "brier": 2.7816221548349063e-12,
+    "eer": 0.0,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 8,
+    "nll": 6.929053875158951e-07,
+    "spoof": 4,
+    "spoof_auprc": 1.0
+  },
+  "val_requests": 8,
+  "width": 64
+}

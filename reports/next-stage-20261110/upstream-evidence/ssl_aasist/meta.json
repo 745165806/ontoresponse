@@ -1,0 +1,45 @@
+{
+  "author_source": {
+    "commit": "4acaa61dcef5f7610f43aa4d0b29c4559b970cd2",
+    "dirty": false,
+    "repository_ref": "${EXPERT_ROOT}/SSL_Anti-spoofing",
+    "status": ""
+  },
+  "code": {
+    "commit": "43a3e905c5977c718e24b94ca7eade02c863dbe9",
+    "dirty": true,
+    "status": "M README.md\n M configs/research/source.yaml\n D docs/DATA_CONTRACT_REVIEW.md\n D docs/R1_APPROVAL_AND_SPLIT_PROPOSAL_20260915.md\n D docs/R5_STAGE1_PROPOSAL_REPORT.md\n D docs/R5_STAGE2_PROPOSAL_REPORT.md\n D docs/REMOTE_R0_R4_20260914.md\n D docs/REMOTE_RUNBOOK.md\n D docs/TEST_REPORT.md\n D docs/TICKET1_AASIST_NONEXACT_AUTHORIZATION_20260916.json\n D docs/TICKET1_APPROVED_EXECUTION_20260916.md\n D docs/TICKET1_AUDIT_20260916.md\n D docs/TRAINING_STOPPED_SNAPSHOT_20260916.md\n D docs/eptta_next_plan_20260916/00_PLAN.md\n D docs/eptta_next_plan_20260916/01_START_NOW.txt\n D docs/eptta_next_plan_20260916/02_RESUME_AND_FREEZE.txt\n D docs/eptta_next_plan_20260916/03_SOURCE_PILOT.txt\n D docs/eptta_next_plan_20260916/04_EXPAND_AND_SEAL.txt\n D docs/eptta_next_plan_20260916/05_SCORE_AND_EVALUATE.txt\n D docs/eptta_next_plan_20260916/README.md\n D docs/eptta_next_plan_20260916/SHA256SUMS.txt\n D docs/eptta_r4_orders_20260917/00_NEXT_STEP.md\n D docs/eptta_r4_orders_20260917/00_NEXT_STEP_2.md\n D docs/eptta_r4_orders_20260917/01_R4_START_NOW.txt\n D docs/eptta_r4_orders_20260917/SHA256SUMS.txt\n D docs/reviews/20260915-r1-approved/group.review.json\n D docs/reviews/20260915-r1-approved/label.review.json\n D docs/reviews/20260915-r1-approved/preprocess.review.json\n D docs/reviews/20260915-r1-approved/raw.review.json\n D docs/reviews/20260915-training-approved/aasist_gpu2_batch48_recipe.review.json\n D docs/reviews/20260915-training-approved/aasist_gpu2_recipe.review.json\n D docs/reviews/20260915-training-approved/aasist_recipe.review.json\n D docs/reviews/20260915-training-approved/split.review.json\n D docs/reviews/20260915-training-approved/ssl_aasist_gpu1_batch48_recipe.review.json\n D docs/reviews/20260915-training-approved/ssl_aasist_gpu1_recipe.review.json\n D docs/reviews/20260915-training-approved/ssl_aasist_recipe.review.json\n D docs/test_logs/20260915-source-full/aasist-gpu2-b48-full.log\n D docs/test_logs/20260916-ticket1-approved/aasist-formal-child-SHA256SUMS.txt\n D docs/test_logs/20260916-ticket1-approved/check-sources-final2.log\n D docs/test_logs/20260916-ticket1-approved/check-sources.log\n D docs/test_logs/20260916-ticket1-approved/py38-worker-compile.log\n D docs/test_logs/20260916-ticket1/aasist-child-80-r3.log\n D docs/test_logs/20260916-ticket1/asvspoof2021-la-audit-r3.log\n D docs/test_logs/20260916-ticket1/in-the-wild-audit-r3.log\n D docs/test_logs/20260916-ticket1/source-snapshot-audit.log\n D docs/test_logs/20260916-ticket1/ssl-child-80-r3.log\n D docs/test_logs/20260917-r4/R4_CODE_SHA256SUMS.txt\n D docs/test_logs/20260917-r5-stage1/SHA256SUMS.txt\n M src/eptta/cli.py\n M src/eptta/research.py\n M src/eptta/training/dispatch.py\n M tests/contracts/test_source_training.py\n M workers/source_train_bridge.py\n?? configs/research/aasist_full.yaml\n?? configs/research/ssl_aasist_full.yaml"
+  },
+  "code_snapshot_ref": "code_snapshot",
+  "environment": {
+    "packages": {
+      "PyYAML": "6.0.3",
+      "fairseq": "0.12.2",
+      "librosa": null,
+      "numpy": "1.26.4",
+      "scipy": "1.13.0",
+      "soundfile": "0.12.1",
+      "tensorboardX": null,
+      "torch": "2.1.0+cu121",
+      "torchaudio": "2.1.0+cu121"
+    },
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.20"
+  },
+  "fit": {
+    "dataset_id": "asvspoof2019_la",
+    "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+    "role": "fit"
+  },
+  "model_id": "ssl_aasist_source",
+  "random_rule": "explicit_sample_index_prng_v1",
+  "recipe_ref": "${EXPERT_ROOT}/TTA/local/ssl_aasist_recipe.yaml",
+  "run_id": "source-20260919T083421Z-a61b23",
+  "schema_version": "0.3.0",
+  "seed": 13,
+  "source_val": {
+    "dataset_id": "asvspoof2019_la",
+    "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+    "role": "source_val"
+  }
+}

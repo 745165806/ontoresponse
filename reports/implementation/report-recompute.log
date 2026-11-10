@@ -1,0 +1,74 @@
+{
+  "N_requested": 24,
+  "N_scored": 24,
+  "N_failed": 0,
+  "statuses": {
+    "scored": 24
+  },
+  "effective_subset_only": false,
+  "conditions": {
+    "no_new_processing": {
+      "n": 8,
+      "bonafide": 4,
+      "spoof": 4,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "auroc": 1.0,
+      "spoof_auprc": 1.0,
+      "nll": 0.037492480643022276,
+      "brier": 0.0041505197760545,
+      "actual_fpr": 0.0,
+      "actual_tpr": 0.25
+    },
+    "aac": {
+      "n": 8,
+      "bonafide": 4,
+      "spoof": 4,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "auroc": 1.0,
+      "spoof_auprc": 1.0,
+      "nll": 0.04127100989293487,
+      "brier": 0.005372933447052153,
+      "actual_fpr": 0.0,
+      "actual_tpr": 0.25
+    },
+    "opus": {
+      "n": 8,
+      "bonafide": 4,
+      "spoof": 4,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "auroc": 1.0,
+      "spoof_auprc": 1.0,
+      "nll": 0.05217592214744059,
+      "brier": 0.0074096227836002605,
+      "actual_fpr": 0.0,
+      "actual_tpr": 0.25
+    }
+  },
+  "unseen_macro_eer": 0.0,
+  "no_new_processing": {
+    "n": 8,
+    "bonafide": 4,
+    "spoof": 4,
+    "eer": 0.0,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "auroc": 1.0,
+    "spoof_auprc": 1.0,
+    "nll": 0.037492480643022276,
+    "brier": 0.0041505197760545,
+    "actual_fpr": 0.0,
+    "actual_tpr": 0.25
+  },
+  "failure_policy_bounds": {
+    "fpr": [
+      0.0,
+      0.0
+    ],
+    "tpr": [
+      0.25,
+      0.25
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "best_step": 20,
+  "budget": "same lr=0.001, AdamW, <=20 full-batch steps; single prespecified width or count-matched width",
+  "capacity": "matched",
+  "checkpoint": "reports/implementation/runs/set_attention-matched-seed29/model.pt",
+  "checkpoint_sha256": "a6e3b315abd5c486b45f534f7c6897e615a52db48262e2e40e9ca31e9aebbfcd",
+  "duration_seconds": 0.3447799669811502,
+  "level": "real_data_integration_pretrained",
+  "limitation": "bounded pipeline check; dev overlaps public/local expert selection; no generalization claim",
+  "model": "set_attention",
+  "optimizer_steps": 20,
+  "parameters": 230161,
+  "save_load_exact": true,
+  "seed": 29,
+  "selection_rule": "min fusion_val EER; tie min source-weighted BCE; no test used",
+  "status": "trained_smoke",
+  "train_origins": 8,
+  "train_requests": 8,
+  "train_version_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "val_metrics": {
+    "auroc": 1.0,
+    "bonafide": 4,
+    "brier": 4.3921303927163535e-08,
+    "eer": 0.0,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 8,
+    "nll": 0.00016206464241332106,
+    "spoof": 4,
+    "spoof_auprc": 1.0
+  },
+  "val_requests": 8,
+  "width": 60
+}

@@ -1,0 +1,190 @@
+[
+  {
+    "expert": "aasist",
+    "overlap_audit": {
+      "fit": {
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+        "n": 25380,
+        "our_role_exact_ID_overlap": {
+          "calibration": 0,
+          "fusion_train": 0,
+          "fusion_val": 0
+        },
+        "sha256": "109bd80eb5df2265b65e1f5464024ca9ee645e96e3b62f38fd786b206f21957c"
+      },
+      "source_val": {
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+        "n": 5654,
+        "our_role_exact_ID_overlap": {
+          "calibration": 2,
+          "fusion_train": 0,
+          "fusion_val": 2
+        },
+        "sha256": "c31477bf16b3c7772d5679c66d5c952042b48538756a0c1d14a0da1904b57fb8"
+      }
+    },
+    "status": "passed",
+    "strict_research_holdout_certified": false,
+    "training_record": {
+      "architecture": {
+        "class_index_map": {
+          "bonafide": 1,
+          "spoof": 0
+        },
+        "embedding_dim": 160,
+        "entrypoint": null,
+        "model_id": "aasist_source",
+        "repository_ref": "${EXPERT_ROOT}/aasist",
+        "repository_revision": "a04c9863f63d44471dde8a6abcb3b082b07cd1d1"
+      },
+      "class_index_map": {
+        "bonafide": 1,
+        "spoof": 0
+      },
+      "epoch": 66,
+      "fit": {
+        "dataset_id": "asvspoof2019_la",
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+        "role": "fit"
+      },
+      "global_step": 35376,
+      "model_patch": {
+        "kind": "none"
+      },
+      "source_val": {
+        "dataset_id": "asvspoof2019_la",
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+        "role": "source_val"
+      },
+      "task_weight_origin": "trained_in_project",
+      "training": {
+        "augmentation_recipe_ref": "none_author_freq_aug_false",
+        "class_weights_by_name": {
+          "bonafide": 0.9,
+          "spoof": 0.1
+        },
+        "loss": "weighted_categorical_cross_entropy",
+        "lr": 0.0001,
+        "max_epochs": 80,
+        "optimizer": "adam",
+        "sampler_policy": "shuffle_drop_global_tail",
+        "scheduler": "cosine_author_audited",
+        "scheduler_horizon_epochs": 80,
+        "trainable_scope": "all_native_trainable_parameters",
+        "weight_decay": 0.0001
+      }
+    }
+  },
+  {
+    "expert": "ssl_aasist",
+    "overlap_audit": {
+      "fit": {
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+        "n": 25380,
+        "our_role_exact_ID_overlap": {
+          "calibration": 0,
+          "fusion_train": 0,
+          "fusion_val": 0
+        },
+        "sha256": "109bd80eb5df2265b65e1f5464024ca9ee645e96e3b62f38fd786b206f21957c"
+      },
+      "source_val": {
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+        "n": 5654,
+        "our_role_exact_ID_overlap": {
+          "calibration": 2,
+          "fusion_train": 0,
+          "fusion_val": 2
+        },
+        "sha256": "c31477bf16b3c7772d5679c66d5c952042b48538756a0c1d14a0da1904b57fb8"
+      }
+    },
+    "status": "passed",
+    "strict_research_holdout_certified": false,
+    "training_record": {
+      "architecture": {
+        "class_index_map": {
+          "bonafide": 1,
+          "spoof": 0
+        },
+        "embedding_dim": 160,
+        "entrypoint": null,
+        "model_id": "ssl_aasist_source",
+        "repository_ref": "${EXPERT_ROOT}/SSL_Anti-spoofing",
+        "repository_revision": "4acaa61dcef5f7610f43aa4d0b29c4559b970cd2"
+      },
+      "class_index_map": {
+        "bonafide": 1,
+        "spoof": 0
+      },
+      "epoch": 7,
+      "fit": {
+        "dataset_id": "asvspoof2019_la",
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+        "role": "fit"
+      },
+      "global_step": 4224,
+      "model_patch": {
+        "artifact_ref": "${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt",
+        "fairseq_version": "0.12.2",
+        "kind": "explicit_generic_ssl_path_only",
+        "removed_legacy_config_fields": [
+          "task.autoregressive",
+          "task.conv_feature_layers",
+          "task.encoder_embed_dim",
+          "task.eval_wer",
+          "task.eval_wer_config",
+          "task.eval_wer_post_process",
+          "task.eval_wer_tokenizer",
+          "task.mask_channel_length",
+          "task.mask_channel_min_space",
+          "task.mask_channel_other",
+          "task.mask_channel_prob",
+          "task.mask_channel_selection",
+          "task.mask_length",
+          "task.mask_min_space",
+          "task.mask_other",
+          "task.mask_prob",
+          "task.mask_selection",
+          "task.multiple_train_files",
+          "task.no_mask_channel_overlap",
+          "task.no_mask_overlap",
+          "task.shuffle_by_bucket",
+          "task.shuffle_by_bucket_size",
+          "task.train_subset"
+        ]
+      },
+      "source_val": {
+        "dataset_id": "asvspoof2019_la",
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+        "role": "source_val"
+      },
+      "task_weight_origin": "trained_in_project",
+      "training": {
+        "augmentation_recipe_ref": "none_project_freq_aug_false",
+        "class_weights_by_name": {
+          "bonafide": 0.9,
+          "spoof": 0.1
+        },
+        "loss": "weighted_categorical_cross_entropy",
+        "lr": 1e-06,
+        "max_epochs": 80,
+        "optimizer": "adam",
+        "sampler_policy": "shuffle_drop_global_tail",
+        "scheduler": "none",
+        "trainable_scope": "joint_ssl_frontend_backend_head",
+        "weight_decay": 0.0001
+      }
+    }
+  },
+  {
+    "expert": "rawnet2",
+    "overlap_audit": {
+      "fit": null,
+      "source_val": null
+    },
+    "status": "passed",
+    "strict_research_holdout_certified": false,
+    "training_record": {}
+  }
+]

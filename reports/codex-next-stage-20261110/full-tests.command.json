@@ -1,0 +1,15 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests",
+    "--junitxml=reports/codex-next-stage-20261110/unit.xml"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:03:43.082864+00:00",
+  "elapsed_seconds": 25.13390326499939,
+  "log": "reports/codex-next-stage-20261110/full-tests.log",
+  "cwd": "${PROJECT_ROOT}"
+}

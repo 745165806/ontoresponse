@@ -1,0 +1,3 @@
+# Mirrors project.optional-dependencies.ontology; full tests require both.
+rdflib>=6
+pyshacl>=0.25

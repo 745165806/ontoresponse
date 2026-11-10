@@ -1,0 +1,165 @@
+[
+  {
+    "codec": "libmp3lame",
+    "metadata": {
+      "alignment": "ffmpeg_gapless_metadata_plus_verified_timing_control_if_length_differs",
+      "bitrate_kbps": 32,
+      "decode_command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "encoded.mp3",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_f32le",
+        "decoded.wav"
+      ],
+      "decoded_samples_before_alignment": 72047,
+      "encode_command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "input.wav",
+        "-c:a",
+        "libmp3lame",
+        "-b:a",
+        "32k",
+        "-f",
+        "mp3",
+        "encoded.mp3"
+      ],
+      "encoded_bytes": 18656,
+      "encoder": "libmp3lame",
+      "manual_shift_samples": 0,
+      "tail_trim_samples": 26,
+      "timing_control": {
+        "impulse_positions": [
+          18005,
+          36010,
+          54015
+        ],
+        "measured_lags": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "n": 72021,
+    "status": "passed"
+  },
+  {
+    "codec": "aac",
+    "metadata": {
+      "alignment": "ffmpeg_gapless_metadata_plus_verified_timing_control_if_length_differs",
+      "bitrate_kbps": 64,
+      "decode_command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "encoded.m4a",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_f32le",
+        "decoded.wav"
+      ],
+      "decoded_samples_before_alignment": 72704,
+      "encode_command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "input.wav",
+        "-c:a",
+        "aac",
+        "-b:a",
+        "64k",
+        "-f",
+        "ipod",
+        "encoded.m4a"
+      ],
+      "encoded_bytes": 37021,
+      "encoder": "aac",
+      "manual_shift_samples": 0,
+      "tail_trim_samples": 683,
+      "timing_control": {
+        "impulse_positions": [
+          18005,
+          36010,
+          54015
+        ],
+        "measured_lags": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "n": 72021,
+    "status": "passed"
+  },
+  {
+    "codec": "libopus",
+    "metadata": {
+      "alignment": "ffmpeg_gapless_metadata_plus_verified_timing_control_if_length_differs",
+      "bitrate_kbps": 32,
+      "decode_command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "encoded.ogg",
+        "-ar",
+        "16000",
+        "-ac",
+        "1",
+        "-c:a",
+        "pcm_f32le",
+        "decoded.wav"
+      ],
+      "decoded_samples_before_alignment": 72021,
+      "encode_command": [
+        "ffmpeg",
+        "-nostdin",
+        "-v",
+        "error",
+        "-y",
+        "-i",
+        "input.wav",
+        "-c:a",
+        "libopus",
+        "-b:a",
+        "32k",
+        "-f",
+        "ogg",
+        "encoded.ogg"
+      ],
+      "encoded_bytes": 16821,
+      "encoder": "libopus",
+      "manual_shift_samples": 0,
+      "tail_trim_samples": 0,
+      "timing_control": null
+    },
+    "n": 72021,
+    "status": "passed"
+  }
+]

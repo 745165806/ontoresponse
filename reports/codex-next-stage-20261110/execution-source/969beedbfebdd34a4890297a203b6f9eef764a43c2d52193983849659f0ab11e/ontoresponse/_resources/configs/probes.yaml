@@ -1,0 +1,15 @@
+# Proposed starting values, NOT experimentally optimized. Record implementation versions.
+version: "0.4.0"
+sample_rate_hz: 16000
+probes:
+  - {id: bandwidth_5k, family: bandwidth, operation: lowpass, cutoff_hz: 5000, order: 6}
+  - {id: bandwidth_3p4k, family: bandwidth, operation: lowpass, cutoff_hz: 3400, order: 6}
+  - {id: noise_30db, family: noise, operation: additive_white_noise, snr_db: 30, seed_rule: artifact_family_hash_shared_direction}
+  - {id: noise_20db, family: noise, operation: additive_white_noise, snr_db: 20, seed_rule: artifact_family_hash_shared_direction}
+  - {id: mp3_64k, family: lossy_coding, operation: ffmpeg_roundtrip, encoder: libmp3lame, bitrate_kbps: 64}
+  - {id: mp3_32k, family: lossy_coding, operation: ffmpeg_roundtrip, encoder: libmp3lame, bitrate_kbps: 32}
+controls:
+  identity: true
+  serialize_decode_lossless: true
+  same_artifact_across_experts: true
+  no_silent_codec_substitution: true

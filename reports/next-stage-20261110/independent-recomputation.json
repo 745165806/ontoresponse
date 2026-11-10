@@ -1,0 +1,728 @@
+{
+  "status": "independently_recomputed",
+  "implementation": "stdlib only; no ontoresponse metric/selection/calibration functions imported",
+  "runs": [
+    {
+      "run": "all_views_mlp-stronger-seed17",
+      "prediction_path": "reports/implementation/runs/all_views_mlp-stronger-seed17/external-evaluation/per_utterance_predictions.jsonl",
+      "prediction_sha256": "88067cf32aef2de71608018caaa5d945298da47d714f5296fe6735b82428f48f",
+      "conditions": {
+        "no_new_processing": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.25,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.75,
+          "nll": 3.155656418364064,
+          "brier": 0.31413078028377966,
+          "ece_10_equal_width": 0.33953797410586406,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 2.701174791838674e-05,
+              "spoof_fraction": 0.3333333333333333
+            },
+            {
+              "bin": 7,
+              "n": 1,
+              "mean_p": 0.7163853049278259,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9999998807907104,
+              "spoof_fraction": 0.75
+            }
+          ]
+        },
+        "aac": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.25,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.75,
+          "nll": 3.0993624619221825,
+          "brier": 0.2677495266927523,
+          "ece_10_equal_width": 0.29711101316939315,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 1.2811991094989784e-05,
+              "spoof_fraction": 0.3333333333333333
+            },
+            {
+              "bin": 3,
+              "n": 1,
+              "mean_p": 0.3769272565841675,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9999998211860657,
+              "spoof_fraction": 0.75
+            }
+          ]
+        },
+        "opus": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.25,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.75,
+          "nll": 3.7957322499804054,
+          "brier": 0.37444881613461034,
+          "ece_10_equal_width": 0.37472350753830164,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 1.2043913568726261e-05,
+              "spoof_fraction": 0.3333333333333333
+            },
+            {
+              "bin": 9,
+              "n": 5,
+              "mean_p": 0.9995648384094238,
+              "spoof_fraction": 0.6
+            }
+          ]
+        }
+      },
+      "differences_from_old_report": [],
+      "max_probability_error_vs_float64_platt": 5.1623260000077664e-08,
+      "threshold_space": "calibrated_probability",
+      "equivalent_raw_logit_threshold": null,
+      "threshold_decision_equivalence": null,
+      "saturation_warning": "threshold at probability boundary; float32 saturated p=1 is not a finite raw-logit threshold; preserve saved probability policy",
+      "probabilities_exactly_one": 9,
+      "threshold_role": "fusion_val",
+      "calibration_role": "calibration",
+      "score_direction": "higher logit/p means spoof; never inverted from observed EER",
+      "legacy_probability_rounding": "float32 Platt output tolerated within 3e-7",
+      "research_holdout": false,
+      "data_status": "consumed_exploration"
+    },
+    {
+      "run": "all_views_mlp-stronger-seed29",
+      "prediction_path": "reports/implementation/runs/all_views_mlp-stronger-seed29/external-evaluation/per_utterance_predictions.jsonl",
+      "prediction_sha256": "54ce9bb751dc7493b0f5302acf2e5a2a744daa580a4b391024d76265a91bd709",
+      "conditions": {
+        "no_new_processing": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.25,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.75,
+          "nll": 3.092745309248775,
+          "brier": 0.32314128532864034,
+          "ece_10_equal_width": 0.3456231721183156,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 5.4222228660869594e-05,
+              "spoof_fraction": 0.3333333333333333
+            },
+            {
+              "bin": 7,
+              "n": 1,
+              "mean_p": 0.7651485204696655,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9999998807907104,
+              "spoof_fraction": 0.75
+            }
+          ]
+        },
+        "aac": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.25,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.75,
+          "nll": 3.013970489913887,
+          "brier": 0.28780603550891437,
+          "ece_10_equal_width": 0.3187521907136128,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 2.6428051713801496e-05,
+              "spoof_fraction": 0.3333333333333333
+            },
+            {
+              "bin": 5,
+              "n": 1,
+              "mean_p": 0.5500977635383606,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9999997615814209,
+              "spoof_fraction": 0.75
+            }
+          ]
+        },
+        "opus": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.25,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.75,
+          "nll": 3.661401213923917,
+          "brier": 0.3742849236312552,
+          "ece_10_equal_width": 0.3746399219764518,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 2.6560907033582184e-05,
+              "spoof_fraction": 0.3333333333333333
+            },
+            {
+              "bin": 9,
+              "n": 5,
+              "mean_p": 0.999439811706543,
+              "spoof_fraction": 0.6
+            }
+          ]
+        }
+      },
+      "differences_from_old_report": [],
+      "max_probability_error_vs_float64_platt": 4.6857952074041975e-08,
+      "threshold_space": "calibrated_probability",
+      "equivalent_raw_logit_threshold": null,
+      "threshold_decision_equivalence": null,
+      "saturation_warning": "threshold at probability boundary; float32 saturated p=1 is not a finite raw-logit threshold; preserve saved probability policy",
+      "probabilities_exactly_one": 9,
+      "threshold_role": "fusion_val",
+      "calibration_role": "calibration",
+      "score_direction": "higher logit/p means spoof; never inverted from observed EER",
+      "legacy_probability_rounding": "float32 Platt output tolerated within 3e-7",
+      "research_holdout": false,
+      "data_status": "consumed_exploration"
+    },
+    {
+      "run": "all_views_mlp-stronger-seed43",
+      "prediction_path": "reports/implementation/runs/all_views_mlp-stronger-seed43/external-evaluation/per_utterance_predictions.jsonl",
+      "prediction_sha256": "374c0ff0996a709ab48b70729ee26ce24e96ca9500257f07493e0c4d2e719117",
+      "conditions": {
+        "no_new_processing": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.25,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.75,
+          "nll": 2.9458761166577894,
+          "brier": 0.34679292109748466,
+          "ece_10_equal_width": 0.3599984126879875,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 5.793502751881366e-05,
+              "spoof_fraction": 0.3333333333333333
+            },
+            {
+              "bin": 8,
+              "n": 1,
+              "mean_p": 0.8801639676094055,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9999992847442627,
+              "spoof_fraction": 0.75
+            }
+          ]
+        },
+        "aac": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.25,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.75,
+          "nll": 2.878135715014478,
+          "brier": 0.3210295205889739,
+          "ece_10_equal_width": 0.34423051104405133,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 3.029702879040757e-05,
+              "spoof_fraction": 0.3333333333333333
+            },
+            {
+              "bin": 7,
+              "n": 1,
+              "mean_p": 0.7539395093917847,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9999988675117493,
+              "spoof_fraction": 0.75
+            }
+          ]
+        },
+        "opus": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.25,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.75,
+          "nll": 3.381795816777227,
+          "brier": 0.3738602829292986,
+          "ece_10_equal_width": 0.3744251892134752,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 3.3414320096515614e-05,
+              "spoof_fraction": 0.3333333333333333
+            },
+            {
+              "bin": 9,
+              "n": 5,
+              "mean_p": 0.9991003513336182,
+              "spoof_fraction": 0.6
+            }
+          ]
+        }
+      },
+      "differences_from_old_report": [],
+      "max_probability_error_vs_float64_platt": 5.5582891178573846e-08,
+      "threshold_space": "calibrated_probability",
+      "equivalent_raw_logit_threshold": null,
+      "threshold_decision_equivalence": null,
+      "saturation_warning": "threshold at probability boundary; float32 saturated p=1 is not a finite raw-logit threshold; preserve saved probability policy",
+      "probabilities_exactly_one": 9,
+      "threshold_role": "fusion_val",
+      "calibration_role": "calibration",
+      "score_direction": "higher logit/p means spoof; never inverted from observed EER",
+      "legacy_probability_rounding": "float32 Platt output tolerated within 3e-7",
+      "research_holdout": false,
+      "data_status": "consumed_exploration"
+    },
+    {
+      "run": "typed_response-fixed-seed17",
+      "prediction_path": "reports/implementation/runs/typed_response-fixed-seed17/external-evaluation/per_utterance_predictions.jsonl",
+      "prediction_sha256": "f0942e9cb66919faf66b16cbc020e259ffc94cfacf03874917091cb55f109d5b",
+      "conditions": {
+        "no_new_processing": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.0,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.25,
+          "nll": 0.03749248064302228,
+          "brier": 0.0041505197760545,
+          "ece_10_equal_width": 0.035201823713578065,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 4,
+              "mean_p": 0.030420762304856908,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 8,
+              "n": 1,
+              "mean_p": 0.8402782678604126,
+              "spoof_fraction": 1.0
+            },
+            {
+              "bin": 9,
+              "n": 3,
+              "mean_p": 0.9999300638834635,
+              "spoof_fraction": 1.0
+            }
+          ]
+        },
+        "aac": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.0,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.25,
+          "nll": 0.041271009892934876,
+          "brier": 0.005372933447052152,
+          "ece_10_equal_width": 0.03823073564308288,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 4,
+              "mean_p": 0.028795353737223195,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 8,
+              "n": 1,
+              "mean_p": 0.8095454573631287,
+              "spoof_fraction": 1.0
+            },
+            {
+              "bin": 9,
+              "n": 3,
+              "mean_p": 0.9999300241470337,
+              "spoof_fraction": 1.0
+            }
+          ]
+        },
+        "opus": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.0,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.25,
+          "nll": 0.05217592214744059,
+          "brier": 0.0074096227836002605,
+          "ece_10_equal_width": 0.047959096734302875,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 3,
+              "mean_p": 0.022369697702136666,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 1,
+              "n": 1,
+              "mean_p": 0.1091197282075882,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 7,
+              "n": 1,
+              "mean_p": 0.7927480936050415,
+              "spoof_fraction": 1.0
+            },
+            {
+              "bin": 9,
+              "n": 3,
+              "mean_p": 0.9999359846115112,
+              "spoof_fraction": 1.0
+            }
+          ]
+        }
+      },
+      "differences_from_old_report": [],
+      "max_probability_error_vs_float64_platt": 5.626461485608303e-08,
+      "threshold_space": "calibrated_probability",
+      "equivalent_raw_logit_threshold": 5.389536367288204,
+      "threshold_decision_equivalence": true,
+      "saturation_warning": null,
+      "probabilities_exactly_one": 0,
+      "threshold_role": "fusion_val",
+      "calibration_role": "calibration",
+      "score_direction": "higher logit/p means spoof; never inverted from observed EER",
+      "legacy_probability_rounding": "float32 Platt output tolerated within 3e-7",
+      "research_holdout": false,
+      "data_status": "consumed_exploration"
+    },
+    {
+      "run": "typed_response-fixed-seed29",
+      "prediction_path": "reports/implementation/runs/typed_response-fixed-seed29/external-evaluation/per_utterance_predictions.jsonl",
+      "prediction_sha256": "eb330683172431ee49f1643fc29dca1125a49a2f2c32dec98fe1fd699d9cf60a",
+      "conditions": {
+        "no_new_processing": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.0,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.5,
+          "nll": 0.06233389254419132,
+          "brier": 0.009592584002544657,
+          "ece_10_equal_width": 0.056863078984861204,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 2,
+              "mean_p": 0.00039393509723595344,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 1,
+              "n": 1,
+              "mean_p": 0.1665096879005432,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 2,
+              "n": 1,
+              "mean_p": 0.2057763934135437,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9795423299074173,
+              "spoof_fraction": 1.0
+            }
+          ]
+        },
+        "aac": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.0,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.5,
+          "nll": 0.05901120482661391,
+          "brier": 0.00824617486945874,
+          "ece_10_equal_width": 0.0543952372536296,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 2,
+              "mean_p": 0.0002765106619335711,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 1,
+              "n": 2,
+              "mean_p": 0.16692227125167847,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 8,
+              "n": 1,
+              "mean_p": 0.8993905186653137,
+              "spoof_fraction": 1.0
+            },
+            {
+              "bin": 9,
+              "n": 3,
+              "mean_p": 0.9999483823776245,
+              "spoof_fraction": 1.0
+            }
+          ]
+        },
+        "opus": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.0,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.5,
+          "nll": 0.0928190932344882,
+          "brier": 0.020592856896435942,
+          "ece_10_equal_width": 0.0797644864733229,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 2,
+              "mean_p": 0.0011281266670266632,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 1,
+              "n": 1,
+              "mean_p": 0.16440600156784058,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 3,
+              "n": 1,
+              "mean_p": 0.35107651352882385,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 8,
+              "n": 1,
+              "mean_p": 0.8797745108604431,
+              "spoof_fraction": 1.0
+            },
+            {
+              "bin": 9,
+              "n": 3,
+              "mean_p": 0.9999494552612305,
+              "spoof_fraction": 1.0
+            }
+          ]
+        }
+      },
+      "differences_from_old_report": [],
+      "max_probability_error_vs_float64_platt": 5.4253437631324175e-08,
+      "threshold_space": "calibrated_probability",
+      "equivalent_raw_logit_threshold": 5.041956169868128,
+      "threshold_decision_equivalence": true,
+      "saturation_warning": null,
+      "probabilities_exactly_one": 0,
+      "threshold_role": "fusion_val",
+      "calibration_role": "calibration",
+      "score_direction": "higher logit/p means spoof; never inverted from observed EER",
+      "legacy_probability_rounding": "float32 Platt output tolerated within 3e-7",
+      "research_holdout": false,
+      "data_status": "consumed_exploration"
+    },
+    {
+      "run": "typed_response-fixed-seed43",
+      "prediction_path": "reports/implementation/runs/typed_response-fixed-seed43/external-evaluation/per_utterance_predictions.jsonl",
+      "prediction_sha256": "81be48854a2a5f712b7d86f13fc002fb2863afc712bb2028d3f11b93e603f545",
+      "conditions": {
+        "no_new_processing": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.0,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.5,
+          "nll": 0.0916820298311261,
+          "brier": 0.021915684765069426,
+          "ece_10_equal_width": 0.07784327772424149,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 2,
+              "mean_p": 0.0004091672963113524,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 2,
+              "n": 1,
+              "mean_p": 0.2512689530849457,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 3,
+              "n": 1,
+              "mean_p": 0.3328177332878113,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9905396997928619,
+              "spoof_fraction": 1.0
+            }
+          ]
+        },
+        "aac": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.0,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.5,
+          "nll": 0.08371352834780836,
+          "brier": 0.018059236389636777,
+          "ece_10_equal_width": 0.07269337921297847,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 2,
+              "mean_p": 0.0002591073098301422,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 2,
+              "n": 2,
+              "mean_p": 0.2665282189846039,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9880069047212601,
+              "spoof_fraction": 1.0
+            }
+          ]
+        },
+        "opus": {
+          "n_requested": 8,
+          "n_scored": 8,
+          "n_failed": 0,
+          "eer": 0.0,
+          "eer_convention": "linear ROC crossing after grouping tied scores",
+          "actual_fpr": 0.0,
+          "actual_tpr": 0.5,
+          "nll": 0.14446627866243936,
+          "brier": 0.04588654234644417,
+          "ece_10_equal_width": 0.10969055149234919,
+          "reliability_bins": [
+            {
+              "bin": 0,
+              "n": 2,
+              "mean_p": 0.0016857416740094777,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 2,
+              "n": 1,
+              "mean_p": 0.28936097025871277,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 5,
+              "n": 1,
+              "mean_p": 0.5294363498687744,
+              "spoof_fraction": 0.0
+            },
+            {
+              "bin": 9,
+              "n": 4,
+              "mean_p": 0.9861610978841782,
+              "spoof_fraction": 1.0
+            }
+          ]
+        }
+      },
+      "differences_from_old_report": [],
+      "max_probability_error_vs_float64_platt": 4.948119991521338e-08,
+      "threshold_space": "calibrated_probability",
+      "equivalent_raw_logit_threshold": 4.826181717496737,
+      "threshold_decision_equivalence": true,
+      "saturation_warning": null,
+      "probabilities_exactly_one": 0,
+      "threshold_role": "fusion_val",
+      "calibration_role": "calibration",
+      "score_direction": "higher logit/p means spoof; never inverted from observed EER",
+      "legacy_probability_rounding": "float32 Platt output tolerated within 3e-7",
+      "research_holdout": false,
+      "data_status": "consumed_exploration"
+    }
+  ],
+  "fitting_performed": false,
+  "warning": "Old expert selection overlaps dev calibration/validation; existing freezes retained"
+}

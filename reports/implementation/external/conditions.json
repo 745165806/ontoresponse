@@ -1,0 +1,38 @@
+{
+  "exposure": {
+    "candidates": [
+      {
+        "all_experts_unseen": null,
+        "classification": "fusion_unseen_operator",
+        "trace": [
+          "aac"
+        ]
+      },
+      {
+        "all_experts_unseen": null,
+        "classification": "fusion_unseen_operator",
+        "trace": [
+          "opus"
+        ]
+      }
+    ],
+    "expert_augmentations": null,
+    "hash": "e55540579e8ab56a98556d661958ca94805a76f751eec10e3a01f347bc4139e0",
+    "training_closure": [
+      [],
+      [
+        "additive_white_noise"
+      ],
+      [
+        "lowpass"
+      ],
+      [
+        "mp3"
+      ]
+    ]
+  },
+  "generated": 24,
+  "origins": 8,
+  "requests": 24,
+  "scope": "fusion-unseen codec operators; expert exposure unknown; engineering smoke only"
+}

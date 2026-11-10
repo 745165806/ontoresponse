@@ -1,0 +1,17 @@
+artifacts/
+deliverables/
+__pycache__/
+.pytest_cache/
+*.pt
+*.pth
+*.npz
+*.npy
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+*.bundle
+.env
+*.pem
+*.key

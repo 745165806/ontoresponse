@@ -1,0 +1,18 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "ontoresponse",
+    "check-experts",
+    "--config",
+    "configs/pilot-20261110.yaml",
+    "--manifest",
+    "reports/pilot-20261110/inference_manifest.jsonl",
+    "--output",
+    "reports/next-stage-20261110/real-checkpoints.json"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T04:15:22.531827+00:00",
+  "elapsed_seconds": 23.813615322113037,
+  "log": "reports/next-stage-20261110/checkpoints.log"
+}

@@ -1,0 +1,148 @@
+{
+  "code_sha256": "161f6bb3200f887bf0feb037a9b6967545f14c4415d4a79778634d36bddc6d4d",
+  "commands": [
+    {
+      "command": [
+        "${USER_HOME}/anaconda3/envs/py310/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests",
+        "--junitxml=reports/next-stage-20261110/unit.xml"
+      ],
+      "cwd": "${PROJECT_ROOT}",
+      "elapsed_seconds": 24.766239643096924,
+      "exit_code": 0,
+      "log": "reports/next-stage-20261110/full-tests.log",
+      "started_utc": "2026-11-10T04:17:39.035215+00:00"
+    },
+    {
+      "command": [
+        "${USER_HOME}/anaconda3/envs/py310/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        ".",
+        "--no-deps",
+        "--no-build-isolation",
+        "--wheel-dir",
+        "reports/next-stage-20261110/wheels"
+      ],
+      "cwd": "${PROJECT_ROOT}",
+      "elapsed_seconds": 0.862713098526001,
+      "exit_code": 0,
+      "log": "reports/next-stage-20261110/wheel-build-final.log",
+      "started_utc": "2026-11-10T04:18:03.832878+00:00"
+    },
+    {
+      "command": [
+        "${EXTERNAL_PATH}",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--no-index",
+        "--force-reinstall",
+        "reports/next-stage-20261110/wheels/ontoresponse-0.5.0-py3-none-any.whl"
+      ],
+      "cwd": "${PROJECT_ROOT}",
+      "elapsed_seconds": 0.4411771297454834,
+      "exit_code": 0,
+      "log": "reports/next-stage-20261110/wheel-install-final.log",
+      "started_utc": "2026-11-10T04:18:04.729272+00:00"
+    },
+    {
+      "command": [
+        "${EXTERNAL_PATH}",
+        "${PROJECT_ROOT}/scripts/check_outside_install.py",
+        "--repo",
+        "${PROJECT_ROOT}",
+        "--out",
+        "${PROJECT_ROOT}/reports/next-stage-20261110/outside-install.json"
+      ],
+      "cwd": "/tmp",
+      "elapsed_seconds": 18.883881092071533,
+      "exit_code": 0,
+      "log": "reports/next-stage-20261110/outside-install.log",
+      "started_utc": "2026-11-10T04:18:05.203870+00:00"
+    },
+    {
+      "command": [
+        "${USER_HOME}/anaconda3/envs/py310/bin/python",
+        "-m",
+        "ontoresponse",
+        "check-experts",
+        "--config",
+        "configs/pilot-20261110.yaml",
+        "--manifest",
+        "reports/pilot-20261110/inference_manifest.jsonl",
+        "--output",
+        "reports/next-stage-20261110/real-checkpoints.json"
+      ],
+      "elapsed_seconds": 23.813615322113037,
+      "exit_code": 0,
+      "log": "reports/next-stage-20261110/checkpoints.log",
+      "started_utc": "2026-11-10T04:15:22.531827+00:00"
+    },
+    {
+      "command": [
+        "${USER_HOME}/anaconda3/envs/py310/bin/python",
+        "-m",
+        "scripts.audit_supervision"
+      ],
+      "elapsed_seconds": 14.417423009872437,
+      "exit_code": 0,
+      "log": "reports/next-stage-20261110/source-audit.log",
+      "started_utc": "2026-11-10T04:15:08.080327+00:00"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "scripts/recompute_predictions.py",
+        "--out",
+        "reports/next-stage-20261110/independent-recomputation.json"
+      ],
+      "cwd": "${PROJECT_ROOT}",
+      "elapsed_seconds": 0.11456465721130371,
+      "exit_code": 0,
+      "log": "reports/next-stage-20261110/independent-metrics.log",
+      "started_utc": "2026-11-10T04:21:43.356405+00:00"
+    },
+    {
+      "command": [
+        "${USER_HOME}/anaconda3/envs/py310/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "ontoresponse",
+        "reference",
+        "scripts"
+      ],
+      "cwd": "${PROJECT_ROOT}",
+      "elapsed_seconds": 0.03862929344177246,
+      "exit_code": 0,
+      "log": "reports/next-stage-20261110/compile.log",
+      "started_utc": "2026-11-10T04:21:43.510290+00:00"
+    }
+  ],
+  "evidence_files": {
+    "dependency-lock.json": "8a67a35dc301a304c83816bb16a52ce89309ef953c94ee7709f43a8f6041f834",
+    "frozen-directory-preservation.json": "13ac81d73bbe5137cd3188663351b19392e5d85d00468f7dc639a01ae2004965",
+    "independent-recomputation.json": "9c6aa7ae6b2d3052ae353e8d308b91a7aa15d2e56e2b8d691356c08fc71a4857",
+    "outside-install.json": "361b48c24c79facde977f3646d86cc8a2b8844cc0d63a8eacbcaed6f4a60c711",
+    "real-checkpoints.json": "7d96261a3857bfb74f5051b1b12485d26c38d7168fd97af81fa2e0d92b777bef",
+    "real-evidence-ontology.json": "4f91d728a73656fd4f897f7647d5f16afc8716b5fc42322fbd444cf4f42291e0",
+    "supervision-audit.json": "0ac12ed80a6a231e86ebcb744c1b7fc18a1790e7f3bcb8766722cc6eb65beba5",
+    "unit.xml": "71e88c2ecebd372e5da9853bc86cfbf131642310ed2a78651d3ab676a6719398"
+  },
+  "passed": true,
+  "pilot_training_started": false,
+  "scope": "Software/measurement/source audit for two-expert integration pilot; no research_holdout certification",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 99
+  },
+  "wheel_sha256": "5c769f50972ac7be9826fe6bd6abd5812e870ff7151a614b661c79134bfb4599"
+}

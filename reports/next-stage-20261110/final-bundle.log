@@ -1,0 +1,41 @@
+{
+  "status": "verified",
+  "files_verified": 2713,
+  "archive": "${PROJECT_ROOT}/deliverables/ontoresponse-v0.5-next-stage-20261110.tar.gz",
+  "historical_manifest_audit": [
+    {
+      "changed": [
+        "PLANS.md",
+        "README.md",
+        "STATUS.md",
+        "ontology/shapes.ttl",
+        "reference/registry.py"
+      ],
+      "entries": 30,
+      "manifest": "MANIFEST.json",
+      "missing": [],
+      "note": "Historical reference-bundle hashes are not silently rewritten to match this revision"
+    },
+    {
+      "changed": [
+        "PLANS.md",
+        "README.md",
+        "STATUS.md",
+        "ontoresponse/evaluation/workflow.py",
+        "ontoresponse/evidence/extract.py",
+        "ontoresponse/models/factory.py",
+        "ontoresponse/ontology/registry.py",
+        "ontoresponse/train/fit.py",
+        "pyproject.toml",
+        "reference/registry.py",
+        "tests/test_workflow.py"
+      ],
+      "entries": 65,
+      "manifest": "MANIFEST.implementation.json",
+      "missing": [],
+      "note": "Historical reference-bundle hashes are not silently rewritten to match this revision"
+    }
+  ],
+  "archive_sha256": "2bc2f8e337350635b1c6a6be468e6f2d22a3f09113324a5b2de60f54d766bcb1",
+  "archive_bytes": 535164917
+}

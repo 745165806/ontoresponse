@@ -1,0 +1,234 @@
+{
+  "blocked": [
+    "GPU: CUDA unavailable in this session; CPU work continues",
+    "aasist: research_holdout supervision not certified",
+    "ssl_aasist: research_holdout supervision not certified",
+    "rawnet2: research_holdout supervision not certified"
+  ],
+  "data": {
+    "asv2019": {
+      "exists": true,
+      "path": "${DATA_ROOT}/asvspoof2019/LA"
+    },
+    "asv2021df": {
+      "exists": true,
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2021_DF_eval"
+    },
+    "asv2021df_keys": {
+      "exists": true,
+      "path": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2021_DF_keys_full"
+    },
+    "asv5": {
+      "exists": true,
+      "path": "${DATA_ROOT}/asvspoof5"
+    },
+    "inthewild": {
+      "exists": true,
+      "path": "${DATA_ROOT}/release_in_the_wild"
+    }
+  },
+  "dependencies": {
+    "PyYAML": "6.0.3",
+    "fairseq": "0.12.2",
+    "numpy": "1.26.4",
+    "pyshacl": null,
+    "pytest": "9.1.1",
+    "rdflib": null,
+    "scikit-learn": "1.7.2",
+    "scipy": "1.13.0",
+    "soundfile": "0.14.0",
+    "torch": "2.6.0+cu118"
+  },
+  "experts": [
+    {
+      "artifacts": {
+        "checkpoint": {
+          "bytes": 4248994,
+          "exists": true,
+          "path": "${EXPERT_ROOT}/TTA/outputs/source/aasist-full-asvspoof2019train-random/checkpoints/best.pt",
+          "sha256": "798de0ee199a6d5cb1de98812a5c9d1bbe1d184f76518a44ea633cf41e804fb6"
+        }
+      },
+      "git": {
+        "command": [
+          "git",
+          "-C",
+          "${EXPERT_ROOT}/aasist",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "a04c9863f63d44471dde8a6abcb3b082b07cd1d1\n"
+      },
+      "id": "aasist",
+      "license_text": "Copyright (c) 2021-present NAVER Corp.\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n",
+      "repository": "${EXPERT_ROOT}/aasist",
+      "research_holdout_eligible": false,
+      "source_files": {
+        "LICENSE": "da2e79b8592d166ef505224300968b80ebe1e4c217c43b94a5ec627d81cd4142",
+        "NOTICE": "70edb07f04ddc88e7155d6e826495e5ef99c3b1f0bd4e1b7fa35897b3854dbd0",
+        "README.md": "409c7ce52ce20d3e13adab731e52ce65a153fb0aed5ac6d5434e1661aa9cb253",
+        "models/AASIST.py": "9e0d3e80937dd0577beea7883098465a479da23a198ebc0d712abcc59b0bec50"
+      },
+      "supervision": {
+        "augmentation": "none_author_freq_aug_false",
+        "independent_holdout": false,
+        "origin": "local_TTA_trained_in_project",
+        "selection": "ASVspoof2019_LA_official_dev",
+        "training": "ASVspoof2019_LA_official_train"
+      }
+    },
+    {
+      "artifacts": {
+        "checkpoint": {
+          "bytes": 3799687746,
+          "exists": true,
+          "path": "${EXPERT_ROOT}/TTA/outputs/source/ssl-aasist-full-asvspoof2019train-random/checkpoints/best.pt",
+          "sha256": "dbf1d5b5229ffe5b904e5a7bef2c0a42181c9be6e7195d1c5c5b84a6a01ec6df"
+        },
+        "frontend": {
+          "bytes": 3808868242,
+          "exists": true,
+          "path": "${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt",
+          "sha256": "b08927597f2c9eb2ebd7dcc3ac78ee4b5f6021cbac4b3a6c5a9deec445d80ed9"
+        }
+      },
+      "git": {
+        "command": [
+          "git",
+          "-C",
+          "${EXPERT_ROOT}/SSL_Anti-spoofing",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "4acaa61dcef5f7610f43aa4d0b29c4559b970cd2\n"
+      },
+      "id": "ssl_aasist",
+      "license_text": "MIT License\n\nCopyright (c) 2022 Hemlata\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "repository": "${EXPERT_ROOT}/SSL_Anti-spoofing",
+      "research_holdout_eligible": false,
+      "source_files": {
+        "LICENSE": "e5ff6b23454767530b5ce87125140fe04b2cb834f29bb735b37275eaf6519fb9",
+        "README.md": "9905f2c5d5630a36c1d92bdf437555b7d02c4b4cef3b2c0997881a5169764184",
+        "model.py": "08b2b99b9cc0e90732746471325185f2eb144795ee35338e0a02951015a856c6"
+      },
+      "supervision": {
+        "augmentation": "none_project_freq_aug_false",
+        "generic_ssl_pretraining": "unknown_open_data_overlap",
+        "independent_holdout": false,
+        "origin": "local_TTA_trained_in_project",
+        "selection": "ASVspoof2019_LA_official_dev",
+        "training": "ASVspoof2019_LA_official_train"
+      }
+    },
+    {
+      "artifacts": {
+        "checkpoint": {
+          "bytes": 70533930,
+          "exists": true,
+          "path": "${EXPERT_ROOT}/detectionLib/models/model_RawNet2_WCE_100_32_0.0001/epoch_70_0.0010673372435522916.pth",
+          "sha256": "1c4ff70338afbf1a688554ed2a65dfb92ee1ff0cbfef035f042e710b2399ed2c"
+        }
+      },
+      "git": {
+        "command": [
+          "git",
+          "-C",
+          "${EXPERT_ROOT}/detectionLib",
+          "rev-parse",
+          "HEAD"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "e3b049f79b3cd9552e66f6d0ba844cbb9399c479\n"
+      },
+      "id": "rawnet2",
+      "license_text": "MIT License\n\nCopyright (c) 2021 Audio Security and Privacy Group @ EURECOM\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+      "repository": "${EXPERT_ROOT}/detectionLib",
+      "research_holdout_eligible": false,
+      "source_files": {
+        "LICENSE": "82b8eaff132499ffde1039c874936e0bc6aea049d2dd488a1bab309f56609d26",
+        "README.md": "9032540723516a00e37e5ca89c4649e33704aed9fe3c30385c7795b53a06b399",
+        "model/RawNet2.py": "520caaa888ce2033b8cdacd466c552745141e2403c37d43042e06a5d89371679"
+      },
+      "supervision": {
+        "augmentation": null,
+        "independent_holdout": false,
+        "origin": "local_detectionLib_unverified_training_history",
+        "selection": null,
+        "training": null
+      }
+    }
+  ],
+  "external_source_mapping": null,
+  "formal_protocol_frozen": false,
+  "mode": "integration_pretrained",
+  "project_code_sha256": "02ab3062f54f1982520ba2dcb79b09231a2da537a262591b7dc1a1f1ce225c75",
+  "project_git": {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 128,
+    "stderr": "fatal: \u4e0d\u662f git \u4ed3\u5e93\uff08\u6216\u8005\u76f4\u81f3\u6302\u8f7d\u70b9 ${EXTERNAL_PATH} \u7684\u4efb\u4f55\u7236\u76ee\u5f55\uff09\n\u505c\u6b62\u5728\u6587\u4ef6\u7cfb\u7edf\u8fb9\u754c\uff08\u672a\u8bbe\u7f6e GIT_DISCOVERY_ACROSS_FILESYSTEM\uff09\u3002\n",
+    "stdout": ""
+  },
+  "resources": {
+    "cpu_count": 40,
+    "cuda_available": false,
+    "cuda_count": 0,
+    "disk": {
+      "free": 3342355730432,
+      "total": 9920822677504,
+      "used": 6078408605696
+    },
+    "encoders": {
+      "command": [
+        "ffmpeg",
+        "-hide_banner",
+        "-encoders"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Encoders:\n V..... = Video\n A..... = Audio\n S..... = Subtitle\n .F.... = Frame-level multithreading\n ..S... = Slice-level multithreading\n ...X.. = Codec is experimental\n ....B. = Supports draw_horiz_band\n .....D = Supports direct rendering method 1\n ------\n V....D a64multi             Multicolor charset for Commodore 64 (codec a64_multi)\n V....D a64multi5            Multicolor charset for Commodore 64, extended with 5th color (colram) (codec a64_multi5)\n V....D alias_pix            Alias/Wavefront PIX image\n V..... amv                  AMV Video\n V....D apng                 APNG (Animated Portable Network Graphics) image\n V....D asv1                 ASUS V1\n V....D asv2                 ASUS V2\n V....D libaom-av1           libaom AV1 (codec av1)\n V....D avrp                 Avid 1:1 10-bit RGB Packer\n V..X.D avui                 Avid Meridien Uncompressed\n VF...D bitpacked            Bitpacked\n V....D bmp                  BMP (Windows and OS/2 bitmap)\n VF...D cfhd                 GoPro CineForm HD\n V....D cinepak              Cinepak\n V....D cljr                 Cirrus Logic AccuPak\n V.S..D vc2                  SMPTE VC-2 (codec dirac)\n VFS..D dnxhd                VC3/DNxHD\n V....D dpx                  DPX (Digital Picture Exchange) image\n VFS..D dvvideo              DV (Digital Video)\n VFS..D dxv                  Resolume DXV\n VF...D exr                  OpenEXR image\n V.S..D ffv1                 FFmpeg video codec #1\n VF...D ffvhuff              Huffyuv FFmpeg variant\n V....D fits                 Flexible Image Transport System\n V....D flashsv              Flash Screen Video\n V....D flashsv2             Flash Screen Video Version 2\n V..... flv                  FLV / Sorenson Spark / Sorenson H.263 (Flash Video) (codec flv1)\n V....D gif                  GIF (Graphics Interchange Format)\n V..... h261                 H.261\n V..... h263                 H.263 / H.263-1996\n V..... h263_v4l2m2m         V4L2 mem2mem H.263 encoder wrapper (codec h263)\n V.S... h263p                H.263+ / H.263-1998 / H.263 version 2\n V....D libx264              libx264 H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 (codec h264)\n V....D libx264rgb           libx264 H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10 RGB (codec h264)\n V..... h264_v4l2m2m         V4L2 mem2mem H.264 encoder wrapper (codec h264)\n VF...D hdr                  HDR (Radiance RGBE format) image\n V....D libx265              libx265 H.265 / HEVC (codec hevc)\n V..... hevc_v4l2m2m         V4L2 mem2mem HEVC encoder wrapper (codec hevc)\n VF...D huffyuv              Huffyuv / HuffYUV\n VF...D jpeg2000             JPEG 2000\n VF.... libopenjpeg          OpenJPEG JPEG 2000 (codec jpeg2000)\n VF...D jpegls               JPEG-LS\n VF...D ljpeg                Lossless JPEG\n VFS..D magicyuv             MagicYUV video\n VFS... mjpeg                MJPEG (Motion JPEG)\n V.S... mpeg1video           MPEG-1 video\n V.S... mpeg2video           MPEG-2 video\n V.S... mpeg4                MPEG-4 part 2\n V....D libxvid              libxvidcore MPEG-4 part 2 (codec mpeg4)\n V..... mpeg4_v4l2m2m        V4L2 mem2mem MPEG4 encoder wrapper (codec mpeg4)\n V..... msmpeg4v2            MPEG-4 part 2 Microsoft variant version 2\n V..... msmpeg4              MPEG-4 part 2 Microsoft variant version 3 (codec msmpeg4v3)\n V....D msrle                Microsoft RLE\n V..... msvideo1             Microsoft Video-1\n V....D pam                  PAM (Portable AnyMap) image\n V....D pbm                  PBM (Portable BitMap) image\n V....D pcx                  PC Paintbrush PCX image\n V....D pfm                  PFM (Portable FloatMap) image\n V....D pgm                  PGM (Portable GrayMap) image\n V....D pgmyuv               PGMYUV (Portable GrayMap YUV) image\n V....D phm                  PHM (Portable HalfFloatMap) image\n VF...D png                  PNG (Portable Network Graphics) image\n V....D ppm                  PPM (Portable PixelMap) image\n VF...D prores               Apple ProRes\n VF...D prores_aw            Apple ProRes (codec prores)\n VFS... prores_ks            Apple ProRes (iCodec Pro) (codec prores)\n VF...D qoi                  QOI (Quite OK Image format) image\n V....D qtrle                QuickTime Animation (RLE) video\n V....D r10k                 AJA Kona 10-bit RGB Codec\n V....D r210                 Uncompressed RGB 10-bit\n VF...D rawvideo             raw video\n V....D roqvideo             id RoQ video (codec roq)\n V....D rpza                 QuickTime video (RPZA)\n V..... rv10                 RealVideo 1.0\n V..... rv20                 RealVideo 2.0\n V....D sgi                  SGI image\n V....D smc                  QuickTime Graphics (SMC)\n V....D snow                 Snow\n V..... speedhq              NewTek SpeedHQ\n V....D sunrast              Sun Rasterfile image\n V....D svq1                 Sorenson Vector Quantizer 1 / Sorenson Video 1 / SVQ1\n V....D targa                Truevision Targa image\n V....D libtheora            libtheora Theora (codec theora)\n VF...D tiff                 TIFF image\n VF...D utvideo              Ut Video\n VF...D v210                 Uncompressed 4:2:2 10-bit\n V....D v308                 Uncompressed packed 4:4:4\n V....D v408                 Uncompressed packed QT 4:4:4:4\n V....D v410                 Uncompressed 4:4:4 10-bit\n V.S..D vbn                  Vizrt Binary Image\n V..... vnull                null video\n V....D libvpx               libvpx VP8 (codec vp8)\n V..... vp8_v4l2m2m          V4L2 mem2mem VP8 encoder wrapper (codec vp8)\n V....D libvpx-vp9           libvpx VP9 (codec vp9)\n VF...D wbmp                 WBMP (Wireless Application Protocol Bitmap) image\n V....D libwebp_anim         libwebp WebP image (codec webp)\n V....D libwebp              libwebp WebP image (codec webp)\n V..... wmv1                 Windows Media Video 7\n V..... wmv2                 Windows Media Video 8\n V..... wrapped_avframe      AVFrame to AVPacket passthrough\n V....D xbm                  XBM (X BitMap) image\n V....D xface                X-face image\n V....D xwd                  XWD (X Window Dump) image\n V....D y41p                 Uncompressed YUV 4:1:1 12-bit\n V....D yuv4                 Uncompressed packed 4:2:0\n VF...D zlib                 LCL (LossLess Codec Library) ZLIB\n V....D zmbv                 Zip Motion Blocks Video\n A....D aac                  AAC (Advanced Audio Coding)\n A....D ac3                  ATSC A/52A (AC-3)\n A....D ac3_fixed            ATSC A/52A (AC-3) (codec ac3)\n A....D adpcm_adx            SEGA CRI ADX ADPCM\n A....D adpcm_argo           ADPCM Argonaut Games\n A....D g722                 G.722 ADPCM (codec adpcm_g722)\n A....D g726                 G.726 ADPCM (codec adpcm_g726)\n A....D g726le               G.726 little endian ADPCM (\"right-justified\") (codec adpcm_g726le)\n A....D adpcm_ima_alp        ADPCM IMA High Voltage Software ALP\n A....D adpcm_ima_amv        ADPCM IMA AMV\n A....D adpcm_ima_apm        ADPCM IMA Ubisoft APM\n A....D adpcm_ima_qt         ADPCM IMA QuickTime\n A....D adpcm_ima_ssi        ADPCM IMA Simon & Schuster Interactive\n A....D adpcm_ima_wav        ADPCM IMA WAV\n A....D adpcm_ima_ws         ADPCM IMA Westwood\n A....D adpcm_ms             ADPCM Microsoft\n A....D adpcm_swf            ADPCM Shockwave Flash\n A....D adpcm_yamaha         ADPCM Yamaha\n A....D alac                 ALAC (Apple Lossless Audio Codec)\n A....D libopencore_amrnb    OpenCORE AMR-NB (Adaptive Multi-Rate Narrow-Band) (codec amr_nb)\n A....D libvo_amrwbenc       Android VisualOn AMR-WB (Adaptive Multi-Rate Wide-Band) (codec amr_wb)\n A..... anull                null audio\n A....D aptx                 aptX (Audio Processing Technology for Bluetooth)\n A....D aptx_hd              aptX HD (Audio Processing Technology for Bluetooth)\n A....D comfortnoise         RFC 3389 comfort noise generator\n A....D dfpwm                DFPWM1a audio\n A..X.D dca                  DCA (DTS Coherent Acoustics) (codec dts)\n A....D eac3                 ATSC A/52 E-AC-3\n A....D flac                 FLAC (Free Lossless Audio Codec)\n A....D g723_1               G.723.1\n A..X.D mlp                  MLP (Meridian Lossless Packing)\n A....D mp2                  MP2 (MPEG audio layer 2)\n A....D mp2fixed             MP2 fixed point (MPEG audio layer 2) (codec mp2)\n A....D libmp3lame           libmp3lame MP3 (MPEG audio layer 3) (codec mp3)\n A....D nellymoser           Nellymoser Asao\n A..X.D opus                 Opus\n A....D libopus              libopus Opus (codec opus)\n A....D pcm_alaw             PCM A-law / G.711 A-law\n A....D pcm_bluray           PCM signed 16|20|24-bit big-endian for Blu-ray media\n A....D pcm_dvd              PCM signed 16|20|24-bit big-endian for DVD media\n A....D pcm_f32be            PCM 32-bit floating point big-endian\n A....D pcm_f32le            PCM 32-bit floating point little-endian\n A....D pcm_f64be            PCM 64-bit floating point big-endian\n A....D pcm_f64le            PCM 64-bit floating point little-endian\n A....D pcm_mulaw            PCM mu-law / G.711 mu-law\n A....D pcm_s16be            PCM signed 16-bit big-endian\n A....D pcm_s16be_planar     PCM signed 16-bit big-endian planar\n A....D pcm_s16le            PCM signed 16-bit little-endian\n A....D pcm_s16le_planar     PCM signed 16-bit little-endian planar\n A....D pcm_s24be            PCM signed 24-bit big-endian\n A....D pcm_s24daud          PCM D-Cinema audio signed 24-bit\n A....D pcm_s24le            PCM signed 24-bit little-endian\n A....D pcm_s24le_planar     PCM signed 24-bit little-endian planar\n A....D pcm_s32be            PCM signed 32-bit big-endian\n A....D pcm_s32le            PCM signed 32-bit little-endian\n A....D pcm_s32le_planar     PCM signed 32-bit little-endian planar\n A....D pcm_s64be            PCM signed 64-bit big-endian\n A....D pcm_s64le            PCM signed 64-bit little-endian\n A....D pcm_s8               PCM signed 8-bit\n A....D pcm_s8_planar        PCM signed 8-bit planar\n A....D pcm_u16be            PCM unsigned 16-bit big-endian\n A....D pcm_u16le            PCM unsigned 16-bit little-endian\n A....D pcm_u24be            PCM unsigned 24-bit big-endian\n A....D pcm_u24le            PCM unsigned 24-bit little-endian\n A....D pcm_u32be            PCM unsigned 32-bit big-endian\n A....D pcm_u32le            PCM unsigned 32-bit little-endian\n A....D pcm_u8               PCM unsigned 8-bit\n A....D pcm_vidc             PCM Archimedes VIDC\n A....D real_144             RealAudio 1.0 (14.4K) (codec ra_144)\n A....D roq_dpcm             id RoQ DPCM\n A..X.D s302m                SMPTE 302M\n A....D sbc                  SBC (low-complexity subband codec)\n A..X.D sonic                Sonic\n A..X.D sonicls              Sonic lossless\n A....D libspeex             libspeex Speex (codec speex)\n A..X.D truehd               TrueHD\n A....D tta                  TTA (True Audio)\n A..X.D vorbis               Vorbis\n A....D libvorbis            libvorbis (codec vorbis)\n A....D wavpack              WavPack\n A....D wmav1                Windows Media Audio 1\n A....D wmav2                Windows Media Audio 2\n S..... ssa                  ASS (Advanced SubStation Alpha) subtitle (codec ass)\n S..... ass                  ASS (Advanced SubStation Alpha) subtitle\n S..... dvbsub               DVB subtitles (codec dvb_subtitle)\n S..... dvdsub               DVD subtitles (codec dvd_subtitle)\n S..... mov_text             3GPP Timed Text subtitle\n S..... srt                  SubRip subtitle (codec subrip)\n S..... subrip               SubRip subtitle\n S..... text                 Raw text subtitle\n S..... ttml                 TTML subtitle\n S..... webvtt               WebVTT subtitle\n S..... xsub                 DivX subtitles (XSUB)\n"
+    },
+    "ffmpeg": {
+      "command": [
+        "ffmpeg",
+        "-version"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "ffmpeg version 7.0.2-static https://johnvansickle.com/ffmpeg/  Copyright (c) 2000-2024 the FFmpeg developers\nbuilt with gcc 8 (Debian 8.3.0-6)\nconfiguration: --enable-gpl --enable-version3 --enable-static --disable-debug --disable-ffplay --disable-indev=sndio --disable-outdev=sndio --cc=gcc --enable-fontconfig --enable-frei0r --enable-gnutls --enable-gmp --enable-libgme --enable-gray --enable-libaom --enable-libfribidi --enable-libass --enable-libvmaf --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-librubberband --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libvorbis --enable-libopus --enable-libtheora --enable-libvidstab --enable-libvo-amrwbenc --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libdav1d --enable-libxvid --enable-libzvbi --enable-libzimg\nlibavutil      59.  8.100 / 59.  8.100\nlibavcodec     61.  3.100 / 61.  3.100\nlibavformat    61.  1.100 / 61.  1.100\nlibavdevice    61.  1.100 / 61.  1.100\nlibavfilter    10.  1.100 / 10.  1.100\nlibswscale      8.  1.100 /  8.  1.100\nlibswresample   5.  1.100 /  5.  1.100\nlibpostproc    58.  1.100 / 58.  1.100\n"
+    },
+    "memory": {
+      "active": 49659518976,
+      "available": 85614444544,
+      "buffers": 4176445440,
+      "cached": 53555621888,
+      "free": 29418827776,
+      "inactive": 43737202688,
+      "percent": 36.2,
+      "shared": 322482176,
+      "slab": 10132971520,
+      "total": 134260412416,
+      "used": 48645967872
+    },
+    "nvidia_smi": {
+      "command": [
+        "nvidia-smi"
+      ],
+      "exit_code": 9,
+      "stderr": "",
+      "stdout": "NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.\n\n"
+    },
+    "python": "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "python_version": "3.10.20",
+    "torch": "2.6.0+cu118"
+  },
+  "status": "PARTIAL"
+}

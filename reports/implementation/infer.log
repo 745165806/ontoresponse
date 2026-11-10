@@ -1,0 +1,21 @@
+extracted aasist on shard 0/1: 2.0s
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+[2026-11-09 19:48:41,835] [WARNING] [real_accelerator.py:209:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2026-11-09 19:48:41,837] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2026-11-09 19:48:43,853] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+extracted ssl_aasist on shard 0/1: 17.8s
+extracted rawnet2 on shard 0/1: 1.0s
+{
+  "id": "inference-5121b5c569bcd1c695f6d87ad68ebcc086ed382adb9862759f1c79358f5937f0",
+  "status": "scored",
+  "logit": -4.823240280151367,
+  "p": 4.725604240465699e-05,
+  "calibrated": true
+}

@@ -1,0 +1,5 @@
+{
+  "command": "export-ontology",
+  "error": "pyshacl unavailable; Python validation and RDF export completed",
+  "status": "BLOCKED"
+}

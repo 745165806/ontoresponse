@@ -1,0 +1,152 @@
+[
+  {
+    "path": "AGENTS.md",
+    "bytes": 2133,
+    "sha256": "a7221c755c2942f2e72c55c48aa8a1064046f40b2c5db34670aa6b709fde0102"
+  },
+  {
+    "path": "PLANS.md",
+    "bytes": 274,
+    "sha256": "a4fc05959820134a9c0749260cd1e0e60758dfa48abaf5c8997841bf1331a0fc"
+  },
+  {
+    "path": "README.md",
+    "bytes": 2689,
+    "sha256": "54123fcc60db9954608e90bac9a66e2b4e456181ff5d4c81c2a6794bbb567533"
+  },
+  {
+    "path": "STAGE_PROMPTS.md",
+    "bytes": 1413,
+    "sha256": "02d1d30c81f845b9c9b24957d87d596e1e714411a221aa119058bb51f5d4a8e7"
+  },
+  {
+    "path": "STATUS.md",
+    "bytes": 1864,
+    "sha256": "bbcdb1221a65b2d9883d2d0a5741730911d5ba8fa507ad2a47e712a2e1da2f91"
+  },
+  {
+    "path": "TASK_FOR_CODEX.md",
+    "bytes": 7773,
+    "sha256": "ae301b730c413838b4721c0e6c854f4c7baa2cf0fb5b0e1c540928315fc1c2e9"
+  },
+  {
+    "path": "configs/experiment.yaml",
+    "bytes": 1117,
+    "sha256": "a56df4a5661741646233aff94f68482fce4874f2874990873cb2c30716365645"
+  },
+  {
+    "path": "configs/ontology.yaml",
+    "bytes": 865,
+    "sha256": "988da8a565405deb54fd1aa38e2d95752149e3d72893179db1d9361df79478f4"
+  },
+  {
+    "path": "configs/probes.yaml",
+    "bytes": 930,
+    "sha256": "862f5aca9a9dacb0e737f7d8d7595a5ebc44dfe4e3d76da7cf66b814be4c4755"
+  },
+  {
+    "path": "docs/ACCEPTANCE.md",
+    "bytes": 1771,
+    "sha256": "bd3eb13dfa8543c0a8a5354398516f5b143382ad20bd87bf9cca0ae83ee48ffb"
+  },
+  {
+    "path": "docs/EXPERIMENT_PROTOCOL.md",
+    "bytes": 8219,
+    "sha256": "5e8ce22ba57bdd8072dd137e5e3afbf2d88da05dbd81b0afce7470e94a2d2562"
+  },
+  {
+    "path": "docs/METHOD.md",
+    "bytes": 6678,
+    "sha256": "24e8dc7c63365c9f0d63f6f9a8dfc1d1e282bf4b66c9b564f10fb6f55072cd59"
+  },
+  {
+    "path": "docs/RESEARCH_PLAN.md",
+    "bytes": 5510,
+    "sha256": "a89808599913e1f1e11cec026302962d6810572946183c3cf8221c31d2661a02"
+  },
+  {
+    "path": "docs/SOURCES.md",
+    "bytes": 3502,
+    "sha256": "ba2cba7b11c35ba2c7308494fd99db4775f9b770d4ff70be39f5b62633218cb1"
+  },
+  {
+    "path": "ontology/ontology.ttl",
+    "bytes": 2997,
+    "sha256": "29dfade1274c631e14ce8cba0d5809fa4da94e4c265aed8d15e9410c4c62a8df"
+  },
+  {
+    "path": "ontology/shapes.ttl",
+    "bytes": 1973,
+    "sha256": "f34094d7f86d40a63e62ecad07d1dd58689f0aada455503d31ed40aa78c5fb35"
+  },
+  {
+    "path": "pytest.ini",
+    "bytes": 42,
+    "sha256": "6c6ccf864e8f2d2e0223ee8e39bfde660c12435aa37d81e2b14000a6bee15003"
+  },
+  {
+    "path": "reference/__init__.py",
+    "bytes": 88,
+    "sha256": "cf1701b3de37cb08bd7b54d1d704261d644275d31cca4240f450395609713a6a"
+  },
+  {
+    "path": "reference/core.py",
+    "bytes": 13733,
+    "sha256": "14dcd8db57cbf33861e2b3ec656dc6ddd091719a28d04447a5e4d4f2574212d0"
+  },
+  {
+    "path": "reference/demo.py",
+    "bytes": 2988,
+    "sha256": "c7f04fded9e6126d0abd41b5b10ef2d2d38514ac2e5391a59c89f8fbee1ce6f2"
+  },
+  {
+    "path": "reference/registry.py",
+    "bytes": 3134,
+    "sha256": "1924ba9adec0876a452481a6d7fbc8805031ec7998823710ea7582077aa318c2"
+  },
+  {
+    "path": "reports/environment.json",
+    "bytes": 371,
+    "sha256": "6d2a9eb94a49ad56713b52ca0828ffc7e67c2eb581467de4ce711b326794c3f7"
+  },
+  {
+    "path": "reports/synthetic_smoke.json",
+    "bytes": 1068,
+    "sha256": "0d3d26a2ca786ef4a6403d051aa6d962ea430c2ac4bfc763b28d201f7430a26e"
+  },
+  {
+    "path": "reports/synthetic_stdout.txt",
+    "bytes": 1069,
+    "sha256": "4c21af58290c9282050f26fb2b5bb0b626da88bf72b22e349d162293d3b424ca"
+  },
+  {
+    "path": "reports/synthetic_topology.ttl",
+    "bytes": 9981,
+    "sha256": "9b7633f119b0e56e5d2cda6a06b1486cbd79ef1f6e4240bc143ec19b16ea7054"
+  },
+  {
+    "path": "reports/unit_tests.txt",
+    "bytes": 99,
+    "sha256": "a2a9d86c3f0c04fd8d67486fc777475507e7a1734464ee9581216205c861bdae"
+  },
+  {
+    "path": "reports/unit_tests.xml",
+    "bytes": 3806,
+    "sha256": "d3516bbce4060c646bdbf919d95471c8875a9a2f1418574a06cb10397f018819"
+  },
+  {
+    "path": "requirements-reference.txt",
+    "bytes": 141,
+    "sha256": "8718f9b16f95eed7d9900a9287553ae75c4b9c66162c1a9e2cecaf63c6e53b0e"
+  },
+  {
+    "path": "tests/test_core.py",
+    "bytes": 6539,
+    "sha256": "635ac35005a2a57e904720517241315f38acaf0d66bc8c3b11850c1f9fbfa98d"
+  },
+  {
+    "path": "tests/test_registry.py",
+    "bytes": 1266,
+    "sha256": "51d7fe0ea1bb2f690979670c79504651affd05f4940267b2246043c9743a9d30"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "status": "trained_smoke",
+  "level": "real_data_integration_pretrained",
+  "model": "response_mlp",
+  "seed": 17,
+  "parameters": 266369,
+  "width": 64,
+  "capacity": "fixed",
+  "optimizer_steps": 20,
+  "best_step": 20,
+  "val_metrics": {
+    "n": 8,
+    "bonafide": 4,
+    "spoof": 4,
+    "eer": 0.0,
+    "auroc": 1.0,
+    "spoof_auprc": 1.0,
+    "nll": 0.00022477344261275133,
+    "brier": 1.57566205416515e-07
+  },
+  "train_requests": 8,
+  "val_requests": 8,
+  "train_origins": 8,
+  "train_version_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "duration_seconds": 0.39928650890942663,
+  "checkpoint": "reports/implementation/runs/response_mlp-fixed-seed17/model.pt",
+  "checkpoint_sha256": "b0a952226f784cbba62637c665d77b539410f6629a5d1af72a99b5079cd26c25",
+  "save_load_exact": true,
+  "selection_rule": "min fusion_val EER; tie min source-weighted BCE; no test used",
+  "budget": "same lr=0.001, AdamW, <=20 full-batch steps; single prespecified width or count-matched width",
+  "limitation": "bounded pipeline check; dev overlaps public/local expert selection; no generalization claim"
+}

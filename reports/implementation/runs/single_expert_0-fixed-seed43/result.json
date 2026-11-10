@@ -1,0 +1,42 @@
+{
+  "best_step": 20,
+  "budget": "same lr=0.001, AdamW, <=20 full-batch steps; single prespecified width or count-matched width",
+  "capacity": "fixed",
+  "checkpoint": "reports/implementation/runs/single_expert_0-fixed-seed43/model.pt",
+  "checkpoint_sha256": "cd3a5c10e1685da34f0e3238f8a75f201873de22c3100e2325256261f7e69b17",
+  "duration_seconds": 0.23411171894986182,
+  "level": "real_data_integration_pretrained",
+  "limitation": "bounded pipeline check; dev overlaps public/local expert selection; no generalization claim",
+  "model": "single_expert_0",
+  "optimizer_steps": 20,
+  "parameters": 71297,
+  "save_load_exact": true,
+  "seed": 43,
+  "selection_rule": "min fusion_val EER; tie min source-weighted BCE; no test used",
+  "status": "trained_smoke",
+  "train_origins": 8,
+  "train_requests": 8,
+  "train_version_weights": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "val_metrics": {
+    "auroc": 1.0,
+    "bonafide": 4,
+    "brier": 0.0003054692642763257,
+    "eer": 0.0,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 8,
+    "nll": 0.014408623340335538,
+    "spoof": 4,
+    "spoof_auprc": 1.0
+  },
+  "val_requests": 8,
+  "width": 64
+}

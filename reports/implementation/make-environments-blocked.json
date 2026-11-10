@@ -1,0 +1,5 @@
+{
+  "command": "make-environments",
+  "error": "[Errno 2] No such file or directory: 'reports/implementation/external/audit_manifest.jsonl'",
+  "status": "BLOCKED"
+}

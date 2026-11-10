@@ -1,0 +1,11 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "scripts.audit_supervision"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T04:15:08.080327+00:00",
+  "elapsed_seconds": 14.417423009872437,
+  "log": "reports/next-stage-20261110/source-audit.log"
+}

@@ -1,0 +1,120 @@
+{
+  "status": "PASS_INTEGRATION_PILOT",
+  "blocked": [],
+  "research_holdout_pass": false,
+  "claim_scope": "integration_pilot_only",
+  "config_digest": "19b54dd93637c92cb535f3c269f8277f4ee714ec4bccfffd6ffe63a279dc7ba9",
+  "code_sha256": "969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e",
+  "supervision_audit_sha256": "0ac12ed80a6a231e86ebcb744c1b7fc18a1790e7f3bcb8766722cc6eb65beba5",
+  "data_audit_sha256": "187c0c7118b747ffea4e45be47a2f2686f972c86335744971b29fd0cb8fdcda9",
+  "reviewed_next_stage_sha256": "99c1ddf3eccc9d4c22abf5c5e1a4459f4d8ed85d58c1cfc07383160ce0420b1a",
+  "quality_gate_sha256": "82d07a1bfbcfe9877de76bbe26f5c47c50bb9561639728cfa06fc1d8f83413e1",
+  "budget": {
+    "max_origins": 128,
+    "origins_by_role": {
+      "fusion_train": 64,
+      "fusion_val": 24,
+      "calibration": 16,
+      "test": 24
+    },
+    "max_optimizer_steps": 400,
+    "max_epochs": 100,
+    "min_epochs": 40,
+    "patience_epochs": 15,
+    "batch_size": 16,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "width": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "trials_per_family": 1,
+    "models": [
+      "best_single_expert",
+      "original_mlp",
+      "response_mlp",
+      "all_views_mlp",
+      "response_mlp_p3",
+      "all_views_mlp_p3",
+      "full_attention",
+      "untyped_union",
+      "relation_tied",
+      "typed_response",
+      "wrong_family",
+      "drop_anchor",
+      "drop_same_probe",
+      "drop_same_family",
+      "no_embedding_response",
+      "no_score_response",
+      "identity_copy_views"
+    ],
+    "split_seed": 1701,
+    "target_dev_fpr": 0.1,
+    "supervision_audit": "reports/next-stage-20261110/supervision-audit.json",
+    "consumed_registry": "reports/next-stage-20261110/consumed-exploration.json",
+    "prior_development_ledger": "reports/implementation/audit_manifest.jsonl",
+    "required_next_stage_document": "CODEX_NEXT_STAGE.md",
+    "claim_scope": "integration_pilot_only",
+    "selection": "per-run min fusion_val BCE; baseline family selected on 3-seed mean fusion_val EER then mean BCE; all test outputs after locks",
+    "training_environments": [
+      "identity"
+    ],
+    "expert_training_authorized": false,
+    "full_training_authorized": false,
+    "quality_gate": "reports/codex-next-stage-20261110/quality-gate.json",
+    "reviewed_next_stage_sha256": "99c1ddf3eccc9d4c22abf5c5e1a4459f4d8ed85d58c1cfc07383160ce0420b1a",
+    "enabled": true,
+    "max_cache_bytes": 2147483648,
+    "min_free_disk_bytes": 2147483648,
+    "max_output_bytes": 1073741824,
+    "h1_models": [
+      "best_single_expert",
+      "original_mlp",
+      "response_mlp",
+      "all_views_mlp",
+      "response_mlp_p3",
+      "all_views_mlp_p3"
+    ],
+    "h2_models": [
+      "full_attention",
+      "untyped_union",
+      "relation_tied",
+      "typed_response"
+    ],
+    "confirmation_models": [
+      "wrong_family",
+      "drop_anchor",
+      "drop_same_probe",
+      "drop_same_family",
+      "no_embedding_response",
+      "no_score_response",
+      "identity_copy_views"
+    ],
+    "h1_gate": {
+      "min_absolute_val_eer_improvement": 0.01,
+      "improved_seeds_at_least": 2,
+      "mean_val_bce_must_not_worsen": true
+    },
+    "integration_provenance_scope": "known task IDs and speakers isolated; official source maps download blocked; research_holdout BLOCKED",
+    "probe_budgets": [
+      0,
+      3,
+      6
+    ],
+    "three_probe_indices": [
+      0,
+      2,
+      4
+    ],
+    "disk_policy": "Hard 2GiB cache, 1GiB fusion outputs, >=2GiB free before start; no expert training/full download",
+    "source_matrix": "reports/codex-next-stage-20261110/supervision_matrix.json",
+    "role_overlap_report": "reports/codex-next-stage-20261110/role_overlap_report.json"
+  },
+  "limitations": [
+    "Recording-level official source map is UNKNOWN/BLOCKED; known task ID/speaker integration scope only",
+    "Generic SSL pretraining overlap remains unknown",
+    "GPU visibility is not required for bounded CPU integration pilot"
+  ]
+}

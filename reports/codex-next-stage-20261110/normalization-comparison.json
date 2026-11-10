@@ -1,0 +1,71 @@
+{
+  "core_hash_matches_v05_report": true,
+  "interpretation": {
+    "tied_minus_union": "balanced per-relation normalization",
+    "typed_minus_strong_attention_MLP": "overall structural prior",
+    "typed_minus_tied": "relation-specific transformations",
+    "typed_minus_wrong_family": "actual evidence correspondence"
+  },
+  "models": [
+    {
+      "adjacency_channels": null,
+      "aggregation": "nonrelational MLP",
+      "distinct_relation_matrices_per_layer": [],
+      "model": "original_mlp",
+      "parameters": 25281
+    },
+    {
+      "adjacency_channels": null,
+      "aggregation": "nonrelational MLP",
+      "distinct_relation_matrices_per_layer": [],
+      "model": "response_mlp",
+      "parameters": 105409
+    },
+    {
+      "adjacency_channels": null,
+      "aggregation": "nonrelational MLP",
+      "distinct_relation_matrices_per_layer": [],
+      "model": "all_views_mlp",
+      "parameters": 151361
+    },
+    {
+      "adjacency_channels": 4,
+      "aggregation": "full untyped self-attention",
+      "distinct_relation_matrices_per_layer": [],
+      "model": "full_attention",
+      "parameters": 118273
+    },
+    {
+      "adjacency_channels": 1,
+      "aggregation": "single union-neighbor mean",
+      "distinct_relation_matrices_per_layer": [
+        1,
+        1
+      ],
+      "model": "untyped_union",
+      "parameters": 67969
+    },
+    {
+      "adjacency_channels": 4,
+      "aggregation": "sum of separately normalized four relation means",
+      "distinct_relation_matrices_per_layer": [
+        1,
+        1
+      ],
+      "model": "relation_tied",
+      "parameters": 67969
+    },
+    {
+      "adjacency_channels": 4,
+      "aggregation": "sum of separately normalized four relation means",
+      "distinct_relation_matrices_per_layer": [
+        4,
+        4
+      ],
+      "model": "typed_response",
+      "parameters": 92545
+    }
+  ],
+  "reference_core_sha256": "14dcd8db57cbf33861e2b3ec656dc6ddd091719a28d04447a5e4d4f2574212d0",
+  "warning": "typed minus union alone is not a pure semantic relation effect"
+}

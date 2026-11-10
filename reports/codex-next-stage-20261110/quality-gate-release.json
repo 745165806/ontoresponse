@@ -1,0 +1,82 @@
+{
+  "code_sha256": "a5a04b954086a981fc7adf4e7baca44ccf0ef78a9f9054ea5ca815b8f1572d3e",
+  "commands": [
+    {
+      "command": [
+        "${USER_HOME}/anaconda3/envs/py310/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "tests",
+        "--junitxml=reports/codex-next-stage-20261110/unit-release.xml"
+      ],
+      "cwd": "${PROJECT_ROOT}",
+      "elapsed_seconds": 25.713385105133057,
+      "exit_code": 0,
+      "log": "reports/codex-next-stage-20261110/final-complete-tests.log",
+      "started_utc": "2026-11-10T05:30:28.447248+00:00"
+    },
+    {
+      "command": [
+        "${USER_HOME}/anaconda3/envs/py310/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        ".",
+        "--no-deps",
+        "--no-build-isolation",
+        "--wheel-dir",
+        "reports/codex-next-stage-20261110/wheels-release"
+      ],
+      "cwd": "${PROJECT_ROOT}",
+      "elapsed_seconds": 1.0375943183898926,
+      "exit_code": 0,
+      "log": "reports/codex-next-stage-20261110/wheel-release.log",
+      "started_utc": "2026-11-10T05:35:59.604462+00:00"
+    },
+    {
+      "command": [
+        "${EXTERNAL_PATH}",
+        "-m",
+        "pip",
+        "install",
+        "--no-index",
+        "--no-deps",
+        "--force-reinstall",
+        "reports/codex-next-stage-20261110/wheels-release/ontoresponse-0.5.0-py3-none-any.whl"
+      ],
+      "cwd": "${PROJECT_ROOT}",
+      "elapsed_seconds": 0.5161640644073486,
+      "exit_code": 0,
+      "log": "reports/codex-next-stage-20261110/install-release.log",
+      "started_utc": "2026-11-10T05:36:45.547880+00:00"
+    },
+    {
+      "command": [
+        "${EXTERNAL_PATH}",
+        "${PROJECT_ROOT}/scripts/check_outside_install.py",
+        "--repo",
+        "${PROJECT_ROOT}",
+        "--out",
+        "${PROJECT_ROOT}/reports/codex-next-stage-20261110/outside-release.json"
+      ],
+      "cwd": "/tmp",
+      "elapsed_seconds": 20.226949453353882,
+      "exit_code": 0,
+      "log": "reports/codex-next-stage-20261110/outside-release.log",
+      "started_utc": "2026-11-10T05:36:55.852076+00:00"
+    }
+  ],
+  "executed_pilot_source_sha256": "969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e",
+  "frozen_pilot_checkpoint_hashes_unchanged": 18,
+  "installed_code_sha256": "a5a04b954086a981fc7adf4e7baca44ccf0ef78a9f9054ea5ca815b8f1572d3e",
+  "passed": true,
+  "scope": "software release verification only; research_holdout BLOCKED",
+  "tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 123
+  },
+  "unit_xml_sha256": "8f1206bdfd783cc4b4b6cc9e756beb18fd7de1d2d90182c1349860223aeb6895"
+}

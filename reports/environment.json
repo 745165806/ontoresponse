@@ -1,0 +1,13 @@
+{
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "torch": "2.10.0+cpu",
+  "numpy": "2.3.5",
+  "pytest": "9.0.2",
+  "PyYAML": "6.0.3",
+  "rdflib": "7.5.0",
+  "cuda_available": false,
+  "real_audio": false,
+  "real_expert_weights": false,
+  "test_host": "current_CPU_container_not_user_workstation"
+}

@@ -1,0 +1,49 @@
+{
+  "GPU_tested": false,
+  "blocked": [
+    "CODEX_NEXT_STAGE.md missing; pilot not started",
+    "strict research source mapping / SSL exposure uncertified",
+    "GPU devices not exposed"
+  ],
+  "code_sha256": "161f6bb3200f887bf0feb037a9b6967545f14c4415d4a79778634d36bddc6d4d",
+  "implemented": [
+    "auditable_bundle",
+    "provenance_read_and_quarantine",
+    "relation_tied",
+    "independent_prediction_recomputation",
+    "full_SHACL_and_negative_tests",
+    "dependency_lock",
+    "out_of_repo_wheel_check",
+    "gated_convergence_pilot_runner"
+  ],
+  "old_frozen_files_unchanged": 349,
+  "pilot": {
+    "max_epochs_each": 100,
+    "max_optimizer_steps_each": 400,
+    "models": 6,
+    "origins_planned": 128,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "started": false
+  },
+  "prior_eight_external_origins": "consumed_exploration; no refit/selection/threshold changes",
+  "real_checkpoint_tested": [
+    "aasist",
+    "ssl_aasist"
+  ],
+  "real_data_evaluated": {
+    "existing_frozen_runs": 6,
+    "new_pilot_scored": 0,
+    "prediction_rows": 144
+  },
+  "research_holdout": false,
+  "source_audit_scope": "two-expert integration; RawNet2 quarantined",
+  "unit_tested": {
+    "level": "unit/synthetic; includes 32-step numerical convergence plumbing, not real efficacy",
+    "passed": 99,
+    "skipped": 0
+  }
+}

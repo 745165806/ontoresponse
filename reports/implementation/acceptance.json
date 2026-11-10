@@ -1,0 +1,20 @@
+{
+  "A01": "IMPLEMENTED/REAL_SMOKE: one utterance one logit",
+  "A02": "REAL_CHECKPOINT_PASSED: AASIST/SSL+AASIST/local RawNet2 logits and hidden match upstream on actual audio",
+  "A03": "UNIT+REAL_CHECKPOINT_PASSED: fixed eval/crop/aggregation and zero identity/lossless responses",
+  "A04": "UNIT_PASSED: separate label-free inference manifest; audit mutation invariant inputs; forward receives tensors only",
+  "A05": "UNIT_PASSED: scaler fitting fusion_train only; calibration/threshold role guards; frozen test hash rejects drift",
+  "A06": "UNIT_PASSED: valid-zero vs NaN mask; no-evidence review/null; mask bias checks",
+  "A07": "UNIT_PASSED: content-addressed measurement keys distinguish experts/checkpoints/crop; duplicate request IDs rejected",
+  "A08": "PARTIAL: common YAML/compiler and actual provenance RDF/Python validation; RDF parser and SHACL engine BLOCKED by dependencies",
+  "A09": "UNIT+REAL_TRAINING_SMOKE: member changes alter edges/degrees preserved; family rename invariant; edge removal retrained",
+  "A10": "UNIT+REAL_TRAINING_SMOKE_PASSED: BCE, deterministic eval, exact save/load, optimizer resume unit test",
+  "A11": "IMPLEMENTED+REAL_TRAINING_SMOKE: same cache/metadata/mask, fixed/matched/stronger capacity counts and same step budgets; no formal hyperparameter search",
+  "A12": "UNIT+REAL_EXTERNAL_SMOKE: all requests retain status; coverage and failure policy bounds reported",
+  "A13": "IMPLEMENTED: T and P(T) ordered exposure ledger; AAC/Opus called fusion-unseen only, expert exposure unknown",
+  "A14": "UNIT_ONLY: stable exclusive source sharding and strict merge; actual multi-GPU consistency BLOCKED",
+  "A15": "BOUNDED_REAL_SMOKE: 3 seeds; paired speaker/source-group bootstrap per condition and macro; full source mapping incomplete",
+  "A16": "SEPARATELY_RECORDED: unit/synthetic, real-checkpoint, real-data, GPU",
+  "A17": "PARTIAL: local metadata/checkpoint/audio hashes pinned; source mappings, ASV2021 full official run and ASV5 pending",
+  "A18": "NO_EFFICACY_CLAIM: all validation methods near ceiling; 8-origin external smoke cannot establish ontology contribution"
+}

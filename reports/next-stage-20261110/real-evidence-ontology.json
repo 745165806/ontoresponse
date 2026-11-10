@@ -1,0 +1,10 @@
+{
+  "SHACL": "Validation Report\nConforms: True\n",
+  "input": "reports/implementation/evidence.ttl",
+  "numerical": {
+    "edges": 2160,
+    "recordings": 24,
+    "registry_hash": "6b98952b92c2c752fb7d8e31cb2e8eb888bb48ee67d4e3827e55e770909fecae"
+  },
+  "status": "passed"
+}

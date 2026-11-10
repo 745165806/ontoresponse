@@ -1,0 +1,75 @@
+{
+  "architecture": {
+    "class_index_map": {
+      "bonafide": 1,
+      "spoof": 0
+    },
+    "embedding_dim": 160,
+    "entrypoint": null,
+    "model_id": "ssl_aasist_source",
+    "repository_ref": "${EXPERT_ROOT}/SSL_Anti-spoofing",
+    "repository_revision": "4acaa61dcef5f7610f43aa4d0b29c4559b970cd2"
+  },
+  "class_index_map": {
+    "bonafide": 1,
+    "spoof": 0
+  },
+  "embedding_dim": 160,
+  "fit": {
+    "dataset_id": "asvspoof2019_la",
+    "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+    "role": "fit"
+  },
+  "initialization": {
+    "artifact_ref": "${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt",
+    "pretraining_provenance": "upstream XLS-R 300M generic wav2vec 2.0 frontend checkpoint; local user-provided artifact",
+    "scope": "generic_ssl_frontend_only"
+  },
+  "metrics_ref": "${EXPERT_ROOT}/TTA/outputs/source/ssl-aasist-full-asvspoof2019train-random/metrics.jsonl",
+  "model_id": "ssl_aasist_source",
+  "model_patch": {
+    "artifact_ref": "${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt",
+    "fairseq_version": "0.12.2",
+    "kind": "explicit_generic_ssl_path_only",
+    "removed_legacy_config_fields": [
+      "task.autoregressive",
+      "task.conv_feature_layers",
+      "task.encoder_embed_dim",
+      "task.eval_wer",
+      "task.eval_wer_config",
+      "task.eval_wer_post_process",
+      "task.eval_wer_tokenizer",
+      "task.mask_channel_length",
+      "task.mask_channel_min_space",
+      "task.mask_channel_other",
+      "task.mask_channel_prob",
+      "task.mask_channel_selection",
+      "task.mask_length",
+      "task.mask_min_space",
+      "task.mask_other",
+      "task.mask_prob",
+      "task.mask_selection",
+      "task.multiple_train_files",
+      "task.no_mask_channel_overlap",
+      "task.no_mask_overlap",
+      "task.shuffle_by_bucket",
+      "task.shuffle_by_bucket_size",
+      "task.train_subset"
+    ]
+  },
+  "recipe_ref": "${EXPERT_ROOT}/TTA/local/ssl_aasist_recipe.yaml",
+  "schema_version": "0.3.0",
+  "selected_checkpoint_ref": "${EXPERT_ROOT}/TTA/outputs/source/ssl-aasist-full-asvspoof2019train-random/checkpoints/epoch_0007.pt",
+  "selected_epoch": 7,
+  "selection_rule": "minimum_source_val_eer_then_earliest_epoch",
+  "source_run_id": "source-20260919T083421Z-a61b23",
+  "source_val": {
+    "dataset_id": "asvspoof2019_la",
+    "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+    "role": "source_val"
+  },
+  "source_val_eer": 0.0,
+  "status": "SELECTED",
+  "task_weight_origin": "trained_in_project",
+  "training_phase": "full"
+}

@@ -1,0 +1,77 @@
+{
+  "N_failed": 0,
+  "N_requested": 24,
+  "N_scored": 24,
+  "conditions": {
+    "aac": {
+      "actual_fpr": 0.0,
+      "actual_tpr": 0.5,
+      "auroc": 1.0,
+      "bonafide": 4,
+      "brier": 0.01805923638963678,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "n": 8,
+      "nll": 0.08371352834780837,
+      "spoof": 4,
+      "spoof_auprc": 1.0
+    },
+    "no_new_processing": {
+      "actual_fpr": 0.0,
+      "actual_tpr": 0.5,
+      "auroc": 1.0,
+      "bonafide": 4,
+      "brier": 0.021915684765069422,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "n": 8,
+      "nll": 0.09168202983112608,
+      "spoof": 4,
+      "spoof_auprc": 1.0
+    },
+    "opus": {
+      "actual_fpr": 0.0,
+      "actual_tpr": 0.5,
+      "auroc": 1.0,
+      "bonafide": 4,
+      "brier": 0.04588654234644417,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "n": 8,
+      "nll": 0.14446627866243936,
+      "spoof": 4,
+      "spoof_auprc": 1.0
+    }
+  },
+  "effective_subset_only": false,
+  "failure_policy_bounds": {
+    "fpr": [
+      0.0,
+      0.0
+    ],
+    "tpr": [
+      0.5,
+      0.5
+    ]
+  },
+  "lock_sha256": "9b0ae634fc470f060dd8bfff3e11feb8f105c8919ec1fadba7015ccc87aef531",
+  "no_new_processing": {
+    "actual_fpr": 0.0,
+    "actual_tpr": 0.5,
+    "auroc": 1.0,
+    "bonafide": 4,
+    "brier": 0.021915684765069422,
+    "eer": 0.0,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 8,
+    "nll": 0.09168202983112608,
+    "spoof": 4,
+    "spoof_auprc": 1.0
+  },
+  "source_mapping_complete": false,
+  "status": "integration_smoke_only",
+  "statuses": {
+    "scored": 24
+  },
+  "unseen_macro_eer": 0.0
+}

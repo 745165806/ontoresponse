@@ -1,0 +1,20 @@
+{
+  "SHACL": true,
+  "code_identity_matches": true,
+  "cwd": "/tmp",
+  "finite_logits": true,
+  "installed_code_sha256": "161f6bb3200f887bf0feb037a9b6967545f14c4415d4a79778634d36bddc6d4d",
+  "no_calibration_or_fitting": true,
+  "numeric_graph": {
+    "edges": 2160,
+    "recordings": 24,
+    "registry_hash": "6b98952b92c2c752fb7d8e31cb2e8eb888bb48ee67d4e3827e55e770909fecae"
+  },
+  "package": "${EXTERNAL_PATH}",
+  "pilot_api_installed": true,
+  "real_cached_validation_requests": 8,
+  "relation_tied_channels": 4,
+  "resource": "${EXTERNAL_PATH}",
+  "source_code_sha256": "161f6bb3200f887bf0feb037a9b6967545f14c4415d4a79778634d36bddc6d4d",
+  "status": "passed"
+}

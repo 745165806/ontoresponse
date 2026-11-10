@@ -1,0 +1,22 @@
+{
+  "metrics": {
+    "N_failed": 0,
+    "N_requested": 24,
+    "N_scored": 24,
+    "actual_fpr": 0.0,
+    "actual_tpr": 1.0,
+    "auroc": 1.0,
+    "bonafide": 12,
+    "brier": 9.641954670516648e-22,
+    "eer": 0.0,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 24,
+    "nll": 1.247990599799102e-11,
+    "spoof": 12,
+    "spoof_auprc": 1.0,
+    "threshold_space": "calibrated_logit_float64"
+  },
+  "model": "all_views_mlp_p3",
+  "scope": "integration_pilot_only",
+  "seed": 17
+}

@@ -1,0 +1,31 @@
+extracted aasist on shard 0/1: 247.6s
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+[2026-11-10 13:12:08,021] [WARNING] [real_accelerator.py:209:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2026-11-10 13:12:08,022] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2026-11-10 13:12:10,064] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+extracted ssl_aasist on shard 0/1: 380.3s
+best_single_expert 17 0 max_epochs
+best_single_expert 29 0 max_epochs
+best_single_expert 43 0 max_epochs
+original_mlp 17 400 max_optimizer_steps
+original_mlp 29 400 max_optimizer_steps
+original_mlp 43 400 max_optimizer_steps
+response_mlp 17 400 max_optimizer_steps
+response_mlp 29 160 validation_patience
+response_mlp 43 356 validation_patience
+all_views_mlp 17 160 validation_patience
+all_views_mlp 29 224 validation_patience
+all_views_mlp 43 328 validation_patience
+response_mlp_p3 17 400 max_optimizer_steps
+response_mlp_p3 29 200 validation_patience
+response_mlp_p3 43 400 max_optimizer_steps
+all_views_mlp_p3 17 160 validation_patience
+all_views_mlp_p3 29 400 max_optimizer_steps
+all_views_mlp_p3 43 400 max_optimizer_steps

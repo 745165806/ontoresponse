@@ -1,0 +1,30 @@
+[
+  {
+    "command": [
+      "git",
+      "ls-remote",
+      "https://github.com/745165806/ontoresponse.git"
+    ],
+    "exit_code": 128,
+    "stdout": "",
+    "stderr": "fatal: \u65e0\u6cd5\u8bbf\u95ee 'https://github.com/745165806/ontoresponse.git/'\uff1aCouldn't connect to server\n"
+  },
+  {
+    "command": [
+      "timeout",
+      "10",
+      "ssh",
+      "-o",
+      "BatchMode=yes",
+      "-o",
+      "StrictHostKeyChecking=accept-new",
+      "-o",
+      "UserKnownHostsFile=${EXTERNAL_PATH}",
+      "-T",
+      "git@github.com"
+    ],
+    "exit_code": 255,
+    "stdout": "",
+    "stderr": "ssh: Could not resolve hostname github.com: Temporary failure in name resolution\n"
+  }
+]

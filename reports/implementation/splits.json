@@ -1,0 +1,37 @@
+{
+  "ledger_hash": "12e56473538f2379c57bf32693f5e111128dcbd6dff6f5ea438ea0795874fbd1",
+  "limitation": "speaker grouping only; cross-speaker source mapping unknown; dev overlaps upstream checkpoint selection; no final test consumed",
+  "missing_audio": [],
+  "protocol_sha256": "2fedaebf1ba3ae1a9bb7d3ec916804ac237b4eee063a27fa92e6549f03d129c7",
+  "source_mapping_complete": false,
+  "status": "integration_only",
+  "summary": {
+    "calibration": {
+      "groups": 3,
+      "labels": {
+        "0": 4,
+        "1": 4
+      },
+      "n": 8,
+      "speakers": 3
+    },
+    "fusion_train": {
+      "groups": 5,
+      "labels": {
+        "0": 4,
+        "1": 4
+      },
+      "n": 8,
+      "speakers": 5
+    },
+    "fusion_val": {
+      "groups": 4,
+      "labels": {
+        "0": 4,
+        "1": 4
+      },
+      "n": 8,
+      "speakers": 4
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "difference": "Own report groups ties and linearly crosses ROC; upstream chooses nearest DET point and stable per-trial tie ordering. Constant-score result can differ.",
+  "fixtures": [
+    {
+      "fixture": "perfect",
+      "grouped_interpolated_EER": 0.0,
+      "upstream_nearest_DET_EER": 0.0
+    },
+    {
+      "fixture": "reverse",
+      "grouped_interpolated_EER": 1.0,
+      "upstream_nearest_DET_EER": 1.0
+    },
+    {
+      "fixture": "constant",
+      "grouped_interpolated_EER": 0.5,
+      "upstream_nearest_DET_EER": 1.0
+    },
+    {
+      "fixture": "tied",
+      "grouped_interpolated_EER": 0.25,
+      "upstream_nearest_DET_EER": 0.5
+    }
+  ],
+  "level": "unit/synthetic only",
+  "local_vendored_copy": "SSL_Anti-spoofing eval_metrics_DF.py",
+  "local_vendored_source_sha256": "db993ad03a892d1eb50f5fdef83cf2ac1dc9a1960aa743cc1b307540d8fc1964",
+  "no_score_direction_search": true,
+  "official_full_ASV2021_evaluation": "NOT_RUN; source/coverage/budget gates still apply",
+  "official_source": "https://github.com/asvspoof-challenge/2021/blob/main/eval-package/eval_metrics.py"
+}

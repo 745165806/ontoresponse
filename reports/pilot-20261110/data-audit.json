@@ -1,0 +1,151 @@
+{
+  "consumed_exploration_origin_overlap": 0,
+  "excluded_upstream_speakers": [
+    "LA_0075",
+    "LA_0077",
+    "LA_0079",
+    "LA_0080",
+    "LA_0081",
+    "LA_0082",
+    "LA_0083",
+    "LA_0084",
+    "LA_0085",
+    "LA_0086",
+    "LA_0087",
+    "LA_0088",
+    "LA_0089",
+    "LA_0090",
+    "LA_0091",
+    "LA_0092",
+    "LA_0093",
+    "LA_0094",
+    "LA_0095",
+    "LA_0096",
+    "LA_0097",
+    "LA_0098",
+    "LA_0102",
+    "LA_0103",
+    "LA_0104"
+  ],
+  "expert_ids": [
+    "aasist",
+    "ssl_aasist"
+  ],
+  "group_limitation": "official dev has bonafide-only speaker groups; fresh test has only one spoof speaker group, so no broad-generalization claim",
+  "ledger_sha256": "1dfe9ba07daab061f8f7c769352e4656d850263e76bab8eb2cc20e8dfbe031aa",
+  "origins": 128,
+  "prior_development_test_speaker_overlap": 0,
+  "protocol_sha256": "2fedaebf1ba3ae1a9bb7d3ec916804ac237b4eee063a27fa92e6549f03d129c7",
+  "research_holdout_pass": false,
+  "roles": {
+    "calibration": {
+      "groups": 3,
+      "labels": {
+        "0": 8,
+        "1": 8
+      },
+      "n": 16,
+      "speakers": 3
+    },
+    "fusion_train": {
+      "groups": 6,
+      "labels": {
+        "0": 32,
+        "1": 32
+      },
+      "n": 64,
+      "speakers": 6
+    },
+    "fusion_val": {
+      "groups": 3,
+      "labels": {
+        "0": 12,
+        "1": 12
+      },
+      "n": 24,
+      "speakers": 3
+    },
+    "test": {
+      "groups": 3,
+      "labels": {
+        "0": 12,
+        "1": 12
+      },
+      "n": 24,
+      "speakers": 3
+    }
+  },
+  "scope": "integration pilot only; speaker-conservative grouping; cross-speaker source maps and generic SSL exposure remain unknown",
+  "speaker_label_counts": {
+    "LA_0069": {
+      "0": 3,
+      "1": 8
+    },
+    "LA_0070": {
+      "0": 6,
+      "1": 7
+    },
+    "group-e4f06542977dbbf417c8": {
+      "0": 4,
+      "1": 12
+    },
+    "LA_0072": {
+      "0": 6,
+      "1": 7
+    },
+    "LA_0073": {
+      "0": 5,
+      "1": 6
+    },
+    "LA_0074": {
+      "0": 5,
+      "1": 6
+    },
+    "LA_0076": {
+      "0": 4,
+      "1": 12
+    },
+    "LA_0078": {
+      "0": 5,
+      "1": 6
+    },
+    "LA_0099": {
+      "0": 3,
+      "1": 0
+    },
+    "LA_0100": {
+      "0": 4,
+      "1": 0
+    },
+    "group-b2550a49e2cc2ae02efd": {
+      "0": 4,
+      "1": 0
+    },
+    "LA_0105": {
+      "0": 2,
+      "1": 0
+    },
+    "LA_0106": {
+      "0": 5,
+      "1": 0
+    },
+    "group-7fc9f17a8f1a91e65ae5": {
+      "0": 4,
+      "1": 0
+    },
+    "LA_0108": {
+      "0": 4,
+      "1": 0
+    }
+  },
+  "status": "prepared_new_integration_pilot",
+  "test_speakers": [
+    "group-e4f06542977dbbf417c8",
+    "group-b2550a49e2cc2ae02efd",
+    "group-7fc9f17a8f1a91e65ae5"
+  ],
+  "test_spoof_speakers": 1,
+  "upstream_exact_ID_overlap": 0,
+  "upstream_speaker_overlap": 0,
+  "waveform_cross_role_duplicates": 0
+}

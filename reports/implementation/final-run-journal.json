@@ -1,0 +1,22 @@
+[
+  {
+    "command": [
+      "${USER_HOME}/anaconda3/envs/py310/bin/python",
+      "-m",
+      "scripts.run_bounded"
+    ],
+    "exit_code": 0,
+    "log": "reports/implementation/comparison-final.log",
+    "seconds": 42.272334814071655
+  },
+  {
+    "command": [
+      "${USER_HOME}/anaconda3/envs/py310/bin/python",
+      "-m",
+      "scripts.evaluate_bounded"
+    ],
+    "exit_code": 0,
+    "log": "reports/implementation/external-evaluation.log",
+    "seconds": 184.34064626693726
+  }
+]

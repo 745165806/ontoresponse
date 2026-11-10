@@ -1,0 +1,37 @@
+{
+  "data_kind": "SYNTHETIC_ONLY",
+  "real_audio_used": false,
+  "real_checkpoint_used": false,
+  "scientific_performance_claim": false,
+  "torch": "2.10.0+cpu",
+  "batch": 24,
+  "steps": 20,
+  "results": {
+    "flat": {
+      "parameters": 7377,
+      "initial_training_bce": 0.7050523161888123,
+      "final_training_bce": 0.2072494477033615,
+      "finite": true
+    },
+    "untyped": {
+      "parameters": 3297,
+      "initial_training_bce": 0.6968598961830139,
+      "final_training_bce": 0.37649574875831604,
+      "finite": true
+    },
+    "set_attention": {
+      "parameters": 6657,
+      "initial_training_bce": 0.7175517082214355,
+      "final_training_bce": 0.3074524700641632,
+      "finite": true
+    },
+    "typed": {
+      "parameters": 4833,
+      "initial_training_bce": 0.6918917298316956,
+      "final_training_bce": 0.07426413148641586,
+      "finite": true
+    }
+  },
+  "warning": "Toy in-sample loss is only a wiring check; not a fair performance ranking.",
+  "registry_hash": "6b98952b92c2c752fb7d8e31cb2e8eb888bb48ee67d4e3827e55e770909fecae"
+}

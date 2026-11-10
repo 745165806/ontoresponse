@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "${PROJECT_ROOT}/scripts/audit_bundle.py",
+    "verify",
+    "${PROJECT_ROOT}/deliverables/ontoresponse-v0.5-baseline-20261110.tar.gz"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T04:21:43.582880+00:00",
+  "elapsed_seconds": 7.996806621551514,
+  "log": "reports/next-stage-20261110/baseline-verify-outside.log",
+  "cwd": "/tmp"
+}

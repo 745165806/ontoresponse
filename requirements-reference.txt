@@ -1,0 +1,4 @@
+# Numerical reference runtime only; test/ontology extras are listed separately.
+torch>=2.2,<3
+numpy>=1.24,<3
+PyYAML>=6

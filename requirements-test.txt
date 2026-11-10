@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=7
+rdflib>=6
+pyshacl>=0.25

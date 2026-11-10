@@ -1,0 +1,150 @@
+{
+  "legacy_metadata_unit_erratum": true,
+  "note": "Existing pilot checkpoints use inherited best_step field for epoch. Actual steps are reconstructed from preserved convergence logs. Future serialization is fixed without changing any frozen artifact.",
+  "rows": [
+    {
+      "best_optimizer_step_from_convergence_log": 400,
+      "checkpoint_sha256": "a3bc93b4b0f181ed8bdb257c20df71e681386427d968756465617081b6c2facd",
+      "last_optimizer_steps": 400,
+      "legacy_best_step_field_actually_epoch": 100,
+      "run": "original_mlp-seed29",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 268,
+      "checkpoint_sha256": "91ff4b1604f626a12bdbf1158defec6271ec5c166cbbba8b43a97b083b8b4980",
+      "last_optimizer_steps": 328,
+      "legacy_best_step_field_actually_epoch": 67,
+      "run": "all_views_mlp-seed43",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 0,
+      "checkpoint_sha256": "a8b04b74488140dd4c2f680f3fb42920be579d7b788d385468386072a8d711c6",
+      "last_optimizer_steps": 0,
+      "legacy_best_step_field_actually_epoch": 1,
+      "run": "best_single_expert-seed43",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 40,
+      "checkpoint_sha256": "846c290c8d742b75534b291530144b4575cb139253f4e39c57cb92e705445a9a",
+      "last_optimizer_steps": 160,
+      "legacy_best_step_field_actually_epoch": 10,
+      "run": "all_views_mlp-seed17",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 392,
+      "checkpoint_sha256": "02c3386d36ef6286dd02f66eb8901e095a3d2dec17a463e2d6628dd871250f3e",
+      "last_optimizer_steps": 400,
+      "legacy_best_step_field_actually_epoch": 98,
+      "run": "all_views_mlp_p3-seed43",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 400,
+      "checkpoint_sha256": "ff52bad293e89411e0fb508e86ccdc74935ce17f614483b2c9a06904816602b2",
+      "last_optimizer_steps": 400,
+      "legacy_best_step_field_actually_epoch": 100,
+      "run": "response_mlp-seed17",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 400,
+      "checkpoint_sha256": "98296ed0f321e761219bcea9bc3cdaddc9e46b24de0485255da386e97b7aadff",
+      "last_optimizer_steps": 400,
+      "legacy_best_step_field_actually_epoch": 100,
+      "run": "original_mlp-seed43",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 0,
+      "checkpoint_sha256": "f1d593e79e4abf2a5c0d5333d9d3b8eb32ad209e83ab2caa3b14d7fd23f5726a",
+      "last_optimizer_steps": 0,
+      "legacy_best_step_field_actually_epoch": 1,
+      "run": "best_single_expert-seed29",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 0,
+      "checkpoint_sha256": "221fc08c991fbafcaeff8e1e03e2c71480badfbc190b7ea67319bb3498d82184",
+      "last_optimizer_steps": 0,
+      "legacy_best_step_field_actually_epoch": 1,
+      "run": "best_single_expert-seed17",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 400,
+      "checkpoint_sha256": "b2d577bcb7228c15015e0667df22a014fe53ba5c8909dfaad2f53749b323394e",
+      "last_optimizer_steps": 400,
+      "legacy_best_step_field_actually_epoch": 100,
+      "run": "response_mlp_p3-seed17",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 80,
+      "checkpoint_sha256": "54023b3d5cb49c52f917576c46f374498f4055876e03a4b711c0d9f2462fc4de",
+      "last_optimizer_steps": 160,
+      "legacy_best_step_field_actually_epoch": 20,
+      "run": "response_mlp-seed29",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 164,
+      "checkpoint_sha256": "9051f29bfd918c538bd5e5b7ba53441f02bc3a5a543f2a5953985f344e23aee5",
+      "last_optimizer_steps": 224,
+      "legacy_best_step_field_actually_epoch": 41,
+      "run": "all_views_mlp-seed29",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 140,
+      "checkpoint_sha256": "8ce75a3678a0c43cc511759c37b664bad3a9af02f0adba294bf615940abf894a",
+      "last_optimizer_steps": 200,
+      "legacy_best_step_field_actually_epoch": 35,
+      "run": "response_mlp_p3-seed29",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 396,
+      "checkpoint_sha256": "80cb248387cf9d76f620a589f3b95c4e0a564fdc90b46b4cc05a82634a398bac",
+      "last_optimizer_steps": 400,
+      "legacy_best_step_field_actually_epoch": 99,
+      "run": "all_views_mlp_p3-seed29",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 392,
+      "checkpoint_sha256": "0e63fa5416d1bcf2e39373f8d2a6dbfd32961904d710d53387e332e1426bf5a8",
+      "last_optimizer_steps": 400,
+      "legacy_best_step_field_actually_epoch": 98,
+      "run": "response_mlp_p3-seed43",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 296,
+      "checkpoint_sha256": "ff6c90e6461c3bfc9ff8ef2c07cc01fa5d088224cbb97cdbdf436ad37fc3ec5d",
+      "last_optimizer_steps": 356,
+      "legacy_best_step_field_actually_epoch": 74,
+      "run": "response_mlp-seed43",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 400,
+      "checkpoint_sha256": "885bcb92db2ebdabe20065b18c47b5d53660bac6014bac3b93ececb42598fc83",
+      "last_optimizer_steps": 400,
+      "legacy_best_step_field_actually_epoch": 100,
+      "run": "original_mlp-seed17",
+      "weights_or_predictions_changed": false
+    },
+    {
+      "best_optimizer_step_from_convergence_log": 72,
+      "checkpoint_sha256": "76a6e01b0aaead83aa9f8544e68a1b86f4356bb132f4c5bd5c3b7512b9fbd408",
+      "last_optimizer_steps": 160,
+      "legacy_best_step_field_actually_epoch": 18,
+      "run": "all_views_mlp_p3-seed17",
+      "weights_or_predictions_changed": false
+    }
+  ]
+}

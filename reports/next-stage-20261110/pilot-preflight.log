@@ -1,0 +1,65 @@
+{
+  "status": "BLOCKED",
+  "blocked": [
+    "CODEX_NEXT_STAGE.md is missing; requested instructions cannot be read"
+  ],
+  "research_holdout_pass": false,
+  "claim_scope": "integration_pilot_only",
+  "config_digest": "7b80b63193545799001f28f4d780c5e7212d2f30bd3c9c9e1a6cd1a3ea0c1826",
+  "code_sha256": "161f6bb3200f887bf0feb037a9b6967545f14c4415d4a79778634d36bddc6d4d",
+  "supervision_audit_sha256": "0ac12ed80a6a231e86ebcb744c1b7fc18a1790e7f3bcb8766722cc6eb65beba5",
+  "data_audit_sha256": "187c0c7118b747ffea4e45be47a2f2686f972c86335744971b29fd0cb8fdcda9",
+  "reviewed_next_stage_sha256": null,
+  "quality_gate_sha256": "c339b4bc265528c8a7ea91f0f82bd44958c42f3e75a4e43c11ab54c8506da4f6",
+  "budget": {
+    "max_origins": 128,
+    "origins_by_role": {
+      "fusion_train": 64,
+      "fusion_val": 24,
+      "calibration": 16,
+      "test": 24
+    },
+    "max_optimizer_steps": 400,
+    "max_epochs": 100,
+    "min_epochs": 40,
+    "patience_epochs": 15,
+    "batch_size": 16,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "width": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "trials_per_family": 1,
+    "models": [
+      "original_mlp",
+      "response_mlp",
+      "all_views_mlp",
+      "set_attention",
+      "relation_tied",
+      "typed_response"
+    ],
+    "split_seed": 1701,
+    "target_dev_fpr": 0.1,
+    "supervision_audit": "reports/next-stage-20261110/supervision-audit.json",
+    "consumed_registry": "reports/next-stage-20261110/consumed-exploration.json",
+    "prior_development_ledger": "reports/implementation/audit_manifest.jsonl",
+    "required_next_stage_document": "CODEX_NEXT_STAGE.md",
+    "claim_scope": "integration_pilot_only",
+    "selection": "per-run min fusion_val BCE; baseline family selected on 3-seed mean fusion_val EER then mean BCE; all test outputs after locks",
+    "training_environments": [
+      "identity"
+    ],
+    "expert_training_authorized": false,
+    "full_training_authorized": false,
+    "quality_gate": "reports/next-stage-20261110/quality-gate.json",
+    "reviewed_next_stage_sha256": null
+  },
+  "limitations": [
+    "No certified cross-speaker source map",
+    "Generic SSL pretraining overlap remains unknown",
+    "GPU visibility is not required for bounded CPU integration pilot"
+  ]
+}

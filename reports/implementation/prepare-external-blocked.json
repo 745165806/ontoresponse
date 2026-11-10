@@ -1,0 +1,5 @@
+{
+  "command": "prepare-external",
+  "error": "Unknown external label",
+  "status": "BLOCKED"
+}

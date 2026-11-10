@@ -1,0 +1,44 @@
+@prefix orf: <https://example.org/ontoresponse#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+orf: a owl:Ontology ; owl:versionInfo "0.4.0 research schema" ;
+ rdfs:comment "Measurement and operation ontology, not a complete speech synthesis ontology or probability reasoner. Namespace is a project placeholder." .
+orf:Recording a owl:Class ; rdfs:subClassOf prov:Entity .
+orf:DetectorModel a owl:Class ; rdfs:subClassOf prov:Entity .
+orf:ExpertRun a owl:Class ; rdfs:subClassOf prov:Activity .
+orf:ExpertObservation a owl:Class ; rdfs:subClassOf prov:Entity .
+orf:ProbeOperation a owl:Class .
+orf:BandwidthProbe a owl:Class ; rdfs:subClassOf orf:ProbeOperation .
+orf:NoiseProbe a owl:Class ; rdfs:subClassOf orf:ProbeOperation .
+orf:LossyCodingProbe a owl:Class ; rdfs:subClassOf orf:ProbeOperation .
+orf:ProbeRun a owl:Class ; rdfs:subClassOf prov:Activity .
+orf:ResponseObservation a owl:Class ; rdfs:subClassOf prov:Entity .
+orf:Decision a owl:Class ; rdfs:subClassOf prov:Entity .
+
+orf:usesModel a owl:ObjectProperty ; rdfs:domain orf:ExpertRun ; rdfs:range orf:DetectorModel .
+orf:usesProbe a owl:ObjectProperty ; rdfs:domain orf:ProbeRun ; rdfs:range orf:ProbeOperation .
+orf:rootRecording a owl:ObjectProperty ; rdfs:range orf:Recording .
+orf:forExpert a owl:ObjectProperty ; rdfs:range orf:DetectorModel .
+orf:hasBefore a owl:ObjectProperty ; rdfs:domain orf:ResponseObservation ; rdfs:range orf:ExpertObservation .
+orf:hasAfter a owl:ObjectProperty ; rdfs:domain orf:ResponseObservation ; rdfs:range orf:ExpertObservation .
+orf:respondsTo a owl:ObjectProperty ; rdfs:domain orf:ResponseObservation ; rdfs:range orf:ProbeRun .
+orf:status a owl:DatatypeProperty ; rdfs:range xsd:string .
+orf:measurementId a owl:DatatypeProperty ; rdfs:range xsd:string .
+orf:dimension a owl:DatatypeProperty ; rdfs:range xsd:integer .
+orf:scoreDirection a owl:DatatypeProperty ; rdfs:range xsd:string .
+orf:numericNodeIndex a owl:DatatypeProperty ; rdfs:range xsd:integer .
+orf:probeId a owl:DatatypeProperty ; rdfs:range xsd:string .
+orf:expertIndex a owl:DatatypeProperty ; rdfs:range xsd:integer .
+orf:registryHash a owl:DatatypeProperty ; rdfs:range xsd:string .
+
+# Numeric propagation predicates. Names agree with configs/ontology.yaml and compiler.
+orf:anchor_to_response a owl:ObjectProperty ; rdfs:domain orf:ExpertObservation ; rdfs:range orf:ResponseObservation .
+orf:response_to_anchor a owl:ObjectProperty ; owl:inverseOf orf:anchor_to_response .
+orf:same_probe_cross_expert a owl:ObjectProperty, owl:SymmetricProperty ;
+ rdfs:domain orf:ResponseObservation ; rdfs:range orf:ResponseObservation .
+orf:same_family_within_expert a owl:ObjectProperty, owl:SymmetricProperty ;
+ rdfs:domain orf:ResponseObservation ; rdfs:range orf:ResponseObservation .
+# Neither same-probe nor same-family numerical edges imply true/false or independence.

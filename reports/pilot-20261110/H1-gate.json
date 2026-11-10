@@ -1,0 +1,14 @@
+{
+  "definition": {
+    "improved_seeds_at_least": 2,
+    "mean_val_bce_must_not_worsen": true,
+    "min_absolute_val_eer_improvement": 0.01
+  },
+  "improved_seeds": 0,
+  "interpretation": "Exploratory validation gate only, not statistical proof; no H2 escalation when H1 is unsupported",
+  "original_mean_val_eer": 0.0,
+  "response_mean_val_eer": 0.0,
+  "selected_response": "all_views_mlp",
+  "status": "NOT_SUPPORTED_IN_PILOT",
+  "test_used": false
+}

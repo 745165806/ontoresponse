@@ -1,0 +1,1 @@
+{"best_epoch": 1, "epoch": 1, "optimization_bce": 0.0, "optimizer_steps": 0, "train_eval_bce": 0.3328009843826294, "val_bce": 0.3662651777267456, "val_eer": 0.0}

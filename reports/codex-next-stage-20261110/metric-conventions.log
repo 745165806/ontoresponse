@@ -1,0 +1,1 @@
+[{'fixture': 'perfect', 'grouped_interpolated_EER': 0.0, 'upstream_nearest_DET_EER': 0.0}, {'fixture': 'reverse', 'grouped_interpolated_EER': 1.0, 'upstream_nearest_DET_EER': 1.0}, {'fixture': 'constant', 'grouped_interpolated_EER': 0.5, 'upstream_nearest_DET_EER': 1.0}, {'fixture': 'tied', 'grouped_interpolated_EER': 0.25, 'upstream_nearest_DET_EER': 0.5}]

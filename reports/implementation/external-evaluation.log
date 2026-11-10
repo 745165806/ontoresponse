@@ -1,0 +1,26 @@
+calibrated and frozen all_views_mlp 17
+calibrated and frozen all_views_mlp 29
+calibrated and frozen all_views_mlp 43
+calibrated and frozen typed_response 17
+calibrated and frozen typed_response 29
+calibrated and frozen typed_response 43
+extracted aasist on shard 0/1: 42.2s
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+[2026-11-09 19:47:30,517] [WARNING] [real_accelerator.py:209:get_accelerator] Setting accelerator to CPU. If you have GPU or other accelerator, we were unable to detect it.
+[2026-11-09 19:47:30,518] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cpu (auto detect)
+[2026-11-09 19:47:31,817] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+extracted ssl_aasist on shard 0/1: 74.1s
+extracted rawnet2 on shard 0/1: 15.9s
+evaluated all_views_mlp 17 24 0.25
+evaluated all_views_mlp 29 24 0.25
+evaluated all_views_mlp 43 24 0.25
+evaluated typed_response 17 24 0.0
+evaluated typed_response 29 24 0.0
+evaluated typed_response 43 24 0.0

@@ -1,0 +1,7 @@
+{
+  "status": "exported_python_validated",
+  "registry_hash": "6b98952b92c2c752fb7d8e31cb2e8eb888bb48ee67d4e3827e55e770909fecae",
+  "requests": 24,
+  "rdf": "reports/implementation/evidence.ttl",
+  "shacl": "NOT_RUN"
+}

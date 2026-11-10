@@ -1,0 +1,126 @@
+[
+  {
+    "atol": 1e-06,
+    "hidden_dim": 160,
+    "id": "control",
+    "limitation": "same loaded upstream implementation with hook removed; not an independent reimplementation",
+    "logits": [
+      [
+        -7.036806583404541,
+        6.453006267547607
+      ]
+    ],
+    "margin": [
+      -13.489812850952148
+    ],
+    "max_hidden_abs_error": 0.0,
+    "max_logit_abs_error": 0.0,
+    "metadata": {
+      "bonafide_index": 1,
+      "checkpoint_sha256": "798de0ee199a6d5cb1de98812a5c9d1bbe1d184f76518a44ea633cf41e804fb6",
+      "crop": {
+        "aggregation": "mean_hidden_mean_logits",
+        "padding": "repeat",
+        "samples": 64600,
+        "starts": [
+          0
+        ]
+      },
+      "frontend_sha256": null,
+      "id": "aasist",
+      "patch": {},
+      "score_direction": "higher_is_spoof",
+      "source_sha256": "9e0d3e80937dd0577beea7883098465a479da23a198ebc0d712abcc59b0bec50",
+      "spoof_index": 0
+    },
+    "rtol": 1e-05,
+    "status": "passed",
+    "training_record": {
+      "architecture": {
+        "class_index_map": {
+          "bonafide": 1,
+          "spoof": 0
+        },
+        "embedding_dim": 160,
+        "entrypoint": null,
+        "model_id": "aasist_source",
+        "repository_ref": "${EXPERT_ROOT}/aasist",
+        "repository_revision": "a04c9863f63d44471dde8a6abcb3b082b07cd1d1"
+      },
+      "class_index_map": {
+        "bonafide": 1,
+        "spoof": 0
+      },
+      "epoch": 66,
+      "fit": {
+        "dataset_id": "asvspoof2019_la",
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+        "role": "fit"
+      },
+      "global_step": 35376,
+      "model_patch": {
+        "kind": "none"
+      },
+      "source_val": {
+        "dataset_id": "asvspoof2019_la",
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+        "role": "source_val"
+      },
+      "task_weight_origin": "trained_in_project",
+      "training": {
+        "augmentation_recipe_ref": "none_author_freq_aug_false",
+        "class_weights_by_name": {
+          "bonafide": 0.9,
+          "spoof": 0.1
+        },
+        "loss": "weighted_categorical_cross_entropy",
+        "lr": 0.0001,
+        "max_epochs": 80,
+        "optimizer": "adam",
+        "sampler_policy": "shuffle_drop_global_tail",
+        "scheduler": "cosine_author_audited",
+        "scheduler_horizon_epochs": 80,
+        "trainable_scope": "all_native_trainable_parameters",
+        "weight_decay": 0.0001
+      }
+    }
+  },
+  {
+    "atol": 1e-06,
+    "hidden_dim": 1024,
+    "id": "control",
+    "limitation": "same loaded upstream implementation with hook removed; not an independent reimplementation",
+    "logits": [
+      [
+        -8.923152923583984,
+        -0.00013326710904948413
+      ]
+    ],
+    "margin": [
+      -8.923019409179688
+    ],
+    "max_hidden_abs_error": 0.0,
+    "max_logit_abs_error": 0.0,
+    "metadata": {
+      "bonafide_index": 1,
+      "checkpoint_sha256": "1c4ff70338afbf1a688554ed2a65dfb92ee1ff0cbfef035f042e710b2399ed2c",
+      "crop": {
+        "aggregation": "mean_hidden_mean_logits",
+        "padding": "repeat",
+        "samples": 64600,
+        "starts": [
+          0
+        ]
+      },
+      "frontend_sha256": null,
+      "id": "rawnet2",
+      "patch": {},
+      "score_direction": "higher_is_spoof",
+      "source_sha256": "520caaa888ce2033b8cdacd466c552745141e2403c37d43042e06a5d89371679",
+      "spoof_index": 0
+    },
+    "rtol": 1e-05,
+    "status": "passed",
+    "training_record": {}
+  }
+]

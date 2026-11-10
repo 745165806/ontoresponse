@@ -1,0 +1,18 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pip",
+    "wheel",
+    ".",
+    "--no-deps",
+    "--no-build-isolation",
+    "--wheel-dir",
+    "reports/codex-next-stage-20261110/wheels-final"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:05:30.940202+00:00",
+  "elapsed_seconds": 0.885850191116333,
+  "log": "reports/codex-next-stage-20261110/wheel-final.log",
+  "cwd": "${PROJECT_ROOT}"
+}

@@ -1,0 +1,352 @@
+{
+  "level": "real_checkpoint_and_real_audio_CPU",
+  "results": [
+    {
+      "controls": [
+        {
+          "id": "LA_D_7712846",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "identity"
+        },
+        {
+          "id": "LA_D_7712846",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "lossless"
+        },
+        {
+          "id": "LA_D_1292057",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "identity"
+        },
+        {
+          "id": "LA_D_1292057",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "lossless"
+        }
+      ],
+      "expert": "aasist",
+      "status": "passed",
+      "upstream": {
+        "atol": 1e-06,
+        "hidden_dim": 160,
+        "id": "LA_D_7712846",
+        "limitation": "same loaded upstream implementation with hook removed; not an independent reimplementation",
+        "logits": [
+          [
+            -8.490660667419434,
+            7.73882532119751
+          ]
+        ],
+        "max_hidden_abs_error": 0.0,
+        "max_logit_abs_error": 0.0,
+        "metadata": {
+          "bonafide_index": 1,
+          "checkpoint_sha256": "798de0ee199a6d5cb1de98812a5c9d1bbe1d184f76518a44ea633cf41e804fb6",
+          "crop": {
+            "aggregation": "mean_hidden_mean_logits",
+            "padding": "repeat",
+            "samples": 64600,
+            "starts": [
+              0
+            ]
+          },
+          "frontend_sha256": null,
+          "id": "aasist",
+          "patch": {},
+          "score_direction": "higher_is_spoof",
+          "source_sha256": "9e0d3e80937dd0577beea7883098465a479da23a198ebc0d712abcc59b0bec50",
+          "spoof_index": 0
+        },
+        "rtol": 1e-05,
+        "status": "passed",
+        "training_record": {
+          "architecture": {
+            "class_index_map": {
+              "bonafide": 1,
+              "spoof": 0
+            },
+            "embedding_dim": 160,
+            "entrypoint": null,
+            "model_id": "aasist_source",
+            "repository_ref": "${EXPERT_ROOT}/aasist",
+            "repository_revision": "a04c9863f63d44471dde8a6abcb3b082b07cd1d1"
+          },
+          "class_index_map": {
+            "bonafide": 1,
+            "spoof": 0
+          },
+          "epoch": 66,
+          "fit": {
+            "dataset_id": "asvspoof2019_la",
+            "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+            "role": "fit"
+          },
+          "global_step": 35376,
+          "model_patch": {
+            "kind": "none"
+          },
+          "source_val": {
+            "dataset_id": "asvspoof2019_la",
+            "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+            "role": "source_val"
+          },
+          "task_weight_origin": "trained_in_project",
+          "training": {
+            "augmentation_recipe_ref": "none_author_freq_aug_false",
+            "class_weights_by_name": {
+              "bonafide": 0.9,
+              "spoof": 0.1
+            },
+            "loss": "weighted_categorical_cross_entropy",
+            "lr": 0.0001,
+            "max_epochs": 80,
+            "optimizer": "adam",
+            "sampler_policy": "shuffle_drop_global_tail",
+            "scheduler": "cosine_author_audited",
+            "scheduler_horizon_epochs": 80,
+            "trainable_scope": "all_native_trainable_parameters",
+            "weight_decay": 0.0001
+          }
+        }
+      }
+    },
+    {
+      "controls": [
+        {
+          "id": "LA_D_7712846",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "identity"
+        },
+        {
+          "id": "LA_D_7712846",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "lossless"
+        },
+        {
+          "id": "LA_D_1292057",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "identity"
+        },
+        {
+          "id": "LA_D_1292057",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "lossless"
+        }
+      ],
+      "expert": "ssl_aasist",
+      "status": "passed",
+      "upstream": {
+        "atol": 1e-06,
+        "hidden_dim": 160,
+        "id": "LA_D_7712846",
+        "limitation": "same loaded upstream implementation with hook removed; not an independent reimplementation",
+        "logits": [
+          [
+            -3.2930774688720703,
+            1.8020598888397217
+          ]
+        ],
+        "max_hidden_abs_error": 0.0,
+        "max_logit_abs_error": 0.0,
+        "metadata": {
+          "bonafide_index": 1,
+          "checkpoint_sha256": "dbf1d5b5229ffe5b904e5a7bef2c0a42181c9be6e7195d1c5c5b84a6a01ec6df",
+          "crop": {
+            "aggregation": "mean_hidden_mean_logits",
+            "padding": "repeat",
+            "samples": 64600,
+            "starts": [
+              0
+            ]
+          },
+          "frontend_sha256": "b08927597f2c9eb2ebd7dcc3ac78ee4b5f6021cbac4b3a6c5a9deec445d80ed9",
+          "id": "ssl_aasist",
+          "patch": {
+            "eval_device_fix": "move all parameters before eval; reject dtype/device mismatch at inference",
+            "fairseq_version": "0.12.2",
+            "frontend_path_only": true,
+            "removed_task_fields": [
+              "task.autoregressive",
+              "task.conv_feature_layers",
+              "task.encoder_embed_dim",
+              "task.eval_wer",
+              "task.eval_wer_config",
+              "task.eval_wer_post_process",
+              "task.eval_wer_tokenizer",
+              "task.mask_channel_length",
+              "task.mask_channel_min_space",
+              "task.mask_channel_other",
+              "task.mask_channel_prob",
+              "task.mask_channel_selection",
+              "task.mask_length",
+              "task.mask_min_space",
+              "task.mask_other",
+              "task.mask_prob",
+              "task.mask_selection",
+              "task.multiple_train_files",
+              "task.no_mask_channel_overlap",
+              "task.no_mask_overlap",
+              "task.shuffle_by_bucket",
+              "task.shuffle_by_bucket_size",
+              "task.train_subset"
+            ]
+          },
+          "score_direction": "higher_is_spoof",
+          "source_sha256": "08b2b99b9cc0e90732746471325185f2eb144795ee35338e0a02951015a856c6",
+          "spoof_index": 0
+        },
+        "rtol": 1e-05,
+        "status": "passed",
+        "training_record": {
+          "architecture": {
+            "class_index_map": {
+              "bonafide": 1,
+              "spoof": 0
+            },
+            "embedding_dim": 160,
+            "entrypoint": null,
+            "model_id": "ssl_aasist_source",
+            "repository_ref": "${EXPERT_ROOT}/SSL_Anti-spoofing",
+            "repository_revision": "4acaa61dcef5f7610f43aa4d0b29c4559b970cd2"
+          },
+          "class_index_map": {
+            "bonafide": 1,
+            "spoof": 0
+          },
+          "epoch": 7,
+          "fit": {
+            "dataset_id": "asvspoof2019_la",
+            "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+            "role": "fit"
+          },
+          "global_step": 4224,
+          "model_patch": {
+            "artifact_ref": "${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt",
+            "fairseq_version": "0.12.2",
+            "kind": "explicit_generic_ssl_path_only",
+            "removed_legacy_config_fields": [
+              "task.autoregressive",
+              "task.conv_feature_layers",
+              "task.encoder_embed_dim",
+              "task.eval_wer",
+              "task.eval_wer_config",
+              "task.eval_wer_post_process",
+              "task.eval_wer_tokenizer",
+              "task.mask_channel_length",
+              "task.mask_channel_min_space",
+              "task.mask_channel_other",
+              "task.mask_channel_prob",
+              "task.mask_channel_selection",
+              "task.mask_length",
+              "task.mask_min_space",
+              "task.mask_other",
+              "task.mask_prob",
+              "task.mask_selection",
+              "task.multiple_train_files",
+              "task.no_mask_channel_overlap",
+              "task.no_mask_overlap",
+              "task.shuffle_by_bucket",
+              "task.shuffle_by_bucket_size",
+              "task.train_subset"
+            ]
+          },
+          "source_val": {
+            "dataset_id": "asvspoof2019_la",
+            "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+            "role": "source_val"
+          },
+          "task_weight_origin": "trained_in_project",
+          "training": {
+            "augmentation_recipe_ref": "none_project_freq_aug_false",
+            "class_weights_by_name": {
+              "bonafide": 0.9,
+              "spoof": 0.1
+            },
+            "loss": "weighted_categorical_cross_entropy",
+            "lr": 1e-06,
+            "max_epochs": 80,
+            "optimizer": "adam",
+            "sampler_policy": "shuffle_drop_global_tail",
+            "scheduler": "none",
+            "trainable_scope": "joint_ssl_frontend_backend_head",
+            "weight_decay": 0.0001
+          }
+        }
+      }
+    },
+    {
+      "controls": [
+        {
+          "id": "LA_D_7712846",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "identity"
+        },
+        {
+          "id": "LA_D_7712846",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "lossless"
+        },
+        {
+          "id": "LA_D_1292057",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "identity"
+        },
+        {
+          "id": "LA_D_1292057",
+          "max_hidden_delta": 0.0,
+          "max_margin_delta": 0.0,
+          "operation": "lossless"
+        }
+      ],
+      "expert": "rawnet2",
+      "status": "passed",
+      "upstream": {
+        "atol": 1e-06,
+        "hidden_dim": 1024,
+        "id": "LA_D_7712846",
+        "limitation": "same loaded upstream implementation with hook removed; not an independent reimplementation",
+        "logits": [
+          [
+            -9.295852661132812,
+            -9.178694017464295e-05
+          ]
+        ],
+        "max_hidden_abs_error": 0.0,
+        "max_logit_abs_error": 0.0,
+        "metadata": {
+          "bonafide_index": 1,
+          "checkpoint_sha256": "1c4ff70338afbf1a688554ed2a65dfb92ee1ff0cbfef035f042e710b2399ed2c",
+          "crop": {
+            "aggregation": "mean_hidden_mean_logits",
+            "padding": "repeat",
+            "samples": 64600,
+            "starts": [
+              0
+            ]
+          },
+          "frontend_sha256": null,
+          "id": "rawnet2",
+          "patch": {},
+          "score_direction": "higher_is_spoof",
+          "source_sha256": "520caaa888ce2033b8cdacd466c552745141e2403c37d43042e06a5d89371679",
+          "spoof_index": 0
+        },
+        "rtol": 1e-05,
+        "status": "passed",
+        "training_record": {}
+      }
+    }
+  ],
+  "status": "passed"
+}

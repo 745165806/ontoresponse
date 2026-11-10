@@ -1,0 +1,38 @@
+version: "0.4.0"
+task: utterance_bonafide_vs_spoof
+y_spoof: 1
+objective: source_weighted_binary_cross_entropy
+experts: [aasist, ssl_aasist, rawnet2]
+freeze_experts: true
+hidden_dim: 64
+relation_layers: 2
+dropout: 0.1
+quality_names: [log_duration, rms_db, clipping_fraction, near_silence_fraction]
+seeds: [17, 29, 43]
+normalizer_fit_role: fusion_train
+model_selection_role: fusion_val
+calibration_role: calibration
+primary_metric: unseen_postprocess_macro_EER
+primary_coverage: all_requested_with_failure_accounting
+main_pair: [typed_response, best_nonontology_response_selected_on_val]
+secondary_pair: [response_fusion, best_original_only_selected_on_val]
+formal_budget:
+  epochs_max: 50
+  early_stop_patience: 8
+  hyperparameter_trials_per_family: 8
+  hidden_grid: [32, 64, 128]
+  learning_rate_grid: [0.0001, 0.0003, 0.001]
+  bootstrap_replicates: 2000
+safety_budget:
+  default_mode: smoke
+  smoke_max_origins: 64
+  smoke_max_steps: 20
+  pilot_max_origins: 1024
+  full_download_requires_explicit_budget: true
+paths:
+  asv2019: null
+  asv2021df: null
+  inthewild: null
+  asv5: null
+  checkpoints: null
+  cache: null

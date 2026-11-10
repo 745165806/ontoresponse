@@ -1,0 +1,53 @@
+{
+  "H1_gate": {
+    "definition": {
+      "improved_seeds_at_least": 2,
+      "mean_val_bce_must_not_worsen": true,
+      "min_absolute_val_eer_improvement": 0.01
+    },
+    "improved_seeds": 0,
+    "interpretation": "Exploratory validation gate only, not statistical proof; no H2 escalation when H1 is unsupported",
+    "original_mean_val_eer": 0.0,
+    "response_mean_val_eer": 0.0,
+    "selected_response": "all_views_mlp",
+    "status": "NOT_SUPPORTED_IN_PILOT",
+    "test_used": false
+  },
+  "both_experts_wrong": 0,
+  "cross_expert_raw_embedding_comparison": false,
+  "either_expert_wrong": 1,
+  "experts": [
+    {
+      "expert": "aasist",
+      "native_margin_zero_threshold_errors": 1,
+      "threshold_source": "fixed native class mapping, not tuned on test",
+      "val_metrics_raw_margin": {
+        "auroc": 1.0,
+        "bonafide": 12,
+        "eer": 0.0,
+        "eer_method": "ROC_linear_interpolation_grouped_ties",
+        "n": 24,
+        "spoof": 12,
+        "spoof_auprc": 1.0
+      }
+    },
+    {
+      "expert": "ssl_aasist",
+      "native_margin_zero_threshold_errors": 0,
+      "threshold_source": "fixed native class mapping, not tuned on test",
+      "val_metrics_raw_margin": {
+        "auroc": 1.0,
+        "bonafide": 12,
+        "eer": 0.0,
+        "eer_method": "ROC_linear_interpolation_grouped_ties",
+        "n": 24,
+        "spoof": 12,
+        "spoof_auprc": 1.0
+      }
+    }
+  ],
+  "interpretation": "Validation EER is at ceiling already. This pilot cannot establish incremental observation benefit; it does not establish that response fusion is useless.",
+  "no_hyperparameter_or_threshold_change": true,
+  "original_margin_Pearson": 0.933009016496112,
+  "role": "fusion_val"
+}

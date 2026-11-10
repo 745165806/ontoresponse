@@ -1,0 +1,16 @@
+{
+  "not_run": [
+    "full_attention",
+    "untyped_union",
+    "relation_tied",
+    "typed_response",
+    "wrong_family",
+    "drop_anchor",
+    "drop_same_probe",
+    "drop_same_family",
+    "no_embedding_response",
+    "no_score_response",
+    "identity_copy_views"
+  ],
+  "reason": "H1 unsupported under preregistered validation gate"
+}

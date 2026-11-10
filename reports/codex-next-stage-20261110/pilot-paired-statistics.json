@@ -1,0 +1,64 @@
+{
+  "seeds": [
+    {
+      "N_common": 24,
+      "models": [
+        "original_mlp",
+        "all_views_mlp"
+      ],
+      "paired_EER_difference_original_minus_response": {
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "degenerate_replicates": 588,
+        "independent_groups": 3,
+        "metric": "EER(a)-EER(b)",
+        "replicates": 2000,
+        "valid_replicates": 1412
+      },
+      "seed": 17
+    },
+    {
+      "N_common": 24,
+      "models": [
+        "original_mlp",
+        "all_views_mlp"
+      ],
+      "paired_EER_difference_original_minus_response": {
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "degenerate_replicates": 588,
+        "independent_groups": 3,
+        "metric": "EER(a)-EER(b)",
+        "replicates": 2000,
+        "valid_replicates": 1412
+      },
+      "seed": 29
+    },
+    {
+      "N_common": 24,
+      "models": [
+        "original_mlp",
+        "all_views_mlp"
+      ],
+      "paired_EER_difference_original_minus_response": {
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "degenerate_replicates": 588,
+        "independent_groups": 3,
+        "metric": "EER(a)-EER(b)",
+        "replicates": 2000,
+        "valid_replicates": 1412
+      },
+      "seed": 43
+    }
+  ],
+  "source_group_scope": "known speaker groups only; recording-level links unknown",
+  "warning": "three groups / one spoof group; degeneracies and uncertainty are reported; seeds are not extra recordings",
+  "boundary_bootstrap_warning": "All observed EER differences are zero. A zero-width empirical bootstrap interval at this ceiling does not prove population equality or zero population error. Only 3 groups / 1 spoof group."
+}

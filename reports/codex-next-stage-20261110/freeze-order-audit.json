@@ -1,0 +1,187 @@
+{
+  "source": "post-run filesystem audit of actual persisted artifacts, not invented execution events",
+  "executed_inside_command": "reports/codex-next-stage-20261110/pilot-execute.command.json",
+  "all_locks_persisted_before_any_prediction_file": true,
+  "rows": [
+    {
+      "artifact": "reports/pilot-20261110/runs/original_mlp-seed29/freeze.json",
+      "mtime_ns": 1794287981982997939,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp-seed43/freeze.json",
+      "mtime_ns": 1794287982354999673,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/best_single_expert-seed43/freeze.json",
+      "mtime_ns": 1794287981881997468,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp-seed17/freeze.json",
+      "mtime_ns": 1794287982253999202,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp_p3-seed43/freeze.json",
+      "mtime_ns": 1794287982671001145,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp-seed17/freeze.json",
+      "mtime_ns": 1794287982097998475,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/original_mlp-seed43/freeze.json",
+      "mtime_ns": 1794287982039998205,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/best_single_expert-seed29/freeze.json",
+      "mtime_ns": 1794287981838997268,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/best_single_expert-seed17/freeze.json",
+      "mtime_ns": 1794287981798997081,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp_p3-seed17/freeze.json",
+      "mtime_ns": 1794287982404999906,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp-seed29/freeze.json",
+      "mtime_ns": 1794287982155998745,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp-seed29/freeze.json",
+      "mtime_ns": 1794287982303999435,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp_p3-seed29/freeze.json",
+      "mtime_ns": 1794287982458000153,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp_p3-seed29/freeze.json",
+      "mtime_ns": 1794287982621000912,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp_p3-seed43/freeze.json",
+      "mtime_ns": 1794287982515000418,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp-seed43/freeze.json",
+      "mtime_ns": 1794287982204998974,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/original_mlp-seed17/freeze.json",
+      "mtime_ns": 1794287981933997711,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp_p3-seed17/freeze.json",
+      "mtime_ns": 1794287982563000642,
+      "kind": "freeze"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/original_mlp-seed29/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983072003013,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp-seed43/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983608005508,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/best_single_expert-seed43/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287982910002259,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp-seed17/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983449004768,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp_p3-seed43/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287984079007700,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp-seed17/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983224003721,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/original_mlp-seed43/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983147003362,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/best_single_expert-seed29/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287982836001914,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/best_single_expert-seed17/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287982742001476,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp_p3-seed17/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983684005862,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp-seed29/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983298004065,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp-seed29/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983524005117,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp_p3-seed29/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983769006257,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp_p3-seed29/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983995007309,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp_p3-seed43/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983844006606,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/response_mlp-seed43/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983376004428,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/original_mlp-seed17/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287982988002622,
+      "kind": "prediction"
+    },
+    {
+      "artifact": "reports/pilot-20261110/runs/all_views_mlp_p3-seed17/per_utterance_predictions.jsonl",
+      "mtime_ns": 1794287983916006942,
+      "kind": "prediction"
+    }
+  ]
+}

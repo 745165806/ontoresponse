@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/recompute_predictions.py",
+    "--out",
+    "reports/next-stage-20261110/independent-recomputation.json"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T04:21:43.356405+00:00",
+  "elapsed_seconds": 0.11456465721130371,
+  "log": "reports/next-stage-20261110/independent-metrics.log",
+  "cwd": "${PROJECT_ROOT}"
+}

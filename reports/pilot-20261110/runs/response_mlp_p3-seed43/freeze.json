@@ -1,0 +1,224 @@
+{
+  "calibration": {
+    "bias": -0.43578383030291173,
+    "role": "calibration",
+    "scale": 1.5952319624891196,
+    "steps": 20
+  },
+  "code_sha256": "969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e",
+  "config": {
+    "cache": "artifacts/pilot-20261110",
+    "crop": {
+      "aggregation": "mean_hidden_mean_logits",
+      "padding": "repeat",
+      "samples": 64600,
+      "starts": [
+        0
+      ]
+    },
+    "data": {
+      "asv2019": "${DATA_ROOT}/asvspoof2019/LA",
+      "asv2021df": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2021_DF_eval",
+      "asv2021df_keys": "${DATA_ROOT}/asvspoof2019/LA/ASVspoof2021_DF_keys_full",
+      "asv5": "${DATA_ROOT}/asvspoof5",
+      "inthewild": "${DATA_ROOT}/release_in_the_wild"
+    },
+    "experts": [
+      {
+        "bonafide_index": 1,
+        "checkpoint": "${EXPERT_ROOT}/TTA/outputs/source/aasist-full-asvspoof2019train-random/checkpoints/best.pt",
+        "config": "config/AASIST.conf",
+        "id": "aasist",
+        "kind": "aasist",
+        "module": "models/AASIST.py",
+        "repository": "${EXPERT_ROOT}/aasist",
+        "spoof_index": 0,
+        "state_key": "model_state",
+        "supervision": {
+          "augmentation": "none_author_freq_aug_false",
+          "independent_holdout": false,
+          "origin": "local_TTA_trained_in_project",
+          "selection": "ASVspoof2019_LA_official_dev",
+          "training": "ASVspoof2019_LA_official_train"
+        },
+        "task_trained": true
+      },
+      {
+        "bonafide_index": 1,
+        "checkpoint": "${EXPERT_ROOT}/TTA/outputs/source/ssl-aasist-full-asvspoof2019train-random/checkpoints/best.pt",
+        "frontend": "${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt",
+        "id": "ssl_aasist",
+        "kind": "ssl_aasist",
+        "module": "model.py",
+        "repository": "${EXPERT_ROOT}/SSL_Anti-spoofing",
+        "spoof_index": 0,
+        "state_key": "model_state",
+        "supervision": {
+          "augmentation": "none_project_freq_aug_false",
+          "generic_ssl_pretraining": "unknown_open_data_overlap",
+          "independent_holdout": false,
+          "origin": "local_TTA_trained_in_project",
+          "selection": "ASVspoof2019_LA_official_dev",
+          "training": "ASVspoof2019_LA_official_train"
+        },
+        "task_trained": true
+      }
+    ],
+    "mode": "integration_pretrained",
+    "output": "reports/pilot-20261110",
+    "pilot": {
+      "batch_size": 16,
+      "claim_scope": "integration_pilot_only",
+      "confirmation_models": [
+        "wrong_family",
+        "drop_anchor",
+        "drop_same_probe",
+        "drop_same_family",
+        "no_embedding_response",
+        "no_score_response",
+        "identity_copy_views"
+      ],
+      "consumed_registry": "reports/next-stage-20261110/consumed-exploration.json",
+      "disk_policy": "Hard 2GiB cache, 1GiB fusion outputs, >=2GiB free before start; no expert training/full download",
+      "enabled": true,
+      "expert_training_authorized": false,
+      "full_training_authorized": false,
+      "h1_gate": {
+        "improved_seeds_at_least": 2,
+        "mean_val_bce_must_not_worsen": true,
+        "min_absolute_val_eer_improvement": 0.01
+      },
+      "h1_models": [
+        "best_single_expert",
+        "original_mlp",
+        "response_mlp",
+        "all_views_mlp",
+        "response_mlp_p3",
+        "all_views_mlp_p3"
+      ],
+      "h2_models": [
+        "full_attention",
+        "untyped_union",
+        "relation_tied",
+        "typed_response"
+      ],
+      "integration_provenance_scope": "known task IDs and speakers isolated; official source maps download blocked; research_holdout BLOCKED",
+      "learning_rate": 0.001,
+      "max_cache_bytes": 2147483648,
+      "max_epochs": 100,
+      "max_optimizer_steps": 400,
+      "max_origins": 128,
+      "max_output_bytes": 1073741824,
+      "min_epochs": 40,
+      "min_free_disk_bytes": 2147483648,
+      "models": [
+        "best_single_expert",
+        "original_mlp",
+        "response_mlp",
+        "all_views_mlp",
+        "response_mlp_p3",
+        "all_views_mlp_p3",
+        "full_attention",
+        "untyped_union",
+        "relation_tied",
+        "typed_response",
+        "wrong_family",
+        "drop_anchor",
+        "drop_same_probe",
+        "drop_same_family",
+        "no_embedding_response",
+        "no_score_response",
+        "identity_copy_views"
+      ],
+      "origins_by_role": {
+        "calibration": 16,
+        "fusion_train": 64,
+        "fusion_val": 24,
+        "test": 24
+      },
+      "patience_epochs": 15,
+      "prior_development_ledger": "reports/implementation/audit_manifest.jsonl",
+      "probe_budgets": [
+        0,
+        3,
+        6
+      ],
+      "quality_gate": "reports/codex-next-stage-20261110/quality-gate.json",
+      "required_next_stage_document": "CODEX_NEXT_STAGE.md",
+      "reviewed_next_stage_sha256": "99c1ddf3eccc9d4c22abf5c5e1a4459f4d8ed85d58c1cfc07383160ce0420b1a",
+      "role_overlap_report": "reports/codex-next-stage-20261110/role_overlap_report.json",
+      "seeds": [
+        17,
+        29,
+        43
+      ],
+      "selection": "per-run min fusion_val BCE; baseline family selected on 3-seed mean fusion_val EER then mean BCE; all test outputs after locks",
+      "source_matrix": "reports/codex-next-stage-20261110/supervision_matrix.json",
+      "split_seed": 1701,
+      "supervision_audit": "reports/next-stage-20261110/supervision-audit.json",
+      "target_dev_fpr": 0.1,
+      "three_probe_indices": [
+        0,
+        2,
+        4
+      ],
+      "training_environments": [
+        "identity"
+      ],
+      "trials_per_family": 1,
+      "weight_decay": 0.0001,
+      "width": 64
+    },
+    "runtime": {
+      "budget": "pilot",
+      "device": "cpu",
+      "max_origins": 128,
+      "steps": 400,
+      "threads": 4
+    }
+  },
+  "data_audit_sha256": "187c0c7118b747ffea4e45be47a2f2686f972c86335744971b29fd0cb8fdcda9",
+  "index_sha256": "7ffeb9d414c014c2e0d5a0111f90dc293f8fa2e324360446ffb63b4dda323b85",
+  "ledger_sha256": "1dfe9ba07daab061f8f7c769352e4656d850263e76bab8eb2cc20e8dfbe031aa",
+  "model_sha256": "0e63fa5416d1bcf2e39373f8d2a6dbfd32961904d710d53387e332e1426bf5a8",
+  "operating_point": {
+    "actual_dev_fpr": 0.08333333333333333,
+    "comparison": ">=",
+    "n_dev_bonafide": 12,
+    "role": "fusion_val",
+    "space": "calibrated_logit_float64",
+    "target_dev_fpr": 0.1,
+    "threshold": -12.139779975592482,
+    "warning": "pilot empirical operating point; small development counts limit FPR precision"
+  },
+  "registry_hash": "6b98952b92c2c752fb7d8e31cb2e8eb888bb48ee67d4e3827e55e770909fecae",
+  "research_holdout": false,
+  "selection_sha256": "f8a3b55b323d012bdcc61b58e80e81e0370a3738c2d6971555cb4ec202a6ecfc",
+  "status": "frozen_integration_pilot",
+  "test_requests": [
+    "record-b926b6a430f44a94bdcd",
+    "record-bd9262d258771417414b",
+    "record-fe7bf2583a7552352fcf",
+    "record-d7a8685365c8defccbf6",
+    "record-6885359ec88562ae29b4",
+    "record-2610e8ebfbb7f026edb2",
+    "record-f87fbb03073bfe09ee4c",
+    "record-6f43e3c1c3598a91675a",
+    "record-93fd6913da1ab708acac",
+    "record-4579356628f0e40aeaf3",
+    "record-8f8b4fb50977ecc69b97",
+    "record-2c6a7684ec36ca30463e",
+    "record-6e39e94494bbab0a6f8f",
+    "record-80e0740db67ab7a6e563",
+    "record-a572acbb47cba2c17b30",
+    "record-5061d1a969d5a098e1a7",
+    "record-7d6e678d623e84c75c74",
+    "record-3a574ff0f3b5bd7cd6d8",
+    "record-86dbcc82994e50180032",
+    "record-23f88e1a03d794dcd736",
+    "record-b7b9ee1e48e3142f8346",
+    "record-10ef70b091eac689b570",
+    "record-2b13b764ec3bdeb958a1",
+    "record-18258afcf20f2ee8748b"
+  ]
+}

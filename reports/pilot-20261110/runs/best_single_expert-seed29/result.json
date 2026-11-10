@@ -1,0 +1,15 @@
+{
+  "best_epoch": 1,
+  "checkpoint": "reports/pilot-20261110/runs/best_single_expert-seed29/model.pt",
+  "checkpoint_sha256": "f1d593e79e4abf2a5c0d5333d9d3b8eb32ad209e83ab2caa3b14d7fd23f5726a",
+  "convergence_claim": false,
+  "epochs": 1,
+  "model": "best_single_expert",
+  "parameters": 0,
+  "save_load_exact": true,
+  "seed": 29,
+  "steps": 0,
+  "stop_reason": "max_epochs",
+  "val_bce": 0.3662651777267456,
+  "val_eer": 0.0
+}

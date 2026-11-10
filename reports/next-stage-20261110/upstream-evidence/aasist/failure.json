@@ -1,0 +1,6 @@
+{
+  "error_type": "KeyboardInterrupt",
+  "message": "source training interrupted",
+  "schema_version": "0.1.0",
+  "status": "INTERRUPTED"
+}

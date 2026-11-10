@@ -1,0 +1,27 @@
+{
+  "status": "verified",
+  "files_verified": 2463,
+  "archive": "${PROJECT_ROOT}/deliverables/ontoresponse-v0.5-baseline-20261110.tar.gz",
+  "historical_manifest_audit": [
+    {
+      "changed": [
+        "PLANS.md",
+        "README.md",
+        "STATUS.md"
+      ],
+      "entries": 30,
+      "manifest": "MANIFEST.json",
+      "missing": [],
+      "note": "Historical reference-bundle hashes are not silently rewritten to match this revision"
+    },
+    {
+      "changed": [
+        "PLANS.md"
+      ],
+      "entries": 65,
+      "manifest": "MANIFEST.implementation.json",
+      "missing": [],
+      "note": "Historical reference-bundle hashes are not silently rewritten to match this revision"
+    }
+  ]
+}

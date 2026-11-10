@@ -1,0 +1,44 @@
+F........................                                                [100%]
+=================================== FAILURES ===================================
+_________ test_shareable_zip_has_no_audio_weights_paths_and_recomputes _________
+
+tmp_path = PosixPath('${EXTERNAL_PATH}')
+
+    def test_shareable_zip_has_no_audio_weights_paths_and_recomputes(tmp_path):
+        root=tmp_path/'source';run=root/'reports/implementation/runs/unit-seed17/external-evaluation';run.mkdir(parents=True)
+        (root/'scripts').mkdir();(root/'ontoresponse').mkdir()
+        original=Path(__file__).parents[1]/'scripts/recompute_predictions.py';(root/'scripts/recompute_predictions.py').write_text(original.read_text())
+        (root/'ontoresponse/unit.py').write_text("DATA='${EXTERNAL_PATH}'\n")
+        (run/'original.wav').write_bytes(b'synthetic forbidden audio placeholder')
+        model=run.parent/'model.pt';model.write_bytes(b'unit hash fixture only; not an expert')
+        checkpoint=hashlib.sha256(model.read_bytes()).hexdigest()
+        (run.parent/'freeze.json').write_text(json.dumps({'checkpoint_sha256':checkpoint,'calibration':{'calibration':{'scale':1.,'bias':0.,'role':'calibration'}}}))
+        rows=[]
+        for i,(s,y) in enumerate([(-2,0),(-1,0),(1,1),(2,1)]):
+            rows.append({'id':str(i),'origin_id':str(i),'source_group':'g'+str(i),'label':y,'logit':s,'p':1/(1+math.exp(-s)),
+                         'threshold':.5,'status':'scored','condition':'original'})
+        (run/'per_utterance_predictions.jsonl').write_text(''.join(json.dumps(r)+'\n' for r in rows))
+        target=tmp_path/'share.zip';result=export_audit(root,target);assert result['prediction_rows']==4
+        assert verify_audit_zip(target)['status']=='verified'
+        unpack=tmp_path/'unpack';unpack.mkdir()
+        with zipfile.ZipFile(target) as z:
+            assert not any(Path(name).suffix in ('.pt','.wav') for name in z.namelist())
+            assert not any(PERSONAL.search(z.read(name).decode()) for name in z.namelist())
+            z.extractall(unpack)
+        result=subprocess.run([sys.executable,'audit_recompute.py'],cwd=unpack,capture_output=True,text=True)
+>       assert result.returncode==0,result.stderr
+E       AssertionError: Traceback (most recent call last):
+E           File "${EXTERNAL_PATH}", line 4, in <module>
+E             from scripts.recompute_predictions import independent_metrics
+E           File "${EXTERNAL_PATH}", line 7
+E             def sha(p):return hashlib.sharecord-02d9record-e92e24e6abccc69058f5164d64bbrecord-e92e24e6abccc69058f51record-e92e24e6abccc69058f5arecord-e92e24e6abccc69058f52756(Path(p).read_bytes()).hexdigest()
+E                                                 ^
+E         SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+E         
+E       assert 1 == 0
+E        +  where 1 = CompletedProcess(args=['${USER_HOME}/anaconda3/envs/py310/bin/python', 'audit_recompute.py'], returncode=1, stdout='', s...   ^\nSyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers\n').returncode
+
+tests/test_shareable_audit.py:29: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_shareable_audit.py::test_shareable_zip_has_no_audio_weights_paths_and_recomputes
+1 failed, 24 passed in 6.56s

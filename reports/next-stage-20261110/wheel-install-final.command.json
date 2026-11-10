@@ -1,0 +1,17 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "pip",
+    "install",
+    "--no-deps",
+    "--no-index",
+    "--force-reinstall",
+    "reports/next-stage-20261110/wheels/ontoresponse-0.5.0-py3-none-any.whl"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T04:18:04.729272+00:00",
+  "elapsed_seconds": 0.4411771297454834,
+  "log": "reports/next-stage-20261110/wheel-install-final.log",
+  "cwd": "${PROJECT_ROOT}"
+}

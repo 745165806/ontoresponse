@@ -1,0 +1,216 @@
+{
+  "calibration": {
+    "calibration": {
+      "bias": -0.0002196908993766031,
+      "role": "calibration",
+      "scale": 1.0055337852172823,
+      "steps": 20
+    },
+    "calibration_groups": [
+      "LA_0073",
+      "LA_0075",
+      "LA_0105"
+    ],
+    "calibration_ids": [
+      "LA_D_1842990",
+      "LA_D_4497485",
+      "LA_D_3631999",
+      "LA_D_2930504",
+      "LA_D_4663919",
+      "LA_D_5792148",
+      "LA_D_4004968",
+      "LA_D_1317619"
+    ],
+    "checkpoint_sha256": "0371e20f94fa0896598397fe6e198f202007e2caa7ea02d8fde8ce7289560796",
+    "index_sha256": "3061fb7ee9344dd4b5f81d669470eeb89441a7382131d8a4ab81fa1d2a5ecf56",
+    "manifest_sha256": "3150d708aac29948253e6fc415257a0ad1865c56cde33f20c7dacfc20ca01b59",
+    "probability_scope": "integration dev prior only; no arbitrary deployment posterior claim",
+    "status": "calibrated_smoke",
+    "threshold": {
+      "actual_dev_fpr": 0.0,
+      "low_fpr_estimate_supported": false,
+      "n_dev_bonafide": 4,
+      "role": "fusion_val",
+      "target_dev_fpr": 0.01,
+      "threshold": 1.0
+    },
+    "train_and_val_groups": [
+      "LA_0069",
+      "LA_0070",
+      "LA_0072",
+      "LA_0074",
+      "LA_0076",
+      "LA_0077",
+      "LA_0078",
+      "LA_0100",
+      "LA_0106"
+    ]
+  },
+  "checkpoint": "${PROJECT_ROOT}/reports/implementation/runs/all_views_mlp-stronger-seed29/model.pt",
+  "checkpoint_sha256": "0371e20f94fa0896598397fe6e198f202007e2caa7ea02d8fde8ce7289560796",
+  "crop": {
+    "aggregation": "mean_hidden_mean_logits",
+    "padding": "repeat",
+    "samples": 64600,
+    "starts": [
+      0
+    ]
+  },
+  "experts": [
+    {
+      "bonafide_index": 1,
+      "checkpoint": "${EXPERT_ROOT}/TTA/outputs/source/aasist-full-asvspoof2019train-random/checkpoints/best.pt",
+      "config": "config/AASIST.conf",
+      "id": "aasist",
+      "kind": "aasist",
+      "module": "models/AASIST.py",
+      "repository": "${EXPERT_ROOT}/aasist",
+      "spoof_index": 0,
+      "state_key": "model_state",
+      "supervision": {
+        "augmentation": "none_author_freq_aug_false",
+        "independent_holdout": false,
+        "origin": "local_TTA_trained_in_project",
+        "selection": "ASVspoof2019_LA_official_dev",
+        "training": "ASVspoof2019_LA_official_train"
+      },
+      "task_trained": true
+    },
+    {
+      "bonafide_index": 1,
+      "checkpoint": "${EXPERT_ROOT}/TTA/outputs/source/ssl-aasist-full-asvspoof2019train-random/checkpoints/best.pt",
+      "frontend": "${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt",
+      "id": "ssl_aasist",
+      "kind": "ssl_aasist",
+      "module": "model.py",
+      "repository": "${EXPERT_ROOT}/SSL_Anti-spoofing",
+      "spoof_index": 0,
+      "state_key": "model_state",
+      "supervision": {
+        "augmentation": "none_project_freq_aug_false",
+        "generic_ssl_pretraining": "unknown_open_data_overlap",
+        "independent_holdout": false,
+        "origin": "local_TTA_trained_in_project",
+        "selection": "ASVspoof2019_LA_official_dev",
+        "training": "ASVspoof2019_LA_official_train"
+      },
+      "task_trained": true
+    },
+    {
+      "bonafide_index": 1,
+      "checkpoint": "${EXPERT_ROOT}/detectionLib/models/model_RawNet2_WCE_100_32_0.0001/epoch_70_0.0010673372435522916.pth",
+      "config": "config/RawNet2.yaml",
+      "id": "rawnet2",
+      "kind": "rawnet2",
+      "module": "model/RawNet2.py",
+      "repository": "${EXPERT_ROOT}/detectionLib",
+      "spoof_index": 0,
+      "state_key": null,
+      "supervision": {
+        "augmentation": null,
+        "independent_holdout": false,
+        "origin": "local_detectionLib_unverified_training_history",
+        "selection": null,
+        "training": null
+      },
+      "task_trained": true
+    }
+  ],
+  "exposure": {
+    "candidates": [
+      {
+        "all_experts_unseen": null,
+        "classification": "fusion_unseen_operator",
+        "trace": [
+          "aac"
+        ]
+      },
+      {
+        "all_experts_unseen": null,
+        "classification": "fusion_unseen_operator",
+        "trace": [
+          "opus"
+        ]
+      }
+    ],
+    "expert_augmentations": null,
+    "hash": "e55540579e8ab56a98556d661958ca94805a76f751eec10e3a01f347bc4139e0",
+    "training_closure": [
+      [],
+      [
+        "additive_white_noise"
+      ],
+      [
+        "lowpass"
+      ],
+      [
+        "mp3"
+      ]
+    ]
+  },
+  "limitations": [
+    "engineering smoke, not official full benchmark",
+    "expert augmentation/selection independence not fully certified"
+  ],
+  "mode": "integration_pretrained",
+  "ontology_sha256": "988da8a565405deb54fd1aa38e2d95752149e3d72893179db1d9361df79478f4",
+  "primary_metric": "fusion_unseen_condition_macro_EER",
+  "probe_config_sha256": "862f5aca9a9dacb0e737f7d8d7595a5ebc44dfe4e3d76da7cf66b814be4c4755",
+  "registry_hash": "6b98952b92c2c752fb7d8e31cb2e8eb888bb48ee67d4e3827e55e770909fecae",
+  "selection_rule": "min fusion_val EER; tie min source-weighted BCE; no test used",
+  "source_mapping_complete": false,
+  "status": "frozen_integration_smoke",
+  "test_audio_sha256": {
+    "record-f02079910486520d9fba": "6e9553d6878f572bf16f0eca589c5e5b484c0cafea891f661af42e2561456f12",
+    "record-9e7957f305cc02d9beb3": "8a658e70848dbbde6008dfc7e593d668fcbf35b89e6e0a8bbd5a7fe86895ec4e",
+    "record-d751c402b148c2ca96d1": "497cf22dcad2064b1922e71b936b09cfd59ea3bcca12a56a99aa392982ae2908",
+    "record-6bbad178e181930fb0ab": "842771607e4137316ec885fc1e36d4d0db4c7f2d66c2a44f5d3a6ea2719f67eb",
+    "record-aae7ee8db67faae026d7": "98787d01609999d0eccbb539d3eac6deb7256f84d7112bc606898a884e51debc",
+    "record-634f7d846b27c0d67d18": "f094fdd9c3a2babd0603cc780eee6dea7d56452286e21839d5b89292c61c93dd",
+    "record-90a4ab37f7b2d96dcde7": "6c8051afe30875a6c0d0b096c78bb59094f74a889245509392592756e6ce02fd",
+    "record-cbf3309b2578fb4d8daa": "627ef41571e1ef3e9ec09b806f8736b94193e00e648a1cdb4ebcf2de61ccbae6",
+    "record-bf4c2adfa04035955b43": "907905459c4232d3077282a8b71bd431541e1f1cb8d798c598af87c1fb600104",
+    "record-159da0c75b22c10cb5d8": "e663ca3e5af90a009119d4be04ae1ca01002b254b96bd98c168b9252dad99631",
+    "record-ab902f6f4f836207a699": "cd39dd7fb12583aadda7f725cef7b5ce9e560af1aa5d84ff82ba65f1d9689413",
+    "record-d084fa6874c7e37f06eb": "6104e8a0773ff7124479e34fb91e972cdcde0518a1f7896c8d77b60c0fab5fac",
+    "record-aa68e30db494774d2812": "b0569baa52c90ccf08e6d31edf99cc7343c848327632ef899c8da668b84ba47c",
+    "record-720de76365219cb44a09": "3c76edcea53dfe03c1d15bb8e46ab6c19c798b8b903ab8cd98c067404aa0546a",
+    "record-d0e8bc2a6027dc8a77ff": "191cbc1e492b8dccd78b3e3933a7443a19578df9530ce36d1a2e734da94acd75",
+    "record-2af77f5396237a0ce926": "d56632bb67a5ab1670a0f282037d272a6b38b3cd6c0b1db8726d2b6805e1e3f5",
+    "record-31cb92bd151654ba1bd6": "404deb5e2e9b4774b4584af738d3a656373dfd6323c3fbbcfceaaeb86b3281fd",
+    "record-86c793feb6870e6a3913": "d1e966d0bb2dda89dd6a09791b05068ec77082efedcfe5666a701e6af04d7293",
+    "record-153dac2a5d9c3e07ed99": "8141ac0622592f6bc8ce6b4fab57f2a39acf61b6dca5620670a464cd507c9c3c",
+    "record-c940d09b4ee0a8f441e3": "73af4c102337684aa985b206ed3140d1934cf06d98f6a075b6d97a71c5b0c139",
+    "record-f5e1326c4665980360a1": "aee08ca2bc81b228ba524188327cd8e86e76f8207c0dd6e8a07095990a980e3d",
+    "record-78d7f2c7002ca5d2d208": "d98a5a7e512f83a292a3648a5d76cd0915704230d71ec055091b6cc3b363151d",
+    "record-20912d7d1ad805eb8c2a": "69b00228c35e8aec94a840ed4b716a69186ad2433bda1adbe1550c5f396f61b9",
+    "record-3f39b39af359106baa9a": "c6506b7f7ae62722fe929bbf4deb3dc1eca81726a2b5d920d4e67ef46b327bc3"
+  },
+  "test_ids": [
+    "record-aae7ee8db67faae026d7",
+    "record-78d7f2c7002ca5d2d208",
+    "record-f02079910486520d9fba",
+    "record-31cb92bd151654ba1bd6",
+    "record-2af77f5396237a0ce926",
+    "record-ab902f6f4f836207a699",
+    "record-153dac2a5d9c3e07ed99",
+    "record-3f39b39af359106baa9a",
+    "record-d751c402b148c2ca96d1",
+    "record-720de76365219cb44a09",
+    "record-bf4c2adfa04035955b43",
+    "record-d0e8bc2a6027dc8a77ff",
+    "record-c940d09b4ee0a8f441e3",
+    "record-aa68e30db494774d2812",
+    "record-9e7957f305cc02d9beb3",
+    "record-20912d7d1ad805eb8c2a",
+    "record-cbf3309b2578fb4d8daa",
+    "record-86c793feb6870e6a3913",
+    "record-f5e1326c4665980360a1",
+    "record-159da0c75b22c10cb5d8",
+    "record-d084fa6874c7e37f06eb",
+    "record-634f7d846b27c0d67d18",
+    "record-6bbad178e181930fb0ab",
+    "record-90a4ab37f7b2d96dcde7"
+  ],
+  "test_manifest_sha256": "4888f7e21e4f7e43c2e871b845e67295dac64bbf80d93d2bfb38fa56a7328f72"
+}

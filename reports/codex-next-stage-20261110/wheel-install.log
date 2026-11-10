@@ -1,0 +1,8 @@
+WARNING: The directory '${USER_HOME}/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing ./reports/codex-next-stage-20261110/wheels/ontoresponse-0.5.0-py3-none-any.whl
+Installing collected packages: ontoresponse
+  Attempting uninstall: ontoresponse
+    Found existing installation: ontoresponse 0.5.0
+    Uninstalling ontoresponse-0.5.0:
+      Successfully uninstalled ontoresponse-0.5.0
+Successfully installed ontoresponse-0.5.0

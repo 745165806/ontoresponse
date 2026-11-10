@@ -1,0 +1,134 @@
+{
+  "35910f2cb7a94519726f2ce748aa4b7ef552edadfac436e263c248235abd1e4a": {
+    "a": 1.0004086982997078,
+    "b": -1.4640791765536568e-05,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "19eca9935cdcf87525c34dcc3513d9db45e679faf770223733bdf5f4de60cd29": {
+    "a": 1.0055337852172823,
+    "b": -0.0002196908993766031,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "6605528141d4fe47e8211c3007287c5914e930dccefcbcd8181eb1508ad997f9": {
+    "a": 1.008660990609312,
+    "b": -0.0003503729943881103,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "1b3dbecf46318a3db724426d25e1e66a426422725b09a2e9f5ddb2ba3e69e831": {
+    "a": 1.949592787713756,
+    "b": -0.5565283098680444,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "6831f34367546031324eff847fd6dc1f1dd4121160caa931f9c878108cb15c0a": {
+    "a": 1.956346394734072,
+    "b": -0.0505325510714626,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "7b8df85cde8ddf7f46d81e81c1deaf75ecf6805e3a166f07d759fec33d4e80d5": {
+    "a": 1.9283858359440889,
+    "b": 0.6001134239164013,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "ec3e20df9dc35fd22c23b31ea5a9c046e34ed68888a24572cfa163862a1bed13": {
+    "a": 1.5222056353404627,
+    "b": -0.23989937591743124,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "264ebc569922c538f418352effa803a2c392f587fe2ee2627a1b268fdc073fc0": {
+    "a": 1.5968200932275776,
+    "b": -0.43307690148367123,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "6e2b8d2fc0af0b25edda926d674fe472e7aa4ad8a134d827a7c473ca789c78b7": {
+    "a": 1.6122013521757845,
+    "b": -0.4510876951007124,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "6f5915f7c6357dcde826a910df2d5e9fd108efc3c5e40d0082291697b8729872": {
+    "a": 1.5810739819740267,
+    "b": -0.41446584424891314,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "1b6e6a99cf828e81b413d70b45a510b1b2d9b998963d7890a04ad7436046384d": {
+    "a": 1.61160034143634,
+    "b": -0.4530631176573146,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "8791db12943c4d27dba8ae167e27e4e146b00c8d79b31a5187852a6da7fb6271": {
+    "a": 1.641900213567187,
+    "b": -0.4762951218803701,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "bff88ad4e3651514948255df1ed258cb290223c90413d81ec7f252cd17050988": {
+    "a": 2.694797373400456,
+    "b": -0.23421781008422685,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "4ab9e8a1aaf96ac71eac20a15fcfa1f40ac5d76934ab187efee82a7a10704ebf": {
+    "a": 1.676395339136866,
+    "b": -0.504523934146841,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "6cbe78e8175b87d90aa8252a3ed7a796ed4211d709db6bf50b5f918727b4947f": {
+    "a": 1.674163352220619,
+    "b": -0.5032208739607329,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "fda68b8d3914de8a196e4dc64cbd45f4b68a8fde9ce2518d95a98e72130d7f5f": {
+    "a": 1.6980860409204936,
+    "b": -0.5164462032175123,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "9ff113ac75bcefbfede83625755513a0d344c85a300237980fab2ebb2f7dd056": {
+    "a": 1.6277746811461191,
+    "b": -0.44187789153432977,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "b929e586ac667a7d8f12dd893fe8f869e881247810c316061b7a5280fb6cdf59": {
+    "a": 1.6499109795106555,
+    "b": -0.4429232755169439,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "dfe4bc98d80713e46e5ecda3b15f301096e1ae7f1b4f8b2ef12ad0b36fc8d386": {
+    "a": 1.612456400540457,
+    "b": -0.4550764769694218,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "3b51ac9e9ca9a7e4cd9507fb1d2610c2b998938ae2c506d941706ee3f833ff52": {
+    "a": 1.6157638507572223,
+    "b": -0.45866265247312665,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "82be9be83ddb072dee309d80c9f9e9bee3d5b7c47d613e421724c61c46240b83": {
+    "a": 1.6184203140050766,
+    "b": -0.4656675984634068,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  },
+  "cb53fb6d204ad40f3e589cde5db7c641a3e6d48fdb6dd19de44ebe90caf8d362": {
+    "a": 1.5952319624891196,
+    "b": -0.43578383030291173,
+    "fit_role": "calibration",
+    "source": "existing frozen calibration; never refitted during export"
+  }
+}

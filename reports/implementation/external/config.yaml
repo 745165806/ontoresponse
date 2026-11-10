@@ -1,0 +1,71 @@
+mode: integration_pretrained
+runtime:
+  device: cpu
+  threads: 4
+  budget: smoke
+  max_origins: 24
+  steps: 20
+data:
+  asv2019: ${DATA_ROOT}/asvspoof2019/LA
+  asv2021df: ${DATA_ROOT}/asvspoof2019/LA/ASVspoof2021_DF_eval
+  asv2021df_keys: ${DATA_ROOT}/asvspoof2019/LA/ASVspoof2021_DF_keys_full
+  inthewild: ${DATA_ROOT}/release_in_the_wild
+  asv5: ${DATA_ROOT}/asvspoof5
+output: reports/implementation/external
+cache: artifacts/evidence
+experts:
+- id: aasist
+  kind: aasist
+  repository: ${EXPERT_ROOT}/aasist
+  module: models/AASIST.py
+  config: config/AASIST.conf
+  checkpoint: ${EXPERT_ROOT}/TTA/outputs/source/aasist-full-asvspoof2019train-random/checkpoints/best.pt
+  state_key: model_state
+  spoof_index: 0
+  bonafide_index: 1
+  task_trained: true
+  supervision:
+    training: ASVspoof2019_LA_official_train
+    selection: ASVspoof2019_LA_official_dev
+    augmentation: none_author_freq_aug_false
+    origin: local_TTA_trained_in_project
+    independent_holdout: false
+- id: ssl_aasist
+  kind: ssl_aasist
+  repository: ${EXPERT_ROOT}/SSL_Anti-spoofing
+  module: model.py
+  checkpoint: ${EXPERT_ROOT}/TTA/outputs/source/ssl-aasist-full-asvspoof2019train-random/checkpoints/best.pt
+  frontend: ${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt
+  state_key: model_state
+  spoof_index: 0
+  bonafide_index: 1
+  task_trained: true
+  supervision:
+    training: ASVspoof2019_LA_official_train
+    selection: ASVspoof2019_LA_official_dev
+    augmentation: none_project_freq_aug_false
+    generic_ssl_pretraining: unknown_open_data_overlap
+    origin: local_TTA_trained_in_project
+    independent_holdout: false
+- id: rawnet2
+  kind: rawnet2
+  repository: ${EXPERT_ROOT}/detectionLib
+  module: model/RawNet2.py
+  config: config/RawNet2.yaml
+  checkpoint: ${EXPERT_ROOT}/detectionLib/models/model_RawNet2_WCE_100_32_0.0001/epoch_70_0.0010673372435522916.pth
+  state_key: null
+  spoof_index: 0
+  bonafide_index: 1
+  task_trained: true
+  supervision:
+    training: null
+    selection: null
+    augmentation: null
+    origin: local_detectionLib_unverified_training_history
+    independent_holdout: false
+crop:
+  samples: 64600
+  starts:
+  - 0
+  padding: repeat
+  aggregation: mean_hidden_mean_logits

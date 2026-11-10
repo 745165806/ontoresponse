@@ -1,0 +1,6 @@
+{
+  "results_sha256": "2e64368194c6ff3f75c37a785d4ecf85afb8e2b90fe32b04a2c666b14aa0f743",
+  "role": "fusion_val",
+  "rule": "3-seed mean validation EER, tie mean BCE",
+  "selected_nonontology": "all_views_mlp"
+}

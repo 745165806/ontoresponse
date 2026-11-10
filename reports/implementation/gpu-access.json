@@ -1,0 +1,13 @@
+{
+  "kernel_driver": "NVRM version: NVIDIA UNIX x86_64 Kernel Module  535.309.01  Wed Mar 25 15:26:15 UTC 2026\nGCC version:  gcc version 12.3.0 (Ubuntu 12.3.0-1ubuntu1~22.04.3) \n",
+  "status": "BLOCKED: GPU devices are not exposed to this tool session; no driver changes attempted",
+  "user_reported_hardware": "4 x A6000",
+  "visible_device_nodes": {
+    "/dev/nvidia-uvm": false,
+    "/dev/nvidia0": false,
+    "/dev/nvidia1": false,
+    "/dev/nvidia2": false,
+    "/dev/nvidia3": false,
+    "/dev/nvidiactl": false
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "best_epoch": 10,
+  "checkpoint": "reports/pilot-20261110/runs/all_views_mlp-seed17/model.pt",
+  "checkpoint_sha256": "846c290c8d742b75534b291530144b4575cb139253f4e39c57cb92e705445a9a",
+  "convergence_claim": true,
+  "epochs": 40,
+  "model": "all_views_mlp",
+  "parameters": 151361,
+  "save_load_exact": true,
+  "seed": 17,
+  "steps": 160,
+  "stop_reason": "validation_patience",
+  "val_bce": 1.044818077389209e-06,
+  "val_eer": 0.0
+}

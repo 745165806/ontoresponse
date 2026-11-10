@@ -1,0 +1,12 @@
+{
+  "exists": false,
+  "fallback": "user six-item brief used for independent work; no fabricated missing document",
+  "needed_for": "read additional next-stage constraints before authorizing the pilot gate to pass",
+  "request_sent": true,
+  "requested_document": "CODEX_NEXT_STAGE.md",
+  "search_scope": [
+    "project",
+    "docs",
+    "adjacent fakeAudioDection projects"
+  ]
+}

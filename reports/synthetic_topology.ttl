@@ -1,0 +1,198 @@
+@prefix orf: <https://example.org/ontoresponse#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/synthetic-topology/fixture> a orf:TopologyFixture ;
+    orf:registryHash "6b98952b92c2c752fb7d8e31cb2e8eb888bb48ee67d4e3827e55e770909fecae" .
+
+<https://example.org/synthetic-topology/node-10> a orf:ResponseToken ;
+    orf:expertIndex 1 ;
+    orf:numericNodeIndex 10 ;
+    orf:probeId "bandwidth_3p4k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-1> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-9> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-16>,
+        <https://example.org/synthetic-topology/node-4> .
+
+<https://example.org/synthetic-topology/node-11> a orf:ResponseToken ;
+    orf:expertIndex 1 ;
+    orf:numericNodeIndex 11 ;
+    orf:probeId "noise_30db" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-1> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-12> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-17>,
+        <https://example.org/synthetic-topology/node-5> .
+
+<https://example.org/synthetic-topology/node-12> a orf:ResponseToken ;
+    orf:expertIndex 1 ;
+    orf:numericNodeIndex 12 ;
+    orf:probeId "noise_20db" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-1> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-11> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-18>,
+        <https://example.org/synthetic-topology/node-6> .
+
+<https://example.org/synthetic-topology/node-13> a orf:ResponseToken ;
+    orf:expertIndex 1 ;
+    orf:numericNodeIndex 13 ;
+    orf:probeId "mp3_64k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-1> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-14> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-19>,
+        <https://example.org/synthetic-topology/node-7> .
+
+<https://example.org/synthetic-topology/node-14> a orf:ResponseToken ;
+    orf:expertIndex 1 ;
+    orf:numericNodeIndex 14 ;
+    orf:probeId "mp3_32k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-1> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-13> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-20>,
+        <https://example.org/synthetic-topology/node-8> .
+
+<https://example.org/synthetic-topology/node-15> a orf:ResponseToken ;
+    orf:expertIndex 2 ;
+    orf:numericNodeIndex 15 ;
+    orf:probeId "bandwidth_5k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-2> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-16> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-3>,
+        <https://example.org/synthetic-topology/node-9> .
+
+<https://example.org/synthetic-topology/node-16> a orf:ResponseToken ;
+    orf:expertIndex 2 ;
+    orf:numericNodeIndex 16 ;
+    orf:probeId "bandwidth_3p4k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-2> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-15> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-10>,
+        <https://example.org/synthetic-topology/node-4> .
+
+<https://example.org/synthetic-topology/node-17> a orf:ResponseToken ;
+    orf:expertIndex 2 ;
+    orf:numericNodeIndex 17 ;
+    orf:probeId "noise_30db" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-2> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-18> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-11>,
+        <https://example.org/synthetic-topology/node-5> .
+
+<https://example.org/synthetic-topology/node-18> a orf:ResponseToken ;
+    orf:expertIndex 2 ;
+    orf:numericNodeIndex 18 ;
+    orf:probeId "noise_20db" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-2> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-17> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-12>,
+        <https://example.org/synthetic-topology/node-6> .
+
+<https://example.org/synthetic-topology/node-19> a orf:ResponseToken ;
+    orf:expertIndex 2 ;
+    orf:numericNodeIndex 19 ;
+    orf:probeId "mp3_64k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-2> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-20> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-13>,
+        <https://example.org/synthetic-topology/node-7> .
+
+<https://example.org/synthetic-topology/node-20> a orf:ResponseToken ;
+    orf:expertIndex 2 ;
+    orf:numericNodeIndex 20 ;
+    orf:probeId "mp3_32k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-2> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-19> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-14>,
+        <https://example.org/synthetic-topology/node-8> .
+
+<https://example.org/synthetic-topology/node-3> a orf:ResponseToken ;
+    orf:expertIndex 0 ;
+    orf:numericNodeIndex 3 ;
+    orf:probeId "bandwidth_5k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-0> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-4> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-15>,
+        <https://example.org/synthetic-topology/node-9> .
+
+<https://example.org/synthetic-topology/node-4> a orf:ResponseToken ;
+    orf:expertIndex 0 ;
+    orf:numericNodeIndex 4 ;
+    orf:probeId "bandwidth_3p4k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-0> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-3> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-10>,
+        <https://example.org/synthetic-topology/node-16> .
+
+<https://example.org/synthetic-topology/node-5> a orf:ResponseToken ;
+    orf:expertIndex 0 ;
+    orf:numericNodeIndex 5 ;
+    orf:probeId "noise_30db" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-0> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-6> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-11>,
+        <https://example.org/synthetic-topology/node-17> .
+
+<https://example.org/synthetic-topology/node-6> a orf:ResponseToken ;
+    orf:expertIndex 0 ;
+    orf:numericNodeIndex 6 ;
+    orf:probeId "noise_20db" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-0> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-5> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-12>,
+        <https://example.org/synthetic-topology/node-18> .
+
+<https://example.org/synthetic-topology/node-7> a orf:ResponseToken ;
+    orf:expertIndex 0 ;
+    orf:numericNodeIndex 7 ;
+    orf:probeId "mp3_64k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-0> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-8> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-13>,
+        <https://example.org/synthetic-topology/node-19> .
+
+<https://example.org/synthetic-topology/node-8> a orf:ResponseToken ;
+    orf:expertIndex 0 ;
+    orf:numericNodeIndex 8 ;
+    orf:probeId "mp3_32k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-0> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-7> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-14>,
+        <https://example.org/synthetic-topology/node-20> .
+
+<https://example.org/synthetic-topology/node-9> a orf:ResponseToken ;
+    orf:expertIndex 1 ;
+    orf:numericNodeIndex 9 ;
+    orf:probeId "bandwidth_5k" ;
+    orf:response_to_anchor <https://example.org/synthetic-topology/node-1> ;
+    orf:same_family_within_expert <https://example.org/synthetic-topology/node-10> ;
+    orf:same_probe_cross_expert <https://example.org/synthetic-topology/node-15>,
+        <https://example.org/synthetic-topology/node-3> .
+
+<https://example.org/synthetic-topology/node-0> a orf:OriginalToken ;
+    orf:anchor_to_response <https://example.org/synthetic-topology/node-3>,
+        <https://example.org/synthetic-topology/node-4>,
+        <https://example.org/synthetic-topology/node-5>,
+        <https://example.org/synthetic-topology/node-6>,
+        <https://example.org/synthetic-topology/node-7>,
+        <https://example.org/synthetic-topology/node-8> ;
+    orf:expertIndex 0 ;
+    orf:numericNodeIndex 0 .
+
+<https://example.org/synthetic-topology/node-1> a orf:OriginalToken ;
+    orf:anchor_to_response <https://example.org/synthetic-topology/node-10>,
+        <https://example.org/synthetic-topology/node-11>,
+        <https://example.org/synthetic-topology/node-12>,
+        <https://example.org/synthetic-topology/node-13>,
+        <https://example.org/synthetic-topology/node-14>,
+        <https://example.org/synthetic-topology/node-9> ;
+    orf:expertIndex 1 ;
+    orf:numericNodeIndex 1 .
+
+<https://example.org/synthetic-topology/node-2> a orf:OriginalToken ;
+    orf:anchor_to_response <https://example.org/synthetic-topology/node-15>,
+        <https://example.org/synthetic-topology/node-16>,
+        <https://example.org/synthetic-topology/node-17>,
+        <https://example.org/synthetic-topology/node-18>,
+        <https://example.org/synthetic-topology/node-19>,
+        <https://example.org/synthetic-topology/node-20> ;
+    orf:expertIndex 2 ;
+    orf:numericNodeIndex 2 .
+

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "scripts/recompute_predictions.py",
+    "--out",
+    "reports/codex-next-stage-20261110/metrics_recomputed.json"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:09:34.723759+00:00",
+  "elapsed_seconds": 0.10622859001159668,
+  "log": "reports/codex-next-stage-20261110/metrics-recomputed.log",
+  "cwd": "${PROJECT_ROOT}"
+}

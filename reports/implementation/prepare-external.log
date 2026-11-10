@@ -1,0 +1,8 @@
+{
+  "status": "integration_only",
+  "dataset": "inthewild",
+  "metadata_sha256": "2e404150eff3cf171b766da81013a93248cbb219682fff420bbadb6b86a18795",
+  "n_requested": 8,
+  "source_mapping_complete": false,
+  "limitation": "metadata version pinned, selected audio hashes pinned during extraction; original download/release version unknown; speaker grouping only"
+}

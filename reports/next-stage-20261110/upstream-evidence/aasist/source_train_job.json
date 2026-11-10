@@ -1,0 +1,81 @@
+{
+  "execution": {
+    "architecture": {
+      "class_index_map": {
+        "bonafide": 1,
+        "spoof": 0
+      },
+      "embedding_dim": 160,
+      "entrypoint": null,
+      "model_id": "aasist_source",
+      "repository_ref": "${EXPERT_ROOT}/aasist",
+      "repository_revision": "a04c9863f63d44471dde8a6abcb3b082b07cd1d1"
+    },
+    "class_index_map": {
+      "bonafide": 1,
+      "spoof": 0
+    },
+    "data_roots": {
+      "asvspoof2019_la": "${DATA_ROOT}/asvspoof2019/LA"
+    },
+    "preprocess": {
+      "decode": "soundfile_float32_mono_mean_require_16khz",
+      "eval_unit": "repeat_or_crop_first_64600",
+      "train_unit": "repeat_or_random_crop_64600_seed_epoch_sample_index"
+    },
+    "random_rule": "explicit_sample_index_prng_v1",
+    "runtime": {
+      "allow_cpu": false,
+      "grad_accum_steps": 1,
+      "num_workers": 4,
+      "per_gpu_batch_size": 48,
+      "physical_gpu_ids": [],
+      "precision": "float32",
+      "smoke_epochs": 1,
+      "strategy": "single_process",
+      "training_seed": 13,
+      "validation_batch_size": 48,
+      "world_size": 1
+    },
+    "task_weight_origin": "trained_in_project",
+    "training": {
+      "augmentation_recipe_ref": "none_author_freq_aug_false",
+      "class_weights_by_name": {
+        "bonafide": 0.9,
+        "spoof": 0.1
+      },
+      "loss": "weighted_categorical_cross_entropy",
+      "lr": 0.0001,
+      "max_epochs": 80,
+      "optimizer": "adam",
+      "sampler_policy": "shuffle_drop_global_tail",
+      "scheduler": "cosine_author_audited",
+      "scheduler_horizon_epochs": 80,
+      "trainable_scope": "all_native_trainable_parameters",
+      "weight_decay": 0.0001
+    }
+  },
+  "job_type": "source_train",
+  "schema_version": "0.3.0",
+  "source_job": {
+    "fit": {
+      "dataset_id": "asvspoof2019_la",
+      "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+      "role": "fit"
+    },
+    "initialization": null,
+    "job_type": "source_train",
+    "model_id": "aasist_source",
+    "output_dir": "${EXPERT_ROOT}/TTA/outputs/source/aasist-full-asvspoof2019train-random",
+    "phase": "full",
+    "recipe_ref": "${EXPERT_ROOT}/TTA/local/aasist_recipe.yaml",
+    "run_id": "source-20260919T083403Z-8057e8",
+    "schema_version": "0.3.0",
+    "source_val": {
+      "dataset_id": "asvspoof2019_la",
+      "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+      "role": "source_val"
+    },
+    "training_seed": 13
+  }
+}

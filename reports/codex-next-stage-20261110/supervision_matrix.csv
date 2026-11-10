@@ -1,0 +1,16 @@
+expert,stage,status,n_ids,n_speakers,source_map_status,manifest_sha256,selection_rule,selected_epoch,new_pilot_included,pretraining_condition
+aasist,generic_ssl_pretraining,NOT_APPLICABLE,,,UNKNOWN,,,,True,
+aasist,task_fit,KNOWN,25380,20,UNKNOWN,109bd80eb5df2265b65e1f5464024ca9ee645e96e3b62f38fd786b206f21957c,,,True,
+aasist,checkpoint_selection,KNOWN,5654,5,UNKNOWN,c31477bf16b3c7772d5679c66d5c952042b48538756a0c1d14a0da1904b57fb8,minimum_source_val_eer_then_earliest_epoch,66,True,
+aasist,early_stopping,NOT_APPLICABLE,,,UNKNOWN,,,,True,
+aasist,task_hyperparameter_selection,UNKNOWN,,,UNKNOWN,,,,True,
+ssl_aasist,generic_ssl_pretraining,UNKNOWN,,,UNKNOWN,,,,True,open_pretraining
+ssl_aasist,task_fit,KNOWN,25380,20,UNKNOWN,109bd80eb5df2265b65e1f5464024ca9ee645e96e3b62f38fd786b206f21957c,,,True,open_pretraining
+ssl_aasist,checkpoint_selection,KNOWN,5654,5,UNKNOWN,c31477bf16b3c7772d5679c66d5c952042b48538756a0c1d14a0da1904b57fb8,minimum_source_val_eer_then_earliest_epoch,7,True,open_pretraining
+ssl_aasist,early_stopping,NOT_APPLICABLE,,,UNKNOWN,,,,True,open_pretraining
+ssl_aasist,task_hyperparameter_selection,UNKNOWN,,,UNKNOWN,,,,True,open_pretraining
+rawnet2,generic_ssl_pretraining,NOT_APPLICABLE,,,UNKNOWN,,,,False,
+rawnet2,task_fit,UNKNOWN,,,UNKNOWN,,,,False,
+rawnet2,checkpoint_selection,UNKNOWN,,,UNKNOWN,,,,False,
+rawnet2,early_stopping,UNKNOWN,,,UNKNOWN,,,,False,
+rawnet2,task_hyperparameter_selection,UNKNOWN,,,UNKNOWN,,,,False,

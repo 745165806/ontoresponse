@@ -1,0 +1,74 @@
+{
+  "N_failed": 0,
+  "N_requested": 24,
+  "N_scored": 24,
+  "conditions": {
+    "aac": {
+      "actual_fpr": 0.0,
+      "actual_tpr": 0.25,
+      "auroc": 1.0,
+      "bonafide": 4,
+      "brier": 0.005372933447052153,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "n": 8,
+      "nll": 0.04127100989293487,
+      "spoof": 4,
+      "spoof_auprc": 1.0
+    },
+    "no_new_processing": {
+      "actual_fpr": 0.0,
+      "actual_tpr": 0.25,
+      "auroc": 1.0,
+      "bonafide": 4,
+      "brier": 0.0041505197760545,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "n": 8,
+      "nll": 0.037492480643022276,
+      "spoof": 4,
+      "spoof_auprc": 1.0
+    },
+    "opus": {
+      "actual_fpr": 0.0,
+      "actual_tpr": 0.25,
+      "auroc": 1.0,
+      "bonafide": 4,
+      "brier": 0.0074096227836002605,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "n": 8,
+      "nll": 0.05217592214744059,
+      "spoof": 4,
+      "spoof_auprc": 1.0
+    }
+  },
+  "effective_subset_only": false,
+  "failure_policy_bounds": {
+    "fpr": [
+      0.0,
+      0.0
+    ],
+    "tpr": [
+      0.25,
+      0.25
+    ]
+  },
+  "no_new_processing": {
+    "actual_fpr": 0.0,
+    "actual_tpr": 0.25,
+    "auroc": 1.0,
+    "bonafide": 4,
+    "brier": 0.0041505197760545,
+    "eer": 0.0,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 8,
+    "nll": 0.037492480643022276,
+    "spoof": 4,
+    "spoof_auprc": 1.0
+  },
+  "statuses": {
+    "scored": 24
+  },
+  "unseen_macro_eer": 0.0
+}

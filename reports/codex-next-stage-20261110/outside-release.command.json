@@ -1,0 +1,15 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "${PROJECT_ROOT}/scripts/check_outside_install.py",
+    "--repo",
+    "${PROJECT_ROOT}",
+    "--out",
+    "${PROJECT_ROOT}/reports/codex-next-stage-20261110/outside-release.json"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:36:55.852076+00:00",
+  "elapsed_seconds": 20.226949453353882,
+  "log": "reports/codex-next-stage-20261110/outside-release.log",
+  "cwd": "/tmp"
+}

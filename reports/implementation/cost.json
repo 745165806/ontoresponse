@@ -1,0 +1,24 @@
+{
+  "crops_per_view": 1,
+  "expert_hidden_dims": [
+    160,
+    160,
+    1024
+  ],
+  "expert_view_evaluations_per_request": 21,
+  "external_frozen_extract_evaluate_bootstrap_seconds": 184.34064626693726,
+  "fusion_comparison_total_seconds": 42.272334814071655,
+  "fusion_runs": 78,
+  "gpu_profile": "BLOCKED",
+  "interpretation": "end-to-end measured CPU timings include loading/hashing/codec/cache; not GPU throughput or formal budget estimate",
+  "optimizer_steps_per_run_max": 20,
+  "runtime_device": "CPU",
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "threads_per_process": 4,
+  "uncompressed_embedding_margin_mask_quality_bytes_per_request": 37753,
+  "views_per_request": 7
+}

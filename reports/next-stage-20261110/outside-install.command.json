@@ -1,0 +1,15 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "${PROJECT_ROOT}/scripts/check_outside_install.py",
+    "--repo",
+    "${PROJECT_ROOT}",
+    "--out",
+    "${PROJECT_ROOT}/reports/next-stage-20261110/outside-install.json"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T04:18:05.203870+00:00",
+  "elapsed_seconds": 18.883881092071533,
+  "log": "reports/next-stage-20261110/outside-install.log",
+  "cwd": "/tmp"
+}

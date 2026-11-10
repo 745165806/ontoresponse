@@ -1,0 +1,12 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "scripts.pilot_summary"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:20:26.590720+00:00",
+  "elapsed_seconds": 12.389593362808228,
+  "log": "reports/codex-next-stage-20261110/pilot-summary.log",
+  "cwd": "${PROJECT_ROOT}"
+}

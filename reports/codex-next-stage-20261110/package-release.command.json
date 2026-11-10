@@ -1,0 +1,18 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pip",
+    "wheel",
+    ".",
+    "--no-deps",
+    "--no-build-isolation",
+    "--wheel-dir",
+    "reports/codex-next-stage-20261110/release-wheel"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:28:48.956560+00:00",
+  "elapsed_seconds": 1.06669020652771,
+  "log": "reports/codex-next-stage-20261110/package-release.log",
+  "cwd": "${PROJECT_ROOT}"
+}

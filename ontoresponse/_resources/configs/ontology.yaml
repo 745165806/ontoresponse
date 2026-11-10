@@ -1,0 +1,12 @@
+version: "0.4.0"
+classes: [Recording, DetectorModel, ExpertRun, ExpertObservation, ProbeOperation, ProbeRun, ResponseObservation, Decision]
+relations:
+  - {name: anchor_to_response, source: ExpertObservation, target: ResponseObservation, constraint: same_expert_before}
+  - {name: response_to_anchor, source: ResponseObservation, target: ExpertObservation, constraint: same_expert_before_inverse}
+  - {name: same_probe_cross_expert, source: ResponseObservation, target: ResponseObservation, constraint: same_probe_artifact_different_expert}
+  - {name: same_family_within_expert, source: ResponseObservation, target: ResponseObservation, constraint: same_expert_same_family_different_probe}
+semantics:
+  scores_are_observations_not_truth: true
+  relation_types_do_not_imply_fake_or_real: true
+  rdf_and_numeric_graph_share_registry: true
+  missing_is_not_zero: true
