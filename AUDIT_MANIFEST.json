@@ -39,9 +39,9 @@
     },
     {
       "path": "README.md",
-      "bytes": 4451,
-      "sha256": "b5f02e693c52b4909e6579b27903b7544814dde3f70d8c14ccf1ae0153bd2550",
-      "private_source_sha256": "f2fec7dbb9badb728affeacdae7102bcea7c66289bed0ed0cd7bccca71c20dd4"
+      "bytes": 4540,
+      "sha256": "d34777fe9f0051711bcaf11ed9fc1c5e25db557c6fd73db3b46f8aabacb0a141",
+      "private_source_sha256": "02957d3c80cf05759585eb1faae3edff004538b0c6869e34419f9b83035ef804"
     },
     {
       "path": "STAGE_PROMPTS.md",

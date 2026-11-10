@@ -37,6 +37,6 @@ ${USER_HOME}/anaconda3/envs/py310/bin/python -m ontoresponse train --model typed
 
 ## 仍然 BLOCKED
 
-当前工具会话未暴露GPU设备，未运行四卡验证。RDF/SHACL已通过本轮隔离依赖层补齐真实验证；网络依赖下载限制仍在。旧专家选模与部分fusion_val/calibration重叠已审计，新pilot隔离已知ID及speaker，但官方跨说话人源映射与任务HPO来源仍UNKNOWN；research_holdout阻塞。ASV2021官方全测和ASV5确认尚未执行。GitHub认证/远端及网络未就绪，离线脱敏Git bundle已准备，不声称上传。正式协议仅为提案，不自动下载或全量训练。
+当前工具会话未暴露GPU设备，未运行四卡验证。RDF/SHACL已通过本轮隔离依赖层补齐真实验证；网络依赖下载限制仍在。旧专家选模与部分fusion_val/calibration重叠已审计，新pilot隔离已知ID及speaker，但官方跨说话人源映射与任务HPO来源仍UNKNOWN；research_holdout阻塞。ASV2021官方全测和ASV5确认尚未执行。GitHub公开仓库：[745165806/ontoresponse](https://github.com/745165806/ontoresponse)。发布内容为脱敏源码与审计证据，音频、模型权重和缓存另行配置。正式协议仅为提案，不自动下载或全量训练。
 
 方法、研究协议和验收要求分别见 [METHOD](docs/METHOD.md)、[EXPERIMENT_PROTOCOL](docs/EXPERIMENT_PROTOCOL.md)、[ACCEPTANCE](docs/ACCEPTANCE.md)。保留的 `reference/` 为数值核，生产输入来自 `ontoresponse/` 的真实音频提取；tests中的合成fixture从不替代真实专家。
