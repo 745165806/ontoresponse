@@ -1,0 +1,44 @@
+{
+  "elapsed_seconds": 0.5314462679671124,
+  "exact_repeat": true,
+  "gpu_name": "NVIDIA RTX A6000",
+  "level": "real_checkpoint_real_data_GPU",
+  "max_batch_singleton_logit_error": 9.5367431640625e-07,
+  "requests": 4,
+  "status": "PASSED",
+  "upstream": {
+    "atol": 0.0001,
+    "hidden_dim": 160,
+    "id": "record-546a78553537fe077f1a",
+    "limitation": "same loaded upstream implementation with hook removed; not an independent reimplementation",
+    "logits": [
+      [
+        6.418529033660889,
+        -6.774924278259277
+      ]
+    ],
+    "max_hidden_abs_error": 0.0,
+    "max_logit_abs_error": 0.0,
+    "metadata": {
+      "bonafide_index": 1,
+      "checkpoint_sha256": "51d2d9cf0738172f61e2a384ec50a54a55363240f67c971ed55a92435bc1a1c0",
+      "crop": {
+        "aggregation": "mean_hidden_mean_logits",
+        "padding": "repeat",
+        "samples": 64600,
+        "starts": [
+          0
+        ]
+      },
+      "frontend_sha256": null,
+      "id": "aasist_author_reference",
+      "patch": {},
+      "score_direction": "higher_is_spoof",
+      "source_sha256": "9e0d3e80937dd0577beea7883098465a479da23a198ebc0d712abcc59b0bec50",
+      "spoof_index": 0
+    },
+    "rtol": 0.0001,
+    "status": "passed",
+    "training_record": {}
+  }
+}

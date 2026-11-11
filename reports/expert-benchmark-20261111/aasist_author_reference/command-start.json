@@ -1,0 +1,18 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-u",
+    "-m",
+    "scripts.expert_benchmark",
+    "--config",
+    "configs/expert-benchmark-20261111.yaml",
+    "--phase",
+    "score",
+    "--expert",
+    "aasist_author_reference"
+  ],
+  "gpu": 0,
+  "log": "reports/expert-benchmark-20261111/aasist_author_reference/evaluation.log",
+  "pid": 705339,
+  "started_utc": "2026-11-11T03:40:22.272990+00:00"
+}

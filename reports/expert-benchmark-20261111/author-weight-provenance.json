@@ -1,0 +1,9 @@
+{
+  "local_commit": "a04c9863f63d44471dde8a6abcb3b082b07cd1d1",
+  "path": "models/weights/AASIST.pth",
+  "repository": "https://github.com/clovaai/aasist",
+  "sha256": "51d2d9cf0738172f61e2a384ec50a54a55363240f67c971ed55a92435bc1a1c0",
+  "tracked_git_blob": "edbce171dbae13ae448f210e9fd62a0b861b5713",
+  "working_copy_matches_tracked_author_weight": true,
+  "working_file_blob": "edbce171dbae13ae448f210e9fd62a0b861b5713"
+}

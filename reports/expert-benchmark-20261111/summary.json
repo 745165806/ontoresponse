@@ -1,0 +1,74 @@
+{
+  "all_experts_identical_audio_hashes": true,
+  "bonafide": 7355,
+  "dataset": "ASVspoof2019_LA_official_eval",
+  "fusion_training_started": false,
+  "interpretation": {
+    "aasist_author_reference": "Same predeclared author-weight reference reproduces 0.83% when rounded to two decimals.",
+    "aasist_local": "Not a reproduction of author released 0.83% checkpoint; present local task-trained checkpoint is weaker.",
+    "rawnet2": "Local Mel frontend uses first_conv=1024, 20 initial filters; original paper reports other architecture variants. EER alone does not certify source/training reproduction.",
+    "ssl_aasist": "2019 eval benchmark only. Paper 0.82% concerns 2021 LA, not 2019 LA; no same-set paper target certified."
+  },
+  "model_or_direction_selected_on_eval": false,
+  "primary_metric": "Author compute_eer using native bonafide output; nearest DET point with stable ties",
+  "recomputed_from_prediction_files": true,
+  "results": [
+    {
+      "N_failed": 0,
+      "N_requested": 71237,
+      "N_scored": 71237,
+      "checkpoint_sha256": "798de0ee199a6d5cb1de98812a5c9d1bbe1d184f76518a44ea633cf41e804fb6",
+      "cuda_peak_allocated_bytes": 4644350464,
+      "elapsed_seconds": 407.6603727560723,
+      "expert": "aasist",
+      "gpu": 0,
+      "margin_eer_percent": 2.0803078866667217,
+      "native_eer_percent": 2.121052196615654,
+      "native_grouped_roc_eer_percent": 2.1210061182868793
+    },
+    {
+      "N_failed": 0,
+      "N_requested": 71237,
+      "N_scored": 71237,
+      "checkpoint_sha256": "dbf1d5b5229ffe5b904e5a7bef2c0a42181c9be6e7195d1c5c5b84a6a01ec6df",
+      "cuda_peak_allocated_bytes": 2136691200,
+      "elapsed_seconds": 964.948752046912,
+      "expert": "ssl_aasist",
+      "gpu": 1,
+      "margin_eer_percent": 0.6119473423243752,
+      "native_eer_percent": 0.6372839317460978,
+      "native_grouped_roc_eer_percent": 0.6355467893929378
+    },
+    {
+      "N_failed": 0,
+      "N_requested": 71237,
+      "N_scored": 71237,
+      "checkpoint_sha256": "1c4ff70338afbf1a688554ed2a65dfb92ee1ff0cbfef035f042e710b2399ed2c",
+      "cuda_peak_allocated_bytes": 603583488,
+      "elapsed_seconds": 253.0754775410751,
+      "expert": "rawnet2",
+      "gpu": 3,
+      "margin_eer_percent": 5.0846752609028405,
+      "native_eer_percent": 5.0846752609028405,
+      "native_grouped_roc_eer_percent": 5.084976206662135
+    },
+    {
+      "N_failed": 0,
+      "N_requested": 71237,
+      "N_scored": 71237,
+      "checkpoint_sha256": "51d2d9cf0738172f61e2a384ec50a54a55363240f67c971ed55a92435bc1a1c0",
+      "cuda_peak_allocated_bytes": 4644350464,
+      "elapsed_seconds": 352.2442333829822,
+      "expert": "aasist_author_reference",
+      "gpu": 0,
+      "margin_eer_percent": 0.8156688920690384,
+      "native_eer_percent": 0.8295112264154778,
+      "native_grouped_roc_eer_percent": 0.8293677770224337
+    }
+  ],
+  "secondary_metric": "Spoof-minus-bonafide margin; reported separately, never selected using eval",
+  "source_map_downloaded_and_real_format_verified": true,
+  "spoof": 63882,
+  "status": "VERIFIED_COMPLETE_GPU_BENCHMARK",
+  "unique_audio_requests": 71237
+}

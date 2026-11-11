@@ -1,0 +1,167 @@
+{
+  "ASV2019": {
+    "dev": {
+      "components_per_label": {
+        "0": 2,
+        "1": 2
+      },
+      "connected_components": 2,
+      "generation_kinds": {
+        "bonafide": 2548,
+        "text_to_speech": 14864,
+        "voice_conversion": 7432
+      },
+      "labels": {
+        "0": 2548,
+        "1": 22296
+      },
+      "mapped_acoustic_sources": 2548,
+      "n": 24844,
+      "official_ID_coverage_complete": true,
+      "target_speakers": 20
+    },
+    "eval": {
+      "components_per_label": {
+        "0": 2,
+        "1": 2
+      },
+      "connected_components": 2,
+      "generation_kinds": {
+        "bonafide": 7355,
+        "text_to_speech": 49140,
+        "voice_conversion": 14742
+      },
+      "labels": {
+        "0": 7355,
+        "1": 63882
+      },
+      "mapped_acoustic_sources": 7355,
+      "n": 71237,
+      "official_ID_coverage_complete": true,
+      "target_speakers": 67
+    },
+    "train": {
+      "components_per_label": {
+        "0": 2,
+        "1": 2
+      },
+      "connected_components": 2,
+      "generation_kinds": {
+        "bonafide": 2580,
+        "text_to_speech": 15200,
+        "voice_conversion": 7600
+      },
+      "labels": {
+        "0": 2580,
+        "1": 22800
+      },
+      "mapped_acoustic_sources": 3623,
+      "n": 25380,
+      "official_ID_coverage_complete": true,
+      "target_speakers": 20
+    }
+  },
+  "ASV2019_conservative_speaker_source_components": [
+    {
+      "by_partition_label": {
+        "eval:0": 5072,
+        "eval:1": 44226
+      },
+      "public_component_id": "p228",
+      "size": 49298
+    },
+    {
+      "by_partition_label": {
+        "dev:0": 1680,
+        "dev:1": 14904,
+        "train:0": 1524,
+        "train:1": 13392
+      },
+      "public_component_id": "p229",
+      "size": 31500
+    },
+    {
+      "by_partition_label": {
+        "eval:0": 2283,
+        "eval:1": 19656
+      },
+      "public_component_id": "p226",
+      "size": 21939
+    },
+    {
+      "by_partition_label": {
+        "dev:0": 868,
+        "dev:1": 7392,
+        "train:0": 1056,
+        "train:1": 9408
+      },
+      "public_component_id": "p241",
+      "size": 18724
+    }
+  ],
+  "ASV2019_cross_partition": {
+    "dev__eval": {
+      "same_acoustic_source_utterances": 0,
+      "same_source_target_connected_components": 0,
+      "same_target_speakers": 0
+    },
+    "train__dev": {
+      "same_acoustic_source_utterances": 1043,
+      "same_source_target_connected_components": 2,
+      "same_target_speakers": 0
+    },
+    "train__eval": {
+      "same_acoustic_source_utterances": 0,
+      "same_source_target_connected_components": 0,
+      "same_target_speakers": 0
+    }
+  },
+  "ASV2021_DF": {
+    "map_ids": 611829,
+    "missing_protocol_ids": 0,
+    "protocol_ids": 611829,
+    "unexpected_map_ids": 0
+  },
+  "archive": "reports/expert-benchmark-20261111/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz",
+  "archive_sha256": "a4188df4be1157cd242c6f176d416e59b53086e168de9926b629d4e1d9edfa92",
+  "expert_scores_used": false,
+  "interpretation": "Components conservatively join target and VC-source speakers. TTS text is not fabricated into an acoustic-source ID. This audit does not assign roles, certify task-HPO independence, or authorize leaking source groups.",
+  "inventory": {
+    "ASVspoof2019_LA_VCTK_MetaInfo.tsv": {
+      "columns": [
+        "ASVspoof_ID",
+        "VCTK_ID",
+        "TTS_VC_target_speaker",
+        "TTS_text",
+        "VC_source_VCTK_ID"
+      ],
+      "rows": 122299,
+      "sha256": "f0887bcb7988ebafc0d90c03fee35d8fb176357eaf3ae1ba6a4ebeaf2ebf7bcd"
+    },
+    "ASVspoof2021_DF_VCC_MetaInfo.tsv": {
+      "columns": [
+        "ASVspoof_ID",
+        "VCC_ID",
+        "TTS_VC_target_speaker",
+        "TTS_text",
+        "VC_source_VCC_ID"
+      ],
+      "rows": 452133,
+      "sha256": "ac89dc6525c8f339800553c4006743e967efaed14ec33c6298bb722c667367fd"
+    },
+    "ASVspoof2021_DF_VCTK_MetaInfo.tsv": {
+      "columns": [
+        "ASVspoof_ID",
+        "VCTK_ID",
+        "TTS_VC_target_speaker",
+        "TTS_text",
+        "VC_source_VCTK_ID"
+      ],
+      "rows": 159696,
+      "sha256": "f9faba9e43870b5cf30493332d30b7b98f602ea306989c9eabdde87a68fb70e4"
+    }
+  },
+  "new_training_started": false,
+  "source_url": "https://www.asvspoof.org/asvspoof2019/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz",
+  "status": "METADATA_AUDIT_ONLY"
+}

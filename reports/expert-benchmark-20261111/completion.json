@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+      "elapsed_seconds": 256.2663266658783,
+      "exit_code": 0,
+      "expert": "rawnet2",
+      "log": "reports/expert-benchmark-20261111/rawnet2/evaluation.log"
+    },
+    {
+      "elapsed_seconds": 410.51903653144836,
+      "exit_code": 0,
+      "expert": "aasist",
+      "log": "reports/expert-benchmark-20261111/aasist/evaluation.log"
+    },
+    {
+      "elapsed_seconds": 356.38304376602173,
+      "exit_code": 0,
+      "expert": "aasist_author_reference",
+      "log": "reports/expert-benchmark-20261111/aasist_author_reference/evaluation.log"
+    },
+    {
+      "elapsed_seconds": 969.1276564598083,
+      "exit_code": 0,
+      "expert": "ssl_aasist",
+      "log": "reports/expert-benchmark-20261111/ssl_aasist/evaluation.log"
+    }
+  ],
+  "status": "COMPLETE"
+}

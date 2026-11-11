@@ -1,0 +1,161 @@
+{
+  "N_failed": 0,
+  "N_requested": 71237,
+  "N_scored": 71237,
+  "checkpoint_selected_on_eval": false,
+  "cuda_peak_allocated_bytes": 2136691200,
+  "elapsed_seconds": 964.948752046912,
+  "expert": "ssl_aasist",
+  "margin_author_eer": {
+    "eer": 0.006119473423243752,
+    "eer_percent": 0.6119473423243752,
+    "eer_summary_threshold": 4.39382791519165,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+    "threshold_is_deployment_rule": false
+  },
+  "margin_grouped_roc": {
+    "auroc": 0.9996945719792554,
+    "bonafide": 7355,
+    "eer": 0.006118286879673691,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 71237,
+    "spoof": 63882,
+    "spoof_auprc": 0.9999641838565171
+  },
+  "measurement_lock_sha256": "32642f72af17a11df20c51bfb473d9357db0350a6dd14580b2488f42ad0b87fc",
+  "native_author_eer": {
+    "eer": 0.006372839317460978,
+    "eer_percent": 0.6372839317460978,
+    "eer_summary_threshold": 1.4603946208953857,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+    "threshold_is_deployment_rule": false
+  },
+  "native_grouped_roc": {
+    "auroc": 0.9995209194654888,
+    "bonafide": 7355,
+    "eer": 0.0063554678939293785,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 71237,
+    "spoof": 63882,
+    "spoof_auprc": 0.9999445030482866
+  },
+  "per_attack_native_author_eer": {
+    "A07": {
+      "eer": 0.00040744309948932656,
+      "eer_percent": 0.040744309948932654,
+      "eer_summary_threshold": -1.6352016925811768,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A08": {
+      "eer": 0.004481874094382592,
+      "eer_percent": 0.44818740943825924,
+      "eer_summary_threshold": 1.12331223487854,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A09": {
+      "eer": 0.0017995034650371156,
+      "eer_percent": 0.17995034650371156,
+      "eer_summary_threshold": -1.0585780143737793,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A10": {
+      "eer": 0.015075394681105081,
+      "eer_percent": 1.507539468110508,
+      "eer_summary_threshold": 1.5719518661499023,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A11": {
+      "eer": 0.009540922355334321,
+      "eer_percent": 0.9540922355334321,
+      "eer_summary_threshold": 1.5387187004089355,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A12": {
+      "eer": 0.006281377559419708,
+      "eer_percent": 0.6281377559419707,
+      "eer_summary_threshold": 1.4389355182647705,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A13": {
+      "eer": 0.00016973106707980943,
+      "eer_percent": 0.016973106707980943,
+      "eer_summary_threshold": -2.6293022632598877,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A14": {
+      "eer": 0.004481874094382592,
+      "eer_percent": 0.44818740943825924,
+      "eer_summary_threshold": 1.1875178813934326,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A15": {
+      "eer": 0.01181584988519047,
+      "eer_percent": 1.181584988519047,
+      "eer_summary_threshold": 1.5546412467956543,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A16": {
+      "eer": 0.0032595447959146125,
+      "eer_percent": 0.32595447959146123,
+      "eer_summary_threshold": 0.09308493137359619,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A17": {
+      "eer": 0.0030218327635050954,
+      "eer_percent": 0.30218327635050957,
+      "eer_summary_threshold": -0.06646867096424103,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A18": {
+      "eer": 0.0034972568283241296,
+      "eer_percent": 0.34972568283241295,
+      "eer_summary_threshold": 0.146966814994812,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A19": {
+      "eer": 0.003904699927813456,
+      "eer_percent": 0.3904699927813456,
+      "eer_summary_threshold": 0.40553832054138184,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    }
+  },
+  "predictions_sha256": "40a28d57674ac2bd8da3d6ec6e4a8ce8433077aec23d3e80723dd653cccb8b1a",
+  "provenance": {
+    "augmentation": "none_project_freq_aug_false",
+    "generic_ssl_pretraining": "unknown_open_data_overlap",
+    "independent_holdout": false,
+    "origin": "local_TTA_trained_in_project",
+    "selection": "ASVspoof2019_LA_official_dev",
+    "training": "ASVspoof2019_LA_official_train"
+  },
+  "score_direction_chosen_on_eval": false,
+  "status": "COMPLETE"
+}

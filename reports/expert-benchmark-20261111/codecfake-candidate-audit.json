@@ -1,0 +1,148 @@
+{
+  "expert_inference_used": false,
+  "limitations": [
+    "Speaker pattern inferred from documented source filename conventions; verify against original corpus metadata before certifying split",
+    "Audio SHA cross-role duplicate scan and upstream checkpoint task-HPO/source exposure audit still required",
+    "A full partition may contain incomplete codec families; exact source-family inventory must be checked before a frozen training recipe",
+    "This does not authorize reuse of any test partition for model selection"
+  ],
+  "partitions": {
+    "dev": {
+      "audio_format_controls": [
+        {
+          "channels": 1,
+          "corpus": "VCTK",
+          "format": "WAV",
+          "frames": 178205,
+          "label": 0,
+          "name": "p363_065.wav",
+          "samplerate": 48000
+        },
+        {
+          "channels": 1,
+          "corpus": "VCTK",
+          "format": "WAV",
+          "frames": 48866,
+          "label": 1,
+          "name": "F01_p363_065.wav",
+          "samplerate": 16000
+        },
+        {
+          "channels": 1,
+          "corpus": "AISHELL3",
+          "format": "WAV",
+          "frames": 249473,
+          "label": 0,
+          "name": "SSB01490197.wav",
+          "samplerate": 44100
+        },
+        {
+          "channels": 1,
+          "corpus": "AISHELL3",
+          "format": "WAV",
+          "frames": 79906,
+          "label": 1,
+          "name": "F01_SSB01490197.wav",
+          "samplerate": 16000
+        }
+      ],
+      "corpus_labels": {
+        "AISHELL3:0": 8870,
+        "AISHELL3:1": 53220,
+        "VCTK:0": 4358,
+        "VCTK:1": 26148
+      },
+      "labels": {
+        "0": 13228,
+        "1": 79368
+      },
+      "labels_sha256": "30393f1ff6cf180c317e2bc502246f904785351981d5f2ce811d98352a2a1277",
+      "missing_examples": [],
+      "missing_files": 0,
+      "requests": 92596,
+      "sources": {
+        "AISHELL3": 8870,
+        "VCTK": 4358
+      },
+      "speakers": {
+        "AISHELL3": 218,
+        "VCTK": 109
+      }
+    },
+    "train": {
+      "audio_format_controls": [
+        {
+          "channels": 1,
+          "corpus": "VCTK",
+          "format": "WAV",
+          "frames": 108791,
+          "label": 0,
+          "name": "p277_308.wav",
+          "samplerate": 48000
+        },
+        {
+          "channels": 1,
+          "corpus": "VCTK",
+          "format": "WAV",
+          "frames": 25506,
+          "label": 1,
+          "name": "F01_p277_308.wav",
+          "samplerate": 16000
+        },
+        {
+          "channels": 1,
+          "corpus": "AISHELL3",
+          "format": "WAV",
+          "frames": 106810,
+          "label": 0,
+          "name": "SSB13650058.wav",
+          "samplerate": 44100
+        },
+        {
+          "channels": 1,
+          "corpus": "AISHELL3",
+          "format": "WAV",
+          "frames": 28066,
+          "label": 1,
+          "name": "F01_SSB13650058.wav",
+          "samplerate": 16000
+        }
+      ],
+      "corpus_labels": {
+        "AISHELL3:0": 70388,
+        "AISHELL3:1": 422328,
+        "VCTK:0": 35433,
+        "VCTK:1": 212598
+      },
+      "labels": {
+        "0": 105821,
+        "1": 634926
+      },
+      "labels_sha256": "f789240cb61f714270123526e2b8d020f15859d315c240dfaf22b93746503ca4",
+      "missing_examples": [],
+      "missing_files": 0,
+      "requests": 740747,
+      "sources": {
+        "AISHELL3": 70388,
+        "VCTK": 35433
+      },
+      "speakers": {
+        "AISHELL3": 218,
+        "VCTK": 109
+      }
+    }
+  },
+  "root": "${DATA_ROOT}/Codecfake_Xie/extracted",
+  "status": "METADATA_AND_EXISTENCE_AUDIT_ONLY",
+  "train_dev_overlap": {
+    "AISHELL3": {
+      "source": 0,
+      "speaker": 218
+    },
+    "VCTK": {
+      "source": 0,
+      "speaker": 109
+    }
+  },
+  "training_started": false
+}

@@ -9,8 +9,8 @@
     },
     {
       "path": "AUDIT_README.txt",
-      "bytes": 574,
-      "sha256": "a4d2eecabc67863a44265606fd5df7655210b4e4bdb0529971d88e76cd28a207",
+      "bytes": 797,
+      "sha256": "28a491747395231aea5160228704030c8883ea1dbf07994626481afa2ef7cca4",
       "private_source_sha256": null
     },
     {
@@ -33,15 +33,15 @@
     },
     {
       "path": "PLANS.md",
-      "bytes": 6581,
-      "sha256": "ee0e952d8c642987d58eec3acfe15a0b59069106e83d7ed509afc854de700d02",
-      "private_source_sha256": "20713deea2fe627d177fe770d0e159dc278e2fb885e86f103457a46829913517"
+      "bytes": 15113,
+      "sha256": "a3b82c0189cbc6ab59109a6bc11699832140917a8af6d8bd548e8010d4de3f85",
+      "private_source_sha256": "b4e970eb1c7dd4680dfcf793175131636e021989db2c3a91c8d14124b884c84a"
     },
     {
       "path": "README.md",
-      "bytes": 4540,
-      "sha256": "d34777fe9f0051711bcaf11ed9fc1c5e25db557c6fd73db3b46f8aabacb0a141",
-      "private_source_sha256": "02957d3c80cf05759585eb1faae3edff004538b0c6869e34419f9b83035ef804"
+      "bytes": 6446,
+      "sha256": "d85f77a1a12587340c5cd17beadc65effa3e8b171651f15567f31c57d24e31f3",
+      "private_source_sha256": "64f944958df3ba174a79cd2baef536be7715759bfbffeafd997569653ccfed7f"
     },
     {
       "path": "STAGE_PROMPTS.md",
@@ -51,15 +51,15 @@
     },
     {
       "path": "STATUS.md",
-      "bytes": 21896,
-      "sha256": "0287f2270023c36d71f5f58ea907b69be62d47fa4bb4760cb386b090ace5c5f3",
-      "private_source_sha256": "083957e6e32e84ea5e1e33d9b7fc7ead6646843285ba4bff3cf071cc51a00465"
+      "bytes": 33167,
+      "sha256": "19f8d2ce8aa8072daf9c708e7a94f837c64ac4ea7636544972dd7c36a14dc97f",
+      "private_source_sha256": "7a7920207bc3446c52b102318220f234264ebf8bfa0de11b5c707a31eca794f8"
     },
     {
       "path": "STATUS_NEXT.md",
-      "bytes": 8135,
-      "sha256": "204ab41e46340f06bc8076d95ce4292fcca107da3c55a0a0877cb29658374c6f",
-      "private_source_sha256": "204ab41e46340f06bc8076d95ce4292fcca107da3c55a0a0877cb29658374c6f"
+      "bytes": 15369,
+      "sha256": "0f0d0133ac210dd1aa6be7efb421a145dba7763ce2e6fa9e434fd8dea82f2c71",
+      "private_source_sha256": "a4e589366d06f84a34ca512b16d8659d7a756c083facfdddb65396844a47a4bb"
     },
     {
       "path": "TASK_FOR_CODEX.md",
@@ -138,6 +138,12 @@
       "bytes": 8219,
       "sha256": "5e8ce22ba57bdd8072dd137e5e3afbf2d88da05dbd81b0afce7470e94a2d2562",
       "private_source_sha256": "5e8ce22ba57bdd8072dd137e5e3afbf2d88da05dbd81b0afce7470e94a2d2562"
+    },
+    {
+      "path": "docs/FUSION_DATA_RECOMMENDATION_20261111.md",
+      "bytes": 7435,
+      "sha256": "7c1f638b8c5f1117c3f83701be23fdeeb57d9fec45db0c96b56ea2fb4b09c845",
+      "private_source_sha256": "7c1f638b8c5f1117c3f83701be23fdeeb57d9fec45db0c96b56ea2fb4b09c845"
     },
     {
       "path": "docs/IMPLEMENTATION.md",
@@ -1260,6 +1266,192 @@
       "bytes": 371,
       "sha256": "6d2a9eb94a49ad56713b52ca0828ffc7e67c2eb581467de4ce711b326794c3f7",
       "private_source_sha256": "6d2a9eb94a49ad56713b52ca0828ffc7e67c2eb581467de4ce711b326794c3f7"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/PUBLICATION_SCOPE.md",
+      "bytes": 1909,
+      "sha256": "46c043f4b8aa3bd392b34d668c52b81920e3a50a61697400621f3c1078f80a5c",
+      "private_source_sha256": null
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/RESULTS.md",
+      "bytes": 3813,
+      "sha256": "a170fd961fd04c5b649bf0edf759e6002eda33f133aa706d11d9125ed56c3b93",
+      "private_source_sha256": "5d1f1a9fb7dc3ae717fab79bf74dfb607af538886e15eb31e8f64cc256b923ab"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/command-result.json",
+      "bytes": 152,
+      "sha256": "056c611518a35528c9f21f17c7b09a325d4dc8ea1423c86e29d35ccb4ff96112",
+      "private_source_sha256": "056c611518a35528c9f21f17c7b09a325d4dc8ea1423c86e29d35ccb4ff96112"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/command-start.json",
+      "bytes": 396,
+      "sha256": "062ae17511533fbc528aa8a0d335e2065a6da4a56d5077dbeb3dfa8cfa70e415",
+      "private_source_sha256": "be44bd8e16c71c6018561b8ee61b88a71f76b5281dd98b7e10dffb367d9e6ff9"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/gpu-controls.json",
+      "bytes": 2743,
+      "sha256": "dffe70c87970e441988a467e81811db769ea391c8a78116bbbe12675cf7fcca0",
+      "private_source_sha256": "19012108e95b1edc757068d20b12bebebee5b9954f2f9548350c6f4c4e0d4d2e"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/result.json",
+      "bytes": 6233,
+      "sha256": "ec737bd4bd8ad9230022b28c5c1aba9aca6e519e3b539c7c2edf9bb5fe345230",
+      "private_source_sha256": "ec737bd4bd8ad9230022b28c5c1aba9aca6e519e3b539c7c2edf9bb5fe345230"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/command-result.json",
+      "bytes": 186,
+      "sha256": "17077addb06b75e1a9bc2518269ef403b13fa8e4fed39079811c54b1c96f365d",
+      "private_source_sha256": "17077addb06b75e1a9bc2518269ef403b13fa8e4fed39079811c54b1c96f365d"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/command-start.json",
+      "bytes": 430,
+      "sha256": "599efa8a0ec7e8d5dfd08e8f00858ec026510b08e1206011f856c1c27e275228",
+      "private_source_sha256": "08f29f5e262a936338391d455cff55add827cf2deb135031e1d2bcee58d97574"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/gpu-controls.json",
+      "bytes": 1254,
+      "sha256": "ca2fd2ede78bb37a32e3ff3993a0f3c6087648c1b5db1f8156619daaf6a7ea0a",
+      "private_source_sha256": "f4df27f9ef099dc4341682f41d57f4302c893863101789c43592dc9278e99fd5"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/result.json",
+      "bytes": 6059,
+      "sha256": "f5a1719a9132fdd50b60f4e39a2fd89acc8cf6113a67aeda081868ce02966060",
+      "private_source_sha256": "f5a1719a9132fdd50b60f4e39a2fd89acc8cf6113a67aeda081868ce02966060"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/author-weight-provenance.json",
+      "bytes": 424,
+      "sha256": "e94e98d324d533b676e1ef2f4faa6a26913ceaf6b999000871a23f1c13bb0410",
+      "private_source_sha256": "e94e98d324d533b676e1ef2f4faa6a26913ceaf6b999000871a23f1c13bb0410"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/benchmark-unit.command.json",
+      "bytes": 351,
+      "sha256": "017259f31ccfebb42e78e5cf87be02e5d0dfac639715119a80682184eb481b57",
+      "private_source_sha256": "77a385b97ebe680f1192c9f81b99fa38f2952c1ca8722c8169d97ef8103720c7"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/benchmark-unit.log",
+      "bytes": 98,
+      "sha256": "6403144343fcfc7993ba55a29673178add8b7a0544a2c0145ffbc5cbbafad1d3",
+      "private_source_sha256": "6403144343fcfc7993ba55a29673178add8b7a0544a2c0145ffbc5cbbafad1d3"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/codecfake-candidate-audit.json",
+      "bytes": 3782,
+      "sha256": "a97a4581b45e1219b3b86f7d3dd1296d5524359e1962d89c49c12f1f35f7ce27",
+      "private_source_sha256": "482a760943ecf3316b4d1a19dcf304880f9eab0ebee6ebfdb8cd3e91b619dd5a"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/completion.json",
+      "bytes": 796,
+      "sha256": "2aab0bff0ddfd99fc25a1fef4037988b0cf57ad75386537ea7b1491fa10cd8c2",
+      "private_source_sha256": "2aab0bff0ddfd99fc25a1fef4037988b0cf57ad75386537ea7b1491fa10cd8c2"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/consumption-ledger.json",
+      "bytes": 528,
+      "sha256": "6f090ac660912b1aa9b4f007e31f5321e4056f05f497aa6e6ab9e786a906d782",
+      "private_source_sha256": "6f090ac660912b1aa9b4f007e31f5321e4056f05f497aa6e6ab9e786a906d782"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/full-unit-suite.command.json",
+      "bytes": 357,
+      "sha256": "b6bfb602d35ed96d5fe05bb1c5dc31580f99196ac8e68742acec8f2d38ed5ae3",
+      "private_source_sha256": "1475d097da2bff466597c1642962b3b735303ea312fceffcf418b39839075c1a"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/full-unit-suite.log",
+      "bytes": 819,
+      "sha256": "2e7dc9d6dee77fa01bc851701b8f5a096183ab686605b18f97f69f3278f4cdb8",
+      "private_source_sha256": "50e3cd1788c8ab0a4e4324e632a955888d0b41b78305c93853acf91c6b813881"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/official-source-map-audit.json",
+      "bytes": 4347,
+      "sha256": "9c21ca369d899cdb9ff111768efbfee55d29471ecb35d3993d98331d69acad91",
+      "private_source_sha256": "9c21ca369d899cdb9ff111768efbfee55d29471ecb35d3993d98331d69acad91"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/preflight.json",
+      "bytes": 2430,
+      "sha256": "c6a3775ceccc7a5c03fc7f4c18d2df4103466a11ec6e02cdb3d6a960500b58b3",
+      "private_source_sha256": "e6fbcfdb0f035379186ce93bc0638494e0e158d708d34042d4fb7031a998071a"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/command-result.json",
+      "bytes": 153,
+      "sha256": "6d0ea84c185eb6410c44c9500e0cd116250cbf60b46be7bd537889bae224c320",
+      "private_source_sha256": "6d0ea84c185eb6410c44c9500e0cd116250cbf60b46be7bd537889bae224c320"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/command-start.json",
+      "bytes": 398,
+      "sha256": "06aee355fdd24a310081c690e0abe207361c89a409c5faa4cb78fe86b557d8f7",
+      "private_source_sha256": "909f0f128270a7105153767fc344a4759f2f144260035b27b5e5d2c44c391a17"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/gpu-controls.json",
+      "bytes": 1229,
+      "sha256": "38f3e1e2d84fffa5ad62e0172c9b8a525d2fafb1500f3dd0ec695e9ec5ef5224",
+      "private_source_sha256": "5bd838d01553bbcedd8679fb63c261ced291a2a3d30767cc2983f6f9bf2ad71b"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/result.json",
+      "bytes": 6169,
+      "sha256": "3e3a8011e63081bed5ea150f18204b2cf3ce35606fa889ee5f60ca74a24ebf76",
+      "private_source_sha256": "3e3a8011e63081bed5ea150f18204b2cf3ce35606fa889ee5f60ca74a24ebf76"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/recompute-comparison.command.json",
+      "bytes": 333,
+      "sha256": "e1541ebdd2340b8b8953d0fab7e6b4ede0ad34d3685e94eb8c10791c2d7c4d07",
+      "private_source_sha256": "dbc67ac310518d9eb8b0f1f03434bf75a73b51680c09600d8f08da2e50ce24cf"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/command-result.json",
+      "bytes": 159,
+      "sha256": "ac87da9cd11b3c19704a2512117cc3a9014b73acbe22d08f26de9db22ff9b111",
+      "private_source_sha256": "ac87da9cd11b3c19704a2512117cc3a9014b73acbe22d08f26de9db22ff9b111"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/command-start.json",
+      "bytes": 404,
+      "sha256": "28f4f9f3cfd9c565eca0ec964daf9c479f72ddeef26b505c260a143f6dc86b21",
+      "private_source_sha256": "01985e37be40307e4b6444ebdde251ba038d3e76a70d284da15542619f90e967"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/gpu-controls.json",
+      "bytes": 4809,
+      "sha256": "9bc7eb70633b3cbe4adf1d300fc7a580c02737f62ea20fd48470dd51d53b46d3",
+      "private_source_sha256": "a8f01010e3dc7e6c5e70b24b9823f2085a7247a7315d55d383307f7d34bac81e"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/result.json",
+      "bytes": 6319,
+      "sha256": "ea9b3723a56ccbd6f4cff1bc40eea068df8f834fb9b44db0ed972371cd77d50b",
+      "private_source_sha256": "ea9b3723a56ccbd6f4cff1bc40eea068df8f834fb9b44db0ed972371cd77d50b"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/summary.csv",
+      "bytes": 884,
+      "sha256": "7b8716f93ca08f0961c585bf0727889a154ca1e4f027b1db638c0cc35f4d8cdc",
+      "private_source_sha256": "245f3b6ad4b9b6a13200729bb22439b52f749e6a1140f526c86a682ea1fb388c"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/summary.json",
+      "bytes": 3115,
+      "sha256": "4295df03cff829146b9c095042fed58d4fb14504b359d7019cc3bdd90794824d",
+      "private_source_sha256": "4295df03cff829146b9c095042fed58d4fb14504b359d7019cc3bdd90794824d"
     },
     {
       "path": "reports/implementation/acceptance.json",
@@ -4304,5 +4496,52 @@
   "prediction_rows": 576,
   "weights_and_audio_included": false,
   "source_hash_scope": "SHA256 is of delivered sanitized bytes; optional private_source_sha256 identifies local pre-redaction bytes",
-  "policy": "Shareable ZIP excludes all audio/weights/cache archives; historical private inventory statements have a separate scope."
+  "policy": "Shareable ZIP excludes all audio/weights/cache archives; historical private inventory statements have a separate scope.",
+  "documentation_update": {
+    "date": "2026-11-11",
+    "scope": "documentation_and_small_aggregate_evidence",
+    "files": [
+      "README.md",
+      "STATUS.md",
+      "STATUS_NEXT.md",
+      "PLANS.md",
+      "docs/FUSION_DATA_RECOMMENDATION_20261111.md",
+      "reports/expert-benchmark-20261111/RESULTS.md",
+      "reports/expert-benchmark-20261111/summary.json",
+      "reports/expert-benchmark-20261111/summary.csv",
+      "reports/expert-benchmark-20261111/preflight.json",
+      "reports/expert-benchmark-20261111/completion.json",
+      "reports/expert-benchmark-20261111/author-weight-provenance.json",
+      "reports/expert-benchmark-20261111/official-source-map-audit.json",
+      "reports/expert-benchmark-20261111/codecfake-candidate-audit.json",
+      "reports/expert-benchmark-20261111/full-unit-suite.log",
+      "reports/expert-benchmark-20261111/full-unit-suite.command.json",
+      "reports/expert-benchmark-20261111/benchmark-unit.log",
+      "reports/expert-benchmark-20261111/benchmark-unit.command.json",
+      "reports/expert-benchmark-20261111/recompute-comparison.command.json",
+      "reports/expert-benchmark-20261111/consumption-ledger.json",
+      "reports/expert-benchmark-20261111/aasist/result.json",
+      "reports/expert-benchmark-20261111/aasist/gpu-controls.json",
+      "reports/expert-benchmark-20261111/aasist/command-start.json",
+      "reports/expert-benchmark-20261111/aasist/command-result.json",
+      "reports/expert-benchmark-20261111/ssl_aasist/result.json",
+      "reports/expert-benchmark-20261111/ssl_aasist/gpu-controls.json",
+      "reports/expert-benchmark-20261111/ssl_aasist/command-start.json",
+      "reports/expert-benchmark-20261111/ssl_aasist/command-result.json",
+      "reports/expert-benchmark-20261111/rawnet2/result.json",
+      "reports/expert-benchmark-20261111/rawnet2/gpu-controls.json",
+      "reports/expert-benchmark-20261111/rawnet2/command-start.json",
+      "reports/expert-benchmark-20261111/rawnet2/command-result.json",
+      "reports/expert-benchmark-20261111/aasist_author_reference/result.json",
+      "reports/expert-benchmark-20261111/aasist_author_reference/gpu-controls.json",
+      "reports/expert-benchmark-20261111/aasist_author_reference/command-start.json",
+      "reports/expert-benchmark-20261111/aasist_author_reference/command-result.json",
+      "reports/expert-benchmark-20261111/PUBLICATION_SCOPE.md",
+      "AUDIT_README.txt"
+    ],
+    "new_benchmark_per_request_scores_included": false,
+    "research_source_sha256": "7b79db93c0213f8d3b5181eb368f5261ceb71df2d1aabbb32d63223079ae8e1b",
+    "public_source_updated": false,
+    "publication_scope": "reports/expert-benchmark-20261111/PUBLICATION_SCOPE.md"
+  }
 }

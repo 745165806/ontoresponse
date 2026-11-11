@@ -1,0 +1,160 @@
+{
+  "N_failed": 0,
+  "N_requested": 71237,
+  "N_scored": 71237,
+  "checkpoint_selected_on_eval": false,
+  "cuda_peak_allocated_bytes": 603583488,
+  "elapsed_seconds": 253.0754775410751,
+  "expert": "rawnet2",
+  "margin_author_eer": {
+    "eer": 0.050846752609028406,
+    "eer_percent": 5.0846752609028405,
+    "eer_summary_threshold": -2.5605635419487953,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+    "threshold_is_deployment_rule": false
+  },
+  "margin_grouped_roc": {
+    "auroc": 0.9872276714900781,
+    "bonafide": 7355,
+    "eer": 0.05084976206662135,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 71237,
+    "spoof": 63882,
+    "spoof_auprc": 0.998408966059003
+  },
+  "measurement_lock_sha256": "ae89b7464f51fd7be8d20f6d0723bfad93323ebc9af207923ab1aeb3a7562ff4",
+  "native_author_eer": {
+    "eer": 0.050846752609028406,
+    "eer_percent": 5.0846752609028405,
+    "eer_summary_threshold": -2.6349854469299316,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+    "threshold_is_deployment_rule": false
+  },
+  "native_grouped_roc": {
+    "auroc": 0.9872276640409255,
+    "bonafide": 7355,
+    "eer": 0.05084976206662135,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "n": 71237,
+    "spoof": 63882,
+    "spoof_auprc": 0.9984089428037994
+  },
+  "per_attack_native_author_eer": {
+    "A07": {
+      "eer": 0.010355808554312972,
+      "eer_percent": 1.035580855431297,
+      "eer_summary_threshold": -8.422429084777832,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A08": {
+      "eer": 0.03619445488922035,
+      "eer_percent": 3.619445488922035,
+      "eer_summary_threshold": -4.379730224609375,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A09": {
+      "eer": 0.008726036156355668,
+      "eer_percent": 0.8726036156355668,
+      "eer_summary_threshold": -8.727777481079102,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A10": {
+      "eer": 0.00831859305686634,
+      "eer_percent": 0.831859305686634,
+      "eer_summary_threshold": -8.819770812988281,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A11": {
+      "eer": 0.006281377559419708,
+      "eer_percent": 0.6281377559419707,
+      "eer_summary_threshold": -9.16380500793457,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A12": {
+      "eer": 0.006756801624238742,
+      "eer_percent": 0.6756801624238742,
+      "eer_summary_threshold": -9.029897689819336,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A13": {
+      "eer": 0.006519089591829225,
+      "eer_percent": 0.6519089591829225,
+      "eer_summary_threshold": -9.135004997253418,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A14": {
+      "eer": 0.005059048260951727,
+      "eer_percent": 0.5059048260951727,
+      "eer_summary_threshold": -9.432767868041992,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A15": {
+      "eer": 0.007571687823217395,
+      "eer_percent": 0.7571687823217395,
+      "eer_summary_threshold": -8.92082405090332,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A16": {
+      "eer": 0.00814886198978653,
+      "eer_percent": 0.8148861989786531,
+      "eer_summary_threshold": -8.858418464660645,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A17": {
+      "eer": 0.09479828025035367,
+      "eer_percent": 9.479828025035367,
+      "eer_summary_threshold": -0.48451709747314453,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A18": {
+      "eer": 0.19146404493107416,
+      "eer_percent": 19.146404493107415,
+      "eer_summary_threshold": -0.01802797242999077,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    },
+    "A19": {
+      "eer": 0.03212002389432709,
+      "eer_percent": 3.2120023894327088,
+      "eer_summary_threshold": -4.9536943435668945,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8",
+      "threshold_is_deployment_rule": false
+    }
+  },
+  "predictions_sha256": "f0cc26298fca301689738cfec44f572059cf909f82c228c78f047792c0bdfc3b",
+  "provenance": {
+    "augmentation": null,
+    "independent_holdout": false,
+    "origin": "local_detectionLib_unverified_training_history",
+    "selection": null,
+    "training": null
+  },
+  "score_direction_chosen_on_eval": false,
+  "status": "COMPLETE"
+}

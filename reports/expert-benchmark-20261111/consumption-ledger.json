@@ -1,0 +1,15 @@
+{
+  "cannot_claim_new_unseen_confirmation": true,
+  "checkpoint_ids": [
+    "aasist",
+    "ssl_aasist",
+    "rawnet2",
+    "aasist_author_reference"
+  ],
+  "dataset": "ASVspoof2019_LA_eval",
+  "model_selection_allowed": false,
+  "note": "Benchmark consumption does not change official partitions, but must be disclosed in future experiment selection/confirmation records.",
+  "protocol_sha256": "84fce576efff092269a0a6ad247d2e9f2f7b4d4e25a4545efb2518da92708036",
+  "requests": 71237,
+  "role": "fixed_single_expert_benchmark"
+}

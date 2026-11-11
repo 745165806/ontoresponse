@@ -1,0 +1,14 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_expert_benchmark.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-11T03:37:28.920374+00:00",
+  "elapsed_seconds": 2.7318174839019775,
+  "log": "reports/expert-benchmark-20261111/benchmark-unit.log",
+  "cwd": "${PROJECT_ROOT}"
+}

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-u",
+    "-m",
+    "scripts.expert_benchmark",
+    "--config",
+    "configs/expert-benchmark-20261111.yaml",
+    "--phase",
+    "score",
+    "--expert",
+    "rawnet2"
+  ],
+  "gpu": 3,
+  "log": "reports/expert-benchmark-20261111/rawnet2/evaluation.log",
+  "pid": 697799,
+  "started_utc": "2026-11-11T03:33:29.783439+00:00"
+}

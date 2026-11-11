@@ -1,0 +1,147 @@
+{
+  "elapsed_seconds": 17.49492015701253,
+  "exact_repeat": true,
+  "gpu_name": "NVIDIA RTX A6000",
+  "level": "real_checkpoint_real_data_GPU",
+  "max_batch_singleton_logit_error": 4.5299530029296875e-06,
+  "requests": 4,
+  "status": "PASSED",
+  "upstream": {
+    "atol": 0.0001,
+    "hidden_dim": 160,
+    "id": "record-546a78553537fe077f1a",
+    "limitation": "same loaded upstream implementation with hook removed; not an independent reimplementation",
+    "logits": [
+      [
+        1.6882065534591675,
+        -3.547184705734253
+      ]
+    ],
+    "max_hidden_abs_error": 0.0,
+    "max_logit_abs_error": 0.0,
+    "metadata": {
+      "bonafide_index": 1,
+      "checkpoint_sha256": "dbf1d5b5229ffe5b904e5a7bef2c0a42181c9be6e7195d1c5c5b84a6a01ec6df",
+      "crop": {
+        "aggregation": "mean_hidden_mean_logits",
+        "padding": "repeat",
+        "samples": 64600,
+        "starts": [
+          0
+        ]
+      },
+      "frontend_sha256": "b08927597f2c9eb2ebd7dcc3ac78ee4b5f6021cbac4b3a6c5a9deec445d80ed9",
+      "id": "ssl_aasist",
+      "patch": {
+        "eval_device_fix": "move all parameters before eval; reject dtype/device mismatch at inference",
+        "fairseq_version": "0.12.2",
+        "frontend_path_only": true,
+        "removed_task_fields": [
+          "task.autoregressive",
+          "task.conv_feature_layers",
+          "task.encoder_embed_dim",
+          "task.eval_wer",
+          "task.eval_wer_config",
+          "task.eval_wer_post_process",
+          "task.eval_wer_tokenizer",
+          "task.mask_channel_length",
+          "task.mask_channel_min_space",
+          "task.mask_channel_other",
+          "task.mask_channel_prob",
+          "task.mask_channel_selection",
+          "task.mask_length",
+          "task.mask_min_space",
+          "task.mask_other",
+          "task.mask_prob",
+          "task.mask_selection",
+          "task.multiple_train_files",
+          "task.no_mask_channel_overlap",
+          "task.no_mask_overlap",
+          "task.shuffle_by_bucket",
+          "task.shuffle_by_bucket_size",
+          "task.train_subset"
+        ]
+      },
+      "score_direction": "higher_is_spoof",
+      "source_sha256": "08b2b99b9cc0e90732746471325185f2eb144795ee35338e0a02951015a856c6",
+      "spoof_index": 0
+    },
+    "rtol": 0.0001,
+    "status": "passed",
+    "training_record": {
+      "architecture": {
+        "class_index_map": {
+          "bonafide": 1,
+          "spoof": 0
+        },
+        "embedding_dim": 160,
+        "entrypoint": null,
+        "model_id": "ssl_aasist_source",
+        "repository_ref": "${EXPERT_ROOT}/SSL_Anti-spoofing",
+        "repository_revision": "4acaa61dcef5f7610f43aa4d0b29c4559b970cd2"
+      },
+      "class_index_map": {
+        "bonafide": 1,
+        "spoof": 0
+      },
+      "epoch": 7,
+      "fit": {
+        "dataset_id": "asvspoof2019_la",
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/fit.jsonl",
+        "role": "fit"
+      },
+      "global_step": 4224,
+      "model_patch": {
+        "artifact_ref": "${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt",
+        "fairseq_version": "0.12.2",
+        "kind": "explicit_generic_ssl_path_only",
+        "removed_legacy_config_fields": [
+          "task.autoregressive",
+          "task.conv_feature_layers",
+          "task.encoder_embed_dim",
+          "task.eval_wer",
+          "task.eval_wer_config",
+          "task.eval_wer_post_process",
+          "task.eval_wer_tokenizer",
+          "task.mask_channel_length",
+          "task.mask_channel_min_space",
+          "task.mask_channel_other",
+          "task.mask_channel_prob",
+          "task.mask_channel_selection",
+          "task.mask_length",
+          "task.mask_min_space",
+          "task.mask_other",
+          "task.mask_prob",
+          "task.mask_selection",
+          "task.multiple_train_files",
+          "task.no_mask_channel_overlap",
+          "task.no_mask_overlap",
+          "task.shuffle_by_bucket",
+          "task.shuffle_by_bucket_size",
+          "task.train_subset"
+        ]
+      },
+      "source_val": {
+        "dataset_id": "asvspoof2019_la",
+        "manifest_ref": "${EXPERT_ROOT}/TTA/local/asv2019_la_initial_manifests/source_val.jsonl",
+        "role": "source_val"
+      },
+      "task_weight_origin": "trained_in_project",
+      "training": {
+        "augmentation_recipe_ref": "none_project_freq_aug_false",
+        "class_weights_by_name": {
+          "bonafide": 0.9,
+          "spoof": 0.1
+        },
+        "loss": "weighted_categorical_cross_entropy",
+        "lr": 1e-06,
+        "max_epochs": 80,
+        "optimizer": "adam",
+        "sampler_policy": "shuffle_drop_global_tail",
+        "scheduler": "none",
+        "trainable_scope": "joint_ssl_frontend_backend_head",
+        "weight_decay": 0.0001
+      }
+    }
+  }
+}
