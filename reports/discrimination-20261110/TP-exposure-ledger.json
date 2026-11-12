@@ -1,0 +1,1754 @@
+{
+  "ASV2021_historical_T": "codec metadata labels in local-inventory.json; do not reinterpret as actively applied P",
+  "actual_pilot_recordings": 128,
+  "actual_view_manifest": "reports/pilot-20261110/extraction-0-of-1.jsonl",
+  "actual_view_manifest_sha256": "7ffeb9d414c014c2e0d5a0111f90dc293f8fa2e324360446ffb63b4dda323b85",
+  "expert_task_augmentations": "audited none; generic SSL and HPO UNKNOWN",
+  "prospective_status": "NOT_EXECUTED; complete run-level artifact/encoder/seed/length/failure metadata required on execution",
+  "rows": [
+    {
+      "P": {
+        "id": "original",
+        "operation": "identity"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "id": "original",
+          "operation": "identity"
+        }
+      ],
+      "phase": "actual_old_pilot"
+    },
+    {
+      "P": {
+        "cutoff_hz": 5000,
+        "family": "bandwidth",
+        "id": "bandwidth_5k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "cutoff_hz": 5000,
+          "family": "bandwidth",
+          "id": "bandwidth_5k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "actual_old_pilot"
+    },
+    {
+      "P": {
+        "cutoff_hz": 3400,
+        "family": "bandwidth",
+        "id": "bandwidth_3p4k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "cutoff_hz": 3400,
+          "family": "bandwidth",
+          "id": "bandwidth_3p4k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "actual_old_pilot"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_30db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 30
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "family": "noise",
+          "id": "noise_30db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 30
+        }
+      ],
+      "phase": "actual_old_pilot"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_20db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 20
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "family": "noise",
+          "id": "noise_20db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 20
+        }
+      ],
+      "phase": "actual_old_pilot"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 64,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_64k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "bitrate_kbps": 64,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_64k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "actual_old_pilot"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 32,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_32k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_32k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "actual_old_pilot"
+    },
+    {
+      "P": {
+        "id": "original",
+        "operation": "identity"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "id": "original",
+          "operation": "identity"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "cutoff_hz": 5000,
+        "family": "bandwidth",
+        "id": "bandwidth_5k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "cutoff_hz": 5000,
+          "family": "bandwidth",
+          "id": "bandwidth_5k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "cutoff_hz": 3400,
+        "family": "bandwidth",
+        "id": "bandwidth_3p4k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "cutoff_hz": 3400,
+          "family": "bandwidth",
+          "id": "bandwidth_3p4k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_30db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 30
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "family": "noise",
+          "id": "noise_30db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 30
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_20db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 20
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "family": "noise",
+          "id": "noise_20db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 20
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 64,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_64k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "bitrate_kbps": 64,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_64k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 32,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_32k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_32k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "id": "original",
+        "operation": "identity"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "cutoff_hz": 4500,
+        "id": "lowpass4500",
+        "operation": "lowpass"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "cutoff_hz": 4500,
+          "id": "lowpass4500",
+          "operation": "lowpass"
+        },
+        {
+          "id": "original",
+          "operation": "identity"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "cutoff_hz": 5000,
+        "family": "bandwidth",
+        "id": "bandwidth_5k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "cutoff_hz": 4500,
+        "id": "lowpass4500",
+        "operation": "lowpass"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "cutoff_hz": 4500,
+          "id": "lowpass4500",
+          "operation": "lowpass"
+        },
+        {
+          "cutoff_hz": 5000,
+          "family": "bandwidth",
+          "id": "bandwidth_5k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "cutoff_hz": 3400,
+        "family": "bandwidth",
+        "id": "bandwidth_3p4k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "cutoff_hz": 4500,
+        "id": "lowpass4500",
+        "operation": "lowpass"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "cutoff_hz": 4500,
+          "id": "lowpass4500",
+          "operation": "lowpass"
+        },
+        {
+          "cutoff_hz": 3400,
+          "family": "bandwidth",
+          "id": "bandwidth_3p4k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_30db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 30
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "cutoff_hz": 4500,
+        "id": "lowpass4500",
+        "operation": "lowpass"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "cutoff_hz": 4500,
+          "id": "lowpass4500",
+          "operation": "lowpass"
+        },
+        {
+          "family": "noise",
+          "id": "noise_30db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 30
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_20db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 20
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "cutoff_hz": 4500,
+        "id": "lowpass4500",
+        "operation": "lowpass"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "cutoff_hz": 4500,
+          "id": "lowpass4500",
+          "operation": "lowpass"
+        },
+        {
+          "family": "noise",
+          "id": "noise_20db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 20
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 64,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_64k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "cutoff_hz": 4500,
+        "id": "lowpass4500",
+        "operation": "lowpass"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "cutoff_hz": 4500,
+          "id": "lowpass4500",
+          "operation": "lowpass"
+        },
+        {
+          "bitrate_kbps": 64,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_64k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 32,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_32k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "cutoff_hz": 4500,
+        "id": "lowpass4500",
+        "operation": "lowpass"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "cutoff_hz": 4500,
+          "id": "lowpass4500",
+          "operation": "lowpass"
+        },
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_32k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "id": "original",
+        "operation": "identity"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "white25",
+        "operation": "additive_white_noise",
+        "snr_db": 25
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "white25",
+          "operation": "additive_white_noise",
+          "snr_db": 25
+        },
+        {
+          "id": "original",
+          "operation": "identity"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "cutoff_hz": 5000,
+        "family": "bandwidth",
+        "id": "bandwidth_5k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "white25",
+        "operation": "additive_white_noise",
+        "snr_db": 25
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "white25",
+          "operation": "additive_white_noise",
+          "snr_db": 25
+        },
+        {
+          "cutoff_hz": 5000,
+          "family": "bandwidth",
+          "id": "bandwidth_5k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "cutoff_hz": 3400,
+        "family": "bandwidth",
+        "id": "bandwidth_3p4k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "white25",
+        "operation": "additive_white_noise",
+        "snr_db": 25
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "white25",
+          "operation": "additive_white_noise",
+          "snr_db": 25
+        },
+        {
+          "cutoff_hz": 3400,
+          "family": "bandwidth",
+          "id": "bandwidth_3p4k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_30db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 30
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "white25",
+        "operation": "additive_white_noise",
+        "snr_db": 25
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "white25",
+          "operation": "additive_white_noise",
+          "snr_db": 25
+        },
+        {
+          "family": "noise",
+          "id": "noise_30db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 30
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_20db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 20
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "white25",
+        "operation": "additive_white_noise",
+        "snr_db": 25
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "white25",
+          "operation": "additive_white_noise",
+          "snr_db": 25
+        },
+        {
+          "family": "noise",
+          "id": "noise_20db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 20
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 64,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_64k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "white25",
+        "operation": "additive_white_noise",
+        "snr_db": 25
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "white25",
+          "operation": "additive_white_noise",
+          "snr_db": 25
+        },
+        {
+          "bitrate_kbps": 64,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_64k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 32,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_32k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "white25",
+        "operation": "additive_white_noise",
+        "snr_db": 25
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "white25",
+          "operation": "additive_white_noise",
+          "snr_db": 25
+        },
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_32k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "id": "original",
+        "operation": "identity"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 48,
+        "encoder": "libmp3lame",
+        "id": "MP3_48",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 48,
+          "encoder": "libmp3lame",
+          "id": "MP3_48",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "id": "original",
+          "operation": "identity"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "cutoff_hz": 5000,
+        "family": "bandwidth",
+        "id": "bandwidth_5k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 48,
+        "encoder": "libmp3lame",
+        "id": "MP3_48",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 48,
+          "encoder": "libmp3lame",
+          "id": "MP3_48",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "cutoff_hz": 5000,
+          "family": "bandwidth",
+          "id": "bandwidth_5k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "cutoff_hz": 3400,
+        "family": "bandwidth",
+        "id": "bandwidth_3p4k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 48,
+        "encoder": "libmp3lame",
+        "id": "MP3_48",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 48,
+          "encoder": "libmp3lame",
+          "id": "MP3_48",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "cutoff_hz": 3400,
+          "family": "bandwidth",
+          "id": "bandwidth_3p4k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_30db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 30
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 48,
+        "encoder": "libmp3lame",
+        "id": "MP3_48",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 48,
+          "encoder": "libmp3lame",
+          "id": "MP3_48",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "family": "noise",
+          "id": "noise_30db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 30
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_20db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 20
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 48,
+        "encoder": "libmp3lame",
+        "id": "MP3_48",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 48,
+          "encoder": "libmp3lame",
+          "id": "MP3_48",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "family": "noise",
+          "id": "noise_20db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 20
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 64,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_64k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 48,
+        "encoder": "libmp3lame",
+        "id": "MP3_48",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 48,
+          "encoder": "libmp3lame",
+          "id": "MP3_48",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "bitrate_kbps": 64,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_64k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 32,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_32k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 48,
+        "encoder": "libmp3lame",
+        "id": "MP3_48",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 48,
+          "encoder": "libmp3lame",
+          "id": "MP3_48",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_32k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_train"
+    },
+    {
+      "P": {
+        "id": "original",
+        "operation": "identity"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "id": "original",
+          "operation": "identity"
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "cutoff_hz": 5000,
+        "family": "bandwidth",
+        "id": "bandwidth_5k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "cutoff_hz": 5000,
+          "family": "bandwidth",
+          "id": "bandwidth_5k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "cutoff_hz": 3400,
+        "family": "bandwidth",
+        "id": "bandwidth_3p4k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "cutoff_hz": 3400,
+          "family": "bandwidth",
+          "id": "bandwidth_3p4k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_30db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 30
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "family": "noise",
+          "id": "noise_30db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 30
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_20db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 20
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "family": "noise",
+          "id": "noise_20db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 20
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 64,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_64k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "bitrate_kbps": 64,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_64k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 32,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_32k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "id": "identity",
+        "operation": "identity"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "id": "identity",
+          "operation": "identity"
+        },
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_32k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "id": "original",
+        "operation": "identity"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 64,
+        "encoder": "aac",
+        "id": "AAC_64",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 64,
+          "encoder": "aac",
+          "id": "AAC_64",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "id": "original",
+          "operation": "identity"
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "cutoff_hz": 5000,
+        "family": "bandwidth",
+        "id": "bandwidth_5k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 64,
+        "encoder": "aac",
+        "id": "AAC_64",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 64,
+          "encoder": "aac",
+          "id": "AAC_64",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "cutoff_hz": 5000,
+          "family": "bandwidth",
+          "id": "bandwidth_5k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "cutoff_hz": 3400,
+        "family": "bandwidth",
+        "id": "bandwidth_3p4k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 64,
+        "encoder": "aac",
+        "id": "AAC_64",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 64,
+          "encoder": "aac",
+          "id": "AAC_64",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "cutoff_hz": 3400,
+          "family": "bandwidth",
+          "id": "bandwidth_3p4k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_30db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 30
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 64,
+        "encoder": "aac",
+        "id": "AAC_64",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 64,
+          "encoder": "aac",
+          "id": "AAC_64",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "family": "noise",
+          "id": "noise_30db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 30
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_20db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 20
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 64,
+        "encoder": "aac",
+        "id": "AAC_64",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 64,
+          "encoder": "aac",
+          "id": "AAC_64",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "family": "noise",
+          "id": "noise_20db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 20
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 64,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_64k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 64,
+        "encoder": "aac",
+        "id": "AAC_64",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 64,
+          "encoder": "aac",
+          "id": "AAC_64",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "bitrate_kbps": 64,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_64k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 32,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_32k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 64,
+        "encoder": "aac",
+        "id": "AAC_64",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 64,
+          "encoder": "aac",
+          "id": "AAC_64",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_32k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "id": "original",
+        "operation": "identity"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 32,
+        "encoder": "libopus",
+        "id": "Opus_32",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libopus",
+          "id": "Opus_32",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "id": "original",
+          "operation": "identity"
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "cutoff_hz": 5000,
+        "family": "bandwidth",
+        "id": "bandwidth_5k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 32,
+        "encoder": "libopus",
+        "id": "Opus_32",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libopus",
+          "id": "Opus_32",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "cutoff_hz": 5000,
+          "family": "bandwidth",
+          "id": "bandwidth_5k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "cutoff_hz": 3400,
+        "family": "bandwidth",
+        "id": "bandwidth_3p4k",
+        "operation": "lowpass",
+        "order": 6
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 32,
+        "encoder": "libopus",
+        "id": "Opus_32",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libopus",
+          "id": "Opus_32",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "cutoff_hz": 3400,
+          "family": "bandwidth",
+          "id": "bandwidth_3p4k",
+          "operation": "lowpass",
+          "order": 6
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_30db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 30
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 32,
+        "encoder": "libopus",
+        "id": "Opus_32",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libopus",
+          "id": "Opus_32",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "family": "noise",
+          "id": "noise_30db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 30
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "family": "noise",
+        "id": "noise_20db",
+        "operation": "additive_white_noise",
+        "seed_rule": "artifact_family_hash_shared_direction",
+        "snr_db": 20
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 32,
+        "encoder": "libopus",
+        "id": "Opus_32",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libopus",
+          "id": "Opus_32",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "family": "noise",
+          "id": "noise_20db",
+          "operation": "additive_white_noise",
+          "seed_rule": "artifact_family_hash_shared_direction",
+          "snr_db": 20
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 64,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_64k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 32,
+        "encoder": "libopus",
+        "id": "Opus_32",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libopus",
+          "id": "Opus_32",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "bitrate_kbps": 64,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_64k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    },
+    {
+      "P": {
+        "bitrate_kbps": 32,
+        "encoder": "libmp3lame",
+        "family": "lossy_coding",
+        "id": "mp3_32k",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "P_parameters_forward_input": true,
+      "T": {
+        "bitrate_kbps": 32,
+        "encoder": "libopus",
+        "id": "Opus_32",
+        "operation": "ffmpeg_roundtrip"
+      },
+      "history_truth_forward_input": false,
+      "label_assignment": "same hash schedule, label independent",
+      "ordered_DAG": [
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libopus",
+          "id": "Opus_32",
+          "operation": "ffmpeg_roundtrip"
+        },
+        {
+          "bitrate_kbps": 32,
+          "encoder": "libmp3lame",
+          "family": "lossy_coding",
+          "id": "mp3_32k",
+          "operation": "ffmpeg_roundtrip"
+        }
+      ],
+      "phase": "proposed_fusion_val_and_confirmation"
+    }
+  ]
+}

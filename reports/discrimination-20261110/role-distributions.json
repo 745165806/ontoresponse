@@ -1,0 +1,271 @@
+{
+  "calibration": {
+    "attack": {
+      "-": {
+        "0": 8
+      },
+      "A01": {
+        "1": 2
+      },
+      "A02": {
+        "1": 2
+      },
+      "A03": {
+        "1": 1
+      },
+      "A04": {
+        "1": 3
+      }
+    },
+    "groups_per_label": {
+      "0": 3,
+      "1": 1
+    },
+    "labels": {
+      "0": 8,
+      "1": 8
+    },
+    "n": 16,
+    "pure_label_speakers": [
+      "LA_0099",
+      "LA_0105"
+    ],
+    "source_group": {
+      "LA_0069": {
+        "0": 3,
+        "1": 8
+      },
+      "LA_0099": {
+        "0": 3
+      },
+      "LA_0105": {
+        "0": 2
+      }
+    },
+    "source_mapping": "UNKNOWN cross-speaker recording-level source links",
+    "speaker_id": {
+      "LA_0069": {
+        "0": 3,
+        "1": 8
+      },
+      "LA_0099": {
+        "0": 3
+      },
+      "LA_0105": {
+        "0": 2
+      }
+    },
+    "speaker_only_label_majority_accuracy": 0.8125
+  },
+  "fusion_train": {
+    "attack": {
+      "-": {
+        "0": 32
+      },
+      "A01": {
+        "1": 9
+      },
+      "A02": {
+        "1": 6
+      },
+      "A03": {
+        "1": 3
+      },
+      "A04": {
+        "1": 3
+      },
+      "A05": {
+        "1": 3
+      },
+      "A06": {
+        "1": 8
+      }
+    },
+    "groups_per_label": {
+      "0": 6,
+      "1": 5
+    },
+    "labels": {
+      "0": 32,
+      "1": 32
+    },
+    "n": 64,
+    "pure_label_speakers": [
+      "LA_0106"
+    ],
+    "source_group": {
+      "LA_0070": {
+        "0": 6,
+        "1": 7
+      },
+      "LA_0072": {
+        "0": 6,
+        "1": 7
+      },
+      "LA_0073": {
+        "0": 5,
+        "1": 6
+      },
+      "LA_0074": {
+        "0": 5,
+        "1": 6
+      },
+      "LA_0078": {
+        "0": 5,
+        "1": 6
+      },
+      "LA_0106": {
+        "0": 5
+      }
+    },
+    "source_mapping": "UNKNOWN cross-speaker recording-level source links",
+    "speaker_id": {
+      "LA_0070": {
+        "0": 6,
+        "1": 7
+      },
+      "LA_0072": {
+        "0": 6,
+        "1": 7
+      },
+      "LA_0073": {
+        "0": 5,
+        "1": 6
+      },
+      "LA_0074": {
+        "0": 5,
+        "1": 6
+      },
+      "LA_0078": {
+        "0": 5,
+        "1": 6
+      },
+      "LA_0106": {
+        "0": 5
+      }
+    },
+    "speaker_only_label_majority_accuracy": 0.578125
+  },
+  "fusion_val": {
+    "attack": {
+      "-": {
+        "0": 12
+      },
+      "A03": {
+        "1": 3
+      },
+      "A04": {
+        "1": 1
+      },
+      "A05": {
+        "1": 4
+      },
+      "A06": {
+        "1": 4
+      }
+    },
+    "groups_per_label": {
+      "0": 3,
+      "1": 1
+    },
+    "labels": {
+      "0": 12,
+      "1": 12
+    },
+    "n": 24,
+    "pure_label_speakers": [
+      "LA_0100",
+      "LA_0108"
+    ],
+    "source_group": {
+      "LA_0076": {
+        "0": 4,
+        "1": 12
+      },
+      "LA_0100": {
+        "0": 4
+      },
+      "LA_0108": {
+        "0": 4
+      }
+    },
+    "source_mapping": "UNKNOWN cross-speaker recording-level source links",
+    "speaker_id": {
+      "LA_0076": {
+        "0": 4,
+        "1": 12
+      },
+      "LA_0100": {
+        "0": 4
+      },
+      "LA_0108": {
+        "0": 4
+      }
+    },
+    "speaker_only_label_majority_accuracy": 0.8333333333333334
+  },
+  "test": {
+    "attack": {
+      "-": {
+        "0": 12
+      },
+      "A01": {
+        "1": 4
+      },
+      "A02": {
+        "1": 1
+      },
+      "A03": {
+        "1": 2
+      },
+      "A04": {
+        "1": 1
+      },
+      "A05": {
+        "1": 3
+      },
+      "A06": {
+        "1": 1
+      }
+    },
+    "groups_per_label": {
+      "0": 3,
+      "1": 1
+    },
+    "labels": {
+      "0": 12,
+      "1": 12
+    },
+    "n": 24,
+    "pure_label_speakers": [
+      "group-b2550a49e2cc2ae02efd",
+      "group-7fc9f17a8f1a91e65ae5"
+    ],
+    "source_group": {
+      "group-e4f06542977dbbf417c8": {
+        "0": 4,
+        "1": 12
+      },
+      "group-b2550a49e2cc2ae02efd": {
+        "0": 4
+      },
+      "group-7fc9f17a8f1a91e65ae5": {
+        "0": 4
+      }
+    },
+    "source_mapping": "UNKNOWN cross-speaker recording-level source links",
+    "speaker_id": {
+      "group-e4f06542977dbbf417c8": {
+        "0": 4,
+        "1": 12
+      },
+      "group-b2550a49e2cc2ae02efd": {
+        "0": 4
+      },
+      "group-7fc9f17a8f1a91e65ae5": {
+        "0": 4
+      }
+    },
+    "speaker_only_label_majority_accuracy": 0.8333333333333334
+  }
+}

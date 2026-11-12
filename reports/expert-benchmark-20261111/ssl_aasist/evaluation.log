@@ -1,0 +1,302 @@
+[2026-11-11 11:33:31,776] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-11-11 11:33:33,853] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+{"expert": "ssl_aasist", "completed": 520, "requested": 71237, "elapsed_seconds": 30.208930152002722, "requests_per_second": 17.213453021457838, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 1040, "requested": 71237, "elapsed_seconds": 36.746010044938885, "requests_per_second": 28.302392524470605, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 1560, "requested": 71237, "elapsed_seconds": 43.42200963594951, "requests_per_second": 35.92648090401741, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 2080, "requested": 71237, "elapsed_seconds": 50.15773718198761, "requests_per_second": 41.469175382715605, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 2600, "requested": 71237, "elapsed_seconds": 56.85315271595027, "requests_per_second": 45.731852602618545, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 3120, "requested": 71237, "elapsed_seconds": 63.582729707006365, "requests_per_second": 49.06992849122988, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 3640, "requested": 71237, "elapsed_seconds": 70.3076708879089, "requests_per_second": 51.772444656902806, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 4160, "requested": 71237, "elapsed_seconds": 77.09151821001433, "requests_per_second": 53.96183778178088, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 4680, "requested": 71237, "elapsed_seconds": 83.90131735301111, "requests_per_second": 55.779815474280404, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 5200, "requested": 71237, "elapsed_seconds": 90.76735001790803, "requests_per_second": 57.28932263610275, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 5720, "requested": 71237, "elapsed_seconds": 97.5938332809601, "requests_per_second": 58.6102605841176, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 6240, "requested": 71237, "elapsed_seconds": 104.47452829696704, "requests_per_second": 59.72747713455004, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 6760, "requested": 71237, "elapsed_seconds": 111.37885997700505, "requests_per_second": 60.69374387020705, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 7280, "requested": 71237, "elapsed_seconds": 118.35062348190695, "requests_per_second": 61.51213898009538, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 7800, "requested": 71237, "elapsed_seconds": 125.23726974893361, "requests_per_second": 62.28177934281753, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 8320, "requested": 71237, "elapsed_seconds": 132.14258685696404, "requests_per_second": 62.9622909456576, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 8840, "requested": 71237, "elapsed_seconds": 139.0668164859526, "requests_per_second": 63.566566226048224, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 9360, "requested": 71237, "elapsed_seconds": 145.96393545600586, "requests_per_second": 64.12542913945441, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 9880, "requested": 71237, "elapsed_seconds": 152.90323422697838, "requests_per_second": 64.61603019680773, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 10400, "requested": 71237, "elapsed_seconds": 159.81484890100546, "requests_per_second": 65.07530477622952, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 10920, "requested": 71237, "elapsed_seconds": 166.7137111639604, "requests_per_second": 65.50151108603387, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 11440, "requested": 71237, "elapsed_seconds": 173.63445637898985, "requests_per_second": 65.88554045419447, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 11960, "requested": 71237, "elapsed_seconds": 180.55191790498793, "requests_per_second": 66.2413345633566, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 12480, "requested": 71237, "elapsed_seconds": 187.481276604929, "requests_per_second": 66.56664721938368, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 13000, "requested": 71237, "elapsed_seconds": 194.4281059129862, "requests_per_second": 66.86276111653314, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 13520, "requested": 71237, "elapsed_seconds": 201.37794262298848, "requests_per_second": 67.1374422833964, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 14040, "requested": 71237, "elapsed_seconds": 208.30126785696484, "requests_per_second": 67.40237418833624, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 14560, "requested": 71237, "elapsed_seconds": 215.21216388291214, "requests_per_second": 67.65416850657884, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 15080, "requested": 71237, "elapsed_seconds": 222.0880435789004, "requests_per_second": 67.9009988875992, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 15600, "requested": 71237, "elapsed_seconds": 228.98283965396695, "requests_per_second": 68.12737593600605, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 16120, "requested": 71237, "elapsed_seconds": 235.89364842697978, "requests_per_second": 68.33587978096791, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 16640, "requested": 71237, "elapsed_seconds": 242.83338490501046, "requests_per_second": 68.52435058099238, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 17160, "requested": 71237, "elapsed_seconds": 249.78512600099202, "requests_per_second": 68.69904655544562, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 17680, "requested": 71237, "elapsed_seconds": 256.6994140339084, "requests_per_second": 68.8743294040577, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 18200, "requested": 71237, "elapsed_seconds": 263.58801409299485, "requests_per_second": 69.04714564744576, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 18720, "requested": 71237, "elapsed_seconds": 270.46499604091514, "requests_per_second": 69.21413223161822, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 19240, "requested": 71237, "elapsed_seconds": 277.3491104339482, "requests_per_second": 69.37105357899492, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 19760, "requested": 71237, "elapsed_seconds": 284.2443914199248, "requests_per_second": 69.51764255150357, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 20280, "requested": 71237, "elapsed_seconds": 291.16203962499276, "requests_per_second": 69.65193686003842, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 20800, "requested": 71237, "elapsed_seconds": 298.0391865329584, "requests_per_second": 69.78948051081146, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 21320, "requested": 71237, "elapsed_seconds": 304.9206172119593, "requests_per_second": 69.91983748078222, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 21840, "requested": 71237, "elapsed_seconds": 311.8029081199784, "requests_per_second": 70.04424728327487, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 22360, "requested": 71237, "elapsed_seconds": 318.69160375895444, "requests_per_second": 70.16187353624856, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 22880, "requested": 71237, "elapsed_seconds": 325.5563879609108, "requests_per_second": 70.27968378475552, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 23400, "requested": 71237, "elapsed_seconds": 332.4375304529676, "requests_per_second": 70.38916444877925, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 23920, "requested": 71237, "elapsed_seconds": 339.2998739730101, "requests_per_second": 70.49811047646524, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 24440, "requested": 71237, "elapsed_seconds": 346.1670504959766, "requests_per_second": 70.60175127870542, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 24960, "requested": 71237, "elapsed_seconds": 353.09036060993094, "requests_per_second": 70.69012010660362, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 25480, "requested": 71237, "elapsed_seconds": 359.9685099279741, "requests_per_second": 70.7839694230428, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 26000, "requested": 71237, "elapsed_seconds": 366.8341973419301, "requests_per_second": 70.87670721103768, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 26520, "requested": 71237, "elapsed_seconds": 373.71198846492916, "requests_per_second": 70.96373897164597, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 27040, "requested": 71237, "elapsed_seconds": 380.59121793101076, "requests_per_second": 71.04735665472319, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 27560, "requested": 71237, "elapsed_seconds": 387.44441571098287, "requests_per_second": 71.13278416834531, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 28080, "requested": 71237, "elapsed_seconds": 394.4903287049383, "requests_per_second": 71.1804522361374, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 28600, "requested": 71237, "elapsed_seconds": 401.3816961469129, "requests_per_second": 71.25387199901584, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 29120, "requested": 71237, "elapsed_seconds": 408.27370303694624, "requests_per_second": 71.32470150144552, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 29640, "requested": 71237, "elapsed_seconds": 415.1505586350104, "requests_per_second": 71.39578493511969, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 30160, "requested": 71237, "elapsed_seconds": 422.0271064299159, "requests_per_second": 71.46460390929542, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 30680, "requested": 71237, "elapsed_seconds": 428.8820026399335, "requests_per_second": 71.53482732115783, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 31200, "requested": 71237, "elapsed_seconds": 435.74791708996054, "requests_per_second": 71.60103072519962, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 31720, "requested": 71237, "elapsed_seconds": 442.6039739929838, "requests_per_second": 71.66677631435552, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 32240, "requested": 71237, "elapsed_seconds": 449.46353549091145, "requests_per_second": 71.72995683573517, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 32760, "requested": 71237, "elapsed_seconds": 456.3275702019455, "requests_per_second": 71.79053412333212, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 33280, "requested": 71237, "elapsed_seconds": 463.2493957619881, "requests_per_second": 71.84035274403004, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 33800, "requested": 71237, "elapsed_seconds": 470.1329509089701, "requests_per_second": 71.89455649651869, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 34320, "requested": 71237, "elapsed_seconds": 477.0093143279664, "requests_per_second": 71.94828060821341, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 34840, "requested": 71237, "elapsed_seconds": 483.8998567049857, "requests_per_second": 71.99836808639633, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 35360, "requested": 71237, "elapsed_seconds": 490.75687473092694, "requests_per_second": 72.05197078367418, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 35880, "requested": 71237, "elapsed_seconds": 497.6332586259814, "requests_per_second": 72.10129021333606, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 36400, "requested": 71237, "elapsed_seconds": 504.51088652398903, "requests_per_second": 72.14908730868231, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 36920, "requested": 71237, "elapsed_seconds": 511.39381187199615, "requests_per_second": 72.19485090140516, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 37440, "requested": 71237, "elapsed_seconds": 518.2538137589581, "requests_per_second": 72.24259427720003, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 37960, "requested": 71237, "elapsed_seconds": 525.117110852967, "requests_per_second": 72.28863660210992, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 38480, "requested": 71237, "elapsed_seconds": 531.9842811099952, "requests_per_second": 72.33296427426532, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 39000, "requested": 71237, "elapsed_seconds": 538.8533785609761, "requests_per_second": 72.37590326361254, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 39520, "requested": 71237, "elapsed_seconds": 545.7115277959965, "requests_per_second": 72.41921415809594, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 40040, "requested": 71237, "elapsed_seconds": 552.5711401309818, "requests_per_second": 72.46125809340838, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 40560, "requested": 71237, "elapsed_seconds": 559.4308880979661, "requests_per_second": 72.50225338450964, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 41080, "requested": 71237, "elapsed_seconds": 566.2800517419819, "requests_per_second": 72.54361136972835, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 41600, "requested": 71237, "elapsed_seconds": 573.1490823399508, "requests_per_second": 72.58146489594459, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 42120, "requested": 71237, "elapsed_seconds": 580.0650509909028, "requests_per_second": 72.61254565853955, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 42640, "requested": 71237, "elapsed_seconds": 586.9158173839096, "requests_per_second": 72.65096413666527, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 43160, "requested": 71237, "elapsed_seconds": 593.77136607992, "requests_per_second": 72.68791064301809, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 43680, "requested": 71237, "elapsed_seconds": 600.6871992750093, "requests_per_second": 72.71671521004433, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 44200, "requested": 71237, "elapsed_seconds": 607.5531021449715, "requests_per_second": 72.75084242669739, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 44720, "requested": 71237, "elapsed_seconds": 614.4334163420135, "requests_per_second": 72.7824997967028, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 45240, "requested": 71237, "elapsed_seconds": 621.3029081559507, "requests_per_second": 72.81472435767915, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 45760, "requested": 71237, "elapsed_seconds": 628.1484322039178, "requests_per_second": 72.84902366061273, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 46280, "requested": 71237, "elapsed_seconds": 634.9829132829327, "requests_per_second": 72.88385093817284, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 46800, "requested": 71237, "elapsed_seconds": 641.9726881439565, "requests_per_second": 72.90029757388297, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 47320, "requested": 71237, "elapsed_seconds": 648.8297399949515, "requests_per_second": 72.93130552303012, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 47840, "requested": 71237, "elapsed_seconds": 655.7269524529111, "requests_per_second": 72.95719631630587, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 48360, "requested": 71237, "elapsed_seconds": 662.5857360219816, "requests_per_second": 72.9867809867788, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 48880, "requested": 71237, "elapsed_seconds": 669.441136439913, "requests_per_second": 73.0161284380338, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 49400, "requested": 71237, "elapsed_seconds": 676.2849161149934, "requests_per_second": 73.04613606316214, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 49920, "requested": 71237, "elapsed_seconds": 683.1363976380089, "requests_per_second": 73.07471856660227, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 50440, "requested": 71237, "elapsed_seconds": 689.9926083569881, "requests_per_second": 73.10223238493502, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 50960, "requested": 71237, "elapsed_seconds": 696.8537425330142, "requests_per_second": 73.12868811576443, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 51480, "requested": 71237, "elapsed_seconds": 703.7134728099918, "requests_per_second": 73.15477390881219, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 52000, "requested": 71237, "elapsed_seconds": 710.5871919019846, "requests_per_second": 73.17891539926975, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 52520, "requested": 71237, "elapsed_seconds": 717.4629521569004, "requests_per_second": 73.2023860494953, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 53040, "requested": 71237, "elapsed_seconds": 724.3245880230097, "requests_per_second": 73.2268390125603, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 53560, "requested": 71237, "elapsed_seconds": 731.1770628090017, "requests_per_second": 73.25175080607112, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 54080, "requested": 71237, "elapsed_seconds": 738.0399657719536, "requests_per_second": 73.27516463615216, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 54600, "requested": 71237, "elapsed_seconds": 744.8913508019177, "requests_per_second": 73.29928041347239, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 55120, "requested": 71237, "elapsed_seconds": 751.7361542349681, "requests_per_second": 73.32359856510412, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 55640, "requested": 71237, "elapsed_seconds": 758.5915825410048, "requests_per_second": 73.34645055462693, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 56160, "requested": 71237, "elapsed_seconds": 765.4740052279085, "requests_per_second": 73.36630586597019, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 56680, "requested": 71237, "elapsed_seconds": 772.3286164159654, "requests_per_second": 73.38844993602173, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 57200, "requested": 71237, "elapsed_seconds": 779.223849906004, "requests_per_second": 73.40637739322263, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 57720, "requested": 71237, "elapsed_seconds": 786.0679465469439, "requests_per_second": 73.428766881481, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 58240, "requested": 71237, "elapsed_seconds": 792.9099563759519, "requests_per_second": 73.4509631663472, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 58760, "requested": 71237, "elapsed_seconds": 799.7606002339162, "requests_per_second": 73.47198647046842, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 59280, "requested": 71237, "elapsed_seconds": 806.5879758689553, "requests_per_second": 73.4947727631773, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 59800, "requested": 71237, "elapsed_seconds": 813.410470971954, "requests_per_second": 73.5176176531687, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 60320, "requested": 71237, "elapsed_seconds": 820.2706319259014, "requests_per_second": 73.53670563381692, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 60840, "requested": 71237, "elapsed_seconds": 827.107321927906, "requests_per_second": 73.55756428100277, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 61360, "requested": 71237, "elapsed_seconds": 833.9379306340124, "requests_per_second": 73.57861747978083, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 61880, "requested": 71237, "elapsed_seconds": 840.7814970659092, "requests_per_second": 73.5981943179575, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 62400, "requested": 71237, "elapsed_seconds": 847.6308734219056, "requests_per_second": 73.61695043986511, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 62920, "requested": 71237, "elapsed_seconds": 854.4542288850062, "requests_per_second": 73.63764830575597, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 63440, "requested": 71237, "elapsed_seconds": 861.3042754979106, "requests_per_second": 73.65573561483372, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 63960, "requested": 71237, "elapsed_seconds": 868.1466569679324, "requests_per_second": 73.674187980387, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 64480, "requested": 71237, "elapsed_seconds": 874.9872664739378, "requests_per_second": 73.69250098900793, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 65000, "requested": 71237, "elapsed_seconds": 881.8482811959693, "requests_per_second": 73.70882427966691, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 65520, "requested": 71237, "elapsed_seconds": 888.6850193629507, "requests_per_second": 73.72690950385062, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 66040, "requested": 71237, "elapsed_seconds": 895.5391273819841, "requests_per_second": 73.74328823918738, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 66560, "requested": 71237, "elapsed_seconds": 902.3931085210061, "requests_per_second": 73.759428536738, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 67080, "requested": 71237, "elapsed_seconds": 909.2424619239755, "requests_per_second": 73.77570099185354, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 67600, "requested": 71237, "elapsed_seconds": 916.0992004799191, "requests_per_second": 73.7911352445087, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 68120, "requested": 71237, "elapsed_seconds": 922.9449869300006, "requests_per_second": 73.80721599300095, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 68640, "requested": 71237, "elapsed_seconds": 929.8112017529784, "requests_per_second": 73.82143801945236, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 69160, "requested": 71237, "elapsed_seconds": 936.661364955944, "requests_per_second": 73.83671686218524, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 69680, "requested": 71237, "elapsed_seconds": 943.5211411109194, "requests_per_second": 73.85102141745067, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 70200, "requested": 71237, "elapsed_seconds": 950.3932597399689, "requests_per_second": 73.86416021006607, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 70720, "requested": 71237, "elapsed_seconds": 957.2615072259214, "requests_per_second": 73.87740911565716, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{"expert": "ssl_aasist", "completed": 71237, "requested": 71237, "elapsed_seconds": 964.0649602389894, "requests_per_second": 73.89232358609996, "cuda_peak_allocated_bytes": 2136691200, "pid": 697792}
+{
+  "N_requested": 71237,
+  "N_scored": 71237,
+  "N_failed": 0,
+  "status": "COMPLETE",
+  "score_direction_chosen_on_eval": false,
+  "checkpoint_selected_on_eval": false,
+  "native_author_eer": {
+    "eer": 0.006372839317460978,
+    "eer_percent": 0.6372839317460978,
+    "eer_summary_threshold": 1.4603946208953857,
+    "threshold_is_deployment_rule": false,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+  },
+  "native_grouped_roc": {
+    "n": 71237,
+    "bonafide": 7355,
+    "spoof": 63882,
+    "eer": 0.0063554678939293785,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "auroc": 0.9995209194654888,
+    "spoof_auprc": 0.9999445030482866
+  },
+  "margin_author_eer": {
+    "eer": 0.006119473423243752,
+    "eer_percent": 0.6119473423243752,
+    "eer_summary_threshold": 4.39382791519165,
+    "threshold_is_deployment_rule": false,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+  },
+  "margin_grouped_roc": {
+    "n": 71237,
+    "bonafide": 7355,
+    "spoof": 63882,
+    "eer": 0.006118286879673691,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "auroc": 0.9996945719792554,
+    "spoof_auprc": 0.9999641838565171
+  },
+  "per_attack_native_author_eer": {
+    "A07": {
+      "eer": 0.00040744309948932656,
+      "eer_percent": 0.040744309948932654,
+      "eer_summary_threshold": -1.6352016925811768,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A08": {
+      "eer": 0.004481874094382592,
+      "eer_percent": 0.44818740943825924,
+      "eer_summary_threshold": 1.12331223487854,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A09": {
+      "eer": 0.0017995034650371156,
+      "eer_percent": 0.17995034650371156,
+      "eer_summary_threshold": -1.0585780143737793,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A10": {
+      "eer": 0.015075394681105081,
+      "eer_percent": 1.507539468110508,
+      "eer_summary_threshold": 1.5719518661499023,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A11": {
+      "eer": 0.009540922355334321,
+      "eer_percent": 0.9540922355334321,
+      "eer_summary_threshold": 1.5387187004089355,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A12": {
+      "eer": 0.006281377559419708,
+      "eer_percent": 0.6281377559419707,
+      "eer_summary_threshold": 1.4389355182647705,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A13": {
+      "eer": 0.00016973106707980943,
+      "eer_percent": 0.016973106707980943,
+      "eer_summary_threshold": -2.6293022632598877,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A14": {
+      "eer": 0.004481874094382592,
+      "eer_percent": 0.44818740943825924,
+      "eer_summary_threshold": 1.1875178813934326,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A15": {
+      "eer": 0.01181584988519047,
+      "eer_percent": 1.181584988519047,
+      "eer_summary_threshold": 1.5546412467956543,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A16": {
+      "eer": 0.0032595447959146125,
+      "eer_percent": 0.32595447959146123,
+      "eer_summary_threshold": 0.09308493137359619,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A17": {
+      "eer": 0.0030218327635050954,
+      "eer_percent": 0.30218327635050957,
+      "eer_summary_threshold": -0.06646867096424103,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A18": {
+      "eer": 0.0034972568283241296,
+      "eer_percent": 0.34972568283241295,
+      "eer_summary_threshold": 0.146966814994812,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A19": {
+      "eer": 0.003904699927813456,
+      "eer_percent": 0.3904699927813456,
+      "eer_summary_threshold": 0.40553832054138184,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    }
+  },
+  "expert": "ssl_aasist",
+  "elapsed_seconds": 964.948752046912,
+  "measurement_lock_sha256": "32642f72af17a11df20c51bfb473d9357db0350a6dd14580b2488f42ad0b87fc",
+  "predictions_sha256": "40a28d57674ac2bd8da3d6ec6e4a8ce8433077aec23d3e80723dd653cccb8b1a",
+  "cuda_peak_allocated_bytes": 2136691200,
+  "provenance": {
+    "training": "ASVspoof2019_LA_official_train",
+    "selection": "ASVspoof2019_LA_official_dev",
+    "augmentation": "none_project_freq_aug_false",
+    "generic_ssl_pretraining": "unknown_open_data_overlap",
+    "origin": "local_TTA_trained_in_project",
+    "independent_holdout": false
+  }
+}

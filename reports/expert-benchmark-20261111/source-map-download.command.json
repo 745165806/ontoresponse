@@ -1,0 +1,18 @@
+{
+  "bytes": 16862221,
+  "command": [
+    "curl",
+    "-L",
+    "--fail",
+    "--max-time",
+    "30",
+    "--max-filesize",
+    "134217728",
+    "-o",
+    "reports/expert-benchmark-20261111/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz",
+    "https://www.asvspoof.org/asvspoof2019/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz"
+  ],
+  "evidence": "actual exec session 75895 exited 0; output showed complete 16.0MiB in about23s; no unobserved timestamps invented",
+  "exit_code": 0,
+  "sha256": "a4188df4be1157cd242c6f176d416e59b53086e168de9926b629d4e1d9edfa92"
+}

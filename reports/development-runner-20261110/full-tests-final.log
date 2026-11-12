@@ -1,0 +1,66 @@
+.......................................................F................ [ 45%]
+........................................................................ [ 91%]
+..............                                                           [100%]
+=================================== FAILURES ===================================
+____ test_preregister_freezes_before_outputs_and_rejects_config_data_drift _____
+
+tmp_path = PosixPath('${EXTERNAL_PATH}')
+
+    def test_preregister_freezes_before_outputs_and_rejects_config_data_drift(tmp_path):
+        cfg,root=prereg_fixture(tmp_path)
+        lock=freeze_development(cfg);assert lock['data']['source_mapping_complete'] and not lock['test_used']
+        require_preregistration(cfg)
+        changed=copy.deepcopy(cfg);changed['pilot']['validation_eer_conditions']=['identity']
+        with pytest.raises(Blocked,match='drift'):require_preregistration(changed)
+        with pytest.raises(ValueError,match='exists'):freeze_development(cfg)
+        (root/'audit_manifest.jsonl').write_text('changed')
+>       with pytest.raises(Blocked,match='drift'):require_preregistration(cfg)
+
+tests/test_development_runner.py:151: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+ontoresponse/preregistration.py:132: in require_preregistration
+    expected=evidence_paths(cfg)
+ontoresponse/preregistration.py:23: in evidence_paths
+    for row in read_jsonl(paths['ledger']):paths['current_audio:'+row['id']]=Path(row['audio'])
+ontoresponse/common.py:40: in read_jsonl
+    return [json.loads(line) for line in f if line.strip()]
+ontoresponse/common.py:40: in <listcomp>
+    return [json.loads(line) for line in f if line.strip()]
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/json/__init__.py:346: in loads
+    return _default_decoder.decode(s)
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/json/decoder.py:337: in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <json.decoder.JSONDecoder object at 0x7d3e60f93850>, s = 'changed'
+idx = 0
+
+    def raw_decode(self, s, idx=0):
+        """Decode a JSON document from ``s`` (a ``str`` beginning with
+        a JSON document) and return a 2-tuple of the Python
+        representation and the index in ``s`` where the document ended.
+    
+        This can be used to decode a JSON document from a string that may
+        have extraneous data at the end.
+    
+        """
+        try:
+            obj, end = self.scan_once(s, idx)
+        except StopIteration as err:
+>           raise JSONDecodeError("Expecting value", s, err.value) from None
+E           json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/json/decoder.py:355: JSONDecodeError
+=============================== warnings summary ===============================
+tests/test_ontology_validation.py: 10327 warnings
+  ${EXTERNAL_PATH} DeprecationWarning: Dataset.default_context is deprecated, use Dataset.default_graph instead.
+    if context == self.default_context:
+
+tests/test_ontology_validation.py: 78 warnings
+  ${EXTERNAL_PATH} DeprecationWarning: Dataset.identifier is deprecated and will be removed in future versions.
+    return hash(self.identifier)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_development_runner.py::test_preregister_freezes_before_outputs_and_rejects_config_data_drift
+1 failed, 157 passed, 10405 warnings in 33.67s

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "scripts/audit_split_feasibility.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T13:04:54.139012+00:00",
+  "elapsed_seconds": 1.481294870376587,
+  "log": "reports/connected-split-20261110/optimistic-feasibility-final.log",
+  "cwd": "${PROJECT_ROOT}"
+}

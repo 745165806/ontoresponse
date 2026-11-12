@@ -1,0 +1,12 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "scripts.audit_codecfake_candidates"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-11T03:41:11.238078+00:00",
+  "elapsed_seconds": 23.16443920135498,
+  "log": "reports/expert-benchmark-20261111/codecfake-candidate-audit.log",
+  "cwd": "${PROJECT_ROOT}"
+}

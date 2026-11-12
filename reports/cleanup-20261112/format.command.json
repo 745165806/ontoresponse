@@ -1,0 +1,19 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "ruff",
+    "format",
+    "--no-cache",
+    "--check",
+    "ontoresponse",
+    "reference",
+    "scripts",
+    "tests"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T10:43:51.254264+00:00",
+  "elapsed_seconds": 0.04154062271118164,
+  "log": "reports/cleanup-20261112/format.log",
+  "cwd": "${PROJECT_ROOT}"
+}

@@ -1,0 +1,25 @@
+
+==================================== ERRORS ====================================
+______________ ERROR collecting tests/test_ontology_validation.py ______________
+ImportError while importing test module '${PROJECT_ROOT}/tests/test_ontology_validation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/test_ontology_validation.py:4: in <module>
+    from rdflib import Graph,Namespace,Literal,RDF
+E   ModuleNotFoundError: No module named 'rdflib'
+___________________ ERROR collecting tests/test_registry.py ____________________
+ImportError while importing test module '${PROJECT_ROOT}/tests/test_registry.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/test_registry.py:2: in <module>
+    from rdflib import Graph, Namespace
+E   ModuleNotFoundError: No module named 'rdflib'
+=========================== short test summary info ============================
+ERROR tests/test_ontology_validation.py
+ERROR tests/test_registry.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
+2 errors in 1.85s

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "protected_evidence_files": 5792,
+  "changed_protected_files": [],
+  "measurement_and_budget_configs_unchanged": true,
+  "main_CLI_help_identical": true,
+  "data_entrypoints_import_safe": true,
+  "active_document_links_valid": true,
+  "historical_docs_preserved": true
+}

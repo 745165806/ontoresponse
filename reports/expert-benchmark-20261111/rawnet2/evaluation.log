@@ -1,0 +1,300 @@
+{"expert": "rawnet2", "completed": 512, "requested": 71237, "elapsed_seconds": 11.190594566054642, "requests_per_second": 45.752707506095526, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 1024, "requested": 71237, "elapsed_seconds": 14.504590025986545, "requests_per_second": 70.59834150192408, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 1536, "requested": 71237, "elapsed_seconds": 18.090467622037977, "requests_per_second": 84.90659457187444, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 2048, "requested": 71237, "elapsed_seconds": 21.974936557002366, "requests_per_second": 93.1970836269559, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 2560, "requested": 71237, "elapsed_seconds": 25.421208280022256, "requests_per_second": 100.70331715946897, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 3072, "requested": 71237, "elapsed_seconds": 28.86343193007633, "requests_per_second": 106.43224989468104, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 3584, "requested": 71237, "elapsed_seconds": 32.59001556108706, "requests_per_second": 109.97233165728669, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 4096, "requested": 71237, "elapsed_seconds": 36.048761771060526, "requests_per_second": 113.62387496172518, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 4608, "requested": 71237, "elapsed_seconds": 39.8088953869883, "requests_per_second": 115.75302341863382, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 5120, "requested": 71237, "elapsed_seconds": 43.34097306604963, "requests_per_second": 118.13301912251389, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 5632, "requested": 71237, "elapsed_seconds": 46.89403878804296, "requests_per_second": 120.10055319517599, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 6144, "requested": 71237, "elapsed_seconds": 50.250961724086665, "requests_per_second": 122.26631668732844, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 6656, "requested": 71237, "elapsed_seconds": 54.020258589065634, "requests_per_second": 123.2130347733518, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 7168, "requested": 71237, "elapsed_seconds": 57.52715624100529, "requests_per_second": 124.60202221660765, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 7680, "requested": 71237, "elapsed_seconds": 61.46223687008023, "requests_per_second": 124.95477534008558, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 8192, "requested": 71237, "elapsed_seconds": 65.15486924198922, "requests_per_second": 125.73120160174683, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 8704, "requested": 71237, "elapsed_seconds": 68.8499560150085, "requests_per_second": 126.41983385004092, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 9216, "requested": 71237, "elapsed_seconds": 72.5518761370331, "requests_per_second": 127.0263498437061, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 9728, "requested": 71237, "elapsed_seconds": 76.3551652149763, "requests_per_second": 127.40460940148618, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 10240, "requested": 71237, "elapsed_seconds": 79.42819261504337, "requests_per_second": 128.9214781661869, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 10752, "requested": 71237, "elapsed_seconds": 83.20048941997811, "requests_per_second": 129.23000904148802, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 11264, "requested": 71237, "elapsed_seconds": 86.78772564104293, "requests_per_second": 129.78793852241617, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 11776, "requested": 71237, "elapsed_seconds": 90.43354857701343, "requests_per_second": 130.2171614992143, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 12288, "requested": 71237, "elapsed_seconds": 93.97538563597482, "requests_per_second": 130.75764378982254, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 12800, "requested": 71237, "elapsed_seconds": 97.46119964600075, "requests_per_second": 131.3343160816022, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 13312, "requested": 71237, "elapsed_seconds": 101.0667597950669, "requests_per_second": 131.71491820844705, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 13824, "requested": 71237, "elapsed_seconds": 104.46915983303916, "requests_per_second": 132.32613358902555, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 14336, "requested": 71237, "elapsed_seconds": 108.53683353506494, "requests_per_second": 132.08419237114077, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 14848, "requested": 71237, "elapsed_seconds": 112.03093808307312, "requests_per_second": 132.53481809631833, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 15360, "requested": 71237, "elapsed_seconds": 115.52673560602125, "requests_per_second": 132.95623666180555, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 15872, "requested": 71237, "elapsed_seconds": 119.57393845007755, "requests_per_second": 132.7379544885243, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 16384, "requested": 71237, "elapsed_seconds": 122.93101340008434, "requests_per_second": 133.27800322183595, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 16896, "requested": 71237, "elapsed_seconds": 127.07264970603865, "requests_per_second": 132.96330909197277, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 17408, "requested": 71237, "elapsed_seconds": 130.15865821600892, "requests_per_second": 133.7444641685688, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 17920, "requested": 71237, "elapsed_seconds": 134.18107304908335, "requests_per_second": 133.55087713037497, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 18432, "requested": 71237, "elapsed_seconds": 137.46567127504386, "requests_per_second": 134.0843850616414, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 18944, "requested": 71237, "elapsed_seconds": 141.44081350206397, "requests_per_second": 133.93588124211092, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 19456, "requested": 71237, "elapsed_seconds": 145.18485989107285, "requests_per_second": 134.00846351745741, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 19968, "requested": 71237, "elapsed_seconds": 148.54618286003824, "requests_per_second": 134.4228415402236, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 20480, "requested": 71237, "elapsed_seconds": 152.36417036305647, "requests_per_second": 134.41480337010884, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 20992, "requested": 71237, "elapsed_seconds": 155.34963043499738, "requests_per_second": 135.1274537391554, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 21504, "requested": 71237, "elapsed_seconds": 157.94326183898374, "requests_per_second": 136.15015765549018, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 22016, "requested": 71237, "elapsed_seconds": 158.51004616601858, "requests_per_second": 138.89340475581665, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 22528, "requested": 71237, "elapsed_seconds": 159.13460384006612, "requests_per_second": 141.56569002830554, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 23040, "requested": 71237, "elapsed_seconds": 159.84735250705853, "requests_per_second": 144.13751393838444, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 23552, "requested": 71237, "elapsed_seconds": 160.41693797998596, "requests_per_second": 146.81741402481083, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 24064, "requested": 71237, "elapsed_seconds": 164.87014933803584, "requests_per_second": 145.9572887913215, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 24576, "requested": 71237, "elapsed_seconds": 169.06624618708156, "requests_per_second": 145.3631375526327, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 25088, "requested": 71237, "elapsed_seconds": 173.28682037605904, "requests_per_second": 144.77731165910473, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 25600, "requested": 71237, "elapsed_seconds": 177.54093955399003, "requests_per_second": 144.1920948729409, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 26112, "requested": 71237, "elapsed_seconds": 181.67848386708647, "requests_per_second": 143.72643058328904, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 26624, "requested": 71237, "elapsed_seconds": 185.0061940670712, "requests_per_second": 143.90869524264616, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 27136, "requested": 71237, "elapsed_seconds": 188.55144410103094, "requests_per_second": 143.9182825110573, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 27648, "requested": 71237, "elapsed_seconds": 192.06569235597271, "requests_per_second": 143.95074758462047, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 28160, "requested": 71237, "elapsed_seconds": 195.94991803599987, "requests_per_second": 143.7101902478288, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 28672, "requested": 71237, "elapsed_seconds": 199.1103998409817, "requests_per_second": 144.00051440255615, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 29184, "requested": 71237, "elapsed_seconds": 201.84724757808726, "requests_per_second": 144.584582401649, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 29696, "requested": 71237, "elapsed_seconds": 202.3936314950697, "requests_per_second": 146.7239842510726, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 30208, "requested": 71237, "elapsed_seconds": 202.99264177808072, "requests_per_second": 148.81327586752892, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 30720, "requested": 71237, "elapsed_seconds": 203.61198749300092, "requests_per_second": 150.87520326403174, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 31232, "requested": 71237, "elapsed_seconds": 204.21907548303716, "requests_per_second": 152.93380369158606, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 31744, "requested": 71237, "elapsed_seconds": 204.8663982549915, "requests_per_second": 154.94976370155698, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 32256, "requested": 71237, "elapsed_seconds": 205.47536046605092, "requests_per_second": 156.98232589463888, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 32768, "requested": 71237, "elapsed_seconds": 206.05521909997333, "requests_per_second": 159.02533380676812, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 33280, "requested": 71237, "elapsed_seconds": 206.65185558702797, "requests_per_second": 161.0437995122898, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 33792, "requested": 71237, "elapsed_seconds": 207.2456252219854, "requests_per_second": 163.05289901200393, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 34304, "requested": 71237, "elapsed_seconds": 207.84442275203764, "requests_per_second": 165.04652636710549, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 34816, "requested": 71237, "elapsed_seconds": 208.42607506306376, "requests_per_second": 167.0424393371399, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 35328, "requested": 71237, "elapsed_seconds": 209.02031475608237, "requests_per_second": 169.01706439982277, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 35840, "requested": 71237, "elapsed_seconds": 209.61218818905763, "requests_per_second": 170.9824238258248, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 36352, "requested": 71237, "elapsed_seconds": 210.21263913298026, "requests_per_second": 172.9296589868879, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 36864, "requested": 71237, "elapsed_seconds": 210.79055267805234, "requests_per_second": 174.88449805577224, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 37376, "requested": 71237, "elapsed_seconds": 211.3924842410488, "requests_per_second": 176.80855653023363, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 37888, "requested": 71237, "elapsed_seconds": 211.98302745900583, "requests_per_second": 178.73129020825473, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 38400, "requested": 71237, "elapsed_seconds": 212.5613775840029, "requests_per_second": 180.65370311605437, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 38912, "requested": 71237, "elapsed_seconds": 213.15966951102018, "requests_per_second": 182.54860353866462, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 39424, "requested": 71237, "elapsed_seconds": 213.80564540799242, "requests_per_second": 184.391763485803, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 39936, "requested": 71237, "elapsed_seconds": 214.4036605010042, "requests_per_second": 186.26547656266789, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 40448, "requested": 71237, "elapsed_seconds": 214.99678192904685, "requests_per_second": 188.13304849069152, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 40960, "requested": 71237, "elapsed_seconds": 215.60227906005457, "requests_per_second": 189.97943889355116, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 41472, "requested": 71237, "elapsed_seconds": 216.16873594897334, "requests_per_second": 191.85012956632855, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 41984, "requested": 71237, "elapsed_seconds": 216.785250757006, "requests_per_second": 193.66631195338908, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 42496, "requested": 71237, "elapsed_seconds": 217.37975459499285, "requests_per_second": 195.4919862669624, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 43008, "requested": 71237, "elapsed_seconds": 217.9529078620253, "requests_per_second": 197.32703005378636, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 43520, "requested": 71237, "elapsed_seconds": 218.61872589297127, "requests_per_second": 199.06803418708972, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 44032, "requested": 71237, "elapsed_seconds": 219.22419660107698, "requests_per_second": 200.8537409769834, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 44544, "requested": 71237, "elapsed_seconds": 219.81345367699396, "requests_per_second": 202.644557259245, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 45056, "requested": 71237, "elapsed_seconds": 220.39993972401135, "requests_per_second": 204.42836806770416, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 45568, "requested": 71237, "elapsed_seconds": 220.9943720420124, "requests_per_second": 206.19529619214575, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 46080, "requested": 71237, "elapsed_seconds": 221.60095444798935, "requests_per_second": 207.9413426480307, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 46592, "requested": 71237, "elapsed_seconds": 222.22668477101251, "requests_per_second": 209.6597897233155, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 47104, "requested": 71237, "elapsed_seconds": 222.82745089905802, "requests_per_second": 211.39226702071977, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 47616, "requested": 71237, "elapsed_seconds": 223.56913391302805, "requests_per_second": 212.9810997010141, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 48128, "requested": 71237, "elapsed_seconds": 224.1727801130619, "requests_per_second": 214.69154272756293, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 48640, "requested": 71237, "elapsed_seconds": 224.7787834390765, "requests_per_second": 216.39052963903626, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 49152, "requested": 71237, "elapsed_seconds": 225.3620817080373, "requests_per_second": 218.10235167989686, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 49664, "requested": 71237, "elapsed_seconds": 225.94637222902384, "requests_per_second": 219.80436999298027, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 50176, "requested": 71237, "elapsed_seconds": 226.53753560199402, "requests_per_second": 221.4908883274633, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 50688, "requested": 71237, "elapsed_seconds": 227.13560853304807, "requests_per_second": 223.16183854820338, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 51200, "requested": 71237, "elapsed_seconds": 227.74376459699124, "requests_per_second": 224.81405842483562, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 51712, "requested": 71237, "elapsed_seconds": 228.33644474798348, "requests_per_second": 226.47282634655582, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 52224, "requested": 71237, "elapsed_seconds": 228.92861356399953, "requests_per_second": 228.12351495502418, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 52736, "requested": 71237, "elapsed_seconds": 229.55543893005233, "requests_per_second": 229.73099764396846, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 53248, "requested": 71237, "elapsed_seconds": 230.16278203902766, "requests_per_second": 231.34930647028318, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 53760, "requested": 71237, "elapsed_seconds": 230.7575341219781, "requests_per_second": 232.97180828593247, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 54272, "requested": 71237, "elapsed_seconds": 231.35593905404676, "requests_per_second": 234.58226411607956, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 54784, "requested": 71237, "elapsed_seconds": 231.96042751707137, "requests_per_second": 236.17821620012367, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 55296, "requested": 71237, "elapsed_seconds": 232.5608509160811, "requests_per_second": 237.77002785371386, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 55808, "requested": 71237, "elapsed_seconds": 233.1451251669787, "requests_per_second": 239.3702204154184, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 56320, "requested": 71237, "elapsed_seconds": 233.74538456497248, "requests_per_second": 240.94593399060312, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 56832, "requested": 71237, "elapsed_seconds": 234.33077008405235, "requests_per_second": 242.52896868650615, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 57344, "requested": 71237, "elapsed_seconds": 234.9398585810559, "requests_per_second": 244.0794863261396, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 57856, "requested": 71237, "elapsed_seconds": 235.54874915408436, "requests_per_second": 245.62219161755542, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 58368, "requested": 71237, "elapsed_seconds": 236.15534488100093, "requests_per_second": 247.1593434796563, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 58880, "requested": 71237, "elapsed_seconds": 236.74554504000116, "requests_per_second": 248.70584149767836, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 59392, "requested": 71237, "elapsed_seconds": 237.34910605102777, "requests_per_second": 250.23056116854002, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 59904, "requested": 71237, "elapsed_seconds": 237.94313794607297, "requests_per_second": 251.75762796562154, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 60416, "requested": 71237, "elapsed_seconds": 238.55284750903957, "requests_per_second": 253.2604436746899, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 60928, "requested": 71237, "elapsed_seconds": 239.28999752004165, "requests_per_second": 254.6199198940482, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 61440, "requested": 71237, "elapsed_seconds": 239.89205010107253, "requests_per_second": 256.11519837407616, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 61952, "requested": 71237, "elapsed_seconds": 240.49999354302417, "requests_per_second": 257.59668051266334, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 62464, "requested": 71237, "elapsed_seconds": 241.07776461704634, "requests_per_second": 259.1031159560671, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 62976, "requested": 71237, "elapsed_seconds": 241.70186587702483, "requests_per_second": 260.5523948749385, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 63488, "requested": 71237, "elapsed_seconds": 242.31389062397648, "requests_per_second": 262.0072660156363, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 64000, "requested": 71237, "elapsed_seconds": 242.91506735398434, "requests_per_second": 263.4665716587146, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 64512, "requested": 71237, "elapsed_seconds": 243.5189788020216, "requests_per_second": 264.915696991517, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 65024, "requested": 71237, "elapsed_seconds": 244.2223311989801, "requests_per_second": 266.24919875579155, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 65536, "requested": 71237, "elapsed_seconds": 244.8325954549946, "requests_per_second": 267.67677677152636, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 66048, "requested": 71237, "elapsed_seconds": 245.4764460080769, "requests_per_second": 269.06043766751793, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 66560, "requested": 71237, "elapsed_seconds": 246.08765711903106, "requests_per_second": 270.47272821084783, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 67072, "requested": 71237, "elapsed_seconds": 246.72863081807736, "requests_per_second": 271.84522435685545, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 67584, "requested": 71237, "elapsed_seconds": 247.37923049903475, "requests_per_second": 273.19997666604314, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 68096, "requested": 71237, "elapsed_seconds": 248.03982741106302, "requests_per_second": 274.53655612793256, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 68608, "requested": 71237, "elapsed_seconds": 248.7048641250003, "requests_per_second": 275.8611104828142, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 69120, "requested": 71237, "elapsed_seconds": 249.3397097280249, "requests_per_second": 277.2121619753019, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 69632, "requested": 71237, "elapsed_seconds": 249.9791672200663, "requests_per_second": 278.55121198439815, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 70144, "requested": 71237, "elapsed_seconds": 250.7354670340428, "requests_per_second": 279.7530035528497, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 70656, "requested": 71237, "elapsed_seconds": 251.3763595999917, "requests_per_second": 281.07655036628324, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 71168, "requested": 71237, "elapsed_seconds": 252.05953241698444, "requests_per_second": 282.3459970649557, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{"expert": "rawnet2", "completed": 71237, "requested": 71237, "elapsed_seconds": 252.19718958402518, "requests_per_second": 282.46547916532506, "cuda_peak_allocated_bytes": 603583488, "pid": 697799}
+{
+  "N_requested": 71237,
+  "N_scored": 71237,
+  "N_failed": 0,
+  "status": "COMPLETE",
+  "score_direction_chosen_on_eval": false,
+  "checkpoint_selected_on_eval": false,
+  "native_author_eer": {
+    "eer": 0.050846752609028406,
+    "eer_percent": 5.0846752609028405,
+    "eer_summary_threshold": -2.6349854469299316,
+    "threshold_is_deployment_rule": false,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+  },
+  "native_grouped_roc": {
+    "n": 71237,
+    "bonafide": 7355,
+    "spoof": 63882,
+    "eer": 0.05084976206662135,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "auroc": 0.9872276640409255,
+    "spoof_auprc": 0.9984089428037994
+  },
+  "margin_author_eer": {
+    "eer": 0.050846752609028406,
+    "eer_percent": 5.0846752609028405,
+    "eer_summary_threshold": -2.5605635419487953,
+    "threshold_is_deployment_rule": false,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+  },
+  "margin_grouped_roc": {
+    "n": 71237,
+    "bonafide": 7355,
+    "spoof": 63882,
+    "eer": 0.05084976206662135,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "auroc": 0.9872276714900781,
+    "spoof_auprc": 0.998408966059003
+  },
+  "per_attack_native_author_eer": {
+    "A07": {
+      "eer": 0.010355808554312972,
+      "eer_percent": 1.035580855431297,
+      "eer_summary_threshold": -8.422429084777832,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A08": {
+      "eer": 0.03619445488922035,
+      "eer_percent": 3.619445488922035,
+      "eer_summary_threshold": -4.379730224609375,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A09": {
+      "eer": 0.008726036156355668,
+      "eer_percent": 0.8726036156355668,
+      "eer_summary_threshold": -8.727777481079102,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A10": {
+      "eer": 0.00831859305686634,
+      "eer_percent": 0.831859305686634,
+      "eer_summary_threshold": -8.819770812988281,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A11": {
+      "eer": 0.006281377559419708,
+      "eer_percent": 0.6281377559419707,
+      "eer_summary_threshold": -9.16380500793457,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A12": {
+      "eer": 0.006756801624238742,
+      "eer_percent": 0.6756801624238742,
+      "eer_summary_threshold": -9.029897689819336,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A13": {
+      "eer": 0.006519089591829225,
+      "eer_percent": 0.6519089591829225,
+      "eer_summary_threshold": -9.135004997253418,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A14": {
+      "eer": 0.005059048260951727,
+      "eer_percent": 0.5059048260951727,
+      "eer_summary_threshold": -9.432767868041992,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A15": {
+      "eer": 0.007571687823217395,
+      "eer_percent": 0.7571687823217395,
+      "eer_summary_threshold": -8.92082405090332,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A16": {
+      "eer": 0.00814886198978653,
+      "eer_percent": 0.8148861989786531,
+      "eer_summary_threshold": -8.858418464660645,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A17": {
+      "eer": 0.09479828025035367,
+      "eer_percent": 9.479828025035367,
+      "eer_summary_threshold": -0.48451709747314453,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A18": {
+      "eer": 0.19146404493107416,
+      "eer_percent": 19.146404493107415,
+      "eer_summary_threshold": -0.01802797242999077,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A19": {
+      "eer": 0.03212002389432709,
+      "eer_percent": 3.2120023894327088,
+      "eer_summary_threshold": -4.9536943435668945,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    }
+  },
+  "expert": "rawnet2",
+  "elapsed_seconds": 253.0754775410751,
+  "measurement_lock_sha256": "ae89b7464f51fd7be8d20f6d0723bfad93323ebc9af207923ab1aeb3a7562ff4",
+  "predictions_sha256": "f0cc26298fca301689738cfec44f572059cf909f82c228c78f047792c0bdfc3b",
+  "cuda_peak_allocated_bytes": 603583488,
+  "provenance": {
+    "training": null,
+    "selection": null,
+    "augmentation": null,
+    "origin": "local_detectionLib_unverified_training_history",
+    "independent_holdout": false
+  }
+}

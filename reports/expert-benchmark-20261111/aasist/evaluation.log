@@ -1,0 +1,295 @@
+{"expert": "aasist", "completed": 528, "requested": 71237, "elapsed_seconds": 11.493012316990644, "requests_per_second": 45.940958335129736, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 1056, "requested": 71237, "elapsed_seconds": 15.325861841090955, "requests_per_second": 68.90313973526136, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 1584, "requested": 71237, "elapsed_seconds": 18.99445147998631, "requests_per_second": 83.39277402503552, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 2112, "requested": 71237, "elapsed_seconds": 22.529385209083557, "requests_per_second": 93.74423582355318, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 2640, "requested": 71237, "elapsed_seconds": 26.35122803703416, "requests_per_second": 100.18508421276343, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 3168, "requested": 71237, "elapsed_seconds": 29.625864646048285, "requests_per_second": 106.93358785808708, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 3696, "requested": 71237, "elapsed_seconds": 33.48917685798369, "requests_per_second": 110.36401448962123, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 4224, "requested": 71237, "elapsed_seconds": 37.40196999406908, "requests_per_second": 112.93522776125991, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 4752, "requested": 71237, "elapsed_seconds": 40.95210056100041, "requests_per_second": 116.03800378741585, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 5280, "requested": 71237, "elapsed_seconds": 44.65929452504497, "requests_per_second": 118.22846858986927, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 5808, "requested": 71237, "elapsed_seconds": 48.167987130000256, "requests_per_second": 120.57800929743706, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 6336, "requested": 71237, "elapsed_seconds": 51.915352149051614, "requests_per_second": 122.04482369317311, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 6864, "requested": 71237, "elapsed_seconds": 55.45426569203846, "requests_per_second": 123.77767362602478, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 7392, "requested": 71237, "elapsed_seconds": 59.79597807500977, "requests_per_second": 123.62035437780223, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 7920, "requested": 71237, "elapsed_seconds": 63.40173402207438, "requests_per_second": 124.91771908387425, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 8448, "requested": 71237, "elapsed_seconds": 67.05547533102799, "requests_per_second": 125.98523771989326, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 8976, "requested": 71237, "elapsed_seconds": 70.88333089405205, "requests_per_second": 126.6306180421495, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 9504, "requested": 71237, "elapsed_seconds": 74.63903538300656, "requests_per_second": 127.33283530837033, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 10032, "requested": 71237, "elapsed_seconds": 78.50914158800151, "requests_per_second": 127.78129778371162, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 10560, "requested": 71237, "elapsed_seconds": 81.9454191980185, "requests_per_second": 128.8662637075795, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 11088, "requested": 71237, "elapsed_seconds": 85.72730496304575, "requests_per_second": 129.34035433377588, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 11616, "requested": 71237, "elapsed_seconds": 89.3430502320407, "requests_per_second": 130.01570877456126, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 12144, "requested": 71237, "elapsed_seconds": 93.05587261507753, "requests_per_second": 130.50224191903766, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 12672, "requested": 71237, "elapsed_seconds": 96.91458167403471, "requests_per_second": 130.7543176796797, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 13200, "requested": 71237, "elapsed_seconds": 100.50592924200464, "requests_per_second": 131.33553512267113, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 13728, "requested": 71237, "elapsed_seconds": 104.33113431802485, "requests_per_second": 131.58104807098096, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 14256, "requested": 71237, "elapsed_seconds": 108.35331710404716, "requests_per_second": 131.56957609623117, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 14784, "requested": 71237, "elapsed_seconds": 111.83719976001885, "requests_per_second": 132.19215101704643, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 15312, "requested": 71237, "elapsed_seconds": 115.69652685301844, "requests_per_second": 132.3462373200922, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 15840, "requested": 71237, "elapsed_seconds": 119.41350035299547, "requests_per_second": 132.64831826531963, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 16368, "requested": 71237, "elapsed_seconds": 123.0422156790737, "requests_per_second": 133.02751344052538, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 16896, "requested": 71237, "elapsed_seconds": 127.20159955904819, "requests_per_second": 132.82851834073608, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 17424, "requested": 71237, "elapsed_seconds": 130.39050776103977, "requests_per_second": 133.6293592163327, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 17952, "requested": 71237, "elapsed_seconds": 134.59726839803625, "requests_per_second": 133.37566366437431, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 18480, "requested": 71237, "elapsed_seconds": 138.3262775039766, "requests_per_second": 133.59717570270578, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 19008, "requested": 71237, "elapsed_seconds": 141.8871045319829, "requests_per_second": 133.96566279013317, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 19536, "requested": 71237, "elapsed_seconds": 146.05037240299862, "requests_per_second": 133.76206906267976, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 20064, "requested": 71237, "elapsed_seconds": 149.43460787797812, "requests_per_second": 134.26608658406224, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 20592, "requested": 71237, "elapsed_seconds": 153.0412760199979, "requests_per_second": 134.55193615419964, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 21120, "requested": 71237, "elapsed_seconds": 156.67100026097614, "requests_per_second": 134.80478177083933, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 21648, "requested": 71237, "elapsed_seconds": 159.3123565390706, "requests_per_second": 135.88399839337592, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 22176, "requested": 71237, "elapsed_seconds": 161.93488996103406, "requests_per_second": 136.94392854644326, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 22704, "requested": 71237, "elapsed_seconds": 164.52596137009095, "requests_per_second": 137.99645849768814, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 23232, "requested": 71237, "elapsed_seconds": 167.12762825004756, "requests_per_second": 139.00753719332093, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 23760, "requested": 71237, "elapsed_seconds": 169.7285010140622, "requests_per_second": 139.98827455638377, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 24288, "requested": 71237, "elapsed_seconds": 172.3282960089855, "requests_per_second": 140.94028991462656, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 24816, "requested": 71237, "elapsed_seconds": 174.941038581077, "requests_per_second": 141.85350790917445, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 25344, "requested": 71237, "elapsed_seconds": 177.55732419900596, "requests_per_second": 142.73700121541867, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 25872, "requested": 71237, "elapsed_seconds": 180.29009610100184, "requests_per_second": 143.50205895672732, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 26400, "requested": 71237, "elapsed_seconds": 183.91290875698905, "requests_per_second": 143.54620444225205, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 26928, "requested": 71237, "elapsed_seconds": 187.29391273204237, "requests_per_second": 143.77402664722663, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 27456, "requested": 71237, "elapsed_seconds": 191.1480875160778, "requests_per_second": 143.637325158645, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 27984, "requested": 71237, "elapsed_seconds": 195.07964542508125, "requests_per_second": 143.44910223218048, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 28512, "requested": 71237, "elapsed_seconds": 198.343329844065, "requests_per_second": 143.75073778591783, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 29040, "requested": 71237, "elapsed_seconds": 201.70897115406115, "requests_per_second": 143.9697988336862, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 29568, "requested": 71237, "elapsed_seconds": 204.25391678803135, "requests_per_second": 144.76099388921287, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 30096, "requested": 71237, "elapsed_seconds": 206.84011460200418, "requests_per_second": 145.50369041280925, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 30624, "requested": 71237, "elapsed_seconds": 209.37836584099568, "requests_per_second": 146.2615293466194, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 31152, "requested": 71237, "elapsed_seconds": 211.9265871969983, "requests_per_second": 146.99429841260255, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 31680, "requested": 71237, "elapsed_seconds": 214.48919307498727, "requests_per_second": 147.6997490914351, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 32208, "requested": 71237, "elapsed_seconds": 217.05688151007053, "requests_per_second": 148.38506743452723, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 32736, "requested": 71237, "elapsed_seconds": 219.60833834600635, "requests_per_second": 149.06537814799378, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 33264, "requested": 71237, "elapsed_seconds": 222.17359340097755, "requests_per_second": 149.72076334906882, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 33792, "requested": 71237, "elapsed_seconds": 224.77112321509048, "requests_per_second": 150.3395966378803, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 34320, "requested": 71237, "elapsed_seconds": 227.3295716890134, "requests_per_second": 150.97024001325144, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 34848, "requested": 71237, "elapsed_seconds": 229.87541551608592, "requests_per_second": 151.59515828068814, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 35376, "requested": 71237, "elapsed_seconds": 232.4293231740594, "requests_per_second": 152.20110576800144, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 35904, "requested": 71237, "elapsed_seconds": 234.99532132898457, "requests_per_second": 152.78602057670653, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 36432, "requested": 71237, "elapsed_seconds": 237.56906385498587, "requests_per_second": 153.3533003364377, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 36960, "requested": 71237, "elapsed_seconds": 240.2215627700789, "requests_per_second": 153.85796168254552, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 37488, "requested": 71237, "elapsed_seconds": 242.81476146308705, "requests_per_second": 154.38929566767285, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 38016, "requested": 71237, "elapsed_seconds": 245.41542373003904, "requests_per_second": 154.9046894534967, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 38544, "requested": 71237, "elapsed_seconds": 247.99421532801352, "requests_per_second": 155.42298012483542, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 39072, "requested": 71237, "elapsed_seconds": 250.63884460309055, "requests_per_second": 155.88964297163943, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 39600, "requested": 71237, "elapsed_seconds": 253.24913821101654, "requests_per_second": 156.3677581678632, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 40128, "requested": 71237, "elapsed_seconds": 255.82951372803655, "requests_per_second": 156.85445910927493, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 40656, "requested": 71237, "elapsed_seconds": 258.4165899370564, "requests_per_second": 157.32736048371643, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 41184, "requested": 71237, "elapsed_seconds": 260.98174859699793, "requests_per_second": 157.80413849397337, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 41712, "requested": 71237, "elapsed_seconds": 263.55338456702884, "requests_per_second": 158.26774552155862, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 42240, "requested": 71237, "elapsed_seconds": 266.11779495107476, "requests_per_second": 158.72670224013297, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 42768, "requested": 71237, "elapsed_seconds": 268.67894438200165, "requests_per_second": 159.17882995398935, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 43296, "requested": 71237, "elapsed_seconds": 271.2387906369986, "requests_per_second": 159.6231862644729, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 43824, "requested": 71237, "elapsed_seconds": 273.8044909280725, "requests_per_second": 160.0558115444221, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 44352, "requested": 71237, "elapsed_seconds": 276.36655671708286, "requests_per_second": 160.4825146966073, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 44880, "requested": 71237, "elapsed_seconds": 278.9392269490054, "requests_per_second": 160.89526199269488, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 45408, "requested": 71237, "elapsed_seconds": 281.49360434000846, "requests_per_second": 161.31094738888956, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 45936, "requested": 71237, "elapsed_seconds": 284.04089046106674, "requests_per_second": 161.72319388745336, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 46464, "requested": 71237, "elapsed_seconds": 286.6288833799772, "requests_per_second": 162.105086731276, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 46992, "requested": 71237, "elapsed_seconds": 289.1737571110716, "requests_per_second": 162.50437269779766, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 47520, "requested": 71237, "elapsed_seconds": 291.72886223206297, "requests_per_second": 162.8909790975671, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 48048, "requested": 71237, "elapsed_seconds": 294.2808465620037, "requests_per_second": 163.27260357352714, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 48576, "requested": 71237, "elapsed_seconds": 296.8362155359937, "requests_per_second": 163.64580013354126, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 49104, "requested": 71237, "elapsed_seconds": 299.38187780207954, "requests_per_second": 164.0179437730112, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 49632, "requested": 71237, "elapsed_seconds": 301.9458150700666, "requests_per_second": 164.37386286835232, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 50160, "requested": 71237, "elapsed_seconds": 304.52507668407634, "requests_per_second": 164.7154991181154, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 50688, "requested": 71237, "elapsed_seconds": 307.08504036604427, "requests_per_second": 165.0617690121931, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 51216, "requested": 71237, "elapsed_seconds": 309.6370695300866, "requests_per_second": 165.40655186320797, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 51744, "requested": 71237, "elapsed_seconds": 312.19992777798325, "requests_per_second": 165.73994865494345, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 52272, "requested": 71237, "elapsed_seconds": 314.7599456970347, "requests_per_second": 166.069414849605, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 52800, "requested": 71237, "elapsed_seconds": 317.3419281230308, "requests_per_second": 166.3820482603543, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 53328, "requested": 71237, "elapsed_seconds": 319.90827226405963, "requests_per_second": 166.6977837821644, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 53856, "requested": 71237, "elapsed_seconds": 322.45947449898813, "requests_per_second": 167.01633618822075, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 54384, "requested": 71237, "elapsed_seconds": 325.03085382201243, "requests_per_second": 167.3195001659159, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 54912, "requested": 71237, "elapsed_seconds": 327.5997525290586, "requests_per_second": 167.6191742395447, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 55440, "requested": 71237, "elapsed_seconds": 330.15426518698223, "requests_per_second": 167.92150169134317, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 55968, "requested": 71237, "elapsed_seconds": 332.71410312200896, "requests_per_second": 168.21649420576585, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 56496, "requested": 71237, "elapsed_seconds": 335.2732950759819, "requests_per_second": 168.50730681427072, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 57024, "requested": 71237, "elapsed_seconds": 337.82763999304734, "requests_per_second": 168.79613521609298, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 57552, "requested": 71237, "elapsed_seconds": 340.37905813299585, "requests_per_second": 169.08208253374033, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 58080, "requested": 71237, "elapsed_seconds": 343.0287371680606, "requests_per_second": 169.31526052158358, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 58608, "requested": 71237, "elapsed_seconds": 345.5866978910053, "requests_per_second": 169.58986082989918, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 59136, "requested": 71237, "elapsed_seconds": 348.15671551204287, "requests_per_second": 169.85454355814218, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 59664, "requested": 71237, "elapsed_seconds": 350.71159279101994, "requests_per_second": 170.12269119815565, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 60192, "requested": 71237, "elapsed_seconds": 353.2682918100618, "requests_per_second": 170.38608161403522, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 60720, "requested": 71237, "elapsed_seconds": 355.81850739603397, "requests_per_second": 170.64879633261256, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 61248, "requested": 71237, "elapsed_seconds": 358.36633062001783, "requests_per_second": 170.9089129384265, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 61776, "requested": 71237, "elapsed_seconds": 360.9276524450397, "requests_per_second": 171.15895549013646, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 62304, "requested": 71237, "elapsed_seconds": 363.4878362490563, "requests_per_second": 171.40601083913646, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 62832, "requested": 71237, "elapsed_seconds": 366.0447639130289, "requests_per_second": 171.65113722246465, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 63360, "requested": 71237, "elapsed_seconds": 368.59329620108474, "requests_per_second": 171.89677797458958, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 63888, "requested": 71237, "elapsed_seconds": 371.1471962099895, "requests_per_second": 172.13655566416602, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 64416, "requested": 71237, "elapsed_seconds": 373.7067046650918, "requests_per_second": 172.37046912960332, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 64944, "requested": 71237, "elapsed_seconds": 376.2706685330486, "requests_per_second": 172.59915648805307, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 65472, "requested": 71237, "elapsed_seconds": 378.8322877250612, "requests_per_second": 172.8258179712404, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 66000, "requested": 71237, "elapsed_seconds": 381.3964054270182, "requests_per_second": 173.04830108743482, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 66528, "requested": 71237, "elapsed_seconds": 383.9550433739787, "requests_per_second": 173.27028554017613, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 67056, "requested": 71237, "elapsed_seconds": 386.5300471340306, "requests_per_second": 173.4819854166424, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 67584, "requested": 71237, "elapsed_seconds": 389.09941738506313, "requests_per_second": 173.69339808884132, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 68112, "requested": 71237, "elapsed_seconds": 391.6690560890129, "requests_per_second": 173.90191780818265, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 68640, "requested": 71237, "elapsed_seconds": 394.20935635000933, "requests_per_second": 174.12067698123363, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 69168, "requested": 71237, "elapsed_seconds": 396.7742382150609, "requests_per_second": 174.32583403388534, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 69696, "requested": 71237, "elapsed_seconds": 399.3374003050849, "requests_per_second": 174.52910733318194, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 70224, "requested": 71237, "elapsed_seconds": 401.9035038590664, "requests_per_second": 174.72850902196942, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 70752, "requested": 71237, "elapsed_seconds": 404.4395803230582, "requests_per_second": 174.93836766293924, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{"expert": "aasist", "completed": 71237, "requested": 71237, "elapsed_seconds": 406.79371980705764, "requests_per_second": 175.11823937151175, "cuda_peak_allocated_bytes": 4644350464, "pid": 697791}
+{
+  "N_requested": 71237,
+  "N_scored": 71237,
+  "N_failed": 0,
+  "status": "COMPLETE",
+  "score_direction_chosen_on_eval": false,
+  "checkpoint_selected_on_eval": false,
+  "native_author_eer": {
+    "eer": 0.02121052196615654,
+    "eer_percent": 2.121052196615654,
+    "eer_summary_threshold": 2.009134292602539,
+    "threshold_is_deployment_rule": false,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+  },
+  "native_grouped_roc": {
+    "n": 71237,
+    "bonafide": 7355,
+    "spoof": 63882,
+    "eer": 0.021210061182868795,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "auroc": 0.9976294296092446,
+    "spoof_auprc": 0.9996739562118512
+  },
+  "margin_author_eer": {
+    "eer": 0.020803078866667216,
+    "eer_percent": 2.0803078866667217,
+    "eer_summary_threshold": 4.210403203964233,
+    "threshold_is_deployment_rule": false,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+  },
+  "margin_grouped_roc": {
+    "n": 71237,
+    "bonafide": 7355,
+    "spoof": 63882,
+    "eer": 0.02080217539089055,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "auroc": 0.9976288219712367,
+    "spoof_auprc": 0.9996740682355569
+  },
+  "per_attack_native_author_eer": {
+    "A07": {
+      "eer": 0.024446585969359592,
+      "eer_percent": 2.4446585969359593,
+      "eer_summary_threshold": 2.3579537868499756,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A08": {
+      "eer": 0.0038367189624837483,
+      "eer_percent": 0.38367189624837483,
+      "eer_summary_threshold": -0.39798128604888916,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A09": {
+      "eer": 0.0030218327635050954,
+      "eer_percent": 0.30218327635050957,
+      "eer_summary_threshold": -0.8971918821334839,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A10": {
+      "eer": 0.03259544795914612,
+      "eer_percent": 3.2595447959146124,
+      "eer_summary_threshold": 2.85874080657959,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A11": {
+      "eer": 0.008963748188765185,
+      "eer_percent": 0.8963748188765185,
+      "eer_summary_threshold": 0.9665067195892334,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A12": {
+      "eer": 0.023224256670891612,
+      "eer_percent": 2.322425667089161,
+      "eer_summary_threshold": 2.252393960952759,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A13": {
+      "eer": 0.004481874094382592,
+      "eer_percent": 0.44818740943825924,
+      "eer_summary_threshold": -0.04509634152054787,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A14": {
+      "eer": 0.0030218327635050954,
+      "eer_percent": 0.30218327635050957,
+      "eer_summary_threshold": -0.8821225166320801,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A15": {
+      "eer": 0.01303817918365845,
+      "eer_percent": 1.303817918365845,
+      "eer_summary_threshold": 1.4988601207733154,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A16": {
+      "eer": 0.006519089591829225,
+      "eer_percent": 0.6519089591829225,
+      "eer_summary_threshold": 0.4083176851272583,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A17": {
+      "eer": 0.01629772397957306,
+      "eer_percent": 1.6297723979573062,
+      "eer_summary_threshold": 1.6777763366699219,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A18": {
+      "eer": 0.03707732205352872,
+      "eer_percent": 3.707732205352872,
+      "eer_summary_threshold": 3.08354115486145,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A19": {
+      "eer": 0.007741418890297204,
+      "eer_percent": 0.7741418890297204,
+      "eer_summary_threshold": 0.6733012795448303,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    }
+  },
+  "expert": "aasist",
+  "elapsed_seconds": 407.6603727560723,
+  "measurement_lock_sha256": "176906041f6e600f0d1a078d643b902b04dab5b7c7fe70b8373cae3af1b71d0e",
+  "predictions_sha256": "fe3e03293951d68e7f2ae251edb0a5ed2d167cec1980216e9339594cbbfaf93a",
+  "cuda_peak_allocated_bytes": 4644350464,
+  "provenance": {
+    "training": "ASVspoof2019_LA_official_train",
+    "selection": "ASVspoof2019_LA_official_dev",
+    "augmentation": "none_author_freq_aug_false",
+    "origin": "local_TTA_trained_in_project",
+    "independent_holdout": false
+  }
+}

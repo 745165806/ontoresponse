@@ -4,7 +4,7 @@
 
 ## 本地运行
 
-从项目根目录执行，优先使用已存在的 py310；无需修改上游工程。机器路径集中在 `configs/local.yaml`，探针参数仍以 `configs/probes.yaml` 为唯一来源。工作站设备访问限制见 `reports/implementation/gpu-access.json`。
+从项目根目录执行，优先使用已存在的 py310；无需修改上游工程。机器路径集中在 `configs/local.yaml`，探针参数仍以 `configs/probes.yaml` 为唯一来源。以下是历史smoke复现流程，已有output不可覆盖。当前GPU和来源状态见根目录[STATUS.md](../STATUS.md)；旧`gpu-access.json`仅代表当时沙箱条件。
 
 ```bash
 ${USER_HOME}/anaconda3/envs/py310/bin/python -m ontoresponse doctor
@@ -42,8 +42,8 @@ python -m ontoresponse report --manifest reports/implementation/runs/typed_respo
 - `OntologyRegistry`使用同一YAML编译数值边与真实观测来源RDF；Python检查专家版本、crop、score方向、当前录音派生与同probe artifact。SHACL引擎仍需要可用的pyshacl；缺依赖是BLOCKED，不能写通过。
 - CPU分片函数和严格合并接口已经实现；真实四卡执行及与单卡的数值对照尚未验证。
 - 外部JSONL每条都有status、logit/p或null、固定开发阈值、来源组、条件、checkpoint和registry hash。报完整请求数、有效子集指标、失败政策上下界、每条件EER及条件均权macro EER。bootstrap按source/speaker组，同时抽取所有派生条件；多seed分别报告，不扩大独立样本数。
-- ASV2021 DF全量官方包装器强制ID全集/有效状态，依官方方向取负spoof margin；没有执行全量。重叠来源映射仍缺失。ASV5官方音频/工具未锁定，明确BLOCKED；不自动下载。
+- ASV2021 DF全量官方包装器强制ID全集/有效状态，依官方方向取负spoof margin；没有执行全量。官方来源archive已取得，但认证新分组及任务监督来源仍须单独审计。ASV5本地只有协议，音频/工具未锁定；不自动下载。
 
 ## 当前研究限制
 
-24条ASV2019 dev只用于8条fusion_train、8条fusion_val、8条calibration；8条In-the-Wild只作集成smoke。AASIST/SSL专家训练与本次fusion_train的文件ID无重叠，但上游source_val分别与本次fusion_val、calibration重叠2条，且跨说话人源映射不完整。因此当前只能是integration_pretrained，不是research_holdout。未知处理仅称“融合训练未见AAC/Opus算子”，不声称所有专家/通用SSL彻底未见。正式研究需要重训/选择隔离的专家、完整来源映射、正式预注册预算及冻结协议。
+24条ASV2019 dev只用于8条fusion_train、8条fusion_val、8条calibration；8条In-the-Wild只作集成smoke。AASIST/SSL专家训练与该fusion_train的文件ID无重叠，但上游source_val分别与fusion_val、calibration重叠2条。后续取得的官方映射又发现2019 train/dev有1043条共同声学来源。因此该结果只能是integration_pretrained，不是research_holdout。未知处理仅称“融合训练未见AAC/Opus算子”，不声称所有专家/通用SSL彻底未见。新数据安排见[融合数据方案](FUSION_DATA_RECOMMENDATION_20261111.md)。

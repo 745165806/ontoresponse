@@ -1,0 +1,56 @@
+...F.............................                                        [100%]
+=================================== FAILURES ===================================
+___ test_connected_base_to_versions_to_audit_to_freeze_without_expert_scores ___
+
+tmp_path = PosixPath('${EXTERNAL_PATH}')
+
+    def test_connected_base_to_versions_to_audit_to_freeze_without_expert_scores(tmp_path):
+        cfg,assets=prereg_fixture(tmp_path)
+        root=tmp_path/'new';cfg['output']=str(root);cfg['runtime']={'budget':'smoke'}
+        p=cfg['pilot'];p['preregistration']=str(root/'preregistration.json')
+        p.update(training_t_candidates=['white25','lowpass4500'],environment_assignment_seed=17,max_output_bytes=2**20)
+        candidates=[]
+        for i in range(16):
+            audio=assets/f'o{i}.wav';t=np.arange(1200,dtype='float32')
+            wave=(.1*np.sin((.03+i*.011)*t)).astype('float32');sf.write(audio,wave,16000,subtype='FLOAT')
+            candidates.append(dict(id=f'o{i}',origin_id=f'o{i}',speaker_id=f's{i}',label=i%2,audio=str(audio)))
+        manifest=assets/'candidates.jsonl';write_jsonl(manifest,candidates)
+        result=prepare_connected_base(cfg,manifest)
+        assert result['status']=='PREPARED_CONNECTED_BASE'
+        with pytest.raises(ValueError):prepare_connected_base(cfg,manifest)
+>       result=materialize_versions(cfg,root/'base_manifest.jsonl');assert result['failed']==0 and result['requests']==44
+
+tests/test_connected_split.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+cfg = {'output': '${EXTERNAL_PATH}', 'experts': [{'id': 'fixture', 'checkpo.../pytest-of-dell/pytest-25/test_connected_base_to_version0/seal/official.fixture', ...}, 'runtime': {'budget': 'smoke'}}
+base_manifest = PosixPath('${EXTERNAL_PATH}')
+
+    def materialize_versions(cfg,base_manifest):
+        """Only a caller-audited origin manifest; v2 preregistration still checks sources.
+    
+        No expert is run here. Every failed request remains in the audit ledger, and
+        prevents preregistration rather than disappearing or receiving random data.
+        """
+        p=cfg['pilot'];root=Path(cfg['output']);rows=read_jsonl(base_manifest)
+        validate_splits(rows)
+        budget(cfg['runtime']['budget'],len({r['origin_id'] for r in rows}))
+        if len({r['origin_id'] for r in rows})!=len(rows):raise ValueError('Base ledger must contain one row/origin')
+        if root.exists() and any((root/name).exists() for name in ('audit_manifest.jsonl','experiment-start.json','preregistration.json','current_audio')):
+            raise ValueError('Never overwrite materialized/frozen development inputs')
+        counts={role:sum(r['role']==role for r in rows) for role in {r['role'] for r in rows}}
+        if counts!=p['origins_by_role']:raise Blocked('Base origin budget differs from recipe')
+        root.mkdir(parents=True,exist_ok=True);destination=root/'current_audio';destination.mkdir()
+        audit=[];total_bytes=0
+        for row in rows:
+            for condition in conditions_for_origin(row,p):
+                ident='current-'+digest([row['origin_id'],condition])[:32]
+                target=destination/(ident+'.wav');item=copy.deepcopy(row)
+>               item.update(id=ident,condition=condition,audio=str(target),historical_processing=[OPERATIONS[condition]],
+                    generation_status='pending',input_base_id=row['id'],T_truth_forward_input=False)
+E               KeyError: 'aac'
+
+ontoresponse/data/development.py:46: KeyError
+=========================== short test summary info ============================
+FAILED tests/test_connected_split.py::test_connected_base_to_versions_to_audit_to_freeze_without_expert_scores
+1 failed, 32 passed in 18.94s

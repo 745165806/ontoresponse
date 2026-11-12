@@ -1,7 +1,12 @@
-artifacts/
-deliverables/
 __pycache__/
 .pytest_cache/
+.ruff_cache/
+*.pyc
+*.egg-info/
+build/
+dist/
+artifacts/
+deliverables/
 *.pt
 *.pth
 *.npz
@@ -11,6 +16,10 @@ __pycache__/
 *.mp3
 *.m4a
 *.ogg
+*.whl
+*.tar
+*.gz
+*.zip
 *.bundle
 .env
 *.pem

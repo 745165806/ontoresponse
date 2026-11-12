@@ -1,0 +1,17 @@
+{
+  "GPU_status": "BLOCKED",
+  "cuda_available": false,
+  "cuda_build": "11.8",
+  "cuda_devices": 0,
+  "deterministic_algorithms": true,
+  "device": "cpu",
+  "nvidia_smi": {
+    "exit_code": 9,
+    "stderr": "",
+    "stdout": "NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.\n\n"
+  },
+  "python": "${USER_HOME}/anaconda3/envs/py310/bin/python",
+  "seed": 17,
+  "threads": 4,
+  "torch": "2.6.0+cu118"
+}

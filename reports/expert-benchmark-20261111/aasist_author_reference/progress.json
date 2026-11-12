@@ -1,0 +1,9 @@
+{
+  "completed": 71237,
+  "cuda_peak_allocated_bytes": 4644350464,
+  "elapsed_seconds": 351.4041161349742,
+  "expert": "aasist_author_reference",
+  "pid": 705339,
+  "requested": 71237,
+  "requests_per_second": 202.721017566675
+}

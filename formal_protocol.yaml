@@ -13,11 +13,14 @@ pilot_reference:
   config_sha256: 5754314ee33f10672ee1d286c5980f20fd533744a479dbd069771074240d2439
   scope: integration_pretrained; known task ID/speaker isolation only
   actual_result: reports/pilot-20261110/completion.json
-  H1_gate: NOT_SUPPORTED_IN_PILOT; original and selected response mean val EER both zero
+  H1_gate: INSUFFICIENT_DISCRIMINATION; retrospective interpretive correction only,
+    original frozen gate preserved
   H2_execution: NOT_RUN_BY_PREREGISTERED_STOP_RULE
   consumption_ledger: reports/codex-next-stage-20261110/test-consumption.json
   formal_role_source_hashes: null
-  formal_role_source_hash_status: BLOCKED; complete official source map and fresh groups required before freezing a formal protocol
+  formal_role_source_hash_status: BLOCKED; complete official source map and fresh
+    groups required before freezing a formal protocol
+  reassessment: reports/discrimination-20261110/H1-reassessment.json
 research_holdout_gate:
   status: BLOCKED
   requires:
@@ -95,7 +98,10 @@ H1_then_H2:
   H1: additional probe observations improve over original embedding+score under matched
     data/selection budget
   H2: typed vs tied/union/wrong relations/strong same-information baselines
-  stop: No extra relational complexity when preregistered pilot H1 is unsupported
+  stop: H2 runs only after eligible, converged, preregistered H1 support on new development
+    data. Insufficient discrimination is inconclusive, never H1_FAILED.
+  H3: Improvements persist under unseen processing and independent sources without
+    material no-new-processing degradation
 candidate_budget_proposal:
   seeds:
   - 17
@@ -135,5 +141,236 @@ rerun_policy:
   protocol
 - retain failed run and original outputs
 - no score direction/threshold/hyperparameter selection from confirmation results
-consumption: old 8 In-the-Wild origins + all descendants remain consumed; pilot confirmation
-  origins become consumed after pilot evaluation
+consumption: All 128 old pilot recordings, 8 external exploration origins, all prior
+  development records and all linked source/speaker components/descendants are consumed;
+  never new confirmation.
+stage_gate_v2:
+  status: PROSPECTIVE_NOT_EXECUTED
+  decision_role: fusion_val only
+  INSUFFICIENT_DISCRIMINATION:
+  - fewer than 5 certified connected groups carrying either label
+  - baseline mean EER below prespecified absolute improvement .01
+  - more than .10 group bootstrap draws undefined due to missing class
+  - single-class condition, unresolved provenance, or numerically undefined metric
+  convergence_required: 'For trainable models: validation patience reached OR plateau
+    criteria frozen before extraction met; hitting optimizer/epoch cap alone is not
+    convergence'
+  H1_support_unchanged:
+    min_absolute_val_eer_improvement: 0.01
+    improved_seeds_at_least: 2
+    mean_val_bce_must_not_worsen: true
+  group_floor_note: Five per class is a feasibility floor, not a power guarantee.
+    Need additional development cluster precision estimation; seeds never add independent
+    groups.
+  underpowered_or_unconverged: INCONCLUSIVE; no negative H1 inference or H2 escalation
+  old_confirmation_policy: No changed primary metric, success rule, threshold or refit
+    applied to already-viewed test
+new_development_v2:
+  status: BLOCKED_SOURCE_MAP_AND_TASK_HPO_PROVENANCE
+  enabled: false
+  mode: integration_pretrained; strict research_holdout remains separately blocked
+  source_candidates:
+  - local ASVspoof2019 LA eval unconsumed components for DEVELOPMENT; permanently
+    retire any selected components and descendants from official unseen-test claims
+  - 'ASVspoof2021 DF source-linked components: asvspoof derivatives follow 2019 ownership;
+    VCC groups separate only if recording-source mapping certifies independence'
+  mapping_url: https://www.asvspoof.org/asvspoof2019/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz
+  grouping: Union original/source IDs, target/source speaker IDs, same origin and
+    all derivative links across both datasets before splitting; unknown links block
+    freeze
+  exclusions:
+  - all audited expert fit, checkpoint selection and known HPO components
+  - all 128 prior pilot recordings and all 8 old external recordings, linked components
+    and descendants
+  - all earlier development records in reports/implementation/audit_manifest.jsonl
+  role_targets:
+    fusion_train: 256
+    fusion_val: 128
+    calibration: 64
+    confirmation_test: 64
+  origins_cap: 512
+  sampling: Metadata-only integer constraints allocate whole connected components
+    to one role, maximize class-bearing independent groups, tie by fixed seed/hash;
+    within-role/class round-robin recording quotas, balanced origin labels, minimum
+    5 groups/class and per-group cap ceil(class_budget/5); no score input or per-file
+    random fallback.
+  role_assignment: Allocate whole connected components; no per-file random fallback;
+    fixed rotations if large components make split infeasible require a new preregistration
+    before any predictions
+  confirmation_test: No confirmation IDs frozen yet; inspect no new confirmation outputs
+    until all selection/calibration/threshold and convergence locks complete
+  formal_confirmation: Requires independent corpus/source components, fresh freeze
+    and explicitly reviewed full budget; current pilot512 is not a formal effect study
+  metadata_not_features:
+  - speaker
+  - source
+  - attack
+  - dataset
+  - historical_T
+  - path
+  freeze:
+  - complete mapped manifests + hashes
+  - exclusion ledger
+  - expert/checkpoint/code hashes
+  - crop/probe/T DAG
+  - all model candidate budgets and parameter counts
+  - seeds and selection/stop rules
+  - primary metric and unchanged H1 success rule
+coverage_v2:
+  baseline:
+    samples: 64600
+    starts:
+    - 0
+    padding: repeat
+    aggregation: mean_hidden_mean_logits
+  whole_utterance:
+    samples: 64600
+    strategy: cover
+    padding: repeat
+    aggregation: mean_hidden_mean_logits
+    batch_size: 2
+  coordinates: Derived only from aligned current waveform length; equal length required
+    for all probes; identical starts per expert across before/after
+  count: ceil(length/64600); final window right-aligned; short waveform repeat-padded;
+    crop count multiplies compute but not labeled sample count
+  record:
+  - actual starts
+  - unique coverage
+  - model-input samples
+  - per-expert per-view latency/device
+  - peak memory
+  - cache bytes
+  fairness: Repeat every H1 family using both policies with identical cache and tuning
+    budget; do not pool crops as independently labeled samples
+H1_v2_plan:
+  models:
+  - score_lr
+  - score_mlp
+  - original_mlp
+  - tta_stats
+  - all_views_mlp
+  - response_mlp
+  seeds:
+  - 17
+  - 29
+  - 43
+  primary_reference: original_mlp
+  candidate_response_selection: fusion_val 3-seed mean macro EER, tie mean BCE then
+    model name
+  processing: identity + one hash-assigned T from lowpass4500/white25dB/MP3_48; same
+    rule in both labels; paired validation conditions frozen before extraction
+  validation_conditions:
+  - identity
+  - AAC_64kbps
+  - Opus_32kbps
+  primary_metric: macro utterance EER on AAC_64kbps and Opus_32kbps; identity reported
+    separately
+  scope_warning: codec conditions fusion-training-unseen only; expert/general SSL
+    exposure unknown; this does not establish all-model-unseen effects
+  training:
+    widths:
+    - 32
+    - 64
+    learning_rates:
+    - 0.001
+    - 0.0003
+    trials_per_family: 4
+    seeds: 3
+    max_epochs: 200
+    min_epochs: 40
+    patience: 20
+    batch_size: 32
+    max_optimizer_steps: 2000
+  convergence: Record per-epoch train/val weighted BCE, EER, gradients, best epoch,
+    steps, lr, seeds, sample counts; patience with min_delta=1e-6 after min_epochs;
+    cap-only => INCONCLUSIVE_CONVERGENCE
+  no_confirmation_on_insufficient_gate: true
+  normalization_and_weights: fusion_train only shared before/after standardizer; one
+    uniformly sampled T version per origin/epoch; same actual versions in every model
+  test_policy: No choice is changed after new confirmation output. If discrimination
+    insufficient, register new development data and retain all failed/inconclusive
+    runs
+H2_v2_plan:
+  enabled_only_if: H1 eligible and supported; same cache, crop and data roles
+  models:
+  - all_views_mlp
+  - full_attention
+  - untyped_union
+  - relation_tied
+  - typed_response
+  - wrong_family
+  - drop_anchor
+  - drop_same_probe
+  - drop_same_family
+  typed_vs_tied: identical four directional channels, per-relation valid-neighbor
+    means, self/residual/LayerNorm/readout; only four W_r become one aliased W per
+    layer
+  verification: tests/test_relation_tied.py copied-weight forward, summed gradient,
+    masks, seed initialization and parameter-count difference
+  fairness: Same metadata, observations, trial/step budgets. Width matched by parameter
+    count before labels plus stronger width64 attention/MLP; report parameter counts
+    and both comparisons
+  statistics: paired group bootstrap 2000 across same conditions per draw/seed; report
+    undefined draws, CI and all seeds; no forced positive H2
+  H3: Only after H1/H2 locks evaluate fresh independent confirmation components; preregister
+    identity EER noninferiority tolerance=0.01 absolute (paired group 95% upper CI),
+    no-new-processing separately; insufficient precision remains inconclusive.
+cost_v2:
+  origins: 512
+  experts: 2
+  views_per_version: 7
+  train_versions: 2
+  estimated_current_utterance_versions: 1280
+  estimated_expert_view_calls_single_crop: 17920
+  observed_old_mean_crop_multiplier: 1.2109375
+  gpu_hours: UNMEASURED_BLOCKED; CPU real-checkpoint per-crop measurements supplied;
+    benchmark GPU before approving any full run
+  storage_formula: wave float32 bytes = 1280*7*mean_samples*4; embeddings float32
+    bytes = 1280*7*sum(hidden_dims)*4; add JSON/model/codec artifacts and safety reserve
+  illustrative_4second_wave_GiB: 2.1562576293945312
+  hard_proposed_cache_cap_GiB: 8
+  hard_proposed_outputs_cap_GiB: 2
+  fusion_runs: 'H1: 6 families x 4 trials x 3 seeds x 2 crop policies = 144 runs,
+    <=2000 steps each; H2 contingent and separately budgeted'
+  not_authorized_full: true
+implementation_v2:
+  status: SOFTWARE_VERIFIED_SOURCE_GATE_BLOCKED
+  configs:
+  - configs/development-v2-single-20261110.yaml
+  - configs/development-v2-cover-20261110.yaml
+  enabled: false
+  runtime_modules:
+  - ontoresponse/train/development.py
+  - ontoresponse/data/development.py
+  - ontoresponse/preregistration.py
+  documentation: docs/DEVELOPMENT_V2.md
+  evidence: reports/development-runner-20261110
+  unit_tests: 160 passed, zero skipped; includes synthetic 6 families x 3 seeds, not
+    research effects
+  remaining_before_new_H1:
+  - complete official source mapping and parser
+  - connected source role allocation and base ledger audit
+  - origin/label group sufficiency and prospective precision check
+  - new cache extraction under preregistration
+  no_new_confirmation_read: true
+  old_frozen_files_unchanged: 490
+connected_split_implementation:
+  status: SOFTWARE_VERIFIED_REAL_SOURCE_MAP_BLOCKED
+  module: ontoresponse/data/prepare_connected.py
+  source_audit: ontoresponse/data/source_audit.py
+  solver: scipy.optimize.milp for dataset assignment only; detection remains BCE neural
+    utterance logit
+  source_coverage: Complete normalized source universe must cover every local official
+    2019 train/dev/eval and 2021 DF metadata recording ID; pin coverage protocol hashes
+  seed: 271828
+  allocation_timeout_seconds: 30
+  solver_timeout: BLOCKED_ALLOCATION_UNRESOLVED, never certified infeasible without
+    proof
+  origin_sampling: round-robin across participating source groups per role/class;
+    stable hash within group
+  amendment_scope: Prospective metadata assignment only; no new confirmation results
+    or primary metric/success-rule change
+  evidence: reports/connected-split-20261110
+  actual_new_split_written: false
+  new_H1_executed: false
+  unit_passed: 166

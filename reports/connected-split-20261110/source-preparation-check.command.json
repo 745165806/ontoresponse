@@ -1,0 +1,19 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "scripts/prepare_connected.py",
+    "--config",
+    "configs/development-v2-cover-20261110.yaml",
+    "--candidates",
+    "reports/connected-split-20261110/future-audited-candidates.jsonl",
+    "--report",
+    "reports/connected-split-20261110/source-preparation-check.json"
+  ],
+  "exit_code": 2,
+  "started_utc": "2026-11-10T13:06:43.278467+00:00",
+  "elapsed_seconds": 0.31048083305358887,
+  "log": "reports/connected-split-20261110/source-preparation-check.log",
+  "cwd": "${PROJECT_ROOT}"
+}

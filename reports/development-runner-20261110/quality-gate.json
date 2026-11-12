@@ -1,0 +1,14 @@
+{
+  "GPU_tested": false,
+  "claim": "Engineering checks only; source/preregistration gates remain mandatory",
+  "code_sha256": "32f8c75696164d84a985c6b4b45e353161c6868b16b3e3a12e54287a3ed9af83",
+  "installed_package": "outside-install-verified.json",
+  "new_real_H1_or_H2": false,
+  "passed": true,
+  "real_checkpoint_and_audio": "previous stage real-multicrop controls; unchanged expert adapter",
+  "unit_synthetic": {
+    "command": "final-complete-tests.command.json",
+    "passed": 160,
+    "skipped": 0
+  }
+}

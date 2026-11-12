@@ -1,0 +1,14 @@
+{
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONPATH=${EXTERNAL_PATH}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "${EXTERNAL_PATH}"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T10:40:48.418352+00:00",
+  "elapsed_seconds": 2.7407138347625732,
+  "log": "${PROJECT_ROOT}/reports/cleanup-20261112/installed-outside.log",
+  "cwd": "/tmp"
+}

@@ -1,7 +1,7 @@
 {
   "command": [
     "env",
-    "PYTHONPATH=.:${TEMP_ROOT}",
+    "PYTHONPATH=.:${EXTERNAL_PATH}",
     "${USER_HOME}/anaconda3/envs/py310/bin/python",
     "-m",
     "pytest",

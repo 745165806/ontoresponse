@@ -1,0 +1,13 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "scripts/report_development_runner.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T12:56:06.342042+00:00",
+  "elapsed_seconds": 2.2688722610473633,
+  "log": "reports/development-runner-20261110/stage-report.log",
+  "cwd": "${PROJECT_ROOT}"
+}

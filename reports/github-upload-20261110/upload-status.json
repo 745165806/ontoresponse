@@ -1,0 +1,75 @@
+{
+  "checked_at": "2026-11-10T12:04:43.692466+00:00",
+  "status": "UPLOADED_AND_VERIFIED",
+  "uploaded": true,
+  "requested_owner": "745165806",
+  "requested_repo": "ontoresponse",
+  "requested_visibility": "public",
+  "prepared_commit": "98ab75cad5fb46212e7b4c255dc9f372f130f390",
+  "source_stage": "${EXTERNAL_PATH}",
+  "manifest_members_verified": 648,
+  "manifest_errors": 0,
+  "prediction_rows": 576,
+  "checks": [
+    {
+      "command": "git bundle verify deliverables/ontoresponse-github-20261110.bundle",
+      "exit_code": 0
+    },
+    {
+      "command": "git ls-remote git@github-745165806:745165806/ontoresponse.git",
+      "exit_code": 128,
+      "result": "Repository not found"
+    },
+    {
+      "command": "ssh -T git@github.com (existing account key)",
+      "exit_code": 1,
+      "result": "Authenticated as 745165806; GitHub does not provide shell access"
+    },
+    {
+      "command": "GET https://api.github.com/repos/745165806/ontoresponse",
+      "exit_code": 0,
+      "http_status": 404
+    },
+    {
+      "command": "POST https://api.github.com/user/repos (private=false)",
+      "exit_code": 0,
+      "http_status": 201
+    },
+    {
+      "command": "git -C ${EXTERNAL_PATH} push -u origin main",
+      "exit_code": 128,
+      "result": "Initial sandbox DNS failure; retried with git push from publication working directory"
+    },
+    {
+      "command": "git push -u origin main",
+      "cwd": "${EXTERNAL_PATH}",
+      "exit_code": 0,
+      "result": "New branch main pushed and tracking origin/main"
+    },
+    {
+      "command": "git ls-remote origin refs/heads/main",
+      "exit_code": 0,
+      "result": "aa200672b888660b7a0321288d91dd1564fcfb64"
+    },
+    {
+      "command": "Unauthenticated GET https://api.github.com/repos/745165806/ontoresponse",
+      "exit_code": 0,
+      "http_status": 200,
+      "private": false
+    },
+    {
+      "command": "Unauthenticated GET https://api.github.com/repos/745165806/ontoresponse/commits/main",
+      "exit_code": 0,
+      "http_status": 200,
+      "sha": "aa200672b888660b7a0321288d91dd1564fcfb64"
+    }
+  ],
+  "resources": "CPU-only file verification and network operations; no experiments/training",
+  "remaining": null,
+  "url": "https://github.com/745165806/ontoresponse",
+  "visibility": "public",
+  "branch": "main",
+  "commit": "aa200672b888660b7a0321288d91dd1564fcfb64",
+  "remote_main": "aa200672b888660b7a0321288d91dd1564fcfb64",
+  "public_api_commit": "aa200672b888660b7a0321288d91dd1564fcfb64"
+}

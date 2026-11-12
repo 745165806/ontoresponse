@@ -1,0 +1,201 @@
+{
+  "retired_scripts": [
+    "audit_split_feasibility.py",
+    "check_outside_install.py",
+    "check_v2_install.py",
+    "diagnose_discrimination.py",
+    "h1_diagnostics.py",
+    "metric_conventions.py",
+    "report_connected_split.py",
+    "report_development_runner.py",
+    "report_discrimination.py",
+    "revise_protocol.py",
+    "prepare_github.py",
+    "stage_benchmark_docs.py"
+  ],
+  "removed": [
+    {
+      "path": "scripts/audit_split_feasibility.py",
+      "bytes": 2704,
+      "sha256": "496614eb321dd50939579ef71426bae89a23aa97ed268a71c209876c459e8821",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/check_outside_install.py",
+      "bytes": 2311,
+      "sha256": "60963ae0ce75b859f8c9dc38eface5882b4197aa9f09ab575420c547b111b904",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/check_v2_install.py",
+      "bytes": 2495,
+      "sha256": "675ec45079a318d376c79df2b31ae5b2c68c943c6b8900c544f572882b32a8be",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/diagnose_discrimination.py",
+      "bytes": 7144,
+      "sha256": "f6ab268ef42e68ff2e3ce8c7f14f2f230480c58bc091337abb6541e8d3978bcb",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/h1_diagnostics.py",
+      "bytes": 1618,
+      "sha256": "70978fe556ff336750daef4aae887ba04929ff0acdfaddcd030f9aa3dbf351cf",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/metric_conventions.py",
+      "bytes": 1711,
+      "sha256": "dcc0f8821eb7444c6b325d4515e04a7a86150ea462d084c94f8f1c21cac528cd",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/report_connected_split.py",
+      "bytes": 10584,
+      "sha256": "f4c2e16df87c6d389d99d22aa928c4c6802341d770d76fef3fc4c1c145c14697",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/report_development_runner.py",
+      "bytes": 8618,
+      "sha256": "56c8f36fb679cf23967665ce6b9f873f3795adb8baebd355ebaf486afbb0ed29",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/report_discrimination.py",
+      "bytes": 12533,
+      "sha256": "d88ff05d3c696e2a91e105996103f4bc861e2f0a29985deacfc75b02a7d30b0d",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/revise_protocol.py",
+      "bytes": 11005,
+      "sha256": "88e35370c6b2aa4a4c01d6b11dbf7ca44ae188d052ef8de54866db4fec2d92a2",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/prepare_github.py",
+      "bytes": 2534,
+      "sha256": "2a85af8e8bfeee1686e9b51ed8629492e8ca5990cb1972dc2abeba026c2eb743",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "scripts/stage_benchmark_docs.py",
+      "bytes": 9654,
+      "sha256": "8016450bee6d4c17c52e8b92f6c8d01df25cecfcf3fa3f3c2080c01272c73566",
+      "reason": "completed date-specific report/publishing helper; exact original in source-before.tar.gz"
+    },
+    {
+      "path": "build",
+      "files": 59,
+      "bytes": 211873,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse.egg-info",
+      "files": 6,
+      "bytes": 3500,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": ".pytest_cache",
+      "files": 5,
+      "bytes": 16379,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse/__pycache__",
+      "files": 10,
+      "bytes": 35576,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse/evaluation/__pycache__",
+      "files": 6,
+      "bytes": 23650,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse/train/__pycache__",
+      "files": 6,
+      "bytes": 35392,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse/experts/__pycache__",
+      "files": 2,
+      "bytes": 9813,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse/transforms/__pycache__",
+      "files": 3,
+      "bytes": 7214,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse/evidence/__pycache__",
+      "files": 5,
+      "bytes": 18285,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse/ontology/__pycache__",
+      "files": 3,
+      "bytes": 9252,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse/data/__pycache__",
+      "files": 11,
+      "bytes": 49623,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "ontoresponse/models/__pycache__",
+      "files": 5,
+      "bytes": 12557,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "reference/__pycache__",
+      "files": 4,
+      "bytes": 20528,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "scripts/__pycache__",
+      "files": 22,
+      "bytes": 109666,
+      "reason": "reproducible build/cache output"
+    },
+    {
+      "path": "tests/__pycache__",
+      "files": 15,
+      "bytes": 162450,
+      "reason": "reproducible build/cache output"
+    }
+  ],
+  "bytes_removed": 798669,
+  "regenerated_then_removed": [
+    {
+      "path": "build",
+      "files": 59,
+      "bytes": 250952,
+      "reason": "regenerated during packaging/style verification"
+    },
+    {
+      "path": "ontoresponse.egg-info",
+      "files": 6,
+      "bytes": 3531,
+      "reason": "regenerated during packaging/style verification"
+    },
+    {
+      "path": ".ruff_cache",
+      "files": 17,
+      "bytes": 15070,
+      "reason": "regenerated during packaging/style verification"
+    }
+  ]
+}

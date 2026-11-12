@@ -1,0 +1,31 @@
+{
+  "status": "COMPLETE",
+  "source_before_sha256": "7b79db93c0213f8d3b5181eb368f5261ceb71df2d1aabbb32d63223079ae8e1b",
+  "source_after_sha256": "5199b439a2da4b575be7d02f8d1de3dc0713920d7892a156397a609949b66941",
+  "retired_scripts": 12,
+  "scripts_before": 33,
+  "scripts_after": 21,
+  "status_lines_before": 204,
+  "status_lines_after": 35,
+  "unused_imports_removed": 49,
+  "unit_passed": 171,
+  "unit_skipped": 0,
+  "protected_evidence_files_unchanged": 5792,
+  "executable_AST_equivalent_files": 85,
+  "intentional_refactor_files": [
+    "ontoresponse/cli.py",
+    "ontoresponse/evaluation/metrics.py",
+    "scripts/materialize_development.py",
+    "scripts/prepare_connected.py",
+    "tests/test_workflow.py"
+  ],
+  "real_checkpoint_GPU": "passed",
+  "fusion_CPU_exact": true,
+  "expert_GPU_max_error": 3.337860107421875e-06,
+  "fusion_GPU_max_error": 3.814697265625e-06,
+  "installed_wheel_verified": true,
+  "CLI_help_unchanged": true,
+  "historical_snapshot": "reports/cleanup-20261112/source-before.tar.gz",
+  "new_training": false,
+  "new_confirmation": false
+}

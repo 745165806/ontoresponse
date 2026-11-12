@@ -1,0 +1,17 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--target",
+    "artifacts/discrimination-deps",
+    "rdflib>=6",
+    "pyshacl>=0.25"
+  ],
+  "exit_code": 1,
+  "started_utc": "2026-11-10T12:26:00.080987+00:00",
+  "elapsed_seconds": 7.9820473194122314,
+  "log": "reports/discrimination-20261110/py310-rdf-dependencies.log",
+  "cwd": "${PROJECT_ROOT}"
+}

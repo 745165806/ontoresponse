@@ -1,0 +1,26 @@
+{
+  "consecutive_goal_turns_with_evidence": [
+    "reports/discrimination-20261110/DIAGNOSIS.md",
+    "reports/development-runner-20261110/source-readiness.json",
+    "reports/connected-split-20261110/source-preparation-final.json"
+  ],
+  "current_download_attempt": "mapping-network-check.command.json: exit6; web binary retrieval unsupported",
+  "external_change_required": "Provide the official source archive in configured writable source-map directory or restore a permitted download route",
+  "new_confirmation_read": false,
+  "objective_complete": false,
+  "safe_necessary_preparation_completed": [
+    "diagnosis and gates",
+    "whole utterance crops and real CPU controls",
+    "multi-T/macro EER runner and convergence/confirmation guards",
+    "complete-universe connected allocation and metadata precision audit",
+    "version/data-audit/preregistration software loop"
+  ],
+  "same_blocker": "Official recording-level source map/archive absent; real source-certified new development experiment cannot proceed",
+  "unfulfilled": [
+    "real official mapping import and coverage certification",
+    "real connected split/source precision",
+    "new real H1 training and convergence",
+    "conditional H2",
+    "GPU profiling"
+  ]
+}

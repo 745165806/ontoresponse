@@ -1,0 +1,18 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=${EXTERNAL_PATH}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "${PROJECT_ROOT}/scripts/check_v2_install.py",
+    "--repo",
+    "${PROJECT_ROOT}",
+    "--report",
+    "${PROJECT_ROOT}/reports/development-runner-20261110/outside-install.json",
+    "--unused"
+  ],
+  "exit_code": 2,
+  "started_utc": "2026-11-10T12:48:41.009475+00:00",
+  "elapsed_seconds": 2.126769781112671,
+  "log": "reports/development-runner-20261110/wheel-outside-check.log",
+  "cwd": "${PROJECT_ROOT}"
+}

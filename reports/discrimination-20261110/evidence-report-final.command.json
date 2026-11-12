@@ -1,0 +1,13 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "scripts/report_discrimination.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T12:37:06.040197+00:00",
+  "elapsed_seconds": 0.5190110206604004,
+  "log": "reports/discrimination-20261110/evidence-report-final.log",
+  "cwd": "${PROJECT_ROOT}"
+}

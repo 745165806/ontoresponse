@@ -1,0 +1,74 @@
+{
+  "1_existing_diagnosis": {
+    "evidence": [
+      "role-distributions.json",
+      "training-diagnosis.json",
+      "coverage.json",
+      "test-visibility.json",
+      "H1-reassessment.json"
+    ],
+    "status": "complete"
+  },
+  "2_stage_gates": {
+    "evidence": [
+      "../../ontoresponse/evaluation/stage_gate.py",
+      "final-unit-suite.log",
+      "../../formal_protocol.yaml"
+    ],
+    "frozen_old_gate_preserved": true,
+    "status": "implemented_unit_tested"
+  },
+  "3_new_data": {
+    "evidence": [
+      "local-inventory.json",
+      "TP-exposure-ledger.json",
+      "consumed-recordings.jsonl"
+    ],
+    "missing": [
+      "official source map",
+      "connected split freeze",
+      "strict research task-HPO provenance"
+    ],
+    "status": "protocol_designed_split_not_certified"
+  },
+  "4_whole_utterance": {
+    "GPU": "BLOCKED",
+    "evidence": [
+      "real-multicrop.json"
+    ],
+    "status": "implemented_real_CPU_controls"
+  },
+  "5_new_H1": {
+    "missing": [
+      "multi-T origin sampler integration",
+      "multi-condition macro-EER selection integration",
+      "new source-certified development cache",
+      "144 fair baseline runs and convergence audit"
+    ],
+    "status": "not_executed"
+  },
+  "6_H2": {
+    "existing_tied_normalization_tests": "passed",
+    "real_new_experiment": "not_run",
+    "status": "contingent_on_eligible_H1"
+  },
+  "7_delivery": {
+    "evidence": [
+      "DIAGNOSIS.md",
+      "cost-estimate.json",
+      "../../STATUS_NEXT.md",
+      "../../formal_protocol.yaml"
+    ],
+    "status": "current_stage_delivered"
+  },
+  "code_and_config_sha256": {
+    "formal_protocol.yaml": "b3c64a7fbf0ac24c674d3f84f2f431f978db2f76eb64e4c066cbcb026de95fda",
+    "ontoresponse/data/audio.py": "1a6ef148abc586d51dcce4554cf6f4010554fda8942ebbe4f4ca36e6ce531ea7",
+    "ontoresponse/data/connected.py": "96bc485375bdfc3e3a3107084a8daa8897ffa12aeae98c84865844afc7a5246e",
+    "ontoresponse/evaluation/stage_gate.py": "25fa2129ceab7c05e5c5d789f20d49fbb2af8d927c6fc1adef28024db60ef4ca",
+    "ontoresponse/experts/base.py": "1800e042946bef4ab76e49bdc9318cccb3c0ec792e6bcd5789e22f5a3e50b965",
+    "ontoresponse/train/pilot.py": "806779fc5f19273a708c1f2710e48f5d7c16c1a6a269a83f68710c7c9fac071d"
+  },
+  "next_safe_engineering_action": "Integrate origin_uniform_epoch and frozen-condition macro EER in pilot runner; test without new confirmation data. Do not launch full/expert training.",
+  "objective_complete": false
+}

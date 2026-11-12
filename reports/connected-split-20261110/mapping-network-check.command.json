@@ -1,0 +1,21 @@
+{
+  "command": [
+    "curl",
+    "-L",
+    "--noproxy",
+    "*",
+    "--fail",
+    "--max-time",
+    "20",
+    "--max-filesize",
+    "52428800",
+    "https://www.asvspoof.org/asvspoof2019/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz",
+    "-o",
+    "reports/connected-split-20261110/source-maps.tar.gz"
+  ],
+  "exit_code": 6,
+  "started_utc": "2026-11-10T12:57:11.681626+00:00",
+  "elapsed_seconds": 0.009216785430908203,
+  "log": "reports/connected-split-20261110/mapping-network-check.log",
+  "cwd": "${PROJECT_ROOT}"
+}

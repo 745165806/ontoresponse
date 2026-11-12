@@ -1,0 +1,8 @@
+{
+  "CUDA_available": false,
+  "GPU_tested": false,
+  "nvidia_smi_exit_code": 9,
+  "nvidia_smi_output": "NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.\n\n",
+  "python": "${USER_HOME}/anaconda3/envs/py310/bin/python",
+  "torch": "2.6.0+cu118"
+}

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "scripts/report_connected_split.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T13:12:16.759329+00:00",
+  "elapsed_seconds": 2.243361234664917,
+  "log": "reports/connected-split-20261110/stage-report.log",
+  "cwd": "${PROJECT_ROOT}"
+}

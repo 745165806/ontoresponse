@@ -1,0 +1,12 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "scripts.export_public"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:39:41.152413+00:00",
+  "elapsed_seconds": 69.09756207466125,
+  "log": "reports/codex-next-stage-20261110/public-export.log",
+  "cwd": "${PROJECT_ROOT}"
+}

@@ -1,0 +1,19 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pip",
+    "wheel",
+    "--no-build-isolation",
+    "--no-deps",
+    "--no-index",
+    "--wheel-dir",
+    "reports/cleanup-20261112/dist",
+    "."
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T10:37:44.230687+00:00",
+  "elapsed_seconds": 0.8593599796295166,
+  "log": "reports/cleanup-20261112/wheel-build-pip.log",
+  "cwd": "${PROJECT_ROOT}"
+}

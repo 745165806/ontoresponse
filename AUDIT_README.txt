@@ -5,5 +5,5 @@ Tokens ${PROJECT_ROOT}, ${EXPERT_ROOT}, ${DATA_ROOT}, ${USER_HOME}, ${EXTERNAL_P
 Stable pseudonyms preserve pairing/groups; no claim of irreversible anonymity for public dataset IDs.
 Original/large task checkpoints, audio, waveform/embedding caches and legacy private tar archives are deliberately not delivered.
 
-2026-11-11 documentation/aggregate update: see reports/expert-benchmark-20261111/PUBLICATION_SCOPE.md.
-The original 576-row recomputation remains unchanged; new single-expert benchmark per-request scores are not included.
+Current source and small reports are synchronized; each public file is at most 1MiB. See PUBLICATION.md.
+Large local benchmark tables and private assets are intentionally excluded.

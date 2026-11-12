@@ -1,3 +1,7 @@
+# 历史实施说明
+
+本文保留2026-11-10准备阶段的复现资料；当前能力、GPU和来源映射状态统一见[STATUS.md](../STATUS.md)，常用入口见[SCRIPTS.md](SCRIPTS.md)。
+
 # 2026-11-10 审计与新 pilot 入口
 
 ## 文档到位后的最终状态
@@ -20,10 +24,11 @@
 
 ## 实际证据与独立导出
 
-`deliverables/ontoresponse-v0.5-baseline-20261110.tar.gz`是修改前代码/配置/测试/实际日志/融合checkpoint/观测缓存/逐条预测的完整快照。内含`BUNDLE_MANIFEST.json`，对每个成员逐一检查名称、存在性、大小和SHA256；历史manifest的不匹配单列，不能用旧STATUS代替真实文件。`scripts/audit_bundle.py`只依赖stdlib，可以在仓库之外验证，无需安装本项目。最终stage导出另存新tar，不覆盖此baseline。
+原`deliverables/ontoresponse-v0.5-baseline-20261110.tar.gz`已于2026-11-12去重，独有内容保存在同名`.delta.tar.gz`，公共成员复用保留的`ontoresponse-v0.5-next-stage-20261110.tar.gz`。恢复后2463个原始文件的大小/SHA256已全部验证；不声称重建gzip容器与退役容器的压缩字节完全相同。原清单与校验记录仍保留，恢复方法见[存储清理报告](../reports/storage-cleanup-20261112/REPORT.md)。
 
 ```bash
-python3 /absolute/project/scripts/audit_bundle.py verify /absolute/project/deliverables/ontoresponse-v0.5-baseline-20261110.tar.gz
+python3 reports/storage-cleanup-20261112/snapshot_delta.py restore --base deliverables/ontoresponse-v0.5-next-stage-20261110.tar.gz --source deliverables/ontoresponse-v0.5-baseline-20261110.delta.tar.gz --output /tmp/restored-baseline.tar.gz
+python3 scripts/audit_bundle.py verify /tmp/restored-baseline.tar.gz
 python3 scripts/recompute_predictions.py --root reports/implementation --out /tmp/independent-metrics.json
 ```
 

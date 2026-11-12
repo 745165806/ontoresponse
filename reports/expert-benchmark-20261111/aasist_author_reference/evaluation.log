@@ -1,0 +1,289 @@
+{"expert": "aasist_author_reference", "completed": 528, "requested": 71237, "elapsed_seconds": 9.31274887395557, "requests_per_second": 56.69647137985512, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 1056, "requested": 71237, "elapsed_seconds": 11.838559436029755, "requests_per_second": 89.200042091789, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 1584, "requested": 71237, "elapsed_seconds": 14.379521235008724, "requests_per_second": 110.15665779911754, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 2112, "requested": 71237, "elapsed_seconds": 16.940744146006182, "requests_per_second": 124.66984813638831, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 2640, "requested": 71237, "elapsed_seconds": 19.47982474102173, "requests_per_second": 135.52483326200246, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 3168, "requested": 71237, "elapsed_seconds": 22.012209387961775, "requests_per_second": 143.92012833262174, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 3696, "requested": 71237, "elapsed_seconds": 24.551524751936086, "requests_per_second": 150.54054839133934, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 4224, "requested": 71237, "elapsed_seconds": 27.088393389014527, "requests_per_second": 155.93394334390493, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 4752, "requested": 71237, "elapsed_seconds": 29.628287432948127, "requests_per_second": 160.38726540486914, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 5280, "requested": 71237, "elapsed_seconds": 32.16444213199429, "requests_per_second": 164.15643020737895, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 5808, "requested": 71237, "elapsed_seconds": 34.6969634789275, "requests_per_second": 167.39216973633359, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 6336, "requested": 71237, "elapsed_seconds": 37.22535227204207, "requests_per_second": 170.20658269924886, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 6864, "requested": 71237, "elapsed_seconds": 39.75001606694423, "requests_per_second": 172.6791754861212, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 7392, "requested": 71237, "elapsed_seconds": 42.29103306098841, "requests_per_second": 174.7888255493761, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 7920, "requested": 71237, "elapsed_seconds": 44.83624236297328, "requests_per_second": 176.64281354988177, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 8448, "requested": 71237, "elapsed_seconds": 47.38097065896727, "requests_per_second": 178.299428705375, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 8976, "requested": 71237, "elapsed_seconds": 49.92952400504146, "requests_per_second": 179.77339417643316, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 9504, "requested": 71237, "elapsed_seconds": 52.55101365293376, "requests_per_second": 180.85283878191035, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 10032, "requested": 71237, "elapsed_seconds": 55.12662229698617, "requests_per_second": 181.98103896070666, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 10560, "requested": 71237, "elapsed_seconds": 57.671372488024645, "requests_per_second": 183.106445094449, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 11088, "requested": 71237, "elapsed_seconds": 60.224973776959814, "requests_per_second": 184.10966920573273, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 11616, "requested": 71237, "elapsed_seconds": 62.78210415993817, "requests_per_second": 185.02087745272283, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 12144, "requested": 71237, "elapsed_seconds": 65.34346126101445, "requests_per_second": 185.84874087846055, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 12672, "requested": 71237, "elapsed_seconds": 67.90335396002047, "requests_per_second": 186.6181751119526, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 13200, "requested": 71237, "elapsed_seconds": 70.47147563903127, "requests_per_second": 187.30982827169663, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 13728, "requested": 71237, "elapsed_seconds": 73.030204633018, "requests_per_second": 187.97701675606936, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 14256, "requested": 71237, "elapsed_seconds": 75.58612322097179, "requests_per_second": 188.60604820706817, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 14784, "requested": 71237, "elapsed_seconds": 78.1449535699794, "requests_per_second": 189.18688059313791, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 15312, "requested": 71237, "elapsed_seconds": 80.6981274309801, "requests_per_second": 189.74417979024514, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 15840, "requested": 71237, "elapsed_seconds": 83.26003130001482, "requests_per_second": 190.24734620772574, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 16368, "requested": 71237, "elapsed_seconds": 85.80972470704, "requests_per_second": 190.74761113476845, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 16896, "requested": 71237, "elapsed_seconds": 88.37269064295106, "requests_per_second": 191.19028601566845, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 17424, "requested": 71237, "elapsed_seconds": 90.93846204492729, "requests_per_second": 191.60209671669878, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 17952, "requested": 71237, "elapsed_seconds": 93.49026180198416, "requests_per_second": 192.01999923824152, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 18480, "requested": 71237, "elapsed_seconds": 96.0307094870368, "requests_per_second": 192.43844077289273, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 19008, "requested": 71237, "elapsed_seconds": 98.5861833919771, "requests_per_second": 192.80592214858845, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 19536, "requested": 71237, "elapsed_seconds": 101.21934764203615, "requests_per_second": 193.0065788320369, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 20064, "requested": 71237, "elapsed_seconds": 103.77372746600304, "requests_per_second": 193.34373439147302, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 20592, "requested": 71237, "elapsed_seconds": 106.32415705895983, "requests_per_second": 193.6718857651619, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 21120, "requested": 71237, "elapsed_seconds": 108.88068680500146, "requests_per_second": 193.97379480003286, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 21648, "requested": 71237, "elapsed_seconds": 111.43111884198152, "requests_per_second": 194.2724817355432, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 22176, "requested": 71237, "elapsed_seconds": 114.00474766397383, "requests_per_second": 194.5182148498167, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 22704, "requested": 71237, "elapsed_seconds": 116.57878275995608, "requests_per_second": 194.75241945825712, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 23232, "requested": 71237, "elapsed_seconds": 119.1383827959653, "requests_per_second": 195.00012888194723, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 23760, "requested": 71237, "elapsed_seconds": 121.72624005493708, "requests_per_second": 195.1920965379093, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 24288, "requested": 71237, "elapsed_seconds": 124.28435682295822, "requests_per_second": 195.42282408556053, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 24816, "requested": 71237, "elapsed_seconds": 126.84110424097162, "requests_per_second": 195.64635729483072, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 25344, "requested": 71237, "elapsed_seconds": 129.40065241593402, "requests_per_second": 195.85681777350308, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 25872, "requested": 71237, "elapsed_seconds": 131.95236001804005, "requests_per_second": 196.07076369428233, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 26400, "requested": 71237, "elapsed_seconds": 134.50998779502697, "requests_per_second": 196.26795327815833, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 26928, "requested": 71237, "elapsed_seconds": 137.0587106370367, "requests_per_second": 196.47054809461616, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 27456, "requested": 71237, "elapsed_seconds": 139.61850862496067, "requests_per_second": 196.6501452450802, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 27984, "requested": 71237, "elapsed_seconds": 142.16374760097824, "requests_per_second": 196.84343211424627, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 28512, "requested": 71237, "elapsed_seconds": 144.71892912802286, "requests_per_second": 197.0163832181027, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 29040, "requested": 71237, "elapsed_seconds": 147.2758526939433, "requests_per_second": 197.18100061079642, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 29568, "requested": 71237, "elapsed_seconds": 149.83993142994586, "requests_per_second": 197.33057615435325, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 30096, "requested": 71237, "elapsed_seconds": 152.38754967902787, "requests_per_second": 197.49644943691828, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 30624, "requested": 71237, "elapsed_seconds": 154.9366688770242, "requests_per_second": 197.6549529686015, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 31152, "requested": 71237, "elapsed_seconds": 157.5073848880129, "requests_per_second": 197.78120259027185, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 31680, "requested": 71237, "elapsed_seconds": 160.06158300302923, "requests_per_second": 197.92382035482208, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 32208, "requested": 71237, "elapsed_seconds": 162.61166158202104, "requests_per_second": 198.06697555792664, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 32736, "requested": 71237, "elapsed_seconds": 165.18760011997074, "requests_per_second": 198.1746812486218, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 33264, "requested": 71237, "elapsed_seconds": 167.74030509300064, "requests_per_second": 198.3065428524013, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 33792, "requested": 71237, "elapsed_seconds": 170.29813377396204, "requests_per_second": 198.42848098883087, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 34320, "requested": 71237, "elapsed_seconds": 172.84444927994628, "requests_per_second": 198.56003558675962, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 34848, "requested": 71237, "elapsed_seconds": 175.39700525603257, "requests_per_second": 198.68070124191271, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 35376, "requested": 71237, "elapsed_seconds": 177.95486584794708, "requests_per_second": 198.7919792551607, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 35904, "requested": 71237, "elapsed_seconds": 180.51713656599168, "requests_per_second": 198.8952444239252, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 36432, "requested": 71237, "elapsed_seconds": 183.1535268620355, "requests_per_second": 198.91508847352537, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 36960, "requested": 71237, "elapsed_seconds": 185.69524536794052, "requests_per_second": 199.0357907482589, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 37488, "requested": 71237, "elapsed_seconds": 188.2486982929986, "requests_per_second": 199.1408192456769, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 38016, "requested": 71237, "elapsed_seconds": 190.80015668296255, "requests_per_second": 199.24511940086174, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 38544, "requested": 71237, "elapsed_seconds": 193.34356186597142, "requests_per_second": 199.35497012680082, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 39072, "requested": 71237, "elapsed_seconds": 195.8934376570396, "requests_per_second": 199.4553797580769, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 39600, "requested": 71237, "elapsed_seconds": 198.43620723695494, "requests_per_second": 199.56035519623285, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 40128, "requested": 71237, "elapsed_seconds": 200.9879821819486, "requests_per_second": 199.65372836905883, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 40656, "requested": 71237, "elapsed_seconds": 203.53429267497268, "requests_per_second": 199.75012301698098, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 41184, "requested": 71237, "elapsed_seconds": 206.09817204694264, "requests_per_second": 199.8270998280353, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 41712, "requested": 71237, "elapsed_seconds": 208.63355347595643, "requests_per_second": 199.92949027159727, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 42240, "requested": 71237, "elapsed_seconds": 211.16556668002158, "requests_per_second": 200.032612627636, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 42768, "requested": 71237, "elapsed_seconds": 213.7096519030165, "requests_per_second": 200.12198615815691, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 43296, "requested": 71237, "elapsed_seconds": 216.26403760700487, "requests_per_second": 200.1997210404326, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 43824, "requested": 71237, "elapsed_seconds": 218.80789964995347, "requests_per_second": 200.28527338413815, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 44352, "requested": 71237, "elapsed_seconds": 221.3539452869445, "requests_per_second": 200.36688274295642, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 44880, "requested": 71237, "elapsed_seconds": 223.89233459101524, "requests_per_second": 200.45349065649086, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 45408, "requested": 71237, "elapsed_seconds": 226.43478960799985, "requests_per_second": 200.53455601327684, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 45936, "requested": 71237, "elapsed_seconds": 229.0839764890261, "requests_per_second": 200.52035373238115, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 46464, "requested": 71237, "elapsed_seconds": 231.6598243949702, "requests_per_second": 200.5699526076686, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 46992, "requested": 71237, "elapsed_seconds": 234.2186194609385, "requests_per_second": 200.63306712401243, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 47520, "requested": 71237, "elapsed_seconds": 236.76370451494586, "requests_per_second": 200.70643892548264, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 48048, "requested": 71237, "elapsed_seconds": 239.31658626301214, "requests_per_second": 200.77170893284682, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 48576, "requested": 71237, "elapsed_seconds": 241.87262136896607, "requests_per_second": 200.83298277029647, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 49104, "requested": 71237, "elapsed_seconds": 244.44324597693048, "requests_per_second": 200.88098488364136, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 49632, "requested": 71237, "elapsed_seconds": 247.0068786010379, "requests_per_second": 200.93367553607655, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 50160, "requested": 71237, "elapsed_seconds": 249.55769449099898, "requests_per_second": 200.99560585501868, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 50688, "requested": 71237, "elapsed_seconds": 252.09624066296965, "requests_per_second": 201.066068524859, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 51216, "requested": 71237, "elapsed_seconds": 254.64103373000398, "requests_per_second": 201.13019197960196, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 51744, "requested": 71237, "elapsed_seconds": 257.18949566595256, "requests_per_second": 201.19017639510076, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 52272, "requested": 71237, "elapsed_seconds": 259.7383545850171, "requests_per_second": 201.24867612838605, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 52800, "requested": 71237, "elapsed_seconds": 262.2903302849736, "requests_per_second": 201.3036467742969, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 53328, "requested": 71237, "elapsed_seconds": 264.8234433720354, "requests_per_second": 201.37190016475438, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 53856, "requested": 71237, "elapsed_seconds": 267.367576634977, "requests_per_second": 201.43055742890914, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 54384, "requested": 71237, "elapsed_seconds": 269.9064948009327, "requests_per_second": 201.49200203615132, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 54912, "requested": 71237, "elapsed_seconds": 272.4548835209571, "requests_per_second": 201.54529546458357, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 55440, "requested": 71237, "elapsed_seconds": 275.0231411389541, "requests_per_second": 201.5830368688474, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 55968, "requested": 71237, "elapsed_seconds": 277.56967714393977, "requests_per_second": 201.63585797945998, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 56496, "requested": 71237, "elapsed_seconds": 280.10845837998204, "requests_per_second": 201.6933023970314, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 57024, "requested": 71237, "elapsed_seconds": 282.664018707932, "requests_per_second": 201.7377388910654, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 57552, "requested": 71237, "elapsed_seconds": 285.31452110596, "requests_per_second": 201.71423374075783, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 58080, "requested": 71237, "elapsed_seconds": 287.87303191795945, "requests_per_second": 201.75561292782766, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 58608, "requested": 71237, "elapsed_seconds": 290.41681015398353, "requests_per_second": 201.80650000571634, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 59136, "requested": 71237, "elapsed_seconds": 292.9505187399918, "requests_per_second": 201.86344183430563, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 59664, "requested": 71237, "elapsed_seconds": 295.48638931603637, "requests_per_second": 201.91792975001158, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 60192, "requested": 71237, "elapsed_seconds": 298.0372207319597, "requests_per_second": 201.96135184784114, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 60720, "requested": 71237, "elapsed_seconds": 300.61711632693186, "requests_per_second": 201.9845068767303, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 61248, "requested": 71237, "elapsed_seconds": 303.17322912300006, "requests_per_second": 202.02311456448268, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 61776, "requested": 71237, "elapsed_seconds": 305.7713937329827, "requests_per_second": 202.03328782922836, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 62304, "requested": 71237, "elapsed_seconds": 308.329498018953, "requests_per_second": 202.06954054123673, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 62832, "requested": 71237, "elapsed_seconds": 310.88352149992716, "requests_per_second": 202.10784957933103, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 63360, "requested": 71237, "elapsed_seconds": 313.4331382869277, "requests_per_second": 202.14837635323047, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 63888, "requested": 71237, "elapsed_seconds": 315.96007176302373, "requests_per_second": 202.20276455664708, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 64416, "requested": 71237, "elapsed_seconds": 318.51542213000357, "requests_per_second": 202.2382450721909, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 64944, "requested": 71237, "elapsed_seconds": 321.06767191994004, "requests_per_second": 202.27511418899297, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 65472, "requested": 71237, "elapsed_seconds": 323.6187559289392, "requests_per_second": 202.31213055641453, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 66000, "requested": 71237, "elapsed_seconds": 326.1516859929543, "requests_per_second": 202.3598308224774, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 66528, "requested": 71237, "elapsed_seconds": 328.6977373129921, "requests_per_second": 202.39871604790147, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 67056, "requested": 71237, "elapsed_seconds": 331.2388513539918, "requests_per_second": 202.44002092718858, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 67584, "requested": 71237, "elapsed_seconds": 333.7846904619364, "requests_per_second": 202.4778305633734, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 68112, "requested": 71237, "elapsed_seconds": 336.3268858010415, "requests_per_second": 202.51726185307865, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 68640, "requested": 71237, "elapsed_seconds": 338.8706598469289, "requests_per_second": 202.5551578617203, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 69168, "requested": 71237, "elapsed_seconds": 341.41795398294926, "requests_per_second": 202.5904003966186, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 69696, "requested": 71237, "elapsed_seconds": 343.9794781189412, "requests_per_second": 202.6167385947964, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 70224, "requested": 71237, "elapsed_seconds": 346.5176066160202, "requests_per_second": 202.65636914033044, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 70752, "requested": 71237, "elapsed_seconds": 349.05622886295896, "requests_per_second": 202.69513662733561, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{"expert": "aasist_author_reference", "completed": 71237, "requested": 71237, "elapsed_seconds": 351.4041161349742, "requests_per_second": 202.721017566675, "cuda_peak_allocated_bytes": 4644350464, "pid": 705339}
+{
+  "N_requested": 71237,
+  "N_scored": 71237,
+  "N_failed": 0,
+  "status": "COMPLETE",
+  "score_direction_chosen_on_eval": false,
+  "checkpoint_selected_on_eval": false,
+  "native_author_eer": {
+    "eer": 0.008295112264154778,
+    "eer_percent": 0.8295112264154778,
+    "eer_summary_threshold": 1.493814468383789,
+    "threshold_is_deployment_rule": false,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+  },
+  "native_grouped_roc": {
+    "n": 71237,
+    "bonafide": 7355,
+    "spoof": 63882,
+    "eer": 0.008293677770224337,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "auroc": 0.999250076795441,
+    "spoof_auprc": 0.9999066311577449
+  },
+  "margin_author_eer": {
+    "eer": 0.008156688920690384,
+    "eer_percent": 0.8156688920690384,
+    "eer_summary_threshold": 4.453048229217529,
+    "threshold_is_deployment_rule": false,
+    "method": "author_stable_sort_nearest_DET",
+    "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+  },
+  "margin_grouped_roc": {
+    "n": 71237,
+    "bonafide": 7355,
+    "spoof": 63882,
+    "eer": 0.008157715839564922,
+    "eer_method": "ROC_linear_interpolation_grouped_ties",
+    "auroc": 0.9992819251146918,
+    "spoof_auprc": 0.9999103294162525
+  },
+  "per_attack_native_author_eer": {
+    "A07": {
+      "eer": 0.005296760293361244,
+      "eer_percent": 0.5296760293361245,
+      "eer_summary_threshold": 0.7077614665031433,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A08": {
+      "eer": 0.004244162061973075,
+      "eer_percent": 0.4244162061973075,
+      "eer_summary_threshold": 0.22970843315124512,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A09": {
+      "eer": 0.0,
+      "eer_percent": 0.0,
+      "eer_summary_threshold": -5.231115818023682,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A10": {
+      "eer": 0.008556305089275858,
+      "eer_percent": 0.8556305089275857,
+      "eer_summary_threshold": 1.526879072189331,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A11": {
+      "eer": 0.0017995034650371156,
+      "eer_percent": 0.17995034650371156,
+      "eer_summary_threshold": -0.8533360362052917,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A12": {
+      "eer": 0.007096263758398361,
+      "eer_percent": 0.7096263758398361,
+      "eer_summary_threshold": 1.1147230863571167,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A13": {
+      "eer": 0.0014600413308774969,
+      "eer_percent": 0.14600413308774968,
+      "eer_summary_threshold": -1.5536361932754517,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A14": {
+      "eer": 0.0016297723979573062,
+      "eer_percent": 0.16297723979573062,
+      "eer_summary_threshold": -1.431795358657837,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A15": {
+      "eer": 0.005534472325770762,
+      "eer_percent": 0.5534472325770762,
+      "eer_summary_threshold": 0.770553469657898,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A16": {
+      "eer": 0.006519089591829225,
+      "eer_percent": 0.6519089591829225,
+      "eer_summary_threshold": 1.0283687114715576,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A17": {
+      "eer": 0.012630736084169123,
+      "eer_percent": 1.2630736084169123,
+      "eer_summary_threshold": 1.8084115982055664,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A18": {
+      "eer": 0.0260763583673169,
+      "eer_percent": 2.60763583673169,
+      "eer_summary_threshold": 2.568009614944458,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    },
+    "A19": {
+      "eer": 0.006519089591829225,
+      "eer_percent": 0.6519089591829225,
+      "eer_summary_threshold": 1.0283687114715576,
+      "threshold_is_deployment_rule": false,
+      "method": "author_stable_sort_nearest_DET",
+      "source_sha256": "008d92a04bbea3bf5074017d58127f0d271ff114ca39af69a72f4779cf4b73f8"
+    }
+  },
+  "expert": "aasist_author_reference",
+  "elapsed_seconds": 352.2442333829822,
+  "measurement_lock_sha256": "1e37933eaa4c68cea1964265aec36849abf3027bf3fcdf6ce7d25230ff3d2c01",
+  "predictions_sha256": "ff20dbd8568d8fd9dda7db1eb01dbf8d6148db8ea283748aa36f2dfba882dc85",
+  "cuda_peak_allocated_bytes": 4644350464,
+  "provenance": "local_copy_of_author_released_AASIST_weight_not_selected_on_this_eval"
+}

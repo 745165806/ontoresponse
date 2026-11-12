@@ -1,0 +1,9 @@
+Processing ${PROJECT_ROOT}
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: ontoresponse
+  Building wheel for ontoresponse (pyproject.toml): started
+  Building wheel for ontoresponse (pyproject.toml): finished with status 'done'
+  Created wheel for ontoresponse: filename=ontoresponse-0.5.0-py3-none-any.whl size=93822 sha256=60bb8aa51732f1100ae69103820530435297860ac32984f0f327069f2e0701c8
+  Stored in directory: /tmp/pip-ephem-wheel-cache-h8b1riry/wheels/9f/02/fc/eac3a2aebf2467e0f54b0c490a9fcfcfc12832ed090f3e506f
+Successfully built ontoresponse

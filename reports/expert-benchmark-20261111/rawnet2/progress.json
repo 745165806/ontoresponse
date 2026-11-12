@@ -1,0 +1,9 @@
+{
+  "completed": 71237,
+  "cuda_peak_allocated_bytes": 603583488,
+  "elapsed_seconds": 252.19718958402518,
+  "expert": "rawnet2",
+  "pid": 697799,
+  "requested": 71237,
+  "requests_per_second": 282.46547916532506
+}

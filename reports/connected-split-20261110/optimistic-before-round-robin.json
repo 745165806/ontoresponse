@@ -1,0 +1,128 @@
+{
+  "actual_split_written": false,
+  "candidate_origins": 71237,
+  "class_balance": "equal origins per class in each role",
+  "elapsed_seconds": 0.8064571960130706,
+  "eligible_components": 67,
+  "eligible_components_by_class": {
+    "0": 67,
+    "1": 48
+  },
+  "eligible_origins_by_class": {
+    "0": 7355,
+    "1": 63882
+  },
+  "excluded_candidate_origins": 0,
+  "inference_performed": false,
+  "interpretation": "PASS can only justify seeking mapping, never extraction. FAIL proves this stricter design cannot be supported even under optimistic speaker independence.",
+  "level": "REAL_METADATA_ONLY_OPTIMISTIC_BOUND_NOT_SOURCE_CERTIFIED",
+  "minimum_groups_per_class": 5,
+  "new_confirmation_results_read": false,
+  "precision": {
+    "calibration": {
+      "classes": {
+        "0": {
+          "groups": 14,
+          "kish_group_count_descriptive_only": 6.481012658227848,
+          "maximum_group_fraction": 0.21875,
+          "origins": 32
+        },
+        "1": {
+          "groups": 11,
+          "kish_group_count_descriptive_only": 6.023529411764706,
+          "maximum_group_fraction": 0.21875,
+          "origins": 32
+        }
+      },
+      "exact_class_degenerate_bootstrap_probability": 4.304325109843341e-10,
+      "groups": 14,
+      "iid_zero_FPR_one_sided_95pct_upper": 0.0893681989862648,
+      "precision_status": "NOT_POWERED_FROM_METADATA_ONLY",
+      "warning": "Kish and IID bound are descriptive, not EER power/cluster CI; independent source groups and real development score variability still required"
+    },
+    "fusion_train": {
+      "classes": {
+        "0": {
+          "groups": 14,
+          "kish_group_count_descriptive_only": 5.576582709326072,
+          "maximum_group_fraction": 0.203125,
+          "origins": 128
+        },
+        "1": {
+          "groups": 9,
+          "kish_group_count_descriptive_only": 5.271557271557271,
+          "maximum_group_fraction": 0.203125,
+          "origins": 128
+        }
+      },
+      "exact_class_degenerate_bootstrap_probability": 5.49272127061846e-07,
+      "groups": 14,
+      "iid_zero_FPR_one_sided_95pct_upper": 0.023132405251746757,
+      "precision_status": "NOT_POWERED_FROM_METADATA_ONLY",
+      "warning": "Kish and IID bound are descriptive, not EER power/cluster CI; independent source groups and real development score variability still required"
+    },
+    "fusion_val": {
+      "classes": {
+        "0": {
+          "groups": 21,
+          "kish_group_count_descriptive_only": 6.965986394557823,
+          "maximum_group_fraction": 0.203125,
+          "origins": 64
+        },
+        "1": {
+          "groups": 16,
+          "kish_group_count_descriptive_only": 5.953488372093023,
+          "maximum_group_fraction": 0.203125,
+          "origins": 64
+        }
+      },
+      "exact_class_degenerate_bootstrap_probability": 8.161404472069822e-14,
+      "groups": 21,
+      "iid_zero_FPR_one_sided_95pct_upper": 0.045729702330762456,
+      "precision_status": "NOT_POWERED_FROM_METADATA_ONLY",
+      "warning": "Kish and IID bound are descriptive, not EER power/cluster CI; independent source groups and real development score variability still required"
+    },
+    "test": {
+      "classes": {
+        "0": {
+          "groups": 18,
+          "kish_group_count_descriptive_only": 8.39344262295082,
+          "maximum_group_fraction": 0.21875,
+          "origins": 32
+        },
+        "1": {
+          "groups": 12,
+          "kish_group_count_descriptive_only": 6.2439024390243905,
+          "maximum_group_fraction": 0.21875,
+          "origins": 32
+        }
+      },
+      "exact_class_degenerate_bootstrap_probability": 2.5811747917131946e-09,
+      "groups": 18,
+      "iid_zero_FPR_one_sided_95pct_upper": 0.0893681989862648,
+      "precision_status": "NOT_POWERED_FROM_METADATA_ONLY",
+      "warning": "Kish and IID bound are descriptive, not EER power/cluster CI; independent source groups and real development score variability still required"
+    }
+  },
+  "protocol_sha256": "84fce576efff092269a0a6ad247d2e9f2f7b4d4e25a4545efb2518da92708036",
+  "reasons": [],
+  "reproducibility": "Pin SciPy/solver and actual allocated manifest hash; no claim of identical optimal ties across solver versions",
+  "role_targets": {
+    "calibration": 64,
+    "fusion_train": 256,
+    "fusion_val": 128,
+    "test": 64
+  },
+  "scipy_version": "1.13.0",
+  "seed": 271828,
+  "selected_origin_hash": "5904a73e5e4144ea825caaeb19210c99726aa041fbb237a973b1dcd26140787e",
+  "selection": "maximize class-bearing independent groups, then stable hash tie costs; whole-component role quotas and maximum class group share; no scores",
+  "solver": "scipy.optimize.milp",
+  "solver_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "solver_status": 0,
+  "source_link_limitation": "Official recording/source and source-speaker links absent; more links may merge groups or exclude more components",
+  "source_mapping_complete": false,
+  "source_mapping_scope": "Requires separately certified full-universe components, never speaker-only fallback",
+  "status": "ALLOCATED_METADATA_ONLY",
+  "test_scores_read": false
+}

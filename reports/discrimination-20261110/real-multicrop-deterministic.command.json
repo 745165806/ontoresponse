@@ -1,0 +1,13 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "scripts/profile_multicrop.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T12:34:37.055629+00:00",
+  "elapsed_seconds": 48.57335543632507,
+  "log": "reports/discrimination-20261110/real-multicrop-deterministic.log",
+  "cwd": "${PROJECT_ROOT}"
+}

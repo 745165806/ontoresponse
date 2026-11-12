@@ -1,0 +1,18 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-deps",
+    "--no-compile",
+    "--target",
+    "${EXTERNAL_PATH}",
+    "reports/development-runner-20261110/wheels/ontoresponse-0.5.0-py3-none-any.whl"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T12:48:04.575166+00:00",
+  "elapsed_seconds": 0.38588547706604004,
+  "log": "reports/development-runner-20261110/wheel-install.log",
+  "cwd": "${PROJECT_ROOT}"
+}

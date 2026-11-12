@@ -1,0 +1,12 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "scripts.prepare_github"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:41:17.335160+00:00",
+  "elapsed_seconds": 3.0020041465759277,
+  "log": "reports/codex-next-stage-20261110/github-prepare.log",
+  "cwd": "${PROJECT_ROOT}"
+}

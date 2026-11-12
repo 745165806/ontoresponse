@@ -1,0 +1,18 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pip",
+    "wheel",
+    ".",
+    "--no-deps",
+    "--no-build-isolation",
+    "--wheel-dir",
+    "reports/development-runner-20261110/wheels"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T12:47:46.378342+00:00",
+  "elapsed_seconds": 0.8907461166381836,
+  "log": "reports/development-runner-20261110/wheel-build.log",
+  "cwd": "${PROJECT_ROOT}"
+}

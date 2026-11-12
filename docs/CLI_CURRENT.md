@@ -1,41 +1,31 @@
-# 当前CLI（从实际 --help 生成）
+# CLI与运行入口
 
-生成日期2026-11-10。TASK_FOR_CODEX的仅reference描述是历史规格。
+使用`python -m ontoresponse --help`查看当前完整参数。主CLI保留原命令与参数兼容；默认配置为`configs/local.yaml`，默认模型为`response_mlp`。
 
-```text
-usage: __main__.py [-h] [--config CONFIG] [--max-origins MAX_ORIGINS]
-                   [--source-root SOURCE_ROOT] [--manifest MANIFEST]
-                   [--index INDEX] [--output OUTPUT] [--model MODEL]
-                   [--steps STEPS] [--seed SEED] [--shard-index SHARD_INDEX]
-                   [--shard-count SHARD_COUNT] [--shacl]
-                   [--indices INDICES [INDICES ...]] [--audio AUDIO]
-                   [--checkpoint CHECKPOINT] [--lock LOCK] [--role ROLE]
-                   {doctor,audit,audit-export,prepare-data,prepare-external,make-environments,export-ontology,check-experts,extract,merge,train,ablate,calibrate,freeze,evaluate,infer,report}
+| 用途 | 命令 |
+|---|---|
+| 环境/来源 | `doctor`、`audit` |
+| 数据准备 | `prepare-data`、`prepare-external`、`make-environments` |
+| 专家/证据 | `check-experts`、`extract`、`merge` |
+| 本体 | `export-ontology` |
+| 融合训练 | `train`、`ablate` |
+| 校准与冻结评价 | `calibrate`、`freeze`、`evaluate` |
+| 单条推断/重算/导出 | `infer`、`report`、`audit-export` |
 
-OntoResponse bounded real-expert pipeline
+通用路径参数：`--config`、`--manifest`、`--index`、`--output`。训练预算参数：`--max-origins`、`--steps`、`--seed`、`--model`。提取分片：`--shard-index`、`--shard-count`；合并：`--indices`。推断/评价使用`--audio`、`--checkpoint`、`--lock`；本体引擎可用`--shacl`。
 
-positional arguments:
-  {doctor,audit,audit-export,prepare-data,prepare-external,make-environments,export-ontology,check-experts,extract,merge,train,ablate,calibrate,freeze,evaluate,infer,report}
+## 独立实验入口
 
-options:
-  -h, --help            show this help message and exit
-  --config CONFIG
-  --max-origins MAX_ORIGINS
-  --source-root SOURCE_ROOT
-  --manifest MANIFEST
-  --index INDEX
-  --output OUTPUT
-  --model MODEL
-  --steps STEPS
-  --seed SEED
-  --shard-index SHARD_INDEX
-  --shard-count SHARD_COUNT
-  --shacl
-  --indices INDICES [INDICES ...]
-  --audio AUDIO
-  --checkpoint CHECKPOINT
-  --lock LOCK
-  --role ROLE
+```bash
+python -m scripts.expert_benchmark --help
+python -m scripts.run_pilot --help
+python -m scripts.prepare_connected --help
+python -m scripts.materialize_development --help
+python -m scripts.freeze_development --help
 ```
 
-真实新pilot入口为 `python -m scripts.run_pilot --config configs/pilot-20261110.yaml`；只有显式预算enabled及预检通过才启动。`full_attention`为完整自注意力TransformerEncoder对照，未声称完整Set Transformer。`untyped_union`保留旧union计算，`relation_tied`单独保留四通道归一化。
+完整专家benchmark有独立的明确full-evaluation预算，不能把主CLI的smoke/pilot预算改掉当作全量融合训练。pilot仅在显式enabled且来源、质量、预算和预注册门通过后执行。已有冻结目录不覆盖。
+
+`full_attention`为完整自注意力TransformerEncoder对照；`untyped_union`合并邻接；`relation_tied`保留四通道及逐关系归一化、仅共享矩阵。旧名字继续兼容保存的checkpoint。
+
+数据开发接口见[DEVELOPMENT_V2.md](DEVELOPMENT_V2.md)，全部保留脚本见[SCRIPTS.md](SCRIPTS.md)，最新状态见[STATUS.md](../STATUS.md)。

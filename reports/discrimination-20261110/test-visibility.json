@@ -1,0 +1,52 @@
+{
+  "all_128_pilot_recordings_excluded_from_fresh_confirmation": true,
+  "experiments": [
+    {
+      "ledger": "reports/implementation/audit_manifest.jsonl",
+      "roles": {
+        "calibration": 8,
+        "fusion_train": 8,
+        "fusion_val": 8
+      },
+      "status": "previously viewed exploratory",
+      "test_ids": []
+    },
+    {
+      "ledger": "reports/pilot-20261110/audit_manifest.jsonl",
+      "roles": {
+        "calibration": 16,
+        "fusion_train": 64,
+        "fusion_val": 24,
+        "test": 24
+      },
+      "status": "previously evaluated 18 configurations",
+      "test_ids": [
+        "record-b926b6a430f44a94bdcd",
+        "record-bd9262d258771417414b",
+        "record-fe7bf2583a7552352fcf",
+        "record-d7a8685365c8defccbf6",
+        "record-6885359ec88562ae29b4",
+        "record-2610e8ebfbb7f026edb2",
+        "record-f87fbb03073bfe09ee4c",
+        "record-6f43e3c1c3598a91675a",
+        "record-93fd6913da1ab708acac",
+        "record-4579356628f0e40aeaf3",
+        "record-8f8b4fb50977ecc69b97",
+        "record-2c6a7684ec36ca30463e",
+        "record-6e39e94494bbab0a6f8f",
+        "record-80e0740db67ab7a6e563",
+        "record-a572acbb47cba2c17b30",
+        "record-5061d1a969d5a098e1a7",
+        "record-7d6e678d623e84c75c74",
+        "record-3a574ff0f3b5bd7cd6d8",
+        "record-86dbcc82994e50180032",
+        "record-23f88e1a03d794dcd736",
+        "record-b7b9ee1e48e3142f8346",
+        "record-10ef70b091eac689b570",
+        "record-2b13b764ec3bdeb958a1",
+        "record-18258afcf20f2ee8748b"
+      ]
+    }
+  ],
+  "new_test_audio_or_scores_read": false
+}

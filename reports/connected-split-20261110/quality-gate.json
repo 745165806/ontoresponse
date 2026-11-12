@@ -1,0 +1,13 @@
+{
+  "code_sha256": "7b79db93c0213f8d3b5181eb368f5261ceb71df2d1aabbb32d63223079ae8e1b",
+  "installed_wheel": "outside-install.json",
+  "new_confirmation_read": false,
+  "passed": true,
+  "real_new_expert_data": false,
+  "source_gate_passed": false,
+  "unit_synthetic": {
+    "command": "complete-tests.command.json",
+    "passed": 166,
+    "skipped": 0
+  }
+}

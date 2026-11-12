@@ -1,0 +1,9 @@
+{
+  "status": "verified",
+  "members": 649,
+  "missing": [],
+  "prediction_rows": 576,
+  "audio_or_weights_included": false,
+  "zip_sha256": "8e99c3c5828eb4634447832dd365a4abe61784f0a623c25a34d16d8399420ab5",
+  "zip_bytes": 38931307
+}

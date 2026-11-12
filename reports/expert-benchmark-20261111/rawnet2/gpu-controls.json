@@ -9,7 +9,7 @@
   "upstream": {
     "atol": 0.0001,
     "hidden_dim": 1024,
-    "id": "record-546a78553537fe077f1a",
+    "id": "LA_E_2834763",
     "limitation": "same loaded upstream implementation with hook removed; not an independent reimplementation",
     "logits": [
       [

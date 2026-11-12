@@ -1,0 +1,13 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "scripts/revise_protocol.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T12:28:30.181617+00:00",
+  "elapsed_seconds": 0.11280441284179688,
+  "log": "reports/discrimination-20261110/protocol-revision.log",
+  "cwd": "${PROJECT_ROOT}"
+}

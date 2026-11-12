@@ -1,0 +1,33 @@
+usage: ontoresponse [-h] [--config CONFIG] [--max-origins MAX_ORIGINS]
+                    [--source-root SOURCE_ROOT] [--manifest MANIFEST]
+                    [--index INDEX] [--output OUTPUT] [--model MODEL]
+                    [--steps STEPS] [--seed SEED] [--shard-index SHARD_INDEX]
+                    [--shard-count SHARD_COUNT] [--shacl]
+                    [--indices INDICES [INDICES ...]] [--audio AUDIO]
+                    [--checkpoint CHECKPOINT] [--lock LOCK] [--role ROLE]
+                    {doctor,audit,audit-export,prepare-data,prepare-external,make-environments,export-ontology,check-experts,extract,merge,train,ablate,calibrate,freeze,evaluate,infer,report}
+
+OntoResponse bounded real-expert pipeline
+
+positional arguments:
+  {doctor,audit,audit-export,prepare-data,prepare-external,make-environments,export-ontology,check-experts,extract,merge,train,ablate,calibrate,freeze,evaluate,infer,report}
+
+options:
+  -h, --help            show this help message and exit
+  --config CONFIG
+  --max-origins MAX_ORIGINS
+  --source-root SOURCE_ROOT
+  --manifest MANIFEST
+  --index INDEX
+  --output OUTPUT
+  --model MODEL
+  --steps STEPS
+  --seed SEED
+  --shard-index SHARD_INDEX
+  --shard-count SHARD_COUNT
+  --shacl
+  --indices INDICES [INDICES ...]
+  --audio AUDIO
+  --checkpoint CHECKPOINT
+  --lock LOCK
+  --role ROLE

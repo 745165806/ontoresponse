@@ -1,0 +1,139 @@
+status: PROPOSAL_ONLY_NOT_AUTHORIZED_FULL
+full_enabled: false
+expert_training_enabled: false
+task:
+  unit: one full utterance
+  label_map:
+    bonafide: 0
+    spoof: 1
+  objective: origin-normalized BCEWithLogits
+  main_output: unconstrained spoof logit
+pilot_reference:
+  config: configs/pilot-20261110.yaml
+  config_sha256: 5754314ee33f10672ee1d286c5980f20fd533744a479dbd069771074240d2439
+  scope: integration_pretrained; known task ID/speaker isolation only
+  actual_result: reports/pilot-20261110/completion.json
+  H1_gate: NOT_SUPPORTED_IN_PILOT; original and selected response mean val EER both zero
+  H2_execution: NOT_RUN_BY_PREREGISTERED_STOP_RULE
+  consumption_ledger: reports/codex-next-stage-20261110/test-consumption.json
+  formal_role_source_hashes: null
+  formal_role_source_hash_status: BLOCKED; complete official source map and fresh groups required before freezing a formal protocol
+research_holdout_gate:
+  status: BLOCKED
+  requires:
+  - official recording-level 2019/2021 to VCTK/VCC maps pinned and connected-source
+    groups checked
+  - task training/checkpoint/HPO source sets certified for all experts
+  - fresh confirmation groups not used in old exploration or this pilot
+  generic_SSL_condition: open_pretraining, with unknown overlap disclosed
+roles:
+  expert_fit_and_selection: fixed from audited experts; unknown HPO provenance remains
+    a blocker
+  fusion_train: normalizers, adapters, graph/classifier BCE and train-only diagnostics
+  fusion_val: all hyperparameter/model selection, convergence, frozen operating threshold
+  calibration: independent positive-slope Platt only after model selection
+  confirmation_test: new source/speaker-connected groups; all model choices frozen
+    before one evaluation
+exposure:
+  T_train_candidates:
+  - identity
+  - lowpass_4500
+  - white_noise_25dB
+  - MP3_48kbps
+  P_fixed:
+  - lowpass_5000
+  - lowpass_3400
+  - white_noise_30dB
+  - white_noise_20dB
+  - MP3_64kbps
+  - MP3_32kbps
+  required_closure: every observed P(T_train(x)) ordered DAG and all known expert
+    augmentation/pretraining traces
+  confirmation_candidates:
+  - AAC
+  - Opus
+  name: fusion-training-unseen codec operator, not all-model-unseen
+primary_comparison:
+  models:
+  - typed_response
+  - strongest ordinary response baseline selected on fusion_val
+  metric: macro utterance EER across prespecified unseen processing conditions
+report_always:
+- no-new-processing EER
+- each-condition EER/AUROC/spoof AUPRC
+- frozen threshold actual FPR/TPR/FNR
+- NLL/Brier/reliability bins
+- N_requested/N_scored/N_failed
+- per-request status/failure list
+- latency/storage/expert-view count/crop coverage
+- all seeds separately
+controls:
+  normalization:
+  - typed_response
+  - relation_tied
+  - untyped_union
+  same_information:
+  - all_views_mlp
+  - response_mlp
+  - full_attention
+  structure:
+  - wrong_family_actual_members
+  - drop_anchor
+  - drop_same_probe
+  - drop_same_family
+  information:
+  - no_embedding_response
+  - no_score_response
+  - identity_copy_views
+  cost:
+  - 0
+  - 3
+  - 6
+  three_probe_warning: one probe/family has no same-family edges; cost and topology
+    are jointly changed
+H1_then_H2:
+  H1: additional probe observations improve over original embedding+score under matched
+    data/selection budget
+  H2: typed vs tied/union/wrong relations/strong same-information baselines
+  stop: No extra relational complexity when preregistered pilot H1 is unsupported
+candidate_budget_proposal:
+  seeds:
+  - 17
+  - 29
+  - 43
+  widths:
+  - 32
+  - 64
+  learning_rates:
+  - 0.001
+  - 0.0003
+  trials_per_family: 4
+  max_epochs: 200
+  early_stop_patience: 20
+  requires_user_review_before_full: true
+statistics:
+  bootstrap: paired source/speaker components; all conditions together; identical
+    draws for both models
+  replicates: 2000
+  degenerate_draws: reported, never counted as valid
+  seeds_do_not_increase_independent_recordings: true
+sample_size_limits:
+  pilot_test: 24 recordings but only 3 known speaker groups / 1 spoof speaker group;
+    cannot infer broad generalization
+  EER_difference_precision: cannot derive reliable cluster-based power from current
+    pilot; need larger independent source groups
+  zero_FPR_95pct_bound_under_iid: p_upper = 1 - 0.05^(1/N_bonafide)
+  iid_bonafide_needed_for_upper_bound_1percent: 299
+  warning: the binomial count assumes independent recordings and does not replace
+    speaker/source-group uncertainty
+external_confirmations:
+  ASV2021DF: official full evaluation and known-overlap-removed subset separately;
+    unknown source is not clean
+  ASV5: official Track1 tools/data/version audit before use; no automatic full download
+rerun_policy:
+- only deterministic implementation/infrastructure failure with predeclared unchanged
+  protocol
+- retain failed run and original outputs
+- no score direction/threshold/hyperparameter selection from confirmation results
+consumption: old 8 In-the-Wild origins + all descendants remain consumed; pilot confirmation
+  origins become consumed after pilot evaluation

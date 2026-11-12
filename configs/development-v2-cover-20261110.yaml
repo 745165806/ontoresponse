@@ -1,0 +1,191 @@
+mode: integration_pretrained
+runtime:
+  device: cpu
+  threads: 4
+  budget: pilot
+  max_origins: 512
+  steps: 2000
+data:
+  asv2019: ${DATA_ROOT}/asvspoof2019/LA
+  asv2021df: ${DATA_ROOT}/asvspoof2019/LA/ASVspoof2021_DF_eval
+  asv2021df_keys: ${DATA_ROOT}/asvspoof2019/LA/ASVspoof2021_DF_keys_full
+  inthewild: ${DATA_ROOT}/release_in_the_wild
+  asv5: ${DATA_ROOT}/asvspoof5
+output: reports/development-v2-cover-20261110
+cache: artifacts/development-v2-cover-20261110
+experts:
+- id: aasist
+  kind: aasist
+  repository: ${EXPERT_ROOT}/aasist
+  module: models/AASIST.py
+  config: config/AASIST.conf
+  checkpoint: ${EXPERT_ROOT}/TTA/outputs/source/aasist-full-asvspoof2019train-random/checkpoints/best.pt
+  state_key: model_state
+  spoof_index: 0
+  bonafide_index: 1
+  task_trained: true
+  supervision:
+    training: ASVspoof2019_LA_official_train
+    selection: ASVspoof2019_LA_official_dev
+    augmentation: none_author_freq_aug_false
+    origin: local_TTA_trained_in_project
+    independent_holdout: false
+- id: ssl_aasist
+  kind: ssl_aasist
+  repository: ${EXPERT_ROOT}/SSL_Anti-spoofing
+  module: model.py
+  checkpoint: ${EXPERT_ROOT}/TTA/outputs/source/ssl-aasist-full-asvspoof2019train-random/checkpoints/best.pt
+  frontend: ${EXPERT_ROOT}/pretrained-model/xlsr2_300m.pt
+  state_key: model_state
+  spoof_index: 0
+  bonafide_index: 1
+  task_trained: true
+  supervision:
+    training: ASVspoof2019_LA_official_train
+    selection: ASVspoof2019_LA_official_dev
+    augmentation: none_project_freq_aug_false
+    generic_ssl_pretraining: unknown_open_data_overlap
+    origin: local_TTA_trained_in_project
+    independent_holdout: false
+crop:
+  samples: 64600
+  strategy: cover
+  padding: repeat
+  aggregation: mean_hidden_mean_logits
+  batch_size: 2
+pilot:
+  max_origins: 512
+  origins_by_role:
+    fusion_train: 256
+    fusion_val: 128
+    calibration: 64
+    test: 64
+  max_optimizer_steps: 2000
+  max_epochs: 200
+  min_epochs: 40
+  patience_epochs: 20
+  batch_size: 32
+  seeds:
+  - 17
+  - 29
+  - 43
+  width: 64
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  trials_per_family: 4
+  models:
+  - score_lr
+  - score_mlp
+  - original_mlp
+  - tta_stats
+  - all_views_mlp
+  - response_mlp
+  - full_attention
+  - untyped_union
+  - relation_tied
+  - typed_response
+  - wrong_family
+  - drop_anchor
+  - drop_same_probe
+  - drop_same_family
+  split_seed: 271828
+  target_dev_fpr: 0.1
+  supervision_audit: reports/next-stage-20261110/supervision-audit.json
+  consumed_registry: reports/next-stage-20261110/consumed-exploration.json
+  prior_development_ledger: reports/implementation/audit_manifest.jsonl
+  required_next_stage_document: CODEX_NEXT_STAGE.md
+  claim_scope: new_development_integration_only; not research_holdout
+  selection: Per trial min origin-weighted fusion_val BCE; select common width/lr
+    per family by 3-seed mean prespecified AAC/Opus macro EER, tie BCE then trial
+    ID; all selected families must converge; no confirmation if H1 inconclusive
+  training_environments:
+  - identity
+  expert_training_authorized: false
+  full_training_authorized: false
+  quality_gate: reports/connected-split-20261110/quality-gate.json
+  reviewed_next_stage_sha256: 99c1ddf3eccc9d4c22abf5c5e1a4459f4d8ed85d58c1cfc07383160ce0420b1a
+  enabled: false
+  max_cache_bytes: 8589934592
+  min_free_disk_bytes: 12884901888
+  max_output_bytes: 2147483648
+  h1_models:
+  - score_lr
+  - score_mlp
+  - original_mlp
+  - tta_stats
+  - all_views_mlp
+  - response_mlp
+  h2_models:
+  - full_attention
+  - untyped_union
+  - relation_tied
+  - typed_response
+  confirmation_models:
+  - wrong_family
+  - drop_anchor
+  - drop_same_probe
+  - drop_same_family
+  h1_gate:
+    min_absolute_val_eer_improvement: 0.01
+    improved_seeds_at_least: 2
+    mean_val_bce_must_not_worsen: true
+    min_groups_per_class: 5
+  integration_provenance_scope: known task IDs and speakers isolated; official source
+    maps download blocked; research_holdout BLOCKED
+  probe_budgets:
+  - 0
+  - 3
+  - 6
+  three_probe_indices:
+  - 0
+  - 2
+  - 4
+  disk_policy: Hard 2GiB cache, 1GiB fusion outputs, >=2GiB free before start; no
+    expert training/full download
+  source_matrix: reports/codex-next-stage-20261110/supervision_matrix.json
+  role_overlap_report: reports/codex-next-stage-20261110/role_overlap_report.json
+  protocol_version: 2
+  min_delta: 1.0e-06
+  candidate_grid:
+  - width: 32
+    learning_rate: 0.001
+  - width: 32
+    learning_rate: 0.0003
+  - width: 64
+    learning_rate: 0.001
+  - width: 64
+    learning_rate: 0.0003
+  require_convergence: true
+  require_h1_support_before_confirmation: true
+  h1_response_candidates:
+  - response_mlp
+  - all_views_mlp
+  validation_eer_conditions:
+  - AAC_64kbps
+  - Opus_32kbps
+  conditions_by_role:
+    fusion_train:
+    - identity
+    - hash_assigned_T
+    fusion_val:
+    - identity
+    - AAC_64kbps
+    - Opus_32kbps
+    calibration:
+    - identity
+    - AAC_64kbps
+    - Opus_32kbps
+    test:
+    - identity
+    - AAC_64kbps
+    - Opus_32kbps
+  training_t_candidates:
+  - lowpass4500
+  - white25
+  - MP3_48
+  environment_assignment_seed: 271828
+  source_map_manifest: artifacts/source-maps/normalized-recording-map.json
+  official_map_archive: artifacts/source-maps/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz
+  consumption_ledger: reports/discrimination-20261110/consumed-recordings.jsonl
+  preregistration: reports/development-v2-cover-20261110/preregistration.json
+  allocation_timeout_seconds: 30

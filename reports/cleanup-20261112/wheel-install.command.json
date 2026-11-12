@@ -1,0 +1,19 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pip",
+    "install",
+    "--no-deps",
+    "--no-compile",
+    "--no-index",
+    "--target",
+    "${EXTERNAL_PATH}",
+    "reports/cleanup-20261112/dist/ontoresponse-0.5.0-py3-none-any.whl"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T10:38:40.169805+00:00",
+  "elapsed_seconds": 0.3749046325683594,
+  "log": "reports/cleanup-20261112/wheel-install.log",
+  "cwd": "${PROJECT_ROOT}"
+}

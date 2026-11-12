@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "unchanged_old_evidence_files": 5790,
+  "intentional_retired_archives": [
+    "deliverables/ontoresponse-github-20261110.bundle",
+    "deliverables/ontoresponse-v0.5-baseline-20261110.tar.gz"
+  ],
+  "unplanned_changes": [],
+  "new_training": false,
+  "new_confirmation": false
+}

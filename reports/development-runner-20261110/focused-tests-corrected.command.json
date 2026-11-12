@@ -1,0 +1,18 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.:${EXTERNAL_PATH}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_development_runner.py",
+    "tests/test_pilot_budget.py",
+    "tests/test_discrimination.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T12:43:10.389815+00:00",
+  "elapsed_seconds": 20.96652841567993,
+  "log": "reports/development-runner-20261110/focused-tests-corrected.log",
+  "cwd": "${PROJECT_ROOT}"
+}

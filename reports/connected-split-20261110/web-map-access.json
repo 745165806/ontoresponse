@@ -1,0 +1,7 @@
+{
+  "archive_bytes_available_in_workspace": false,
+  "observed": "Failed to fetch: (400) Unsupported content-type: application/x-gzip",
+  "scope": "Web page retrieval cannot deliver binary archive bytes to this workspace",
+  "tool": "web.run open",
+  "url": "https://www.asvspoof.org/asvspoof2019/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz"
+}

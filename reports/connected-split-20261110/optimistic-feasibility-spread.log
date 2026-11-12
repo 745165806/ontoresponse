@@ -1,0 +1,12 @@
+{
+  "status": "ALLOCATED_METADATA_ONLY",
+  "level": "REAL_METADATA_ONLY_OPTIMISTIC_BOUND_NOT_SOURCE_CERTIFIED",
+  "candidate_origins": 71237,
+  "eligible_components": 67,
+  "eligible_components_by_class": {
+    "0": 67,
+    "1": 48
+  },
+  "reasons": [],
+  "elapsed_seconds": 0.8064571960130706
+}

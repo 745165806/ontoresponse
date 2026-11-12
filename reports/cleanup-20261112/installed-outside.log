@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "package": "${EXTERNAL_PATH}",
+  "source_code_sha256": "5199b439a2da4b575be7d02f8d1de3dc0713920d7892a156397a609949b66941",
+  "installed_source_hash_equal": true,
+  "packaged_resources_equal": true,
+  "validation_requests": 24,
+  "before_after_logits_exact": true,
+  "new_training": false,
+  "new_confirmation": false
+}

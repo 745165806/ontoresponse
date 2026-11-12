@@ -1,0 +1,19 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=${EXTERNAL_PATH}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "${PROJECT_ROOT}/scripts/check_v2_install.py",
+    "--repo",
+    "${PROJECT_ROOT}",
+    "--report",
+    "${PROJECT_ROOT}/reports/connected-split-20261110/outside-install.json",
+    "--installed-root",
+    "${EXTERNAL_PATH}"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T13:08:39.278583+00:00",
+  "elapsed_seconds": 2.670894145965576,
+  "log": "reports/connected-split-20261110/outside-install.log",
+  "cwd": "/tmp"
+}

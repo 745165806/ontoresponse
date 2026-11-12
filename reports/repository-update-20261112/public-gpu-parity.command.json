@@ -1,0 +1,16 @@
+{
+  "command": [
+    "env",
+    "CUDA_VISIBLE_DEVICES=0",
+    "CUBLAS_WORKSPACE_CONFIG=:4096:8",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONPATH=${TEMP_ROOT}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "${TEMP_ROOT}"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T11:43:37.547778+00:00",
+  "elapsed_seconds": 18.761173486709595,
+  "log": "reports/repository-update-20261112/public-gpu-parity.log",
+  "cwd": "${PROJECT_ROOT}"
+}

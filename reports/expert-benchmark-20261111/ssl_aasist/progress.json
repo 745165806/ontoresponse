@@ -1,0 +1,9 @@
+{
+  "completed": 71237,
+  "cuda_peak_allocated_bytes": 2136691200,
+  "elapsed_seconds": 964.0649602389894,
+  "expert": "ssl_aasist",
+  "pid": 697792,
+  "requested": 71237,
+  "requests_per_second": 73.89232358609996
+}

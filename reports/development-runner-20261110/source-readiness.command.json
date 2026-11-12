@@ -1,0 +1,17 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "scripts/freeze_development.py",
+    "--config",
+    "configs/development-v2-cover-20261110.yaml",
+    "--report",
+    "reports/development-runner-20261110/source-readiness.json"
+  ],
+  "exit_code": 2,
+  "started_utc": "2026-11-10T12:43:54.148603+00:00",
+  "elapsed_seconds": 1.9532012939453125,
+  "log": "reports/development-runner-20261110/source-readiness.log",
+  "cwd": "${PROJECT_ROOT}"
+}

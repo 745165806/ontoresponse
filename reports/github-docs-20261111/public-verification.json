@@ -1,0 +1,49 @@
+{
+  "status": "PUSHED_AND_PUBLICLY_VERIFIED",
+  "repository": "745165806/ontoresponse",
+  "visibility": "public",
+  "branch": "main",
+  "commit": "45dc09f387a2aa24b89b22b2a73dd252e0ee5e10",
+  "commit_url": "https://github.com/745165806/ontoresponse/commit/45dc09f387a2aa24b89b22b2a73dd252e0ee5e10",
+  "public_main_commit_matches": true,
+  "files": [
+    {
+      "path": "README.md",
+      "http_status": 200,
+      "sha256": "d85f77a1a12587340c5cd17beadc65effa3e8b171651f15567f31c57d24e31f3",
+      "exact_bytes_match": true
+    },
+    {
+      "path": "STATUS.md",
+      "http_status": 200,
+      "sha256": "19f8d2ce8aa8072daf9c708e7a94f837c64ac4ea7636544972dd7c36a14dc97f",
+      "exact_bytes_match": true
+    },
+    {
+      "path": "docs/FUSION_DATA_RECOMMENDATION_20261111.md",
+      "http_status": 200,
+      "sha256": "7c1f638b8c5f1117c3f83701be23fdeeb57d9fec45db0c96b56ea2fb4b09c845",
+      "exact_bytes_match": true
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/RESULTS.md",
+      "http_status": 200,
+      "sha256": "a170fd961fd04c5b649bf0edf759e6002eda33f133aa706d11d9125ed56c3b93",
+      "exact_bytes_match": true
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/summary.json",
+      "http_status": 200,
+      "sha256": "4295df03cff829146b9c095042fed58d4fb14504b359d7019cc3bdd90794824d",
+      "exact_bytes_match": true
+    },
+    {
+      "path": "AUDIT_MANIFEST.json",
+      "http_status": 200,
+      "sha256": "b3d948e5e19c687c26fca7cef3268bb999d6448f37bbcd150f76d014a283c75d",
+      "exact_bytes_match": true
+    }
+  ],
+  "manifest_members": 680,
+  "changed_files": 38
+}

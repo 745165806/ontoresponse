@@ -1,0 +1,33 @@
+{
+  "status": "DELETED_VERIFIED_DUPLICATE_CONTAINERS",
+  "retired": [
+    {
+      "path": "deliverables/ontoresponse-v0.5-baseline-20261110.tar.gz",
+      "bytes": 492703163,
+      "sha256": "3e03ea3f4e41fee4c657f87ab00761e47972140d50d1525b3b7c27cc6ed1aab7",
+      "replacement": "deliverables/ontoresponse-v0.5-baseline-20261110.delta.tar.gz"
+    },
+    {
+      "path": "deliverables/ontoresponse-github-20261110.bundle",
+      "bytes": 44560217,
+      "sha256": "3b13a1a39720b444711082953097e619ca903cfc5bc47f675df3e32089f32f37",
+      "replacement": "GitHub history reachable from 45dc09f387a2aa24b89b22b2a73dd252e0ee5e10"
+    }
+  ],
+  "retained_base": "deliverables/ontoresponse-v0.5-next-stage-20261110.tar.gz",
+  "retained_base_sha256": "2bc2f8e337350635b1c6a6be468e6f2d22a3f09113324a5b2de60f54d766bcb1",
+  "delta": "deliverables/ontoresponse-v0.5-baseline-20261110.delta.tar.gz",
+  "delta_bytes": 404022,
+  "delta_sha256": "764fb63fb751818536a969637e7695ac1ec24983b7e94c0918861d192bb42245",
+  "restored_files_verified": 2463,
+  "unique_historical_files": 13,
+  "original_file_bytes_preserved": true,
+  "original_gzip_container_byte_identity_not_claimed": true,
+  "remote_main_before_update": "45dc09f387a2aa24b89b22b2a73dd252e0ee5e10",
+  "bundle_heads": [
+    "98ab75cad5fb46212e7b4c255dc9f372f130f390 refs/heads/main",
+    "98ab75cad5fb46212e7b4c255dc9f372f130f390 HEAD"
+  ],
+  "reclaimed_bytes": 536859358,
+  "historical_records_unchanged": true
+}

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.:${EXTERNAL_PATH}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T12:26:35.011822+00:00",
+  "elapsed_seconds": 24.26426887512207,
+  "log": "reports/discrimination-20261110/unit-suite-local-deps.log",
+  "cwd": "${PROJECT_ROOT}"
+}

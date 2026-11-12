@@ -1,0 +1,6 @@
+{
+  "status": "BLOCKED",
+  "reason": "Missing v2 provenance: reports/development-v2-cover-20261110/audit_manifest.jsonl, reports/development-v2-cover-20261110/inference_manifest.jsonl, reports/development-v2-cover-20261110/data-audit.json, artifacts/source-maps/normalized-recording-map.json, artifacts/source-maps/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz",
+  "freeze_written": false,
+  "test_used": false
+}

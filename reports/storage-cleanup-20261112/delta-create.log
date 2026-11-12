@@ -1,0 +1,10 @@
+{
+  "schema": "ontoresponse-snapshot-delta-1",
+  "base_name": "ontoresponse-v0.5-next-stage-20261110.tar.gz",
+  "base_sha256": "2bc2f8e337350635b1c6a6be468e6f2d22a3f09113324a5b2de60f54d766bcb1",
+  "retired_name": "ontoresponse-v0.5-baseline-20261110.tar.gz",
+  "retired_sha256": "3e03ea3f4e41fee4c657f87ab00761e47972140d50d1525b3b7c27cc6ed1aab7",
+  "retired_bytes": 492703163,
+  "original_archive_byte_identity_preserved": false,
+  "original_file_content_identity_preserved": true
+}

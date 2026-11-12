@@ -1,0 +1,29 @@
+base_config: configs/local.yaml
+output: reports/expert-benchmark-20261111
+protocol: ${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_cm_protocols/ASVspoof2019.LA.cm.eval.trl.txt
+audio_root: ${DATA_ROOT}/asvspoof2019/LA/ASVspoof2019_LA_eval/flac
+official_metric: ${EXPERT_ROOT}/aasist/evaluation.py
+budget:
+  mode: full_evaluation_only
+  authorized_by: user_request_2026-11-11_three_experts_entire_ASVspoof2019_LA_eval
+  expected_requests: 71237
+  expected_bonafide: 7355
+  expected_spoof: 63882
+  max_seconds_per_expert: 14400
+  max_output_bytes: 536870912
+  optimizer_steps: 0
+crop: {samples: 64600, starts: [0], padding: repeat, aggregation: mean_hidden_mean_logits}
+seed: 17
+threads: 4
+workers: 4
+jobs:
+  - {id: aasist, base_expert: aasist, gpu: 0, batch_size: 24}
+  - {id: ssl_aasist, base_expert: ssl_aasist, gpu: 1, batch_size: 10}
+  - {id: rawnet2, base_expert: rawnet2, gpu: 3, batch_size: 32}
+  - id: aasist_author_reference
+    base_expert: aasist
+    gpu: 0
+    batch_size: 24
+    checkpoint: ${EXPERT_ROOT}/aasist/models/weights/AASIST.pth
+    state_key: null
+    provenance: local_copy_of_author_released_AASIST_weight_not_selected_on_this_eval

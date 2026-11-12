@@ -1,0 +1,15 @@
+{
+  "command": [
+    "env",
+    "PYTHONPATH=.:${EXTERNAL_PATH}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 1,
+  "started_utc": "2026-11-10T12:47:45.211890+00:00",
+  "elapsed_seconds": 34.84723138809204,
+  "log": "reports/development-runner-20261110/full-tests-final.log",
+  "cwd": "${PROJECT_ROOT}"
+}

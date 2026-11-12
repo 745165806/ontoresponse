@@ -1,0 +1,15 @@
+{
+  "command": [
+    "python3",
+    "scripts/audit_bundle.py",
+    "verify",
+    "${EXTERNAL_PATH}",
+    "--report",
+    "reports/storage-cleanup-20261112/restored-verification.json"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T11:30:58.027121+00:00",
+  "elapsed_seconds": 7.33856987953186,
+  "log": "reports/storage-cleanup-20261112/restored-snapshot-verify.log",
+  "cwd": "${PROJECT_ROOT}"
+}

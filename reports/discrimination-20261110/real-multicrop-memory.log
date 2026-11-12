@@ -1,0 +1,14 @@
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/cuda/__init__.py:734: UserWarning: Can't initialize NVML
+  warnings.warn("Can't initialize NVML")
+Traceback (most recent call last):
+  File "${PROJECT_ROOT}/scripts/profile_multicrop.py", line 60, in <module>
+    if __name__=='__main__':raise SystemExit(main())
+  File "${PROJECT_ROOT}/scripts/profile_multicrop.py", line 32, in main
+    torch.testing.assert_close(first.embeddings,repeat.embeddings,atol=0,rtol=0)
+  File "${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/testing/_comparison.py", line 1530, in assert_close
+    raise error_metas[0].to_error(msg)
+AssertionError: Tensor-likes are not equal!
+
+Mismatched elements: 94 / 160 (58.8%)
+Greatest absolute difference: 9.5367431640625e-07 at index (0, 21)
+Greatest relative difference: 1.0155207519346732e-06 at index (0, 115)

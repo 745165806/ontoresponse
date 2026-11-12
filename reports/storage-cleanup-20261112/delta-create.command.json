@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "reports/storage-cleanup-20261112/snapshot_delta.py",
+    "create",
+    "--base",
+    "deliverables/ontoresponse-v0.5-next-stage-20261110.tar.gz",
+    "--source",
+    "deliverables/ontoresponse-v0.5-baseline-20261110.tar.gz",
+    "--output",
+    "deliverables/ontoresponse-v0.5-baseline-20261110.delta.tar.gz"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T11:28:20.106271+00:00",
+  "elapsed_seconds": 13.215926885604858,
+  "log": "reports/storage-cleanup-20261112/delta-create.log",
+  "cwd": "${PROJECT_ROOT}"
+}

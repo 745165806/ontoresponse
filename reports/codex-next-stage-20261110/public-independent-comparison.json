@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "independent_interpreter": "/usr/bin/python3",
+  "dependency_scope": "Python standard library; no models/audio/project metrics",
+  "method_seed_condition_tables": 36,
+  "prediction_rows": 576,
+  "new_run_metric_comparisons": 126,
+  "differences_gt_1e_10": []
+}

@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "audit_recompute.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-10T05:41:06.215667+00:00",
+  "elapsed_seconds": 0.04195094108581543,
+  "log": "reports/codex-next-stage-20261110/public-recompute.log",
+  "cwd": "${EXTERNAL_PATH}"
+}

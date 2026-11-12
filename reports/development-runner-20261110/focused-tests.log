@@ -1,0 +1,18 @@
+........F.................                                               [100%]
+=================================== FAILURES ===================================
+_______ test_unconverged_and_insufficient_never_support_h1_or_load_test ________
+
+tmp_path = PosixPath('${EXTERNAL_PATH}')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x737a7ae68c10>
+
+    def test_unconverged_and_insufficient_never_support_h1_or_load_test(tmp_path,monkeypatch):
+        cfg,train,val=batches(tmp_path);p=cfg['pilot'];p['h1_models']=['original_mlp','response_mlp','all_views_mlp']
+        p['h1_gate']['min_groups_per_class']=2
+        runs=results_for_gate()
+>       assert h1_decision(cfg,runs,val)['H2_allowed']
+E       assert False
+
+tests/test_development_runner.py:84: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_development_runner.py::test_unconverged_and_insufficient_never_support_h1_or_load_test
+1 failed, 25 passed in 11.36s

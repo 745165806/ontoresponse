@@ -33,13 +33,15 @@
 - 来源映射archive已取得，2019全协议和2021DF全部611829个本地keys映射全覆盖；2019 train/dev共享1043条声学来源，保守speaker/source组件不足以直接满足多角色划分。
 - 本地Codecfake train/dev共833343条文件全部存在，但speaker重叠且抽查原始采样率不一致；未在该不合格划分上启动全量融合。具体重分组方案见下方文档。
 
-## 本次公开产物与本地完整证据
+## 公开汇总与本地完整证据
 
 - `summary.json` / `summary.csv`：全结果及权重hash。
-- 各专家公开目录包含`gpu-controls.json`、`result.json`与`command-*.json`；完整measurement lock、逐条分数和运行日志保存在研究工作区，未包含在本次文档提交。
+- 各专家公开目录包含小型控制、结果和命令记录；完整逐条分数保存在本地，不随公开仓库分发。
 - `official-source-map-audit.json`、`codecfake-candidate-audit.json`：无专家分数参与的数据审计。
 - [融合数据与GPU全量方案](../../docs/FUSION_DATA_RECOMMENDATION_20261111.md)。
 
-研究工作区的重算命令为`python -m scripts.report_expert_benchmark`，需要本地完整runner及四份逐条分数；仅凭本次公开汇总不能重算新benchmark的EER。旧576条融合预测仍可独立使用根目录`audit_recompute.py`重算。详见[发布范围](PUBLICATION_SCOPE.md)。
+本地完整分数齐备时的重算命令：`${USER_HOME}/anaconda3/envs/py310/bin/python -m scripts.report_expert_benchmark`。
 
 来源：[AASIST作者仓库](https://github.com/clovaai/aasist)、[SSL作者仓库](https://github.com/TakHemlata/SSL_Anti-spoofing)、[SSL原论文](https://www.isca-archive.org/odyssey_2022/tak22_odyssey.pdf)、[RawNet2原论文](https://www.eurecom.fr/publication/6395/download/sec-publi-6395.pdf)。
+
+公开仓库包含当前精简源码与小型报告；完整benchmark分数未上传，仅凭汇总不能重算这些EER。此前576条融合预测可用根目录audit_recompute.py独立重算。见[发布范围](../../PUBLICATION.md)。

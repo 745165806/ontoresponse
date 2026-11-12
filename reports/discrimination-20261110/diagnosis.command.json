@@ -1,0 +1,11 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "scripts/diagnose_discrimination.py"
+  ],
+  "exit_code": 1,
+  "started_utc": "2026-11-10T12:25:03.058768+00:00",
+  "elapsed_seconds": 0.16275596618652344,
+  "log": "reports/discrimination-20261110/diagnosis.log",
+  "cwd": "${PROJECT_ROOT}"
+}

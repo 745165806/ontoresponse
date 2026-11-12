@@ -1,0 +1,51 @@
+{
+  "status": "software_audited_integration_pilot_completed",
+  "research_holdout": "BLOCKED",
+  "github_uploaded": false,
+  "files": [
+    {
+      "path": "reports/codex-next-stage-20261110/audit_bundle.zip",
+      "bytes": 38931307,
+      "sha256": "8e99c3c5828eb4634447832dd365a4abe61784f0a623c25a34d16d8399420ab5"
+    },
+    {
+      "path": "deliverables/ontoresponse-github-20261110.bundle",
+      "bytes": 44560217,
+      "sha256": "3b13a1a39720b444711082953097e619ca903cfc5bc47f675df3e32089f32f37"
+    }
+  ],
+  "shareable_zip_members": 649,
+  "missing_delivered_members": [],
+  "predictions": 576,
+  "independent_comparison": {
+    "status": "passed",
+    "independent_interpreter": "/usr/bin/python3",
+    "dependency_scope": "Python standard library; no models/audio/project metrics",
+    "method_seed_condition_tables": 36,
+    "prediction_rows": 576,
+    "new_run_metric_comparisons": 126,
+    "differences_gt_1e_10": []
+  },
+  "outside_installed_cli_command": {
+    "command": [
+      "${EXTERNAL_PATH}",
+      "--help"
+    ],
+    "exit_code": 0,
+    "started_utc": "2026-11-10T05:42:02.603475+00:00",
+    "elapsed_seconds": 1.6962058544158936,
+    "log": "reports/codex-next-stage-20261110/outside-cli-release.log",
+    "cwd": "/tmp"
+  },
+  "original_frozen_preservation": {
+    "changed": [],
+    "checked_files": 349,
+    "missing": [],
+    "scope": "original reports/implementation vs actual baseline archive manifest",
+    "status": "passed"
+  },
+  "git_commit": "98ab75cad5fb46212e7b4c255dc9f372f130f390",
+  "git_stage_clean": true,
+  "full_training_started": false,
+  "GPU_tested": false
+}

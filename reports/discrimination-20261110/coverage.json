@@ -1,0 +1,3161 @@
+{
+  "multi_policy": {
+    "aggregation": "mean_hidden_mean_logits",
+    "batch_size": 2,
+    "padding": "repeat",
+    "samples": 64600,
+    "strategy": "cover"
+  },
+  "rows": [
+    {
+      "id": "LA_D_8272605",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 46362
+      },
+      "role": "fusion_train",
+      "seconds": 2.897625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 46362
+      }
+    },
+    {
+      "id": "LA_D_6735956",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53023
+      },
+      "role": "fusion_train",
+      "seconds": 3.3139375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53023
+      }
+    },
+    {
+      "id": "LA_D_7200791",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 62731
+      },
+      "role": "fusion_train",
+      "seconds": 3.9206875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 62731
+      }
+    },
+    {
+      "id": "LA_D_3173565",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 51869
+      },
+      "role": "fusion_train",
+      "seconds": 3.2418125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 51869
+      }
+    },
+    {
+      "id": "LA_D_2748583",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 57980
+      },
+      "role": "fusion_train",
+      "seconds": 3.62375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 57980
+      }
+    },
+    {
+      "id": "LA_D_7160142",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47881
+      },
+      "role": "fusion_train",
+      "seconds": 2.9925625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47881
+      }
+    },
+    {
+      "id": "LA_D_8568451",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53864
+      },
+      "role": "fusion_train",
+      "seconds": 3.3665,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53864
+      }
+    },
+    {
+      "id": "LA_D_1622941",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 3,
+        "model_input_samples": 193800,
+        "starts": [
+          0,
+          64600,
+          65952
+        ],
+        "unique_samples": 130552
+      },
+      "role": "fusion_train",
+      "seconds": 8.1595,
+      "single": {
+        "coverage_fraction": 0.4948219866413383,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_6948624",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47676
+      },
+      "role": "fusion_train",
+      "seconds": 2.97975,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47676
+      }
+    },
+    {
+      "id": "LA_D_3884812",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          16420
+        ],
+        "unique_samples": 81020
+      },
+      "role": "fusion_train",
+      "seconds": 5.06375,
+      "single": {
+        "coverage_fraction": 0.7973339916070106,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_2609323",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 3,
+        "model_input_samples": 193800,
+        "starts": [
+          0,
+          64600,
+          75236
+        ],
+        "unique_samples": 139836
+      },
+      "role": "fusion_train",
+      "seconds": 8.73975,
+      "single": {
+        "coverage_fraction": 0.46196973597642954,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_3324013",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 22022
+      },
+      "role": "fusion_train",
+      "seconds": 1.376375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 22022
+      }
+    },
+    {
+      "id": "LA_D_1173765",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 33482
+      },
+      "role": "fusion_train",
+      "seconds": 2.092625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 33482
+      }
+    },
+    {
+      "id": "LA_D_3367868",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 60565
+      },
+      "role": "fusion_train",
+      "seconds": 3.7853125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 60565
+      }
+    },
+    {
+      "id": "LA_D_5075029",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36756
+      },
+      "role": "fusion_train",
+      "seconds": 2.29725,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36756
+      }
+    },
+    {
+      "id": "LA_D_2874104",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          23392
+        ],
+        "unique_samples": 87992
+      },
+      "role": "fusion_train",
+      "seconds": 5.4995,
+      "single": {
+        "coverage_fraction": 0.7341576506955177,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_6520984",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 40178
+      },
+      "role": "fusion_train",
+      "seconds": 2.511125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 40178
+      }
+    },
+    {
+      "id": "LA_D_8923577",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 52316
+      },
+      "role": "fusion_train",
+      "seconds": 3.26975,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 52316
+      }
+    },
+    {
+      "id": "LA_D_2658622",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 55870
+      },
+      "role": "fusion_train",
+      "seconds": 3.491875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 55870
+      }
+    },
+    {
+      "id": "LA_D_2442363",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47735
+      },
+      "role": "fusion_train",
+      "seconds": 2.9834375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47735
+      }
+    },
+    {
+      "id": "LA_D_9679656",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49820
+      },
+      "role": "fusion_train",
+      "seconds": 3.11375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49820
+      }
+    },
+    {
+      "id": "LA_D_5303690",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 32686
+      },
+      "role": "fusion_train",
+      "seconds": 2.042875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 32686
+      }
+    },
+    {
+      "id": "LA_D_6935031",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53119
+      },
+      "role": "fusion_train",
+      "seconds": 3.3199375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53119
+      }
+    },
+    {
+      "id": "LA_D_3259137",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47673
+      },
+      "role": "fusion_train",
+      "seconds": 2.9795625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47673
+      }
+    },
+    {
+      "id": "LA_D_1239754",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          4273
+        ],
+        "unique_samples": 68873
+      },
+      "role": "fusion_train",
+      "seconds": 4.3045625,
+      "single": {
+        "coverage_fraction": 0.937958271020574,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_8011201",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 25114
+      },
+      "role": "fusion_train",
+      "seconds": 1.569625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 25114
+      }
+    },
+    {
+      "id": "LA_D_1969568",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          6405
+        ],
+        "unique_samples": 71005
+      },
+      "role": "fusion_train",
+      "seconds": 4.4378125,
+      "single": {
+        "coverage_fraction": 0.9097950848531794,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_4199273",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          629
+        ],
+        "unique_samples": 65229
+      },
+      "role": "fusion_train",
+      "seconds": 4.0768125,
+      "single": {
+        "coverage_fraction": 0.9903570497784727,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_3443703",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 39545
+      },
+      "role": "fusion_train",
+      "seconds": 2.4715625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 39545
+      }
+    },
+    {
+      "id": "LA_D_6427284",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 43953
+      },
+      "role": "fusion_train",
+      "seconds": 2.7470625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 43953
+      }
+    },
+    {
+      "id": "LA_D_4248918",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 51140
+      },
+      "role": "fusion_train",
+      "seconds": 3.19625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 51140
+      }
+    },
+    {
+      "id": "LA_D_5324750",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          59366
+        ],
+        "unique_samples": 123966
+      },
+      "role": "fusion_train",
+      "seconds": 7.747875,
+      "single": {
+        "coverage_fraction": 0.5211106271074327,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_1072893",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          9038
+        ],
+        "unique_samples": 73638
+      },
+      "role": "fusion_train",
+      "seconds": 4.602375,
+      "single": {
+        "coverage_fraction": 0.8772644558515984,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_1738100",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64421
+      },
+      "role": "fusion_train",
+      "seconds": 4.0263125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64421
+      }
+    },
+    {
+      "id": "LA_D_9980740",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          178
+        ],
+        "unique_samples": 64778
+      },
+      "role": "fusion_train",
+      "seconds": 4.048625,
+      "single": {
+        "coverage_fraction": 0.9972521535089074,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_8172352",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 20444
+      },
+      "role": "fusion_train",
+      "seconds": 1.27775,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 20444
+      }
+    },
+    {
+      "id": "LA_D_3000565",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          15832
+        ],
+        "unique_samples": 80432
+      },
+      "role": "fusion_train",
+      "seconds": 5.027,
+      "single": {
+        "coverage_fraction": 0.803162920230754,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_1135973",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 41558
+      },
+      "role": "fusion_train",
+      "seconds": 2.597375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 41558
+      }
+    },
+    {
+      "id": "LA_D_7122184",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 25882
+      },
+      "role": "fusion_train",
+      "seconds": 1.617625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 25882
+      }
+    },
+    {
+      "id": "LA_D_1293430",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59307
+      },
+      "role": "fusion_train",
+      "seconds": 3.7066875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59307
+      }
+    },
+    {
+      "id": "LA_D_3746211",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 33353
+      },
+      "role": "fusion_train",
+      "seconds": 2.0845625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 33353
+      }
+    },
+    {
+      "id": "LA_D_4488859",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 16715
+      },
+      "role": "fusion_train",
+      "seconds": 1.0446875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 16715
+      }
+    },
+    {
+      "id": "LA_D_2923426",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53906
+      },
+      "role": "fusion_train",
+      "seconds": 3.369125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53906
+      }
+    },
+    {
+      "id": "LA_D_3144528",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 63372
+      },
+      "role": "fusion_train",
+      "seconds": 3.96075,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 63372
+      }
+    },
+    {
+      "id": "LA_D_1541720",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 46435
+      },
+      "role": "fusion_train",
+      "seconds": 2.9021875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 46435
+      }
+    },
+    {
+      "id": "LA_D_1609660",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49054
+      },
+      "role": "fusion_train",
+      "seconds": 3.065875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49054
+      }
+    },
+    {
+      "id": "LA_D_5673436",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          17915
+        ],
+        "unique_samples": 82515
+      },
+      "role": "fusion_train",
+      "seconds": 5.1571875,
+      "single": {
+        "coverage_fraction": 0.7828879597648912,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_7750829",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          33131
+        ],
+        "unique_samples": 97731
+      },
+      "role": "fusion_train",
+      "seconds": 6.1081875,
+      "single": {
+        "coverage_fraction": 0.6609980456559331,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_1119156",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 37443
+      },
+      "role": "fusion_train",
+      "seconds": 2.3401875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 37443
+      }
+    },
+    {
+      "id": "LA_D_2192025",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 55873
+      },
+      "role": "fusion_train",
+      "seconds": 3.4920625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 55873
+      }
+    },
+    {
+      "id": "LA_D_6458272",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36818
+      },
+      "role": "fusion_train",
+      "seconds": 2.301125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36818
+      }
+    },
+    {
+      "id": "LA_D_9653036",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 16517
+      },
+      "role": "fusion_train",
+      "seconds": 1.0323125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 16517
+      }
+    },
+    {
+      "id": "LA_D_7870160",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 42316
+      },
+      "role": "fusion_train",
+      "seconds": 2.64475,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 42316
+      }
+    },
+    {
+      "id": "LA_D_7688135",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 28857
+      },
+      "role": "fusion_train",
+      "seconds": 1.8035625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 28857
+      }
+    },
+    {
+      "id": "LA_D_8126437",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59333
+      },
+      "role": "fusion_train",
+      "seconds": 3.7083125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59333
+      }
+    },
+    {
+      "id": "LA_D_9672147",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 34480
+      },
+      "role": "fusion_train",
+      "seconds": 2.155,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 34480
+      }
+    },
+    {
+      "id": "LA_D_9682441",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          52787
+        ],
+        "unique_samples": 117387
+      },
+      "role": "fusion_train",
+      "seconds": 7.3366875,
+      "single": {
+        "coverage_fraction": 0.5503164745670304,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_8788522",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          10966
+        ],
+        "unique_samples": 75566
+      },
+      "role": "fusion_train",
+      "seconds": 4.722875,
+      "single": {
+        "coverage_fraction": 0.8548818251594632,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_2265315",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          5622
+        ],
+        "unique_samples": 70222
+      },
+      "role": "fusion_train",
+      "seconds": 4.388875,
+      "single": {
+        "coverage_fraction": 0.9199396200620888,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_7616930",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 28521
+      },
+      "role": "fusion_train",
+      "seconds": 1.7825625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 28521
+      }
+    },
+    {
+      "id": "LA_D_9954386",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 43566
+      },
+      "role": "fusion_train",
+      "seconds": 2.722875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 43566
+      }
+    },
+    {
+      "id": "LA_D_8770467",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 56760
+      },
+      "role": "fusion_train",
+      "seconds": 3.5475,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 56760
+      }
+    },
+    {
+      "id": "LA_D_7783712",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 45008
+      },
+      "role": "fusion_train",
+      "seconds": 2.813,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 45008
+      }
+    },
+    {
+      "id": "LA_D_3820911",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          7821
+        ],
+        "unique_samples": 72421
+      },
+      "role": "fusion_train",
+      "seconds": 4.5263125,
+      "single": {
+        "coverage_fraction": 0.8920064622139987,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_7974536",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47108
+      },
+      "role": "fusion_val",
+      "seconds": 2.94425,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47108
+      }
+    },
+    {
+      "id": "LA_D_3063506",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 57923
+      },
+      "role": "fusion_val",
+      "seconds": 3.6201875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 57923
+      }
+    },
+    {
+      "id": "LA_D_6439730",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47702
+      },
+      "role": "fusion_val",
+      "seconds": 2.981375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47702
+      }
+    },
+    {
+      "id": "LA_D_5579170",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 34045
+      },
+      "role": "fusion_val",
+      "seconds": 2.1278125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 34045
+      }
+    },
+    {
+      "id": "LA_D_7039466",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          5733
+        ],
+        "unique_samples": 70333
+      },
+      "role": "fusion_val",
+      "seconds": 4.3958125,
+      "single": {
+        "coverage_fraction": 0.9184877653448594,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_4593298",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 37329
+      },
+      "role": "fusion_val",
+      "seconds": 2.3330625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 37329
+      }
+    },
+    {
+      "id": "LA_D_7724772",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          7673
+        ],
+        "unique_samples": 72273
+      },
+      "role": "fusion_val",
+      "seconds": 4.5170625,
+      "single": {
+        "coverage_fraction": 0.8938331050323081,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_7225984",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 46236
+      },
+      "role": "fusion_val",
+      "seconds": 2.88975,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 46236
+      }
+    },
+    {
+      "id": "LA_D_4203374",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 46341
+      },
+      "role": "fusion_val",
+      "seconds": 2.8963125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 46341
+      }
+    },
+    {
+      "id": "LA_D_7622887",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 37320
+      },
+      "role": "fusion_val",
+      "seconds": 2.3325,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 37320
+      }
+    },
+    {
+      "id": "LA_D_3467485",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64093
+      },
+      "role": "fusion_val",
+      "seconds": 4.0058125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64093
+      }
+    },
+    {
+      "id": "LA_D_5192033",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 38445
+      },
+      "role": "fusion_val",
+      "seconds": 2.4028125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 38445
+      }
+    },
+    {
+      "id": "LA_D_2718909",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 57936
+      },
+      "role": "fusion_val",
+      "seconds": 3.621,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 57936
+      }
+    },
+    {
+      "id": "LA_D_6568228",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47734
+      },
+      "role": "fusion_val",
+      "seconds": 2.983375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47734
+      }
+    },
+    {
+      "id": "LA_D_4723558",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53894
+      },
+      "role": "fusion_val",
+      "seconds": 3.368375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53894
+      }
+    },
+    {
+      "id": "LA_D_4725187",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 32454
+      },
+      "role": "fusion_val",
+      "seconds": 2.028375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 32454
+      }
+    },
+    {
+      "id": "LA_D_4620892",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 60779
+      },
+      "role": "fusion_val",
+      "seconds": 3.7986875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 60779
+      }
+    },
+    {
+      "id": "LA_D_7986044",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47019
+      },
+      "role": "fusion_val",
+      "seconds": 2.9386875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 47019
+      }
+    },
+    {
+      "id": "LA_D_4293112",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36070
+      },
+      "role": "fusion_val",
+      "seconds": 2.254375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36070
+      }
+    },
+    {
+      "id": "LA_D_3496584",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64170
+      },
+      "role": "fusion_val",
+      "seconds": 4.010625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64170
+      }
+    },
+    {
+      "id": "LA_D_1758018",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36764
+      },
+      "role": "fusion_val",
+      "seconds": 2.29775,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36764
+      }
+    },
+    {
+      "id": "LA_D_8840275",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 35350
+      },
+      "role": "fusion_val",
+      "seconds": 2.209375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 35350
+      }
+    },
+    {
+      "id": "LA_D_9027095",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49151
+      },
+      "role": "fusion_val",
+      "seconds": 3.0719375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49151
+      }
+    },
+    {
+      "id": "LA_D_8259778",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59623
+      },
+      "role": "fusion_val",
+      "seconds": 3.7264375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59623
+      }
+    },
+    {
+      "id": "LA_D_8750703",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 50454
+      },
+      "role": "calibration",
+      "seconds": 3.153375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 50454
+      }
+    },
+    {
+      "id": "LA_D_6682623",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59837
+      },
+      "role": "calibration",
+      "seconds": 3.7398125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59837
+      }
+    },
+    {
+      "id": "LA_D_7559885",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49785
+      },
+      "role": "calibration",
+      "seconds": 3.1115625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49785
+      }
+    },
+    {
+      "id": "LA_D_7771236",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 31931
+      },
+      "role": "calibration",
+      "seconds": 1.9956875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 31931
+      }
+    },
+    {
+      "id": "LA_D_3163255",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59432
+      },
+      "role": "calibration",
+      "seconds": 3.7145,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59432
+      }
+    },
+    {
+      "id": "LA_D_2630833",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 39203
+      },
+      "role": "calibration",
+      "seconds": 2.4501875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 39203
+      }
+    },
+    {
+      "id": "LA_D_3081203",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 55940
+      },
+      "role": "calibration",
+      "seconds": 3.49625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 55940
+      }
+    },
+    {
+      "id": "LA_D_8590450",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 3,
+        "model_input_samples": 193800,
+        "starts": [
+          0,
+          64600,
+          93882
+        ],
+        "unique_samples": 158482
+      },
+      "role": "calibration",
+      "seconds": 9.905125,
+      "single": {
+        "coverage_fraction": 0.4076172688381015,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "LA_D_6189044",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 42936
+      },
+      "role": "calibration",
+      "seconds": 2.6835,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 42936
+      }
+    },
+    {
+      "id": "LA_D_3082795",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 34828
+      },
+      "role": "calibration",
+      "seconds": 2.17675,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 34828
+      }
+    },
+    {
+      "id": "LA_D_3229215",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49853
+      },
+      "role": "calibration",
+      "seconds": 3.1158125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 49853
+      }
+    },
+    {
+      "id": "LA_D_4258684",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 31813
+      },
+      "role": "calibration",
+      "seconds": 1.9883125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 31813
+      }
+    },
+    {
+      "id": "LA_D_6853824",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 51716
+      },
+      "role": "calibration",
+      "seconds": 3.23225,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 51716
+      }
+    },
+    {
+      "id": "LA_D_6316752",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 31623
+      },
+      "role": "calibration",
+      "seconds": 1.9764375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 31623
+      }
+    },
+    {
+      "id": "LA_D_9517414",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 28575
+      },
+      "role": "calibration",
+      "seconds": 1.7859375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 28575
+      }
+    },
+    {
+      "id": "LA_D_1339468",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 24117
+      },
+      "role": "calibration",
+      "seconds": 1.5073125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 24117
+      }
+    },
+    {
+      "id": "record-b926b6a430f44a94bdcd",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 37450
+      },
+      "role": "test",
+      "seconds": 2.340625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 37450
+      }
+    },
+    {
+      "id": "record-bd9262d258771417414b",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 22326
+      },
+      "role": "test",
+      "seconds": 1.395375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 22326
+      }
+    },
+    {
+      "id": "record-fe7bf2583a7552352fcf",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 35410
+      },
+      "role": "test",
+      "seconds": 2.213125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 35410
+      }
+    },
+    {
+      "id": "record-d7a8685365c8defccbf6",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 44737
+      },
+      "role": "test",
+      "seconds": 2.7960625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 44737
+      }
+    },
+    {
+      "id": "record-6885359ec88562ae29b4",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 51075
+      },
+      "role": "test",
+      "seconds": 3.1921875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 51075
+      }
+    },
+    {
+      "id": "record-2610e8ebfbb7f026edb2",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 42058
+      },
+      "role": "test",
+      "seconds": 2.628625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 42058
+      }
+    },
+    {
+      "id": "record-f87fbb03073bfe09ee4c",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64162
+      },
+      "role": "test",
+      "seconds": 4.010125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64162
+      }
+    },
+    {
+      "id": "record-6f43e3c1c3598a91675a",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          17615
+        ],
+        "unique_samples": 82215
+      },
+      "role": "test",
+      "seconds": 5.1384375,
+      "single": {
+        "coverage_fraction": 0.7857446937906708,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "record-93fd6913da1ab708acac",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 54573
+      },
+      "role": "test",
+      "seconds": 3.4108125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 54573
+      }
+    },
+    {
+      "id": "record-4579356628f0e40aeaf3",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 43643
+      },
+      "role": "test",
+      "seconds": 2.7276875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 43643
+      }
+    },
+    {
+      "id": "record-8f8b4fb50977ecc69b97",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 44365
+      },
+      "role": "test",
+      "seconds": 2.7728125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 44365
+      }
+    },
+    {
+      "id": "record-2c6a7684ec36ca30463e",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 2,
+        "model_input_samples": 129200,
+        "starts": [
+          0,
+          39564
+        ],
+        "unique_samples": 104164
+      },
+      "role": "test",
+      "seconds": 6.51025,
+      "single": {
+        "coverage_fraction": 0.6201758765024384,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "record-6e39e94494bbab0a6f8f",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 63416
+      },
+      "role": "test",
+      "seconds": 3.9635,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 63416
+      }
+    },
+    {
+      "id": "record-80e0740db67ab7a6e563",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 30501
+      },
+      "role": "test",
+      "seconds": 1.9063125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 30501
+      }
+    },
+    {
+      "id": "record-a572acbb47cba2c17b30",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36143
+      },
+      "role": "test",
+      "seconds": 2.2589375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36143
+      }
+    },
+    {
+      "id": "record-5061d1a969d5a098e1a7",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59366
+      },
+      "role": "test",
+      "seconds": 3.710375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 59366
+      }
+    },
+    {
+      "id": "record-7d6e678d623e84c75c74",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53882
+      },
+      "role": "test",
+      "seconds": 3.367625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 53882
+      }
+    },
+    {
+      "id": "record-3a574ff0f3b5bd7cd6d8",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 42113
+      },
+      "role": "test",
+      "seconds": 2.6320625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 42113
+      }
+    },
+    {
+      "id": "record-86dbcc82994e50180032",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 25151
+      },
+      "role": "test",
+      "seconds": 1.5719375,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 25151
+      }
+    },
+    {
+      "id": "record-23f88e1a03d794dcd736",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 3,
+        "model_input_samples": 193800,
+        "starts": [
+          0,
+          64600,
+          65391
+        ],
+        "unique_samples": 129991
+      },
+      "role": "test",
+      "seconds": 8.1244375,
+      "single": {
+        "coverage_fraction": 0.49695748167180803,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 64600
+      }
+    },
+    {
+      "id": "record-b7b9ee1e48e3142f8346",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 52498
+      },
+      "role": "test",
+      "seconds": 3.281125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 52498
+      }
+    },
+    {
+      "id": "record-10ef70b091eac689b570",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36890
+      },
+      "role": "test",
+      "seconds": 2.305625,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 36890
+      }
+    },
+    {
+      "id": "record-2b13b764ec3bdeb958a1",
+      "label": 0,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 55218
+      },
+      "role": "test",
+      "seconds": 3.451125,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 55218
+      }
+    },
+    {
+      "id": "record-18258afcf20f2ee8748b",
+      "label": 1,
+      "multi": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 34043
+      },
+      "role": "test",
+      "seconds": 2.1276875,
+      "single": {
+        "coverage_fraction": 1.0,
+        "crop_count": 1,
+        "model_input_samples": 64600,
+        "starts": [
+          0
+        ],
+        "unique_samples": 34043
+      }
+    }
+  ],
+  "sample_rate": 16000,
+  "single_policy": {
+    "aggregation": "mean_hidden_mean_logits",
+    "padding": "repeat",
+    "samples": 64600,
+    "starts": [
+      0
+    ]
+  },
+  "summary": {
+    "calibration": {
+      "max_seconds": 9.905125,
+      "mean_single_coverage": 0.9629760793023814,
+      "median_seconds": 2.89753125,
+      "min_seconds": 1.5073125,
+      "multi_crop_count": 18,
+      "n": 16,
+      "single_crop_count": 16,
+      "single_incomplete_count": 1
+    },
+    "fusion_train": {
+      "max_seconds": 8.73975,
+      "mean_single_coverage": 0.9404095986671035,
+      "median_seconds": 3.25578125,
+      "min_seconds": 1.0323125,
+      "multi_crop_count": 83,
+      "n": 64,
+      "single_crop_count": 64,
+      "single_incomplete_count": 17
+    },
+    "fusion_val": {
+      "max_seconds": 4.5170625,
+      "mean_single_coverage": 0.9921800362657153,
+      "median_seconds": 2.9628125,
+      "min_seconds": 2.028375,
+      "multi_crop_count": 26,
+      "n": 24,
+      "single_crop_count": 24,
+      "single_incomplete_count": 2
+    },
+    "test": {
+      "max_seconds": 8.1244375,
+      "mean_single_coverage": 0.9542865854985382,
+      "median_seconds": 2.7844375,
+      "min_seconds": 1.395375,
+      "multi_crop_count": 28,
+      "n": 24,
+      "single_crop_count": 24,
+      "single_incomplete_count": 3
+    }
+  }
+}

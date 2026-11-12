@@ -7,7 +7,15 @@ name = "ontoresponse"
 version = "0.5.0"
 description = "Utterance anti-spoofing from frozen expert and diagnostic response evidence"
 requires-python = ">=3.10"
-dependencies = ["torch>=2.2,<3", "numpy>=1.24,<3", "scipy>=1.10,<2", "soundfile>=0.12,<1", "PyYAML>=6", "scikit-learn>=1.2,<2", "psutil>=5,<8"]
+dependencies = [
+    "torch>=2.2,<3",
+    "numpy>=1.24,<3",
+    "scipy>=1.10,<2",
+    "soundfile>=0.12,<1",
+    "PyYAML>=6",
+    "scikit-learn>=1.2,<2",
+    "psutil>=5,<8",
+]
 
 [project.optional-dependencies]
 ontology = ["rdflib>=6", "pyshacl>=0.25"]
@@ -22,3 +30,11 @@ include = ["ontoresponse*", "reference*"]
 
 [tool.setuptools.package-data]
 ontoresponse = ["_resources/configs/*.yaml", "_resources/ontology/*.ttl"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+extend-exclude = ["reports", "artifacts", "deliverables", "build", "docs/history"]
+
+[tool.ruff.lint]
+select = ["F401", "F811", "F841", "I"]

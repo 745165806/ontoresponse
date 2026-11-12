@@ -1,0 +1,28 @@
+{
+  "dtype": "float32",
+  "expert": {
+    "bonafide_index": 1,
+    "checkpoint_sha256": "1c4ff70338afbf1a688554ed2a65dfb92ee1ff0cbfef035f042e710b2399ed2c",
+    "crop": {
+      "aggregation": "mean_hidden_mean_logits",
+      "padding": "repeat",
+      "samples": 64600,
+      "starts": [
+        0
+      ]
+    },
+    "frontend_sha256": null,
+    "id": "rawnet2",
+    "patch": {},
+    "score_direction": "higher_is_spoof",
+    "source_sha256": "520caaa888ce2033b8cdacd466c552745141e2403c37d43042e06a5d89371679",
+    "spoof_index": 0
+  },
+  "primary_score": "native_bonafide_output",
+  "protocol_sha256": "84fce576efff092269a0a6ad247d2e9f2f7b4d4e25a4545efb2518da92708036",
+  "recipe": "25f0b599f37e99bb41fb84743d332e25cb28890f52b692b3ab57a5c496218f28",
+  "runner_sha256": "22757ba4e45bcc1915343ef8cd52083cef6bacb969800380c612953a356cf6e5",
+  "secondary_score": "spoof_minus_bonafide",
+  "seed": 17,
+  "source_code_sha256": "7b79db93c0213f8d3b5181eb368f5261ceb71df2d1aabbb32d63223079ae8e1b"
+}

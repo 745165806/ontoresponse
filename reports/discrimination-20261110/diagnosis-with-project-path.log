@@ -1,0 +1,54 @@
+{
+  "gate": {
+    "status": "INSUFFICIENT_DISCRIMINATION",
+    "reasons": [
+      "TOO_FEW_INDEPENDENT_GROUPS_PER_CLASS",
+      "BASELINE_BOUND_PRECLUDES_PRESPECIFIED_IMPROVEMENT",
+      "DEGENERATE_GROUP_BOOTSTRAP"
+    ],
+    "groups_per_label": {
+      "0": 3,
+      "1": 1
+    },
+    "role": "fusion_val",
+    "test_used": false,
+    "min_groups_per_class": 5,
+    "min_improvement": 0.01,
+    "source_mapping_note": "Counts presume supplied connected groups are certified; unknown mapping is a separate blocking gate"
+  },
+  "roles": {
+    "calibration": {
+      "n": 16,
+      "groups_per_label": {
+        "0": 3,
+        "1": 1
+      },
+      "speaker_only_label_majority_accuracy": 0.8125
+    },
+    "fusion_train": {
+      "n": 64,
+      "groups_per_label": {
+        "0": 6,
+        "1": 5
+      },
+      "speaker_only_label_majority_accuracy": 0.578125
+    },
+    "fusion_val": {
+      "n": 24,
+      "groups_per_label": {
+        "0": 3,
+        "1": 1
+      },
+      "speaker_only_label_majority_accuracy": 0.8333333333333334
+    },
+    "test": {
+      "n": 24,
+      "groups_per_label": {
+        "0": 3,
+        "1": 1
+      },
+      "speaker_only_label_majority_accuracy": 0.8333333333333334
+    }
+  },
+  "frozen_files": 490
+}

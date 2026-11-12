@@ -1,0 +1,19 @@
+{
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONPATH=.:${EXTERNAL_PATH}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "tests/test_shareable_audit.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T11:29:00.677621+00:00",
+  "elapsed_seconds": 0.7597014904022217,
+  "log": "reports/repository-update-20261112/bounded-export-test.log",
+  "cwd": "${PROJECT_ROOT}"
+}

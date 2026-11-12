@@ -1,0 +1,12 @@
+{
+  "status": "VALIDATED_FOR_PUSH",
+  "changed_files": 38,
+  "manifest_members": 680,
+  "old_predictions_unchanged": true,
+  "old_prediction_tables_recomputed": 36,
+  "old_predictions_sha256": "7e4523086acc6e95fa161fb71b3ff5b5e4b831259a4178378d47229550ef54fc",
+  "benchmark_values_exact": true,
+  "privacy_scan_passed": true,
+  "relative_links_valid": true,
+  "only_documentation_and_aggregate_evidence_staged": true
+}

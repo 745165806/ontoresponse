@@ -1,0 +1,19 @@
+{
+  "command": [
+    "curl",
+    "-L",
+    "--fail",
+    "--max-time",
+    "45",
+    "--max-filesize",
+    "52428800",
+    "https://www.asvspoof.org/asvspoof2019/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz",
+    "-o",
+    "reports/discrimination-20261110/source-maps.tar.gz"
+  ],
+  "exit_code": 7,
+  "started_utc": "2026-11-10T12:25:52.794902+00:00",
+  "elapsed_seconds": 0.009298086166381836,
+  "log": "reports/discrimination-20261110/mapping-fetch.log",
+  "cwd": "${PROJECT_ROOT}"
+}

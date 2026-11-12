@@ -1,0 +1,22 @@
+{
+  "groups_per_label": {
+    "0": 3,
+    "1": 1
+  },
+  "min_groups_per_class": 5,
+  "min_improvement": 0.01,
+  "old_protocol_and_frozen_artifacts_unchanged": true,
+  "original_gate_path": "reports/pilot-20261110/H1-gate.json",
+  "original_gate_sha256": "4efe1d6010beb4e3b8f7ef3282f35eb22b1acb4b7e49866622793c59d0e60061",
+  "reasons": [
+    "TOO_FEW_INDEPENDENT_GROUPS_PER_CLASS",
+    "BASELINE_BOUND_PRECLUDES_PRESPECIFIED_IMPROVEMENT",
+    "DEGENERATE_GROUP_BOOTSTRAP"
+  ],
+  "reinterpretation_only": true,
+  "role": "fusion_val",
+  "source_mapping_note": "Counts presume supplied connected groups are certified; unknown mapping is a separate blocking gate",
+  "status": "INSUFFICIENT_DISCRIMINATION",
+  "test_used": false,
+  "validation_bootstrap_exact_degenerate_probability": 0.2962962962962963
+}

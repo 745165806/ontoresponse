@@ -1,0 +1,40 @@
+{
+  "atol": 0.0001,
+  "experts": [
+    {
+      "checkpoint_sha256": "798de0ee199a6d5cb1de98812a5c9d1bbe1d184f76518a44ea633cf41e804fb6",
+      "expert": "aasist",
+      "max_output_error": 9.5367431640625e-07,
+      "requests": 8,
+      "status": "passed"
+    },
+    {
+      "checkpoint_sha256": "dbf1d5b5229ffe5b904e5a7bef2c0a42181c9be6e7195d1c5c5b84a6a01ec6df",
+      "expert": "ssl_aasist",
+      "max_output_error": 2.6226043701171875e-06,
+      "requests": 8,
+      "status": "passed"
+    },
+    {
+      "checkpoint_sha256": "1c4ff70338afbf1a688554ed2a65dfb92ee1ff0cbfef035f042e710b2399ed2c",
+      "expert": "rawnet2",
+      "max_output_error": 3.337860107421875e-06,
+      "requests": 8,
+      "status": "passed"
+    }
+  ],
+  "fusion": {
+    "CPU_before_after_exact": true,
+    "GPU_max_logit_error": 3.814697265625e-06,
+    "checkpoint_sha256": "885bcb92db2ebdabe20065b18c47b5d53660bac6014bac3b93ececb42598fc83",
+    "requests": 24
+  },
+  "gpu": "NVIDIA RTX A6000",
+  "level": "real_checkpoint_consumed_real_data_GPU",
+  "new_confirmation": false,
+  "new_training": false,
+  "physical_gpu": 0,
+  "rtol": 0.0001,
+  "source_code_sha256": "5199b439a2da4b575be7d02f8d1de3dc0713920d7892a156397a609949b66941",
+  "status": "passed"
+}
