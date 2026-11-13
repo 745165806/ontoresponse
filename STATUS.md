@@ -1,6 +1,8 @@
 # 当前状态 — 2026-11-13
 
-第一轮数据范围已按用户要求改为ASVspoof2019 LA、ASVspoof2021 LA、In-the-Wild；Codecfake延后。已用python3读取本地协议/CSV、逐ID检查文件存在（退出0，CPU，无音频解码或GPU运行）：2019 train/dev/eval为25380/24844/71237条，2021 LA完整keys为181566条（eval148176、progress16464、hidden16926），ITW为31779条，路径缺失均0。初次`python`命令因PATH未激活返回127，改用python3完成；未改动环境。协议检查结果记录于[更新后的数据方案](docs/FUSION_DATA_RECOMMENDATION_20261111.md)。新训练/融合外测尚未执行；待落实2019分组开发、2021 LA接入及可扩展三专家训练入口。
+最新调整：2019 LA eval已从第一轮评测方案移除，原始数据和历史benchmark保留。测试仅2021 LA eval及In-the-Wild。新增`scripts.prepare_round1`，已执行`python -m scripts.prepare_round1 --work-dir reports/round1-smoke/fold0 --device cuda:0`（py310解释器，退出0）；开发池50224条，准备32训练/32验证，各16真16假、各一个保守来源组件，结果见`reports/round1-smoke/fold0/preparation.json`。神经计算配置为CUDA，但本轮仅准备数据，未启动提取/训练/外测。`pytest -q tests/test_round1_prepare.py tests/test_connected_split.py tests/test_pilot_budget.py`为12 passed、0 skipped、退出0；首次测试命令误指不存在的test_data.py退出4，纠正后通过。GPU查询时0/1空闲、2/3忙，未影响任何进程。入口及后续限制见[运行实验](docs/RUN_EXPERIMENTS.md)。
+
+前一轮数据检查：已用python3读取本地协议/CSV、逐ID检查文件存在（退出0，CPU，无音频解码或GPU运行）：2019 train/dev/eval为25380/24844/71237条，2021 LA完整keys为181566条（eval148176、progress16464、hidden16926），ITW为31779条，路径缺失均0。初次`python`命令因PATH未激活返回127，改用python3完成；未改动环境。Codecfake延后。完整数据说明见[更新后的数据方案](docs/FUSION_DATA_RECOMMENDATION_20261111.md)。
 
 实现整句真假判别：0=bonafide，1=spoof。常规实验已移除文件/源码SHA审计、文档审核、质量封存和预注册文件门槛，优先使用配置、数据划分、checkpoint、曲线和指标。
 

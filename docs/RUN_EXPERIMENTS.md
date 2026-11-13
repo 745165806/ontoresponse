@@ -2,6 +2,40 @@
 
 常规实验只需要配置、数据划分、真实专家权重和运行环境。无需计算文件/源码SHA，无需先审核文档或生成质量封存报告。历史模型和缓存仍可读取。
 
+## 第一轮现在怎么启动
+
+2019 LA eval已从本轮排除。2019 train/dev仅用于开发，正式测试只用2021 LA eval阶段和In-the-Wild。先用真实来源分组的64条开发录音检查三专家链路，再扩展pilot和正式训练。
+
+在项目根目录激活环境：
+
+```bash
+source /home/dell/anaconda3/etc/profile.d/conda.sh
+conda activate py310
+```
+
+新实验首先准备清单（只读2019 train/dev协议；从本地官方映射归并目标与VC来源说话人，不读测试音频或分数）：
+
+```bash
+python -m scripts.prepare_round1 --work-dir reports/round1-smoke/fold0 --device cuda:0
+```
+
+本机`reports/round1-smoke/fold0`已准备好，跳过上述准备命令；重复准备会拒绝覆盖，另起实验应更换工作目录。默认32条训练、32条验证，各16真/16假；每角色只有一个连接组件，仅供工程smoke。官方来源映射默认使用本地`reports/expert-benchmark-20261111/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz`，其他机器可通过`--source-map PATH`指定；不自动下载数据。
+
+先确认cuda:0仍空闲，然后依次执行（配置包含AASIST、SSL+AASIST、RawNet2，原始+六探针）：
+
+```bash
+python -m ontoresponse extract --config reports/round1-smoke/fold0/config.yaml --max-origins 64
+python -m ontoresponse train --config reports/round1-smoke/fold0/config.yaml --model original_mlp --steps 20
+python -m ontoresponse train --config reports/round1-smoke/fold0/config.yaml --model response_mlp --steps 20
+python -m ontoresponse train --config reports/round1-smoke/fold0/config.yaml --model typed_response --steps 20
+```
+
+只提取一次，三个融合模型共享观测；各模型输出在该工作目录的`runs/<model>-fixed-seed17/`。检查提取失败数、loss/验证指标及checkpoint保存。20步、单seed和64条录音不支持方法优越性结论；相同width也不等于参数量匹配，正式对照仍需容量和预算控制。来源未知的RawNet2可用于明确标注的integration smoke，不能据此宣称严格来源独立。
+
+可另用`--fold 1 --work-dir reports/round1-smoke/fold1`准备同一批64条录音的反向角色，分别训练，不能共用已拟合的标准化或融合权重。两个测试集均不参与此开发过程。
+
+下一阶段再完成≤1024条的收敛pilot、分批正式训练和2021 LA评价入口，然后固定三seed及模型设置，在2021 LA eval（148176条）与ITW（31779条）分别报告EER。当前入口仍有smoke/pilot预算，不能把`--steps`调大冒充正式全量训练；本轮不要求calibration，EER直接从logit计算。
+
 ## 先准备
 
 在项目根目录激活已有py310环境。检查`configs/local.yaml`中的数据、专家源码和权重路径；默认设备为`cuda:0`。`--device`可覆盖配置，指定CUDA但不可用时明确报错。

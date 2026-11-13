@@ -4,6 +4,7 @@
 
 | 任务 | 入口 | 说明 |
 |---|---|---|
+| 第一轮开发smoke准备 | python -m scripts.prepare_round1 --work-dir ... --device cuda:0 | 2019 train/dev来源连接后选64条，32训练/32验证；--fold 1交换角色，不使用2019 eval或外部测试 |
 | 有界基线比较 | python -m scripts.run_bounded --config ... | 普通基线后比较关系模型；用新output |
 | 有界pilot | python -m scripts.run_pilot --config ... | --preflight-only检查实际输入/分组/设备/预算，无SHA或文档审核 |
 | 完整专家LA eval | python -m scripts.expert_benchmark --config ... --phase ... | preflight / controls / score / summarize / run；需要显式GPU全评测预算 |
