@@ -7,6 +7,7 @@
 - 64条真实开发录音，按两个来源组件分为32训练/32验证，各自16真16假；没有读取新测试分数。
 - 三专家各448个有效观测，合计1344个，失败0；提取退出0，50.61秒（含既有缓存命中，不能据此线性估计全量吞吐）。
 - original_mlp（90945参数）、response_mlp（266369）、typed_response（224385），GPU0各20步，验证EER均0，save/load精确一致；三个命令均退出0。参数量尚未匹配，且只有32条验证，不能判断方法增益。
+- 既有64条真实观测打包后读取，所有hidden、score、mask、label、quality、专家身份及ID精确一致，见pack-check.json；只复用开发smoke，没有新增测试曝光。
 - 177项测试通过、0 skipped，pytest退出0，35.08秒；regression.command.json、regression.log记录实际命令与日志。
 
 smoke完整记录见../round1-smoke/{extraction,original_mlp,response_mlp,typed_response}.command.json和summary.json。

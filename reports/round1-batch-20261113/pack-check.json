@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "requests": 64,
+  "expert_views": 1344,
+  "all_observation_tensors_exact": true,
+  "identities_and_ids_exact": true,
+  "source": "existing smoke evidence; no new test data"
+}
