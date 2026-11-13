@@ -1,5 +1,7 @@
 # 当前状态 — 2026-11-13
 
+第一轮数据范围已按用户要求改为ASVspoof2019 LA、ASVspoof2021 LA、In-the-Wild；Codecfake延后。已用python3读取本地协议/CSV、逐ID检查文件存在（退出0，CPU，无音频解码或GPU运行）：2019 train/dev/eval为25380/24844/71237条，2021 LA完整keys为181566条（eval148176、progress16464、hidden16926），ITW为31779条，路径缺失均0。初次`python`命令因PATH未激活返回127，改用python3完成；未改动环境。协议检查结果记录于[更新后的数据方案](docs/FUSION_DATA_RECOMMENDATION_20261111.md)。新训练/融合外测尚未执行；待落实2019分组开发、2021 LA接入及可扩展三专家训练入口。
+
 实现整句真假判别：0=bonafide，1=spoof。常规实验已移除文件/源码SHA审计、文档审核、质量封存和预注册文件门槛，优先使用配置、数据划分、checkpoint、曲线和指标。
 
 | 层级 | 实际状态 |
@@ -17,3 +19,5 @@ ASV2019 LA eval历史完整EER：现用AASIST 2.121052%、SSL+AASIST 0.637284%�
 2019来源重叠、公开专家选模型曝光、RawNet2来源未知及旧pilot独立组不足等限制仍保留。技术审计的删除不改变数据独立性；[数据方案](docs/FUSION_DATA_RECOMMENDATION_20261111.md)尚需落实，新数据不得直接随机逐文件切分。
 
 操作见[运行实验](docs/RUN_EXPERIMENTS.md)。历史状态/工具移至docs/history，旧结果不重写；GitHub仅上传小型代码与报告，不上传音频、权重和缓存。
+
+GitHub main已更新，包含精简代码、实验说明及小型报告；发布回执见reports/simplify-experiments-20261113/publish.json。提交/推送均退出0，远端分支已确认。
