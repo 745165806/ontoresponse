@@ -19,7 +19,7 @@
     },
     {
       "path": "PLANS.md",
-      "bytes": 1143
+      "bytes": 3296
     },
     {
       "path": "PUBLICATION.md",
@@ -35,7 +35,7 @@
     },
     {
       "path": "STATUS.md",
-      "bytes": 1826
+      "bytes": 2214
     },
     {
       "path": "STATUS_NEXT.md",
@@ -94,6 +94,10 @@
       "bytes": 930
     },
     {
+      "path": "configs/round1-batch.yaml",
+      "bytes": 3433
+    },
+    {
       "path": "docs/ACCEPTANCE.md",
       "bytes": 1782
     },
@@ -111,11 +115,11 @@
     },
     {
       "path": "docs/EXPERIMENT_PROTOCOL.md",
-      "bytes": 8237
+      "bytes": 8688
     },
     {
       "path": "docs/FUSION_DATA_RECOMMENDATION_20261111.md",
-      "bytes": 7472
+      "bytes": 12493
     },
     {
       "path": "docs/IMPLEMENTATION.md",
@@ -135,11 +139,11 @@
     },
     {
       "path": "docs/RUN_EXPERIMENTS.md",
-      "bytes": 3657
+      "bytes": 8209
     },
     {
       "path": "docs/SCRIPTS.md",
-      "bytes": 2125
+      "bytes": 2585
     },
     {
       "path": "docs/SOURCES.md",
@@ -431,7 +435,7 @@
     },
     {
       "path": "ontoresponse/train/pilot.py",
-      "bytes": 21822
+      "bytes": 22595
     },
     {
       "path": "ontoresponse/train/sampling.py",
@@ -3590,6 +3594,26 @@
       "bytes": 3975
     },
     {
+      "path": "reports/round1-batch-20261113/REPORT.md",
+      "bytes": 3193
+    },
+    {
+      "path": "reports/round1-batch-20261113/launch.json",
+      "bytes": 289
+    },
+    {
+      "path": "reports/round1-batch-20261113/regression.command.json",
+      "bytes": 278
+    },
+    {
+      "path": "reports/round1-batch-20261113/regression.log",
+      "bytes": 4436
+    },
+    {
+      "path": "reports/round1-smoke/summary.json",
+      "bytes": 1733
+    },
+    {
       "path": "reports/simplify-experiments-20261113/REPORT.md",
       "bytes": 2869
     },
@@ -3802,6 +3826,10 @@
       "bytes": 1973
     },
     {
+      "path": "scripts/round1_batch.py",
+      "bytes": 24910
+    },
+    {
       "path": "scripts/run_bounded.py",
       "bytes": 3848
     },
@@ -3860,6 +3888,10 @@
     {
       "path": "tests/test_relation_tied.py",
       "bytes": 4506
+    },
+    {
+      "path": "tests/test_round1_batch.py",
+      "bytes": 3448
     },
     {
       "path": "tests/test_shareable_audit.py",

@@ -4,12 +4,12 @@
 
 ## 第一轮现在怎么启动
 
-2019 LA eval已从本轮排除。2019 train/dev仅用于开发，正式测试只用2021 LA eval阶段和In-the-Wild。先用真实来源分组的64条开发录音检查三专家链路，再扩展pilot和正式训练。
+用户已恢复2019 LA eval测试。2019 train/dev用于开发，正式测试为2019 LA eval、2021 LA eval阶段和In-the-Wild。先用真实来源分组的64条开发录音检查三专家链路，再扩展pilot和正式训练。
 
 在项目根目录激活环境：
 
 ```bash
-source /home/dell/anaconda3/etc/profile.d/conda.sh
+source ${EXTERNAL_PATH}
 conda activate py310
 ```
 
@@ -32,9 +32,36 @@ python -m ontoresponse train --config reports/round1-smoke/fold0/config.yaml --m
 
 只提取一次，三个融合模型共享观测；各模型输出在该工作目录的`runs/<model>-fixed-seed17/`。检查提取失败数、loss/验证指标及checkpoint保存。20步、单seed和64条录音不支持方法优越性结论；相同width也不等于参数量匹配，正式对照仍需容量和预算控制。来源未知的RawNet2可用于明确标注的integration smoke，不能据此宣称严格来源独立。
 
-可另用`--fold 1 --work-dir reports/round1-smoke/fold1`准备同一批64条录音的反向角色，分别训练，不能共用已拟合的标准化或融合权重。两个测试集均不参与此开发过程。
+可另用`--fold 1 --work-dir reports/round1-smoke/fold1`准备同一批64条录音的反向角色，分别训练，不能共用已拟合的标准化或融合权重。三个测试集均不参与此开发过程。
 
-下一阶段再完成≤1024条的收敛pilot、分批正式训练和2021 LA评价入口，然后固定三seed及模型设置，在2021 LA eval（148176条）与ITW（31779条）分别报告EER。当前入口仍有smoke/pilot预算，不能把`--steps`调大冒充正式全量训练；本轮不要求calibration，EER直接从logit计算。
+已有独立批量入口，见下节；普通CLI仍有smoke/pilot预算，不能把`--steps`调大冒充正式全量训练。本轮不要求calibration，EER直接从logit计算。
+
+## 自主批量实验（已启动）
+
+配置`configs/round1-batch.yaml`明确授权完整运行，使用cuda:0和cuda:1；其余GPU不使用。流程依次为：
+
+1. 1024条录音pilot：两折、seed 17/29/43，12种模型/对照，每个神经模型最多320步。
+2. 50224条完整开发录音：按两个来源连接组件进行两折选择；最多30 epoch/15000步，早停只看开发BCE。
+3. 根据两折、三seed的最佳开发epoch中位数，为每种架构固定重训轮数，然后使用完整开发池重训。强基线采用接近typed模型的参数量，训练预算相同。
+4. 所有设置和最终权重生成后，依次完整评测2019 LA eval（71237）、2021 LA eval阶段（148176）及ITW（31779）。2021另外报告七种codec条件，progress/hidden不混入eval。
+
+运行目录`reports/round1-batch-20261113`。每块最多256条，提取只读无标签清单，校验同专家/同视图后将embedding、margin、mask、质量与对应metadata打包为evidence.pt；删除该块临时波形缓存，保留原始音频。CPU只做准备和指标，神经计算使用CUDA。保留100 GiB磁盘余量；单块3600秒超时。部分块/模型完成后可继续，失败记录保留，不悄悄删除困难样本。
+
+任务已在独立后台进程启动，无需再次运行。查看进度：
+
+```bash
+cat reports/round1-batch-20261113/progress.json
+tail -n 20 reports/round1-batch-20261113/runner.log
+cat reports/round1-batch-20261113/pilot/progress.json
+```
+
+若进程已退出，需要继续同一配置时运行：
+
+```bash
+python -u -m scripts.round1_batch --config configs/round1-batch.yaml
+```
+
+锁文件防止同一目录重复启动；修改配置需新目录。已完成的块和模型不重算；被中断的单模型开发训练保留旧目录后从头运行，尚不支持在该模型的epoch中间恢复。选择保存在selection.json；逐句测试logit和report.json在tests/<dataset>/<model>-seed<seed>/。统计来源独立性未知、专家开发曝光和仅两个开发组件的限制仍存在；这些结果属于集成研究，不自动升级为research_holdout。
 
 ## 先准备
 

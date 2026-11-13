@@ -1,6 +1,6 @@
 # 实验协议（正式运行前填写并锁定）
 
-2026-11-13第一轮范围更新：2019 LA仅train/dev用于开发，2019 LA eval不参与本轮训练、选择或测试；最终测试仅2021 LA eval阶段和In-the-Wild。当前分组和启动步骤见[数据方案](FUSION_DATA_RECOMMENDATION_20261111.md)与[运行实验](RUN_EXPERIMENTS.md)。下方research_holdout及其他数据安排是通用/历史设计，不能直接当作本轮已完成的划分。
+2026-11-13第一轮范围更新：2019 LA train/dev用于开发；用户最新允许2019 LA eval重新加入固定模型后的测试，与2021 LA eval阶段和In-the-Wild分别报告，均不参与融合选择。当前分组和启动步骤见[数据方案](FUSION_DATA_RECOMMENDATION_20261111.md)与[运行实验](RUN_EXPERIMENTS.md)。下方research_holdout及其他数据安排是通用/历史设计，不能直接当作本轮已完成的划分。
 
 ## 1. 两种运行模式必须分开
 ### integration_pretrained

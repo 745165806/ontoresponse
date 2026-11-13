@@ -13,7 +13,7 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from reference.core import ExpertStats, source_weighted_bce
+from reference.core import ExpertStats, FusionOutput, source_weighted_bce
 
 from ..common import (
     Blocked,
@@ -54,6 +54,22 @@ def subset(batch, indices):
         groups=[batch.groups[i] for i in ix],
         audit=[batch.audit[i] for i in ix],
     )
+
+
+@torch.inference_mode()
+def predict_batches(model, batch, stats, reg, batch_size=128):
+    """Bound GPU memory and retain every request in its original order."""
+    if batch_size < 1:
+        raise ValueError("Positive prediction batch size required")
+    logits, observed = [], []
+    for start in range(0, len(batch.ids), batch_size):
+        part = subset(
+            batch, torch.arange(start, min(start + batch_size, len(batch.ids)))
+        )
+        out = forward(model, part, stats, reg)
+        logits.append(out.logits.cpu())
+        observed.append(out.observed.cpu())
+    return FusionOutput(torch.cat(logits), torch.cat(observed))
 
 
 def operating_point(labels, calibrated_logits, role, target_fpr):
@@ -142,8 +158,9 @@ def fit_one(cfg, name, seed, train, val, reg):
             batches += 1
         model.eval()
         with torch.inference_mode():
-            a = forward(model, train, stats, reg)
-            b = forward(model, val, stats, reg)
+            size = p.get("validation_batch_size", 128)
+            a = predict_batches(model, train, stats, reg, size)
+            b = predict_batches(model, val, stats, reg, size)
             train_loss = float(
                 source_weighted_bce(a, train.labels, origin_weights(train.origins))
             )
@@ -230,8 +247,8 @@ def fit_one(cfg, name, seed, train, val, reg):
     _, restored, loaded_stats, loaded_reg = restore(out / "model.pt", device)
     with torch.inference_mode():
         torch.testing.assert_close(
-            forward(model, val, stats, reg).logits,
-            forward(restored, val, loaded_stats, loaded_reg).logits,
+            predict_batches(model, val, stats, reg, size).logits,
+            predict_batches(restored, val, loaded_stats, loaded_reg, size).logits,
             atol=0,
             rtol=0,
         )

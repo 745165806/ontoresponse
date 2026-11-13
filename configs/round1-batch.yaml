@@ -1,0 +1,139 @@
+mode: integration_pretrained
+runtime:
+  device: cuda:0
+  threads: 4
+  budget: explicit_full
+  max_origins: 24
+  steps: 20
+  cache_revision: 2
+data:
+  asv2019: ${EXTERNAL_PATH}
+  inthewild: ${EXTERNAL_PATH}
+  asv2021la: ${EXTERNAL_PATH}
+  asv2021la_keys: ${EXTERNAL_PATH}
+output: reports/round1-batch-20261113
+cache: artifacts/evidence
+experts:
+- id: aasist
+  kind: aasist
+  repository: ${EXTERNAL_PATH}
+  module: models/AASIST.py
+  config: config/AASIST.conf
+  checkpoint: ${EXTERNAL_PATH}
+  state_key: model_state
+  spoof_index: 0
+  bonafide_index: 1
+  task_trained: true
+  supervision:
+    training: ASVspoof2019_LA_official_train
+    selection: ASVspoof2019_LA_official_dev
+    augmentation: none_author_freq_aug_false
+    origin: local_TTA_trained_in_project
+    independent_holdout: false
+- id: ssl_aasist
+  kind: ssl_aasist
+  repository: ${EXTERNAL_PATH}
+  module: model.py
+  checkpoint: ${EXTERNAL_PATH}
+  frontend: ${EXTERNAL_PATH}
+  state_key: model_state
+  spoof_index: 0
+  bonafide_index: 1
+  task_trained: true
+  supervision:
+    training: ASVspoof2019_LA_official_train
+    selection: ASVspoof2019_LA_official_dev
+    augmentation: none_project_freq_aug_false
+    generic_ssl_pretraining: unknown_open_data_overlap
+    origin: local_TTA_trained_in_project
+    independent_holdout: false
+- id: rawnet2
+  kind: rawnet2
+  repository: ${EXTERNAL_PATH}
+  module: model/RawNet2.py
+  config: config/RawNet2.yaml
+  checkpoint: ${EXTERNAL_PATH}
+  state_key: null
+  spoof_index: 0
+  bonafide_index: 1
+  task_trained: true
+  supervision:
+    training: null
+    selection: null
+    augmentation: null
+    origin: local_detectionLib_unverified_training_history
+    independent_holdout: false
+crop:
+  samples: 64600
+  starts:
+  - 0
+  padding: repeat
+  aggregation: mean_hidden_mean_logits
+batch:
+  full_run_authorized: true
+  authorization: '2026-11-13 user: autonomous large-batch GPU experiments; ASV2019
+    eval restored'
+  devices:
+  - cuda:0
+  - cuda:1
+  source_map: reports/expert-benchmark-20261111/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz
+  pilot_origins: 1024
+  split_seed: 17
+  extract_part_size: 256
+  part_timeout_seconds: 3600
+  minimum_free_disk_bytes: 107374182400
+  max_dataset_origins: 200000
+  seeds:
+  - 17
+  - 29
+  - 43
+  models:
+  - best_single_expert
+  - score_mlp
+  - original_mlp
+  - all_views_mlp
+  - response_mlp
+  - set_attention
+  - relation_tied
+  - typed_response
+  - wrong_family
+  - drop_anchor
+  - drop_same_probe
+  - drop_same_family
+  match_capacity:
+  - all_views_mlp
+  - response_mlp
+  - set_attention
+  - relation_tied
+  test_datasets:
+  - asv2019_eval
+  - asv2021_la
+  - inthewild
+  limitations:
+  - integration_pretrained; experts trained/selected on ASV2019 development
+  - RawNet2 supervision provenance unknown
+  - Two source/speaker components only; no narrow independent-group CI claims
+  - Official test conditions only; no extra environmental T
+  - Fixed first 64600-sample crop, same crop/aggregation for original and all probes
+development_training:
+  max_epochs: 30
+  min_epochs: 5
+  patience_epochs: 5
+  batch_size: 128
+  validation_batch_size: 128
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  min_delta: 1.0e-06
+  width: 64
+  max_optimizer_steps: 15000
+pilot_training:
+  max_epochs: 40
+  min_epochs: 10
+  patience_epochs: 8
+  batch_size: 64
+  validation_batch_size: 128
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  min_delta: 1.0e-06
+  width: 64
+  max_optimizer_steps: 320

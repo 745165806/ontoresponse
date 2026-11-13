@@ -1,0 +1,65 @@
+{
+  "status": "completed_real_data_gpu_smoke",
+  "n_train": 32,
+  "n_val": 32,
+  "valid_measurements_per_expert": 448,
+  "failed_measurements": 0,
+  "device": "cuda:0",
+  "results": [
+    {
+      "model": "original_mlp",
+      "parameters": 90945,
+      "val_metrics": {
+        "auroc": 1.0,
+        "bonafide": 16,
+        "brier": 0.05056455358862877,
+        "eer": 0.0,
+        "eer_method": "ROC_linear_interpolation_grouped_ties",
+        "n": 32,
+        "nll": 0.15935971998704407,
+        "spoof": 16,
+        "spoof_auprc": 1.0
+      },
+      "device": "cuda:0",
+      "duration_seconds": 0.3828981940023368,
+      "save_load_exact": true
+    },
+    {
+      "model": "response_mlp",
+      "parameters": 266369,
+      "val_metrics": {
+        "auroc": 1.0,
+        "bonafide": 16,
+        "brier": 0.05077183619141579,
+        "eer": 0.0,
+        "eer_method": "ROC_linear_interpolation_grouped_ties",
+        "n": 32,
+        "nll": 0.16077903290438098,
+        "spoof": 16,
+        "spoof_auprc": 1.0
+      },
+      "device": "cuda:0",
+      "duration_seconds": 0.5878747149981791,
+      "save_load_exact": true
+    },
+    {
+      "model": "typed_response",
+      "parameters": 224385,
+      "val_metrics": {
+        "auroc": 1.0,
+        "bonafide": 16,
+        "brier": 0.02513493038713932,
+        "eer": 0.0,
+        "eer_method": "ROC_linear_interpolation_grouped_ties",
+        "n": 32,
+        "nll": 0.08070018878203176,
+        "spoof": 16,
+        "spoof_auprc": 1.0
+      },
+      "device": "cuda:0",
+      "duration_seconds": 0.7539939650014276,
+      "save_load_exact": true
+    }
+  ],
+  "limitation": "All validation EER zero on 32 requests; no method efficacy claim; experts exposed to development data"
+}

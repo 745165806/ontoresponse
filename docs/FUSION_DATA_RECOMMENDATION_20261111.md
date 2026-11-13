@@ -2,39 +2,40 @@
 
 ## 当前第一轮方案 — 2026-11-13用户指定
 
-用户最新要求：仅使用本地ASVspoof2019 LA train/dev开发，ASVspoof2021 LA eval和In-the-Wild测试。2019 LA eval已移出本轮训练、选择及测试范围；保留原始音频和历史专家benchmark。下方2026-11-11的Codecfake方案保留为后续扩展，不再是第一轮优先路线。本轮为方案调整及本地文件检查，尚未训练新的融合模型。
+用户最新授权：使用本地ASVspoof2019 LA train/dev开发，2019 LA eval、2021 LA eval及In-the-Wild测试；允许离开期间自主执行大批量GPU实验。2019 LA eval已按用户最新指示恢复为固定模型后的测试集。下方2026-11-11的Codecfake方案保留为后续扩展，不再是第一轮优先路线。已完成64条GPU smoke（3模型验证EER均0，不支持增益结论），1024条pilot及后续完整批量流程已启动。
 
 | 数据 | 协议条数 | 第一轮用途 |
 |---|---:|---|
 | 2019 LA train | 25380 | 与dev组成融合开发候选池，按来源重新分组 |
 | 2019 LA dev | 24844 | 与train统一处理来源重叠，用于开发选择 |
+| 2019 LA eval | 71237 | 固定模型后的测试；不用于选择 |
 | 2021 LA eval阶段 | 148176 | 固定模型后的信道鲁棒性测试 |
 | 2021 LA progress / hidden阶段 | 16464 / 16926 | 如评价则单独报告，不混入eval EER |
 | In-the-Wild | 31779 | 固定模型后的真实传播域外部测试 |
 
 本地三个2019协议、2021完整keys及ITW meta.csv中的音频路径全部存在（缺失0）；这里只验证文件存在，没有重新解码全部音频。2019 dev/eval文件夹各有24986/71933个FLAC，多于协议条数，因此按协议ID读取，不能直接遍历目录作为测试集。ITW含54个说话人、19963条真音频和11816条伪音频。
 
-2021 LA音频：`/media/dell/data/fakedata/asvspoof2019/LA/ASVspoof2021_LA_eval/flac`；完整keys：`/media/dell/data/fakedata/asvspoof2021/LA-keys-full/keys/LA/CM/trial_metadata.txt`。共181566行，第8列区分eval/progress/hidden。现有默认配置只接入2021 DF，LA仍需独立入口和来源核查；旧来源映射报告覆盖2019和2021 DF，不能用来证明2021 LA来源独立。[官方LA数据与keys](https://www.asvspoof.org/index2021.html)。
+2021 LA音频：`${EXTERNAL_PATH} DF，LA仍需独立入口和来源核查；旧来源映射报告覆盖2019和2021 DF，不能用来证明2021 LA来源独立。[官方LA数据与keys](https://www.asvspoof.org/index2021.html)。
 
 ### 开发划分与结论范围
 
 - 2019 train/dev已知共享1043条声学来源，不能直接把官方两个角色当成来源独立的fusion_train/fusion_val。先合并开发池，真实来源和派生整体同组；不使用eval或外部测试分数选择划分。
 - 现有保守目标/VC来源说话人连接仅产生两个开发组件。候选做法是两折分组开发：轮流训练/验证，各折标准化只用其训练组；用开发折选择有限超参及固定训练轮数后，可在整个开发池重训最终融合模型。只有两个独立组，开发稳定性与置信区间解释均有限；已实现两组内分层抽样的64条smoke准备入口，可交换两折；正式两折优化和最终全量重训仍未实现。
 - 第一轮主指标为EER，可直接使用未校准logit，不强行划独立calibration角色。若以后报告校准概率或固定工作点，需要另行确定开发侧校准/阈值方案，不能从测试集选部署阈值。
-- 现用专家已在2019 train/dev训练或选权重，RawNet2来源仍未知，因此本轮属于integration_pretrained集成研究，不能声称专家监督未见的严格holdout。三份checkpoint先固定，不能按两个测试集的效果换权重。
+- 现用专家已在2019 train/dev训练或选权重，RawNet2来源仍未知，因此本轮属于integration_pretrained集成研究，不能声称专家监督未见的严格holdout。三份checkpoint先固定，不能按三个测试集的效果换权重。
 - 2021 LA与2019的来源关系需单独核查；它承担信道压力测试，不预先称为完全独立语料。ITW应披露此前已消费样本，主表完整数据与剔除已消费来源/说话人的适用子集分开报告；不以成绩挑子集。
 
 ### 启动入口
 
-使用`python -m scripts.prepare_round1`生成仅含2019 train/dev的64条smoke清单和三专家GPU配置；默认32条训练、32条验证，两个来源组件分别占一个角色。`--fold 1`可交换角色，需指定新的`--work-dir`；共享缓存，但各折分别拟合标准化。真实数据清单已生成在`reports/round1-smoke/fold0`，尚未提取或训练。具体命令见[运行实验](RUN_EXPERIMENTS.md)。
+使用`python -m scripts.prepare_round1`生成仅含2019 train/dev的64条smoke清单和三专家GPU配置；默认32条训练、32条验证，两个来源组件分别占一个角色。`--fold 1`可交换角色，需指定新的`--work-dir`；共享缓存，但各折分别拟合标准化。真实数据清单在`reports/round1-smoke/fold0`，三专家提取和三模型20步已完成。具体命令见[运行实验](RUN_EXPERIMENTS.md)。
 
 ### 比较与执行顺序
 
-1. 先在2019开发数据跑有界GPU pilot，不在两个测试集做方法探索。原始+六探针的观测缓存由所有方法共用，专家冻结，同专家裁剪和聚合一致。
+1. 先在2019开发数据跑有界GPU pilot，不在三个测试集做方法探索。原始+六探针的观测缓存由所有方法共用，专家冻结，同专家裁剪和聚合一致。
 2. 对照单专家、score_mlp、original_mlp、all_views_mlp、response_mlp、set_attention、relation_tied与typed_response；所有强基线获得同样的探针参数、专家身份及mask，匹配容量和选择预算。
-3. 至少三个固定seed，训练和选择完成后仅在2021 LA eval、ITW分别报告EER与样本/失败数；2021另给各信道EER。两个测试集不合并为一个主要EER。
+3. 至少三个固定seed，训练和选择完成后在2019 LA eval、2021 LA eval、ITW分别报告EER与样本/失败数；2021另给各信道EER。三个测试集不合并为一个主要EER。
 4. 用正确/错误关系成员和删边实验判断类型化关系贡献，保留无增益结果。探针P照常使用；第一张标准测试表不额外施加环境T，人工T压力测试另表，避免混淆官方条件。
-5. 全量前补齐分批读取缓存、分批验证、断点恢复和资源估算；普通CLI仍是smoke/pilot，旧pilot仍阻止来源未知RawNet2，不能通过去掉预算或隐藏来源限制宣称三专家正式实验已就绪。
+5. 独立批量入口`python -m scripts.round1_batch --config configs/round1-batch.yaml`采用显式full预算、分块提取/压缩观测、分批验证及断点重启；普通CLI和旧pilot保护不变。新入口明确为integration_pretrained并披露RawNet2未知监督来源，不声称严格专家独立。
 
 保留配置、分组表、checkpoint、训练曲线、逐句预测和指标即可，不新增SHA/hash审计。神经训练与推断使用GPU，CPU用于数据准备和指标统计。
 

@@ -1,0 +1,14 @@
+{
+  "pid": 510093,
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-u",
+    "-m",
+    "scripts.round1_batch",
+    "--config",
+    "configs/round1-batch.yaml"
+  ],
+  "started_utc": "2026-11-13T11:09:36.502982+00:00",
+  "log": "reports/round1-batch-20261113/runner.log",
+  "status": "started"
+}
