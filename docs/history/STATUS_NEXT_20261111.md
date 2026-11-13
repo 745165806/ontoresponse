@@ -4,7 +4,7 @@
 
 本轮经授权使用沙箱外GPU0/1/3，真实GPU/上游/批量控制通过；四份完整输出均有固定身份与音频hash。完整unit/synthetic171通过、0skip。官方来源archive已经成功取得并按真实格式核验：2019全部ID与DF611829个ID全覆盖；此前网络/缺archive阻塞已解决。新的审计显示2019 train/dev同源1043条、保守连接组件不足；Codecfake官方train/dev也有speaker重叠及不同采样率。
 
-**新的融合全量训练仍未启动**。近期建议Codecfake中文来源按speaker/source重分组、统一16kHz后使用全量；ASV5本地仅协议，作为后续现代路线。监督来源/任务HPO/通用SSL与合格新角色仍需分别认证。最新证据见 RESULTS.md（本地证据：`reports/expert-benchmark-20261111/RESULTS.md`），数据方案见 FUSION_DATA_RECOMMENDATION_20261111.md（本地证据：`docs/FUSION_DATA_RECOMMENDATION_20261111.md`）。以下全部为历史阶段记录，原日志与冻结产物保留。
+**新的融合全量训练仍未启动**。近期建议Codecfake中文来源按speaker/source重分组、统一16kHz后使用全量；ASV5本地仅协议，作为后续现代路线。监督来源/任务HPO/通用SSL与合格新角色仍需分别认证。最新证据见 RESULTS.md（本地历史文件：`reports/expert-benchmark-20261111/RESULTS.md`），数据方案见 FUSION_DATA_RECOMMENDATION_20261111.md（本地历史文件：`docs/FUSION_DATA_RECOMMENDATION_20261111.md`）。以下全部为历史阶段记录，原日志与冻结产物保留。
 
 ---
 
@@ -18,13 +18,13 @@
 - 真实2019 eval的71237条无role候选metadata已导出；speaker独立的乐观上界可行，拟议val每类组21/16、test18/12。它不等于真实source独立，未写新角色manifest。
 - 旧490冻结文件全部hash不变；GPU仍不可用，没有全量专家重训/大下载/新真实H1训练。元数据不能证明EER功效，拟议32个test bonafide即使IID零错误95%上界仍约8.94%。
 
-完整交付：SOURCE_SPLIT_REPORT.md（本地证据：`reports/connected-split-20261110/SOURCE_SPLIT_REPORT.md`）。阻塞审计：blocked-audit.json（本地证据：`reports/connected-split-20261110/blocked-audit.json`）。继续需要官方来源archive及其可核对格式/完整映射，或恢复可用的下载网络；然后真实解析、覆盖认证、组件划分、精度审计、注册提取及充分收敛H1，H2仍条件执行。
+完整交付：SOURCE_SPLIT_REPORT.md（本地历史文件：`reports/connected-split-20261110/SOURCE_SPLIT_REPORT.md`）。阻塞审计：blocked-audit.json（本地历史文件：`reports/connected-split-20261110/blocked-audit.json`）。继续需要官方来源archive及其可核对格式/完整映射，或恢复可用的下载网络；然后真实解析、覆盖认证、组件划分、精度审计、注册提取及充分收敛H1，H2仍条件执行。
 
 ---
 
 # 当前阶段：多环境开发实验接口已验证 — 2026-11-10
 
-**多T训练、条件宏EER、收敛/确认集守卫与预注册锁已实现；真实新H1/H2尚未执行。** 最新证据在 VALIDATION.md（本地证据：`reports/development-runner-20261110/VALIDATION.md`）。此前“多T/多条件runner待接入”的描述属于历史状态，已由本阶段实现替代。
+**多T训练、条件宏EER、收敛/确认集守卫与预注册锁已实现；真实新H1/H2尚未执行。** 最新证据在 VALIDATION.md（本地历史文件：`reports/development-runner-20261110/VALIDATION.md`）。此前“多T/多条件runner待接入”的描述属于历史状态，已由本阶段实现替代。
 
 - 新增历史T版本生成：每origin固定hash选训练处理，完整波形对齐、统一WAV容器，失败请求保留；诊断P仍由专家提取管线单独施加。
 - 每epoch每origin一个有效T，三seed下同模型/候选共享数据日程；六类基线同候选网格。家族选择用预定AAC/Opus条件macro EER，identity单列。记录源数/梯度/lr/抽样hash，cap-only不算收敛。
@@ -32,7 +32,7 @@
 - 完整unit/synthetic **160 passed，0 skipped**，含六类基线×三seed的合成多版本训练。新wheel在仓库外加载24条旧fusion_val缓存前向通过；没有新真实H1训练或新test读取，GPU仍不可用。
 - single/cover两份512-origin新配置保持disabled。就绪检查退出2：缺官方archive/完整解析映射/认证角色清单。严格研究的task HPO/通用SSL曝光问题继续单列；未把integration写成research_holdout。
 
-新运行接口与冻结顺序见 DEVELOPMENT_V2.md（本地证据：`docs/DEVELOPMENT_V2.md`）。原490冻结文件hash无变。本阶段完成工程缺项；下一步仍需完整官方映射解析、连接组件角色分配/精度审计、新缓存及充分收敛H1，不能据软件验证宣布目标完成。
+新运行接口与冻结顺序见 DEVELOPMENT_V2.md（本地历史文件：`docs/DEVELOPMENT_V2.md`）。原490冻结文件hash无变。本阶段完成工程缺项；下一步仍需完整官方映射解析、连接组件角色分配/精度审计、新缓存及充分收敛H1，不能据软件验证宣布目标完成。
 
 ---
 
@@ -46,7 +46,7 @@
 - `formal_protocol.yaml`新增512-origin开发提案、source/speaker连通分组/消费排除、56条T/P有序闭包、六类H1基线×3seed×4候选×两crop策略与收敛门、后续H2公平对照。全128条pilot、旧8条外测及其关联组件不得称新确认。
 - 本地2019 train/dev/eval及2021 DF metadata已盘点；DF有611829条、VCC2018 spoof只有4个speaker，不能硬拆足够独立组。官方录音映射curl退出7，task HPO仍UNKNOWN。未创建假认证新split；新协议仍disabled。当前pilot runner的多T抽样/多条件宏EER选择尚需实现，不能直接运行该新协议。
 
-主交付：DIAGNOSIS.md（本地证据：`reports/discrimination-20261110/DIAGNOSIS.md`）。命令、失败及修正、真实输出、资源/成本与旧文件完整性均在同目录。没有新确认结果、全量重训或大型下载；下一阶段真实科学实验 **BLOCKED（来源与协议接口未齐备）**，代码/测量验证可继续。
+主交付：DIAGNOSIS.md（本地历史文件：`reports/discrimination-20261110/DIAGNOSIS.md`）。命令、失败及修正、真实输出、资源/成本与旧文件完整性均在同目录。没有新确认结果、全量重训或大型下载；下一阶段真实科学实验 **BLOCKED（来源与协议接口未齐备）**，代码/测量验证可继续。
 
 ---
 

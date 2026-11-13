@@ -12,7 +12,7 @@ from unittest.mock import patch
 import torch
 import yaml
 
-from ..common import Blocked, sha256
+from ..common import Blocked, digest, file_info
 from ..data.audio import coverage, crops
 
 
@@ -35,7 +35,7 @@ def load_module(path):
     if not path.is_file():
         raise Blocked("Missing upstream source " + str(path))
     spec = importlib.util.spec_from_file_location(
-        "ontoresponse_upstream_" + sha256(path)[:16], path
+        "ontoresponse_upstream_" + digest(str(path.resolve()))[:16], path
     )
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
@@ -151,11 +151,9 @@ class FrozenExpert:
         )
         self.identity = {
             "id": spec["id"],
-            "checkpoint_sha256": sha256(cp),
-            "source_sha256": sha256(source),
-            "frontend_sha256": sha256(spec["frontend"])
-            if spec.get("frontend")
-            else None,
+            "checkpoint": file_info(cp),
+            "source": file_info(source),
+            "frontend": file_info(spec["frontend"]) if spec.get("frontend") else None,
             "crop": crop_policy,
             "spoof_index": spec["spoof_index"],
             "bonafide_index": spec["bonafide_index"],

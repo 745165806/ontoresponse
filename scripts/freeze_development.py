@@ -1,4 +1,4 @@
-"""Check v2 provenance or explicitly seal it before expert extraction."""
+"""Check source/role separation or optionally save a readable experiment snapshot."""
 
 import argparse
 import json
@@ -29,7 +29,7 @@ def main():
             result = freeze_development(cfg)
         else:
             result = {
-                "status": "READY_FOR_EXPLICIT_FREEZE",
+                "status": "DEVELOPMENT_INPUTS_VALID",
                 "pilot_enabled": cfg["pilot"]["enabled"],
                 "data": validate_development_data(cfg),
                 "test_used": False,

@@ -1,12 +1,10 @@
-"""Freeze and revalidate a prospective v2 development experiment before extraction."""
+"""Source/role checks and an optional human-readable development configuration snapshot."""
 
-import json
 from pathlib import Path
 
-from .common import Blocked, atomic_json, code_hash, digest, read_jsonl, sha256
+from .common import Blocked, atomic_json, digest, read_jsonl
 from .data.prepare import validate_splits
 from .data.source_audit import coverage_protocols, excluded_components, source_universe
-from .resources import resource_path
 
 
 def evidence_paths(cfg):
@@ -17,17 +15,11 @@ def evidence_paths(cfg):
         "inference": root / "inference_manifest.jsonl",
         "data_audit": root / "data-audit.json",
         "source_map": Path(p["source_map_manifest"]),
-        "official_map_archive": Path(p["official_map_archive"]),
         "consumption": Path(p["consumption_ledger"]),
         "supervision": Path(p["supervision_audit"]),
     }
     for expert in cfg["experts"]:
         paths["checkpoint:" + expert["id"]] = Path(expert["checkpoint"])
-    paths["probe_spec"] = resource_path("configs/probes.yaml")
-    paths["ontology_spec"] = resource_path("configs/ontology.yaml")
-    paths["method_spec"] = Path(
-        cfg["pilot"].get("protocol_specification", "formal_protocol.yaml")
-    )
     paths.update(
         {"coverage:" + name: path for name, path in coverage_protocols(cfg).items()}
     )
@@ -57,8 +49,6 @@ def validate_development_data(cfg, require_data_audit=True):
     ownership = {}
     counts = {}
     for row in rows:
-        if row.get("audio_file_sha256") != sha256(row["audio"]):
-            raise Blocked("Current audio hash missing or changed")
         origin = row["origin_id"]
         if origin not in mapped:
             raise Blocked("Unmapped selected origin " + origin)
@@ -159,7 +149,7 @@ def validate_v2_recipe(cfg):
 def freeze_development(cfg):
     validate_v2_recipe(cfg)
     root = Path(cfg["output"])
-    path = Path(cfg["pilot"]["preregistration"])
+    path = Path(cfg["pilot"].get("preregistration", root / "experiment-config.json"))
     if path.exists():
         raise ValueError("Preregistration exists; do not refreeze")
     if (
@@ -171,11 +161,9 @@ def freeze_development(cfg):
     report = validate_development_data(cfg)
     lock = {
         "status": "frozen_development_v2",
-        "config_digest": digest(cfg),
-        "code_sha256": code_hash(),
+        "config": cfg,
         "files": {
-            key: {"path": str(value), "sha256": sha256(value)}
-            for key, value in evidence_paths(cfg).items()
+            key: {"path": str(value)} for key, value in evidence_paths(cfg).items()
         },
         "data": report,
         "test_used": False,
@@ -185,29 +173,10 @@ def freeze_development(cfg):
 
 
 def require_preregistration(cfg):
+    """Compatibility name: validate current inputs; no seal or document approval needed."""
     validate_v2_recipe(cfg)
-    path = Path(cfg["pilot"]["preregistration"])
-    if not path.is_file():
-        raise Blocked("Missing pre-extraction v2 preregistration")
-    lock = json.loads(path.read_text())
-    if (
-        lock.get("status") != "frozen_development_v2"
-        or lock.get("config_digest") != digest(cfg)
-        or lock.get("code_sha256") != code_hash()
-    ):
-        raise Blocked("Preregistered code/config drift")
-    ledger = Path(cfg["output"]) / "audit_manifest.jsonl"
-    if not ledger.is_file() or lock["files"].get("ledger", {}).get("sha256") != sha256(
-        ledger
-    ):
-        raise Blocked("Preregistered evidence drift: ledger")
-    expected = evidence_paths(cfg)
-    if set(lock["files"]) != set(expected):
-        raise Blocked("Preregistered evidence inventory drift")
-    for key, value in expected.items():
-        if not value.is_file() or lock["files"][key] != {
-            "path": str(value),
-            "sha256": sha256(value),
-        }:
-            raise Blocked("Preregistered evidence drift: " + key)
-    return lock
+    return {
+        "status": "development_inputs_valid",
+        "data": validate_development_data(cfg),
+        "test_used": False,
+    }

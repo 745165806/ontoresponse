@@ -2,13 +2,13 @@ from __future__ import annotations
 
 import copy
 import json
+import uuid
 from pathlib import Path
 
 import torch
 
-from ..common import Blocked, atomic_json, digest, read_jsonl, sha256, write_jsonl
+from ..common import Blocked, atomic_json, compute_device, read_jsonl, write_jsonl
 from ..evidence.dataset import load_batch
-from ..resources import resource_path
 from ..train.calibrate import Platt
 from ..train.fit import forward, restore
 from .metrics import choose_threshold
@@ -20,54 +20,58 @@ def calibrate(cfg, checkpoint, index, manifest, output=None):
         raise ValueError(
             "Frozen calibration is immutable; use a new experiment directory"
         )
-    cp, model, stats, reg = restore(checkpoint)
-    if cp["index_sha256"] != sha256(index) or cp["manifest_sha256"] != sha256(manifest):
-        raise ValueError("Calibration must use frozen training ledger/cache identity")
+    cp, model, stats, reg = restore(checkpoint, compute_device(cfg))
     cal = load_batch(cfg, index, manifest, "calibration", cp["dims"])
     val = load_batch(cfg, index, manifest, "fusion_val", cp["dims"])
+    if val.ids != cp["val_ids"]:
+        raise ValueError("Calibration must use the model-selection validation role")
     if set(cal.ids) & set(cp["train_ids"] + cp["val_ids"]):
         raise ValueError("Calibration role leakage")
+    if set(cal.groups) & set(cp.get("train_groups", []) + cp.get("val_groups", [])):
+        raise ValueError("Calibration source group leakage")
     with torch.inference_mode():
         c = forward(model, cal, stats, reg)
         v = forward(model, val, stats, reg)
     if not c.observed.all() or not v.observed.all():
         raise Blocked("Calibration/threshold contains missing evidence")
-    params = Platt.fit(c.logits.numpy(), cal.labels.numpy(), "calibration")
+    params = Platt.fit(c.logits.cpu().numpy(), cal.labels.numpy(), "calibration")
     threshold = choose_threshold(
-        val.labels.numpy(), Platt.apply(v.logits.numpy(), params), "fusion_val"
+        val.labels.numpy(), Platt.apply(v.logits.cpu().numpy(), params), "fusion_val"
     )
+    train_groups = cp.get("train_groups")
+    if train_groups is None:
+        train_groups = load_batch(cfg, index, manifest, "fusion_train").groups
     payload = {
         "status": "calibrated_smoke",
-        "checkpoint_sha256": sha256(checkpoint),
+        "run_id": cp.get("run_id"),
+        "checkpoint": str(checkpoint),
         "calibration": params,
         "threshold": threshold,
         "calibration_ids": cal.ids,
         "calibration_groups": sorted(set(cal.groups)),
-        "train_and_val_groups": sorted(
-            set(load_batch(cfg, index, manifest, "fusion_train").groups + val.groups)
-        ),
-        "manifest_sha256": sha256(manifest),
-        "index_sha256": sha256(index),
+        "train_and_val_groups": sorted(set(train_groups + val.groups)),
         "probability_scope": "integration dev prior only; no arbitrary deployment posterior claim",
     }
     atomic_json(output or Path(checkpoint).parent / "calibration.json", payload)
     return payload
 
 
-def freeze(cfg, checkpoint, test_manifest, output=None):
+def evaluation_plan(cfg, checkpoint, test_manifest):
+    """Check role separation and collect the selected operating point, without hashes."""
     cp, model, stats, reg = restore(checkpoint)
     calibration_path = Path(checkpoint).parent / "calibration.json"
     if not calibration_path.is_file():
         raise Blocked("Calibrate selected checkpoint before freezing")
     cal = json.loads(calibration_path.read_text())
-    if cal["checkpoint_sha256"] != sha256(checkpoint):
+    if cp.get("run_id") and cal.get("run_id") != cp["run_id"]:
         raise ValueError("Stale calibration")
-    rows = read_jsonl(test_manifest)
+    all_rows = read_jsonl(test_manifest)
     from ..data.prepare import validate_splits
 
-    validate_splits(rows)
-    if any(r["role"] != "test" for r in rows):
-        raise ValueError("Frozen test ledger must contain test requests only")
+    validate_splits(all_rows)
+    rows = [r for r in all_rows if r["role"] == "test"]
+    if not rows:
+        raise ValueError("No test requests in the manifest")
     if set(r["id"] for r in rows) & set(
         cp["train_ids"] + cp["val_ids"] + cal["calibration_ids"]
     ):
@@ -92,17 +96,9 @@ def freeze(cfg, checkpoint, test_manifest, output=None):
         "status": "frozen_integration_smoke",
         "mode": cfg["mode"],
         "checkpoint": str(Path(checkpoint).resolve()),
-        "checkpoint_sha256": sha256(checkpoint),
+        "run_id": cp.get("run_id"),
         "calibration": cal,
-        "registry_hash": reg.digest,
-        "probe_config_sha256": sha256(resource_path("configs/probes.yaml")),
-        "ontology_sha256": sha256(resource_path("configs/ontology.yaml")),
-        "test_manifest_sha256": sha256(test_manifest),
         "test_ids": [r["id"] for r in rows],
-        "test_audio_sha256": {
-            r["id"]: sha256(r["audio"]) if Path(r["audio"]).is_file() else None
-            for r in rows
-        },
         "experts": cfg["experts"],
         "crop": cfg["crop"],
         "exposure": ledger,
@@ -116,6 +112,12 @@ def freeze(cfg, checkpoint, test_manifest, output=None):
             "expert augmentation/selection independence not fully certified",
         ],
     }
+    return payload
+
+
+def freeze(cfg, checkpoint, test_manifest, output=None):
+    """Optional compatibility snapshot; ordinary evaluation needs no freeze step."""
+    payload = evaluation_plan(cfg, checkpoint, test_manifest)
     path = Path(output or Path(checkpoint).parent / "freeze.json")
     if path.exists():
         if json.loads(path.read_text()) != payload:
@@ -128,47 +130,35 @@ def freeze(cfg, checkpoint, test_manifest, output=None):
 
 
 def check_lock(cfg, checkpoint, manifest, lock):
-    if lock["checkpoint_sha256"] != sha256(checkpoint) or lock[
-        "test_manifest_sha256"
-    ] != sha256(manifest):
-        raise ValueError("Frozen checkpoint/test ledger drift")
-    current_audio = {
-        r["id"]: sha256(r["audio"]) if Path(r["audio"]).is_file() else None
-        for r in read_jsonl(manifest)
-    }
-    if current_audio != lock["test_audio_sha256"]:
-        raise ValueError("Frozen test waveform content drift")
+    if [r["id"] for r in read_jsonl(manifest) if r["role"] == "test"] != lock[
+        "test_ids"
+    ]:
+        raise ValueError("Test request IDs differ from the selected evaluation plan")
     if lock["experts"] != cfg["experts"] or lock["crop"] != cfg["crop"]:
         raise ValueError("Frozen expert/crop drift")
-    if lock["probe_config_sha256"] != sha256(
-        resource_path("configs/probes.yaml")
-    ) or lock["ontology_sha256"] != sha256(resource_path("configs/ontology.yaml")):
-        raise ValueError("Frozen probe/ontology drift")
 
 
-def evaluate(cfg, checkpoint, index, manifest, lock_path, output=None):
-    lock = json.loads(Path(lock_path).read_text())
+def evaluate(cfg, checkpoint, index, manifest, lock_path=None, output=None):
+    current = evaluation_plan(cfg, checkpoint, manifest)
+    lock = json.loads(Path(lock_path).read_text()) if lock_path else current
     check_lock(cfg, checkpoint, manifest, lock)
-    cp, model, stats, reg = restore(checkpoint)
+    if lock.get("run_id") and lock["run_id"] != current["run_id"]:
+        raise ValueError("Evaluation plan belongs to another trained model")
+    if lock["calibration"]["calibration"] != current["calibration"]["calibration"]:
+        raise ValueError("Evaluation plan uses a different calibration")
+    cp, model, stats, reg = restore(checkpoint, compute_device(cfg))
     from ..evidence.cache import Cache
     from ..ontology.registry import validate_evidence
 
     records = read_jsonl(index)
     cache = Cache(cfg["cache"])
     validate_evidence(cfg, records, cache)
-    for row in records:
-        if row.get("views") and row["views"][0]["status"] == "valid":
-            meta = cache.get(row["views"][0]["artifact_key"])[1]
-            if meta["spec"].get("audio_file_sha256") != lock["test_audio_sha256"].get(
-                row["id"]
-            ):
-                raise ValueError("Test cache audio identity differs from freeze lock")
     data = load_batch(cfg, index, manifest, "test", cp["dims"])
     if data.ids != lock["test_ids"]:
         raise ValueError("Frozen request order differs")
     with torch.inference_mode():
         out = forward(model, data, stats, reg)
-    probs = Platt.apply(out.logits.numpy(), lock["calibration"]["calibration"])
+    probs = Platt.apply(out.logits.cpu().numpy(), lock["calibration"]["calibration"])
     threshold = lock["calibration"]["threshold"]["threshold"]
     rows = []
     for i, ident in enumerate(data.ids):
@@ -186,8 +176,7 @@ def evaluate(cfg, checkpoint, index, manifest, lock_path, output=None):
                 "logit": float(out.logits[i]) if observed else None,
                 "p": float(probs[i]) if observed else None,
                 "threshold": threshold,
-                "checkpoint_sha256": lock["checkpoint_sha256"],
-                "registry_hash": reg.digest,
+                "model_id": cp.get("run_id", Path(checkpoint).parent.name),
             }
         )
     root = Path(output or Path(checkpoint).parent / "evaluation")
@@ -196,7 +185,6 @@ def evaluate(cfg, checkpoint, index, manifest, lock_path, output=None):
     report = summarize(rows)
     report.update(
         status="integration_smoke_only",
-        lock_sha256=sha256(lock_path),
         source_mapping_complete=lock["source_mapping_complete"],
     )
     atomic_json(root / "report.json", report)
@@ -204,14 +192,12 @@ def evaluate(cfg, checkpoint, index, manifest, lock_path, output=None):
 
 
 def infer(cfg, checkpoint, audio, output=None):
-    cp, model, stats, reg = restore(checkpoint)
+    cp, model, stats, reg = restore(checkpoint, compute_device(cfg))
     if cp["expert_specs"] != cfg["experts"] or cp["crop"] != cfg["crop"]:
         raise ValueError("Inference expert/crop identity differs from training")
     from ..evidence.extract import extract
 
-    ident = "inference-" + (
-        sha256(audio) if Path(audio).is_file() else digest(str(Path(audio)))
-    )
+    ident = "inference-" + uuid.uuid4().hex[:12]
     local = copy.deepcopy(cfg)
     local["output"] = str(Path(cfg["output"]) / "inference" / ident)
     root = Path(local["output"])
@@ -233,7 +219,7 @@ def infer(cfg, checkpoint, audio, output=None):
             if calibration_path.exists()
             else None
         )
-        if cal and cal["checkpoint_sha256"] != sha256(checkpoint):
+        if cal and cp.get("run_id") and cal.get("run_id") != cp["run_id"]:
             raise ValueError("Stale calibration")
         logit = float(out.logits[0]) if observed else None
         probability = (

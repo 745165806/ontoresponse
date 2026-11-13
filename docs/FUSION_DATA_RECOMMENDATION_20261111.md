@@ -33,7 +33,7 @@
 
 1. 独立专家质量/来源：固定 checkpoint 和 native-score 口径。本地 AASIST 与作者发布权重分开报告，不在 eval 的历史 epoch 中选最优。
 2. 数据审计：认证中文 speaker/source 标识；检查所有 real/fake 衍生及其跨角色音频重复；隔离已消费数据。metadata 符合不等于音频重复审计通过。
-3. 统一音频处理：本地抽查 real 为 44100/48000 Hz、fake 为 16000 Hz。按相同、与标签无关的规则重采样为 16 kHz 单声道、统一无损容器，保留输入/output hash，不直接把它们送入只接受 16 kHz 的现有 extractor。
+3. 统一音频处理：本地抽查 real 为 44100/48000 Hz、fake 为 16000 Hz。按相同、与标签无关的规则重采样为 16 kHz 单声道、统一无损容器，记录输入/output路径、采样率、长度和处理参数，不直接把它们送入只接受 16 kHz 的现有 extractor。
 4. 预先固定 T/P、crop、三 seed、候选网格、源等权策略、收敛与存储预算；scaler 仅 fusion_train 拟合。专家与融合神经计算全部在 CUDA，CPU 仅作数据读取和指标统计。
 5. 先完整训练原始分数/embedding 基线和同信息 probe/response 基线，验证额外观测 H1；H1 有区分能力且支持后再做 typed、relation_tied、full_attention 和错误成员关系 H2。
 6. 每角色保留 no-new-processing 和预定 T 条件，未知处理的评价主张以完整暴露 DAG 为准。Codecfake 本身的 neural-codec 标签与系统 MP3 诊断 P 是不同操作。

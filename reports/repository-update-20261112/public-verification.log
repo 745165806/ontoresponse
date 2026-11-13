@@ -1,0 +1,11 @@
+fatal: 无法读取远程仓库。
+
+请确认您有正确的访问权限并且仓库存在。
+Traceback (most recent call last):
+  File "${EXTERNAL_PATH}", line 14, in <module>
+    remote = subprocess.check_output(['git','ls-remote','origin','refs/heads/main'], cwd=stage, text=True).split()[0]
+  File "${USER_HOME}/anaconda3/envs/py310/lib/python3.10/subprocess.py", line 421, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "${USER_HOME}/anaconda3/envs/py310/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'ls-remote', 'origin', 'refs/heads/main']' returned non-zero exit status 128.

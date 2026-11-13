@@ -9,5 +9,5 @@
   "started_utc": "2026-11-12T11:40:44.386251+00:00",
   "elapsed_seconds": 0.032021284103393555,
   "log": "${PROJECT_ROOT}/reports/repository-update-20261112/public-recompute.log",
-  "cwd": "${TEMP_ROOT}"
+  "cwd": "${EXTERNAL_PATH}"
 }

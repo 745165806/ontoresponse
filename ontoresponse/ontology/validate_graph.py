@@ -27,8 +27,6 @@ def validate_numeric_graph(graph, experts):
             root = graph.value(node, OR.rootRecording)
         if root is None or value in groups[root]:
             raise ValueError("Missing root/duplicate numeric node index")
-        if str(graph.value(node, OR.registryHash)) != reg.digest:
-            raise ValueError("Registry hash mismatch")
         groups[root][value] = node
         node_group[node] = root
     expected = set()
@@ -45,7 +43,7 @@ def validate_numeric_graph(graph, experts):
     if actual != expected:
         raise ValueError("RDF edges differ from registry compiled numerical topology")
     return {
-        "registry_hash": reg.digest,
+        "probe_ids": list(reg.probe_ids),
         "recordings": len(groups),
         "edges": len(actual),
     }

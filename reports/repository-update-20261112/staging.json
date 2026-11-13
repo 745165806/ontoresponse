@@ -1,0 +1,26 @@
+{
+  "files": 908,
+  "historical_links_marked_local": 8,
+  "legacy_576_predictions_unchanged": true,
+  "max_file_bytes": 630793,
+  "members": 907,
+  "old_prediction_sha256": "7e4523086acc6e95fa161fb71b3ff5b5e4b831259a4178378d47229550ef54fc",
+  "removed_obsolete_or_oversized_tracked_paths": [
+    "reports/expert-benchmark-20261111/PUBLICATION_SCOPE.md",
+    "reports/implementation/evidence-shacl.ttl",
+    "reports/implementation/evidence.ttl",
+    "reports/next-stage-20261110/supervision-audit.json",
+    "reports/next-stage-20261110/upstream-evidence/aasist/fit.jsonl",
+    "reports/next-stage-20261110/upstream-evidence/aasist/source_val.jsonl",
+    "reports/next-stage-20261110/upstream-evidence/aasist/train_log.jsonl",
+    "reports/next-stage-20261110/upstream-evidence/ssl_aasist/fit.jsonl",
+    "reports/next-stage-20261110/upstream-evidence/ssl_aasist/source_val.jsonl",
+    "reports/next-stage-20261110/upstream-evidence/ssl_aasist/train_log.jsonl",
+    "scripts/check_outside_install.py",
+    "scripts/h1_diagnostics.py",
+    "scripts/metric_conventions.py",
+    "scripts/prepare_github.py"
+  ],
+  "status": "STAGED",
+  "tree_bytes": 4945726
+}

@@ -112,10 +112,7 @@ def prepare(cfg, max_origins=24):
     report = {
         "status": "integration_only",
         "summary": summary,
-        "protocol_sha256": __import__(
-            "ontoresponse.common", fromlist=["sha256"]
-        ).sha256(protocol),
-        "ledger_hash": digest(out),
+        "protocol": str(protocol),
         "source_mapping_complete": False,
         "limitation": "speaker grouping only; cross-speaker source mapping unknown; dev overlaps upstream checkpoint selection; no final test consumed",
         "missing_audio": [r["id"] for r in out if not Path(r["audio"]).is_file()],

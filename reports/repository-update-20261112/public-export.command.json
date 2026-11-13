@@ -1,0 +1,18 @@
+{
+  "command": [
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "scripts.export_public",
+    "--output",
+    "${EXTERNAL_PATH}",
+    "--max-file-bytes",
+    "1048576",
+    "--report",
+    "reports/repository-update-20261112/export-verification.json"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T11:35:32.786289+00:00",
+  "elapsed_seconds": 3.700429677963257,
+  "log": "reports/repository-update-20261112/public-export.log",
+  "cwd": "${PROJECT_ROOT}"
+}

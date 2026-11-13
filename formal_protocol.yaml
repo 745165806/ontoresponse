@@ -1,3 +1,4 @@
+# 2026-11-13: no checksum/document seals required; see docs/RUN_EXPERIMENTS.md
 status: PROPOSAL_ONLY_NOT_AUTHORIZED_FULL
 full_enabled: false
 expert_training_enabled: false
@@ -10,15 +11,13 @@ task:
   main_output: unconstrained spoof logit
 pilot_reference:
   config: configs/pilot-20261110.yaml
-  config_sha256: 5754314ee33f10672ee1d286c5980f20fd533744a479dbd069771074240d2439
   scope: integration_pretrained; known task ID/speaker isolation only
   actual_result: reports/pilot-20261110/completion.json
   H1_gate: INSUFFICIENT_DISCRIMINATION; retrospective interpretive correction only,
     original frozen gate preserved
   H2_execution: NOT_RUN_BY_PREREGISTERED_STOP_RULE
   consumption_ledger: reports/codex-next-stage-20261110/test-consumption.json
-  formal_role_source_hashes: null
-  formal_role_source_hash_status: BLOCKED; complete official source map and fresh
+  formal_role_source_status: BLOCKED; complete official source map and fresh
     groups required before freezing a formal protocol
   reassessment: reports/discrimination-20261110/H1-reassessment.json
 research_holdout_gate:
@@ -209,9 +208,9 @@ new_development_v2:
   - historical_T
   - path
   freeze:
-  - complete mapped manifests + hashes
+  - complete mapped split manifests
   - exclusion ledger
-  - expert/checkpoint/code hashes
+  - expert source descriptions and checkpoint paths
   - crop/probe/T DAG
   - all model candidate budgets and parameter counts
   - seeds and selection/stop rules
@@ -351,7 +350,7 @@ implementation_v2:
   - complete official source mapping and parser
   - connected source role allocation and base ledger audit
   - origin/label group sufficiency and prospective precision check
-  - new cache extraction under preregistration
+  - new cache extraction after source/role checks
   no_new_confirmation_read: true
   old_frozen_files_unchanged: 490
 connected_split_implementation:
@@ -361,7 +360,7 @@ connected_split_implementation:
   solver: scipy.optimize.milp for dataset assignment only; detection remains BCE neural
     utterance logit
   source_coverage: Complete normalized source universe must cover every local official
-    2019 train/dev/eval and 2021 DF metadata recording ID; pin coverage protocol hashes
+    2019 train/dev/eval and 2021 DF metadata recording ID; record coverage protocol paths and versions
   seed: 271828
   allocation_timeout_seconds: 30
   solver_timeout: BLOCKED_ALLOCATION_UNRESOLVED, never certified infeasible without

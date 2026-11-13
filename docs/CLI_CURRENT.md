@@ -1,31 +1,23 @@
 # CLI与运行入口
 
-使用`python -m ontoresponse --help`查看当前完整参数。主CLI保留原命令与参数兼容；默认配置为`configs/local.yaml`，默认模型为`response_mlp`。
+按[运行实验](RUN_EXPERIMENTS.md)开始。默认配置为configs/local.yaml，默认GPU为cuda:0，默认模型response_mlp。使用python -m ontoresponse --help查看参数。
 
 | 用途 | 命令 |
 |---|---|
-| 环境/来源 | `doctor`、`audit` |
-| 数据准备 | `prepare-data`、`prepare-external`、`make-environments` |
-| 专家/证据 | `check-experts`、`extract`、`merge` |
-| 本体 | `export-ontology` |
-| 融合训练 | `train`、`ablate` |
-| 校准与冻结评价 | `calibrate`、`freeze`、`evaluate` |
-| 单条推断/重算/导出 | `infer`、`report`、`audit-export` |
+| 环境检查 | doctor（audit为兼容别名） |
+| 数据准备 | prepare-data、prepare-external、make-environments |
+| 真实专家/观测 | check-experts、extract、merge |
+| 融合训练 | train、ablate |
+| 校准与测试 | calibrate、evaluate |
+| 单条推断/指标重算/源码导出 | infer、report、export |
+| 可选旧接口 | freeze、audit-export、export-ontology |
 
-通用路径参数：`--config`、`--manifest`、`--index`、`--output`。训练预算参数：`--max-origins`、`--steps`、`--seed`、`--model`。提取分片：`--shard-index`、`--shard-count`；合并：`--indices`。推断/评价使用`--audio`、`--checkpoint`、`--lock`；本体引擎可用`--shacl`。
+通用参数：--config、--work-dir、--cache-dir、--device、--manifest、--index、--output。--work-dir覆盖配置的output，便于新建实验；--device控制专家与融合模型计算设备。extract的--output指定索引文件路径。
 
-## 独立实验入口
+训练参数：--model、--steps、--seed、--width、--resume。默认最多64源录音、20步；pilot需要显式配置，完整专家benchmark有独立全量推断预算，不能把有界融合实验误称正式全量研究。
 
-```bash
-python -m scripts.expert_benchmark --help
-python -m scripts.run_pilot --help
-python -m scripts.prepare_connected --help
-python -m scripts.materialize_development --help
-python -m scripts.freeze_development --help
-```
+评价/推断使用--checkpoint、--audio。evaluate可直接运行，不再强制--lock或人工freeze；若提供旧lock，仍检查请求、模型设置及校准的一致性，不读取文件SHA。模型设置变化使用新实验目录，已评价的历史目录不覆盖。
 
-完整专家benchmark有独立的明确full-evaluation预算，不能把主CLI的smoke/pilot预算改掉当作全量融合训练。pilot仅在显式enabled且来源、质量、预算和预注册门通过后执行。已有冻结目录不覆盖。
+提取分片使用--shard-index、--shard-count，合并用--indices。可选本体导出支持--shacl；SHACL缺依赖只影响该可选导出，不阻止普通训练。
 
-`full_attention`为完整自注意力TransformerEncoder对照；`untyped_union`合并邻接；`relation_tied`保留四通道及逐关系归一化、仅共享矩阵。旧名字继续兼容保存的checkpoint。
-
-数据开发接口见[DEVELOPMENT_V2.md](DEVELOPMENT_V2.md)，全部保留脚本见[SCRIPTS.md](SCRIPTS.md)，最新状态见[STATUS.md](../STATUS.md)。
+pilot预检只检查实际输入、分组、设备和预算，不再要求上游文档hash、质量封存或预注册文件。独立脚本见[SCRIPTS.md](SCRIPTS.md)，复杂数据安排见[DEVELOPMENT_V2.md](DEVELOPMENT_V2.md)。

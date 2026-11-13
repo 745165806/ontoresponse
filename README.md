@@ -4,6 +4,8 @@
 
 当前已完成真实音频工程闭环、smoke/pilot和三个专家的完整GPU评测。新融合full训练尚未启动；现有结果不能证明本体带来额外检测增益。
 
+常规实验无需hash/SHA审计或文档封存；保留数据分组、train/val/test隔离和公平对照。直接操作见[运行实验](docs/RUN_EXPERIMENTS.md)。
+
 ## 从哪里开始
 
 - 理解代码：[架构与数据流](docs/ARCHITECTURE.md)。
@@ -15,7 +17,7 @@
 ontoresponse/   音频、专家、证据缓存、本体、融合训练与评价
 reference/      生产模型复用的数值核心与兼容checkpoint类
 configs/        资产路径、探针、本体和明确预算
-scripts/        当前可用的运行、审计与复现入口
+scripts/        当前可用的实验、数据检查与复现入口
 tests/          单元、合成与接口回归测试
 docs/           方法、操作说明及历史文档
 reports/        已记录的命令、分数、控制和阶段报告
@@ -32,7 +34,7 @@ ${USER_HOME}/anaconda3/envs/py310/bin/python -m ontoresponse --help
 ${USER_HOME}/anaconda3/envs/py310/bin/python -m scripts.expert_benchmark --help
 ```
 
-历史smoke/pilot已有冻结输出；新实验先复制配置并指定新的output，按[实施说明](docs/IMPLEMENTATION.md)检查来源和预算。完整专家评测使用明确的GPU预算；四卡提取/合并一致性尚未验证。
+历史smoke/pilot输出保留；新实验通过`--work-dir`指定独立目录，按[运行实验](docs/RUN_EXPERIMENTS.md)配置数据和预算。默认GPU为cuda:0，训练、校准和推断均遵循runtime.device。完整专家评测使用明确的GPU预算；四卡提取/合并一致性尚未验证。
 
 ## 已完成的完整专家评测
 
@@ -61,4 +63,4 @@ python -m pytest -q
 
 2026-11-12整理前的状态、计划与一次性脚本恢复说明在[docs/history](docs/history/README.md)。原实验输出和冻结证据保留，生成的构建文件与字节码缓存已清理。GitHub仓库：[745165806/ontoresponse](https://github.com/745165806/ontoresponse)。
 
-公开上传默认每文件不超过1MiB，包含当前源码与小型报告；完整benchmark逐条分数、音频、模型、缓存与归档留在本地。旧576条公开融合预测可独立重算，新benchmark公开汇总不包含完整分数。发布范围见[PUBLICATION.md](PUBLICATION.md)。
+公开上传默认每文件不超过1MiB，包含当前源码与小型报告；完整benchmark逐条分数、音频、模型、缓存与归档留在本地。旧576条公开融合预测可独立重算，新benchmark公开汇总不包含完整分数。发布范围见[PUBLICATION.md](PUBLICATION.md)。导出只列文件名和大小，不再生成SHA清单。

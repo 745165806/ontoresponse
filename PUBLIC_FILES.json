@@ -1,0 +1,4403 @@
+{
+  "schema": "ontoresponse-public-files-1",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 200
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2567
+    },
+    {
+      "path": "AUDIT_README.txt",
+      "bytes": 574
+    },
+    {
+      "path": "CODEX_NEXT_STAGE.md",
+      "bytes": 491
+    },
+    {
+      "path": "PLANS.md",
+      "bytes": 1143
+    },
+    {
+      "path": "PUBLICATION.md",
+      "bytes": 886
+    },
+    {
+      "path": "README.md",
+      "bytes": 3912
+    },
+    {
+      "path": "STAGE_PROMPTS.md",
+      "bytes": 1413
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 1826
+    },
+    {
+      "path": "STATUS_NEXT.md",
+      "bytes": 320
+    },
+    {
+      "path": "TASK_FOR_CODEX.md",
+      "bytes": 8349
+    },
+    {
+      "path": "audit/calibrators.json",
+      "bytes": 5309
+    },
+    {
+      "path": "audit/models.json",
+      "bytes": 4946
+    },
+    {
+      "path": "audit/predictions.jsonl",
+      "bytes": 394978
+    },
+    {
+      "path": "audit_recompute.py",
+      "bytes": 629
+    },
+    {
+      "path": "configs/development-v2-cover-20261110.yaml",
+      "bytes": 5199
+    },
+    {
+      "path": "configs/development-v2-single-20261110.yaml",
+      "bytes": 5184
+    },
+    {
+      "path": "configs/experiment.yaml",
+      "bytes": 1117
+    },
+    {
+      "path": "configs/expert-benchmark-20261111.yaml",
+      "bytes": 1154
+    },
+    {
+      "path": "configs/local.yaml",
+      "bytes": 2214
+    },
+    {
+      "path": "configs/ontology.yaml",
+      "bytes": 865
+    },
+    {
+      "path": "configs/pilot-20261110.yaml",
+      "bytes": 4031
+    },
+    {
+      "path": "configs/probes.yaml",
+      "bytes": 930
+    },
+    {
+      "path": "docs/ACCEPTANCE.md",
+      "bytes": 1782
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 3841
+    },
+    {
+      "path": "docs/CLI_CURRENT.md",
+      "bytes": 1789
+    },
+    {
+      "path": "docs/DEVELOPMENT_V2.md",
+      "bytes": 2084
+    },
+    {
+      "path": "docs/EXPERIMENT_PROTOCOL.md",
+      "bytes": 8237
+    },
+    {
+      "path": "docs/FUSION_DATA_RECOMMENDATION_20261111.md",
+      "bytes": 7472
+    },
+    {
+      "path": "docs/IMPLEMENTATION.md",
+      "bytes": 1595
+    },
+    {
+      "path": "docs/METHOD.md",
+      "bytes": 6689
+    },
+    {
+      "path": "docs/NEXT_STAGE_IMPLEMENTATION.md",
+      "bytes": 8661
+    },
+    {
+      "path": "docs/RESEARCH_PLAN.md",
+      "bytes": 5510
+    },
+    {
+      "path": "docs/RUN_EXPERIMENTS.md",
+      "bytes": 3657
+    },
+    {
+      "path": "docs/SCRIPTS.md",
+      "bytes": 2125
+    },
+    {
+      "path": "docs/SOURCES.md",
+      "bytes": 3501
+    },
+    {
+      "path": "docs/history/CLI_CURRENT_20261112.md",
+      "bytes": 1853
+    },
+    {
+      "path": "docs/history/CODEX_NEXT_STAGE_20261112.md",
+      "bytes": 12530
+    },
+    {
+      "path": "docs/history/DEVELOPMENT_V2_20261112.md",
+      "bytes": 5817
+    },
+    {
+      "path": "docs/history/IMPLEMENTATION_20261112.md",
+      "bytes": 5961
+    },
+    {
+      "path": "docs/history/PLANS_20261111.md",
+      "bytes": 15455
+    },
+    {
+      "path": "docs/history/PLANS_20261112.md",
+      "bytes": 4133
+    },
+    {
+      "path": "docs/history/README.md",
+      "bytes": 1977
+    },
+    {
+      "path": "docs/history/SCRIPTS_20261112.md",
+      "bytes": 2974
+    },
+    {
+      "path": "docs/history/STATUS_20261111.md",
+      "bytes": 34071
+    },
+    {
+      "path": "docs/history/STATUS_20261112.md",
+      "bytes": 4822
+    },
+    {
+      "path": "docs/history/STATUS_NEXT_20261111.md",
+      "bytes": 15449
+    },
+    {
+      "path": "docs/history/formal_protocol_20261112.yaml",
+      "bytes": 15231
+    },
+    {
+      "path": "docs/history/manifests/MANIFEST.implementation.json",
+      "bytes": 7040
+    },
+    {
+      "path": "docs/history/manifests/MANIFEST.json",
+      "bytes": 4314
+    },
+    {
+      "path": "docs/history/tools/audit_bundle.py",
+      "bytes": 5562
+    },
+    {
+      "path": "docs/history/tools/audit_supervision.py",
+      "bytes": 8141
+    },
+    {
+      "path": "docs/history/tools/build_supervision_matrix.py",
+      "bytes": 6760
+    },
+    {
+      "path": "docs/history/tools/checksums.py",
+      "bytes": 317
+    },
+    {
+      "path": "docs/history/tools/lock_dependencies.py",
+      "bytes": 3719
+    },
+    {
+      "path": "formal_protocol.yaml",
+      "bytes": 15222
+    },
+    {
+      "path": "ontology/ontology.ttl",
+      "bytes": 2997
+    },
+    {
+      "path": "ontology/shapes.ttl",
+      "bytes": 4101
+    },
+    {
+      "path": "ontoresponse/__init__.py",
+      "bytes": 99
+    },
+    {
+      "path": "ontoresponse/__main__.py",
+      "bytes": 48
+    },
+    {
+      "path": "ontoresponse/_resources/configs/ontology.yaml",
+      "bytes": 865
+    },
+    {
+      "path": "ontoresponse/_resources/configs/probes.yaml",
+      "bytes": 930
+    },
+    {
+      "path": "ontoresponse/_resources/ontology/ontology.ttl",
+      "bytes": 2997
+    },
+    {
+      "path": "ontoresponse/_resources/ontology/shapes.ttl",
+      "bytes": 4101
+    },
+    {
+      "path": "ontoresponse/audit.py",
+      "bytes": 3598
+    },
+    {
+      "path": "ontoresponse/audit_export.py",
+      "bytes": 13795
+    },
+    {
+      "path": "ontoresponse/cli.py",
+      "bytes": 6154
+    },
+    {
+      "path": "ontoresponse/common.py",
+      "bytes": 3219
+    },
+    {
+      "path": "ontoresponse/data/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "ontoresponse/data/audio.py",
+      "bytes": 2932
+    },
+    {
+      "path": "ontoresponse/data/connected.py",
+      "bytes": 1861
+    },
+    {
+      "path": "ontoresponse/data/connected_split.py",
+      "bytes": 10135
+    },
+    {
+      "path": "ontoresponse/data/development.py",
+      "bytes": 5314
+    },
+    {
+      "path": "ontoresponse/data/environments.py",
+      "bytes": 2599
+    },
+    {
+      "path": "ontoresponse/data/external.py",
+      "bytes": 2762
+    },
+    {
+      "path": "ontoresponse/data/pilot.py",
+      "bytes": 7857
+    },
+    {
+      "path": "ontoresponse/data/prepare.py",
+      "bytes": 4740
+    },
+    {
+      "path": "ontoresponse/data/prepare_connected.py",
+      "bytes": 4396
+    },
+    {
+      "path": "ontoresponse/data/source_audit.py",
+      "bytes": 2782
+    },
+    {
+      "path": "ontoresponse/evaluation/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "ontoresponse/evaluation/metrics.py",
+      "bytes": 5172
+    },
+    {
+      "path": "ontoresponse/evaluation/official.py",
+      "bytes": 2002
+    },
+    {
+      "path": "ontoresponse/evaluation/report.py",
+      "bytes": 3837
+    },
+    {
+      "path": "ontoresponse/evaluation/stage_gate.py",
+      "bytes": 2616
+    },
+    {
+      "path": "ontoresponse/evaluation/workflow.py",
+      "bytes": 11191
+    },
+    {
+      "path": "ontoresponse/evidence/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "ontoresponse/evidence/cache.py",
+      "bytes": 4117
+    },
+    {
+      "path": "ontoresponse/evidence/dataset.py",
+      "bytes": 5424
+    },
+    {
+      "path": "ontoresponse/evidence/diagnostics.py",
+      "bytes": 3065
+    },
+    {
+      "path": "ontoresponse/evidence/extract.py",
+      "bytes": 8198
+    },
+    {
+      "path": "ontoresponse/experts/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "ontoresponse/experts/base.py",
+      "bytes": 12188
+    },
+    {
+      "path": "ontoresponse/models/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "ontoresponse/models/baselines.py",
+      "bytes": 4360
+    },
+    {
+      "path": "ontoresponse/models/controls.py",
+      "bytes": 2057
+    },
+    {
+      "path": "ontoresponse/models/factory.py",
+      "bytes": 3893
+    },
+    {
+      "path": "ontoresponse/models/relation_tied.py",
+      "bytes": 2273
+    },
+    {
+      "path": "ontoresponse/ontology/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "ontoresponse/ontology/registry.py",
+      "bytes": 9307
+    },
+    {
+      "path": "ontoresponse/ontology/validate_graph.py",
+      "bytes": 1745
+    },
+    {
+      "path": "ontoresponse/pilot_gate.py",
+      "bytes": 3358
+    },
+    {
+      "path": "ontoresponse/preregistration.py",
+      "bytes": 7081
+    },
+    {
+      "path": "ontoresponse/resources.py",
+      "bytes": 699
+    },
+    {
+      "path": "ontoresponse/train/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "ontoresponse/train/calibrate.py",
+      "bytes": 1749
+    },
+    {
+      "path": "ontoresponse/train/development.py",
+      "bytes": 7281
+    },
+    {
+      "path": "ontoresponse/train/fit.py",
+      "bytes": 10801
+    },
+    {
+      "path": "ontoresponse/train/pilot.py",
+      "bytes": 21822
+    },
+    {
+      "path": "ontoresponse/train/sampling.py",
+      "bytes": 937
+    },
+    {
+      "path": "ontoresponse/transforms/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "ontoresponse/transforms/environment.py",
+      "bytes": 1292
+    },
+    {
+      "path": "ontoresponse/transforms/probes.py",
+      "bytes": 6581
+    },
+    {
+      "path": "ontoresponse/validation.py",
+      "bytes": 2833
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 1021
+    },
+    {
+      "path": "pytest.ini",
+      "bytes": 42
+    },
+    {
+      "path": "reference/__init__.py",
+      "bytes": 88
+    },
+    {
+      "path": "reference/core.py",
+      "bytes": 14675
+    },
+    {
+      "path": "reference/demo.py",
+      "bytes": 3125
+    },
+    {
+      "path": "reference/registry.py",
+      "bytes": 3563
+    },
+    {
+      "path": "reports/cleanup-20261112/REPORT.md",
+      "bytes": 3526
+    },
+    {
+      "path": "reports/cleanup-20261112/format.command.json",
+      "bytes": 397
+    },
+    {
+      "path": "reports/cleanup-20261112/format.log",
+      "bytes": 27
+    },
+    {
+      "path": "reports/cleanup-20261112/gpu-parity.command.json",
+      "bytes": 439
+    },
+    {
+      "path": "reports/cleanup-20261112/gpu-parity.json",
+      "bytes": 1234
+    },
+    {
+      "path": "reports/cleanup-20261112/gpu-parity.log",
+      "bytes": 1355
+    },
+    {
+      "path": "reports/cleanup-20261112/installed-outside.command.json",
+      "bytes": 381
+    },
+    {
+      "path": "reports/cleanup-20261112/installed-outside.log",
+      "bytes": 345
+    },
+    {
+      "path": "reports/cleanup-20261112/installed-verification.json",
+      "bytes": 345
+    },
+    {
+      "path": "reports/cleanup-20261112/integrity.json",
+      "bytes": 297
+    },
+    {
+      "path": "reports/cleanup-20261112/lint.command.json",
+      "bytes": 380
+    },
+    {
+      "path": "reports/cleanup-20261112/lint.log",
+      "bytes": 19
+    },
+    {
+      "path": "reports/cleanup-20261112/removed.json",
+      "bytes": 6406
+    },
+    {
+      "path": "reports/cleanup-20261112/source-parity.json",
+      "bytes": 3544
+    },
+    {
+      "path": "reports/cleanup-20261112/summary.json",
+      "bytes": 1073
+    },
+    {
+      "path": "reports/cleanup-20261112/unit-final.command.json",
+      "bytes": 414
+    },
+    {
+      "path": "reports/cleanup-20261112/unit-final.log",
+      "bytes": 827
+    },
+    {
+      "path": "reports/cleanup-20261112/unit.command.json",
+      "bytes": 409
+    },
+    {
+      "path": "reports/cleanup-20261112/unit.log",
+      "bytes": 827
+    },
+    {
+      "path": "reports/cleanup-20261112/verification/gpu_parity.py",
+      "bytes": 3852
+    },
+    {
+      "path": "reports/cleanup-20261112/verification/installed_package.py",
+      "bytes": 2077
+    },
+    {
+      "path": "reports/cleanup-20261112/wheel-build-pip.command.json",
+      "bytes": 433
+    },
+    {
+      "path": "reports/cleanup-20261112/wheel-build-pip.log",
+      "bytes": 654
+    },
+    {
+      "path": "reports/cleanup-20261112/wheel-build.command.json",
+      "bytes": 380
+    },
+    {
+      "path": "reports/cleanup-20261112/wheel-build.log",
+      "bytes": 68
+    },
+    {
+      "path": "reports/cleanup-20261112/wheel-install.command.json",
+      "bytes": 473
+    },
+    {
+      "path": "reports/cleanup-20261112/wheel-install.log",
+      "bytes": 165
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/H1-diagnostics.json",
+      "bytes": 1719
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/H1-diagnostics.log",
+      "bytes": 48
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/RELEASE_VERIFICATION.json",
+      "bytes": 1609
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/actual-environment.json",
+      "bytes": 3489
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/checkpoint-metadata-audit.json",
+      "bytes": 6259
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/cli-help.txt",
+      "bytes": 1327
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/cost-performance.csv",
+      "bytes": 1483
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/cost-performance.json",
+      "bytes": 7768
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/dataset_summary.json",
+      "bytes": 3982
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source.json",
+      "bytes": 274
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/__init__.py",
+      "bytes": 98
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/__main__.py",
+      "bytes": 47
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/_resources/configs/ontology.yaml",
+      "bytes": 865
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/_resources/configs/probes.yaml",
+      "bytes": 930
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/_resources/ontology/ontology.ttl",
+      "bytes": 2997
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/_resources/ontology/shapes.ttl",
+      "bytes": 4101
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/audit.py",
+      "bytes": 3221
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/audit_export.py",
+      "bytes": 10260
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/cli.py",
+      "bytes": 4075
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/common.py",
+      "bytes": 2287
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/data/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/data/audio.py",
+      "bytes": 1431
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/data/environments.py",
+      "bytes": 2046
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/data/external.py",
+      "bytes": 2256
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/data/pilot.py",
+      "bytes": 6902
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/data/prepare.py",
+      "bytes": 4361
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evaluation/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evaluation/metrics.py",
+      "bytes": 4298
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evaluation/official.py",
+      "bytes": 1784
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evaluation/report.py",
+      "bytes": 3121
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evaluation/workflow.py",
+      "bytes": 10133
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evidence/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evidence/cache.py",
+      "bytes": 3728
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evidence/dataset.py",
+      "bytes": 4538
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evidence/diagnostics.py",
+      "bytes": 2514
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/evidence/extract.py",
+      "bytes": 5600
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/experts/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/experts/base.py",
+      "bytes": 8799
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/models/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/models/baselines.py",
+      "bytes": 3298
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/models/controls.py",
+      "bytes": 1721
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/models/factory.py",
+      "bytes": 3186
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/models/relation_tied.py",
+      "bytes": 1964
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/ontology/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/ontology/registry.py",
+      "bytes": 7467
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/ontology/validate_graph.py",
+      "bytes": 1625
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/pilot_gate.py",
+      "bytes": 3860
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/resources.py",
+      "bytes": 635
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/train/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/train/calibrate.py",
+      "bytes": 1504
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/train/fit.py",
+      "bytes": 8413
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/train/pilot.py",
+      "bytes": 13637
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/train/sampling.py",
+      "bytes": 849
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/transforms/__init__.py",
+      "bytes": 0
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/transforms/environment.py",
+      "bytes": 1195
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/transforms/probes.py",
+      "bytes": 5459
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/ontoresponse/validation.py",
+      "bytes": 1984
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/reference/__init__.py",
+      "bytes": 88
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/reference/core.py",
+      "bytes": 13733
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/reference/demo.py",
+      "bytes": 2988
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/execution-source/969beedbfebdd34a4890297a203b6f9eef764a43c2d52193983849659f0ab11e/reference/registry.py",
+      "bytes": 3377
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/final-complete-tests.command.json",
+      "bytes": 401
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/final-complete-tests.log",
+      "bytes": 747
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/focused-tests.command.json",
+      "bytes": 464
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/focused-tests.log",
+      "bytes": 3405
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/freeze-order-audit.json",
+      "bytes": 6404
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/frozen-directory-preservation-final.json",
+      "bytes": 165
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/full-tests-final.command.json",
+      "bytes": 394
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/full-tests-final.log",
+      "bytes": 747
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/full-tests.command.json",
+      "bytes": 382
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/full-tests.log",
+      "bytes": 747
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/github-connectivity.json",
+      "bytes": 882
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/github-connectivity.log",
+      "bytes": 688
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/github-prepare.command.json",
+      "bytes": 319
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/github-prepare.log",
+      "bytes": 87
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/github-publish-ready.json",
+      "bytes": 983
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/github-upload-retry.json",
+      "bytes": 2173
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/install-final.command.json",
+      "bytes": 436
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/install-final.log",
+      "bytes": 623
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/install-release.command.json",
+      "bytes": 440
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/install-release.log",
+      "bytes": 625
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/measurement-controls.json",
+      "bytes": 19406
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/measurement-controls.log",
+      "bytes": 1436
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/metric-conventions.json",
+      "bytes": 1101
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/metric-conventions.log",
+      "bytes": 360
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/metrics-recomputed.command.json",
+      "bytes": 374
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/metrics-recomputed.log",
+      "bytes": 68
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/metrics_recomputed.json",
+      "bytes": 25337
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/metrics_recomputed_public.json",
+      "bytes": 29589
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/normalization-comparison.json",
+      "bytes": 2054
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-cli-release.command.json",
+      "bytes": 259
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-cli-release.log",
+      "bytes": 1335
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-final.command.json",
+      "bytes": 420
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-final.json",
+      "bytes": 445
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-final.log",
+      "bytes": 405
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-install.json",
+      "bytes": 445
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-release.command.json",
+      "bytes": 425
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-release.json",
+      "bytes": 445
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-release.log",
+      "bytes": 405
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-wheel.command.json",
+      "bytes": 422
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/outside-wheel.log",
+      "bytes": 405
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/package-release.command.json",
+      "bytes": 440
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/package-release.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/pilot-execute.command.json",
+      "bytes": 363
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/pilot-execute.log",
+      "bytes": 1987
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/pilot-failures.json",
+      "bytes": 69
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/pilot-lock-verification.json",
+      "bytes": 88
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/pilot-paired-statistics.json",
+      "bytes": 1704
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/pilot-preflight.command.json",
+      "bytes": 388
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/pilot-preflight.log",
+      "bytes": 4025
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/pilot-summary.command.json",
+      "bytes": 317
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/pilot-summary.log",
+      "bytes": 39
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/public-export-verification.json",
+      "bytes": 235
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/public-export.command.json",
+      "bytes": 316
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/public-export.log",
+      "bytes": 235
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/public-independent-comparison.json",
+      "bytes": 287
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/public-recompute.command.json",
+      "bytes": 281
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/public-recompute.log",
+      "bytes": 68
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/quality-gate-release.json",
+      "bytes": 2597
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/quality-gate.json",
+      "bytes": 2668
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/role_overlap_report.json",
+      "bytes": 48123
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/source-maps/download.log",
+      "bytes": 37
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/supervision-matrix.log",
+      "bytes": 60
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/supervision_matrix.csv",
+      "bytes": 1446
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/supervision_matrix.json",
+      "bytes": 5295
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/test-consumption.json",
+      "bytes": 2336
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/threshold_audit.json",
+      "bytes": 4160
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/unit-final.xml",
+      "bytes": 14492
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/unit-release.xml",
+      "bytes": 14492
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/unit.xml",
+      "bytes": 14024
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheel-final.command.json",
+      "bytes": 436
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheel-final.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheel-install.command.json",
+      "bytes": 431
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheel-install.log",
+      "bytes": 617
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheel-release.command.json",
+      "bytes": 441
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheel-release.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheel.command.json",
+      "bytes": 425
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheel.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/connected-split-20261110/SOURCE_SPLIT_REPORT.md",
+      "bytes": 5547
+    },
+    {
+      "path": "reports/connected-split-20261110/blocked-audit.json",
+      "bytes": 1243
+    },
+    {
+      "path": "reports/connected-split-20261110/candidate-inventory.command.json",
+      "bytes": 356
+    },
+    {
+      "path": "reports/connected-split-20261110/candidate-inventory.log",
+      "bytes": 296
+    },
+    {
+      "path": "reports/connected-split-20261110/complete-tests.command.json",
+      "bytes": 359
+    },
+    {
+      "path": "reports/connected-split-20261110/complete-tests.log",
+      "bytes": 827
+    },
+    {
+      "path": "reports/connected-split-20261110/connected-tests.command.json",
+      "bytes": 438
+    },
+    {
+      "path": "reports/connected-split-20261110/connected-tests.log",
+      "bytes": 100
+    },
+    {
+      "path": "reports/connected-split-20261110/focused-tests.command.json",
+      "bytes": 436
+    },
+    {
+      "path": "reports/connected-split-20261110/focused-tests.log",
+      "bytes": 3743
+    },
+    {
+      "path": "reports/connected-split-20261110/frozen-integrity.json",
+      "bytes": 65
+    },
+    {
+      "path": "reports/connected-split-20261110/full-tests.command.json",
+      "bytes": 356
+    },
+    {
+      "path": "reports/connected-split-20261110/full-tests.log",
+      "bytes": 827
+    },
+    {
+      "path": "reports/connected-split-20261110/mapping-network-check.command.json",
+      "bytes": 520
+    },
+    {
+      "path": "reports/connected-split-20261110/mapping-network-check.log",
+      "bytes": 288
+    },
+    {
+      "path": "reports/connected-split-20261110/optimistic-before-round-robin.json",
+      "bytes": 5127
+    },
+    {
+      "path": "reports/connected-split-20261110/optimistic-feasibility-final.command.json",
+      "bytes": 364
+    },
+    {
+      "path": "reports/connected-split-20261110/optimistic-feasibility-final.log",
+      "bytes": 296
+    },
+    {
+      "path": "reports/connected-split-20261110/optimistic-feasibility-spread.command.json",
+      "bytes": 366
+    },
+    {
+      "path": "reports/connected-split-20261110/optimistic-feasibility-spread.log",
+      "bytes": 296
+    },
+    {
+      "path": "reports/connected-split-20261110/optimistic-feasibility.command.json",
+      "bytes": 359
+    },
+    {
+      "path": "reports/connected-split-20261110/optimistic-feasibility.json",
+      "bytes": 5148
+    },
+    {
+      "path": "reports/connected-split-20261110/optimistic-feasibility.log",
+      "bytes": 296
+    },
+    {
+      "path": "reports/connected-split-20261110/outside-install.command.json",
+      "bytes": 542
+    },
+    {
+      "path": "reports/connected-split-20261110/outside-install.json",
+      "bytes": 887
+    },
+    {
+      "path": "reports/connected-split-20261110/outside-install.log",
+      "bytes": 743
+    },
+    {
+      "path": "reports/connected-split-20261110/quality-gate.json",
+      "bytes": 358
+    },
+    {
+      "path": "reports/connected-split-20261110/runtime.json",
+      "bytes": 342
+    },
+    {
+      "path": "reports/connected-split-20261110/source-preparation-check.command.json",
+      "bytes": 600
+    },
+    {
+      "path": "reports/connected-split-20261110/source-preparation-check.json",
+      "bytes": 139
+    },
+    {
+      "path": "reports/connected-split-20261110/source-preparation-check.log",
+      "bytes": 139
+    },
+    {
+      "path": "reports/connected-split-20261110/source-preparation-final.command.json",
+      "bytes": 598
+    },
+    {
+      "path": "reports/connected-split-20261110/source-preparation-final.json",
+      "bytes": 139
+    },
+    {
+      "path": "reports/connected-split-20261110/source-preparation-final.log",
+      "bytes": 139
+    },
+    {
+      "path": "reports/connected-split-20261110/stage-report.command.json",
+      "bytes": 347
+    },
+    {
+      "path": "reports/connected-split-20261110/stage-report.log",
+      "bytes": 114
+    },
+    {
+      "path": "reports/connected-split-20261110/web-map-access.json",
+      "bytes": 343
+    },
+    {
+      "path": "reports/connected-split-20261110/wheel-build.command.json",
+      "bytes": 429
+    },
+    {
+      "path": "reports/connected-split-20261110/wheel-build.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/connected-split-20261110/wheel-install.command.json",
+      "bytes": 473
+    },
+    {
+      "path": "reports/connected-split-20261110/wheel-install.log",
+      "bytes": 501
+    },
+    {
+      "path": "reports/development-runner-20261110/VALIDATION.md",
+      "bytes": 4169
+    },
+    {
+      "path": "reports/development-runner-20261110/complete-tests.command.json",
+      "bytes": 362
+    },
+    {
+      "path": "reports/development-runner-20261110/complete-tests.log",
+      "bytes": 827
+    },
+    {
+      "path": "reports/development-runner-20261110/final-complete-tests.command.json",
+      "bytes": 368
+    },
+    {
+      "path": "reports/development-runner-20261110/final-complete-tests.log",
+      "bytes": 827
+    },
+    {
+      "path": "reports/development-runner-20261110/focused-tests-corrected.command.json",
+      "bytes": 481
+    },
+    {
+      "path": "reports/development-runner-20261110/focused-tests-corrected.log",
+      "bytes": 100
+    },
+    {
+      "path": "reports/development-runner-20261110/focused-tests.command.json",
+      "bytes": 472
+    },
+    {
+      "path": "reports/development-runner-20261110/focused-tests.log",
+      "bytes": 995
+    },
+    {
+      "path": "reports/development-runner-20261110/frozen-integrity.json",
+      "bytes": 73
+    },
+    {
+      "path": "reports/development-runner-20261110/full-tests-final.command.json",
+      "bytes": 364
+    },
+    {
+      "path": "reports/development-runner-20261110/full-tests-final.log",
+      "bytes": 3613
+    },
+    {
+      "path": "reports/development-runner-20261110/full-tests.command.json",
+      "bytes": 359
+    },
+    {
+      "path": "reports/development-runner-20261110/full-tests.log",
+      "bytes": 827
+    },
+    {
+      "path": "reports/development-runner-20261110/outside-install-final.json",
+      "bytes": 767
+    },
+    {
+      "path": "reports/development-runner-20261110/outside-install-verified.json",
+      "bytes": 887
+    },
+    {
+      "path": "reports/development-runner-20261110/outside-install.json",
+      "bytes": 767
+    },
+    {
+      "path": "reports/development-runner-20261110/quality-gate.json",
+      "bytes": 514
+    },
+    {
+      "path": "reports/development-runner-20261110/requirement-audit.json",
+      "bytes": 6973
+    },
+    {
+      "path": "reports/development-runner-20261110/runtime.json",
+      "bytes": 363
+    },
+    {
+      "path": "reports/development-runner-20261110/single-source-readiness.command.json",
+      "bytes": 513
+    },
+    {
+      "path": "reports/development-runner-20261110/single-source-readiness.json",
+      "bytes": 413
+    },
+    {
+      "path": "reports/development-runner-20261110/single-source-readiness.log",
+      "bytes": 413
+    },
+    {
+      "path": "reports/development-runner-20261110/source-readiness.command.json",
+      "bytes": 498
+    },
+    {
+      "path": "reports/development-runner-20261110/source-readiness.json",
+      "bytes": 410
+    },
+    {
+      "path": "reports/development-runner-20261110/source-readiness.log",
+      "bytes": 410
+    },
+    {
+      "path": "reports/development-runner-20261110/stage-report.command.json",
+      "bytes": 354
+    },
+    {
+      "path": "reports/development-runner-20261110/stage-report.log",
+      "bytes": 278
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-build-final.command.json",
+      "bytes": 446
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-build-final.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-build-verified.command.json",
+      "bytes": 452
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-build-verified.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-build.command.json",
+      "bytes": 435
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-build.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-install-final.command.json",
+      "bytes": 491
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-install-final.log",
+      "bytes": 510
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-install-verified.command.json",
+      "bytes": 514
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-install-verified.log",
+      "bytes": 513
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-install.command.json",
+      "bytes": 480
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-install.log",
+      "bytes": 504
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-outside-check-corrected.command.json",
+      "bytes": 515
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-outside-check-corrected.log",
+      "bytes": 627
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-outside-check.command.json",
+      "bytes": 531
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-outside-check.log",
+      "bytes": 121
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-outside-final.command.json",
+      "bytes": 510
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-outside-final.log",
+      "bytes": 627
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-outside-verified.command.json",
+      "bytes": 516
+    },
+    {
+      "path": "reports/development-runner-20261110/wheel-outside-verified.log",
+      "bytes": 743
+    },
+    {
+      "path": "reports/discrimination-20261110/DIAGNOSIS.md",
+      "bytes": 10920
+    },
+    {
+      "path": "reports/discrimination-20261110/H1-reassessment.json",
+      "bytes": 802
+    },
+    {
+      "path": "reports/discrimination-20261110/TP-exposure-ledger.json",
+      "bytes": 46147
+    },
+    {
+      "path": "reports/discrimination-20261110/consumed-recordings.jsonl",
+      "bytes": 39976
+    },
+    {
+      "path": "reports/discrimination-20261110/cost-estimate.json",
+      "bytes": 1177
+    },
+    {
+      "path": "reports/discrimination-20261110/coverage.json",
+      "bytes": 67995
+    },
+    {
+      "path": "reports/discrimination-20261110/diagnosis-with-project-path.command.json",
+      "bytes": 362
+    },
+    {
+      "path": "reports/discrimination-20261110/diagnosis-with-project-path.log",
+      "bytes": 1243
+    },
+    {
+      "path": "reports/discrimination-20261110/diagnosis.command.json",
+      "bytes": 315
+    },
+    {
+      "path": "reports/discrimination-20261110/diagnosis.log",
+      "bytes": 246
+    },
+    {
+      "path": "reports/discrimination-20261110/evidence-report-final.command.json",
+      "bytes": 355
+    },
+    {
+      "path": "reports/discrimination-20261110/evidence-report-final.log",
+      "bytes": 56
+    },
+    {
+      "path": "reports/discrimination-20261110/evidence-report.command.json",
+      "bytes": 350
+    },
+    {
+      "path": "reports/discrimination-20261110/evidence-report.log",
+      "bytes": 56
+    },
+    {
+      "path": "reports/discrimination-20261110/final-unit-suite.command.json",
+      "bytes": 361
+    },
+    {
+      "path": "reports/discrimination-20261110/final-unit-suite.log",
+      "bytes": 747
+    },
+    {
+      "path": "reports/discrimination-20261110/formal_protocol.before.yaml",
+      "bytes": 5018
+    },
+    {
+      "path": "reports/discrimination-20261110/frozen-before.json",
+      "bytes": 67894
+    },
+    {
+      "path": "reports/discrimination-20261110/frozen-integrity.json",
+      "bytes": 73
+    },
+    {
+      "path": "reports/discrimination-20261110/local-inventory.json",
+      "bytes": 17279
+    },
+    {
+      "path": "reports/discrimination-20261110/mapping-fetch.command.json",
+      "bytes": 484
+    },
+    {
+      "path": "reports/discrimination-20261110/mapping-fetch.log",
+      "bytes": 37
+    },
+    {
+      "path": "reports/discrimination-20261110/protocol-revision.command.json",
+      "bytes": 346
+    },
+    {
+      "path": "reports/discrimination-20261110/protocol-revision.log",
+      "bytes": 87
+    },
+    {
+      "path": "reports/discrimination-20261110/py310-rdf-dependencies.command.json",
+      "bytes": 412
+    },
+    {
+      "path": "reports/discrimination-20261110/py310-rdf-dependencies.log",
+      "bytes": 2163
+    },
+    {
+      "path": "reports/discrimination-20261110/real-multicrop-deterministic.command.json",
+      "bytes": 357
+    },
+    {
+      "path": "reports/discrimination-20261110/real-multicrop-deterministic.log",
+      "bytes": 1629
+    },
+    {
+      "path": "reports/discrimination-20261110/real-multicrop-memory.command.json",
+      "bytes": 351
+    },
+    {
+      "path": "reports/discrimination-20261110/real-multicrop-memory.log",
+      "bytes": 873
+    },
+    {
+      "path": "reports/discrimination-20261110/real-multicrop.command.json",
+      "bytes": 342
+    },
+    {
+      "path": "reports/discrimination-20261110/real-multicrop.json",
+      "bytes": 25518
+    },
+    {
+      "path": "reports/discrimination-20261110/real-multicrop.log",
+      "bytes": 1629
+    },
+    {
+      "path": "reports/discrimination-20261110/requirement-audit.json",
+      "bytes": 2465
+    },
+    {
+      "path": "reports/discrimination-20261110/role-distributions.json",
+      "bytes": 4320
+    },
+    {
+      "path": "reports/discrimination-20261110/runtime.json",
+      "bytes": 498
+    },
+    {
+      "path": "reports/discrimination-20261110/test-visibility.json",
+      "bytes": 1609
+    },
+    {
+      "path": "reports/discrimination-20261110/training-diagnosis.json",
+      "bytes": 25167
+    },
+    {
+      "path": "reports/discrimination-20261110/unit-suite-local-deps.command.json",
+      "bytes": 365
+    },
+    {
+      "path": "reports/discrimination-20261110/unit-suite-local-deps.log",
+      "bytes": 747
+    },
+    {
+      "path": "reports/discrimination-20261110/unit-suite.command.json",
+      "bytes": 337
+    },
+    {
+      "path": "reports/discrimination-20261110/unit-suite.log",
+      "bytes": 1418
+    },
+    {
+      "path": "reports/environment.json",
+      "bytes": 371
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/RESULTS.md",
+      "bytes": 3769
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/command-result.json",
+      "bytes": 152
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/command-start.json",
+      "bytes": 396
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/evaluation.log",
+      "bytes": 32976
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/gpu-controls.json",
+      "bytes": 2728
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/measurement-lock.json",
+      "bytes": 988
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/progress.json",
+      "bytes": 215
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/result.json",
+      "bytes": 6233
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/command-result.json",
+      "bytes": 186
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/command-start.json",
+      "bytes": 430
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/evaluation.log",
+      "bytes": 35072
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/gpu-controls.json",
+      "bytes": 1239
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/measurement-lock.json",
+      "bytes": 1005
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/progress.json",
+      "bytes": 229
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/result.json",
+      "bytes": 6059
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/author-weight-provenance.json",
+      "bytes": 424
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/benchmark-unit.command.json",
+      "bytes": 351
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/benchmark-unit.log",
+      "bytes": 98
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/codecfake-candidate-audit.command.json",
+      "bytes": 341
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/codecfake-candidate-audit.json",
+      "bytes": 3782
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/codecfake-candidate-audit.log",
+      "bytes": 134
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/completion.json",
+      "bytes": 796
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/consumption-ledger.json",
+      "bytes": 528
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/full-unit-suite.command.json",
+      "bytes": 361
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/full-unit-suite.log",
+      "bytes": 827
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/official-map-README.txt",
+      "bytes": 7038
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/official-source-map-audit.command.json",
+      "bytes": 338
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/official-source-map-audit.json",
+      "bytes": 4347
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/official-source-map-audit.log",
+      "bytes": 1463
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/preflight.json",
+      "bytes": 2430
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/command-result.json",
+      "bytes": 153
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/command-start.json",
+      "bytes": 398
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/evaluation.log",
+      "bytes": 33908
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/gpu-controls.json",
+      "bytes": 1214
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/measurement-lock.json",
+      "bytes": 989
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/progress.json",
+      "bytes": 215
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/result.json",
+      "bytes": 6169
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/recompute-comparison.command.json",
+      "bytes": 333
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/recompute-comparison.log",
+      "bytes": 3115
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/source-map-download.command.json",
+      "bytes": 557
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/command-result.json",
+      "bytes": 159
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/command-start.json",
+      "bytes": 404
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/evaluation.log",
+      "bytes": 34347
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/gpu-controls.json",
+      "bytes": 4794
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/measurement-lock.json",
+      "bytes": 2037
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/progress.json",
+      "bytes": 217
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/result.json",
+      "bytes": 6319
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/summary.csv",
+      "bytes": 884
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/summary.json",
+      "bytes": 3115
+    },
+    {
+      "path": "reports/github-docs-20261111/old-predictions-recomputed.json",
+      "bytes": 29589
+    },
+    {
+      "path": "reports/github-docs-20261111/public-verification.json",
+      "bytes": 1613
+    },
+    {
+      "path": "reports/github-docs-20261111/staging.json",
+      "bytes": 2493
+    },
+    {
+      "path": "reports/github-docs-20261111/validation.json",
+      "bytes": 419
+    },
+    {
+      "path": "reports/github-upload-20261110/public-verification.json",
+      "bytes": 448
+    },
+    {
+      "path": "reports/github-upload-20261110/upload-status.json",
+      "bytes": 2488
+    },
+    {
+      "path": "reports/implementation/acceptance.json",
+      "bytes": 2126
+    },
+    {
+      "path": "reports/implementation/audit.json",
+      "bytes": 23672
+    },
+    {
+      "path": "reports/implementation/audit_manifest.jsonl",
+      "bytes": 5736
+    },
+    {
+      "path": "reports/implementation/blocked.json",
+      "bytes": 1016
+    },
+    {
+      "path": "reports/implementation/check-experts-blocked.json",
+      "bytes": 157
+    },
+    {
+      "path": "reports/implementation/check-experts.log",
+      "bytes": 12546
+    },
+    {
+      "path": "reports/implementation/codecs.json",
+      "bytes": 3225
+    },
+    {
+      "path": "reports/implementation/comparison-final.log",
+      "bytes": 2658
+    },
+    {
+      "path": "reports/implementation/comparison.json",
+      "bytes": 107269
+    },
+    {
+      "path": "reports/implementation/comparison.log",
+      "bytes": 2658
+    },
+    {
+      "path": "reports/implementation/core-tests.log",
+      "bytes": 99
+    },
+    {
+      "path": "reports/implementation/cost.json",
+      "bytes": 680
+    },
+    {
+      "path": "reports/implementation/dependencies.log",
+      "bytes": 2157
+    },
+    {
+      "path": "reports/implementation/doctor.log",
+      "bytes": 23839
+    },
+    {
+      "path": "reports/implementation/export-ontology-blocked.json",
+      "bytes": 136
+    },
+    {
+      "path": "reports/implementation/external-evaluation.log",
+      "bytes": 1741
+    },
+    {
+      "path": "reports/implementation/external-results.json",
+      "bytes": 18148
+    },
+    {
+      "path": "reports/implementation/external/audit_manifest.jsonl",
+      "bytes": 2789
+    },
+    {
+      "path": "reports/implementation/external/conditions-audit.jsonl",
+      "bytes": 20638
+    },
+    {
+      "path": "reports/implementation/external/conditions-inference.jsonl",
+      "bytes": 5232
+    },
+    {
+      "path": "reports/implementation/external/conditions.json",
+      "bytes": 766
+    },
+    {
+      "path": "reports/implementation/external/config.yaml",
+      "bytes": 2187
+    },
+    {
+      "path": "reports/implementation/external/data-audit.json",
+      "bytes": 363
+    },
+    {
+      "path": "reports/implementation/external/extraction-0-of-1.jsonl",
+      "bytes": 151083
+    },
+    {
+      "path": "reports/implementation/external/extraction-summary.json",
+      "bytes": 138
+    },
+    {
+      "path": "reports/implementation/external/inference_manifest.jsonl",
+      "bytes": 1461
+    },
+    {
+      "path": "reports/implementation/extract-final.log",
+      "bytes": 1423
+    },
+    {
+      "path": "reports/implementation/extract.log",
+      "bytes": 1423
+    },
+    {
+      "path": "reports/implementation/extraction-0-of-1.jsonl",
+      "bytes": 151163
+    },
+    {
+      "path": "reports/implementation/final-run-journal.json",
+      "bytes": 489
+    },
+    {
+      "path": "reports/implementation/full-unit.log",
+      "bytes": 817
+    },
+    {
+      "path": "reports/implementation/full-unit.xml",
+      "bytes": 830
+    },
+    {
+      "path": "reports/implementation/gpu-access.json",
+      "bytes": 526
+    },
+    {
+      "path": "reports/implementation/infer.log",
+      "bytes": 1486
+    },
+    {
+      "path": "reports/implementation/inference/inference-5121b5c569bcd1c695f6d87ad68ebcc086ed382adb9862759f1c79358f5937f0/decision.json",
+      "bytes": 194
+    },
+    {
+      "path": "reports/implementation/inference/inference-5121b5c569bcd1c695f6d87ad68ebcc086ed382adb9862759f1c79358f5937f0/extraction-0-of-1.jsonl",
+      "bytes": 6359
+    },
+    {
+      "path": "reports/implementation/inference/inference-5121b5c569bcd1c695f6d87ad68ebcc086ed382adb9862759f1c79358f5937f0/input.jsonl",
+      "bytes": 354
+    },
+    {
+      "path": "reports/implementation/inference_manifest.jsonl",
+      "bytes": 3912
+    },
+    {
+      "path": "reports/implementation/make-environments-blocked.json",
+      "bytes": 166
+    },
+    {
+      "path": "reports/implementation/make-environments.log",
+      "bytes": 766
+    },
+    {
+      "path": "reports/implementation/ontology-final.log",
+      "bytes": 219
+    },
+    {
+      "path": "reports/implementation/ontology.log",
+      "bytes": 219
+    },
+    {
+      "path": "reports/implementation/p3-completed.json",
+      "bytes": 248
+    },
+    {
+      "path": "reports/implementation/prepare-external-blocked.json",
+      "bytes": 96
+    },
+    {
+      "path": "reports/implementation/prepare-external.log",
+      "bytes": 363
+    },
+    {
+      "path": "reports/implementation/prepare.log",
+      "bytes": 851
+    },
+    {
+      "path": "reports/implementation/real-checkpoints-final.json",
+      "bytes": 8785
+    },
+    {
+      "path": "reports/implementation/real-checkpoints-initial.json",
+      "bytes": 3532
+    },
+    {
+      "path": "reports/implementation/real-checkpoints.json",
+      "bytes": 11294
+    },
+    {
+      "path": "reports/implementation/recomputed-typed-seed17.json",
+      "bytes": 1575
+    },
+    {
+      "path": "reports/implementation/report-recompute.log",
+      "bytes": 1575
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-fixed-seed17/history.jsonl",
+      "bytes": 1974
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-fixed-seed17/result.json",
+      "bytes": 1206
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-fixed-seed29/history.jsonl",
+      "bytes": 1978
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-fixed-seed29/result.json",
+      "bytes": 1202
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-fixed-seed43/history.jsonl",
+      "bytes": 1969
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-fixed-seed43/result.json",
+      "bytes": 1205
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-matched-seed17/history.jsonl",
+      "bytes": 1946
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-matched-seed17/result.json",
+      "bytes": 1210
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-matched-seed29/history.jsonl",
+      "bytes": 1935
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-matched-seed29/result.json",
+      "bytes": 1209
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-matched-seed43/history.jsonl",
+      "bytes": 1958
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-matched-seed43/result.json",
+      "bytes": 1208
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed17/calibration.json",
+      "bytes": 1151
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed17/external-evaluation/report.json",
+      "bytes": 1796
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed17/freeze.json",
+      "bytes": 8470
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed17/history.jsonl",
+      "bytes": 1981
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed17/result.json",
+      "bytes": 1213
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed29/calibration.json",
+      "bytes": 1150
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed29/external-evaluation/report.json",
+      "bytes": 1797
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed29/freeze.json",
+      "bytes": 8469
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed29/history.jsonl",
+      "bytes": 1974
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed29/result.json",
+      "bytes": 1212
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed43/calibration.json",
+      "bytes": 1149
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed43/external-evaluation/report.json",
+      "bytes": 1797
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed43/freeze.json",
+      "bytes": 8468
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed43/history.jsonl",
+      "bytes": 1983
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed43/result.json",
+      "bytes": 1213
+    },
+    {
+      "path": "reports/implementation/runs/drop_anchor-fixed-seed17/history.jsonl",
+      "bytes": 1882
+    },
+    {
+      "path": "reports/implementation/runs/drop_anchor-fixed-seed17/result.json",
+      "bytes": 1199
+    },
+    {
+      "path": "reports/implementation/runs/drop_anchor-fixed-seed29/history.jsonl",
+      "bytes": 1875
+    },
+    {
+      "path": "reports/implementation/runs/drop_anchor-fixed-seed29/result.json",
+      "bytes": 1199
+    },
+    {
+      "path": "reports/implementation/runs/drop_anchor-fixed-seed43/history.jsonl",
+      "bytes": 1891
+    },
+    {
+      "path": "reports/implementation/runs/drop_anchor-fixed-seed43/result.json",
+      "bytes": 1198
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_family-fixed-seed17/history.jsonl",
+      "bytes": 1890
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_family-fixed-seed17/result.json",
+      "bytes": 1210
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_family-fixed-seed29/history.jsonl",
+      "bytes": 1893
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_family-fixed-seed29/result.json",
+      "bytes": 1209
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_family-fixed-seed43/history.jsonl",
+      "bytes": 1888
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_family-fixed-seed43/result.json",
+      "bytes": 1208
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_probe-fixed-seed17/history.jsonl",
+      "bytes": 1892
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_probe-fixed-seed17/result.json",
+      "bytes": 1206
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_probe-fixed-seed29/history.jsonl",
+      "bytes": 1886
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_probe-fixed-seed29/result.json",
+      "bytes": 1207
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_probe-fixed-seed43/history.jsonl",
+      "bytes": 1889
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_probe-fixed-seed43/result.json",
+      "bytes": 1208
+    },
+    {
+      "path": "reports/implementation/runs/missing_probe-fixed-seed17/history.jsonl",
+      "bytes": 1892
+    },
+    {
+      "path": "reports/implementation/runs/missing_probe-fixed-seed17/result.json",
+      "bytes": 1203
+    },
+    {
+      "path": "reports/implementation/runs/missing_probe-fixed-seed29/history.jsonl",
+      "bytes": 1892
+    },
+    {
+      "path": "reports/implementation/runs/missing_probe-fixed-seed29/result.json",
+      "bytes": 1203
+    },
+    {
+      "path": "reports/implementation/runs/missing_probe-fixed-seed43/history.jsonl",
+      "bytes": 1895
+    },
+    {
+      "path": "reports/implementation/runs/missing_probe-fixed-seed43/result.json",
+      "bytes": 1202
+    },
+    {
+      "path": "reports/implementation/runs/no_delta_mlp-fixed-seed17/history.jsonl",
+      "bytes": 1974
+    },
+    {
+      "path": "reports/implementation/runs/no_delta_mlp-fixed-seed17/result.json",
+      "bytes": 1203
+    },
+    {
+      "path": "reports/implementation/runs/no_delta_mlp-fixed-seed29/history.jsonl",
+      "bytes": 1978
+    },
+    {
+      "path": "reports/implementation/runs/no_delta_mlp-fixed-seed29/result.json",
+      "bytes": 1201
+    },
+    {
+      "path": "reports/implementation/runs/no_delta_mlp-fixed-seed43/history.jsonl",
+      "bytes": 1969
+    },
+    {
+      "path": "reports/implementation/runs/no_delta_mlp-fixed-seed43/result.json",
+      "bytes": 1202
+    },
+    {
+      "path": "reports/implementation/runs/no_response-fixed-seed17/history.jsonl",
+      "bytes": 1875
+    },
+    {
+      "path": "reports/implementation/runs/no_response-fixed-seed17/result.json",
+      "bytes": 1199
+    },
+    {
+      "path": "reports/implementation/runs/no_response-fixed-seed29/history.jsonl",
+      "bytes": 1876
+    },
+    {
+      "path": "reports/implementation/runs/no_response-fixed-seed29/result.json",
+      "bytes": 1196
+    },
+    {
+      "path": "reports/implementation/runs/no_response-fixed-seed43/history.jsonl",
+      "bytes": 1876
+    },
+    {
+      "path": "reports/implementation/runs/no_response-fixed-seed43/result.json",
+      "bytes": 1198
+    },
+    {
+      "path": "reports/implementation/runs/original_mlp-fixed-seed17/history.jsonl",
+      "bytes": 1931
+    },
+    {
+      "path": "reports/implementation/runs/original_mlp-fixed-seed17/result.json",
+      "bytes": 1203
+    },
+    {
+      "path": "reports/implementation/runs/original_mlp-fixed-seed29/history.jsonl",
+      "bytes": 1927
+    },
+    {
+      "path": "reports/implementation/runs/original_mlp-fixed-seed29/result.json",
+      "bytes": 1201
+    },
+    {
+      "path": "reports/implementation/runs/original_mlp-fixed-seed43/history.jsonl",
+      "bytes": 1934
+    },
+    {
+      "path": "reports/implementation/runs/original_mlp-fixed-seed43/result.json",
+      "bytes": 1202
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-fixed-seed17/history.jsonl",
+      "bytes": 1912
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-fixed-seed17/result.json",
+      "bytes": 1202
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-fixed-seed29/history.jsonl",
+      "bytes": 1911
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-fixed-seed29/result.json",
+      "bytes": 1203
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-fixed-seed43/history.jsonl",
+      "bytes": 1910
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-fixed-seed43/result.json",
+      "bytes": 1203
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-matched-seed17/history.jsonl",
+      "bytes": 1909
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-matched-seed17/result.json",
+      "bytes": 1207
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-matched-seed29/history.jsonl",
+      "bytes": 1919
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-matched-seed29/result.json",
+      "bytes": 1205
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-matched-seed43/history.jsonl",
+      "bytes": 1901
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-matched-seed43/result.json",
+      "bytes": 1205
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-stronger-seed17/history.jsonl",
+      "bytes": 1925
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-stronger-seed17/result.json",
+      "bytes": 1209
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-stronger-seed29/history.jsonl",
+      "bytes": 1931
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-stronger-seed29/result.json",
+      "bytes": 1211
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-stronger-seed43/history.jsonl",
+      "bytes": 1929
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-stronger-seed43/result.json",
+      "bytes": 1210
+    },
+    {
+      "path": "reports/implementation/runs/score_lr-fixed-seed17/history.jsonl",
+      "bytes": 1845
+    },
+    {
+      "path": "reports/implementation/runs/score_lr-fixed-seed17/result.json",
+      "bytes": 1184
+    },
+    {
+      "path": "reports/implementation/runs/score_lr-fixed-seed29/history.jsonl",
+      "bytes": 1847
+    },
+    {
+      "path": "reports/implementation/runs/score_lr-fixed-seed29/result.json",
+      "bytes": 1183
+    },
+    {
+      "path": "reports/implementation/runs/score_lr-fixed-seed43/history.jsonl",
+      "bytes": 1864
+    },
+    {
+      "path": "reports/implementation/runs/score_lr-fixed-seed43/result.json",
+      "bytes": 1183
+    },
+    {
+      "path": "reports/implementation/runs/score_mlp-fixed-seed17/history.jsonl",
+      "bytes": 1850
+    },
+    {
+      "path": "reports/implementation/runs/score_mlp-fixed-seed17/result.json",
+      "bytes": 1188
+    },
+    {
+      "path": "reports/implementation/runs/score_mlp-fixed-seed29/history.jsonl",
+      "bytes": 1851
+    },
+    {
+      "path": "reports/implementation/runs/score_mlp-fixed-seed29/result.json",
+      "bytes": 1188
+    },
+    {
+      "path": "reports/implementation/runs/score_mlp-fixed-seed43/history.jsonl",
+      "bytes": 1849
+    },
+    {
+      "path": "reports/implementation/runs/score_mlp-fixed-seed43/result.json",
+      "bytes": 1189
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-fixed-seed17/history.jsonl",
+      "bytes": 1917
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-fixed-seed17/result.json",
+      "bytes": 1203
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-fixed-seed29/history.jsonl",
+      "bytes": 1928
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-fixed-seed29/result.json",
+      "bytes": 1203
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-fixed-seed43/history.jsonl",
+      "bytes": 1923
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-fixed-seed43/result.json",
+      "bytes": 1204
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-matched-seed17/history.jsonl",
+      "bytes": 1917
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-matched-seed17/result.json",
+      "bytes": 1209
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-matched-seed29/history.jsonl",
+      "bytes": 1924
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-matched-seed29/result.json",
+      "bytes": 1209
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-matched-seed43/history.jsonl",
+      "bytes": 1919
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-matched-seed43/result.json",
+      "bytes": 1208
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-stronger-seed17/history.jsonl",
+      "bytes": 1945
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-stronger-seed17/result.json",
+      "bytes": 1211
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-stronger-seed29/history.jsonl",
+      "bytes": 1940
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-stronger-seed29/result.json",
+      "bytes": 1212
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-stronger-seed43/history.jsonl",
+      "bytes": 1941
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-stronger-seed43/result.json",
+      "bytes": 1212
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_0-fixed-seed17/history.jsonl",
+      "bytes": 1882
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_0-fixed-seed17/result.json",
+      "bytes": 1206
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_0-fixed-seed29/history.jsonl",
+      "bytes": 1883
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_0-fixed-seed29/result.json",
+      "bytes": 1206
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_0-fixed-seed43/history.jsonl",
+      "bytes": 1880
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_0-fixed-seed43/result.json",
+      "bytes": 1206
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_1-fixed-seed17/history.jsonl",
+      "bytes": 1891
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_1-fixed-seed17/result.json",
+      "bytes": 1206
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_1-fixed-seed29/history.jsonl",
+      "bytes": 1886
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_1-fixed-seed29/result.json",
+      "bytes": 1206
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_1-fixed-seed43/history.jsonl",
+      "bytes": 1887
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_1-fixed-seed43/result.json",
+      "bytes": 1205
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_2-fixed-seed17/history.jsonl",
+      "bytes": 1905
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_2-fixed-seed17/result.json",
+      "bytes": 1208
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_2-fixed-seed29/history.jsonl",
+      "bytes": 1894
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_2-fixed-seed29/result.json",
+      "bytes": 1207
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_2-fixed-seed43/history.jsonl",
+      "bytes": 1897
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_2-fixed-seed43/result.json",
+      "bytes": 1206
+    },
+    {
+      "path": "reports/implementation/runs/tta_stats-fixed-seed17/history.jsonl",
+      "bytes": 1851
+    },
+    {
+      "path": "reports/implementation/runs/tta_stats-fixed-seed17/result.json",
+      "bytes": 1190
+    },
+    {
+      "path": "reports/implementation/runs/tta_stats-fixed-seed29/history.jsonl",
+      "bytes": 1843
+    },
+    {
+      "path": "reports/implementation/runs/tta_stats-fixed-seed29/result.json",
+      "bytes": 1188
+    },
+    {
+      "path": "reports/implementation/runs/tta_stats-fixed-seed43/history.jsonl",
+      "bytes": 1850
+    },
+    {
+      "path": "reports/implementation/runs/tta_stats-fixed-seed43/result.json",
+      "bytes": 1190
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed17/calibration.json",
+      "bytes": 1161
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed17/external-evaluation/report.json",
+      "bytes": 1734
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed17/freeze.json",
+      "bytes": 8478
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed17/history.jsonl",
+      "bytes": 1887
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed17/result.json",
+      "bytes": 1203
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed29/calibration.json",
+      "bytes": 1161
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed29/external-evaluation/report.json",
+      "bytes": 1728
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed29/freeze.json",
+      "bytes": 8478
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed29/history.jsonl",
+      "bytes": 1893
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed29/result.json",
+      "bytes": 1204
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed43/calibration.json",
+      "bytes": 1161
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed43/external-evaluation/report.json",
+      "bytes": 1727
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed43/freeze.json",
+      "bytes": 8478
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed43/history.jsonl",
+      "bytes": 1888
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed43/result.json",
+      "bytes": 1205
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-fixed-seed17/history.jsonl",
+      "bytes": 1882
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-fixed-seed17/result.json",
+      "bytes": 1210
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-fixed-seed29/history.jsonl",
+      "bytes": 1878
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-fixed-seed29/result.json",
+      "bytes": 1210
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-fixed-seed43/history.jsonl",
+      "bytes": 1876
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-fixed-seed43/result.json",
+      "bytes": 1209
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-matched-seed17/history.jsonl",
+      "bytes": 1885
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-matched-seed17/result.json",
+      "bytes": 1211
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-matched-seed29/history.jsonl",
+      "bytes": 1895
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-matched-seed29/result.json",
+      "bytes": 1214
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-matched-seed43/history.jsonl",
+      "bytes": 1892
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-matched-seed43/result.json",
+      "bytes": 1213
+    },
+    {
+      "path": "reports/implementation/runs/wrong_family-fixed-seed17/history.jsonl",
+      "bytes": 1885
+    },
+    {
+      "path": "reports/implementation/runs/wrong_family-fixed-seed17/result.json",
+      "bytes": 1201
+    },
+    {
+      "path": "reports/implementation/runs/wrong_family-fixed-seed29/history.jsonl",
+      "bytes": 1888
+    },
+    {
+      "path": "reports/implementation/runs/wrong_family-fixed-seed29/result.json",
+      "bytes": 1200
+    },
+    {
+      "path": "reports/implementation/runs/wrong_family-fixed-seed43/history.jsonl",
+      "bytes": 1890
+    },
+    {
+      "path": "reports/implementation/runs/wrong_family-fixed-seed43/result.json",
+      "bytes": 1199
+    },
+    {
+      "path": "reports/implementation/runtime-lock.json",
+      "bytes": 440
+    },
+    {
+      "path": "reports/implementation/selection.json",
+      "bytes": 319
+    },
+    {
+      "path": "reports/implementation/shacl.log",
+      "bytes": 136
+    },
+    {
+      "path": "reports/implementation/splits.json",
+      "bytes": 851
+    },
+    {
+      "path": "reports/implementation/supervision-audit.json",
+      "bytes": 5937
+    },
+    {
+      "path": "reports/implementation/train-first-baseline.log",
+      "bytes": 1143
+    },
+    {
+      "path": "reports/implementation/unit.log",
+      "bytes": 179
+    },
+    {
+      "path": "reports/implementation/unit.xml",
+      "bytes": 8278
+    },
+    {
+      "path": "reports/next-stage-20261110/baseline-bundle-verification.json",
+      "bytes": 829
+    },
+    {
+      "path": "reports/next-stage-20261110/baseline-verify-outside.command.json",
+      "bytes": 382
+    },
+    {
+      "path": "reports/next-stage-20261110/baseline-verify-outside.log",
+      "bytes": 711
+    },
+    {
+      "path": "reports/next-stage-20261110/bundle-export.log",
+      "bytes": 829
+    },
+    {
+      "path": "reports/next-stage-20261110/checkpoints.command.json",
+      "bytes": 490
+    },
+    {
+      "path": "reports/next-stage-20261110/checkpoints.log",
+      "bytes": 10676
+    },
+    {
+      "path": "reports/next-stage-20261110/compile.command.json",
+      "bytes": 357
+    },
+    {
+      "path": "reports/next-stage-20261110/compile.log",
+      "bytes": 0
+    },
+    {
+      "path": "reports/next-stage-20261110/consumed-exploration.json",
+      "bytes": 5865
+    },
+    {
+      "path": "reports/next-stage-20261110/dependencies-download.log",
+      "bytes": 481
+    },
+    {
+      "path": "reports/next-stage-20261110/dependency-lock.json",
+      "bytes": 24282
+    },
+    {
+      "path": "reports/next-stage-20261110/dependency-lock.log",
+      "bytes": 122
+    },
+    {
+      "path": "reports/next-stage-20261110/execution-environment.json",
+      "bytes": 2417
+    },
+    {
+      "path": "reports/next-stage-20261110/external-assets.json",
+      "bytes": 72956
+    },
+    {
+      "path": "reports/next-stage-20261110/final-bundle-verification.json",
+      "bytes": 1245
+    },
+    {
+      "path": "reports/next-stage-20261110/final-bundle.log",
+      "bytes": 1245
+    },
+    {
+      "path": "reports/next-stage-20261110/frozen-directory-preservation.json",
+      "bytes": 79
+    },
+    {
+      "path": "reports/next-stage-20261110/full-tests.command.json",
+      "bytes": 371
+    },
+    {
+      "path": "reports/next-stage-20261110/full-tests.log",
+      "bytes": 746
+    },
+    {
+      "path": "reports/next-stage-20261110/independent-metrics.command.json",
+      "bytes": 370
+    },
+    {
+      "path": "reports/next-stage-20261110/independent-metrics.log",
+      "bytes": 68
+    },
+    {
+      "path": "reports/next-stage-20261110/independent-recomputation.json",
+      "bytes": 23726
+    },
+    {
+      "path": "reports/next-stage-20261110/independent-recomputation.log",
+      "bytes": 68
+    },
+    {
+      "path": "reports/next-stage-20261110/outside-install.command.json",
+      "bytes": 413
+    },
+    {
+      "path": "reports/next-stage-20261110/outside-install.json",
+      "bytes": 665
+    },
+    {
+      "path": "reports/next-stage-20261110/outside-install.log",
+      "bytes": 405
+    },
+    {
+      "path": "reports/next-stage-20261110/pilot-post-audit.json",
+      "bytes": 460
+    },
+    {
+      "path": "reports/next-stage-20261110/pilot-preflight.command.json",
+      "bytes": 383
+    },
+    {
+      "path": "reports/next-stage-20261110/pilot-preflight.log",
+      "bytes": 2275
+    },
+    {
+      "path": "reports/next-stage-20261110/pilot-prepare.log",
+      "bytes": 2813
+    },
+    {
+      "path": "reports/next-stage-20261110/quality-gate.json",
+      "bytes": 4902
+    },
+    {
+      "path": "reports/next-stage-20261110/real-checkpoints.json",
+      "bytes": 9448
+    },
+    {
+      "path": "reports/next-stage-20261110/real-evidence-ontology.json",
+      "bytes": 276
+    },
+    {
+      "path": "reports/next-stage-20261110/requested-inputs.json",
+      "bytes": 381
+    },
+    {
+      "path": "reports/next-stage-20261110/requirements-tested.txt",
+      "bytes": 4686
+    },
+    {
+      "path": "reports/next-stage-20261110/source-audit.command.json",
+      "bytes": 286
+    },
+    {
+      "path": "reports/next-stage-20261110/source-audit.log",
+      "bytes": 74
+    },
+    {
+      "path": "reports/next-stage-20261110/stage-results.json",
+      "bytes": 1333
+    },
+    {
+      "path": "reports/next-stage-20261110/supervision-audit.log",
+      "bytes": 74
+    },
+    {
+      "path": "reports/next-stage-20261110/unit-initial.log",
+      "bytes": 179
+    },
+    {
+      "path": "reports/next-stage-20261110/unit-initial.xml",
+      "bytes": 9047
+    },
+    {
+      "path": "reports/next-stage-20261110/unit.log",
+      "bytes": 746
+    },
+    {
+      "path": "reports/next-stage-20261110/unit.xml",
+      "bytes": 11279
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/AASIST.py",
+      "bytes": 18960
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/config.yaml",
+      "bytes": 2480
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/failure.json",
+      "bytes": 140
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/finalized.json",
+      "bytes": 1413
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/history.csv",
+      "bytes": 10931
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/meta.json",
+      "bytes": 4136
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/metrics.jsonl",
+      "bytes": 7544
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/run.json",
+      "bytes": 1506
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/source_train_job.json",
+      "bytes": 2480
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/rawnet2/README.md",
+      "bytes": 4567
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/rawnet2/RawNet2.py",
+      "bytes": 10980
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/rawnet2/RawNet2.yaml",
+      "bytes": 280
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/rawnet2/data_utils.py",
+      "bytes": 7486
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/rawnet2/main.py",
+      "bytes": 8345
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/config.yaml",
+      "bytes": 2694
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/failure.json",
+      "bytes": 140
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/finalized.json",
+      "bytes": 2571
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/history.csv",
+      "bytes": 9263
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/meta.json",
+      "bytes": 4155
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/metrics.jsonl",
+      "bytes": 7160
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/model.py",
+      "bytes": 18796
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/run.json",
+      "bytes": 2655
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/source_train_job.json",
+      "bytes": 2694
+    },
+    {
+      "path": "reports/next-stage-20261110/wheel-build-final.command.json",
+      "bytes": 424
+    },
+    {
+      "path": "reports/next-stage-20261110/wheel-build-final.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/next-stage-20261110/wheel-build.log",
+      "bytes": 980
+    },
+    {
+      "path": "reports/next-stage-20261110/wheel-install-final.command.json",
+      "bytes": 424
+    },
+    {
+      "path": "reports/next-stage-20261110/wheel-install-final.log",
+      "bytes": 611
+    },
+    {
+      "path": "reports/next-stage-20261110/wheel-install.log",
+      "bytes": 435
+    },
+    {
+      "path": "reports/pilot-20261110/H1-gate.json",
+      "bytes": 454
+    },
+    {
+      "path": "reports/pilot-20261110/H2-not-run.json",
+      "bytes": 341
+    },
+    {
+      "path": "reports/pilot-20261110/audit_manifest.jsonl",
+      "bytes": 66760
+    },
+    {
+      "path": "reports/pilot-20261110/completion.json",
+      "bytes": 113
+    },
+    {
+      "path": "reports/pilot-20261110/crop-coverage.json",
+      "bytes": 44466
+    },
+    {
+      "path": "reports/pilot-20261110/data-audit.json",
+      "bytes": 2813
+    },
+    {
+      "path": "reports/pilot-20261110/experiment-start.json",
+      "bytes": 5789
+    },
+    {
+      "path": "reports/pilot-20261110/extraction-0-of-1.jsonl",
+      "bytes": 630793
+    },
+    {
+      "path": "reports/pilot-20261110/extraction-summary.json",
+      "bytes": 132
+    },
+    {
+      "path": "reports/pilot-20261110/inference_manifest.jsonl",
+      "bytes": 22400
+    },
+    {
+      "path": "reports/pilot-20261110/preflight.json",
+      "bytes": 4025
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed17/convergence.jsonl",
+      "bytes": 7588
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed17/freeze.json",
+      "bytes": 7640
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed17/result.json",
+      "bytes": 439
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed17/test-report.json",
+      "bytes": 498
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed29/convergence.jsonl",
+      "bytes": 10633
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed29/freeze.json",
+      "bytes": 7640
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed29/result.json",
+      "bytes": 439
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed29/test-report.json",
+      "bytes": 499
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed43/convergence.jsonl",
+      "bytes": 15658
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed43/freeze.json",
+      "bytes": 7639
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed43/result.json",
+      "bytes": 440
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed43/test-report.json",
+      "bytes": 498
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed17/convergence.jsonl",
+      "bytes": 7596
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed17/freeze.json",
+      "bytes": 7640
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed17/result.json",
+      "bytes": 445
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed17/test-report.json",
+      "bytes": 500
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed29/convergence.jsonl",
+      "bytes": 19083
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed29/freeze.json",
+      "bytes": 7637
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed29/result.json",
+      "bytes": 448
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed29/test-report.json",
+      "bytes": 501
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed43/convergence.jsonl",
+      "bytes": 19033
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed43/freeze.json",
+      "bytes": 7638
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed43/result.json",
+      "bytes": 448
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed43/test-report.json",
+      "bytes": 500
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed17/convergence.jsonl",
+      "bytes": 162
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed17/freeze.json",
+      "bytes": 7638
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed17/result.json",
+      "bytes": 429
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed17/test-report.json",
+      "bytes": 499
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed29/convergence.jsonl",
+      "bytes": 162
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed29/freeze.json",
+      "bytes": 7638
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed29/result.json",
+      "bytes": 429
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed29/test-report.json",
+      "bytes": 499
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed43/convergence.jsonl",
+      "bytes": 162
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed43/freeze.json",
+      "bytes": 7638
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed43/result.json",
+      "bytes": 429
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed43/test-report.json",
+      "bytes": 499
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed17/convergence.jsonl",
+      "bytes": 19050
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed17/freeze.json",
+      "bytes": 7637
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed17/result.json",
+      "bytes": 440
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed17/test-report.json",
+      "bytes": 496
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed29/convergence.jsonl",
+      "bytes": 19048
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed29/freeze.json",
+      "bytes": 7638
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed29/result.json",
+      "bytes": 440
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed29/test-report.json",
+      "bytes": 496
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed43/convergence.jsonl",
+      "bytes": 19050
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed43/freeze.json",
+      "bytes": 7638
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed43/result.json",
+      "bytes": 439
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed43/test-report.json",
+      "bytes": 496
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed17/convergence.jsonl",
+      "bytes": 19054
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed17/freeze.json",
+      "bytes": 7639
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed17/result.json",
+      "bytes": 440
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed17/test-report.json",
+      "bytes": 496
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed29/convergence.jsonl",
+      "bytes": 7549
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed29/freeze.json",
+      "bytes": 7638
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed29/result.json",
+      "bytes": 437
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed29/test-report.json",
+      "bytes": 497
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed43/convergence.jsonl",
+      "bytes": 16916
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed43/freeze.json",
+      "bytes": 7638
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed43/result.json",
+      "bytes": 437
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed43/test-report.json",
+      "bytes": 497
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed17/convergence.jsonl",
+      "bytes": 19008
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed17/freeze.json",
+      "bytes": 7640
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed17/result.json",
+      "bytes": 447
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed17/test-report.json",
+      "bytes": 499
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed29/convergence.jsonl",
+      "bytes": 9460
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed29/freeze.json",
+      "bytes": 7639
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed29/result.json",
+      "bytes": 444
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed29/test-report.json",
+      "bytes": 500
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed43/convergence.jsonl",
+      "bytes": 19036
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed43/freeze.json",
+      "bytes": 7640
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed43/result.json",
+      "bytes": 445
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed43/test-report.json",
+      "bytes": 499
+    },
+    {
+      "path": "reports/pilot-20261110/scaler-diagnostics.json",
+      "bytes": 2561
+    },
+    {
+      "path": "reports/pilot-20261110/selection.json",
+      "bytes": 212
+    },
+    {
+      "path": "reports/pilot-20261110/test-reports.json",
+      "bytes": 9782
+    },
+    {
+      "path": "reports/pilot-20261110/training-results.json",
+      "bytes": 8476
+    },
+    {
+      "path": "reports/repository-update-20261112/REPORT.md",
+      "bytes": 3337
+    },
+    {
+      "path": "reports/repository-update-20261112/bounded-export-test.command.json",
+      "bytes": 471
+    },
+    {
+      "path": "reports/repository-update-20261112/bounded-export-test.log",
+      "bytes": 98
+    },
+    {
+      "path": "reports/repository-update-20261112/export-verification.json",
+      "bytes": 234
+    },
+    {
+      "path": "reports/repository-update-20261112/final-review-retry.command.json",
+      "bytes": 371
+    },
+    {
+      "path": "reports/repository-update-20261112/final-review-retry.log",
+      "bytes": 740
+    },
+    {
+      "path": "reports/repository-update-20261112/final-review.command.json",
+      "bytes": 366
+    },
+    {
+      "path": "reports/repository-update-20261112/final-review.json",
+      "bytes": 694
+    },
+    {
+      "path": "reports/repository-update-20261112/final-review.log",
+      "bytes": 4737
+    },
+    {
+      "path": "reports/repository-update-20261112/git-commit.command.json",
+      "bytes": 362
+    },
+    {
+      "path": "reports/repository-update-20261112/git-commit.log",
+      "bytes": 22432
+    },
+    {
+      "path": "reports/repository-update-20261112/git-push-retry.command.json",
+      "bytes": 443
+    },
+    {
+      "path": "reports/repository-update-20261112/git-push-retry.log",
+      "bytes": 22
+    },
+    {
+      "path": "reports/repository-update-20261112/git-push.command.json",
+      "bytes": 310
+    },
+    {
+      "path": "reports/repository-update-20261112/git-push.log",
+      "bytes": 81
+    },
+    {
+      "path": "reports/repository-update-20261112/gpu-parity.json",
+      "bytes": 1234
+    },
+    {
+      "path": "reports/repository-update-20261112/metrics_recomputed_public.json",
+      "bytes": 29589
+    },
+    {
+      "path": "reports/repository-update-20261112/prepare-public-tree.command.json",
+      "bytes": 373
+    },
+    {
+      "path": "reports/repository-update-20261112/prepare-public-tree.log",
+      "bytes": 314
+    },
+    {
+      "path": "reports/repository-update-20261112/public-export.command.json",
+      "bytes": 479
+    },
+    {
+      "path": "reports/repository-update-20261112/public-export.log",
+      "bytes": 234
+    },
+    {
+      "path": "reports/repository-update-20261112/public-gpu-parity.command.json",
+      "bytes": 455
+    },
+    {
+      "path": "reports/repository-update-20261112/public-gpu-parity.log",
+      "bytes": 1355
+    },
+    {
+      "path": "reports/repository-update-20261112/public-recompute.command.json",
+      "bytes": 371
+    },
+    {
+      "path": "reports/repository-update-20261112/public-recompute.log",
+      "bytes": 68
+    },
+    {
+      "path": "reports/repository-update-20261112/public-unit.command.json",
+      "bytes": 443
+    },
+    {
+      "path": "reports/repository-update-20261112/public-unit.log",
+      "bytes": 827
+    },
+    {
+      "path": "reports/repository-update-20261112/public-verification-retry.command.json",
+      "bytes": 359
+    },
+    {
+      "path": "reports/repository-update-20261112/public-verification-retry.log",
+      "bytes": 798
+    },
+    {
+      "path": "reports/repository-update-20261112/public-verification.command.json",
+      "bytes": 352
+    },
+    {
+      "path": "reports/repository-update-20261112/public-verification.json",
+      "bytes": 3439
+    },
+    {
+      "path": "reports/repository-update-20261112/public-verification.log",
+      "bytes": 731
+    },
+    {
+      "path": "reports/repository-update-20261112/staging.json",
+      "bytes": 1157
+    },
+    {
+      "path": "reports/repository-update-20261112/verification/gpu_parity.py",
+      "bytes": 3975
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/REPORT.md",
+      "bytes": 2869
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/extract-input.jsonl",
+      "bytes": 178
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/extract-smoke/extraction-0-of-1.jsonl",
+      "bytes": 6587
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/fusion-smoke/runs/typed_response-fixed-seed17/history.jsonl",
+      "bytes": 185
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/fusion-smoke/runs/typed_response-fixed-seed17/result.json",
+      "bytes": 1219
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/gpu-check.command.json",
+      "bytes": 486
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/gpu-check.log",
+      "bytes": 3241
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/gpu-results.json",
+      "bytes": 2299
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/gpu_check.py",
+      "bytes": 5105
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/public-recompute.command.json",
+      "bytes": 353
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/public-recompute.log",
+      "bytes": 68
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/public-tests.command.json",
+      "bytes": 440
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/public-tests.log",
+      "bytes": 4188
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/training-input.jsonl",
+      "bytes": 8112
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/unit-final.command.json",
+      "bytes": 446
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/unit-final.log",
+      "bytes": 4212
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/unit-first.command.json",
+      "bytes": 445
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/unit-first.log",
+      "bytes": 4212
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/REPORT.md",
+      "bytes": 2212
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/delta-create.command.json",
+      "bytes": 554
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/delta-create.log",
+      "bytes": 483
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/delta-restore.command.json",
+      "bytes": 515
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/delta-restore.log",
+      "bytes": 206
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/evidence-integrity.json",
+      "bytes": 305
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/restored-snapshot-verify.command.json",
+      "bytes": 401
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/restored-snapshot-verify.log",
+      "bytes": 656
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/restored-verification.json",
+      "bytes": 656
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/retention.json",
+      "bytes": 1457
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/snapshot_delta.py",
+      "bytes": 4255
+    },
+    {
+      "path": "reports/synthetic_smoke.json",
+      "bytes": 1068
+    },
+    {
+      "path": "reports/synthetic_stdout.txt",
+      "bytes": 1069
+    },
+    {
+      "path": "reports/synthetic_topology.ttl",
+      "bytes": 9981
+    },
+    {
+      "path": "reports/unit_tests.txt",
+      "bytes": 99
+    },
+    {
+      "path": "reports/unit_tests.xml",
+      "bytes": 3806
+    },
+    {
+      "path": "requirements-ontology.txt",
+      "bytes": 99
+    },
+    {
+      "path": "requirements-pilot.txt",
+      "bytes": 39
+    },
+    {
+      "path": "requirements-reference.txt",
+      "bytes": 119
+    },
+    {
+      "path": "requirements-test.txt",
+      "bytes": 54
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 239
+    },
+    {
+      "path": "scripts/audit_codecfake_candidates.py",
+      "bytes": 4670
+    },
+    {
+      "path": "scripts/audit_fusion_candidates.py",
+      "bytes": 7244
+    },
+    {
+      "path": "scripts/evaluate_bounded.py",
+      "bytes": 4432
+    },
+    {
+      "path": "scripts/expert_benchmark.py",
+      "bytes": 17511
+    },
+    {
+      "path": "scripts/export_public.py",
+      "bytes": 2633
+    },
+    {
+      "path": "scripts/freeze_development.py",
+      "bytes": 1507
+    },
+    {
+      "path": "scripts/materialize_development.py",
+      "bytes": 865
+    },
+    {
+      "path": "scripts/measurement_controls.py",
+      "bytes": 4333
+    },
+    {
+      "path": "scripts/pilot_summary.py",
+      "bytes": 5431
+    },
+    {
+      "path": "scripts/prepare_connected.py",
+      "bytes": 1482
+    },
+    {
+      "path": "scripts/profile_multicrop.py",
+      "bytes": 6744
+    },
+    {
+      "path": "scripts/recompute_predictions.py",
+      "bytes": 10045
+    },
+    {
+      "path": "scripts/report_expert_benchmark.py",
+      "bytes": 8717
+    },
+    {
+      "path": "scripts/reproduce_smoke.py",
+      "bytes": 1973
+    },
+    {
+      "path": "scripts/run_bounded.py",
+      "bytes": 3848
+    },
+    {
+      "path": "scripts/run_pilot.py",
+      "bytes": 3295
+    },
+    {
+      "path": "scripts/stage_run.py",
+      "bytes": 1371
+    },
+    {
+      "path": "tests/test_connected_split.py",
+      "bytes": 6805
+    },
+    {
+      "path": "tests/test_core.py",
+      "bytes": 7136
+    },
+    {
+      "path": "tests/test_development_runner.py",
+      "bytes": 16865
+    },
+    {
+      "path": "tests/test_discrimination.py",
+      "bytes": 2572
+    },
+    {
+      "path": "tests/test_expert_benchmark.py",
+      "bytes": 3486
+    },
+    {
+      "path": "tests/test_independent_metrics.py",
+      "bytes": 1785
+    },
+    {
+      "path": "tests/test_numeric_diagnostics.py",
+      "bytes": 4591
+    },
+    {
+      "path": "tests/test_ontology_validation.py",
+      "bytes": 3791
+    },
+    {
+      "path": "tests/test_pilot_budget.py",
+      "bytes": 4540
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "bytes": 12079
+    },
+    {
+      "path": "tests/test_registry.py",
+      "bytes": 1317
+    },
+    {
+      "path": "tests/test_relation_tied.py",
+      "bytes": 4506
+    },
+    {
+      "path": "tests/test_shareable_audit.py",
+      "bytes": 4044
+    },
+    {
+      "path": "tests/test_workflow.py",
+      "bytes": 10315
+    }
+  ],
+  "missing": [],
+  "intentional_exclusions": [
+    {
+      "path": "reports/expert-benchmark-20261111/aasist/per_utterance_predictions.jsonl",
+      "bytes": 23746563,
+      "reason": "per-request scores exceed public member size limit; retained locally"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/aasist_author_reference/per_utterance_predictions.jsonl",
+      "bytes": 23741769,
+      "reason": "per-request scores exceed public member size limit; retained locally"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/rawnet2/per_utterance_predictions.jsonl",
+      "bytes": 24154883,
+      "reason": "per-request scores exceed public member size limit; retained locally"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ssl_aasist/per_utterance_predictions.jsonl",
+      "bytes": 23768501,
+      "reason": "per-request scores exceed public member size limit; retained locally"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/best_single_expert-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp_p3-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/response_mlp-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/original_mlp-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/pilot-20261110/runs/all_views_mlp_p3-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/connected-split-20261110/wheels/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/next-stage-20261110/ontology-dependencies.tar.gz",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/next-stage-20261110/wheels/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/simplify-experiments-20261113/fusion-smoke/runs/typed_response-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/cleanup-20261112/fusion-before.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/cleanup-20261112/source-before.tar.gz",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/cleanup-20261112/dist/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/development-runner-20261110/wheels/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/development-runner-20261110/wheels-verified/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/development-runner-20261110/wheels-final/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/audit_bundle.zip",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheels-release/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheels/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/release-wheel/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/codex-next-stage-20261110/wheels-final/ontoresponse-0.5.0-py3-none-any.whl",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/no_delta_mlp-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_1-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/drop_anchor-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-matched-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/missing_probe-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/wrong_family-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_probe-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/tta_stats-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-matched-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/score_lr-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_probe-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/score_mlp-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-stronger-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/no_response-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-matched-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/drop_anchor-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/tta_stats-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_0-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_1-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-matched-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-matched-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_2-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-matched-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/original_mlp-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/score_lr-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/drop_anchor-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_2-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-stronger-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-matched-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-matched-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/no_delta_mlp-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/no_delta_mlp-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-matched-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/score_mlp-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_probe-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-stronger-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_family-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/untyped_response-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/typed_response-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_2-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_family-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/drop_same_family-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/tta_stats-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-matched-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-stronger-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-stronger-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-matched-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/no_response-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/no_response-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-matched-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/response_mlp-stronger-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/missing_probe-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/original_mlp-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/missing_probe-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/wrong_family-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/original_mlp-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_1-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_0-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/score_lr-fixed-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/set_attention-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/single_expert_0-fixed-seed17/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/all_views_mlp-stronger-seed43/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/wrong_family-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/implementation/runs/score_mlp-fixed-seed29/model.pt",
+      "reason": "audio/weights/cache/archive excluded; this is not an unavailable delivered member"
+    },
+    {
+      "path": "reports/cleanup-20261112/before.json",
+      "bytes": 1206625,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/connected-split-20261110/asv2019-eval-candidates.jsonl",
+      "bytes": 14517638,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/implementation/evidence-shacl.ttl",
+      "bytes": 1299687,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/implementation/evidence.ttl",
+      "bytes": 1383812,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/next-stage-20261110/supervision-audit.json",
+      "bytes": 1746914,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/fit.jsonl",
+      "bytes": 6601139,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/source_val.jsonl",
+      "bytes": 1498775,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/aasist/train_log.jsonl",
+      "bytes": 31249172,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/fit.jsonl",
+      "bytes": 6601139,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/source_val.jsonl",
+      "bytes": 1498775,
+      "reason": "text file exceeds public member size limit; retained locally"
+    },
+    {
+      "path": "reports/next-stage-20261110/upstream-evidence/ssl_aasist/train_log.jsonl",
+      "bytes": 31247504,
+      "reason": "text file exceeds public member size limit; retained locally"
+    }
+  ],
+  "prediction_rows": 576,
+  "max_file_bytes": 1048576,
+  "weights_and_audio_included": false,
+  "policy": "Small source/results files only; no checksum audits; historical reports retain their original scope."
+}

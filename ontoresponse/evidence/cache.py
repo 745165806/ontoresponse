@@ -1,5 +1,4 @@
 import fcntl
-import hashlib
 import json
 import os
 import tempfile
@@ -44,13 +43,11 @@ class Cache:
             ):
                 raise ValueError("Cache key/metadata mismatch")
             arrays = {k: f[k].copy() for k in f.files if k != "metadata"}
-        actual = (
-            array_hash(arrays)
-            if meta.get("array_hash_algorithm") == "binary_v1"
-            else digest({k: digest(v.tolist()) for k, v in arrays.items()})
-        )
-        if actual != meta["arrays_hash"]:
-            raise ValueError("Corrupt evidence arrays")
+        if any(
+            v.dtype.kind not in "bifu" or not np.isfinite(v).all()
+            for v in arrays.values()
+        ):
+            raise ValueError("Cache contains invalid numeric observations")
         self._verified[version] = (arrays, meta)
         while len(self._verified) > 2048:
             self._verified.popitem(last=False)
@@ -70,8 +67,6 @@ class Cache:
             "spec": spec,
             "extra": extra,
             "schema": SCHEMA,
-            "array_hash_algorithm": "binary_v1",
-            "arrays_hash": array_hash(arrays),
         }
         fd, tmp = tempfile.mkstemp(dir=self.root, suffix=".npz")
         try:
@@ -112,18 +107,3 @@ class Cache:
             if os.path.exists(tmp):
                 os.unlink(tmp)
         return arrays, meta
-
-
-def array_hash(arrays):
-    return digest(
-        {
-            k: {
-                "dtype": str(v.dtype),
-                "shape": list(v.shape),
-                "bytes_sha256": hashlib.sha256(
-                    np.ascontiguousarray(v).tobytes()
-                ).hexdigest(),
-            }
-            for k, v in arrays.items()
-        }
-    )

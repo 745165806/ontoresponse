@@ -1,0 +1,103 @@
+{
+  "status": "PUBLISHED_AND_PUBLICLY_VERIFIED",
+  "at_utc": "2026-11-12T11:54:46.631031+00:00",
+  "repository": "https://github.com/745165806/ontoresponse",
+  "branch": "main",
+  "commit": "2bffbb4f8a38920cc5a16034b2cdeeefdc6ab777",
+  "remote_main_matches": true,
+  "repository_is_public": true,
+  "API_commit_matches": true,
+  "all_tree_paths_and_sizes_match_manifest": true,
+  "published_files": 918,
+  "published_tree_bytes": 4961226,
+  "max_published_file_bytes": 630793,
+  "configured_member_limit": 1048576,
+  "exact_remote_files_checked": [
+    {
+      "path": "README.md",
+      "bytes": 3615,
+      "sha256": "87232e097d546d0fc1df8a1eb94a96212c78d476258ca628e08a9587e0a56be9",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "PUBLICATION.md",
+      "bytes": 1699,
+      "sha256": "afdfe8c049a097e46318449e525fccbd1ae9f90e70a8c59a416980adb452aa10",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "STATUS.md",
+      "bytes": 3768,
+      "sha256": "0ef1a2b75cf9d34fcad27dae50f94d2da440aef255ab7c7df3e55b01dbf117a4",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 3756,
+      "sha256": "38ad44c12ba878cf5ec4d03d95a3a5684e1ab177f168a93016e5fac64b8f3895",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "ontoresponse/audit_export.py",
+      "bytes": 14348,
+      "sha256": "7b154a1401e77c12083981bb8ca2ab83658aac2a14b087877ffad1622d901ecf",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "scripts/export_public.py",
+      "bytes": 2821,
+      "sha256": "80624d4aa384b76f9e9cf73485bebd174192640a4415d8c9cd51bad9ed36719c",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "tests/test_shareable_audit.py",
+      "bytes": 3967,
+      "sha256": "c400989f9105a11fe085f63cd383017f1a2ebc4f601ab4afc1ca712e390155d5",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "AUDIT_MANIFEST.json",
+      "bytes": 293145,
+      "sha256": "afbc384bf35b3859e400ed7d7b303e56c2f104958330b24c7a98cc04b2898ace",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "reports/expert-benchmark-20261111/summary.json",
+      "bytes": 3115,
+      "sha256": "4295df03cff829146b9c095042fed58d4fb14504b359d7019cc3bdd90794824d",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "reports/storage-cleanup-20261112/REPORT.md",
+      "bytes": 2212,
+      "sha256": "284dd666426b75adfde3ff74e6c7e4fedc85a1e1a04a46bc11f6d2f1933125e2",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "reports/repository-update-20261112/REPORT.md",
+      "bytes": 2508,
+      "sha256": "43e19a3ea1d2d3c8a16bbebcbc3485db6c6d7f060bbdd13ab9dd6a1d46a4b87d",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "reports/repository-update-20261112/gpu-parity.json",
+      "bytes": 1234,
+      "sha256": "fdb48645acde2a1b37fd98b96237759a27be381990e237e5caa71ebcf3aa9d7d",
+      "remote_bytes_equal_local": true
+    },
+    {
+      "path": "audit/predictions.jsonl",
+      "bytes": 394978,
+      "sha256": "7e4523086acc6e95fa161fb71b3ff5b5e4b831259a4178378d47229550ef54fc",
+      "remote_bytes_equal_local": true
+    }
+  ],
+  "unit_passed": 171,
+  "unit_skipped": 0,
+  "GPU_parity": "passed",
+  "new_training": false,
+  "new_confirmation": false,
+  "disk_reclaimed_bytes": 536859358,
+  "large_assets_in_current_commit": false,
+  "historical_git_objects_rewritten": false
+}

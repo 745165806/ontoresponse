@@ -1,0 +1,19 @@
+{
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONPATH=.:${EXTERNAL_PATH}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "-m",
+    "pytest",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--tb=short"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-13T09:00:30.976537+00:00",
+  "elapsed_seconds": 31.279878854751587,
+  "log": "reports/simplify-experiments-20261113/unit-final.log",
+  "cwd": "${PROJECT_ROOT}"
+}

@@ -1,4 +1,4 @@
-"""Run only a reviewed and audited explicit new-directory pilot recipe."""
+"""Run a pilot with explicit data, device and optimization budgets."""
 
 import argparse
 import json
@@ -7,7 +7,7 @@ from pathlib import Path
 import torch
 import yaml
 
-from ontoresponse.common import Blocked, atomic_json, read_jsonl, sha256
+from ontoresponse.common import Blocked, atomic_json, read_jsonl
 from ontoresponse.evidence.extract import extract
 from ontoresponse.pilot_gate import preflight, require_pass
 from ontoresponse.train.pilot import lock_and_evaluate, run_training
@@ -34,8 +34,6 @@ def main():
         root / "experiment-start.json",
         {
             "config": cfg,
-            "config_sha256": sha256(args.config),
-            "preflight_sha256": sha256(root / "preflight.json"),
         },
     )
     extraction = extract(

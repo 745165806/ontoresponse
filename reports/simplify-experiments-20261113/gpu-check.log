@@ -1,0 +1,96 @@
+expert passed: aasist
+[2026-11-13 17:01:59,734] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-11-13 17:02:01,539] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+expert passed: ssl_aasist
+expert passed: rawnet2
+extracted aasist on shard 0/1: 0.6s
+${USER_HOME}/anaconda3/envs/py310/lib/python3.10/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+extracted ssl_aasist on shard 0/1: 5.5s
+extracted rawnet2 on shard 0/1: 0.6s
+{
+  "level": "real_checkpoint_real_data_GPU",
+  "gpu": "NVIDIA RTX A6000",
+  "physical_gpu": 0,
+  "new_confirmation": false,
+  "full_training": false,
+  "unit_or_synthetic": false,
+  "old_fusion": {
+    "requests": 24,
+    "CPU_exact": true,
+    "GPU_max_error": 3.814697265625e-06
+  },
+  "fusion_smoke": {
+    "status": "trained_smoke",
+    "level": "real_data_integration_pretrained",
+    "model": "typed_response",
+    "seed": 17,
+    "parameters": 13921,
+    "width": 16,
+    "capacity": "fixed",
+    "optimizer_steps": 2,
+    "best_step": 2,
+    "val_metrics": {
+      "n": 8,
+      "bonafide": 4,
+      "spoof": 4,
+      "eer": 0.0,
+      "eer_method": "ROC_linear_interpolation_grouped_ties",
+      "auroc": 1.0,
+      "spoof_auprc": 1.0,
+      "nll": 0.696387075864514,
+      "brier": 0.25176915526390076
+    },
+    "train_requests": 8,
+    "val_requests": 8,
+    "train_origins": 8,
+    "train_version_weights": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "duration_seconds": 0.2503729240015673,
+    "checkpoint": "${PROJECT_ROOT}/reports/simplify-experiments-20261113/fusion-smoke/runs/typed_response-fixed-seed17/model.pt",
+    "run_id": "758b2e01cdab4111b9523bc9bcac3a99",
+    "device": "cuda:0",
+    "save_load_exact": true,
+    "selection_rule": "min fusion_val EER; tie min source-weighted BCE; no test used",
+    "budget": "same lr=0.001, AdamW, <=20 full-batch steps; single prespecified width or count-matched width",
+    "limitation": "bounded pipeline check; dev overlaps public/local expert selection; no generalization claim"
+  },
+  "experts": [
+    {
+      "expert": "aasist",
+      "requests": 8,
+      "max_output_error": 9.5367431640625e-07,
+      "status": "passed"
+    },
+    {
+      "expert": "ssl_aasist",
+      "requests": 8,
+      "max_output_error": 2.6226043701171875e-06,
+      "status": "passed"
+    },
+    {
+      "expert": "rawnet2",
+      "requests": 8,
+      "max_output_error": 3.337860107421875e-06,
+      "status": "passed"
+    }
+  ],
+  "extract_smoke": {
+    "index": "${PROJECT_ROOT}/reports/simplify-experiments-20261113/extract-smoke/extraction-0-of-1.jsonl",
+    "requested": 1,
+    "scored": 1,
+    "complete_all_experts": 1
+  },
+  "GPU_peak_allocated_bytes": 204561408,
+  "status": "passed"
+}

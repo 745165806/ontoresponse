@@ -1,0 +1,69 @@
+All checks passed!
+90 files already formatted
+reports/connected-split-20261110/focused-tests.log:23: trailing whitespace.
++tests/test_connected_split.py:76: 
+reports/connected-split-20261110/focused-tests.log:24: trailing whitespace.
++_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+reports/connected-split-20261110/focused-tests.log:31: trailing whitespace.
++    
+reports/development-runner-20261110/full-tests-final.log:19: trailing whitespace.
++tests/test_development_runner.py:151: 
+reports/development-runner-20261110/full-tests-final.log:20: trailing whitespace.
++_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+reports/development-runner-20261110/full-tests-final.log:33: trailing whitespace.
++_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+reports/development-runner-20261110/full-tests-final.log:42: trailing whitespace.
++    
+reports/development-runner-20261110/full-tests-final.log:45: trailing whitespace.
++    
+reports/expert-benchmark-20261111/official-map-README.txt:5: trailing whitespace.
++Copyright (c) 2022  
+reports/expert-benchmark-20261111/official-map-README.txt:21: trailing whitespace.
++  2) TTS-based spoofed utterances are synthesized from input text, 
+reports/expert-benchmark-20261111/official-map-README.txt:24: trailing whitespace.
++ Other metadata such as spoofing attack type or reply configuration for ASVspoof2021 can be found 
+reports/expert-benchmark-20261111/official-map-README.txt:36: trailing whitespace.
++ ASVspoof2021_DF_VCTK_MetaInfo.tsv: mapping file for ASVspoof2021 DF data sourced from VCTK 
+reports/expert-benchmark-20261111/official-map-README.txt:38: trailing whitespace.
++ 
+reports/expert-benchmark-20261111/official-map-README.txt:39: trailing whitespace.
++ 
+reports/expert-benchmark-20261111/official-map-README.txt:41: trailing whitespace.
++ The files are in tab-separated values (tsv) format, which uses \t as the column separator. 
+reports/expert-benchmark-20261111/official-map-README.txt:42: trailing whitespace.
++ You may use Panads (https://pandas.pydata.org/) to load them. 
+reports/expert-benchmark-20261111/official-map-README.txt:59: trailing whitespace.
++   
+reports/expert-benchmark-20261111/official-map-README.txt:70: trailing whitespace.
++ 
+reports/expert-benchmark-20261111/official-map-README.txt:85: trailing whitespace.
++This dataset is licensed under the Open Data Commons Attribution License (ODC-By). 
+reports/expert-benchmark-20261111/official-map-README.txt:87: trailing whitespace.
++Regarding the Open Data Commons Attribution License (ODC-By), please see LICENSE.txt or 
+reports/expert-benchmark-20261111/official-map-README.txt:89: trailing whitespace.
++ 
+reports/expert-benchmark-20261111/official-map-README.txt:90: trailing whitespace.
++THIS DATABASE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+reports/expert-benchmark-20261111/official-map-README.txt:91: trailing whitespace.
++ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+reports/expert-benchmark-20261111/official-map-README.txt:92: trailing whitespace.
++WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+reports/expert-benchmark-20261111/official-map-README.txt:93: trailing whitespace.
++IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+reports/expert-benchmark-20261111/official-map-README.txt:94: trailing whitespace.
++INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, 
+reports/expert-benchmark-20261111/official-map-README.txt:95: trailing whitespace.
++BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, 
+reports/expert-benchmark-20261111/official-map-README.txt:96: trailing whitespace.
++OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+reports/expert-benchmark-20261111/official-map-README.txt:97: trailing whitespace.
++WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+reports/expert-benchmark-20261111/official-map-README.txt:98: trailing whitespace.
++ARISING IN ANY WAY OUT OF THE USE OF THIS DATABASE, EVEN IF ADVISED OF THE 
+reports/expert-benchmark-20261111/official-map-README.txt:144: new blank line at EOF.
+Traceback (most recent call last):
+  File "${EXTERNAL_PATH}", line 51, in <module>
+    subprocess.run(['git', 'diff', '--cached', '--check'], cwd=stage, check=True)
+  File "${USER_HOME}/anaconda3/envs/py310/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', 'diff', '--cached', '--check']' returned non-zero exit status 2.

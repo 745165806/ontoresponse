@@ -1,0 +1,14 @@
+{
+  "command": [
+    "env",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONPATH=.",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "${EXTERNAL_PATH}"
+  ],
+  "exit_code": 1,
+  "started_utc": "2026-11-12T11:49:37.227804+00:00",
+  "elapsed_seconds": 0.6058995723724365,
+  "log": "reports/repository-update-20261112/final-review.log",
+  "cwd": "${PROJECT_ROOT}"
+}

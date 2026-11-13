@@ -71,19 +71,18 @@ def test_negative_measurement_graphs_rejected(tmp_path, mutation):
     assert not conforms(graph), mutation
 
 
-@pytest.mark.parametrize("mutation", ["delete_edge", "rename_hash", "duplicate_index"])
+@pytest.mark.parametrize(
+    "mutation", ["delete_edge", "wrong_relation", "duplicate_index"]
+)
 def test_negative_topology_graphs_rejected(tmp_path, mutation):
     graph = graph_fixture(tmp_path)
     if mutation == "delete_edge":
         graph.remove(next(graph.triples((None, OR.same_probe_cross_expert, None))))
-    elif mutation == "rename_hash":
-        graph.set(
-            (
-                next(graph.subjects(OR.numericNodeIndex, None)),
-                OR.registryHash,
-                Literal("wrong"),
-            )
+    elif mutation == "wrong_relation":
+        source, _, target = next(
+            graph.triples((None, OR.same_probe_cross_expert, None))
         )
+        graph.add((source, OR.same_family_within_expert, target))
     else:
         pairs = list(graph.subject_objects(OR.numericNodeIndex))
         graph.set((pairs[1][0], OR.numericNodeIndex, pairs[0][1]))

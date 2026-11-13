@@ -126,7 +126,7 @@ def test_identity_lossless_exact(op):
     x = waveform()
     y, meta = apply_probe(x, {"operation": op})
     np.testing.assert_array_equal(x, y)
-    assert meta["input_audio_sha256"] == meta["output_audio_sha256"]
+    assert meta["input_samples"] == meta["output_samples"] == len(x)
 
 
 def test_noise_shared_direction_and_physical_snr():

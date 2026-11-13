@@ -1,0 +1,21 @@
+All checks passed!
+90 files already formatted
+{
+  "status": "VERIFIED_AND_STAGED",
+  "files": 918,
+  "tree_bytes": 4961226,
+  "max_file_bytes": 630793,
+  "configured_member_limit": 1048576,
+  "manifest_sha256": "afbc384bf35b3859e400ed7d7b303e56c2f104958330b24c7a98cc04b2898ace",
+  "private_paths_or_credentials_found": false,
+  "forbidden_assets_found": false,
+  "legacy_prediction_rows": 576,
+  "legacy_predictions_byte_identical": true,
+  "benchmark_summary_byte_identical": true,
+  "broken_local_markdown_links": [],
+  "unit_passed": 171,
+  "unit_skipped": 0,
+  "gpu_parity": "passed",
+  "disk_reclaimed_bytes": 536859358,
+  "diff_whitespace_scope": "source/docs/config; historical logs and upstream README retain original whitespace"
+}

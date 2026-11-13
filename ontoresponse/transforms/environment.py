@@ -2,8 +2,6 @@
 
 from itertools import product
 
-from ..common import digest
-
 
 # A trace is ordered physical operations, not dataset/environment labels.
 def exposure_audit(
@@ -36,7 +34,4 @@ def exposure_audit(
         "training_closure": sorted([list(t) for t in exposed]),
         "candidates": results,
         "expert_augmentations": expert_augmentations,
-        "hash": digest(
-            [train_traces, probe_operations, candidates, expert_augmentations]
-        ),
     }

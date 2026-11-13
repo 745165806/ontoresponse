@@ -218,10 +218,9 @@ def allocate_connected(
     report.update(
         status="ALLOCATED_METADATA_ONLY",
         component_ownership=ownership,
-        selected_origin_hash=digest([r["origin_id"] for r in selected]),
         precision=split_precision(selected),
         selection="maximize class-bearing independent groups, then stable hash tie costs; whole-component roles, class/group caps and within-role class round-robin recording quotas; no scores",
-        reproducibility="Pin SciPy/solver and actual allocated manifest hash; no claim of identical optimal ties across solver versions",
+        reproducibility="Record SciPy/solver version and retain the allocated manifest; optimal ties can differ across solver versions",
     )
     return selected, report
 

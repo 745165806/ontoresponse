@@ -134,7 +134,6 @@ def main():
                             "policy": policy_name,
                             "id": row["id"],
                             "role": "consumed_fusion_train",
-                            "checkpoint_sha256": expert.identity["checkpoint_sha256"],
                             "hidden_dim": first.embeddings.shape[1],
                             "single_utterance_embedding_and_margin": True,
                             "repeat_exact": True,

@@ -1,17 +1,12 @@
-"""Independent stdlib audit of frozen per-request predictions. Never fits anything."""
+"""Recompute prediction metrics and calibration math using the standard library."""
 
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import math
 from collections import defaultdict
 from pathlib import Path
-
-
-def sha(p):
-    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 
 
 def read(path):
@@ -144,16 +139,8 @@ def audit(root, out):
             r["id"] for r in records
         } != set(lock["test_ids"]):
             raise ValueError("Prediction request coverage mismatch")
-        if (
-            sha(run / "model.pt") != lock["checkpoint_sha256"]
-            or cal != lock["calibration"]
-        ):
-            raise ValueError("Model/calibration freeze drift")
-        if (
-            sha(root / "audit_manifest.jsonl") != cal["manifest_sha256"]
-            or sha(root / "extraction-0-of-1.jsonl") != cal["index_sha256"]
-        ):
-            raise ValueError("Role ledger/cache lineage drift")
+        if cal != lock["calibration"]:
+            raise ValueError("Calibration settings differ from the evaluation record")
         if set(cal["calibration_ids"]) != {
             i for i, r in ledger.items() if r["role"] == "calibration"
         }:
@@ -183,10 +170,7 @@ def audit(root, out):
                 for k in ("label", "origin_id", "source_group", "condition")
             ):
                 raise ValueError("Audit annotation mismatch")
-            if (
-                r["checkpoint_sha256"] != lock["checkpoint_sha256"]
-                or r["threshold"] != threshold
-            ):
+            if r["threshold"] != threshold:
                 raise ValueError("Per-row freeze mismatch")
             if r["status"] != "scored":
                 if r["p"] is not None:
@@ -225,7 +209,6 @@ def audit(root, out):
             {
                 "run": run.name,
                 "prediction_path": str(path),
-                "prediction_sha256": sha(path),
                 "conditions": by_condition,
                 "differences_from_old_report": differences,
                 "max_probability_error_vs_float64_platt": max_error,

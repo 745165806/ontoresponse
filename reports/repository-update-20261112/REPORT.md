@@ -23,3 +23,7 @@ GPU检查使用NVIDIA RTX A6000物理GPU0；atol/rtol均为1e-4。仅复查既�
 每个公开文件最多1MiB；AUDIT_MANIFEST记录实际交付大小、SHA256与有意排除项。音频、权重、观测缓存、wheel、压缩归档和超限日志/完整benchmark逐条分数保留本地。当前Git树移除早期上传的超限文本，保留Git历史。
 
 完整专家EER仅上传汇总和控制记录，因此仅凭公开汇总不能重算这些EER。旧576条融合预测仍可用根目录audit_recompute.py独立重算。详见[发布范围](../../PUBLICATION.md)。远端推送与读取校验回执另保存在本地，不把发布验证当成新的研究结果。
+
+## GitHub发布完成
+
+当前精简代码、文档和重要小型报告已推送至公开main：[提交2bffbb4](https://github.com/745165806/ontoresponse/commit/2bffbb4f8a38920cc5a16034b2cdeeefdc6ab777)。公开Git树918个文件，共4961226字节，最大文件630793字节；全部路径/大小与manifest一致，13个关键文件远端字节逐一相同。提交、推送及远端API/文件核验最终均退出0；一次重复SSH读取阻塞后关闭了本任务连接并改用公开API复核，失败与重试日志均保留。171 passed、0 skipped，GPU兼容性和旧预测独立重算通过；没有新训练或新确认实验。本地回执：reports/repository-update-20261112/public-verification.json；命令/退出码见同目录git-commit、git-push、git-push-retry、public-verification-retry.command.json。

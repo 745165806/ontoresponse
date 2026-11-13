@@ -1,4 +1,4 @@
-"""Portable, sanitized audit ZIP. No audio, weights, array caches or credentials."""
+"""Share small source/results files; redact private paths and exclude model assets."""
 
 import hashlib
 import json
@@ -6,7 +6,7 @@ import re
 import zipfile
 from pathlib import Path
 
-from .common import digest, read_jsonl, sha256
+from .common import digest, read_jsonl
 
 TEXT = {
     ".py",
@@ -88,8 +88,16 @@ def export_audit(root, destination, *, max_file_bytes=None):
             else path.parent
         )
         freeze = run / "freeze.json"
-        model_path = run / "model.pt"
-        lock = json.loads(freeze.read_text()) if freeze.is_file() else {}
+        calibration_path = run / "calibration.json"
+        lock = (
+            json.loads(freeze.read_text())
+            if freeze.is_file()
+            else (
+                json.loads(calibration_path.read_text())
+                if calibration_path.is_file()
+                else {}
+            )
+        )
         cal = lock.get("calibration", {})
         params = cal.get("calibration", cal)
         if not {"scale", "bias"} <= set(params):
@@ -107,19 +115,15 @@ def export_audit(root, destination, *, max_file_bytes=None):
             "fit_role": "calibration",
             "source": "existing frozen calibration; never refitted during export",
         }
-        model_id = lock.get("checkpoint_sha256", lock.get("model_sha256"))
-        if not model_id:
-            missing.append(
-                {"path": str(freeze.relative_to(root)), "reason": "missing model hash"}
-            )
-            continue
-        if model_path.is_file() and sha256(model_path) != model_id:
-            raise ValueError("Frozen model hash drift")
+        model_id = (
+            lock.get("run_id")
+            or lock.get("checkpoint_sha256", lock.get("model_sha256"))
+            or str(run.relative_to(root))
+        )
         models[model_id] = {
             "method": run.name,
             "artifact_included": False,
             "reason": "weights excluded by audit export policy",
-            "sha256": model_id,
         }
         rows = read_jsonl(path)
         external_path = root / "reports/implementation/external/conditions-audit.jsonl"
@@ -180,8 +184,6 @@ def export_audit(root, destination, *, max_file_bytes=None):
                     else "confirmation_test",
                 }
             )
-    if not prediction_tables:
-        raise ValueError("No actual per-request predictions to export")
     replacements = [
         (str(root), "${PROJECT_ROOT}"),
         (str(root.parent), "${EXPERT_ROOT}"),
@@ -207,7 +209,6 @@ def export_audit(root, destination, *, max_file_bytes=None):
         return text
 
     files = {}
-    original_hashes = {}
     roots = [
         "ontoresponse",
         "reference",
@@ -242,6 +243,8 @@ def export_audit(root, destination, *, max_file_bytes=None):
             )
     for p in sorted(set(candidates)):
         relative = p.relative_to(root)
+        if p.name in ("AUDIT_MANIFEST.json", "PUBLIC_FILES.json"):
+            continue
         if "__pycache__" in relative.parts or p.suffix not in TEXT:
             continue
         # Normalized prediction rows above are authoritative; do not read the
@@ -267,7 +270,6 @@ def export_audit(root, destination, *, max_file_bytes=None):
         name = str(relative)
         data = sanitize(text).encode()
         files[name] = data
-        original_hashes[name] = sha256(p)
     files["audit/predictions.jsonl"] = (
         "".join(
             json.dumps(r, sort_keys=True, allow_nan=False) + "\n"
@@ -293,13 +295,11 @@ def export_audit(root, destination, *, max_file_bytes=None):
         if Path(name).suffix in FORBIDDEN:
             raise ValueError("Forbidden archive member " + name)
     manifest = {
-        "schema": "ontoresponse-shareable-audit-1",
+        "schema": "ontoresponse-public-files-1",
         "files": [
             {
                 "path": name,
                 "bytes": len(data),
-                "sha256": hashlib.sha256(data).hexdigest(),
-                "private_source_sha256": original_hashes.get(name),
             }
             for name, data in sorted(files.items())
         ],
@@ -308,13 +308,9 @@ def export_audit(root, destination, *, max_file_bytes=None):
         "prediction_rows": len(prediction_tables),
         "max_file_bytes": max_file_bytes,
         "weights_and_audio_included": False,
-        "source_hash_scope": "SHA256 is of delivered sanitized bytes; optional private_source_sha256 identifies local pre-redaction bytes",
     }
-    files["AUDIT_MANIFEST.json"] = json.dumps(manifest, indent=2).encode()
-    if (
-        max_file_bytes is not None
-        and len(files["AUDIT_MANIFEST.json"]) > max_file_bytes
-    ):
+    files["PUBLIC_FILES.json"] = json.dumps(manifest, indent=2).encode()
+    if max_file_bytes is not None and len(files["PUBLIC_FILES.json"]) > max_file_bytes:
         raise ValueError("Public manifest exceeds configured size limit")
     with zipfile.ZipFile(
         destination, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=6
@@ -322,7 +318,7 @@ def export_audit(root, destination, *, max_file_bytes=None):
         for name, data in sorted(files.items()):
             archive.writestr(name, data)
     result = verify_audit_zip(destination)
-    result.update(zip_sha256=sha256(destination), zip_bytes=destination.stat().st_size)
+    result.update(zip_bytes=destination.stat().st_size)
     return result
 
 
@@ -331,8 +327,8 @@ def verify_audit_zip(path):
         names = archive.namelist()
         if len(names) != len(set(names)):
             raise ValueError("Duplicate ZIP member")
-        manifest = json.loads(archive.read("AUDIT_MANIFEST.json"))
-        expected = {r["path"] for r in manifest["files"]} | {"AUDIT_MANIFEST.json"}
+        manifest = json.loads(archive.read("PUBLIC_FILES.json"))
+        expected = {r["path"] for r in manifest["files"]} | {"PUBLIC_FILES.json"}
         if set(names) != expected:
             raise ValueError("ZIP members differ from manifest")
         for row in manifest["files"]:
@@ -340,10 +336,7 @@ def verify_audit_zip(path):
             data = archive.read(row["path"])
             if p.is_absolute() or ".." in p.parts or p.suffix in FORBIDDEN:
                 raise ValueError("Unsafe/forbidden member")
-            if (
-                len(data) != row["bytes"]
-                or hashlib.sha256(data).hexdigest() != row["sha256"]
-            ):
+            if len(data) != row["bytes"]:
                 raise ValueError("ZIP content mismatch")
             if PERSONAL.search(data.decode()) or CREDENTIAL.search(data.decode()):
                 raise ValueError("Private path/credential-like content")

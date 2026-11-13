@@ -130,7 +130,6 @@ def apply_probe(x, spec):
     meta = {
         "operation": spec,
         "input_samples": len(x),
-        "input_audio_sha256": audio_hash(x),
         "sample_rate": 16000,
         "scipy_version": scipy.__version__,
         "soundfile_version": sf.__version__,
@@ -175,7 +174,6 @@ def apply_probe(x, spec):
         raise ValueError("Probe must preserve aligned timeline")
     meta.update(
         output_samples=len(y),
-        output_audio_sha256=audio_hash(y),
         clipping_fraction=float(np.mean(np.abs(y) >= 0.999)),
         status="valid",
     )

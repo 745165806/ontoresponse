@@ -5,7 +5,8 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from ontoresponse.common import atomic_json, read_jsonl, sha256
+from ontoresponse.common import atomic_json, read_jsonl
+from docs.history.tools.checksums import sha256
 
 OUT = Path("reports/codex-next-stage-20261110")
 

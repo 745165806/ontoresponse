@@ -36,13 +36,50 @@ def test_explicit_pilot_cap_and_rawnet_quarantine():
         check_pilot_budget(c)
 
 
-def test_missing_document_cannot_start_pilot(tmp_path):
+def test_missing_inputs_cannot_start_pilot(tmp_path):
     c = config()
     c["output"] = str(tmp_path)
     c["pilot"]["required_next_stage_document"] = str(tmp_path / "missing.md")
     result = preflight(c)
     assert result["status"] == "BLOCKED" and not result["research_holdout_pass"]
     assert any("missing" in s for s in result["blocked"])
+
+
+def test_pilot_needs_inputs_and_budget_but_no_document_or_checksum_seal(tmp_path):
+    from ontoresponse.common import write_jsonl
+
+    cfg, index, ledger, rows, records = fixture(tmp_path)
+    cfg["pilot"] = copy.deepcopy(config()["pilot"])
+    cfg["runtime"]["budget"] = "pilot"
+    cfg["pilot"]["origins_by_role"] = {
+        role: 4 for role in ("fusion_train", "fusion_val", "calibration", "test")
+    }
+    checkpoint = tmp_path / "unit-preflight.pt"
+    checkpoint.write_bytes(
+        b"Synthetic existence fixture; never used for expert inference"
+    )
+    audio = tmp_path / "unit-preflight.wav"
+    audio.write_bytes(b"Synthetic existence fixture; never used for expert inference")
+    for expert in cfg["experts"]:
+        expert.update(task_trained=True, checkpoint=str(checkpoint))
+    for row in rows:
+        row["audio"] = str(audio)
+    root = Path(cfg["output"])
+    write_jsonl(root / "audit_manifest.jsonl", rows)
+    write_jsonl(
+        root / "inference_manifest.jsonl",
+        [{k: r[k] for k in ("id", "origin_id", "source_group", "audio")} for r in rows],
+    )
+    result = preflight(cfg)
+    assert (
+        result["status"] == "PASS_INTEGRATION_PILOT"
+        and not result["research_holdout_pass"]
+    )
+    assert not (root / "preregistration.json").exists()
+    assert not any("sha256" in key or "digest" in key for key in result)
+    rows[-1]["source_group"] = rows[0]["source_group"]
+    write_jsonl(root / "audit_manifest.jsonl", rows)
+    assert any("leakage" in reason for reason in preflight(cfg)["blocked"])
 
 
 def test_calibrated_logit_threshold_avoids_probability_saturation():

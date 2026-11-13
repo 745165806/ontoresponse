@@ -4,27 +4,20 @@ import csv
 import json
 from pathlib import Path
 
-from ontoresponse.common import atomic_json, read_jsonl, sha256
-from scripts.expert_benchmark import load_recipe, protocol_rows, summarize
+from ontoresponse.common import atomic_json, read_jsonl
+from scripts.expert_benchmark import job_spec, load_recipe, protocol_rows, summarize
 
 
 def main():
     recipe, base = load_recipe("configs/expert-benchmark-20261111.yaml")
     root = Path(recipe["output"])
     expected = protocol_rows(recipe)
-    frozen = json.loads((root / "preflight.json").read_text())
-    expected_weights = {j["id"]: j["checkpoint_sha256"] for j in frozen["jobs"]}
     summary = []
     reference_audio = None
     for job in recipe["jobs"]:
         folder = root / job["id"]
         result = json.loads((folder / "result.json").read_text())
-        lock = json.loads((folder / "measurement-lock.json").read_text())
-        if lock["expert"]["checkpoint_sha256"] != expected_weights[job["id"]]:
-            raise ValueError("Checkpoint identity differs from preflight")
         path = folder / "per_utterance_predictions.jsonl"
-        if sha256(path) != result["predictions_sha256"]:
-            raise ValueError("Prediction content drift")
         predictions = read_jsonl(path)
         recomputed = summarize(recipe, expected, predictions)
         if recomputed["status"] != "COMPLETE":
@@ -35,16 +28,27 @@ def main():
             "native_grouped_roc",
             "margin_grouped_roc",
         ):
-            if recomputed[key] != result[key]:
+            actual = {
+                k: v
+                for k, v in recomputed[key].items()
+                if k not in ("source_sha256", "source")
+            }
+            saved = {
+                k: v
+                for k, v in result[key].items()
+                if k not in ("source_sha256", "source")
+            }
+            if actual != saved:
                 raise ValueError("Metric recomputation mismatch: " + key)
-        audio = {r["id"]: r["audio_sha256"] for r in predictions}
+        audio = [r["id"] for r in predictions]
         if reference_audio is None:
             reference_audio = audio
         elif audio != reference_audio:
-            raise ValueError("Experts did not receive identical input audio content")
+            raise ValueError("Experts did not score the same recording IDs")
         summary.append(
             dict(
                 expert=job["id"],
+                checkpoint=job_spec(base, job)["checkpoint"],
                 gpu=job["gpu"],
                 N_requested=result["N_requested"],
                 N_scored=result["N_scored"],
@@ -53,7 +57,6 @@ def main():
                 margin_eer_percent=result["margin_author_eer"]["eer_percent"],
                 native_grouped_roc_eer_percent=100
                 * result["native_grouped_roc"]["eer"],
-                checkpoint_sha256=expected_weights[job["id"]],
                 elapsed_seconds=result["elapsed_seconds"],
                 cuda_peak_allocated_bytes=result["cuda_peak_allocated_bytes"],
             )
@@ -65,7 +68,7 @@ def main():
         "bonafide": 7355,
         "spoof": 63882,
         "results": summary,
-        "all_experts_identical_audio_hashes": True,
+        "all_experts_identical_recording_ids": True,
         "recomputed_from_prediction_files": True,
         "primary_metric": "Author compute_eer using native bonafide output; nearest DET point with stable ties",
         "secondary_metric": "Spoof-minus-bonafide margin; reported separately, never selected using eval",
@@ -106,7 +109,7 @@ def main():
         )
     lines += [
         "",
-        "主 EER 使用作者原生 `output[:,bonafide_index]`，传入已锁 hash 的 AASIST 官方 `compute_eer`。分数方向在运行前固定。margin 是当前融合观测口径，其结果不能与原生 score 混为同一个实验。独立 grouped ROC 插值值另存 JSON，不能因细微口径差而选择较小者。",
+        "主 EER 使用作者原生 `output[:,bonafide_index]`，传入 AASIST 官方 `compute_eer`。分数方向在运行前固定。margin 是当前融合观测口径，其结果不能与原生 score 混为同一个实验。独立 grouped ROC 插值值另存 JSON，不能因细微口径差而选择较小者。",
         "",
         "## 是否达到论文效果",
         "",
@@ -116,15 +119,15 @@ def main():
         "",
         "## 验证和审计",
         "",
-        "- 每个专家均通过真实GPU上游hidden/logit比对、batch/singleton容差检查、重复推断逐bit一致；每条请求输出status及音频sha256。",
-        "- 四份逐条文件均重新加载并重算；覆盖、结果hash、权重hash和同一ID的跨专家音频hash全部复核。",
+        "- 每个专家均通过真实GPU上游hidden/logit比对、batch/singleton容差检查、重复推断逐bit一致；每条请求保留status。",
+        "- 四份逐条文件均重新加载并重算；重新核对请求覆盖与数值指标；不进行文件hash审计。",
         "- unit/synthetic：新增5项；完整171 passed，0 skipped；这与真实checkpoint、完整真实数据、GPU证据分层。",
         "- 来源映射archive已取得，2019全协议和2021DF全部611829个本地keys映射全覆盖；2019 train/dev共享1043条声学来源，保守speaker/source组件不足以直接满足多角色划分。",
         "- 本地Codecfake train/dev共833343条文件全部存在，但speaker重叠且抽查原始采样率不一致；未在该不合格划分上启动全量融合。具体重分组方案见下方文档。",
         "",
         "## 可复核产物",
         "",
-        "- `summary.json` / `summary.csv`：全结果及权重hash。",
+        "- `summary.json` / `summary.csv`：全结果及模型路径。",
         "- 各专家目录：`measurement-lock.json`、`gpu-controls.json`、`result.json`、`per_utterance_predictions.jsonl`、`command-*.json`、`evaluation.log`。",
         "- `official-source-map-audit.json`、`codecfake-candidate-audit.json`：无专家分数参与的数据审计。",
         "- [融合数据与GPU全量方案](../../docs/FUSION_DATA_RECOMMENDATION_20261111.md)。",
@@ -140,7 +143,6 @@ def main():
             dataset="ASVspoof2019_LA_eval",
             role="fixed_single_expert_benchmark",
             requests=len(expected),
-            protocol_sha256=sha256(recipe["protocol"]),
             checkpoint_ids=[r["expert"] for r in summary],
             model_selection_allowed=False,
             cannot_claim_new_unseen_confirmation=True,

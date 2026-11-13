@@ -359,7 +359,9 @@ def source_weighted_bce(
         raise ValueError("Expected binary labels")
     if not output.observed.all():
         raise ValueError("Training batch contains no-evidence rows; audit explicitly")
-    losses = F.binary_cross_entropy_with_logits(output.logits, labels, reduction="none")
+    losses = F.binary_cross_entropy_with_logits(
+        output.logits, labels.to(output.logits), reduction="none"
+    )
     if weights is None:
         return losses.mean()
     if (
@@ -369,4 +371,5 @@ def source_weighted_bce(
         or weights.sum() <= 0
     ):
         raise ValueError("Invalid origin/version weights")
+    weights = weights.to(losses)
     return (losses * weights).sum() / weights.sum()

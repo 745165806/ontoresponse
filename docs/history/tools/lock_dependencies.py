@@ -9,7 +9,8 @@ import sys
 import tarfile
 from pathlib import Path
 
-from ontoresponse.common import atomic_json, sha256
+from ontoresponse.common import atomic_json
+from docs.history.tools.checksums import sha256
 
 
 def main():

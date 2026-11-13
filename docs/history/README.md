@@ -30,3 +30,5 @@ tar -xOf reports/cleanup-20261112/source-before.tar.gz scripts/report_connected_
 ```
 
 `reports/cleanup-20261112/removed.json`列出实际删除对象、大小、原因和被移出脚本的原始hash。构建输出与字节码缓存可由安装/运行重新生成。
+
+2026-11-13：四个SHA审计工具移入tools/；原CLI、实施、脚本、v2说明及CODEX_NEXT_STAGE/formal_protocol另存20261112历史副本。历史报告中旧scripts/audit_bundle.py等路径对应旧布局，当前历史工具位置为docs/history/tools/。常规实验不需要运行这些工具。

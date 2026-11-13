@@ -4,7 +4,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from ..common import Blocked, atomic_json, read_jsonl, sha256, unique
+from ..common import Blocked, atomic_json, read_jsonl, unique
 
 
 def asv2021df_full(predictions, keys, script, destination):
@@ -45,8 +45,6 @@ def asv2021df_full(predictions, keys, script, destination):
         "exit_code": result.returncode,
         "stdout": result.stdout,
         "stderr": result.stderr,
-        "evaluator_sha256": sha256(script),
-        "metadata_sha256": sha256(metadata),
         "requests": len(rows),
     }
     atomic_json(destination / "official-result.json", report)

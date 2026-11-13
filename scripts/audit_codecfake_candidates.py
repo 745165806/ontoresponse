@@ -6,7 +6,7 @@ from pathlib import Path
 
 import soundfile as sf
 
-from ontoresponse.common import atomic_json, sha256
+from ontoresponse.common import atomic_json
 
 
 def recording_identity(filename):
@@ -84,7 +84,6 @@ def run():
             },
             "missing_files": len(missing),
             "missing_examples": missing[:5],
-            "labels_sha256": sha256(path),
             "audio_format_controls": controls,
         }
         print(split, summaries[split]["requests"], "missing", len(missing), flush=True)
@@ -107,7 +106,7 @@ def run():
         "training_started": False,
         "limitations": [
             "Speaker pattern inferred from documented source filename conventions; verify against original corpus metadata before certifying split",
-            "Audio SHA cross-role duplicate scan and upstream checkpoint task-HPO/source exposure audit still required",
+            "Cross-role duplicate and upstream training/model-selection source checks still required",
             "A full partition may contain incomplete codec families; exact source-family inventory must be checked before a frozen training recipe",
             "This does not authorize reuse of any test partition for model selection",
         ],

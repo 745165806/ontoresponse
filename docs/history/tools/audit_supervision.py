@@ -8,7 +8,8 @@ from pathlib import Path
 import torch
 import yaml
 
-from ontoresponse.common import atomic_json, read_jsonl, sha256
+from ontoresponse.common import atomic_json, read_jsonl
+from docs.history.tools.checksums import sha256
 from ontoresponse.data.audio import read_audio
 from ontoresponse.transforms.probes import audio_hash
 

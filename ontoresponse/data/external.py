@@ -3,7 +3,7 @@
 import csv
 from pathlib import Path
 
-from ..common import Blocked, atomic_json, budget, digest, sha256, write_jsonl
+from ..common import Blocked, atomic_json, budget, digest, write_jsonl
 
 
 def prepare_inthewild(cfg, max_origins=8):
@@ -53,10 +53,9 @@ def prepare_inthewild(cfg, max_origins=8):
     result = {
         "status": "integration_only",
         "dataset": "inthewild",
-        "metadata_sha256": sha256(meta),
         "n_requested": len(selected),
         "source_mapping_complete": False,
-        "limitation": "metadata version pinned, selected audio hashes pinned during extraction; original download/release version unknown; speaker grouping only",
+        "limitation": "metadata path recorded; original download/release version unknown; speaker grouping only",
     }
     atomic_json(dest / "data-audit.json", result)
     return result

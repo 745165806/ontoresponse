@@ -11,7 +11,7 @@ import torch
 import yaml
 from test_workflow import fixture
 
-from ontoresponse.common import Blocked, atomic_json, sha256, write_jsonl
+from ontoresponse.common import Blocked, atomic_json, write_jsonl
 from ontoresponse.data.connected import connected_groups
 from ontoresponse.evidence.dataset import load_batch
 from ontoresponse.ontology.registry import OntologyRegistry
@@ -294,7 +294,6 @@ def prereg_fixture(tmp_path):
                     label=i % 2,
                     condition=condition,
                     audio=str(audio),
-                    audio_file_sha256=sha256(audio),
                 )
             )
     write_jsonl(root / "audit_manifest.jsonl", rows)
@@ -310,7 +309,6 @@ def prereg_fixture(tmp_path):
         root / "mapping.json",
         {
             "mapping_complete": True,
-            "official_archive_sha256": sha256(root / "official.fixture"),
             "recordings": universe,
         },
     )
@@ -321,7 +319,6 @@ def prereg_fixture(tmp_path):
                 {
                     "id": "fixture",
                     "provenance_pass": True,
-                    "checkpoint_sha256": sha256(root / "cp"),
                     "supervision": {
                         "fit": {"ids": [], "speakers": []},
                         "source_val": {"ids": [], "speakers": []},
@@ -333,20 +330,27 @@ def prereg_fixture(tmp_path):
     return cfg, root
 
 
-def test_preregister_freezes_before_outputs_and_rejects_config_data_drift(tmp_path):
+def test_optional_snapshot_is_not_a_checksum_gate(tmp_path):
     cfg, root = prereg_fixture(tmp_path)
-    lock = freeze_development(cfg)
-    assert lock["data"]["source_mapping_complete"] and not lock["test_used"]
+    # Live source/role checks work without any preregistration file.
     require_preregistration(cfg)
+    snapshot = freeze_development(cfg)
+    assert snapshot["data"]["source_mapping_complete"] and not snapshot["test_used"]
+    assert not any("sha256" in key or "digest" in key for key in snapshot)
     changed = copy.deepcopy(cfg)
     changed["pilot"]["validation_eer_conditions"] = ["identity"]
-    with pytest.raises(Blocked, match="drift"):
-        require_preregistration(changed)
+    require_preregistration(changed)
     with pytest.raises(ValueError, match="exists"):
         freeze_development(cfg)
-    (root / "audit_manifest.jsonl").write_text("changed")
-    with pytest.raises(Blocked, match="drift"):
-        require_preregistration(cfg)
+    # Whitespace/key order changes do not alter the experimental split.
+    rows = [
+        json.loads(line)
+        for line in (root / "audit_manifest.jsonl").read_text().splitlines()
+    ]
+    (root / "audit_manifest.jsonl").write_text(
+        "".join(json.dumps(r, sort_keys=False) + "\n" for r in reversed(rows))
+    )
+    require_preregistration(cfg)
 
 
 def test_preregister_rejects_cross_speaker_consumed_source_component(tmp_path):
@@ -378,12 +382,11 @@ def test_preregister_rejects_late_lock_and_smoke_budget(tmp_path):
         freeze_development(cfg)
 
 
-def test_preregister_rejects_waveform_changes_after_freeze(tmp_path):
+def test_optional_snapshot_does_not_seal_waveform_bytes(tmp_path):
     cfg, root = prereg_fixture(tmp_path)
     freeze_development(cfg)
     (root / "wave.fixture").write_bytes(b"changed waveform")
-    with pytest.raises(Blocked, match="current_audio"):
-        require_preregistration(cfg)
+    require_preregistration(cfg)
 
 
 def test_materialized_T_rule_is_label_independent_and_failures_are_retained(tmp_path):
@@ -439,10 +442,7 @@ def test_materialized_T_rule_is_label_independent_and_failures_are_retained(tmp_
     assert all(
         set(r) == {"id", "origin_id", "source_group", "audio"} for r in inference
     )
-    assert all(
-        r["length_preserved"] and r["audio_file_sha256"] == sha256(r["audio"])
-        for r in audit
-    )
+    assert all(r["length_preserved"] and Path(r["audio"]).is_file() for r in audit)
     assert all(len(sf.read(r["audio"])[0]) == len(x) for r in audit)
     with pytest.raises(ValueError, match="overwrite"):
         materialize_versions(cfg, base)

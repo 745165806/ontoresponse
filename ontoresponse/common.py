@@ -19,23 +19,47 @@ def digest(value):
     ).hexdigest()
 
 
-def sha256(path):
-    h = hashlib.sha256()
-    with open(path, "rb") as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b""):
-            h.update(chunk)
-    return h.hexdigest()
+def file_info(path):
+    """Cheap cache invalidation metadata; never reads or checksums file contents."""
+    path = Path(path).resolve()
+    stat = path.stat()
+    return {"path": str(path), "bytes": stat.st_size, "mtime_ns": stat.st_mtime_ns}
 
 
-def code_hash():
-    root = Path(__file__).resolve().parents[1]
-    return digest(
-        {
-            str(p.relative_to(root)): sha256(p)
-            for folder in ("ontoresponse", "reference")
-            for p in sorted((root / folder).rglob("*.py"))
-        }
+def same_expert(left, right):
+    """Compare model settings, accepting historical checksum-only metadata."""
+    fields = (
+        "id",
+        "crop",
+        "spoof_index",
+        "bonafide_index",
+        "score_direction",
+        "checkpoint",
+        "frontend",
+        "source",
     )
+    for key in fields:
+        if key not in left or key not in right:
+            continue
+        a, b = left[key], right[key]
+        if (
+            key in ("checkpoint", "frontend", "source")
+            and isinstance(a, dict)
+            and isinstance(b, dict)
+        ):
+            a, b = a["path"], b["path"]
+        if a != b:
+            return False
+    return True
+
+
+def compute_device(cfg):
+    import torch
+
+    device = torch.device(cfg.get("runtime", {}).get("device", "cpu"))
+    if device.type == "cuda" and not torch.cuda.is_available():
+        raise Blocked("CUDA requested but unavailable")
+    return device
 
 
 def atomic_json(path, value):

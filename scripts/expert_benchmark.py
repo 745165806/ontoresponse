@@ -23,7 +23,7 @@ import torch
 import yaml
 from torch.utils.data import DataLoader, Dataset
 
-from ontoresponse.common import atomic_json, code_hash, digest, read_jsonl, sha256
+from ontoresponse.common import atomic_json, read_jsonl, same_expert
 from ontoresponse.data.audio import crops, read_audio
 from ontoresponse.evaluation.metrics import metrics
 from ontoresponse.experts.base import AudioInput, FrozenExpert
@@ -88,7 +88,6 @@ class Waveforms(Dataset):
             return dict(
                 id=ident,
                 waveform=crops(wave, self.crop)[0],
-                audio_sha256=sha256(path),
                 samples=len(wave),
                 status="valid",
             )
@@ -113,7 +112,6 @@ def official_eer(recipe, labels, bonafide_scores):
         eer_summary_threshold=float(threshold),
         threshold_is_deployment_rule=False,
         method="author_stable_sort_nearest_DET",
-        source_sha256=sha256(path),
     )
 
 
@@ -170,8 +168,6 @@ def preflight(recipe, base):
             dict(
                 id=job["id"],
                 checkpoint=spec["checkpoint"],
-                checkpoint_sha256=sha256(spec["checkpoint"]),
-                source_sha256=sha256(Path(spec["repository"]) / spec["module"]),
                 gpu=job["gpu"],
                 batch_size=job["batch_size"],
             )
@@ -182,14 +178,11 @@ def preflight(recipe, base):
         labels=dict(Counter(r["label"] for r in rows)),
         missing=missing,
         jobs=jobs,
-        protocol_sha256=sha256(recipe["protocol"]),
         budget=recipe["budget"],
         crop=recipe["crop"],
         torch=torch.__version__,
         cuda_available=torch.cuda.is_available(),
         cuda_count=torch.cuda.device_count(),
-        source_code_sha256=code_hash(),
-        runner_sha256=sha256(__file__),
     )
     atomic_json(Path(recipe["output"]) / "preflight.json", result)
     return result
@@ -213,18 +206,17 @@ def worker(recipe, base, job, phase, resume=False):
     expert = FrozenExpert(job_spec(base, job), recipe["crop"], device)
     intended_lock = dict(
         expert=expert.identity,
-        recipe=digest(recipe),
-        protocol_sha256=sha256(recipe["protocol"]),
-        runner_sha256=sha256(__file__),
-        source_code_sha256=code_hash(),
+        recipe=recipe,
         primary_score="native_bonafide_output",
         secondary_score="spoof_minus_bonafide",
         dtype="float32",
         seed=recipe["seed"],
     )
     lock_path = root / "measurement-lock.json"
-    if lock_path.exists() and json.loads(lock_path.read_text()) != intended_lock:
-        raise ValueError("Measurement lock drift; use a new output directory")
+    if lock_path.exists():
+        previous = json.loads(lock_path.read_text())
+        if not same_expert(previous["expert"], expert.identity):
+            raise ValueError("Expert settings differ; use a new output directory")
     atomic_json(lock_path, intended_lock)
     # Fixed label-blind prefix and positions; no accuracy or EER enters controls.
     control_ids = [r["id"] for r in rows[: min(64, len(rows))]]
@@ -302,7 +294,6 @@ def worker(recipe, base, job, phase, resume=False):
                     outputs[item["id"]] = pair
             for item in items:
                 row = dict(lookup[item["id"]])
-                row["audio_sha256"] = item.get("audio_sha256")
                 row["samples"] = item.get("samples")
                 if item["id"] in outputs:
                     pair = outputs[item["id"]]
@@ -343,8 +334,6 @@ def worker(recipe, base, job, phase, resume=False):
     report.update(
         expert=job["id"],
         elapsed_seconds=time.monotonic() - started,
-        measurement_lock_sha256=sha256(lock_path),
-        predictions_sha256=sha256(path),
         cuda_peak_allocated_bytes=torch.cuda.max_memory_allocated(),
         provenance=job.get("provenance", expert.spec.get("supervision")),
     )

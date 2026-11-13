@@ -4,6 +4,7 @@ import os
 import random
 import tempfile
 import time
+import uuid
 from pathlib import Path
 
 import numpy as np
@@ -11,7 +12,14 @@ import torch
 
 from reference.core import ExpertStats, source_weighted_bce
 
-from ..common import atomic_json, budget, code_hash, read_jsonl, sha256, write_jsonl
+from ..common import (
+    atomic_json,
+    budget,
+    compute_device,
+    read_jsonl,
+    same_expert,
+    write_jsonl,
+)
 from ..evaluation.metrics import metrics
 from ..evidence.cache import Cache
 from ..evidence.dataset import load_batch, origin_weights
@@ -35,6 +43,7 @@ def atomic_torch(path, payload):
 
 
 def set_seed(seed):
+    os.environ.setdefault("CUBLAS_WORKSPACE_CONFIG", ":4096:8")
     random.seed(seed)
     np.random.seed(seed)
     torch.manual_seed(seed)
@@ -44,19 +53,29 @@ def set_seed(seed):
 def forward(model, batch, stats, reg):
     expected = getattr(model, "expert_identities", None)
     if expected is not None and any(
-        name not in expected or expected[name] != identity
+        name not in expected or not same_expert(expected[name], identity)
         for name, identity in batch.identities.items()
     ):
         raise ValueError("Frozen expert measurement identity differs from training")
+    tensor = next(model.parameters(), None)
+    if tensor is None:
+        tensor = next(model.buffers(), batch.scores)
+    batch = batch.to(tensor.device)
     hidden, scores = stats.transform(*batch.inputs())
-    return model(hidden, scores, batch.valid, reg.features, batch.quality)
+    return model(
+        hidden, scores, batch.valid, reg.features.to(tensor.device), batch.quality
+    )
 
 
-def restore(path):
+def restore(path, device="cpu"):
     checkpoint = torch.load(path, map_location="cpu", weights_only=False)
     reg = OntologyRegistry()
-    if checkpoint["registry_hash"] != reg.digest:
-        raise ValueError("Model/registry drift")
+    if "probe_ids" in checkpoint and (
+        checkpoint["probe_ids"] != list(reg.probe_ids)
+        or checkpoint["probe_families"] != list(reg.families)
+        or not torch.equal(checkpoint["probe_features"].cpu(), reg.features.cpu())
+    ):
+        raise ValueError("Model/probe configuration differs")
     model = build_model(
         checkpoint["dims"],
         reg,
@@ -65,7 +84,7 @@ def restore(path):
         checkpoint["seed"],
     )
     model.load_state_dict(checkpoint["model_state"], strict=True)
-    model.eval()
+    model.to(device).eval()
     model.expert_identities = checkpoint["expert_identities"]
     return checkpoint, model, checkpoint["stats"], reg
 
@@ -107,7 +126,8 @@ def fit(
         width = matched_width(dims, reg, model_name, target, seed)
     set_seed(seed)
     stats = ExpertStats.fit(*train.inputs(), role="fusion_train")
-    model = build_model(dims, reg, model_name, width, seed)
+    device = compute_device(cfg)
+    model = build_model(dims, reg, model_name, width, seed).to(device)
     model.expert_identities = train.identities
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-3, weight_decay=1e-4)
     start = 0
@@ -120,10 +140,12 @@ def fit(
             or cp["width"] != width
         ):
             raise ValueError("Resume identity mismatch")
-        if cp["manifest_sha256"] != sha256(manifest) or cp["index_sha256"] != sha256(
-            index
+        if (
+            cp["val_ids"] != val.ids
+            or cp["expert_specs"] != cfg["experts"]
+            or cp["crop"] != cfg["crop"]
         ):
-            raise ValueError("Resume evidence mismatch")
+            raise ValueError("Resume data/model settings differ")
         model.load_state_dict(cp["last_model_state"])
         optimizer.load_state_dict(cp["optimizer_state"])
         stats = cp["stats"]
@@ -170,7 +192,9 @@ def fit(
                 source_weighted_bce(pred, val.labels, origin_weights(val.origins))
             )
             measured = metrics(
-                val.labels.numpy(), pred.logits.numpy(), pred.probabilities().numpy()
+                val.labels.numpy(),
+                pred.logits.cpu().numpy(),
+                pred.probabilities().cpu().numpy(),
             )
         key = (measured["eer"], val_loss)
         if best is None or key < best[0]:
@@ -190,6 +214,7 @@ def fit(
         )
     cp = {
         "schema": "ontoresponse-fusion-1",
+        "run_id": uuid.uuid4().hex,
         "mode": cfg["mode"],
         "model_name": model_name,
         "width": width,
@@ -202,25 +227,26 @@ def fit(
         "last_step": steps,
         "rng_state": torch.get_rng_state(),
         "stats": stats,
-        "registry_hash": reg.digest,
+        "probe_ids": list(reg.probe_ids),
+        "probe_families": list(reg.families),
         "probe_features": reg.features,
         "expert_specs": cfg["experts"],
         "crop": cfg["crop"],
         "expert_identities": train.identities,
-        "index_sha256": sha256(index),
-        "manifest_sha256": sha256(manifest),
+        "evidence": {"index": str(index), "manifest": str(manifest)},
         "train_ids": train.ids,
         "val_ids": val.ids,
+        "train_groups": sorted(set(train.groups)),
+        "val_groups": sorted(set(val.groups)),
         "selection_rule": "min fusion_val EER; tie min source-weighted BCE; no test used",
         "best_key": best[0],
         "best_step": best[2],
         "val_metrics": best[3],
         "history": history,
-        "code_sha256": code_hash(),
     }
     atomic_torch(root / "model.pt", cp)
     # Roundtrip must reproduce selected eval outputs on the same actual evidence.
-    _, loaded, loaded_stats, loaded_reg = restore(root / "model.pt")
+    _, loaded, loaded_stats, loaded_reg = restore(root / "model.pt", device)
     model.load_state_dict(best[1])
     model.eval()
     with torch.inference_mode():
@@ -246,7 +272,8 @@ def fit(
         "train_version_weights": weights.tolist(),
         "duration_seconds": time.monotonic() - start_time,
         "checkpoint": str(root / "model.pt"),
-        "checkpoint_sha256": sha256(root / "model.pt"),
+        "run_id": cp["run_id"],
+        "device": str(device),
         "save_load_exact": True,
         "selection_rule": cp["selection_rule"],
         "budget": "same lr=0.001, AdamW, <=20 full-batch steps; single prespecified width or count-matched width",

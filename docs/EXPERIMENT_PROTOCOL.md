@@ -18,7 +18,7 @@
 ## 2. 数据来源安排
 - 主研发：ASVspoof2019 LA，原始与配对常规后处理。保留官方测试入口。
 - 外部压力：ASVspoof2021 DF。使用官方2019/2021→VCTK/VCC来源映射，分别报告官方全评估与剔除已知重叠的子集。无法识别的来源不能默认为干净。
-- 独立传播来源：In-the-Wild，锁定下载版本/hash，不用其test调参。
+- 独立传播来源：In-the-Wild，记录下载版本和路径，不用其test调参。
 - 更现代确认性扩展：ASVspoof5 Track1。使用官方协议和工具；较大，不阻塞首轮。2019体系成功不能直接称对新生成器全面有效。
 
 speaker/source连接组件用于划分与配对统计；若连接组件导致巨大组、类别失衡或可用组很少，应报告并调整协议，不偷偷改成逐文件随机划分。
@@ -44,7 +44,7 @@ AAC、Opus等未在已知训练增强/融合环境/探针中使用的真实算�
 - identity和lossless serialize/decode控制应近零响应；模型eval、dropout关闭、相同crop、没有随机augmentation。
 - 探针是改变信号的操作，不保证模型分数不变；不对真实/伪造强制不同增广。
 - 一条目标录音的多个环境版不作为独立统计样本；目标录音的probe views不是额外标签样本。
-- 缓存key包括audio sha、checkpoint sha、code commit、preprocess/crop policy、operation params、seed、schema version。
+- 缓存区分输入路径/大小/修改时间、专家与crop policy、operation params和cache_revision；不进行文件/源码SHA审计。
 
 ## 5. 分阶段比较
 ### A 更多观测是否有效

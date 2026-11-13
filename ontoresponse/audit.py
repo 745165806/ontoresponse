@@ -10,8 +10,6 @@ from pathlib import Path
 import psutil
 import torch
 
-from .common import code_hash, sha256
-
 
 def command(args):
     try:
@@ -74,7 +72,6 @@ def doctor(cfg):
                 item["artifacts"][name] = {
                     "path": str(p),
                     "exists": p.is_file(),
-                    "sha256": sha256(p) if p.is_file() else None,
                     "bytes": p.stat().st_size if p.is_file() else None,
                 }
                 if not p.is_file():
@@ -83,7 +80,7 @@ def doctor(cfg):
         for name in ("LICENSE", "NOTICE", "README.md", e["module"]):
             p = repo / name
             if p.is_file():
-                item.setdefault("source_files", {})[name] = sha256(p)
+                item.setdefault("source_files", []).append(str(p))
         item["license_text"] = (
             (repo / "LICENSE").read_text() if (repo / "LICENSE").is_file() else None
         )
@@ -102,7 +99,6 @@ def doctor(cfg):
         "mode": cfg["mode"],
         "resources": resources,
         "dependencies": deps,
-        "project_code_sha256": code_hash(),
         "project_git": command(["git", "rev-parse", "HEAD"]),
         "experts": experts,
         "data": data,

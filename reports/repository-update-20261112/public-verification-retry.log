@@ -1,0 +1,24 @@
+{
+  "status": "PUBLISHED_AND_PUBLICLY_VERIFIED",
+  "at_utc": "2026-11-12T11:54:46.631031+00:00",
+  "repository": "https://github.com/745165806/ontoresponse",
+  "branch": "main",
+  "commit": "2bffbb4f8a38920cc5a16034b2cdeeefdc6ab777",
+  "remote_main_matches": true,
+  "repository_is_public": true,
+  "API_commit_matches": true,
+  "all_tree_paths_and_sizes_match_manifest": true,
+  "published_files": 918,
+  "published_tree_bytes": 4961226,
+  "max_published_file_bytes": 630793,
+  "configured_member_limit": 1048576,
+  "unit_passed": 171,
+  "unit_skipped": 0,
+  "GPU_parity": "passed",
+  "new_training": false,
+  "new_confirmation": false,
+  "disk_reclaimed_bytes": 536859358,
+  "large_assets_in_current_commit": false,
+  "historical_git_objects_rewritten": false
+}
+Exact public byte comparisons: 13

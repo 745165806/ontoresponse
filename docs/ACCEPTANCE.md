@@ -9,7 +9,7 @@
 | A05 | 训练隔离 | test不能改变normalizer、PCA、选模型、阈值或校准 |
 | A06 | 视图掩码 | NaN missing与有效0不同；missing不能通过bias泄漏 |
 | A07 | 来源与重复 | 真正同测量去重；相同数值但不同专家不去重 |
-| A08 | 图语义 | 本体registry→邻接→RDF同hash；同probe边指同artifact |
+| A08 | 图语义 | 本体registry→邻接→RDF的实际边一致；同probe边指同artifact |
 | A09 | 类型作用 | 删除类型和改变实际成员确实改变计算；纯family重命名不改变 |
 | A10 | 神经计算 | BCE反传、save/load、mode/eval、确定性合格 |
 | A11 | 强对照 | 相同证据、元信息和调参预算；无类型attention不被刻意弱化 |

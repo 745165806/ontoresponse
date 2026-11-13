@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from ..common import Blocked, atomic_json, budget, read_jsonl, sha256, write_jsonl
+from ..common import Blocked, atomic_json, budget, read_jsonl, write_jsonl
 from ..preregistration import validate_development_data
 from .connected_split import allocate_connected
 from .prepare import validate_splits
@@ -50,9 +50,6 @@ def prepare_connected_base(cfg, candidate_manifest):
     )
     root.mkdir(parents=True, exist_ok=True)
     report.update(
-        candidate_manifest_sha256=sha256(candidate_manifest),
-        source_map_sha256=sha256(p["source_map_manifest"]),
-        official_archive_sha256=sha256(p["official_map_archive"]),
         excluded_components=len(excluded),
     )
     if not selected:
@@ -66,13 +63,10 @@ def prepare_connected_base(cfg, candidate_manifest):
         atomic_json(root / "base-split-audit.json", report)
         return report
     report["role_distribution"] = validate_splits(selected)
-    for row in selected:
-        row["base_audio_file_sha256"] = sha256(row["audio"])
     write_jsonl(base, selected)
     report.update(
         status="PREPARED_CONNECTED_BASE",
         base_manifest=str(base),
-        base_manifest_sha256=sha256(base),
         scope="integration_pretrained only; source mapping certified, task HPO / generic SSL open risks separately disclosed",
     )
     atomic_json(root / "base-split-audit.json", report)
@@ -102,7 +96,6 @@ def audit_materialized(cfg):
     result = dict(
         checked,
         origins=sum(checked["unique_origins"].values()),
-        ledger_sha256=sha256(root / "audit_manifest.jsonl"),
         expert_ids=sorted(e["id"] for e in cfg["experts"]),
         upstream_exact_ID_overlap=0,
         upstream_speaker_overlap=0,

@@ -44,6 +44,6 @@ flowchart LR
 
 `configs/local.yaml`指定本机资产和历史smoke路径；`configs/probes.yaml`与`configs/ontology.yaml`是工作区测量定义。`ontoresponse/_resources/`保存wheel所需的同内容资源，这两份是打包接口要求，测试会检查一致性。
 
-原始模块路径、模型名字、state_dict键和注册表配置保持兼容。源码排版会改变字节级`code_hash`，因此旧实验应使用当时源码快照；不能把旧缓存/质量锁的hash改写成新版本。精简前源码保存在`reports/cleanup-20261112/source-before.tar.gz`。
+原始模块路径、模型名字、state_dict键保持兼容。常规实验不再计算文件或源码SHA，不要求文档审核、质量锁和预注册封存。缓存键仅用于复用观测；改变权重或提取实现时使用新缓存或增加cache_revision。旧checkpoint和缓存可读取，历史报告保留当时事实。操作步骤见[运行实验](RUN_EXPERIMENTS.md)。
 
 方法细节见[METHOD.md](METHOD.md)，实验纪律见[EXPERIMENT_PROTOCOL.md](EXPERIMENT_PROTOCOL.md)，操作入口见[SCRIPTS.md](SCRIPTS.md)。

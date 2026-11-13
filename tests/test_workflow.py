@@ -149,7 +149,7 @@ def test_train_resume_calibrate_freeze_evaluate(tmp_path):
     result = evaluate(cfg, checkpoint, index, test, lock, tmp_path / "evaluation")
     assert result["N_requested"] == 4 and result["N_failed"] == 0
     payload = json.loads(lock.read_text())
-    payload["test_manifest_sha256"] = "drift"
+    payload["test_ids"] = ["unexpected-request"]
     atomic_json(lock, payload)
     with pytest.raises(ValueError):
         evaluate(cfg, checkpoint, index, test, lock)
@@ -214,7 +214,7 @@ def test_rdf_actual_observations_export_and_semantics(tmp_path):
     cfg, index, ledger, audit, records = fixture(tmp_path)
     path = tmp_path / "evidence.ttl"
     r = export_evidence(cfg, index, path)
-    assert r["registry_hash"] == OntologyRegistry().digest
+    assert r["probe_ids"] == list(OntologyRegistry().probe_ids)
     text = path.read_text()
     assert (
         "prov:wasGeneratedBy" in text
@@ -224,10 +224,13 @@ def test_rdf_actual_observations_export_and_semantics(tmp_path):
     assert "orf:same_probe_cross_expert" in text
 
 
-def test_freeze_detects_audio_replacement_without_manifest_change(tmp_path):
+def test_experiment_does_not_require_file_checksum_audits(tmp_path):
     from ontoresponse.evaluation.workflow import check_lock
 
     cfg, index, ledger, audit, records = fixture(tmp_path)
+    from ontoresponse import common
+
+    assert not hasattr(common, "sha256") and not hasattr(common, "code_hash")
     r = fit(cfg, index, ledger, "response_mlp", 17, 1, width=16)
     cp = Path(r["checkpoint"])
     calibrate(cfg, cp, index, ledger)
@@ -241,8 +244,14 @@ def test_freeze_detects_audio_replacement_without_manifest_change(tmp_path):
     lock = freeze(cfg, cp, manifest, tmp_path / "freeze.json")
     check_lock(cfg, cp, manifest, lock)
     content.write_bytes(b"replaced unit fixture content")
-    with pytest.raises(ValueError, match="waveform content drift"):
-        check_lock(cfg, cp, manifest, lock)
+    check_lock(cfg, cp, manifest, lock)
+    evaluated = evaluate(
+        cfg, cp, index, manifest, output=tmp_path / "direct-evaluation"
+    )
+    assert evaluated["N_scored"] == 4
+    assert not (cp.parent / "freeze.json").exists()
+    saved = torch.load(cp, map_location="cpu", weights_only=False)
+    assert not any("sha256" in key or key == "registry_hash" for key in saved)
 
 
 def test_frozen_training_and_calibration_cannot_be_overwritten(tmp_path):
@@ -253,12 +262,13 @@ def test_frozen_training_and_calibration_cannot_be_overwritten(tmp_path):
     test = tmp_path / "test.jsonl"
     write_jsonl(test, [row for row in audit if row["role"] == "test"])
     freeze(cfg, cp, test)
-    from ontoresponse.common import sha256
-
-    before = sha256(cp)
-    cal_before = sha256(cp.parent / "calibration.json")
+    before = cp.read_bytes()
+    cal_before = (cp.parent / "calibration.json").read_bytes()
     with pytest.raises(ValueError, match="Frozen run"):
         fit(cfg, index, ledger, "response_mlp", 17, 2, width=16, resume=cp)
     with pytest.raises(ValueError, match="Frozen calibration"):
         calibrate(cfg, cp, index, ledger)
-    assert sha256(cp) == before and sha256(cp.parent / "calibration.json") == cal_before
+    assert (
+        cp.read_bytes() == before
+        and (cp.parent / "calibration.json").read_bytes() == cal_before
+    )

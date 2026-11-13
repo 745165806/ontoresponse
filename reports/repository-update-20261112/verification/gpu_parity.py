@@ -12,7 +12,7 @@ from ontoresponse.evidence.dataset import load_batch
 from ontoresponse.experts.base import FrozenExpert
 from ontoresponse.train.fit import forward, restore
 import ontoresponse
-assert Path(ontoresponse.__file__).is_relative_to('${TEMP_ROOT}')
+assert Path(ontoresponse.__file__).is_relative_to('${EXTERNAL_PATH}')
 
 root = Path('${PROJECT_ROOT}')
 outdir = root / 'reports/repository-update-20261112'

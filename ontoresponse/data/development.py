@@ -13,7 +13,6 @@ from ..common import (
     budget,
     digest,
     read_jsonl,
-    sha256,
     write_jsonl,
 )
 from ..transforms.probes import apply_probe
@@ -123,8 +122,6 @@ def materialize_versions(cfg, base_manifest):
                 total_bytes += target.stat().st_size
                 item.update(
                     generation_status="valid",
-                    audio_file_sha256=sha256(target),
-                    base_audio_file_sha256=sha256(row["audio"]),
                     processing=meta,
                     length_preserved=len(x) == len(y),
                 )
@@ -145,7 +142,6 @@ def materialize_versions(cfg, base_manifest):
         "requests": len(audit),
         "failed": sum(r["generation_status"] != "valid" for r in audit),
         "current_audio_bytes": total_bytes,
-        "base_manifest_sha256": sha256(base_manifest),
         "historical_T_and_diagnostic_P_separate": True,
         "expert_inference_performed": False,
         "new_confirmation_scores_read": False,

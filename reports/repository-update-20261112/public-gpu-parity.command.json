@@ -4,9 +4,9 @@
     "CUDA_VISIBLE_DEVICES=0",
     "CUBLAS_WORKSPACE_CONFIG=:4096:8",
     "PYTHONDONTWRITEBYTECODE=1",
-    "PYTHONPATH=${TEMP_ROOT}",
+    "PYTHONPATH=${EXTERNAL_PATH}",
     "${USER_HOME}/anaconda3/envs/py310/bin/python",
-    "${TEMP_ROOT}"
+    "${EXTERNAL_PATH}"
   ],
   "exit_code": 0,
   "started_utc": "2026-11-12T11:43:37.547778+00:00",

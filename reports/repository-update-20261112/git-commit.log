@@ -1,0 +1,327 @@
+[sync/20261112-clean-project 2bffbb4] refactor: simplify project and publish bounded audit reports
+ 345 files changed, 30902 insertions(+), 140579 deletions(-)
+ rewrite PLANS.md (99%)
+ create mode 100644 PUBLICATION.md
+ rewrite README.md (97%)
+ rewrite STATUS.md (99%)
+ rewrite STATUS_NEXT.md (99%)
+ create mode 100644 configs/development-v2-cover-20261110.yaml
+ create mode 100644 configs/development-v2-single-20261110.yaml
+ create mode 100644 configs/expert-benchmark-20261111.yaml
+ create mode 100644 docs/ARCHITECTURE.md
+ rewrite docs/CLI_CURRENT.md (99%)
+ create mode 100644 docs/DEVELOPMENT_V2.md
+ create mode 100644 docs/SCRIPTS.md
+ copy PLANS.md => docs/history/PLANS_20261111.md (97%)
+ create mode 100644 docs/history/README.md
+ copy STATUS.md => docs/history/STATUS_20261111.md (94%)
+ copy STATUS_NEXT.md => docs/history/STATUS_NEXT_20261111.md (98%)
+ rewrite ontoresponse/audit.py (85%)
+ rewrite ontoresponse/audit_export.py (91%)
+ rewrite ontoresponse/cli.py (82%)
+ rewrite ontoresponse/common.py (62%)
+ rewrite ontoresponse/data/audio.py (78%)
+ create mode 100644 ontoresponse/data/connected.py
+ create mode 100644 ontoresponse/data/connected_split.py
+ create mode 100644 ontoresponse/data/development.py
+ rewrite ontoresponse/data/environments.py (82%)
+ rewrite ontoresponse/data/external.py (90%)
+ rewrite ontoresponse/data/pilot.py (93%)
+ rewrite ontoresponse/data/prepare.py (77%)
+ create mode 100644 ontoresponse/data/prepare_connected.py
+ create mode 100644 ontoresponse/data/source_audit.py
+ rewrite ontoresponse/evaluation/metrics.py (96%)
+ rewrite ontoresponse/evaluation/official.py (82%)
+ rewrite ontoresponse/evaluation/report.py (91%)
+ create mode 100644 ontoresponse/evaluation/stage_gate.py
+ rewrite ontoresponse/evaluation/workflow.py (93%)
+ rewrite ontoresponse/evidence/cache.py (87%)
+ rewrite ontoresponse/evidence/dataset.py (83%)
+ rewrite ontoresponse/evidence/diagnostics.py (92%)
+ rewrite ontoresponse/evidence/extract.py (88%)
+ rewrite ontoresponse/experts/base.py (85%)
+ rewrite ontoresponse/models/baselines.py (87%)
+ rewrite ontoresponse/models/controls.py (79%)
+ rewrite ontoresponse/models/factory.py (88%)
+ rewrite ontoresponse/models/relation_tied.py (64%)
+ rewrite ontoresponse/ontology/registry.py (92%)
+ rewrite ontoresponse/ontology/validate_graph.py (87%)
+ rewrite ontoresponse/pilot_gate.py (92%)
+ create mode 100644 ontoresponse/preregistration.py
+ rewrite ontoresponse/resources.py (70%)
+ rewrite ontoresponse/train/calibrate.py (82%)
+ create mode 100644 ontoresponse/train/development.py
+ rewrite ontoresponse/train/fit.py (92%)
+ rewrite ontoresponse/train/pilot.py (92%)
+ rewrite ontoresponse/train/sampling.py (71%)
+ rewrite ontoresponse/transforms/environment.py (79%)
+ rewrite ontoresponse/transforms/probes.py (83%)
+ rewrite ontoresponse/validation.py (88%)
+ create mode 100644 reports/cleanup-20261112/REPORT.md
+ create mode 100644 reports/cleanup-20261112/format.command.json
+ create mode 100644 reports/cleanup-20261112/format.log
+ create mode 100644 reports/cleanup-20261112/gpu-parity.command.json
+ create mode 100644 reports/cleanup-20261112/gpu-parity.json
+ create mode 100644 reports/cleanup-20261112/gpu-parity.log
+ create mode 100644 reports/cleanup-20261112/installed-outside.command.json
+ create mode 100644 reports/cleanup-20261112/installed-outside.log
+ create mode 100644 reports/cleanup-20261112/installed-verification.json
+ create mode 100644 reports/cleanup-20261112/integrity.json
+ create mode 100644 reports/cleanup-20261112/lint.command.json
+ create mode 100644 reports/cleanup-20261112/lint.log
+ create mode 100644 reports/cleanup-20261112/removed.json
+ create mode 100644 reports/cleanup-20261112/source-parity.json
+ create mode 100644 reports/cleanup-20261112/summary.json
+ create mode 100644 reports/cleanup-20261112/unit-final.command.json
+ create mode 100644 reports/cleanup-20261112/unit-final.log
+ create mode 100644 reports/cleanup-20261112/unit.command.json
+ create mode 100644 reports/cleanup-20261112/unit.log
+ create mode 100644 reports/cleanup-20261112/verification/gpu_parity.py
+ create mode 100644 reports/cleanup-20261112/verification/installed_package.py
+ create mode 100644 reports/cleanup-20261112/wheel-build-pip.command.json
+ create mode 100644 reports/cleanup-20261112/wheel-build-pip.log
+ create mode 100644 reports/cleanup-20261112/wheel-build.command.json
+ create mode 100644 reports/cleanup-20261112/wheel-build.log
+ create mode 100644 reports/cleanup-20261112/wheel-install.command.json
+ create mode 100644 reports/cleanup-20261112/wheel-install.log
+ create mode 100644 reports/codex-next-stage-20261110/RELEASE_VERIFICATION.json
+ create mode 100644 reports/codex-next-stage-20261110/github-prepare.command.json
+ create mode 100644 reports/codex-next-stage-20261110/github-prepare.log
+ create mode 100644 reports/codex-next-stage-20261110/github-publish-ready.json
+ create mode 100644 reports/codex-next-stage-20261110/github-upload-retry.json
+ create mode 100644 reports/codex-next-stage-20261110/metrics_recomputed_public.json
+ create mode 100644 reports/codex-next-stage-20261110/outside-cli-release.command.json
+ create mode 100644 reports/codex-next-stage-20261110/outside-cli-release.log
+ create mode 100644 reports/codex-next-stage-20261110/public-export-verification.json
+ create mode 100644 reports/codex-next-stage-20261110/public-export.command.json
+ create mode 100644 reports/codex-next-stage-20261110/public-independent-comparison.json
+ create mode 100644 reports/codex-next-stage-20261110/public-recompute.command.json
+ create mode 100644 reports/codex-next-stage-20261110/public-recompute.log
+ create mode 100644 reports/connected-split-20261110/SOURCE_SPLIT_REPORT.md
+ create mode 100644 reports/connected-split-20261110/blocked-audit.json
+ create mode 100644 reports/connected-split-20261110/candidate-inventory.command.json
+ create mode 100644 reports/connected-split-20261110/candidate-inventory.log
+ create mode 100644 reports/connected-split-20261110/complete-tests.command.json
+ create mode 100644 reports/connected-split-20261110/complete-tests.log
+ create mode 100644 reports/connected-split-20261110/connected-tests.command.json
+ create mode 100644 reports/connected-split-20261110/connected-tests.log
+ create mode 100644 reports/connected-split-20261110/focused-tests.command.json
+ create mode 100644 reports/connected-split-20261110/focused-tests.log
+ create mode 100644 reports/connected-split-20261110/frozen-integrity.json
+ create mode 100644 reports/connected-split-20261110/full-tests.command.json
+ create mode 100644 reports/connected-split-20261110/full-tests.log
+ create mode 100644 reports/connected-split-20261110/mapping-network-check.command.json
+ create mode 100644 reports/connected-split-20261110/mapping-network-check.log
+ create mode 100644 reports/connected-split-20261110/optimistic-before-round-robin.json
+ create mode 100644 reports/connected-split-20261110/optimistic-feasibility-final.command.json
+ create mode 100644 reports/connected-split-20261110/optimistic-feasibility-final.log
+ create mode 100644 reports/connected-split-20261110/optimistic-feasibility-spread.command.json
+ create mode 100644 reports/connected-split-20261110/optimistic-feasibility-spread.log
+ create mode 100644 reports/connected-split-20261110/optimistic-feasibility.command.json
+ create mode 100644 reports/connected-split-20261110/optimistic-feasibility.json
+ create mode 100644 reports/connected-split-20261110/optimistic-feasibility.log
+ create mode 100644 reports/connected-split-20261110/outside-install.command.json
+ create mode 100644 reports/connected-split-20261110/outside-install.json
+ create mode 100644 reports/connected-split-20261110/outside-install.log
+ create mode 100644 reports/connected-split-20261110/quality-gate.json
+ create mode 100644 reports/connected-split-20261110/runtime.json
+ create mode 100644 reports/connected-split-20261110/source-preparation-check.command.json
+ create mode 100644 reports/connected-split-20261110/source-preparation-check.json
+ create mode 100644 reports/connected-split-20261110/source-preparation-check.log
+ create mode 100644 reports/connected-split-20261110/source-preparation-final.command.json
+ create mode 100644 reports/connected-split-20261110/source-preparation-final.json
+ create mode 100644 reports/connected-split-20261110/source-preparation-final.log
+ create mode 100644 reports/connected-split-20261110/stage-report.command.json
+ create mode 100644 reports/connected-split-20261110/stage-report.log
+ create mode 100644 reports/connected-split-20261110/web-map-access.json
+ create mode 100644 reports/connected-split-20261110/wheel-build.command.json
+ create mode 100644 reports/connected-split-20261110/wheel-build.log
+ create mode 100644 reports/connected-split-20261110/wheel-install.command.json
+ create mode 100644 reports/connected-split-20261110/wheel-install.log
+ create mode 100644 reports/development-runner-20261110/VALIDATION.md
+ create mode 100644 reports/development-runner-20261110/complete-tests.command.json
+ create mode 100644 reports/development-runner-20261110/complete-tests.log
+ create mode 100644 reports/development-runner-20261110/final-complete-tests.command.json
+ create mode 100644 reports/development-runner-20261110/final-complete-tests.log
+ create mode 100644 reports/development-runner-20261110/focused-tests-corrected.command.json
+ create mode 100644 reports/development-runner-20261110/focused-tests-corrected.log
+ create mode 100644 reports/development-runner-20261110/focused-tests.command.json
+ create mode 100644 reports/development-runner-20261110/focused-tests.log
+ create mode 100644 reports/development-runner-20261110/frozen-integrity.json
+ create mode 100644 reports/development-runner-20261110/full-tests-final.command.json
+ create mode 100644 reports/development-runner-20261110/full-tests-final.log
+ create mode 100644 reports/development-runner-20261110/full-tests.command.json
+ create mode 100644 reports/development-runner-20261110/full-tests.log
+ create mode 100644 reports/development-runner-20261110/outside-install-final.json
+ create mode 100644 reports/development-runner-20261110/outside-install-verified.json
+ create mode 100644 reports/development-runner-20261110/outside-install.json
+ create mode 100644 reports/development-runner-20261110/quality-gate.json
+ create mode 100644 reports/development-runner-20261110/requirement-audit.json
+ create mode 100644 reports/development-runner-20261110/runtime.json
+ create mode 100644 reports/development-runner-20261110/single-source-readiness.command.json
+ create mode 100644 reports/development-runner-20261110/single-source-readiness.json
+ create mode 100644 reports/development-runner-20261110/single-source-readiness.log
+ create mode 100644 reports/development-runner-20261110/source-readiness.command.json
+ create mode 100644 reports/development-runner-20261110/source-readiness.json
+ create mode 100644 reports/development-runner-20261110/source-readiness.log
+ create mode 100644 reports/development-runner-20261110/stage-report.command.json
+ create mode 100644 reports/development-runner-20261110/stage-report.log
+ create mode 100644 reports/development-runner-20261110/wheel-build-final.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-build-final.log
+ create mode 100644 reports/development-runner-20261110/wheel-build-verified.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-build-verified.log
+ create mode 100644 reports/development-runner-20261110/wheel-build.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-build.log
+ create mode 100644 reports/development-runner-20261110/wheel-install-final.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-install-final.log
+ create mode 100644 reports/development-runner-20261110/wheel-install-verified.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-install-verified.log
+ create mode 100644 reports/development-runner-20261110/wheel-install.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-install.log
+ create mode 100644 reports/development-runner-20261110/wheel-outside-check-corrected.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-outside-check-corrected.log
+ create mode 100644 reports/development-runner-20261110/wheel-outside-check.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-outside-check.log
+ create mode 100644 reports/development-runner-20261110/wheel-outside-final.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-outside-final.log
+ create mode 100644 reports/development-runner-20261110/wheel-outside-verified.command.json
+ create mode 100644 reports/development-runner-20261110/wheel-outside-verified.log
+ create mode 100644 reports/discrimination-20261110/DIAGNOSIS.md
+ create mode 100644 reports/discrimination-20261110/H1-reassessment.json
+ create mode 100644 reports/discrimination-20261110/TP-exposure-ledger.json
+ create mode 100644 reports/discrimination-20261110/consumed-recordings.jsonl
+ create mode 100644 reports/discrimination-20261110/cost-estimate.json
+ create mode 100644 reports/discrimination-20261110/coverage.json
+ create mode 100644 reports/discrimination-20261110/diagnosis-with-project-path.command.json
+ create mode 100644 reports/discrimination-20261110/diagnosis-with-project-path.log
+ create mode 100644 reports/discrimination-20261110/diagnosis.command.json
+ create mode 100644 reports/discrimination-20261110/diagnosis.log
+ create mode 100644 reports/discrimination-20261110/evidence-report-final.command.json
+ create mode 100644 reports/discrimination-20261110/evidence-report-final.log
+ create mode 100644 reports/discrimination-20261110/evidence-report.command.json
+ create mode 100644 reports/discrimination-20261110/evidence-report.log
+ create mode 100644 reports/discrimination-20261110/final-unit-suite.command.json
+ create mode 100644 reports/discrimination-20261110/final-unit-suite.log
+ create mode 100644 reports/discrimination-20261110/formal_protocol.before.yaml
+ create mode 100644 reports/discrimination-20261110/frozen-before.json
+ create mode 100644 reports/discrimination-20261110/frozen-integrity.json
+ create mode 100644 reports/discrimination-20261110/local-inventory.json
+ create mode 100644 reports/discrimination-20261110/mapping-fetch.command.json
+ create mode 100644 reports/discrimination-20261110/mapping-fetch.log
+ create mode 100644 reports/discrimination-20261110/protocol-revision.command.json
+ create mode 100644 reports/discrimination-20261110/protocol-revision.log
+ create mode 100644 reports/discrimination-20261110/py310-rdf-dependencies.command.json
+ create mode 100644 reports/discrimination-20261110/py310-rdf-dependencies.log
+ create mode 100644 reports/discrimination-20261110/real-multicrop-deterministic.command.json
+ create mode 100644 reports/discrimination-20261110/real-multicrop-deterministic.log
+ create mode 100644 reports/discrimination-20261110/real-multicrop-memory.command.json
+ create mode 100644 reports/discrimination-20261110/real-multicrop-memory.log
+ create mode 100644 reports/discrimination-20261110/real-multicrop.command.json
+ create mode 100644 reports/discrimination-20261110/real-multicrop.json
+ create mode 100644 reports/discrimination-20261110/real-multicrop.log
+ create mode 100644 reports/discrimination-20261110/requirement-audit.json
+ create mode 100644 reports/discrimination-20261110/role-distributions.json
+ create mode 100644 reports/discrimination-20261110/runtime.json
+ create mode 100644 reports/discrimination-20261110/test-visibility.json
+ create mode 100644 reports/discrimination-20261110/training-diagnosis.json
+ create mode 100644 reports/discrimination-20261110/unit-suite-local-deps.command.json
+ create mode 100644 reports/discrimination-20261110/unit-suite-local-deps.log
+ create mode 100644 reports/discrimination-20261110/unit-suite.command.json
+ create mode 100644 reports/discrimination-20261110/unit-suite.log
+ delete mode 100644 reports/expert-benchmark-20261111/PUBLICATION_SCOPE.md
+ create mode 100644 reports/expert-benchmark-20261111/aasist/evaluation.log
+ create mode 100644 reports/expert-benchmark-20261111/aasist/measurement-lock.json
+ create mode 100644 reports/expert-benchmark-20261111/aasist/progress.json
+ create mode 100644 reports/expert-benchmark-20261111/aasist_author_reference/evaluation.log
+ create mode 100644 reports/expert-benchmark-20261111/aasist_author_reference/measurement-lock.json
+ create mode 100644 reports/expert-benchmark-20261111/aasist_author_reference/progress.json
+ create mode 100644 reports/expert-benchmark-20261111/codecfake-candidate-audit.command.json
+ create mode 100644 reports/expert-benchmark-20261111/codecfake-candidate-audit.log
+ create mode 100644 reports/expert-benchmark-20261111/official-map-README.txt
+ create mode 100644 reports/expert-benchmark-20261111/official-source-map-audit.command.json
+ create mode 100644 reports/expert-benchmark-20261111/official-source-map-audit.log
+ create mode 100644 reports/expert-benchmark-20261111/rawnet2/evaluation.log
+ create mode 100644 reports/expert-benchmark-20261111/rawnet2/measurement-lock.json
+ create mode 100644 reports/expert-benchmark-20261111/rawnet2/progress.json
+ create mode 100644 reports/expert-benchmark-20261111/recompute-comparison.log
+ create mode 100644 reports/expert-benchmark-20261111/source-map-download.command.json
+ create mode 100644 reports/expert-benchmark-20261111/ssl_aasist/evaluation.log
+ create mode 100644 reports/expert-benchmark-20261111/ssl_aasist/measurement-lock.json
+ create mode 100644 reports/expert-benchmark-20261111/ssl_aasist/progress.json
+ create mode 100644 reports/github-docs-20261111/old-predictions-recomputed.json
+ create mode 100644 reports/github-docs-20261111/public-verification.json
+ create mode 100644 reports/github-docs-20261111/staging.json
+ create mode 100644 reports/github-docs-20261111/validation.json
+ create mode 100644 reports/github-upload-20261110/public-verification.json
+ create mode 100644 reports/github-upload-20261110/upload-status.json
+ delete mode 100644 reports/implementation/evidence-shacl.ttl
+ delete mode 100644 reports/implementation/evidence.ttl
+ delete mode 100644 reports/next-stage-20261110/supervision-audit.json
+ delete mode 100644 reports/next-stage-20261110/upstream-evidence/aasist/fit.jsonl
+ delete mode 100644 reports/next-stage-20261110/upstream-evidence/aasist/source_val.jsonl
+ delete mode 100644 reports/next-stage-20261110/upstream-evidence/aasist/train_log.jsonl
+ delete mode 100644 reports/next-stage-20261110/upstream-evidence/ssl_aasist/fit.jsonl
+ delete mode 100644 reports/next-stage-20261110/upstream-evidence/ssl_aasist/source_val.jsonl
+ delete mode 100644 reports/next-stage-20261110/upstream-evidence/ssl_aasist/train_log.jsonl
+ create mode 100644 reports/repository-update-20261112/REPORT.md
+ create mode 100644 reports/repository-update-20261112/bounded-export-test.command.json
+ create mode 100644 reports/repository-update-20261112/bounded-export-test.log
+ create mode 100644 reports/repository-update-20261112/gpu-parity.json
+ create mode 100644 reports/repository-update-20261112/public-export.log
+ create mode 100644 reports/repository-update-20261112/public-gpu-parity.command.json
+ create mode 100644 reports/repository-update-20261112/public-gpu-parity.log
+ create mode 100644 reports/repository-update-20261112/public-recompute.command.json
+ create mode 100644 reports/repository-update-20261112/public-recompute.log
+ create mode 100644 reports/repository-update-20261112/public-unit.command.json
+ create mode 100644 reports/repository-update-20261112/public-unit.log
+ create mode 100644 reports/repository-update-20261112/verification/gpu_parity.py
+ create mode 100644 reports/storage-cleanup-20261112/REPORT.md
+ create mode 100644 reports/storage-cleanup-20261112/delta-create.command.json
+ create mode 100644 reports/storage-cleanup-20261112/delta-create.log
+ create mode 100644 reports/storage-cleanup-20261112/delta-restore.command.json
+ create mode 100644 reports/storage-cleanup-20261112/delta-restore.log
+ create mode 100644 reports/storage-cleanup-20261112/evidence-integrity.json
+ create mode 100644 reports/storage-cleanup-20261112/restored-snapshot-verify.command.json
+ create mode 100644 reports/storage-cleanup-20261112/restored-snapshot-verify.log
+ create mode 100644 reports/storage-cleanup-20261112/restored-verification.json
+ create mode 100644 reports/storage-cleanup-20261112/retention.json
+ create mode 100644 reports/storage-cleanup-20261112/snapshot_delta.py
+ rewrite scripts/audit_bundle.py (90%)
+ create mode 100644 scripts/audit_codecfake_candidates.py
+ create mode 100644 scripts/audit_fusion_candidates.py
+ rewrite scripts/audit_supervision.py (92%)
+ rewrite scripts/build_supervision_matrix.py (93%)
+ delete mode 100644 scripts/check_outside_install.py
+ rewrite scripts/evaluate_bounded.py (87%)
+ create mode 100644 scripts/expert_benchmark.py
+ rewrite scripts/export_public.py (80%)
+ create mode 100644 scripts/freeze_development.py
+ delete mode 100644 scripts/h1_diagnostics.py
+ rewrite scripts/lock_dependencies.py (92%)
+ create mode 100644 scripts/materialize_development.py
+ rewrite scripts/measurement_controls.py (97%)
+ delete mode 100644 scripts/metric_conventions.py
+ rewrite scripts/pilot_summary.py (94%)
+ create mode 100644 scripts/prepare_connected.py
+ delete mode 100644 scripts/prepare_github.py
+ create mode 100644 scripts/profile_multicrop.py
+ rewrite scripts/recompute_predictions.py (96%)
+ create mode 100644 scripts/report_expert_benchmark.py
+ rewrite scripts/reproduce_smoke.py (73%)
+ rewrite scripts/run_bounded.py (81%)
+ rewrite scripts/run_pilot.py (87%)
+ rewrite scripts/stage_run.py (89%)
+ create mode 100644 tests/test_connected_split.py
+ rewrite tests/test_core.py (71%)
+ create mode 100644 tests/test_development_runner.py
+ create mode 100644 tests/test_discrimination.py
+ create mode 100644 tests/test_expert_benchmark.py
+ rewrite tests/test_independent_metrics.py (86%)
+ rewrite tests/test_numeric_diagnostics.py (79%)
+ rewrite tests/test_ontology_validation.py (81%)
+ rewrite tests/test_pilot_budget.py (74%)
+ rewrite tests/test_pipeline.py (82%)
+ rewrite tests/test_registry.py (78%)
+ rewrite tests/test_relation_tied.py (82%)
+ rewrite tests/test_shareable_audit.py (84%)
+ rewrite tests/test_workflow.py (85%)

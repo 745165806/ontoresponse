@@ -84,12 +84,14 @@ def validate_evidence(cfg, records, cache):
                     raise ValueError(
                         "Cached operation parameters differ from frozen registry"
                     )
-                if (
-                    audio_meta["extra"]["input_audio_sha256"]
-                    != cache.get(r["views"][0]["artifact_key"])[1]["extra"][
-                        "input_audio_sha256"
-                    ]
-                ):
+                original = cache.get(r["views"][0]["artifact_key"])[1]
+                source = audio_meta["spec"].get(
+                    "audio", audio_meta["extra"].get("input_audio_sha256")
+                )
+                before_source = original["spec"].get(
+                    "audio", original["extra"].get("input_audio_sha256")
+                )
+                if source is None or source != before_source:
                     raise ValueError("Probe not derived from current recording")
     return reg
 
@@ -105,7 +107,6 @@ def export_evidence(cfg, index, destination, shacl=False):
         "@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .",
     ]
     q = lambda x: json.dumps(str(x), ensure_ascii=False)
-    triples.append(f"ex:registry orf:registryHash {q(reg.digest)} .")
     eids = [e["id"] for e in cfg["experts"]]
     a = reg.adjacency(len(eids))
     k = len(reg.probe_ids)
@@ -119,9 +120,9 @@ def export_evidence(cfg, index, destination, shacl=False):
             None,
         )
         triples.append(f"ex:model-{name} a orf:DetectorModel .")
-        if identity:
+        if identity and identity.get("checkpoint"):
             triples.append(
-                f"ex:model-{name} orf:checkpointHash {q(identity['checkpoint_sha256'])} ."
+                f"ex:model-{name} orf:checkpointPath {q(identity['checkpoint']['path'])} ."
             )
     for rec in records:
         rid = digest(rec["id"])[:20]
@@ -149,7 +150,7 @@ def export_evidence(cfg, index, destination, shacl=False):
                     f"{run} a orf:ExpertRun ; orf:usesModel ex:model-{name} ; prov:used {input_recording} ."
                 )
                 triples.append(
-                    f'{obs} a orf:ExpertObservation ; orf:rootRecording {root} ; orf:forExpert ex:model-{name} ; prov:wasGeneratedBy {run} ; orf:measurementId {q(key)} ; orf:status "valid" ; orf:scoreDirection "higher_is_spoof" ; orf:cropPolicy {q(digest(e["identity"]["crop"]))} .'
+                    f'{obs} a orf:ExpertObservation ; orf:rootRecording {root} ; orf:forExpert ex:model-{name} ; prov:wasGeneratedBy {run} ; orf:measurementId {q(key)} ; orf:status "valid" ; orf:scoreDirection "higher_is_spoof" ; orf:cropPolicy {q(json.dumps(e["identity"]["crop"], sort_keys=True))} .'
                 )
                 if v == 0:
                     nodes[i] = obs
@@ -181,9 +182,7 @@ def export_evidence(cfg, index, destination, shacl=False):
                     )
                     nodes[len(eids) + i * k + v - 1] = response
         for idx, node in nodes.items():
-            triples.append(
-                f'{node} orf:numericNodeIndex "{idx}"^^xsd:integer ; orf:registryHash {q(reg.digest)} .'
-            )
+            triples.append(f'{node} orf:numericNodeIndex "{idx}"^^xsd:integer .')
         for ri, relation in enumerate(RELATIONS):
             for target, source in torch.nonzero(a[ri]).tolist():
                 if target in nodes and source in nodes:
@@ -193,7 +192,7 @@ def export_evidence(cfg, index, destination, shacl=False):
     destination.write_text("\n".join(triples) + "\n")
     result = {
         "status": "exported_python_validated",
-        "registry_hash": reg.digest,
+        "probe_ids": list(reg.probe_ids),
         "requests": len(records),
         "rdf": str(destination),
         "shacl": "NOT_RUN",

@@ -1,30 +1,20 @@
-# 常用入口
+# 实验入口
 
-在项目根目录使用现有py310环境；先运行`python -m ontoresponse --help`。`ontoresponse/`是可安装库和主CLI，`scripts/`仅保留当前可用的运行、审计与复现工具。
+主要操作使用python -m ontoresponse，详见[运行实验](RUN_EXPERIMENTS.md)。scripts仅保留实验编排、数据检查和指标工具。
 
 | 任务 | 入口 | 说明 |
 |---|---|---|
-| 数据/专家检查、提取、训练、校准、推断、评价 | `python -m ontoresponse ...` | 命令列表见[CLI_CURRENT.md](CLI_CURRENT.md) |
-| 三专家完整LA eval | `python -m scripts.expert_benchmark --config configs/expert-benchmark-20261111.yaml --phase ...` | `preflight`检查；`run`是明确预算下的完整GPU推断；已完成目录不能直接覆盖 |
-| benchmark重算 | `python -m scripts.report_expert_benchmark` | 依赖完整本地逐条分数；会写汇总，应在独立副本中重现旧报告 |
-| 历史smoke全流程 | `python -m scripts.reproduce_smoke` | 编排`run_bounded`与`evaluate_bounded`；指定新output，保留已有锁 |
-| 有界pilot | `python -m scripts.run_pilot --config ...` | `--preflight-only`就绪检查；来源/预算/质量门通过后运行 |
-| 来源连接和角色 | `python -m scripts.prepare_connected --config ... --candidates ...` | `--audit-materialized`核对已有T版本和数据审计 |
-| 历史环境T生成 | `python -m scripts.materialize_development --config ... --base-manifest ...` | 不生成诊断P，不运行专家 |
-| 开发预注册 | `python -m scripts.freeze_development --config ...` | 默认只检查；`--freeze`显式封存，详见[DEVELOPMENT_V2.md](DEVELOPMENT_V2.md) |
+| 有界基线比较 | python -m scripts.run_bounded --config ... | 普通基线后比较关系模型；用新output |
+| 有界pilot | python -m scripts.run_pilot --config ... | --preflight-only检查实际输入/分组/设备/预算，无SHA或文档审核 |
+| 完整专家LA eval | python -m scripts.expert_benchmark --config ... --phase ... | preflight / controls / score / summarize / run；需要显式GPU全评测预算 |
+| 专家结果重算 | python -m scripts.report_expert_benchmark | 从本地完整逐条分数重算指标；不校验文件摘要；避免覆盖历史报告 |
+| 来源连接与分组 | python -m scripts.prepare_connected --config ... --candidates ... | --audit-materialized检查T版本、组隔离和重复音频 |
+| 历史环境T生成 | python -m scripts.materialize_development --config ... --base-manifest ... | 不运行专家，保留失败请求 |
+| 可选数据方案快照 | python -m scripts.freeze_development --config ... | 默认实时检查；--freeze保存可读配置，不是运行前置条件 |
+| 公开导出 | python -m scripts.export_public --output PATH | 默认每文件1MiB，排除私人路径、音频、权重和缓存；只列文件名/大小 |
 
-## 审计与辅助工具
+measurement_controls、profile_multicrop用于实测专家/codec/crop与成本；pilot_summary和recompute_predictions用于旧结果统计与独立指标复算；stage_run只记录命令、退出码、耗时和日志。audit_fusion_candidates、audit_codecfake_candidates检查候选来源，不读取专家分数。
 
-- `audit_fusion_candidates`、`audit_codecfake_candidates`：本地官方来源映射和Codecfake候选数据审计，不读取专家分数。
-- `audit_supervision`、`build_supervision_matrix`：专家监督/选权重来源核验。
-- `measurement_controls`、`profile_multicrop`：真实checkpoint、codec/crop与成本测量；不要与检测效果实验混为一谈。
-- `pilot_summary`：旧pilot统计与消费账本，结果带有对应历史试验范围。
-- `recompute_predictions`：独立的标准库指标核验；保留与训练模块分离的实现。
-- `audit_bundle`：私有复现快照的导出/校验；`export_public --output PATH --max-file-bytes 1048576`：公开源码/文本证据导出，默认每文件1MiB，排除音频、权重、缓存、归档和私人路径。
-- `lock_dependencies`：记录实际依赖版本；`stage_run`：记录真实命令、退出码、耗时和日志。
+## 历史工具
 
-## 已移出的历史脚本
-
-12个只服务于已完成阶段、写死日期/临时目录的报告或发布脚本已移出常用目录，清单见[history/README.md](history/README.md)。原代码逐字节保存在精简前源码快照中，已生成的实验报告、原始日志和GitHub提交仍保留。
-
-不要为重现旧快照而取消当前预算、泄漏或冻结保护。重新运行应使用新output和匹配的源码版本。
+原audit_bundle、lock_dependencies、audit_supervision、build_supervision_matrix移至[history/tools](history/tools)，不再列为实验步骤。它们只供需要重现旧归档结构的人使用；当前实验不导入这些SHA审计工具。更早的一次性脚本恢复见[历史说明](history/README.md)。历史报告保持原状，不把旧实验写成新结论。

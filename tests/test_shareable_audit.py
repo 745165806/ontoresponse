@@ -86,7 +86,8 @@ def test_shareable_zip_has_no_audio_weights_paths_and_recomputes(tmp_path):
     bounded = tmp_path / "bounded.zip"
     assert export_audit(root, bounded, max_file_bytes=limit)["prediction_rows"] == 4
     with zipfile.ZipFile(bounded) as archive:
-        manifest = json.loads(archive.read("AUDIT_MANIFEST.json"))
+        manifest = json.loads(archive.read("PUBLIC_FILES.json"))
+        assert all(set(row) == {"path", "bytes"} for row in manifest["files"])
         excluded = {row["path"] for row in manifest["intentional_exclusions"]}
         assert "reports/oversized.log" in excluded
         assert "reports/full/per_utterance_predictions.jsonl" in excluded

@@ -1,0 +1,58 @@
+........................................................................ [ 41%]
+........................................................................ [ 83%]
+............................                                             [100%]
+=============================== warnings summary ===============================
+tests/test_ontology_validation.py::test_positive_graph_and_exact_registry_edges
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[expert]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[root]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[crop]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[score]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[probe_run]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[missing_model]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[same_probe]
+  ${TEMP_ROOT} DeprecationWarning: Dataset.default_context is deprecated, use Dataset.default_graph instead.
+    target_ds.default_context.namespace_manager = target_ds.namespace_manager
+
+tests/test_ontology_validation.py::test_positive_graph_and_exact_registry_edges
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[expert]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[root]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[crop]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[score]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[probe_run]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[missing_model]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[same_probe]
+  ${TEMP_ROOT} DeprecationWarning: Dataset.default_context is deprecated, use Dataset.default_graph instead.
+    default_g = target_ds.default_context
+
+tests/test_ontology_validation.py::test_positive_graph_and_exact_registry_edges
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[expert]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[root]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[crop]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[score]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[probe_run]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[missing_model]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[same_probe]
+  ${TEMP_ROOT} DeprecationWarning: Dataset.default_context is deprecated, use Dataset.default_graph instead.
+    dest_g = target_g.default_context
+
+tests/test_ontology_validation.py::test_positive_graph_and_exact_registry_edges
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[expert]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[root]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[crop]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[score]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[probe_run]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[missing_model]
+tests/test_ontology_validation.py::test_negative_measurement_graphs_rejected[same_probe]
+  ${TEMP_ROOT} DeprecationWarning: Dataset.default_context is deprecated, use Dataset.default_graph instead.
+    g = self.graph.default_context
+
+tests/test_ontology_validation.py: 10327 warnings
+  ${TEMP_ROOT} DeprecationWarning: Dataset.default_context is deprecated, use Dataset.default_graph instead.
+    if context == self.default_context:
+
+tests/test_ontology_validation.py: 78 warnings
+  ${TEMP_ROOT} DeprecationWarning: Dataset.identifier is deprecated and will be removed in future versions.
+    return hash(self.identifier)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+172 passed, 10437 warnings in 32.59s

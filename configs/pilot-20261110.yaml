@@ -96,7 +96,6 @@ pilot:
   supervision_audit: reports/next-stage-20261110/supervision-audit.json
   consumed_registry: reports/next-stage-20261110/consumed-exploration.json
   prior_development_ledger: reports/implementation/audit_manifest.jsonl
-  required_next_stage_document: CODEX_NEXT_STAGE.md
   claim_scope: integration_pilot_only
   selection: per-run min fusion_val BCE; baseline family selected on 3-seed mean fusion_val
     EER then mean BCE; all test outputs after locks
@@ -104,8 +103,6 @@ pilot:
   - identity
   expert_training_authorized: false
   full_training_authorized: false
-  quality_gate: reports/codex-next-stage-20261110/quality-gate.json
-  reviewed_next_stage_sha256: 99c1ddf3eccc9d4c22abf5c5e1a4459f4d8ed85d58c1cfc07383160ce0420b1a
   enabled: true
   max_cache_bytes: 2147483648
   min_free_disk_bytes: 2147483648

@@ -45,7 +45,7 @@ R3 same_family_within_expert：r_ik↔r_il，k≠l且family(k)=family(l)。
   z'_v = mask_v * LayerNorm(z_v + Dropout(GELU(m_v)))
 无邻居的聚合为0，缺失节点不得通过bias、LayerNorm或另一条边重新注入值。
 两层提供有限关系组合，不默认叠更多层。不需要大型图数据库或PyG。
-RDF关系与数值A[r,target,source]必须由同一registry编译、版本和hash一致。
+RDF关系与数值A[r,target,source]必须由同一registry编译、定义和实际边集合一致。
 
 readout：分别masked-mean汇总原始节点和响应节点，拼接实测质量与覆盖比例，MLP输出任意实值logit l(x)。
   p_uncalibrated=sigmoid(l)

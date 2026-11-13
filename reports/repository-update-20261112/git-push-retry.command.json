@@ -1,0 +1,17 @@
+{
+  "command": [
+    "env",
+    "GIT_SSH_COMMAND=ssh -o ConnectTimeout=15 -o ServerAliveInterval=10 -o ServerAliveCountMax=2 -o BatchMode=yes",
+    "git",
+    "-C",
+    "${EXTERNAL_PATH}",
+    "push",
+    "origin",
+    "HEAD:main"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-12T11:54:19.483753+00:00",
+  "elapsed_seconds": 6.8390889167785645,
+  "log": "reports/repository-update-20261112/git-push-retry.log",
+  "cwd": "${PROJECT_ROOT}"
+}

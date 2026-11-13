@@ -1,8 +1,8 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 
 import torch
 
-from ..common import digest, read_jsonl, unique
+from ..common import read_jsonl, unique
 from ..data.prepare import validate_splits
 from .cache import Cache
 
@@ -22,6 +22,16 @@ class EvidenceBatch:
 
     def inputs(self):
         return self.hidden, self.scores, self.valid
+
+    def to(self, device):
+        # Keep labels/metadata on CPU for metrics; forward sees observations only.
+        return replace(
+            self,
+            hidden=[x.to(device) for x in self.hidden],
+            scores=self.scores.to(device),
+            valid=self.valid.to(device),
+            quality=self.quality.to(device),
+        )
 
 
 def load_batch(cfg, index, manifest, role, expert_dims=None):
@@ -97,7 +107,7 @@ def load_batch(cfg, index, manifest, role, expert_dims=None):
             entry = rec["experts"].get(e, {})
             if entry.get("status") != "complete":
                 continue
-            ident = digest(entry["identity"])
+            ident = entry["identity"]
             if e in identities and identities[e] != ident:
                 raise ValueError("Mixed checkpoint/crop/score identity")
             identities[e] = ident

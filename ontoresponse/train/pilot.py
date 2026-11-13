@@ -6,6 +6,7 @@ are only loaded for scoring after model/calibration/operating-point locks exist.
 
 import copy
 import json
+import uuid
 from dataclasses import replace
 from pathlib import Path
 
@@ -17,10 +18,9 @@ from reference.core import ExpertStats, source_weighted_bce
 from ..common import (
     Blocked,
     atomic_json,
-    code_hash,
+    compute_device,
     digest,
     read_jsonl,
-    sha256,
     write_jsonl,
 )
 from ..data.pilot import check_pilot_budget
@@ -88,7 +88,8 @@ def fit_one(cfg, name, seed, train, val, reg):
     out.mkdir(parents=True)
     set_seed(seed)
     dims = [h.shape[-1] for h in train.hidden]
-    model = build_model(dims, reg, name, p["width"], seed)
+    device = compute_device(cfg)
+    model = build_model(dims, reg, name, p["width"], seed).to(device)
     model.expert_identities = train.identities
     stats = ExpertStats.fit(*train.inputs(), role="fusion_train")
     optimizer = (
@@ -176,7 +177,6 @@ def fit_one(cfg, name, seed, train, val, reg):
                 "validation_metrics": val_metric,
                 "selected_train_origins": len(order),
                 "train_measurement_count": len(train.ids),
-                "epoch_schedule_sha256": digest([train.ids[i] for i in order.tolist()]),
                 "learning_rate": p["learning_rate"],
                 "gradient_norm_max": max(gradient_norms, default=0.0),
                 "gradient_norm_mean": float(np.mean(gradient_norms))
@@ -193,6 +193,7 @@ def fit_one(cfg, name, seed, train, val, reg):
             break
     checkpoint = {
         "schema": "ontoresponse-fusion-1",
+        "run_id": uuid.uuid4().hex,
         "mode": "integration_pretrained",
         "claim_scope": "integration_pilot_only",
         "model_name": name,
@@ -201,7 +202,9 @@ def fit_one(cfg, name, seed, train, val, reg):
         "seed": seed,
         "model_state": best["state"],
         "stats": stats,
-        "registry_hash": reg.digest,
+        "probe_ids": list(reg.probe_ids),
+        "probe_families": list(reg.families),
+        "probe_features": reg.features.cpu(),
         "expert_specs": cfg["experts"],
         "expert_identities": train.identities,
         "crop": cfg["crop"],
@@ -212,19 +215,19 @@ def fit_one(cfg, name, seed, train, val, reg):
         "history": history,
         "train_ids": train.ids,
         "val_ids": val.ids,
+        "train_groups": sorted(set(train.groups)),
+        "val_groups": sorted(set(val.groups)),
         "best_epoch": best["epoch"],
         "best_step": history[best["epoch"] - 1]["optimizer_steps"],
         "selection_rule": "min fusion_val BCE within fixed convergence budget",
-        "code_sha256": code_hash(),
         "pilot_budget": p,
-        "ledger_sha256": sha256(Path(cfg["output"]) / "audit_manifest.jsonl"),
     }
     atomic_torch(out / "model.pt", checkpoint)
     model.load_state_dict(best["state"])
     model.eval()
     from .fit import restore
 
-    _, restored, loaded_stats, loaded_reg = restore(out / "model.pt")
+    _, restored, loaded_stats, loaded_reg = restore(out / "model.pt", device)
     with torch.inference_mode():
         torch.testing.assert_close(
             forward(model, val, stats, reg).logits,
@@ -248,7 +251,8 @@ def fit_one(cfg, name, seed, train, val, reg):
         "stop_reason": stop,
         "convergence_claim": stop == "validation_patience",
         "checkpoint": str(out / "model.pt"),
-        "checkpoint_sha256": sha256(out / "model.pt"),
+        "run_id": checkpoint["run_id"],
+        "device": str(device),
         "save_load_exact": True,
     }
     atomic_json(out / "result.json", result)
@@ -381,7 +385,6 @@ def run_training(cfg):
         "selected_trial_id": chosen["trial_id"],
         "rule": "fixed-seed mean validation EER, tie mean BCE then model/trial name",
         "family_selection": summaries,
-        "results_sha256": sha256(root / "training-results.json"),
     }
     atomic_json(root / "selection.json", selection)
     return results
@@ -432,29 +435,24 @@ def lock_and_evaluate(cfg, results):
     from .fit import restore
 
     for run in results:
-        cp, model, stats, reg = restore(run["checkpoint"])
+        cp, model, stats, reg = restore(run["checkpoint"], compute_device(cfg))
         with torch.inference_mode():
             c = forward(model, cal, stats, reg)
             v = forward(model, val, stats, reg)
         if not c.observed.all() or not v.observed.all():
             raise Blocked("Calibration/validation coverage failure")
-        params = Platt.fit(c.logits.numpy(), cal.labels.numpy(), "calibration")
-        z = v.logits.double().numpy() * params["scale"] + params["bias"]
+        params = Platt.fit(c.logits.cpu().numpy(), cal.labels.numpy(), "calibration")
+        z = v.logits.cpu().double().numpy() * params["scale"] + params["bias"]
         point = operating_point(
             val.labels.numpy(), z, "fusion_val", p["target_dev_fpr"]
         )
         lock = {
             "status": "frozen_integration_pilot",
-            "model_sha256": sha256(run["checkpoint"]),
+            "run_id": cp.get("run_id", Path(run["checkpoint"]).parent.name),
+            "checkpoint": run["checkpoint"],
             "calibration": params,
             "operating_point": point,
-            "ledger_sha256": sha256(manifest),
-            "index_sha256": sha256(index),
             "config": cfg,
-            "registry_hash": reg.digest,
-            "code_sha256": code_hash(),
-            "data_audit_sha256": sha256(root / "data-audit.json"),
-            "selection_sha256": sha256(root / "selection.json"),
             "test_requests": [
                 r["id"] for r in read_jsonl(manifest) if r["role"] == "test"
             ],
@@ -468,11 +466,11 @@ def lock_and_evaluate(cfg, results):
     test = load_batch(cfg, index, manifest, "test")
     reports = []
     for run, lock in locks:
-        _, model, stats, reg = restore(run["checkpoint"])
+        _, model, stats, reg = restore(run["checkpoint"], compute_device(cfg))
         with torch.inference_mode():
             out = forward(model, test, stats, reg)
         params = lock["calibration"]
-        z = out.logits.double().numpy() * params["scale"] + params["bias"]
+        z = out.logits.cpu().double().numpy() * params["scale"] + params["bias"]
         prob = torch.tensor(z).sigmoid().numpy()
         point = lock["operating_point"]
         records = []
@@ -493,11 +491,10 @@ def lock_and_evaluate(cfg, results):
                     "p_calibrated": float(prob[i]) if ok else None,
                     "prediction": int(z[i] >= point["threshold"]) if ok else None,
                     "speaker_group": test.audit[i]["speaker_id"],
-                    "calibrator_id": digest(params),
-                    "model_id": run["checkpoint_sha256"],
+                    "calibrator_id": lock["run_id"] + "-calibration",
+                    "model_id": lock["run_id"],
                     "threshold_space": point["space"],
                     "threshold": point["threshold"],
-                    "model_sha256": lock["model_sha256"],
                 }
             )
         write_jsonl(
@@ -506,7 +503,7 @@ def lock_and_evaluate(cfg, results):
         valid = np.array([r["status"] == "scored" for r in records])
         y = test.labels.numpy()[valid]
         measured = (
-            metrics(y, out.logits.numpy()[valid], prob[valid])
+            metrics(y, out.logits.cpu().numpy()[valid], prob[valid])
             if set(y) == {0.0, 1.0}
             else {"status": "undefined"}
         )
@@ -532,7 +529,9 @@ def lock_and_evaluate(cfg, results):
                 if set(test.labels.numpy()[ok]) == {0.0, 1.0}:
                     entry.update(
                         metrics(
-                            test.labels.numpy()[ok], out.logits.numpy()[ok], prob[ok]
+                            test.labels.numpy()[ok],
+                            out.logits.cpu().numpy()[ok],
+                            prob[ok],
                         )
                     )
                 else:

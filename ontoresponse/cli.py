@@ -1,4 +1,4 @@
-"""Command-line entry point for the bounded audio, fusion and audit pipeline."""
+"""Prepare data, extract expert observations, train and evaluate experiments."""
 
 from __future__ import annotations
 
@@ -20,6 +20,7 @@ def main(argv=None):
             "doctor",
             "audit",
             "audit-export",
+            "export",
             "prepare-data",
             "prepare-external",
             "make-environments",
@@ -37,6 +38,11 @@ def main(argv=None):
         ],
     )
     p.add_argument("--config", default="configs/local.yaml")
+    p.add_argument("--work-dir", help="Experiment directory (overrides config output)")
+    p.add_argument("--cache-dir", help="Observation cache directory")
+    p.add_argument("--device", help="PyTorch device, e.g. cuda:0 or cpu")
+    p.add_argument("--resume", help="Training checkpoint to resume")
+    p.add_argument("--width", type=int, default=64)
     p.add_argument("--max-origins", type=int, default=24)
     p.add_argument("--source-root")
     p.add_argument("--manifest")
@@ -55,11 +61,24 @@ def main(argv=None):
     p.add_argument("--role", default="test")
     args = p.parse_args(argv)
     cfg = yaml.safe_load(Path(args.config).read_text())
+    if args.work_dir:
+        cfg["output"] = args.work_dir
+    if args.cache_dir:
+        cfg["cache"] = args.cache_dir
+    if args.device:
+        cfg["runtime"]["device"] = args.device
+    if (
+        args.command in ("calibrate", "freeze", "evaluate", "infer")
+        and not args.checkpoint
+    ):
+        p.error("--checkpoint is required for " + args.command)
+    if args.command == "infer" and not args.audio:
+        p.error("--audio is required for infer")
     torch.set_num_threads(cfg["runtime"].get("threads", 4))
     root = Path(cfg["output"])
     root.mkdir(parents=True, exist_ok=True)
     try:
-        if args.command == "audit-export":
+        if args.command in ("audit-export", "export"):
             from .audit_export import export_audit
 
             result = export_audit(
@@ -108,6 +127,7 @@ def main(argv=None):
                 args.max_origins,
                 args.shard_index,
                 args.shard_count,
+                args.output,
             )
         elif args.command == "merge":
             from .evidence.extract import merge
@@ -121,6 +141,11 @@ def main(argv=None):
             from .train.fit import ablate, fit
 
             fn = fit if args.command == "train" else ablate
+            kwargs = (
+                {"width": args.width, "resume": args.resume}
+                if args.command == "train"
+                else {}
+            )
             result = fn(
                 cfg,
                 args.index or root / "extraction-0-of-1.jsonl",
@@ -129,6 +154,7 @@ def main(argv=None):
                 args.seed,
                 args.steps,
                 args.output,
+                **kwargs,
             )
         elif args.command in ("calibrate", "freeze", "evaluate", "infer", "report"):
             from .evaluation.workflow import execute

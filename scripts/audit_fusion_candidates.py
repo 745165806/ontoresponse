@@ -5,13 +5,12 @@ No expert scores, audio predictions, data-role assignment or training is used.
 """
 
 import csv
-import hashlib
 import io
 import tarfile
 from collections import Counter, defaultdict
 from pathlib import Path
 
-from ontoresponse.common import atomic_json, sha256
+from ontoresponse.common import atomic_json
 
 
 def run(root=Path("reports/expert-benchmark-20261111")):
@@ -44,7 +43,6 @@ def run(root=Path("reports/expert-benchmark-20261111")):
             inventory[name] = {
                 "rows": len(rows),
                 "columns": list(rows[0]),
-                "sha256": hashlib.sha256(data).hexdigest(),
             }
             maps[name] = {r["ASVspoof_ID"]: r for r in rows}
         readme = archive.extractfile("README.txt").read().decode()
@@ -159,7 +157,6 @@ def run(root=Path("reports/expert-benchmark-20261111")):
     report = {
         "status": "METADATA_AUDIT_ONLY",
         "archive": str(archive_path),
-        "archive_sha256": sha256(archive_path),
         "source_url": "https://www.asvspoof.org/asvspoof2019/ASVspoof2019_2021_VCTK_VCC_MetaInfo.tar.gz",
         "inventory": inventory,
         "ASV2019": summaries,

@@ -4,7 +4,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-from ..common import Blocked, atomic_json, digest, read_jsonl, sha256, write_jsonl
+from ..common import Blocked, atomic_json, digest, read_jsonl, write_jsonl
 from ..transforms.probes import audio_hash
 from .audio import read_audio
 from .prepare import validate_splits
@@ -131,20 +131,17 @@ def prepare_pilot(cfg):
     summary = validate_splits(chosen)
     seen_audio = {}
     for r in chosen:
-        r["audio_file_sha256"] = sha256(r["audio"])
-        r["waveform_sha256"] = audio_hash(read_audio(r["audio"]))
+        r["waveform_key"] = audio_hash(read_audio(r["audio"]))
         if (
-            r["waveform_sha256"] in seen_audio
-            and seen_audio[r["waveform_sha256"]] != r["role"]
+            r["waveform_key"] in seen_audio
+            and seen_audio[r["waveform_key"]] != r["role"]
         ):
             raise ValueError("Duplicate waveform across roles")
-        seen_audio[r["waveform_sha256"]] = r["role"]
+        seen_audio[r["waveform_key"]] = r["role"]
     consumed = json.loads(Path(p["consumed_registry"]).read_text())
     if {r["origin_id"] for r in chosen} & set(consumed["origins"]):
         raise ValueError("Consumed external exploration origin reused")
-    if {r["waveform_sha256"] for r in chosen} & set(
-        consumed.get("waveform_sha256", [])
-    ):
+    if {r["waveform_key"] for r in chosen} & set(consumed.get("waveform_sha256", [])):
         raise ValueError("Consumed waveform reused")
     write_jsonl(out / "audit_manifest.jsonl", chosen)
     write_jsonl(
@@ -177,8 +174,6 @@ def prepare_pilot(cfg):
         "group_limitation": "official dev has bonafide-only speaker groups; fresh test has only one spoof speaker group, so no broad-generalization claim",
         "waveform_cross_role_duplicates": 0,
         "consumed_exploration_origin_overlap": 0,
-        "protocol_sha256": sha256(protocol),
-        "ledger_sha256": sha256(out / "audit_manifest.jsonl"),
         "research_holdout_pass": False,
         "scope": "integration pilot only; speaker-conservative grouping; cross-speaker source maps and generic SSL exposure remain unknown",
     }

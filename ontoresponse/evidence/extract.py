@@ -6,16 +6,16 @@ from pathlib import Path
 
 import yaml
 
-from ..common import budget, code_hash, digest, read_jsonl, sha256, unique, write_jsonl
+from ..common import budget, file_info, read_jsonl, unique, write_jsonl
 from ..data.audio import quality, read_audio
 from ..data.prepare import shard
 from ..experts.base import AudioInput, FrozenExpert
 from ..resources import resource_path
-from ..transforms.probes import apply_probe, audio_hash
+from ..transforms.probes import apply_probe
 from .cache import Cache
 
 
-def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1):
+def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1, output=None):
     rows = read_jsonl(manifest)
     unique(rows)
     allowed = {"id", "audio", "origin_id", "source_group"}
@@ -30,7 +30,6 @@ def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1):
         raise ValueError("Invalid shard index")
     rows = [r for r in rows if shard(r["source_group"], shard_count) == shard_index]
     cache = Cache(cfg["cache"], cfg.get("pilot", {}).get("max_cache_bytes"))
-    code = code_hash()
     probes = yaml.safe_load(resource_path("configs/probes.yaml").read_text())["probes"]
     ffmpeg = (
         __import__("subprocess")
@@ -38,22 +37,19 @@ def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1):
         .stdout.splitlines()[0]
     )
     records = []
-    waveforms = {}
     view_records = {}
     for r in rows:
         try:
             x = read_audio(r["audio"])
-            waveforms[r["id"]] = x
             view_records[r["id"]] = []
             for p in [
                 {"id": "original", "family": "identity", "operation": "identity"}
             ] + probes:
                 spec = {
                     "stage": "audio",
-                    "audio_file_sha256": sha256(r["audio"]),
-                    "input_audio_sha256": audio_hash(x),
+                    "audio": file_info(r["audio"]),
                     "operation": p,
-                    "code_sha256": code,
+                    "cache_revision": cfg["runtime"].get("cache_revision", 2),
                     "ffmpeg_version": ffmpeg,
                     "seed_rule": "audio_hash_noise_shared_direction_v1",
                 }
@@ -117,14 +113,12 @@ def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1):
                         "stage": "expert",
                         "artifact_key": v["artifact_key"],
                         "expert": expert.identity,
-                        "code_sha256": code,
-                        "schema_hash": digest(
-                            {
-                                "dims": "runtime_verified",
-                                "score": "spoof_minus_bonafide",
-                                "views": [p["id"] for p in probes],
-                            }
-                        ),
+                        "cache_revision": cfg["runtime"].get("cache_revision", 2),
+                        "schema": {
+                            "dims": "runtime_verified",
+                            "score": "spoof_minus_bonafide",
+                            "views": [p["id"] for p in probes],
+                        },
                     }
                     key = cache.key(spec)
                     try:
@@ -186,8 +180,11 @@ def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1):
         r["complete_all_experts"] = len(originals) == len(cfg["experts"]) and all(
             originals
         )
-        r["code_sha256"] = code
-    out = Path(cfg["output"]) / f"extraction-{shard_index}-of-{shard_count}.jsonl"
+    out = (
+        Path(output)
+        if output
+        else Path(cfg["output"]) / f"extraction-{shard_index}-of-{shard_count}.jsonl"
+    )
     write_jsonl(out, records)
     return {
         "index": str(out),

@@ -1,5 +1,7 @@
 # Codex主任务：把OntoResponse实施为可复现实验
 
+2026-11-13更新：按用户要求取消hash/SHA审计、源码/文档审核封存和质量文件锁。以实际可运行实验为主，入口见docs/RUN_EXPERIMENTS.md。下文的来源与分组检查属于实验设计，不要求密码学清单。
+
 ## 0. 任务
 读取AGENTS.md、docs/METHOD.md、docs/EXPERIMENT_PROTOCOL.md、docs/ACCEPTANCE.md。
 **主目标是一条录音一个真假logit**。使用原始embedding/score及已知探针响应，按三类证据关系计算并直接BCE训练。不要继续实现OntoRisk的PSD风险矩阵或QP作为主方法。
@@ -21,7 +23,7 @@ src/ontoresponse/
 优先纯PyTorch；固定21节点不需要复杂图数据库。
 
 ## P0 环境、来源与研究协议
-实际检测GPU/CPU/RAM/磁盘/依赖/二进制可用性；记录repo commit、checkpoint sha、许可证、上游训练和选权重来源。
+实际检测GPU/CPU/RAM/磁盘/依赖/二进制可用性；记录运行配置、checkpoint路径、许可证、上游训练和选权重来源。
 不升级系统驱动、不终止其他用户进程。路径配置化，未知填null。
 分开integration_pretrained和research_holdout；按协议审计源组、说话人和处理DAG。旧fairseq用隔离环境和文件接口。
 锁定真正合法的未知环境条件，不把探针已经见过的算子/组合当未知。
@@ -44,7 +46,7 @@ hook不能改变原logits。基础SSL预训练+随机鉴伪头不算专家。权
 同一当前录音同家族的噪声实例使用共享基础噪声方向，随SNR缩放；同一probe artifact供所有专家共同读取。seed不依赖标签。
 处理完整音频后对齐到当前输入时间轴，再使用固定crop；保留长度、时延和重编码记录。
 探针不需要历史干净录音。原始输入和probe输出都保存embedding/margin，不只保存最终概率。
-缓存key包括audio、checkpoint、代码、操作、种子、crop与aggregation、schema hash。原子写入，断点续跑，严查重复/缺失ID。
+缓存区分输入文件、专家、操作、crop与aggregation，使用显式cache_revision控制实现版本。保留原子写入、断点续跑和重复/缺失ID检查，不生成文件/源码校验清单。
 验收：identity与lossless roundtrip响应近零；有效零变化与missing不同；双卡/多分片同一ID无漂移；不同标签不影响seed或特征生成。
 
 ## P3 普通融合先行
@@ -99,5 +101,5 @@ python -m ontoresponse infer --audio ... --model ...
 不要在README把未实现命令标成可运行。当前只有python -m reference.demo与pytest是已实现入口。
 
 ## 5. 最后交付
-代码、配置、数据/权重来源锁、运行环境、split账本、测试、真实checkpoint验证日志、合成smoke与真实结果分开的报告。
+代码、配置、数据/权重来源说明、运行环境、split账本、测试、真实checkpoint验证日志、合成smoke与真实结果分开的报告。
 STATUS分别列implemented/unit_tested/real_checkpoint_tested/real_data_evaluated/blocked。禁止把参考模型合成loss下降解释为研究成功。

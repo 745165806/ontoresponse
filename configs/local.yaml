@@ -1,5 +1,5 @@
 mode: integration_pretrained
-runtime: {device: cpu, threads: 4, budget: smoke, max_origins: 24, steps: 20}
+runtime: {device: 'cuda:0', threads: 4, budget: smoke, max_origins: 24, steps: 20, cache_revision: 2}
 data:
   asv2019: ${DATA_ROOT}/asvspoof2019/LA
   asv2021df: ${DATA_ROOT}/asvspoof2019/LA/ASVspoof2021_DF_eval

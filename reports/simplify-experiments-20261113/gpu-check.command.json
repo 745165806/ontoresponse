@@ -1,0 +1,16 @@
+{
+  "command": [
+    "env",
+    "CUDA_VISIBLE_DEVICES=0",
+    "CUBLAS_WORKSPACE_CONFIG=:4096:8",
+    "PYTHONDONTWRITEBYTECODE=1",
+    "PYTHONPATH=.:${EXTERNAL_PATH}",
+    "${USER_HOME}/anaconda3/envs/py310/bin/python",
+    "reports/simplify-experiments-20261113/gpu_check.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-13T09:01:50.768786+00:00",
+  "elapsed_seconds": 60.630292654037476,
+  "log": "reports/simplify-experiments-20261113/gpu-check.log",
+  "cwd": "${PROJECT_ROOT}"
+}
