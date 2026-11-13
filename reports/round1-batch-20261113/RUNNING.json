@@ -1,0 +1,10 @@
+{
+  "status": "running",
+  "pilot_requested": 1024,
+  "pilot_packed_requests": 512,
+  "valid_expert_view_observations": 10752,
+  "failed_observations_in_packed_parts": 0,
+  "packed_parts": 2,
+  "cross_gpu_expert_identities_match": true,
+  "final_eer_available": false
+}

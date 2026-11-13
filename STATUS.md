@@ -8,7 +8,7 @@
 | unit/synthetic | 177 passed、0 skipped、退出0；日志reports/round1-batch-20261113/regression.log |
 | real-checkpoint / GPU | 三专家原实现兼容性已有验证；本次64条×3专家×7视图共1344个观测有效，失败0 |
 | real-data / GPU smoke | 32训练+32验证，original_mlp/response_mlp/typed_response各20步均成功，save/load精确一致；验证EER全0，仅工程结果 |
-| running | 后台PID见reports/round1-batch-20261113/launch.json；GPU0/1处理1024条pilot，随后自动进入完整开发及测试 |
+| running | 后台PID见reports/round1-batch-20261113/launch.json；GPU0/1处理1024条pilot；首512条（两块）已打包，10752个观测有效且跨GPU专家身份一致，随后自动进入完整开发及测试 |
 | research | 完整结果尚未产生；不能据smoke宣称本体有效 |
 
 批量配置configs/round1-batch.yaml：先1024条两折/三seed/12模型pilot，再50224条开发录音的两折选择及完整重训；测试71237条2019 LA eval、148176条2021 LA eval、31779条ITW。输入按协议取样，不混合2021 progress/hidden。原始数据、权重和大缓存仅本地保存。
