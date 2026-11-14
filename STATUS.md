@@ -15,8 +15,10 @@
 
 [完整测试EER表](reports/round1-batch-20261113/TEST_EER.md)每30秒本地更新，只接受71237/148176/31779条全量覆盖、失败0并齐全三个seed的报告。每个数据集的36份报告完成后自动同步小报告到GitHub；进程结束或失败也更新。原始音频、权重、观测包和逐句大文件留本地。
 
+已按用户目标“定时监测进度，完成上述实验”保持后台监测，健康GPU调度器没有重启。实时表新增实际已打包录音数、分块数和检查UTC；2021监测验证快照28/579块、7168条，余下2021和ITW仍未完成。每个数据集36份评分齐全后自动从全部逐句预测复算，核对协议覆盖、标签、状态及所有模型共用的专家观测，再同步小报告。2019全部36份已通过复算，主表ROC插值EER、AUROC、AUPRC与保存指标误差≤1e-12；上游nearest-DET约定另记，不替换主表定义。命令、退出码和监测PID见[监测记录](reports/monitor-completion-20261114/REPORT.md)，2019复算结果见[prediction-check-asv2019_eval.json](reports/round1-batch-20261113/prediction-check-asv2019_eval.json)。
+
 2021恢复详情见[解码修复报告](reports/flac-recovery-20261114/REPORT.md)：原有soundfile可正常读取的路径保持原样；仅FLAC解码报错时使用严格FFmpeg，拒绝任何解码错误或与流元数据不符的帧数，不重采样。389条失败录音及64条成功对照共453条与独立SoX完整PCM逐样本一致。16条原失败录音的实际GPU提取336观测、关系/缓存读取均通过。原失败摘要和日志保留，2019结果与所有已完成观测复用，未删测试请求。
 
 [开发验证EER](reports/round1-batch-20261113/DEVELOPMENT_EER.md)：本体0.029234%、全视图MLP0.019376%，未显示本体开发增益，不能视为测试结果。专家开发曝光、RawNet2监督未知和两个来源组件的限制保留。
 
-[操作说明](docs/RUN_EXPERIMENTS.md)、[批量报告](reports/round1-batch-20261113/REPORT.md)。双卡调度14项通过；真实checkpoint在16条既有开发证据上同时运行GPU0/1，最大logit差异0，见reports/batch-throughput-20261114/two-gpu-fusion-check.json。最新完整回归192 passed、0 skipped、退出0，含5项解码兼容及损坏/帧数/采样率保护检查，见reports/flac-recovery-20261114/full-regression.command.json/.log。真实解码、真实GPU提取和完整测试效果分开记录；2021/ITW完整EER尚未生成。无需SHA或文档封存。
+[操作说明](docs/RUN_EXPERIMENTS.md)、[批量报告](reports/round1-batch-20261113/REPORT.md)。双卡调度14项通过；真实checkpoint在16条既有开发证据上同时运行GPU0/1，最大logit差异0，见reports/batch-throughput-20261114/two-gpu-fusion-check.json。最新完整回归199 passed、0 skipped、退出0，含解码兼容及完整预测覆盖、指标和观测一致性检查，见reports/monitor-completion-20261114/full-regression.command.json/.log。真实解码、真实GPU提取、完整测试效果及复算分开记录；2021/ITW完整EER尚未生成。无需SHA或文档封存。

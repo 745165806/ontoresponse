@@ -1,0 +1,8 @@
+{
+  "monitor_pid": 1022729,
+  "poll_seconds": 30,
+  "runner_pid": 222701,
+  "runner_unchanged": true,
+  "started_utc": "2026-11-14T07:19:39.355041+00:00",
+  "verification": "Recompute each dataset after all 36 reports; preserve failed checks; publish small completed reports and checks to GitHub"
+}

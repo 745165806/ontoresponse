@@ -1,0 +1,12 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-14T07:18:01.021383+00:00",
+  "elapsed_seconds": 38.815468311309814,
+  "log": "reports/monitor-completion-20261114/full-regression.log"
+}

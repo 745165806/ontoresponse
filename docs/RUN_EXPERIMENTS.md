@@ -79,6 +79,14 @@ AASIST/SSL+AASIST/RawNet2实际推断batch分别32/32/64。每条录音的原始
 
 完整EER汇总：`reports/round1-batch-20261113/TEST_EER.md`及.json。它仅接受2019=71237、2021 LA eval=148176、ITW=31779条完整覆盖、失败0的报告；每种方法三个seed齐全才汇总均值与样本标准差。未完成显示空白，不以开发EER或小子集EER代替。每个数据集的36份报告完成即自动同步小型结果到GitHub，最终状态或失败状态也同步。完整逐句logit留在本地tests/<dataset>/<model>-seed<seed>/。
 
+观察进程每30秒更新实际已打包录音/块数与检查UTC。每个数据集36份报告齐全后，自动复算所有逐句预测，检查协议ID覆盖、标签、状态、共享专家观测及EER/AUROC/AUPRC与保存指标的一致性；复算失败会另留失败记录供处理。也可手动运行以下命令，将数据集名依次替换为`asv2021_la`、`inthewild`。主表继续采用分组同分数后的ROC线性插值；上游stable-sort nearest-DET EER单独命名记录，不因测试结果选择指标约定。
+
+```bash
+python -m scripts.report_round1_tests --root reports/round1-batch-20261113 --verify-predictions asv2019_eval --official-metric /path/to/aasist/evaluation.py
+```
+
+完整数据集的结果保存至`prediction-check-<dataset>.json`；未完成返回`status=pending`，不能计作通过。代码不生成hash/SHA清单，也不改变专家推断或融合模型。
+
 可手动重算汇总：
 
 ```bash

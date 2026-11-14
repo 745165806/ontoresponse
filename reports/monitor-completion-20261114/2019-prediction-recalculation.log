@@ -1,0 +1,280 @@
+{
+  "status": "passed",
+  "dataset": "asv2019_eval",
+  "requested": 71237,
+  "failed": 0,
+  "model_seed_reports": 36,
+  "all_prediction_ids_and_protocol_fields_match": true,
+  "same_expert_observations_for_all_models": true,
+  "max_allowed_metric_error": 1e-12,
+  "original_expert_margins": {
+    "aasist": {
+      "eer_percent": 2.0802175390890554,
+      "nearest_det_eer_percent": 2.0803078866667217
+    },
+    "ssl_aasist": {
+      "eer_percent": 0.6118286879673691,
+      "nearest_det_eer_percent": 0.6119473423243752
+    },
+    "rawnet2": {
+      "eer_percent": 5.084976206662135,
+      "nearest_det_eer_percent": 5.0846752609028405
+    }
+  },
+  "models": [
+    {
+      "model_seed": "best_single_expert-seed17",
+      "n": 71237,
+      "eer_percent": 0.6118286879673691,
+      "nearest_det_eer_percent": 0.6119473423243752,
+      "auroc": 0.999695724469557
+    },
+    {
+      "model_seed": "best_single_expert-seed29",
+      "n": 71237,
+      "eer_percent": 0.6118286879673691,
+      "nearest_det_eer_percent": 0.6119473423243752,
+      "auroc": 0.999695724469557
+    },
+    {
+      "model_seed": "best_single_expert-seed43",
+      "n": 71237,
+      "eer_percent": 0.6118286879673691,
+      "nearest_det_eer_percent": 0.6119473423243752,
+      "auroc": 0.999695724469557
+    },
+    {
+      "model_seed": "score_mlp-seed17",
+      "n": 71237,
+      "eer_percent": 0.37256191102345015,
+      "nearest_det_eer_percent": 0.3698295619019355,
+      "auroc": 0.9998703549506248
+    },
+    {
+      "model_seed": "score_mlp-seed29",
+      "n": 71237,
+      "eer_percent": 0.3412541874080355,
+      "nearest_det_eer_percent": 0.340579507028286,
+      "auroc": 0.9998532836215209
+    },
+    {
+      "model_seed": "score_mlp-seed43",
+      "n": 71237,
+      "eer_percent": 0.32716571178109666,
+      "nearest_det_eer_percent": 0.32673717268184665,
+      "auroc": 0.99985973245922
+    },
+    {
+      "model_seed": "original_mlp-seed17",
+      "n": 71237,
+      "eer_percent": 0.184715569330951,
+      "nearest_det_eer_percent": 0.1875311361270677,
+      "auroc": 0.9998363080672341
+    },
+    {
+      "model_seed": "original_mlp-seed29",
+      "n": 71237,
+      "eer_percent": 0.3399048266485384,
+      "nearest_det_eer_percent": 0.3397968139379006,
+      "auroc": 0.9997965721596952
+    },
+    {
+      "model_seed": "original_mlp-seed43",
+      "n": 71237,
+      "eer_percent": 0.3399048266485384,
+      "nearest_det_eer_percent": 0.3397968139379006,
+      "auroc": 0.9998077544016988
+    },
+    {
+      "model_seed": "all_views_mlp-seed17",
+      "n": 71237,
+      "eer_percent": 0.3263086335825969,
+      "nearest_det_eer_percent": 0.32595447959146123,
+      "auroc": 0.9998022101039411
+    },
+    {
+      "model_seed": "all_views_mlp-seed29",
+      "n": 71237,
+      "eer_percent": 0.7075545537084005,
+      "nearest_det_eer_percent": 0.7072782965686799,
+      "auroc": 0.9996345828903482
+    },
+    {
+      "model_seed": "all_views_mlp-seed43",
+      "n": 71237,
+      "eer_percent": 0.42735042735042583,
+      "nearest_det_eer_percent": 0.4244162061973075,
+      "auroc": 0.9997498766154312
+    },
+    {
+      "model_seed": "response_mlp-seed17",
+      "n": 71237,
+      "eer_percent": 0.22071945148868233,
+      "nearest_det_eer_percent": 0.2191292702718734,
+      "auroc": 0.9998565889168829
+    },
+    {
+      "model_seed": "response_mlp-seed29",
+      "n": 71237,
+      "eer_percent": 0.20193481731943796,
+      "nearest_det_eer_percent": 0.20293885665427788,
+      "auroc": 0.9998883989262067
+    },
+    {
+      "model_seed": "response_mlp-seed43",
+      "n": 71237,
+      "eer_percent": 0.22541561003099897,
+      "nearest_det_eer_percent": 0.22827544607600037,
+      "auroc": 0.9998448277693167
+    },
+    {
+      "model_seed": "set_attention-seed17",
+      "n": 71237,
+      "eer_percent": 0.23113528212100615,
+      "nearest_det_eer_percent": 0.231406218437542,
+      "auroc": 0.99983526518589
+    },
+    {
+      "model_seed": "set_attention-seed29",
+      "n": 71237,
+      "eer_percent": 0.24473147518694768,
+      "nearest_det_eer_percent": 0.24446585969359597,
+      "auroc": 0.9998699377980871
+    },
+    {
+      "model_seed": "set_attention-seed43",
+      "n": 71237,
+      "eer_percent": 0.36160420775805946,
+      "nearest_det_eer_percent": 0.3643507102692377,
+      "auroc": 0.9998198454403026
+    },
+    {
+      "model_seed": "relation_tied-seed17",
+      "n": 71237,
+      "eer_percent": 0.2991162474507138,
+      "nearest_det_eer_percent": 0.29905250398896793,
+      "auroc": 0.9998368018396256
+    },
+    {
+      "model_seed": "relation_tied-seed29",
+      "n": 71237,
+      "eer_percent": 0.298988760527219,
+      "nearest_det_eer_percent": 0.29905250398896793,
+      "auroc": 0.9998432144957272
+    },
+    {
+      "model_seed": "relation_tied-seed43",
+      "n": 71237,
+      "eer_percent": 0.4320465858927425,
+      "nearest_det_eer_percent": 0.4335623820014345,
+      "auroc": 0.9998297357864371
+    },
+    {
+      "model_seed": "typed_response-seed17",
+      "n": 71237,
+      "eer_percent": 0.24473147518694768,
+      "nearest_det_eer_percent": 0.24446585969359597,
+      "auroc": 0.9998506061832946
+    },
+    {
+      "model_seed": "typed_response-seed29",
+      "n": 71237,
+      "eer_percent": 0.3127124405166553,
+      "nearest_det_eer_percent": 0.31289483833540727,
+      "auroc": 0.9998393302948028
+    },
+    {
+      "model_seed": "typed_response-seed43",
+      "n": 71237,
+      "eer_percent": 0.48840048840048667,
+      "nearest_det_eer_percent": 0.48893171938719193,
+      "auroc": 0.9998122111231978
+    },
+    {
+      "model_seed": "wrong_family-seed17",
+      "n": 71237,
+      "eer_percent": 0.5982324949014276,
+      "nearest_det_eer_percent": 0.5981050079779359,
+      "auroc": 0.9997847216222996
+    },
+    {
+      "model_seed": "wrong_family-seed29",
+      "n": 71237,
+      "eer_percent": 0.25832766825288916,
+      "nearest_det_eer_percent": 0.2583081940400353,
+      "auroc": 0.9998152865589984
+    },
+    {
+      "model_seed": "wrong_family-seed43",
+      "n": 71237,
+      "eer_percent": 0.3068156914310727,
+      "nearest_det_eer_percent": 0.3097640659738657,
+      "auroc": 0.9998200540165714
+    },
+    {
+      "model_seed": "drop_anchor-seed17",
+      "n": 71237,
+      "eer_percent": 0.3399048266485384,
+      "nearest_det_eer_percent": 0.3397968139379006,
+      "auroc": 0.9998252492683283
+    },
+    {
+      "model_seed": "drop_anchor-seed29",
+      "n": 71237,
+      "eer_percent": 0.39760808991577967,
+      "nearest_det_eer_percent": 0.3959488444140433,
+      "auroc": 0.9998694440256956
+    },
+    {
+      "model_seed": "drop_anchor-seed43",
+      "n": 71237,
+      "eer_percent": 0.48946295037389537,
+      "nearest_det_eer_percent": 0.4897144124775772,
+      "auroc": 0.99980177379644
+    },
+    {
+      "model_seed": "drop_same_probe-seed17",
+      "n": 71237,
+      "eer_percent": 0.25832766825288916,
+      "nearest_det_eer_percent": 0.2583081940400353,
+      "auroc": 0.9998535007111067
+    },
+    {
+      "model_seed": "drop_same_probe-seed29",
+      "n": 71237,
+      "eer_percent": 0.24889640274255997,
+      "nearest_det_eer_percent": 0.24681393896475212,
+      "auroc": 0.9998458153140996
+    },
+    {
+      "model_seed": "drop_same_probe-seed43",
+      "n": 71237,
+      "eer_percent": 0.44300428915813317,
+      "nearest_det_eer_percent": 0.445839330167103,
+      "auroc": 0.9997725880171103
+    },
+    {
+      "model_seed": "drop_same_family-seed17",
+      "n": 71237,
+      "eer_percent": 0.3349926426849503,
+      "nearest_det_eer_percent": 0.33744873466674435,
+      "auroc": 0.9998331240866408
+    },
+    {
+      "model_seed": "drop_same_family-seed29",
+      "n": 71237,
+      "eer_percent": 0.2833348987195117,
+      "nearest_det_eer_percent": 0.2844274765521432,
+      "auroc": 0.9998626652969591
+    },
+    {
+      "model_seed": "drop_same_family-seed43",
+      "n": 71237,
+      "eer_percent": 0.380693405846363,
+      "nearest_det_eer_percent": 0.38054112388683325,
+      "auroc": 0.9998319822379855
+    }
+  ],
+  "official_metric": "${EXTERNAL_PATH}",
+  "note": "ROC interpolation remains primary; upstream nearest-DET is a separately named convention. No test-based fitting or score reversal."
+}

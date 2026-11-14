@@ -282,3 +282,95 @@ def test_parallel_scoring_keeps_each_models_full_evidence_on_both_devices(tmp_pa
     progress = json.loads((tmp_path / "progress.json").read_text())
     assert progress["completed_models"] == progress["total_models"] == 2
     assert progress["devices"] == ["cuda:0", "cuda:1"]
+
+
+def test_progress_counts_out_of_order_final_short_part(tmp_path):
+    from scripts.report_round1_tests import summarize_tests
+
+    for index in (0, 278):
+        pack = (
+            tmp_path
+            / "test_evidence/asv2019_eval/parts"
+            / f"{index:05d}"
+            / "evidence.pt"
+        )
+        pack.parent.mkdir(parents=True)
+        pack.write_bytes(b"Synthetic completed-part marker; no model inference")
+    report = summarize_tests(tmp_path)
+    progress = report["datasets"]["asv2019_eval"]["extraction"]
+    assert progress["packed_parts"] == 2
+    assert progress["packed_requests"] == 256 + 69
+    assert progress["total_parts"] == 279
+    assert report["datasets"]["asv2021_la"]["extraction"]["packed_requests"] == 0
+
+
+@pytest.mark.parametrize(
+    "change", [None, "missing", "duplicate", "label", "observation", "eer"]
+)
+def test_full_prediction_recalculation_checks_protocol_and_shared_observations(
+    tmp_path, monkeypatch, change
+):
+    import scripts.report_round1_tests as reporting
+    from ontoresponse.evaluation.metrics import metrics
+
+    expected = [
+        dict(
+            id=str(i),
+            label=int(i >= 2),
+            source_group=str(i),
+            condition="no_new_processing",
+        )
+        for i in range(4)
+    ]
+    monkeypatch.setitem(reporting.EXPECTED, "asv2019_eval", 4)
+    monkeypatch.setattr("scripts.round1_batch.test_rows", lambda cfg, dataset: expected)
+    cfg = dict(
+        output=str(tmp_path),
+        batch=dict(models=["a", "b"], seeds=[17]),
+        experts=[dict(id="e")],
+    )
+    scores = [-1.0, 0.5, 0.5, 1.0]
+    computed = metrics([r["label"] for r in expected], scores)
+    for model in ("a", "b"):
+        folder = tmp_path / "tests/asv2019_eval" / f"{model}-seed17"
+        folder.mkdir(parents=True)
+        records = [
+            dict(
+                r,
+                logit=s,
+                dataset="asv2019_eval",
+                status="scored",
+                expert_margins=dict(e=s),
+            )
+            for r, s in zip(expected, scores)
+        ]
+        report = dict(
+            computed, requested=4, failed=0, original_expert_margins=dict(e=computed)
+        )
+        if model == "b":
+            if change == "missing":
+                records.pop()
+            if change == "duplicate":
+                records[-1] = records[0]
+            if change == "label":
+                records[0]["label"] = 1
+            if change == "observation":
+                records[0]["expert_margins"]["e"] = 0.2
+            if change == "eer":
+                report["eer"] = 0.4
+        (folder / "report.json").write_text(json.dumps(report))
+        (folder / "per_utterance_predictions.jsonl").write_text(
+            "".join(json.dumps(r) + "\n" for r in records)
+        )
+    upstream = tmp_path / "upstream_metric.py"
+    upstream.write_text(
+        "import numpy as np\ndef compute_eer(target, nontarget):\n    assert np.array_equal(target, [1.0, -0.5])\n    assert np.array_equal(nontarget, [-0.5, -1.0])\n    return 0.25, 0.0\n"
+    )
+    if change:
+        with pytest.raises(ValueError):
+            reporting.verify_predictions(cfg, "asv2019_eval", upstream)
+    else:
+        result = reporting.verify_predictions(cfg, "asv2019_eval", upstream)
+        assert result["status"] == "passed" and result["model_seed_reports"] == 2
+        assert result["models"][0]["eer_percent"] == 25.0
+        assert result["original_expert_margins"]["e"]["nearest_det_eer_percent"] == 25.0

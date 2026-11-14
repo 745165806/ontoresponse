@@ -19,7 +19,7 @@
     },
     {
       "path": "PLANS.md",
-      "bytes": 7427
+      "bytes": 8280
     },
     {
       "path": "PUBLICATION.md",
@@ -35,7 +35,7 @@
     },
     {
       "path": "STATUS.md",
-      "bytes": 3945
+      "bytes": 4774
     },
     {
       "path": "STATUS_NEXT.md",
@@ -139,7 +139,7 @@
     },
     {
       "path": "docs/RUN_EXPERIMENTS.md",
-      "bytes": 11085
+      "bytes": 11991
     },
     {
       "path": "docs/SCRIPTS.md",
@@ -2958,6 +2958,30 @@
       "bytes": 8278
     },
     {
+      "path": "reports/monitor-completion-20261114/2019-prediction-recalculation.command.json",
+      "bytes": 433
+    },
+    {
+      "path": "reports/monitor-completion-20261114/2019-prediction-recalculation.log",
+      "bytes": 8182
+    },
+    {
+      "path": "reports/monitor-completion-20261114/REPORT.md",
+      "bytes": 2598
+    },
+    {
+      "path": "reports/monitor-completion-20261114/full-regression.command.json",
+      "bytes": 260
+    },
+    {
+      "path": "reports/monitor-completion-20261114/full-regression.log",
+      "bytes": 4436
+    },
+    {
+      "path": "reports/monitor-completion-20261114/monitor-start.json",
+      "bytes": 299
+    },
+    {
       "path": "reports/next-stage-20261110/baseline-bundle-verification.json",
       "bytes": 829
     },
@@ -3750,6 +3774,10 @@
       "bytes": 602
     },
     {
+      "path": "reports/round1-batch-20261113/prediction-check-asv2019_eval.json",
+      "bytes": 8182
+    },
+    {
       "path": "reports/round1-batch-20261113/regression.command.json",
       "bytes": 278
     },
@@ -3978,6 +4006,10 @@
       "bytes": 8717
     },
     {
+      "path": "scripts/report_round1_tests.py",
+      "bytes": 11843
+    },
+    {
       "path": "scripts/reproduce_smoke.py",
       "bytes": 1973
     },
@@ -4055,7 +4087,7 @@
     },
     {
       "path": "tests/test_round1_batch.py",
-      "bytes": 10949
+      "bytes": 14455
     },
     {
       "path": "tests/test_shareable_audit.py",
