@@ -1,14 +1,23 @@
 {
-  "pid": 510093,
+  "pid": 2094040,
   "command": [
     "${EXTERNAL_PATH}",
     "-u",
     "-m",
     "scripts.round1_batch",
     "--config",
-    "configs/round1-batch.yaml"
+    "configs/round1-batch.yaml",
+    "--test-only",
+    "--workers-per-gpu",
+    "3",
+    "--scratch-dir",
+    "/tmp/ontoresponse-round1-cache"
   ],
-  "started_utc": "2026-11-13T11:09:36.502982+00:00",
+  "started_utc": "2026-11-14T03:36:00.756289+00:00",
   "log": "reports/round1-batch-20261113/runner.log",
-  "status": "started"
+  "status": "fixed_model_full_test_running_ssd_cache",
+  "environment": {
+    "TORCHINDUCTOR_COMPILE_THREADS": "1"
+  },
+  "model_checkpoints": 36
 }

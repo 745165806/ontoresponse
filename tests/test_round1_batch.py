@@ -15,7 +15,10 @@ from ontoresponse.train.fit import forward, restore
 from ontoresponse.train.pilot import predict_batches
 from reference.core import ExpertStats
 from scripts.round1_batch import (
+    cache_directory,
     check_evidence,
+    evaluate_ready_models,
+    extract_parts,
     pilot_rows,
     refit,
 )
@@ -134,3 +137,85 @@ def test_parameterless_refit_selects_on_development_and_never_creates_optimizer(
     cfg["output"] = str(tmp_path / "forbidden-selection")
     with pytest.raises(ValueError, match="development evidence only"):
         refit(cfg, "best_single_expert", 17, forbidden, 64, 1, reg)
+
+
+def test_completed_parts_survive_changed_worker_count_without_reextraction(tmp_path):
+    cfg = dict(
+        output=str(tmp_path),
+        batch=dict(
+            devices=["cuda:0", "cuda:1"], extract_part_size=2, max_dataset_origins=20
+        ),
+    )
+    rows = [dict(id=str(i)) for i in range(10)]
+    paths = [tmp_path / "test/parts" / f"{i:05d}" / "evidence.pt" for i in range(5)]
+    for path in paths:
+        path.parent.mkdir(parents=True)
+        path.write_bytes(b"Already packed; no inference in this unit test")
+    with patch(
+        "subprocess.run", side_effect=AssertionError("Completed parts must be reused")
+    ):
+        assert extract_parts(cfg, rows, "test", workers_per_gpu=3) == paths
+    with pytest.raises(ValueError, match="1..4"):
+        extract_parts(cfg, rows, "test", workers_per_gpu=5)
+
+
+def test_test_only_requires_all_final_models_and_cannot_enter_training(tmp_path):
+    import yaml
+
+    cfg = dict(output=str(tmp_path), batch=dict(models=["typed_response"], seeds=[17]))
+    (tmp_path / "execution_config.yaml").write_text(yaml.safe_dump(cfg))
+    checkpoint = tmp_path / "final/typed_response-seed17/model.pt"
+    (tmp_path / "models-ready.json").write_text(
+        json.dumps(dict(checkpoints=[str(checkpoint)]))
+    )
+    (tmp_path / "selection.json").write_text("{}")
+    with pytest.raises(ValueError, match="Missing final checkpoints"):
+        evaluate_ready_models(cfg)
+    checkpoint.parent.mkdir(parents=True)
+    checkpoint.write_bytes(b"Unit existence fixture; inference is mocked below")
+    with (
+        patch("scripts.round1_batch.run_test_phase") as score,
+        patch(
+            "scripts.round1_batch.refit", side_effect=AssertionError("No retraining")
+        ),
+    ):
+        evaluate_ready_models(cfg, 3)
+        score.assert_called_once_with(cfg, [str(checkpoint)], 3, None)
+
+
+def test_test_eer_report_rejects_partial_data_and_requires_all_seeds(tmp_path):
+    from scripts.report_round1_tests import summarize_tests
+
+    def save(seed, n, eer):
+        path = (
+            tmp_path / "tests/asv2019_eval" / f"typed_response-seed{seed}/report.json"
+        )
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(dict(n=n, requested=n, failed=0, eer=eer)))
+
+    save(17, 512, 0.1)
+    save(29, 71237, 0.02)
+    save(43, 71237, 0.03)
+    first = summarize_tests(tmp_path)
+    assert first["models"] == []
+    assert len(first["datasets"]["asv2019_eval"]["incomplete_or_invalid_reports"]) == 1
+    save(17, 71237, 0.01)
+    report = summarize_tests(tmp_path)
+    data = report["models"][0]["datasets"]["asv2019_eval"]
+    assert data["eer_percent_mean"] == 2 and data["eer_percent_seed_std"] == 1
+    assert "asv2021_la" not in report["models"][0]["datasets"]
+
+
+def test_fast_cache_preserves_existing_work_and_namespaces_new_parts(tmp_path):
+    cfg = dict(output=str(tmp_path / "run"))
+    part = tmp_path / "run/test_evidence/dataset/parts/00001"
+    scratch = tmp_path / "ssd"
+    assert (
+        cache_directory(cfg, part, "test_evidence/dataset", scratch)
+        == scratch / "run/test_evidence/dataset/00001/temporary_cache"
+    )
+    legacy = part / "temporary_cache"
+    legacy.mkdir(parents=True)
+    (legacy / "existing.npz").write_bytes(b"Completed measurement fixture")
+    assert cache_directory(cfg, part, "test_evidence/dataset", scratch) == legacy
+    assert cache_directory(cfg, part, "test_evidence/dataset") == legacy

@@ -1,0 +1,13 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-14T03:34:51.298859+00:00",
+  "elapsed_seconds": 37.10342478752136,
+  "log": "reports/round1-batch-20261113/ssd-test-full-regression.log",
+  "cwd": "${EXTERNAL_PATH}"
+}

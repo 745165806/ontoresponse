@@ -1,13 +1,32 @@
 {
-  "status": "resumed_after_fix",
-  "progress": {
-    "epochs": 3,
-    "model": "drop_anchor",
-    "seed": 43,
-    "stage": "refit",
-    "updated": 1794625164.8271394
+  "status": {
+    "dataset": "asv2019_eval",
+    "requested": 71237,
+    "stage": "test_extraction",
+    "updated": 1794627362.7921424
   },
-  "development_eer_report": "DEVELOPMENT_EER.json",
-  "test_reports": [],
-  "final_test_eer_available": false
+  "datasets": {
+    "asv2019_eval": {
+      "expected_requests": 71237,
+      "full_model_seed_reports": 0,
+      "incomplete_or_invalid_reports": []
+    },
+    "asv2021_la": {
+      "expected_requests": 148176,
+      "full_model_seed_reports": 0,
+      "incomplete_or_invalid_reports": []
+    },
+    "inthewild": {
+      "expected_requests": 31779,
+      "full_model_seed_reports": 0,
+      "incomplete_or_invalid_reports": []
+    }
+  },
+  "models": [],
+  "aggregation": "EER (%) mean and sample standard deviation across three fixed seeds",
+  "limitations": [
+    "integration_pretrained; experts exposed to ASV2019 development",
+    "RawNet2 supervision provenance unknown",
+    "Only full requested datasets are summarized; no test-based selection"
+  ]
 }

@@ -1,0 +1,16 @@
+{
+  "moved_partial_parts": [
+    "00004",
+    "00005",
+    "00006",
+    "00007",
+    "00008",
+    "00009"
+  ],
+  "elapsed_seconds": 140.5839683009981,
+  "scratch_dir": "/tmp/ontoresponse-round1-cache",
+  "parent_pid": 2094040,
+  "monitor_pid": 2094041,
+  "models_changed": false,
+  "completed_packs_reused": true
+}

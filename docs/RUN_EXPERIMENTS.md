@@ -63,6 +63,24 @@ python -u -m scripts.round1_batch --config configs/round1-batch.yaml
 
 锁文件防止同一目录重复启动；修改配置需新目录。已完成的块和模型不重算；被中断的单模型开发训练保留旧目录后从头运行，尚不支持在该模型的epoch中间恢复。选择保存在selection.json；逐句测试logit和report.json在tests/<dataset>/<model>-seed<seed>/。统计来源独立性未知、专家开发曝光和仅两个开发组件的限制仍存在；这些结果属于集成研究，不自动升级为research_holdout。
 
+## 当前模型的完整测试
+
+36个最终checkpoint已保存于`reports/round1-batch-20261113/final`，清单为models-ready.json。用户指定固定当前模型，在2019 LA eval、2021 LA eval阶段和ITW进行完整测试，入口为：
+
+```bash
+python -u -m scripts.round1_batch --config configs/round1-batch.yaml --test-only --workers-per-gpu 3 --scratch-dir /tmp/ontoresponse-round1-cache
+```
+
+该任务已启动，勿重复运行。纯测试入口核对训练时配置和完整checkpoint，不进入开发训练或最终重训；GPU0/1各3个独立进程，每条录音的原始/六探针仍用原有逐视图推断。多视图batch前向未通过数值一致性容差，未用于本轮结果。已完成的观测块复用；临时缓存放本地NVMe SSD（/tmp/ontoresponse-round1-cache），打包后删除临时缓存，最终观测包和预测留项目目录。已有部分缓存可保留原位继续，或停止自己的任务后将其整体迁到SSD；缓存键和数值内容不变。只改变并发和临时存储位置，不变更模型、crop、探针或阈值。
+
+完整EER汇总：`reports/round1-batch-20261113/TEST_EER.md`及.json。它仅接受2019=71237、2021 LA eval=148176、ITW=31779条完整覆盖、失败0的报告；每种方法三个seed齐全才汇总均值与样本标准差。未完成显示空白，不以开发EER或小子集EER代替。每个数据集的36份报告完成即自动同步小型结果到GitHub，最终状态或失败状态也同步。完整逐句logit留在本地tests/<dataset>/<model>-seed<seed>/。
+
+可手动重算汇总：
+
+```bash
+python -m scripts.report_round1_tests --root reports/round1-batch-20261113
+```
+
 ## 先准备
 
 在项目根目录激活已有py310环境。检查`configs/local.yaml`中的数据、专家源码和权重路径；默认设备为`cuda:0`。`--device`可覆盖配置，指定CUDA但不可用时明确报错。

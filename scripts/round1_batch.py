@@ -148,8 +148,24 @@ def check_evidence(records):
             )
 
 
-def extract_parts(cfg, rows, name):
+def cache_directory(cfg, folder, name, scratch_dir=None):
+    legacy = Path(folder) / "temporary_cache"
+    if scratch_dir is None or legacy.exists():
+        return legacy
+    return (
+        Path(scratch_dir)
+        / Path(cfg["output"]).name
+        / name
+        / Path(folder).name
+        / "temporary_cache"
+    )
+
+
+def extract_parts(cfg, rows, name, workers_per_gpu=1, scratch_dir=None):
+    if not 1 <= workers_per_gpu <= 4:
+        raise ValueError("Extraction supports 1..4 workers per configured GPU")
     settings = cfg["batch"]
+    worker_devices = settings["devices"] * workers_per_gpu
     root = Path(cfg["output"]) / name
     root.mkdir(parents=True, exist_ok=True)
     size = settings["extract_part_size"]
@@ -163,7 +179,7 @@ def extract_parts(cfg, rows, name):
     lock = threading.Lock()
 
     def worker(worker_id, device):
-        for index in range(worker_id, len(chunks), len(settings["devices"])):
+        for index in range(worker_id, len(chunks), len(worker_devices)):
             folder = paths[index].parent
             if paths[index].is_file():
                 continue
@@ -175,7 +191,13 @@ def extract_parts(cfg, rows, name):
             part = chunks[index]
             local = copy.deepcopy(cfg)
             local["output"] = str(folder)
-            local["cache"] = str(folder / "temporary_cache")
+            local["cache"] = str(cache_directory(cfg, folder, name, scratch_dir))
+            Path(local["cache"]).parent.mkdir(parents=True, exist_ok=True)
+            if (
+                shutil.disk_usage(Path(local["cache"]).parent).free
+                < settings["minimum_free_disk_bytes"]
+            ):
+                raise RuntimeError("Scratch disk reserve reached")
             local["runtime"].update(device=device, budget="pilot")
             local.pop("pilot", None)
             infer = [
@@ -248,13 +270,12 @@ def extract_parts(cfg, rows, name):
                     requested=len(rows),
                     last_part=index,
                     last_part_seconds=time.time() - start,
+                    workers_per_gpu=workers_per_gpu,
                 )
                 print(name, "packed", done, "/", len(paths), "on", device, flush=True)
 
-    with ThreadPoolExecutor(max_workers=len(settings["devices"])) as executor:
-        futures = [
-            executor.submit(worker, i, d) for i, d in enumerate(settings["devices"])
-        ]
+    with ThreadPoolExecutor(max_workers=len(worker_devices)) as executor:
+        futures = [executor.submit(worker, i, d) for i, d in enumerate(worker_devices)]
         for future in futures:
             future.result()
     return paths
@@ -541,7 +562,47 @@ def score_dataset(cfg, dataset, paths, checkpoints):
         print("TEST", dataset, name, "EER", report["eer"], flush=True)
 
 
-def run(cfg, config_path):
+def run_test_phase(cfg, checkpoints, workers_per_gpu=1, scratch_dir=None):
+    root = Path(cfg["output"])
+    for dataset in cfg["batch"]["test_datasets"]:
+        rows = test_rows(cfg, dataset)
+        save_progress(
+            root, stage="test_extraction", dataset=dataset, requested=len(rows)
+        )
+        paths = extract_parts(
+            cfg, rows, "test_evidence/" + dataset, workers_per_gpu, scratch_dir
+        )
+        score_dataset(cfg, dataset, paths, checkpoints)
+    save_progress(
+        root,
+        stage="completed",
+        test_datasets=cfg["batch"]["test_datasets"],
+        models=len(checkpoints),
+    )
+
+
+def evaluate_ready_models(cfg, workers_per_gpu=1, scratch_dir=None):
+    """Evaluate the saved final ensemble of candidates without entering training."""
+    root = Path(cfg["output"])
+    if yaml.safe_load((root / "execution_config.yaml").read_text()) != cfg:
+        raise ValueError("Evaluation settings differ from the completed training run")
+    ready = json.loads((root / "models-ready.json").read_text())
+    checkpoints = ready["checkpoints"]
+    expected = {
+        f"{name}-seed{seed}"
+        for name in cfg["batch"]["models"]
+        for seed in cfg["batch"]["seeds"]
+    }
+    if {Path(p).parent.name for p in checkpoints} != expected or any(
+        not Path(p).is_file() for p in checkpoints
+    ):
+        raise ValueError("Missing final checkpoints; test-only mode never retrains")
+    if not (root / "selection.json").is_file():
+        raise ValueError("Development selection is missing")
+    run_test_phase(cfg, checkpoints, workers_per_gpu, scratch_dir)
+
+
+def run(cfg, config_path, workers_per_gpu=1, scratch_dir=None):
     root = Path(cfg["output"])
     b = cfg["batch"]
     if not b.get("full_run_authorized") or cfg["mode"] != "integration_pretrained":
@@ -566,7 +627,7 @@ def run(cfg, config_path):
         ("development", pool),
     ):
         save_progress(root, stage=stage, action="extract", requested=len(rows))
-        extract_parts(cfg, rows, stage)
+        extract_parts(cfg, rows, stage, workers_per_gpu, scratch_dir)
         jobs = []
         for fold in (0, 1):
             log = (root / stage / f"fold{fold}.log").open("a")
@@ -648,19 +709,7 @@ def run(cfg, config_path):
         root / "models-ready.json",
         dict(checkpoints=checkpoints, selection=str(selection_path)),
     )
-    for dataset in b["test_datasets"]:
-        rows = test_rows(cfg, dataset)
-        save_progress(
-            root, stage="test_extraction", dataset=dataset, requested=len(rows)
-        )
-        paths = extract_parts(cfg, rows, "test_evidence/" + dataset)
-        score_dataset(cfg, dataset, paths, checkpoints)
-    save_progress(
-        root,
-        stage="completed",
-        test_datasets=b["test_datasets"],
-        models=len(checkpoints),
-    )
+    run_test_phase(cfg, checkpoints, workers_per_gpu, scratch_dir)
 
 
 def main():
@@ -668,7 +717,25 @@ def main():
     parser.add_argument("--config", required=True)
     parser.add_argument("--train-stage", choices=("pilot", "development"))
     parser.add_argument("--fold", type=int, choices=(0, 1))
+    parser.add_argument(
+        "--test-only",
+        action="store_true",
+        help="Use models-ready.json; never enter development or refit",
+    )
+    parser.add_argument(
+        "--workers-per-gpu",
+        type=int,
+        choices=(1, 2, 3, 4),
+        default=1,
+        help="Independent unchanged single-view extractors per GPU",
+    )
+    parser.add_argument(
+        "--scratch-dir",
+        help="Fast local temporary cache directory; preserve existing partial caches",
+    )
     args = parser.parse_args()
+    if args.test_only and args.train_stage:
+        parser.error("--test-only cannot be combined with --train-stage")
     cfg = yaml.safe_load(Path(args.config).read_text())
     torch.set_num_threads(cfg["runtime"].get("threads", 4))
     if args.train_stage:
@@ -681,7 +748,10 @@ def main():
         with (root / "runner.lock").open("a") as guard:
             fcntl.flock(guard, fcntl.LOCK_EX | fcntl.LOCK_NB)
             try:
-                run(cfg, args.config)
+                if args.test_only:
+                    evaluate_ready_models(cfg, args.workers_per_gpu, args.scratch_dir)
+                else:
+                    run(cfg, args.config, args.workers_per_gpu, args.scratch_dir)
             except Exception as error:
                 save_progress(root, stage="failed", error=repr(error))
                 raise

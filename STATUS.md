@@ -1,19 +1,19 @@
 # 当前状态 — 2026-11-14
 
-任务未完成，已修复故障并恢复GPU任务。2019 train/dev用于开发，最终测试为2019 LA eval、2021 LA eval和In-the-Wild。
+正在使用已保存的36个最终模型进行完整测试。已完成最终重训，当前进程为纯测试入口，不进入开发训练或重训。2019 LA eval、2021 LA eval和In-the-Wild分别评测；完整测试EER尚未产生。
 
 | 阶段 | 实际状态 |
 |---|---|
-| 1024条pilot | 4/4块提取完成；两折×三seed×12方法，共72次比较完成 |
-| 50224条完整开发数据 | 197/197块提取完成；另72次开发比较完成，选择配置已保存 |
-| 最终重训 | 原先保存3个模型后，因无参数best_single_expert创建AdamW而停止；已修复并恢复，目前8/36个checkpoint |
-| 三测试集 | 尚无完整逐句预测或测试EER；不能用开发EER代替 |
-| 修复验证 | 10项相关回归测试通过、0 skipped、退出0；Ruff通过 |
+| 1024条pilot | 4/4块提取、72次两折/三seed比较完成 |
+| 50224条完整开发数据 | 197/197块提取、另72次比较完成，开发选择已固定 |
+| 最终模型 | 36/36 checkpoint已保存，models-ready.json记录完整清单 |
+| 固定模型测试 | GPU0/1各3个独立进程，复用已完成块；2019启动快照为10/279块已打包，实时进度以progress.json为准；2021/ITW按流程继续 |
+| 测试EER | 尚无全量、三个seed齐全的结果；不以开发或部分数据EER替代 |
 
-[开发验证EER](reports/round1-batch-20261113/DEVELOPMENT_EER.md)：两折×三seed均值，全视图MLP 0.019376%、分数MLP 0.020616%、原始embedding融合0.026072%、同邻接共享关系参数0.026376%、本体typed_response 0.029234%、错误family 0.027870%。当前开发结果未显示本体优于这些强对照；专家已使用2019开发数据且只有两个来源组件，不作为独立泛化证据。
+当前命令：`python -u -m scripts.round1_batch --config configs/round1-batch.yaml --test-only --workers-per-gpu 3 --scratch-dir /tmp/ontoresponse-round1-cache`。PID见launch.json，总进度progress.json，逐数据集进度test_evidence/<dataset>/progress.json，日志runner.log。原无参数基线优化器故障已修复，错误日志保留；恢复后重训成功。临时缓存已改为本地SSD，保留已完成观测包和部分计算。原始专家逐视图推断实现保持不变：多视图batch前向在开发录音出现超过预设容差的差异，未采用；本次仅增加独立进程并发。GPU2/3任务未改动。
 
-修复：最佳单专家仅根据开发组原始margin的平均EER选择并保存chosen_expert，零优化步骤；神经融合仍使用原有开发选择的训练轮数。配置、专家权重、探针、其余方法选择结果不变，未读取测试分数。失败日志与恢复前状态均保留；不重提取已完成数据。
+[完整测试EER表](reports/round1-batch-20261113/TEST_EER.md)每30秒本地更新，只接受71237/148176/31779条全量覆盖、失败0并齐全三个seed的报告。每个数据集的36份报告完成后自动同步小报告到GitHub；进程结束或失败也更新。原始音频、权重、观测包和逐句大文件留本地。
 
-运行PID见reports/round1-batch-20261113/launch.json，当前阶段以progress.json为准；日志runner.log。10项测试命令/退出码/日志见recovery-tests-20261114.command.json与.log。GPU0/1在重启前空闲，其他GPU任务未改动；当前最终重训使用GPU0，提取阶段使用0/1。
+[开发验证EER](reports/round1-batch-20261113/DEVELOPMENT_EER.md)：本体0.029234%、全视图MLP0.019376%，未显示本体开发增益，不能视为测试结果。专家开发曝光、RawNet2监督未知和两个来源组件的限制保留。
 
-[操作说明](docs/RUN_EXPERIMENTS.md)、[批量报告](reports/round1-batch-20261113/REPORT.md)。历史177项完整回归和64条GPU smoke结果保留，不将其冒称为本次修复后的完整回归。结果监控进程已重新启动，终态后汇总并同步小报告。GitHub仅同步代码、说明和小型报告，音频/权重/观测包留本地；无需SHA或文档封存。
+[操作说明](docs/RUN_EXPERIMENTS.md)、[批量报告](reports/round1-batch-20261113/REPORT.md)。固定测试入口与全量覆盖汇总相关回归已通过，命令/退出码见fixed-model-test-regression.command.json和full-test-report-regression.command.json；最新完整回归182 passed、0 skipped、退出0；命令/日志见ssd-test-full-regression.command.json及.log。无需SHA或文档封存。

@@ -4,6 +4,8 @@
 
 | 任务 | 入口 | 说明 |
 |---|---|---|
+| 固定模型纯测试 | python -u -m scripts.round1_batch --config ... --test-only --workers-per-gpu 3 | 复用最终权重，GPU0/1独立进程并发，不重新训练 |
+| 完整测试EER汇总 | python -m scripts.report_round1_tests --root ... | 仅汇总全量覆盖、三个seed齐全的报告，绝不把部分数据EER作为完整结果 |
 | 完整批量实验 | python -u -m scripts.round1_batch --config configs/round1-batch.yaml | 已授权GPU0/1；1024 pilot→完整开发两折/三seed→固定轮数重训→三数据集完整测试；分块保存、失败显式、可重启 |
 | 第一轮开发smoke准备 | python -m scripts.prepare_round1 --work-dir ... --device cuda:0 | 2019 train/dev来源连接后选64条，32训练/32验证；--fold 1交换角色，不使用2019 eval或外部测试 |
 | 有界基线比较 | python -m scripts.run_bounded --config ... | 普通基线后比较关系模型；用新output |

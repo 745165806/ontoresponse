@@ -1,0 +1,14 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_round1_batch.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-14T03:26:28.662192+00:00",
+  "elapsed_seconds": 4.745749235153198,
+  "log": "reports/round1-batch-20261113/full-test-report-regression.log",
+  "cwd": "${EXTERNAL_PATH}"
+}

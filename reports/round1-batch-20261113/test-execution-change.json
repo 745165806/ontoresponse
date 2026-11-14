@@ -1,0 +1,14 @@
+{
+  "purpose": "Fixed saved models, test-only evaluation; increase independent workers without changing inference arithmetic",
+  "old_parent_pid": 1827976,
+  "old_monitor_pid": 1827977,
+  "worker_change": "1 to 3 independent processes per GPU; physical GPU0/1 only",
+  "rejected_multiview_batching": {
+    "reason": "AASIST hidden max error exceeded atol=rtol=1e-4",
+    "max_abs_error": 0.0011184513568878174,
+    "used_for_test": false
+  },
+  "weights_and_probe_settings_changed": false,
+  "completed_packs_preserved": true,
+  "updated": 1794626602.5891578
+}
