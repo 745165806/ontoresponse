@@ -1,11 +1,16 @@
 {
   "status": {
+    "completed_models": 2,
     "dataset": "asv2021_la",
-    "requested": 148176,
-    "stage": "test_extraction",
-    "updated": 1794639809.4620335
+    "devices": [
+      "cuda:0",
+      "cuda:1"
+    ],
+    "stage": "test_scoring",
+    "total_models": 36,
+    "updated": 1794658109.8248174
   },
-  "checked_utc": "2026-11-14T07:19:39.381920+00:00",
+  "checked_utc": "2026-11-14T12:08:37.609457+00:00",
   "datasets": {
     "asv2019_eval": {
       "expected_requests": 71237,
@@ -20,13 +25,13 @@
     },
     "asv2021_la": {
       "expected_requests": 148176,
-      "full_model_seed_reports": 0,
+      "full_model_seed_reports": 2,
       "incomplete_or_invalid_reports": [],
       "extraction": {
-        "packed_parts": 28,
+        "packed_parts": 579,
         "total_parts": 579,
-        "packed_requests": 7168,
-        "last_pack_utc": "2026-11-14T07:18:27.451543+00:00"
+        "packed_requests": 148176,
+        "last_pack_utc": "2026-11-14T12:08:14.898144+00:00"
       }
     },
     "inthewild": {
