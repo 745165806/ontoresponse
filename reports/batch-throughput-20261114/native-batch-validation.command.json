@@ -1,0 +1,14 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-u",
+    "-m",
+    "scripts.profile_inference_batch",
+    "--validate-native"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-14T05:21:17.186071+00:00",
+  "elapsed_seconds": 25.70255184173584,
+  "log": "reports/batch-throughput-20261114/native-batch-validation.log",
+  "cwd": "${EXTERNAL_PATH}"
+}

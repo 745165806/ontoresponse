@@ -1,5 +1,5 @@
 {
-  "pid": 2094040,
+  "pid": 809171,
   "command": [
     "${EXTERNAL_PATH}",
     "-u",
@@ -9,15 +9,19 @@
     "configs/round1-batch.yaml",
     "--test-only",
     "--workers-per-gpu",
-    "3",
+    "2",
     "--scratch-dir",
-    "/tmp/ontoresponse-round1-cache"
+    "/tmp/ontoresponse-round1-cache",
+    "--batch-profile",
+    "reports/batch-throughput-20261114/selected-policy.json"
   ],
-  "started_utc": "2026-11-14T03:36:00.756289+00:00",
-  "log": "reports/round1-batch-20261113/runner.log",
-  "status": "fixed_model_full_test_running_ssd_cache",
-  "environment": {
-    "TORCHINDUCTOR_COMPILE_THREADS": "1"
+  "started_utc": "2026-11-14T05:28:32.096539+00:00",
+  "status": "true_batched_fixed_model_test_running",
+  "batch_sizes": {
+    "aasist": 32,
+    "ssl_aasist": 32,
+    "rawnet2": 64
   },
-  "model_checkpoints": 36
+  "workers_per_gpu": 2,
+  "existing_packs_reused": true
 }

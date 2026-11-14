@@ -1,0 +1,13 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-14T05:36:49.324844+00:00",
+  "elapsed_seconds": 37.745975494384766,
+  "log": "reports/batch-throughput-20261114/full-regression-final.log",
+  "cwd": "${EXTERNAL_PATH}"
+}

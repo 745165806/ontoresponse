@@ -1,0 +1,57 @@
+[2026-11-14 13:21:21,584] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-11-14 13:21:23,770] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+${EXTERNAL_PATH} FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+{'model': 'typed_response', 'seed': 17, 'max_logit_abs_error': 0.004841804504394531, 'decision_changes': 0, 'mean_logit_abs_error': 0.0009969472885131836, 'finite': True}
+{'model': 'typed_response', 'seed': 29, 'max_logit_abs_error': 0.0025758743286132812, 'decision_changes': 0, 'mean_logit_abs_error': 0.0004488825798034668, 'finite': True}
+{'model': 'typed_response', 'seed': 43, 'max_logit_abs_error': 0.007046699523925781, 'decision_changes': 0, 'mean_logit_abs_error': 0.0009599924087524414, 'finite': True}
+{'model': 'all_views_mlp', 'seed': 17, 'max_logit_abs_error': 0.044628143310546875, 'decision_changes': 0, 'mean_logit_abs_error': 0.013056337833404541, 'finite': True}
+{'model': 'all_views_mlp', 'seed': 29, 'max_logit_abs_error': 0.05623626708984375, 'decision_changes': 0, 'mean_logit_abs_error': 0.014304637908935547, 'finite': True}
+{'model': 'all_views_mlp', 'seed': 43, 'max_logit_abs_error': 0.06463432312011719, 'decision_changes': 0, 'mean_logit_abs_error': 0.0137711763381958, 'finite': True}
+{'model': 'response_mlp', 'seed': 17, 'max_logit_abs_error': 0.11582374572753906, 'decision_changes': 0, 'mean_logit_abs_error': 0.012998580932617188, 'finite': True}
+{'model': 'response_mlp', 'seed': 29, 'max_logit_abs_error': 0.1240997314453125, 'decision_changes': 0, 'mean_logit_abs_error': 0.01595550775527954, 'finite': True}
+{'model': 'response_mlp', 'seed': 43, 'max_logit_abs_error': 0.0674905776977539, 'decision_changes': 0, 'mean_logit_abs_error': 0.009842991828918457, 'finite': True}
+{'model': 'relation_tied', 'seed': 17, 'max_logit_abs_error': 0.004116058349609375, 'decision_changes': 0, 'mean_logit_abs_error': 0.0007334351539611816, 'finite': True}
+{'model': 'relation_tied', 'seed': 29, 'max_logit_abs_error': 0.004286766052246094, 'decision_changes': 0, 'mean_logit_abs_error': 0.00046265125274658203, 'finite': True}
+{'model': 'relation_tied', 'seed': 43, 'max_logit_abs_error': 0.0039730072021484375, 'decision_changes': 0, 'mean_logit_abs_error': 0.0008970797061920166, 'finite': True}
+{
+  "aasist": {
+    "batch_size": 32,
+    "cudnn_allow_tf32": true,
+    "eligible": false,
+    "error": "Tensor-likes are not close!\n\nMismatched elements: 4173 / 17920 (23.3%)\nGreatest absolute difference: 0.010020047426223755 at index (37, 24) (up to 0.0001 allowed)\nGreatest relative difference: 0.34455356001853943 at index (89, 131) (up to 0.0001 allowed)",
+    "hidden_max_abs_error": 0.010020047426223755,
+    "margin_max_abs_error": 0.006221771240234375,
+    "peak_allocated_bytes": 6156391936,
+    "seconds": 0.46875161699426826,
+    "views_per_second": 238.9325091146715,
+    "speedup": 1.4648224264506498,
+    "eligibility_basis": "native upstream same-batch hidden/logit equivalence"
+  },
+  "rawnet2": {
+    "batch_size": 64,
+    "cudnn_allow_tf32": true,
+    "eligible": false,
+    "error": "Tensor-likes are not close!\n\nMismatched elements: 164 / 114688 (0.1%)\nGreatest absolute difference: 0.00044536590576171875 at index (23, 698) (up to 0.0001 allowed)\nGreatest relative difference: 0.00458371639251709 at index (23, 365) (up to 0.0001 allowed)",
+    "hidden_max_abs_error": 0.00044536590576171875,
+    "margin_max_abs_error": 0.003422260284423828,
+    "peak_allocated_bytes": 1072731136,
+    "seconds": 0.09197209900594316,
+    "views_per_second": 1217.760616649215,
+    "speedup": 7.4962081376478595,
+    "eligibility_basis": "native upstream same-batch hidden/logit equivalence"
+  },
+  "ssl_aasist": {
+    "batch_size": 32,
+    "cudnn_allow_tf32": true,
+    "eligible": false,
+    "error": "Tensor-likes are not close!\n\nMismatched elements: 9174 / 17920 (51.2%)\nGreatest absolute difference: 0.7450425624847412 at index (20, 73) (up to 0.0001 allowed)\nGreatest relative difference: 120.86763763427734 at index (47, 52) (up to 0.0001 allowed)",
+    "hidden_max_abs_error": 0.7450425624847412,
+    "margin_max_abs_error": 0.05249786376953125,
+    "peak_allocated_bytes": 4291106304,
+    "seconds": 1.1544474030088168,
+    "views_per_second": 97.01611325738729,
+    "speedup": 1.748231544154897,
+    "eligibility_basis": "native upstream same-batch hidden/logit equivalence"
+  }
+}

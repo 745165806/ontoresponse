@@ -19,7 +19,7 @@
     },
     {
       "path": "PLANS.md",
-      "bytes": 3296
+      "bytes": 5495
     },
     {
       "path": "PUBLICATION.md",
@@ -35,7 +35,7 @@
     },
     {
       "path": "STATUS.md",
-      "bytes": 2214
+      "bytes": 2830
     },
     {
       "path": "STATUS_NEXT.md",
@@ -139,7 +139,7 @@
     },
     {
       "path": "docs/RUN_EXPERIMENTS.md",
-      "bytes": 8209
+      "bytes": 10196
     },
     {
       "path": "docs/SCRIPTS.md",
@@ -363,7 +363,7 @@
     },
     {
       "path": "ontoresponse/evidence/extract.py",
-      "bytes": 8198
+      "bytes": 12141
     },
     {
       "path": "ontoresponse/experts/__init__.py",
@@ -371,7 +371,7 @@
     },
     {
       "path": "ontoresponse/experts/base.py",
-      "bytes": 12188
+      "bytes": 14627
     },
     {
       "path": "ontoresponse/models/__init__.py",
@@ -480,6 +480,78 @@
     {
       "path": "reference/registry.py",
       "bytes": 3563
+    },
+    {
+      "path": "reports/batch-throughput-20261114/REPORT.md",
+      "bytes": 3388
+    },
+    {
+      "path": "reports/batch-throughput-20261114/batching-tests.command.json",
+      "bytes": 387
+    },
+    {
+      "path": "reports/batch-throughput-20261114/batching-tests.log",
+      "bytes": 100
+    },
+    {
+      "path": "reports/batch-throughput-20261114/end-to-end-timing.json",
+      "bytes": 556
+    },
+    {
+      "path": "reports/batch-throughput-20261114/full-regression-final.command.json",
+      "bytes": 293
+    },
+    {
+      "path": "reports/batch-throughput-20261114/full-regression-final.log",
+      "bytes": 4436
+    },
+    {
+      "path": "reports/batch-throughput-20261114/full-regression.command.json",
+      "bytes": 286
+    },
+    {
+      "path": "reports/batch-throughput-20261114/full-regression.log",
+      "bytes": 5310
+    },
+    {
+      "path": "reports/batch-throughput-20261114/gpu-profile.command.json",
+      "bytes": 308
+    },
+    {
+      "path": "reports/batch-throughput-20261114/gpu-profile.log",
+      "bytes": 13921
+    },
+    {
+      "path": "reports/batch-throughput-20261114/native-batch-validation.command.json",
+      "bytes": 344
+    },
+    {
+      "path": "reports/batch-throughput-20261114/native-batch-validation.log",
+      "bytes": 4560
+    },
+    {
+      "path": "reports/batch-throughput-20261114/paused-run.json",
+      "bytes": 206
+    },
+    {
+      "path": "reports/batch-throughput-20261114/profile.json",
+      "bytes": 21878
+    },
+    {
+      "path": "reports/batch-throughput-20261114/real-batched-extraction.command.json",
+      "bytes": 422
+    },
+    {
+      "path": "reports/batch-throughput-20261114/real-batched-extraction.log",
+      "bytes": 721
+    },
+    {
+      "path": "reports/batch-throughput-20261114/real-extraction-validation.json",
+      "bytes": 132
+    },
+    {
+      "path": "reports/batch-throughput-20261114/selected-policy.json",
+      "bytes": 3428
     },
     {
       "path": "reports/cleanup-20261112/REPORT.md",
@@ -3599,7 +3671,7 @@
     },
     {
       "path": "reports/round1-batch-20261113/launch.json",
-      "bytes": 289
+      "bytes": 602
     },
     {
       "path": "reports/round1-batch-20261113/regression.command.json",
@@ -3810,6 +3882,10 @@
       "bytes": 1482
     },
     {
+      "path": "scripts/profile_inference_batch.py",
+      "bytes": 13209
+    },
+    {
       "path": "scripts/profile_multicrop.py",
       "bytes": 6744
     },
@@ -3827,7 +3903,7 @@
     },
     {
       "path": "scripts/round1_batch.py",
-      "bytes": 24910
+      "bytes": 31182
     },
     {
       "path": "scripts/run_bounded.py",
@@ -3866,6 +3942,10 @@
       "bytes": 1785
     },
     {
+      "path": "tests/test_inference_batch.py",
+      "bytes": 3553
+    },
+    {
       "path": "tests/test_numeric_diagnostics.py",
       "bytes": 4591
     },
@@ -3879,7 +3959,7 @@
     },
     {
       "path": "tests/test_pipeline.py",
-      "bytes": 12079
+      "bytes": 12268
     },
     {
       "path": "tests/test_registry.py",
@@ -3891,7 +3971,7 @@
     },
     {
       "path": "tests/test_round1_batch.py",
-      "bytes": 3448
+      "bytes": 8714
     },
     {
       "path": "tests/test_shareable_audit.py",

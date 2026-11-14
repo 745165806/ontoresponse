@@ -59,7 +59,10 @@ def test_label_free_contract_and_missing_weights():
     assert set(inspect.signature(FrozenExpert.predict_utterances).parameters) == {
         "self",
         "audio_batch_without_labels",
+        "batch_size",
     }
+    batch = inspect.signature(FrozenExpert.predict_utterances).parameters["batch_size"]
+    assert batch.kind is inspect.Parameter.KEYWORD_ONLY and batch.default == 1
     with pytest.raises(Blocked):
         FrozenExpert({"task_trained": False}, {})
     with pytest.raises(Blocked):

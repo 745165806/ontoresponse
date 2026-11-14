@@ -200,7 +200,63 @@ class FrozenExpert:
         return hidden, logits
 
     @torch.inference_mode()
-    def predict_utterances(self, audio_batch_without_labels):
+    def _predict_batched(self, items, batch_size):
+        if not items or any(type(item) is not AudioInput for item in items):
+            raise TypeError("Nonempty label-free AudioInput sequence required")
+        ids = [item.id for item in items]
+        if len(set(ids)) != len(ids):
+            raise ValueError("Duplicate input IDs")
+        windows = [crops(item.waveform, self.crop_policy) for item in items]
+        counts = [len(x) for x in windows]
+        if self.device.type == "cuda":
+            torch.cuda.synchronize(self.device)
+            torch.cuda.reset_peak_memory_stats(self.device)
+        start = time.perf_counter()
+        hidden, logits = [], []
+        for chunk in torch.cat(windows).split(batch_size):
+            h, s = self._run(chunk.to(self.device))
+            hidden.append(h.cpu())
+            logits.append(s.cpu())
+        h, s = torch.cat(hidden), torch.cat(logits)
+        hs = torch.stack([x.mean(0) for x in h.split(counts)])
+        margins = torch.stack(
+            [
+                (
+                    x[:, self.spec["spoof_index"]] - x[:, self.spec["bonafide_index"]]
+                ).mean()
+                for x in s.split(counts)
+            ]
+        )
+        if not torch.isfinite(hs).all() or not torch.isfinite(margins).all():
+            raise RuntimeError("Nonfinite batched expert observation")
+        if self.device.type == "cuda":
+            torch.cuda.synchronize(self.device)
+        return Prediction(
+            ids,
+            hs,
+            margins,
+            torch.ones(len(ids), dtype=torch.bool),
+            dict(
+                self.identity,
+                hidden_dim=hs.shape[-1],
+                inference_batch_size=batch_size,
+                batch_elapsed_seconds=time.perf_counter() - start,
+                cuda_peak_allocated_bytes=torch.cuda.max_memory_allocated(self.device)
+                if self.device.type == "cuda"
+                else None,
+                utterance_measurements=[
+                    dict(id=item.id, **coverage(len(item.waveform), self.crop_policy))
+                    for item in items
+                ],
+            ),
+        )
+
+    @torch.inference_mode()
+    def predict_utterances(self, audio_batch_without_labels, *, batch_size=1):
+        if type(batch_size) is not int or batch_size < 1:
+            raise ValueError("Positive inference batch size required")
+        if batch_size > 1:
+            return self._predict_batched(audio_batch_without_labels, batch_size)
         ids = []
         hs = []
         margins = []

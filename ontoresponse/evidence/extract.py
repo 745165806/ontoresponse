@@ -4,6 +4,7 @@ import gc
 import time
 from pathlib import Path
 
+import torch
 import yaml
 
 from ..common import budget, file_info, read_jsonl, unique, write_jsonl
@@ -13,6 +14,81 @@ from ..experts.base import AudioInput, FrozenExpert
 from ..resources import resource_path
 from ..transforms.probes import apply_probe
 from .cache import Cache
+
+
+def _batched_measurements(cfg, records, expert, cache, probes, policy):
+    """Queue cache misses across recordings/views while preserving every correspondence."""
+    size = policy["batch_size"]
+    jobs = []
+    for record in records:
+        if not record.get("views"):
+            continue
+        measurements = []
+        record["experts"][expert.spec["id"]] = dict(
+            status="complete",
+            identity=expert.identity,
+            measurements=measurements,
+            inference_policy=policy,
+        )
+        for view in record["views"]:
+            entry = dict(status="missing", probe_id=view["probe_id"], cache_key=None)
+            measurements.append(entry)
+            if view["status"] != "valid":
+                continue
+            spec = dict(
+                stage="expert",
+                artifact_key=view["artifact_key"],
+                expert=expert.identity,
+                cache_revision=cfg["runtime"].get("cache_revision", 2),
+                inference_policy=policy,
+                schema=dict(
+                    dims="runtime_verified",
+                    score="spoof_minus_bonafide",
+                    views=[p["id"] for p in probes],
+                ),
+            )
+            key = cache.key(spec)
+            try:
+                hit = cache.get(key, spec)
+                if hit is not None:
+                    entry.update(status="valid", cache_key=key)
+                else:
+                    jobs.append(
+                        (
+                            record["id"] + "::" + view["probe_id"],
+                            view["artifact_key"],
+                            key,
+                            spec,
+                            entry,
+                        )
+                    )
+            except Exception as error:
+                entry.update(status="failed", error=str(error))
+    for start in range(0, len(jobs), size):
+        chunk = jobs[start : start + size]
+        try:
+            inputs = [
+                AudioInput(item[0], cache.get(item[1])[0]["waveform"]) for item in chunk
+            ]
+            prediction = expert.predict_utterances(inputs, batch_size=size)
+            if prediction.ids != [item.id for item in inputs]:
+                raise ValueError("Batched prediction changed request order")
+            for i, (_, _, key, spec, entry) in enumerate(chunk):
+                meta = dict(prediction.metadata)
+                meta["utterance_measurements"] = [meta["utterance_measurements"][i]]
+                cache.put(
+                    key,
+                    spec,
+                    dict(
+                        embedding=prediction.embeddings[i].numpy(),
+                        margin=prediction.spoof_margins[i : i + 1].numpy(),
+                    ),
+                    meta,
+                )
+                entry.update(status="valid", cache_key=key)
+        except Exception as error:
+            for *_, entry in chunk:
+                entry.update(status="failed", cache_key=None, error=str(error))
 
 
 def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1, output=None):
@@ -92,9 +168,24 @@ def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1, output=
             )
     for e in cfg["experts"]:
         expert = None
+        previous_tf32 = torch.backends.cudnn.allow_tf32
         started = time.monotonic()
         try:
+            policy = cfg["runtime"].get("expert_inference", {}).get(e["id"], {})
+            batch_size = policy.get("batch_size", 1)
+            if type(batch_size) is not int or batch_size < 1:
+                raise ValueError("Positive expert inference batch size required")
+            if "cudnn_allow_tf32" in policy:
+                torch.backends.cudnn.allow_tf32 = policy["cudnn_allow_tf32"]
             expert = FrozenExpert(e, cfg["crop"], cfg["runtime"]["device"])
+            if batch_size > 1:
+                _batched_measurements(cfg, records, expert, cache, probes, policy)
+                print(
+                    f"extracted {e['id']} batch={batch_size} on shard {shard_index}/{shard_count}: "
+                    f"{time.monotonic() - started:.1f}s",
+                    flush=True,
+                )
+                continue
             for record in records:
                 if record["id"] not in view_records:
                     continue
@@ -162,6 +253,7 @@ def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1, output=
             for record in records:
                 record["experts"][e["id"]] = {"status": "blocked", "error": str(err)}
         finally:
+            torch.backends.cudnn.allow_tf32 = previous_tf32
             if expert:
                 expert.close()
             del expert

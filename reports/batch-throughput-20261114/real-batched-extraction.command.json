@@ -1,0 +1,17 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "ontoresponse",
+    "extract",
+    "--config",
+    "reports/batch-throughput-20261114/real-extraction/config.yaml",
+    "--max-origins",
+    "16"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-14T05:26:25.662417+00:00",
+  "elapsed_seconds": 21.795905351638794,
+  "log": "reports/batch-throughput-20261114/real-batched-extraction.log",
+  "cwd": "${EXTERNAL_PATH}"
+}

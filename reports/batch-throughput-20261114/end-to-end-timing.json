@@ -1,0 +1,13 @@
+{
+  "old_workers_per_gpu": 3,
+  "new_workers_per_gpu": 2,
+  "part_origins": 256,
+  "old_median_part_seconds": 261.5442798137665,
+  "new_median_part_seconds": 99.98137295246124,
+  "old_parts_measured": 12,
+  "new_parts_measured": 10,
+  "scope": "recent cold-part wall times from command logs; different samples; approximate steady-state throughput, not a guaranteed end-to-end speedup",
+  "estimated_old_origins_per_second": 5.872810527891163,
+  "estimated_new_origins_per_second": 10.241907765028268,
+  "estimated_throughput_speedup": 1.7439533791167585
+}

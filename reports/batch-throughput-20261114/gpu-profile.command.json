@@ -1,0 +1,13 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-u",
+    "-m",
+    "scripts.profile_inference_batch"
+  ],
+  "exit_code": 1,
+  "started_utc": "2026-11-14T05:16:17.207447+00:00",
+  "elapsed_seconds": 36.749605894088745,
+  "log": "reports/batch-throughput-20261114/gpu-profile.log",
+  "cwd": "${EXTERNAL_PATH}"
+}

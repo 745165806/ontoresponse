@@ -68,10 +68,10 @@ python -u -m scripts.round1_batch --config configs/round1-batch.yaml
 36个最终checkpoint已保存于`reports/round1-batch-20261113/final`，清单为models-ready.json。用户指定固定当前模型，在2019 LA eval、2021 LA eval阶段和ITW进行完整测试，入口为：
 
 ```bash
-python -u -m scripts.round1_batch --config configs/round1-batch.yaml --test-only --workers-per-gpu 3 --scratch-dir /tmp/ontoresponse-round1-cache
+python -u -m scripts.round1_batch --config configs/round1-batch.yaml --test-only --workers-per-gpu 2 --scratch-dir /tmp/ontoresponse-round1-cache --batch-profile reports/batch-throughput-20261114/selected-policy.json
 ```
 
-该任务已启动，勿重复运行。纯测试入口核对训练时配置和完整checkpoint，不进入开发训练或最终重训；GPU0/1各3个独立进程，每条录音的原始/六探针仍用原有逐视图推断。多视图batch前向未通过数值一致性容差，未用于本轮结果。已完成的观测块复用；临时缓存放本地NVMe SSD（/tmp/ontoresponse-round1-cache），打包后删除临时缓存，最终观测包和预测留项目目录。已有部分缓存可保留原位继续，或停止自己的任务后将其整体迁到SSD；缓存键和数值内容不变。只改变并发和临时存储位置，不变更模型、crop、探针或阈值。
+该任务已启动，勿重复运行。纯测试入口核对训练时配置和完整checkpoint，不进入开发训练或最终重训；GPU0/1各2个进程，AASIST/SSL+AASIST/RawNet2实际推断batch分别32/32/64。每条录音的原始/六探针保持同样裁剪和聚合。批量输出与同batch原生上游精确一致，开发融合决策稳定；与batch1存在已记录的浮点差异，不保证测试EER逐位相同。已完成的观测块复用；临时缓存放本地NVMe SSD（/tmp/ontoresponse-round1-cache），打包后删除临时缓存，最终观测包和预测留项目目录。已有部分缓存可保留原位继续，或停止自己的任务后将其整体迁到SSD；缓存键和数值内容不变。只改变推断batch、并发和临时存储位置，不变更模型权重、crop、探针或阈值。实测吞吐和误差见[批量加速报告](../reports/batch-throughput-20261114/REPORT.md)。
 
 完整EER汇总：`reports/round1-batch-20261113/TEST_EER.md`及.json。它仅接受2019=71237、2021 LA eval=148176、ITW=31779条完整覆盖、失败0的报告；每种方法三个seed齐全才汇总均值与样本标准差。未完成显示空白，不以开发EER或小子集EER代替。每个数据集的36份报告完成即自动同步小型结果到GitHub，最终状态或失败状态也同步。完整逐句logit留在本地tests/<dataset>/<model>-seed<seed>/。
 

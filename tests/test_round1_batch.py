@@ -180,7 +180,7 @@ def test_test_only_requires_all_final_models_and_cannot_enter_training(tmp_path)
         ),
     ):
         evaluate_ready_models(cfg, 3)
-        score.assert_called_once_with(cfg, [str(checkpoint)], 3, None)
+        score.assert_called_once_with(cfg, [str(checkpoint)], 3, None, None)
 
 
 def test_test_eer_report_rejects_partial_data_and_requires_all_seeds(tmp_path):

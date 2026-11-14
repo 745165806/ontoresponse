@@ -161,10 +161,31 @@ def cache_directory(cfg, folder, name, scratch_dir=None):
     )
 
 
-def extract_parts(cfg, rows, name, workers_per_gpu=1, scratch_dir=None):
+def extraction_policy(batch_profile, experts):
+    if batch_profile is None:
+        return {}
+    data = json.loads(Path(batch_profile).read_text())
+    if data.get("status") not in ("passed", "passed_native_batch"):
+        raise ValueError("Inference profile has not passed validation")
+    policy = {}
+    for expert in experts:
+        selected = data["selected"][expert["id"]]
+        size = selected["batch_size"]
+        if type(size) is not int or not 1 <= size <= 64:
+            raise ValueError("Invalid profiled inference batch size")
+        policy[expert["id"]] = dict(
+            batch_size=size, cudnn_allow_tf32=selected["cudnn_allow_tf32"]
+        )
+    return policy
+
+
+def extract_parts(
+    cfg, rows, name, workers_per_gpu=1, scratch_dir=None, batch_profile=None
+):
     if not 1 <= workers_per_gpu <= 4:
         raise ValueError("Extraction supports 1..4 workers per configured GPU")
     settings = cfg["batch"]
+    policy = extraction_policy(batch_profile, cfg.get("experts", []))
     worker_devices = settings["devices"] * workers_per_gpu
     root = Path(cfg["output"]) / name
     root.mkdir(parents=True, exist_ok=True)
@@ -199,6 +220,8 @@ def extract_parts(cfg, rows, name, workers_per_gpu=1, scratch_dir=None):
             ):
                 raise RuntimeError("Scratch disk reserve reached")
             local["runtime"].update(device=device, budget="pilot")
+            if policy:
+                local["runtime"]["expert_inference"] = policy
             local.pop("pilot", None)
             infer = [
                 {k: r[k] for k in ("id", "origin_id", "source_group", "audio")}
@@ -562,7 +585,9 @@ def score_dataset(cfg, dataset, paths, checkpoints):
         print("TEST", dataset, name, "EER", report["eer"], flush=True)
 
 
-def run_test_phase(cfg, checkpoints, workers_per_gpu=1, scratch_dir=None):
+def run_test_phase(
+    cfg, checkpoints, workers_per_gpu=1, scratch_dir=None, batch_profile=None
+):
     root = Path(cfg["output"])
     for dataset in cfg["batch"]["test_datasets"]:
         rows = test_rows(cfg, dataset)
@@ -570,7 +595,12 @@ def run_test_phase(cfg, checkpoints, workers_per_gpu=1, scratch_dir=None):
             root, stage="test_extraction", dataset=dataset, requested=len(rows)
         )
         paths = extract_parts(
-            cfg, rows, "test_evidence/" + dataset, workers_per_gpu, scratch_dir
+            cfg,
+            rows,
+            "test_evidence/" + dataset,
+            workers_per_gpu,
+            scratch_dir,
+            batch_profile,
         )
         score_dataset(cfg, dataset, paths, checkpoints)
     save_progress(
@@ -581,7 +611,7 @@ def run_test_phase(cfg, checkpoints, workers_per_gpu=1, scratch_dir=None):
     )
 
 
-def evaluate_ready_models(cfg, workers_per_gpu=1, scratch_dir=None):
+def evaluate_ready_models(cfg, workers_per_gpu=1, scratch_dir=None, batch_profile=None):
     """Evaluate the saved final ensemble of candidates without entering training."""
     root = Path(cfg["output"])
     if yaml.safe_load((root / "execution_config.yaml").read_text()) != cfg:
@@ -599,10 +629,10 @@ def evaluate_ready_models(cfg, workers_per_gpu=1, scratch_dir=None):
         raise ValueError("Missing final checkpoints; test-only mode never retrains")
     if not (root / "selection.json").is_file():
         raise ValueError("Development selection is missing")
-    run_test_phase(cfg, checkpoints, workers_per_gpu, scratch_dir)
+    run_test_phase(cfg, checkpoints, workers_per_gpu, scratch_dir, batch_profile)
 
 
-def run(cfg, config_path, workers_per_gpu=1, scratch_dir=None):
+def run(cfg, config_path, workers_per_gpu=1, scratch_dir=None, batch_profile=None):
     root = Path(cfg["output"])
     b = cfg["batch"]
     if not b.get("full_run_authorized") or cfg["mode"] != "integration_pretrained":
@@ -627,7 +657,7 @@ def run(cfg, config_path, workers_per_gpu=1, scratch_dir=None):
         ("development", pool),
     ):
         save_progress(root, stage=stage, action="extract", requested=len(rows))
-        extract_parts(cfg, rows, stage, workers_per_gpu, scratch_dir)
+        extract_parts(cfg, rows, stage, workers_per_gpu, scratch_dir, batch_profile)
         jobs = []
         for fold in (0, 1):
             log = (root / stage / f"fold{fold}.log").open("a")
@@ -709,7 +739,7 @@ def run(cfg, config_path, workers_per_gpu=1, scratch_dir=None):
         root / "models-ready.json",
         dict(checkpoints=checkpoints, selection=str(selection_path)),
     )
-    run_test_phase(cfg, checkpoints, workers_per_gpu, scratch_dir)
+    run_test_phase(cfg, checkpoints, workers_per_gpu, scratch_dir, batch_profile)
 
 
 def main():
@@ -733,6 +763,9 @@ def main():
         "--scratch-dir",
         help="Fast local temporary cache directory; preserve existing partial caches",
     )
+    parser.add_argument(
+        "--batch-profile", help="Validated per-expert execution batch profile JSON"
+    )
     args = parser.parse_args()
     if args.test_only and args.train_stage:
         parser.error("--test-only cannot be combined with --train-stage")
@@ -749,9 +782,17 @@ def main():
             fcntl.flock(guard, fcntl.LOCK_EX | fcntl.LOCK_NB)
             try:
                 if args.test_only:
-                    evaluate_ready_models(cfg, args.workers_per_gpu, args.scratch_dir)
+                    evaluate_ready_models(
+                        cfg, args.workers_per_gpu, args.scratch_dir, args.batch_profile
+                    )
                 else:
-                    run(cfg, args.config, args.workers_per_gpu, args.scratch_dir)
+                    run(
+                        cfg,
+                        args.config,
+                        args.workers_per_gpu,
+                        args.scratch_dir,
+                        args.batch_profile,
+                    )
             except Exception as error:
                 save_progress(root, stage="failed", error=repr(error))
                 raise

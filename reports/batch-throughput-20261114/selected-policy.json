@@ -1,0 +1,77 @@
+{
+  "status": "passed_native_batch",
+  "selected": {
+    "aasist": {
+      "batch_size": 32,
+      "cudnn_allow_tf32": true,
+      "eligibility_basis": "native upstream same-batch hidden/logit equivalence",
+      "hidden_max_abs_error": 0.010020047426223755,
+      "margin_max_abs_error": 0.006221771240234375,
+      "peak_allocated_bytes": 6156391936,
+      "seconds": 0.46875161699426826,
+      "speedup": 1.4648224264506498,
+      "views_per_second": 238.9325091146715,
+      "single_view_strict_match": false,
+      "single_view_strict_mismatch": "Tensor-likes are not close!\n\nMismatched elements: 4173 / 17920 (23.3%)\nGreatest absolute difference: 0.010020047426223755 at index (37, 24) (up to 0.0001 allowed)\nGreatest relative difference: 0.34455356001853943 at index (89, 131) (up to 0.0001 allowed)",
+      "native_batch_equivalence_passed": true
+    },
+    "rawnet2": {
+      "batch_size": 64,
+      "cudnn_allow_tf32": true,
+      "eligibility_basis": "native upstream same-batch hidden/logit equivalence",
+      "hidden_max_abs_error": 0.00044536590576171875,
+      "margin_max_abs_error": 0.003422260284423828,
+      "peak_allocated_bytes": 1072731136,
+      "seconds": 0.09197209900594316,
+      "speedup": 7.4962081376478595,
+      "views_per_second": 1217.760616649215,
+      "single_view_strict_match": false,
+      "single_view_strict_mismatch": "Tensor-likes are not close!\n\nMismatched elements: 164 / 114688 (0.1%)\nGreatest absolute difference: 0.00044536590576171875 at index (23, 698) (up to 0.0001 allowed)\nGreatest relative difference: 0.00458371639251709 at index (23, 365) (up to 0.0001 allowed)",
+      "native_batch_equivalence_passed": true
+    },
+    "ssl_aasist": {
+      "batch_size": 32,
+      "cudnn_allow_tf32": true,
+      "eligibility_basis": "native upstream same-batch hidden/logit equivalence",
+      "hidden_max_abs_error": 0.7450425624847412,
+      "margin_max_abs_error": 0.05249786376953125,
+      "peak_allocated_bytes": 4291106304,
+      "seconds": 1.1544474030088168,
+      "speedup": 1.748231544154897,
+      "views_per_second": 97.01611325738729,
+      "single_view_strict_match": false,
+      "single_view_strict_mismatch": "Tensor-likes are not close!\n\nMismatched elements: 9174 / 17920 (51.2%)\nGreatest absolute difference: 0.7450425624847412 at index (20, 73) (up to 0.0001 allowed)\nGreatest relative difference: 120.86763763427734 at index (47, 52) (up to 0.0001 allowed)",
+      "native_batch_equivalence_passed": true
+    }
+  },
+  "native_checks": [
+    {
+      "batch_size": 32,
+      "expert": "aasist",
+      "native_hidden_max_error": 0.0,
+      "native_margin_max_error": 0.0,
+      "passed": true
+    },
+    {
+      "batch_size": 32,
+      "expert": "ssl_aasist",
+      "native_hidden_max_error": 0.0,
+      "native_margin_max_error": 0.0,
+      "passed": true
+    },
+    {
+      "batch_size": 64,
+      "expert": "rawnet2",
+      "native_hidden_max_error": 0.0,
+      "native_margin_max_error": 0.0,
+      "passed": true
+    }
+  ],
+  "precision_note": "Float32 batch-dependent rounding/top-k differences from batch1 are measured, not claimed bitwise identical; native batched implementation matches and development fusion decisions unchanged",
+  "development_origins": 16,
+  "development_fusion_checks": 12,
+  "development_decision_changes": 0,
+  "real_extraction_valid_observations": 336,
+  "real_extraction_requests": 16,
+  "test_labels_used": false
+}

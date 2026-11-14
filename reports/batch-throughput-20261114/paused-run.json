@@ -1,0 +1,10 @@
+{
+  "pid": 2094040,
+  "paused_at": 1794633305.268036,
+  "previous_progress": {
+    "dataset": "asv2019_eval",
+    "requested": 71237,
+    "stage": "test_extraction",
+    "updated": 1794627362.7921424
+  }
+}

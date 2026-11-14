@@ -1,0 +1,13 @@
+extracted aasist batch=32 on shard 0/1: 2.1s
+[2026-11-14 13:26:32,661] [INFO] [real_accelerator.py:260:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-11-14 13:26:34,861] [INFO] [logging.py:107:log_dist] [Rank -1] [TorchCheckpointEngine] Initialized with serialization = False
+${EXTERNAL_PATH} FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+extracted ssl_aasist batch=32 on shard 0/1: 12.4s
+extracted rawnet2 batch=64 on shard 0/1: 0.7s
+{
+  "index": "reports/batch-throughput-20261114/real-extraction/extraction-0-of-1.jsonl",
+  "requested": 16,
+  "scored": 16,
+  "complete_all_experts": 16
+}
