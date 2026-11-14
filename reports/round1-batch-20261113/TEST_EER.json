@@ -1,18 +1,37 @@
 {
   "aggregation": "EER (%) mean and sample standard deviation across three fixed seeds",
+  "checked_utc": "2026-11-14T07:19:39.381920+00:00",
   "datasets": {
     "asv2019_eval": {
       "expected_requests": 71237,
+      "extraction": {
+        "last_pack_utc": "2026-11-14T06:53:06.994099+00:00",
+        "packed_parts": 279,
+        "packed_requests": 71237,
+        "total_parts": 279
+      },
       "full_model_seed_reports": 36,
       "incomplete_or_invalid_reports": []
     },
     "asv2021_la": {
       "expected_requests": 148176,
+      "extraction": {
+        "last_pack_utc": "2026-11-14T07:18:27.451543+00:00",
+        "packed_parts": 28,
+        "packed_requests": 7168,
+        "total_parts": 579
+      },
       "full_model_seed_reports": 0,
       "incomplete_or_invalid_reports": []
     },
     "inthewild": {
       "expected_requests": 31779,
+      "extraction": {
+        "last_pack_utc": null,
+        "packed_parts": 0,
+        "packed_requests": 0,
+        "total_parts": 125
+      },
       "full_model_seed_reports": 0,
       "incomplete_or_invalid_reports": []
     }

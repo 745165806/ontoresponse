@@ -1,225 +1,244 @@
 {
-  "aggregation": "EER (%) mean and sample standard deviation across three fixed seeds",
-  "datasets": {
-    "asv2019_eval": {
-      "expected_requests": 71237,
-      "full_model_seed_reports": 36,
-      "incomplete_or_invalid_reports": []
-    },
-    "asv2021_la": {
-      "expected_requests": 148176,
-      "full_model_seed_reports": 0,
-      "incomplete_or_invalid_reports": []
-    },
-    "inthewild": {
-      "expected_requests": 31779,
-      "full_model_seed_reports": 0,
-      "incomplete_or_invalid_reports": []
-    }
-  },
-  "limitations": [
-    "integration_pretrained; experts exposed to ASV2019 development",
-    "RawNet2 supervision provenance unknown",
-    "Only full requested datasets are summarized; no test-based selection"
-  ],
-  "models": [
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.4870712048804744,
-          "eer_percent_seed_std": 0.19751466111339133,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.3263086335825969,
-            "29": 0.7075545537084005,
-            "43": 0.42735042735042583
-          }
-        }
-      },
-      "model": "all_views_mlp"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.6118286879673691,
-          "eer_percent_seed_std": 0.0,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.6118286879673691,
-            "29": 0.6118286879673691,
-            "43": 0.6118286879673691
-          }
-        }
-      },
-      "model": "best_single_expert"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.40899195564607116,
-          "eer_percent_seed_std": 0.07542613865422435,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.3399048266485384,
-            "29": 0.39760808991577967,
-            "43": 0.48946295037389537
-          }
-        }
-      },
-      "model": "drop_anchor"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.33300698241694165,
-          "eer_percent_seed_std": 0.048709617761970296,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.3349926426849503,
-            "29": 0.2833348987195117,
-            "43": 0.380693405846363
-          }
-        }
-      },
-      "model": "drop_same_family"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.31674278671786077,
-          "eer_percent_seed_std": 0.10944730440325046,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.25832766825288916,
-            "29": 0.24889640274255997,
-            "43": 0.44300428915813317
-          }
-        }
-      },
-      "model": "drop_same_probe"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.2881750742093426,
-          "eer_percent_seed_std": 0.08959855948764717,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.184715569330951,
-            "29": 0.3399048266485384,
-            "43": 0.3399048266485384
-          }
-        }
-      },
-      "model": "original_mlp"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.3433838646235584,
-          "eer_percent_seed_std": 0.07678419544653496,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.2991162474507138,
-            "29": 0.298988760527219,
-            "43": 0.4320465858927425
-          }
-        }
-      },
-      "model": "relation_tied"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.2160232929463731,
-          "eer_percent_seed_std": 0.012424867620288844,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.22071945148868233,
-            "29": 0.20193481731943796,
-            "43": 0.22541561003099897
-          }
-        }
-      },
-      "model": "response_mlp"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.34699393673752743,
-          "eer_percent_seed_std": 0.0232360123125057,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.37256191102345015,
-            "29": 0.3412541874080355,
-            "43": 0.32716571178109666
-          }
-        }
-      },
-      "model": "score_mlp"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.27915698835533775,
-          "eer_percent_seed_std": 0.0717242783644561,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.23113528212100615,
-            "29": 0.24473147518694768,
-            "43": 0.36160420775805946
-          }
-        }
-      },
-      "model": "set_attention"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.3486148013680299,
-          "eer_percent_seed_std": 0.12573934004973022,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.24473147518694768,
-            "29": 0.3127124405166553,
-            "43": 0.48840048840048667
-          }
-        }
-      },
-      "model": "typed_response"
-    },
-    {
-      "datasets": {
-        "asv2019_eval": {
-          "eer_percent_mean": 0.38779195152846313,
-          "eer_percent_seed_std": 0.18385235603402916,
-          "failed": 0,
-          "n": 71237,
-          "per_seed_percent": {
-            "17": 0.5982324949014276,
-            "29": 0.25832766825288916,
-            "43": 0.3068156914310727
-          }
-        }
-      },
-      "model": "wrong_family"
-    }
-  ],
   "status": {
     "dataset": "asv2021_la",
     "requested": 148176,
     "stage": "test_extraction",
     "updated": 1794639809.4620335
-  }
+  },
+  "checked_utc": "2026-11-14T07:19:39.381920+00:00",
+  "datasets": {
+    "asv2019_eval": {
+      "expected_requests": 71237,
+      "full_model_seed_reports": 36,
+      "incomplete_or_invalid_reports": [],
+      "extraction": {
+        "packed_parts": 279,
+        "total_parts": 279,
+        "packed_requests": 71237,
+        "last_pack_utc": "2026-11-14T06:53:06.994099+00:00"
+      }
+    },
+    "asv2021_la": {
+      "expected_requests": 148176,
+      "full_model_seed_reports": 0,
+      "incomplete_or_invalid_reports": [],
+      "extraction": {
+        "packed_parts": 28,
+        "total_parts": 579,
+        "packed_requests": 7168,
+        "last_pack_utc": "2026-11-14T07:18:27.451543+00:00"
+      }
+    },
+    "inthewild": {
+      "expected_requests": 31779,
+      "full_model_seed_reports": 0,
+      "incomplete_or_invalid_reports": [],
+      "extraction": {
+        "packed_parts": 0,
+        "total_parts": 125,
+        "packed_requests": 0,
+        "last_pack_utc": null
+      }
+    }
+  },
+  "models": [
+    {
+      "model": "all_views_mlp",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.4870712048804744,
+          "eer_percent_seed_std": 0.19751466111339133,
+          "per_seed_percent": {
+            "17": 0.3263086335825969,
+            "29": 0.7075545537084005,
+            "43": 0.42735042735042583
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "best_single_expert",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.6118286879673691,
+          "eer_percent_seed_std": 0.0,
+          "per_seed_percent": {
+            "17": 0.6118286879673691,
+            "29": 0.6118286879673691,
+            "43": 0.6118286879673691
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "drop_anchor",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.40899195564607116,
+          "eer_percent_seed_std": 0.07542613865422435,
+          "per_seed_percent": {
+            "17": 0.3399048266485384,
+            "29": 0.39760808991577967,
+            "43": 0.48946295037389537
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "drop_same_family",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.33300698241694165,
+          "eer_percent_seed_std": 0.048709617761970296,
+          "per_seed_percent": {
+            "17": 0.3349926426849503,
+            "29": 0.2833348987195117,
+            "43": 0.380693405846363
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "drop_same_probe",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.31674278671786077,
+          "eer_percent_seed_std": 0.10944730440325046,
+          "per_seed_percent": {
+            "17": 0.25832766825288916,
+            "29": 0.24889640274255997,
+            "43": 0.44300428915813317
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "original_mlp",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.2881750742093426,
+          "eer_percent_seed_std": 0.08959855948764717,
+          "per_seed_percent": {
+            "17": 0.184715569330951,
+            "29": 0.3399048266485384,
+            "43": 0.3399048266485384
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "relation_tied",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.3433838646235584,
+          "eer_percent_seed_std": 0.07678419544653496,
+          "per_seed_percent": {
+            "17": 0.2991162474507138,
+            "29": 0.298988760527219,
+            "43": 0.4320465858927425
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "response_mlp",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.2160232929463731,
+          "eer_percent_seed_std": 0.012424867620288844,
+          "per_seed_percent": {
+            "17": 0.22071945148868233,
+            "29": 0.20193481731943796,
+            "43": 0.22541561003099897
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "score_mlp",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.34699393673752743,
+          "eer_percent_seed_std": 0.0232360123125057,
+          "per_seed_percent": {
+            "17": 0.37256191102345015,
+            "29": 0.3412541874080355,
+            "43": 0.32716571178109666
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "set_attention",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.27915698835533775,
+          "eer_percent_seed_std": 0.0717242783644561,
+          "per_seed_percent": {
+            "17": 0.23113528212100615,
+            "29": 0.24473147518694768,
+            "43": 0.36160420775805946
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "typed_response",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.3486148013680299,
+          "eer_percent_seed_std": 0.12573934004973022,
+          "per_seed_percent": {
+            "17": 0.24473147518694768,
+            "29": 0.3127124405166553,
+            "43": 0.48840048840048667
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    },
+    {
+      "model": "wrong_family",
+      "datasets": {
+        "asv2019_eval": {
+          "eer_percent_mean": 0.38779195152846313,
+          "eer_percent_seed_std": 0.18385235603402916,
+          "per_seed_percent": {
+            "17": 0.5982324949014276,
+            "29": 0.25832766825288916,
+            "43": 0.3068156914310727
+          },
+          "n": 71237,
+          "failed": 0
+        }
+      }
+    }
+  ],
+  "aggregation": "EER (%) mean and sample standard deviation across three fixed seeds",
+  "limitations": [
+    "integration_pretrained; experts exposed to ASV2019 development",
+    "RawNet2 supervision provenance unknown",
+    "Only full requested datasets are summarized; no test-based selection"
+  ]
 }
