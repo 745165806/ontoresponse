@@ -18,6 +18,7 @@ import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
+from queue import Empty, Queue
 
 import numpy as np
 import torch
@@ -39,6 +40,35 @@ from scripts.prepare_round1 import development_pool
 
 def save_progress(root, **values):
     atomic_json(Path(root) / "progress.json", dict(updated=time.time(), **values))
+
+
+def run_work_queue(items, devices, action):
+    """Pin workers to devices; claim each task once and stop dispatch on error."""
+    if not devices:
+        raise ValueError("At least one worker device required")
+    tasks = Queue()
+    for item in items:
+        tasks.put(item)
+    stopped = threading.Event()
+
+    def worker(device):
+        while not stopped.is_set():
+            try:
+                item = tasks.get_nowait()
+            except Empty:
+                return
+            try:
+                action(item, device)
+            except BaseException:
+                stopped.set()
+                raise
+            finally:
+                tasks.task_done()
+
+    with ThreadPoolExecutor(max_workers=len(devices)) as executor:
+        futures = [executor.submit(worker, device) for device in devices]
+        for future in futures:
+            future.result()
 
 
 def pool_from_config(cfg):
@@ -180,7 +210,13 @@ def extraction_policy(batch_profile, experts):
 
 
 def extract_parts(
-    cfg, rows, name, workers_per_gpu=1, scratch_dir=None, batch_profile=None
+    cfg,
+    rows,
+    name,
+    workers_per_gpu=1,
+    scratch_dir=None,
+    batch_profile=None,
+    dynamic_queue=False,
 ):
     if not 1 <= workers_per_gpu <= 4:
         raise ValueError("Extraction supports 1..4 workers per configured GPU")
@@ -199,108 +235,120 @@ def extract_parts(
     paths = [root / "parts" / f"{i:05d}" / "evidence.pt" for i in range(len(chunks))]
     lock = threading.Lock()
 
-    def worker(worker_id, device):
-        for index in range(worker_id, len(chunks), len(worker_devices)):
-            folder = paths[index].parent
-            if paths[index].is_file():
-                continue
-            if shutil.disk_usage(root).free < settings["minimum_free_disk_bytes"]:
-                raise RuntimeError(
-                    "Disk reserve reached; completed evidence remains resumable"
-                )
-            folder.mkdir(parents=True, exist_ok=True)
-            part = chunks[index]
-            local = copy.deepcopy(cfg)
-            local["output"] = str(folder)
-            local["cache"] = str(cache_directory(cfg, folder, name, scratch_dir))
-            Path(local["cache"]).parent.mkdir(parents=True, exist_ok=True)
-            if (
-                shutil.disk_usage(Path(local["cache"]).parent).free
-                < settings["minimum_free_disk_bytes"]
-            ):
-                raise RuntimeError("Scratch disk reserve reached")
-            local["runtime"].update(device=device, budget="pilot")
-            if policy:
-                local["runtime"]["expert_inference"] = policy
-            local.pop("pilot", None)
-            infer = [
-                {k: r[k] for k in ("id", "origin_id", "source_group", "audio")}
-                for r in part
-            ]
-            write_jsonl(folder / "inference_manifest.jsonl", infer)
-            (folder / "config.yaml").write_text(yaml.safe_dump(local, sort_keys=False))
-            command = [
-                sys.executable,
-                "-m",
-                "ontoresponse",
-                "extract",
-                "--config",
-                str(folder / "config.yaml"),
-                "--max-origins",
-                str(len(part)),
-            ]
-            start = time.time()
-            with (folder / "extraction.log").open("w") as log:
-                proc = subprocess.run(
-                    command,
-                    stdout=log,
-                    stderr=subprocess.STDOUT,
-                    timeout=settings["part_timeout_seconds"],
-                )
-            atomic_json(
-                folder / "command.json",
-                dict(
-                    command=command,
-                    exit_code=proc.returncode,
-                    elapsed_seconds=time.time() - start,
-                    device=device,
-                ),
+    def process_part(index, device):
+        folder = paths[index].parent
+        if paths[index].is_file():
+            return
+        if shutil.disk_usage(root).free < settings["minimum_free_disk_bytes"]:
+            raise RuntimeError(
+                "Disk reserve reached; completed evidence remains resumable"
             )
-            if proc.returncode:
-                raise RuntimeError("Extraction failed: " + str(folder))
-            extraction = folder / "extraction-0-of-1.jsonl"
-            records = read_jsonl(extraction)
-            check_evidence(records)
-            with lock:
-                # Cache verification uses a shared process-local LRU; pack parts serially.
-                cache = Cache(local["cache"])
-                validate_evidence(local, records, cache)
-                batch = load_batch(
-                    local, extraction, folder / "inference_manifest.jsonl", "inference"
-                )
-                batch = dataclasses.replace(
-                    batch,
-                    labels=torch.tensor(
-                        [r["label"] for r in part], dtype=torch.float32
-                    ),
-                    audit=part,
-                )
-                atomic_torch(
-                    paths[index],
-                    dict(batch=batch, probe_ids=list(OntologyRegistry().probe_ids)),
-                )
-                Cache._shared_verified.clear()
-            # Packed observations contain hidden/logits, identities, masks, quality and row metadata.
-            # The full extraction index retains operation/artifact correspondence after validation.
-            shutil.rmtree(local["cache"])
-            with lock:
-                done = sum(p.is_file() for p in paths)
-                save_progress(
-                    root,
-                    stage="extraction",
-                    completed_parts=done,
-                    total_parts=len(paths),
-                    requested=len(rows),
-                    last_part=index,
-                    last_part_seconds=time.time() - start,
-                    workers_per_gpu=workers_per_gpu,
-                )
-                print(name, "packed", done, "/", len(paths), "on", device, flush=True)
+        folder.mkdir(parents=True, exist_ok=True)
+        part = chunks[index]
+        local = copy.deepcopy(cfg)
+        local["output"] = str(folder)
+        local["cache"] = str(cache_directory(cfg, folder, name, scratch_dir))
+        Path(local["cache"]).parent.mkdir(parents=True, exist_ok=True)
+        if (
+            shutil.disk_usage(Path(local["cache"]).parent).free
+            < settings["minimum_free_disk_bytes"]
+        ):
+            raise RuntimeError("Scratch disk reserve reached")
+        local["runtime"].update(device=device, budget="pilot")
+        if policy:
+            local["runtime"]["expert_inference"] = policy
+        local.pop("pilot", None)
+        infer = [
+            {k: r[k] for k in ("id", "origin_id", "source_group", "audio")}
+            for r in part
+        ]
+        write_jsonl(folder / "inference_manifest.jsonl", infer)
+        (folder / "config.yaml").write_text(yaml.safe_dump(local, sort_keys=False))
+        command = [
+            sys.executable,
+            "-m",
+            "ontoresponse",
+            "extract",
+            "--config",
+            str(folder / "config.yaml"),
+            "--max-origins",
+            str(len(part)),
+        ]
+        start = time.time()
+        with (folder / "extraction.log").open("w") as log:
+            proc = subprocess.run(
+                command,
+                stdout=log,
+                stderr=subprocess.STDOUT,
+                timeout=settings["part_timeout_seconds"],
+            )
+        atomic_json(
+            folder / "command.json",
+            dict(
+                command=command,
+                exit_code=proc.returncode,
+                elapsed_seconds=time.time() - start,
+                device=device,
+            ),
+        )
+        if proc.returncode:
+            raise RuntimeError("Extraction failed: " + str(folder))
+        extraction = folder / "extraction-0-of-1.jsonl"
+        records = read_jsonl(extraction)
+        check_evidence(records)
+        with lock:
+            # Cache verification uses a shared process-local LRU; pack parts serially.
+            cache = Cache(local["cache"])
+            validate_evidence(local, records, cache)
+            batch = load_batch(
+                local, extraction, folder / "inference_manifest.jsonl", "inference"
+            )
+            batch = dataclasses.replace(
+                batch,
+                labels=torch.tensor([r["label"] for r in part], dtype=torch.float32),
+                audit=part,
+            )
+            atomic_torch(
+                paths[index],
+                dict(batch=batch, probe_ids=list(OntologyRegistry().probe_ids)),
+            )
+            Cache._shared_verified.clear()
+        # Packed observations contain hidden/logits, identities, masks, quality and row metadata.
+        # The full extraction index retains operation/artifact correspondence after validation.
+        shutil.rmtree(local["cache"])
+        with lock:
+            done = sum(p.is_file() for p in paths)
+            save_progress(
+                root,
+                stage="extraction",
+                completed_parts=done,
+                total_parts=len(paths),
+                requested=len(rows),
+                last_part=index,
+                last_part_seconds=time.time() - start,
+                workers_per_gpu=workers_per_gpu,
+                scheduling="dynamic" if dynamic_queue else "static",
+            )
+            print(name, "packed", done, "/", len(paths), "on", device, flush=True)
 
-    with ThreadPoolExecutor(max_workers=len(worker_devices)) as executor:
-        futures = [executor.submit(worker, i, d) for i, d in enumerate(worker_devices)]
-        for future in futures:
-            future.result()
+    if dynamic_queue:
+        run_work_queue(
+            [i for i, p in enumerate(paths) if not p.is_file()],
+            worker_devices,
+            process_part,
+        )
+    else:
+
+        def worker(worker_id, device):
+            for index in range(worker_id, len(chunks), len(worker_devices)):
+                process_part(index, device)
+
+        with ThreadPoolExecutor(max_workers=len(worker_devices)) as executor:
+            futures = [
+                executor.submit(worker, i, d) for i, d in enumerate(worker_devices)
+            ]
+            for future in futures:
+                future.result()
     return paths
 
 
@@ -517,76 +565,110 @@ def train_fold(cfg, stage, fold):
     atomic_json(Path(local["output"]) / "results.json", results)
 
 
-def score_dataset(cfg, dataset, paths, checkpoints):
+def _score_checkpoint(cfg, dataset, paths, checkpoint, device):
     root = Path(cfg["output"])
-    device = cfg["batch"]["devices"][0]
-    for checkpoint in checkpoints:
-        name = Path(checkpoint).parent.name
-        out = root / "tests" / dataset / name
-        if (out / "report.json").exists():
-            continue
-        cp, model, stats, reg = restore(checkpoint, device)
-        destination = out / "per_utterance_predictions.jsonl"
-        out.mkdir(parents=True, exist_ok=True)
-        labels, scores, conditions = [], [], []
-        expert_scores = {e["id"]: [] for e in cfg["experts"]}
-        with destination.open("w") as stream:
-            for path in paths:
-                batch = torch.load(path, map_location="cpu", weights_only=False)[
-                    "batch"
-                ]
-                if set(batch.ids) & set(cp["train_ids"]):
-                    raise ValueError("Test/training ID overlap")
-                prediction = predict_batches(model, batch, stats, reg, 128)
-                if not prediction.observed.all():
-                    raise RuntimeError("Missing test coverage")
-                for index, (row, logit) in enumerate(
-                    zip(batch.audit, prediction.logits.tolist())
-                ):
-                    raw_scores = {
-                        e["id"]: float(batch.scores[index, i, 0])
-                        for i, e in enumerate(cfg["experts"])
-                    }
-                    for expert, value in raw_scores.items():
-                        expert_scores[expert].append(value)
-                    item = dict(
-                        id=row["id"],
-                        label=row["label"],
-                        logit=logit,
-                        source_group=row["source_group"],
-                        condition=row["condition"],
-                        status="scored",
-                        dataset=dataset,
-                        expert_margins=raw_scores,
-                    )
-                    stream.write(json.dumps(item) + "\n")
-                    labels.append(row["label"])
-                    scores.append(logit)
-                    conditions.append(row["condition"])
-        report = metrics(labels, scores)
-        report.update(
-            dataset=dataset,
-            checkpoint=checkpoint,
-            requested=len(labels),
-            failed=0,
-            device=device,
-            calibration="none; ranking metrics from spoof-oriented logits",
-            source_independence="unknown; integration_pretrained; historical exposure disclosed",
-        )
-        report["original_expert_margins"] = {
-            e: metrics(labels, s) for e, s in expert_scores.items()
-        }
-        if dataset == "asv2021_la":
-            y, s, c = np.array(labels), np.array(scores), np.array(conditions)
-            report["per_codec"] = {
-                k: metrics(y[c == k], s[c == k]) for k in sorted(set(c))
-            }
-        atomic_json(out / "report.json", report)
-        print("TEST", dataset, name, "EER", report["eer"], flush=True)
+    name = Path(checkpoint).parent.name
+    out = root / "tests" / dataset / name
+    if (out / "report.json").exists():
+        return
+    cp, model, stats, reg = restore(checkpoint, device)
+    destination = out / "per_utterance_predictions.jsonl"
+    out.mkdir(parents=True, exist_ok=True)
+    labels, scores, conditions = [], [], []
+    expert_scores = {e["id"]: [] for e in cfg["experts"]}
+    with destination.open("w") as stream:
+        for path in paths:
+            batch = torch.load(path, map_location="cpu", weights_only=False)["batch"]
+            if set(batch.ids) & set(cp["train_ids"]):
+                raise ValueError("Test/training ID overlap")
+            prediction = predict_batches(model, batch, stats, reg, 128)
+            if not prediction.observed.all():
+                raise RuntimeError("Missing test coverage")
+            for index, (row, logit) in enumerate(
+                zip(batch.audit, prediction.logits.tolist())
+            ):
+                raw_scores = {
+                    e["id"]: float(batch.scores[index, i, 0])
+                    for i, e in enumerate(cfg["experts"])
+                }
+                for expert, value in raw_scores.items():
+                    expert_scores[expert].append(value)
+                item = dict(
+                    id=row["id"],
+                    label=row["label"],
+                    logit=logit,
+                    source_group=row["source_group"],
+                    condition=row["condition"],
+                    status="scored",
+                    dataset=dataset,
+                    expert_margins=raw_scores,
+                )
+                stream.write(json.dumps(item) + "\n")
+                labels.append(row["label"])
+                scores.append(logit)
+                conditions.append(row["condition"])
+    report = metrics(labels, scores)
+    report.update(
+        dataset=dataset,
+        checkpoint=checkpoint,
+        requested=len(labels),
+        failed=0,
+        device=device,
+        calibration="none; ranking metrics from spoof-oriented logits",
+        source_independence="unknown; integration_pretrained; historical exposure disclosed",
+    )
+    report["original_expert_margins"] = {
+        e: metrics(labels, s) for e, s in expert_scores.items()
+    }
+    if dataset == "asv2021_la":
+        y, s, c = np.array(labels), np.array(scores), np.array(conditions)
+        report["per_codec"] = {k: metrics(y[c == k], s[c == k]) for k in sorted(set(c))}
+    atomic_json(out / "report.json", report)
+    print("TEST", dataset, name, "EER", report["eer"], flush=True)
+
+
+def score_dataset(cfg, dataset, paths, checkpoints, parallel_devices=False):
+    devices = list(dict.fromkeys(cfg["batch"]["devices"]))
+    active_devices = devices if parallel_devices else devices[:1]
+    progress_lock = threading.Lock()
+    completed = 0
+
+    def score(checkpoint, device):
+        nonlocal completed
+        _score_checkpoint(cfg, dataset, paths, checkpoint, device)
+        with progress_lock:
+            completed += 1
+            save_progress(
+                cfg["output"],
+                stage="test_scoring",
+                dataset=dataset,
+                completed_models=completed,
+                total_models=len(checkpoints),
+                devices=active_devices,
+            )
+
+    save_progress(
+        cfg["output"],
+        stage="test_scoring",
+        dataset=dataset,
+        completed_models=0,
+        total_models=len(checkpoints),
+        devices=active_devices,
+    )
+    if parallel_devices:
+        run_work_queue(checkpoints, devices, score)
+    else:
+        for checkpoint in checkpoints:
+            score(checkpoint, devices[0])
 
 
 def run_test_phase(
-    cfg, checkpoints, workers_per_gpu=1, scratch_dir=None, batch_profile=None
+    cfg,
+    checkpoints,
+    workers_per_gpu=1,
+    scratch_dir=None,
+    batch_profile=None,
+    dynamic_queue=False,
 ):
     root = Path(cfg["output"])
     for dataset in cfg["batch"]["test_datasets"]:
@@ -601,8 +683,9 @@ def run_test_phase(
             workers_per_gpu,
             scratch_dir,
             batch_profile,
+            dynamic_queue,
         )
-        score_dataset(cfg, dataset, paths, checkpoints)
+        score_dataset(cfg, dataset, paths, checkpoints, parallel_devices=dynamic_queue)
     save_progress(
         root,
         stage="completed",
@@ -611,7 +694,9 @@ def run_test_phase(
     )
 
 
-def evaluate_ready_models(cfg, workers_per_gpu=1, scratch_dir=None, batch_profile=None):
+def evaluate_ready_models(
+    cfg, workers_per_gpu=1, scratch_dir=None, batch_profile=None, dynamic_queue=False
+):
     """Evaluate the saved final ensemble of candidates without entering training."""
     root = Path(cfg["output"])
     if yaml.safe_load((root / "execution_config.yaml").read_text()) != cfg:
@@ -629,10 +714,19 @@ def evaluate_ready_models(cfg, workers_per_gpu=1, scratch_dir=None, batch_profil
         raise ValueError("Missing final checkpoints; test-only mode never retrains")
     if not (root / "selection.json").is_file():
         raise ValueError("Development selection is missing")
-    run_test_phase(cfg, checkpoints, workers_per_gpu, scratch_dir, batch_profile)
+    run_test_phase(
+        cfg, checkpoints, workers_per_gpu, scratch_dir, batch_profile, dynamic_queue
+    )
 
 
-def run(cfg, config_path, workers_per_gpu=1, scratch_dir=None, batch_profile=None):
+def run(
+    cfg,
+    config_path,
+    workers_per_gpu=1,
+    scratch_dir=None,
+    batch_profile=None,
+    dynamic_queue=False,
+):
     root = Path(cfg["output"])
     b = cfg["batch"]
     if not b.get("full_run_authorized") or cfg["mode"] != "integration_pretrained":
@@ -657,7 +751,9 @@ def run(cfg, config_path, workers_per_gpu=1, scratch_dir=None, batch_profile=Non
         ("development", pool),
     ):
         save_progress(root, stage=stage, action="extract", requested=len(rows))
-        extract_parts(cfg, rows, stage, workers_per_gpu, scratch_dir, batch_profile)
+        extract_parts(
+            cfg, rows, stage, workers_per_gpu, scratch_dir, batch_profile, dynamic_queue
+        )
         jobs = []
         for fold in (0, 1):
             log = (root / stage / f"fold{fold}.log").open("a")
@@ -739,7 +835,9 @@ def run(cfg, config_path, workers_per_gpu=1, scratch_dir=None, batch_profile=Non
         root / "models-ready.json",
         dict(checkpoints=checkpoints, selection=str(selection_path)),
     )
-    run_test_phase(cfg, checkpoints, workers_per_gpu, scratch_dir, batch_profile)
+    run_test_phase(
+        cfg, checkpoints, workers_per_gpu, scratch_dir, batch_profile, dynamic_queue
+    )
 
 
 def main():
@@ -766,6 +864,11 @@ def main():
     parser.add_argument(
         "--batch-profile", help="Validated per-expert execution batch profile JSON"
     )
+    parser.add_argument(
+        "--dynamic-queue",
+        action="store_true",
+        help="Balance extraction across devices and score different models concurrently",
+    )
     args = parser.parse_args()
     if args.test_only and args.train_stage:
         parser.error("--test-only cannot be combined with --train-stage")
@@ -783,7 +886,11 @@ def main():
             try:
                 if args.test_only:
                     evaluate_ready_models(
-                        cfg, args.workers_per_gpu, args.scratch_dir, args.batch_profile
+                        cfg,
+                        args.workers_per_gpu,
+                        args.scratch_dir,
+                        args.batch_profile,
+                        args.dynamic_queue,
                     )
                 else:
                     run(
@@ -792,6 +899,7 @@ def main():
                         args.workers_per_gpu,
                         args.scratch_dir,
                         args.batch_profile,
+                        args.dynamic_queue,
                     )
             except Exception as error:
                 save_progress(root, stage="failed", error=repr(error))

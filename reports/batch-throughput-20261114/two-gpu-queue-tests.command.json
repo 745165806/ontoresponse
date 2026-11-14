@@ -1,0 +1,15 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_round1_batch.py",
+    "tests/test_inference_batch.py"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-14T06:20:58.270228+00:00",
+  "elapsed_seconds": 4.790465831756592,
+  "log": "reports/batch-throughput-20261114/two-gpu-queue-tests.log",
+  "cwd": "${EXTERNAL_PATH}"
+}

@@ -1,5 +1,7 @@
 import copy
 import json
+import threading
+import time
 from dataclasses import replace
 from pathlib import Path
 from unittest.mock import patch
@@ -21,6 +23,8 @@ from scripts.round1_batch import (
     extract_parts,
     pilot_rows,
     refit,
+    run_work_queue,
+    score_dataset,
 )
 from scripts.round1_batch import (
     test_rows as evaluation_rows,
@@ -155,6 +159,10 @@ def test_completed_parts_survive_changed_worker_count_without_reextraction(tmp_p
         "subprocess.run", side_effect=AssertionError("Completed parts must be reused")
     ):
         assert extract_parts(cfg, rows, "test", workers_per_gpu=3) == paths
+        assert (
+            extract_parts(cfg, rows, "test", workers_per_gpu=3, dynamic_queue=True)
+            == paths
+        )
     with pytest.raises(ValueError, match="1..4"):
         extract_parts(cfg, rows, "test", workers_per_gpu=5)
 
@@ -180,7 +188,7 @@ def test_test_only_requires_all_final_models_and_cannot_enter_training(tmp_path)
         ),
     ):
         evaluate_ready_models(cfg, 3)
-        score.assert_called_once_with(cfg, [str(checkpoint)], 3, None, None)
+        score.assert_called_once_with(cfg, [str(checkpoint)], 3, None, None, False)
 
 
 def test_test_eer_report_rejects_partial_data_and_requires_all_seeds(tmp_path):
@@ -219,3 +227,58 @@ def test_fast_cache_preserves_existing_work_and_namespaces_new_parts(tmp_path):
     (legacy / "existing.npz").write_bytes(b"Completed measurement fixture")
     assert cache_directory(cfg, part, "test_evidence/dataset", scratch) == legacy
     assert cache_directory(cfg, part, "test_evidence/dataset") == legacy
+
+
+def test_dynamic_device_queue_assigns_every_task_once_and_both_devices_work():
+    barrier = threading.Barrier(2)
+    local = threading.local()
+    seen = []
+
+    def action(item, device):
+        if not getattr(local, "ready", False):
+            local.ready = True
+            barrier.wait(timeout=5)
+        time.sleep(0.001 if device == "cuda:0" else 0.005)
+        seen.append((item, device))
+
+    run_work_queue(range(20), ["cuda:0", "cuda:1"], action)
+    assert sorted(i for i, _ in seen) == list(range(20))
+    assert {d for _, d in seen} == {"cuda:0", "cuda:1"}
+
+
+def test_dynamic_queue_propagates_failure_and_stops_dispatching_rest():
+    barrier = threading.Barrier(2)
+    seen = []
+
+    def action(item, device):
+        seen.append(item)
+        barrier.wait(timeout=5)
+        if item == 0:
+            raise RuntimeError("worker failed")
+        time.sleep(0.02)
+
+    with pytest.raises(RuntimeError, match="worker failed"):
+        run_work_queue(range(100), ["cuda:0", "cuda:1"], action)
+    assert sorted(seen) == [0, 1]
+
+
+def test_parallel_scoring_keeps_each_models_full_evidence_on_both_devices(tmp_path):
+    barrier = threading.Barrier(2)
+    seen = []
+    cfg = {"batch": {"devices": ["cuda:0", "cuda:1"]}, "output": str(tmp_path)}
+    paths = ["part-a.pt", "part-b.pt"]
+
+    def score(config, dataset, evidence, checkpoint, device):
+        barrier.wait(timeout=5)
+        assert config is cfg and dataset == "asv2019_eval" and evidence == paths
+        seen.append((checkpoint, device))
+
+    with patch("scripts.round1_batch._score_checkpoint", side_effect=score):
+        score_dataset(
+            cfg, "asv2019_eval", paths, ["model-a", "model-b"], parallel_devices=True
+        )
+    assert {name for name, _ in seen} == {"model-a", "model-b"}
+    assert {d for _, d in seen} == {"cuda:0", "cuda:1"}
+    progress = json.loads((tmp_path / "progress.json").read_text())
+    assert progress["completed_models"] == progress["total_models"] == 2
+    assert progress["devices"] == ["cuda:0", "cuda:1"]

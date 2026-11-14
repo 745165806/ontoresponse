@@ -19,7 +19,7 @@
     },
     {
       "path": "PLANS.md",
-      "bytes": 5495
+      "bytes": 6451
     },
     {
       "path": "PUBLICATION.md",
@@ -35,7 +35,7 @@
     },
     {
       "path": "STATUS.md",
-      "bytes": 2830
+      "bytes": 3236
     },
     {
       "path": "STATUS_NEXT.md",
@@ -139,7 +139,7 @@
     },
     {
       "path": "docs/RUN_EXPERIMENTS.md",
-      "bytes": 10196
+      "bytes": 10616
     },
     {
       "path": "docs/SCRIPTS.md",
@@ -483,7 +483,7 @@
     },
     {
       "path": "reports/batch-throughput-20261114/REPORT.md",
-      "bytes": 3388
+      "bytes": 4839
     },
     {
       "path": "reports/batch-throughput-20261114/batching-tests.command.json",
@@ -552,6 +552,34 @@
     {
       "path": "reports/batch-throughput-20261114/selected-policy.json",
       "bytes": 3428
+    },
+    {
+      "path": "reports/batch-throughput-20261114/two-gpu-full-regression.command.json",
+      "bytes": 294
+    },
+    {
+      "path": "reports/batch-throughput-20261114/two-gpu-full-regression.log",
+      "bytes": 4436
+    },
+    {
+      "path": "reports/batch-throughput-20261114/two-gpu-fusion-check.json",
+      "bytes": 282
+    },
+    {
+      "path": "reports/batch-throughput-20261114/two-gpu-queue-tests.command.json",
+      "bytes": 361
+    },
+    {
+      "path": "reports/batch-throughput-20261114/two-gpu-queue-tests.log",
+      "bytes": 99
+    },
+    {
+      "path": "reports/batch-throughput-20261114/two-gpu-tests-final.command.json",
+      "bytes": 361
+    },
+    {
+      "path": "reports/batch-throughput-20261114/two-gpu-tests-final.log",
+      "bytes": 99
     },
     {
       "path": "reports/cleanup-20261112/REPORT.md",
@@ -3903,7 +3931,7 @@
     },
     {
       "path": "scripts/round1_batch.py",
-      "bytes": 31182
+      "bytes": 33439
     },
     {
       "path": "scripts/run_bounded.py",
@@ -3971,7 +3999,7 @@
     },
     {
       "path": "tests/test_round1_batch.py",
-      "bytes": 8714
+      "bytes": 10949
     },
     {
       "path": "tests/test_shareable_audit.py",

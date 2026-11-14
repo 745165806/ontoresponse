@@ -1,0 +1,13 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-14T06:26:43.845623+00:00",
+  "elapsed_seconds": 38.70578479766846,
+  "log": "reports/batch-throughput-20261114/two-gpu-full-regression.log",
+  "cwd": "${EXTERNAL_PATH}"
+}

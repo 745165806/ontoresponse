@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "devices": [
+    "cuda:1",
+    "cuda:0"
+  ],
+  "requests": 16,
+  "checkpoint": "reports/round1-batch-20261113/final/typed_response-seed17/model.pt",
+  "max_logit_abs_error": 0.0,
+  "scope": "existing development evidence; no new test or model selection"
+}

@@ -29,3 +29,14 @@ gpu-profile.command.json/log保存原始吞吐测量及初次后处理因缓存�
 当前完整测试的命令、PID和执行batch见../round1-batch-20261113/launch.json；批量缓存的inference_policy与分块config.yaml均记录实际设置。既有batch1块保留，新生成块用该批量配置，所有融合方法仍共用相同观测；不使用随机分数替代任何专家。
 
 近期冷分块命令日志（旧100–111，新132–141）：旧每块中位数261.54秒（6进程），新99.98秒（4进程）；按并发折算的近似吞吐提升1.74倍。样本不同，包含实际I/O/codec/加载且不保证未来全程同倍率；见end-to-end-timing.json。
+
+## GPU0/1动态调度
+
+两卡提取原已并行；本轮增加`--dynamic-queue`，每卡仍2进程，改为从共享队列独占领取下一未完成分块，复用已打包观测。后续模型评分从原GPU0串行改为GPU0/1分别领取完整checkpoint；每个模型读取同一套全量观测并计算完整EER。单条录音全部视图保持在同一提取任务，不将分块EER作平均。没有改变专家batch、模型、探针、裁剪或开发选择，也未读取测试EER选择调度。
+
+- unit/synthetic：任务独占领取、异常停止派发、双设备完整模型评分和断点复用相关14项通过，见two-gpu-tests-final.command.json/.log。
+- real-checkpoint、real-data、GPU：保存的typed_response seed17在16条既有开发证据上同时运行cuda:0/cuda:1，最大logit绝对差异0，见two-gpu-fusion-check.json。
+- 完整回归：187 passed、0 skipped、退出0，见two-gpu-full-regression.command.json/.log。
+- 2026-11-14 14:26（Asia/Shanghai）仅重启本项目调度器和观察进程，保留所有已完成观测及部分缓存；动态调度验证快照2019为238/279块。执行命令/PID记录于../round1-batch-20261113/launch.json，完成后仍自动汇总及发布小报告。
+
+动态队列的额外吞吐增益尚未独立测量；CPU音频处理、模型加载和缓存打包仍可能造成短暂GPU空闲。GPU2/3其他用户任务未改动；完整测试EER待全量覆盖后汇报。
