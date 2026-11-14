@@ -1,6 +1,6 @@
 {
   "aggregation": "EER (%) mean and sample standard deviation across three fixed seeds",
-  "checked_utc": "2026-11-14T12:13:30.230496+00:00",
+  "checked_utc": "2026-11-14T13:42:36.309132+00:00",
   "datasets": {
     "asv2019_eval": {
       "expected_requests": 71237,
@@ -27,12 +27,12 @@
     "inthewild": {
       "expected_requests": 31779,
       "extraction": {
-        "last_pack_utc": null,
-        "packed_parts": 0,
-        "packed_requests": 0,
+        "last_pack_utc": "2026-11-14T13:42:24.624271+00:00",
+        "packed_parts": 125,
+        "packed_requests": 31779,
         "total_parts": 125
       },
-      "full_model_seed_reports": 0,
+      "full_model_seed_reports": 6,
       "incomplete_or_invalid_reports": []
     }
   },
@@ -65,6 +65,17 @@
             "29": 5.129589632829374,
             "43": 4.306155507559395
           }
+        },
+        "inthewild": {
+          "eer_percent_mean": 16.496838124803062,
+          "eer_percent_seed_std": 6.7256495107002,
+          "failed": 0,
+          "n": 31779,
+          "per_seed_percent": {
+            "17": 16.0697289986475,
+            "29": 23.42586323628978,
+            "43": 9.994922139471907
+          }
         }
       },
       "model": "all_views_mlp"
@@ -91,6 +102,17 @@
             "17": 5.887072585482899,
             "29": 5.887072585482899,
             "43": 5.887072585482899
+          }
+        },
+        "inthewild": {
+          "eer_percent_mean": 9.520988490182802,
+          "eer_percent_seed_std": 0.0,
+          "failed": 0,
+          "n": 31779,
+          "per_seed_percent": {
+            "17": 9.520988490182802,
+            "29": 9.520988490182802,
+            "43": 9.520988490182802
           }
         }
       },
@@ -368,9 +390,14 @@
     }
   ],
   "status": {
+    "completed_models": 6,
     "dataset": "inthewild",
-    "requested": 31779,
-    "stage": "test_extraction",
-    "updated": 1794658381.0053678
+    "devices": [
+      "cuda:0",
+      "cuda:1"
+    ],
+    "stage": "test_scoring",
+    "total_models": 36,
+    "updated": 1794663753.4447196
   }
 }
