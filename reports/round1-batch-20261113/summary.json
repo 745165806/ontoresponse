@@ -1,15 +1,13 @@
 {
-  "status": {
-    "error": "ValueError('optimizer got an empty parameter list')",
-    "stage": "failed",
-    "updated": 1794623306.620399
+  "status": "resumed_after_fix",
+  "progress": {
+    "epochs": 3,
+    "model": "drop_anchor",
+    "seed": 43,
+    "stage": "refit",
+    "updated": 1794625164.8271394
   },
-  "updated_utc": "2026-11-14T02:28:45.980240+00:00",
+  "development_eer_report": "DEVELOPMENT_EER.json",
   "test_reports": [],
-  "limitations": [
-    "integration_pretrained; supervised exposure to ASV2019 development",
-    "RawNet2 training provenance unknown",
-    "Only two connected development groups",
-    "No failed requests silently excluded"
-  ]
+  "final_test_eer_available": false
 }

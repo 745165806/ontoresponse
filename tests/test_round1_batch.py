@@ -1,6 +1,8 @@
 import copy
 import json
+from dataclasses import replace
 from pathlib import Path
+from unittest.mock import patch
 
 import pytest
 import torch
@@ -95,3 +97,40 @@ def test_batched_prediction_and_fixed_epoch_refit(tmp_path):
         )["epoch"]
         == 2
     )
+
+
+def test_parameterless_refit_selects_on_development_and_never_creates_optimizer(
+    tmp_path,
+):
+    cfg, index, ledger, _, _ = fixture(tmp_path)
+    train = load_batch(cfg, index, ledger, "fusion_train")
+    scores = train.scores.clone()
+    signal = train.labels * 2 - 1
+    scores[:, 0, 0] = -signal
+    scores[:, 1, 0] = signal
+    scores[:, 2, 0] = 0
+    groups = ["a", "a", "b", "b"]
+    train = replace(
+        train,
+        scores=scores,
+        groups=groups,
+        audit=[dict(r, source_group=g) for r, g in zip(train.audit, groups)],
+    )
+    cfg["output"] = str(tmp_path / "single-refit")
+    # A parameterless expert must work without optimizer settings or optimizer construction.
+    with patch("torch.optim.AdamW", side_effect=AssertionError("No optimizer allowed")):
+        checkpoint = refit(
+            cfg, "best_single_expert", 17, train, 64, 1, OntologyRegistry()
+        )
+    cp, model, stats, reg = restore(checkpoint)
+    assert int(model.chosen_expert) == 1
+    assert cp["epochs"] == 0 and cp["history"] == []
+    assert cp["single_expert_selection"]["test_used"] is False
+    assert cp["single_expert_selection"]["chosen"]["mean_eer"] == 0
+    assert torch.isfinite(predict_batches(model, train, stats, reg, 2).logits).all()
+    # Re-entering a completed refit reuses the checkpoint.
+    assert refit(cfg, "best_single_expert", 17, train, 64, 1, reg) == checkpoint
+    forbidden = replace(train, audit=[dict(r, role="test") for r in train.audit])
+    cfg["output"] = str(tmp_path / "forbidden-selection")
+    with pytest.raises(ValueError, match="development evidence only"):
+        refit(cfg, "best_single_expert", 17, forbidden, 64, 1, reg)

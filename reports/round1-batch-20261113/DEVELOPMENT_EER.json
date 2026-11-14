@@ -1,0 +1,112 @@
+{
+  "level": "development_validation_only",
+  "source": "reports/round1-batch-20261113/development/comparison.json",
+  "development_recordings": 50224,
+  "folds": 2,
+  "seeds": [
+    17,
+    29,
+    43
+  ],
+  "aggregation": "unweighted mean of fold-specific EER over 2 folds x 3 seeds; not pooled test EER",
+  "rows": [
+    {
+      "model": "best_single_expert",
+      "eer_percent_mean": 0.02548315763964415,
+      "fold0_percent": 0.029761904761904656,
+      "fold1_percent": 0.021204410517383643,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "score_mlp",
+      "eer_percent_mean": 0.020616240558986774,
+      "fold0_percent": 0.03769841269840961,
+      "fold1_percent": 0.0035340684195639405,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "original_mlp",
+      "eer_percent_mean": 0.026072169042906657,
+      "fold0_percent": 0.029761904761904656,
+      "fold1_percent": 0.022382433323908657,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "all_views_mlp",
+      "eer_percent_mean": 0.019375950832693313,
+      "fold0_percent": 0.025793650793652183,
+      "fold1_percent": 0.012958250871734448,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "response_mlp",
+      "eer_percent_mean": 0.04089743878212189,
+      "fold0_percent": 0.043118668118669504,
+      "fold1_percent": 0.038676209445574275,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "set_attention",
+      "eer_percent_mean": 0.03933420041862718,
+      "fold0_percent": 0.0317460317460309,
+      "fold1_percent": 0.046922369091223465,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "relation_tied",
+      "eer_percent_mean": 0.026375949546889033,
+      "fold0_percent": 0.0317460317460309,
+      "fold1_percent": 0.02100586734774717,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "typed_response",
+      "eer_percent_mean": 0.029234318833554207,
+      "fold0_percent": 0.03373015873016083,
+      "fold1_percent": 0.024738478936947583,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "wrong_family",
+      "eer_percent_mean": 0.0278703367125747,
+      "fold0_percent": 0.03571428571428707,
+      "fold1_percent": 0.020026387710862327,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "drop_anchor",
+      "eer_percent_mean": 0.03170818563612101,
+      "fold0_percent": 0.03769841269840961,
+      "fold1_percent": 0.02571795857383242,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "drop_same_probe",
+      "eer_percent_mean": 0.028311106539298282,
+      "fold0_percent": 0.03915041415041333,
+      "fold1_percent": 0.01747179892818323,
+      "runs": 6,
+      "test_used": false
+    },
+    {
+      "model": "drop_same_family",
+      "eer_percent_mean": 0.029221734978374075,
+      "fold0_percent": 0.0317460317460309,
+      "fold1_percent": 0.026697438210717264,
+      "runs": 6,
+      "test_used": false
+    }
+  ],
+  "final_test_eer_available": false,
+  "limitation": "Experts exposed to 2019 train/dev; only two connected groups; no confirmed ontology gain"
+}

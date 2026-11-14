@@ -1,20 +1,19 @@
-# 当前状态 — 2026-11-13
+# 当前状态 — 2026-11-14
 
-用户已授权自主执行大批量GPU实验，并恢复ASVspoof2019 LA eval测试。2019 train/dev用于开发；2019 LA eval、2021 LA eval阶段与In-the-Wild仅在设置确定后测试。Codecfake延后。
+任务未完成，已修复故障并恢复GPU任务。2019 train/dev用于开发，最终测试为2019 LA eval、2021 LA eval和In-the-Wild。
 
-| 层级 | 实际状态 |
+| 阶段 | 实际状态 |
 |---|---|
-| implemented | 新增分块提取/压缩观测、GPU分批训练和验证、两折选择、固定轮数重训、2021 LA按eval阶段读取、三测试集独立评价 |
-| unit/synthetic | 177 passed、0 skipped、退出0；日志reports/round1-batch-20261113/regression.log |
-| real-checkpoint / GPU | 三专家原实现兼容性已有验证；本次64条×3专家×7视图共1344个观测有效，失败0 |
-| real-data / GPU smoke | 32训练+32验证，original_mlp/response_mlp/typed_response各20步均成功，save/load精确一致；验证EER全0，仅工程结果 |
-| running | 后台PID见reports/round1-batch-20261113/launch.json；GPU0/1处理1024条pilot；首512条（两块）已打包，10752个观测有效且跨GPU专家身份一致，随后自动进入完整开发及测试 |
-| research | 完整结果尚未产生；不能据smoke宣称本体有效 |
+| 1024条pilot | 4/4块提取完成；两折×三seed×12方法，共72次比较完成 |
+| 50224条完整开发数据 | 197/197块提取完成；另72次开发比较完成，选择配置已保存 |
+| 最终重训 | 原先保存3个模型后，因无参数best_single_expert创建AdamW而停止；已修复并恢复，目前8/36个checkpoint |
+| 三测试集 | 尚无完整逐句预测或测试EER；不能用开发EER代替 |
+| 修复验证 | 10项相关回归测试通过、0 skipped、退出0；Ruff通过 |
 
-批量配置configs/round1-batch.yaml：先1024条两折/三seed/12模型pilot，再50224条开发录音的两折选择及完整重训；测试71237条2019 LA eval、148176条2021 LA eval、31779条ITW。输入按协议取样，不混合2021 progress/hidden。原始数据、权重和大缓存仅本地保存。
+[开发验证EER](reports/round1-batch-20261113/DEVELOPMENT_EER.md)：两折×三seed均值，全视图MLP 0.019376%、分数MLP 0.020616%、原始embedding融合0.026072%、同邻接共享关系参数0.026376%、本体typed_response 0.029234%、错误family 0.027870%。当前开发结果未显示本体优于这些强对照；专家已使用2019开发数据且只有两个来源组件，不作为独立泛化证据。
 
-运行/恢复步骤见[运行实验](docs/RUN_EXPERIMENTS.md)，命令、资源和限制见[批量报告](reports/round1-batch-20261113/REPORT.md)。总进度progress.json、提取进度pilot/progress.json、日志runner.log；失败不计作通过，测试尚未开始。
+修复：最佳单专家仅根据开发组原始margin的平均EER选择并保存chosen_expert，零优化步骤；神经融合仍使用原有开发选择的训练轮数。配置、专家权重、探针、其余方法选择结果不变，未读取测试分数。失败日志与恢复前状态均保留；不重提取已完成数据。
 
-限制：现用专家已使用2019开发数据，RawNet2监督来源未知；保守来源连接仅两个开发组件，结论属于integration_pretrained。三份现用权重不能都声称复现论文；历史专家评测见reports/expert-benchmark-20261111/RESULTS.md。2021 LA/ITW来源独立性及历史消费限制继续披露。取消hash/SHA或文档审核不改变这些实验限制。
+运行PID见reports/round1-batch-20261113/launch.json，当前阶段以progress.json为准；日志runner.log。10项测试命令/退出码/日志见recovery-tests-20261114.command.json与.log。GPU0/1在重启前空闲，其他GPU任务未改动；当前最终重训使用GPU0，提取阶段使用0/1。
 
-常规实验无需文件/源码SHA审计。保留配置、分组、checkpoint、曲线、逐句预测和指标；GitHub仅同步代码、说明及小型重要报告。
+[操作说明](docs/RUN_EXPERIMENTS.md)、[批量报告](reports/round1-batch-20261113/REPORT.md)。历史177项完整回归和64条GPU smoke结果保留，不将其冒称为本次修复后的完整回归。结果监控进程已重新启动，终态后汇总并同步小报告。GitHub仅同步代码、说明和小型报告，音频/权重/观测包留本地；无需SHA或文档封存。

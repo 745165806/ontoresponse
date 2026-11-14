@@ -1,10 +1,7 @@
-# First-round batch experiment results
+# 第一轮实验当前结果 — 2026-11-14
 
-Status: {'error': "ValueError('optimizer got an empty parameter list')", 'stage': 'failed', 'updated': 1794623306.620399}
+状态：原任务失败，已修复并恢复；三个测试集EER尚未产生。
 
-Test scores are generated only after development selection and full refit.
+已完成50224条开发数据、两折三seed的验证，结果见[DEVELOPMENT_EER.md](DEVELOPMENT_EER.md)。本体0.029234%，全视图MLP0.019376%；当前开发结果未显示本体增益。不能以开发指标替代测试指标。
 
-| Dataset | Model/seed | EER (%) | N | Failed |
-|---|---|---:|---:|---:|
-
-Limitations: integration_pretrained; development exposure; RawNet2 provenance unknown; two connected development groups. A stopped or failed run is not a completed benchmark.
+失败原因：无参数单专家基线在最终重训时错误创建优化器。修复后复用完整观测和开发模型继续，历史错误保存在runner.log。最终状态以progress.json和后续summary.json为准。

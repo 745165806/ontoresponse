@@ -288,6 +288,43 @@ def assign_role(batch, indices, role):
     return dataclasses.replace(out, audit=[dict(r, role=role) for r in out.audit])
 
 
+def select_single_expert(batch, experts):
+    """Each source group served as a held-out development fold; no test input."""
+    if any(r.get("role") not in ("fusion_train", "fusion_val") for r in batch.audit):
+        raise ValueError("Single expert selection requires development evidence only")
+    groups = sorted(set(batch.groups))
+    if len(groups) < 2:
+        raise ValueError("Single expert selection needs grouped development folds")
+    if not batch.valid[:, :, 0].all():
+        raise ValueError("Incomplete original expert coverage during selection")
+    labels = batch.labels.numpy()
+    memberships = np.asarray(batch.groups)
+    scores = batch.scores[:, :, 0].numpy()
+    candidates = []
+    for index, expert in enumerate(experts):
+        fold_eers = [
+            metrics(labels[memberships == group], scores[memberships == group, index])[
+                "eer"
+            ]
+            for group in groups
+        ]
+        candidates.append(
+            dict(
+                index=index,
+                expert=expert["id"],
+                fold_eers=fold_eers,
+                mean_eer=float(np.mean(fold_eers)),
+            )
+        )
+    chosen = min(candidates, key=lambda r: (r["mean_eer"], r["index"]))
+    return dict(
+        chosen=chosen,
+        candidates=candidates,
+        test_used=False,
+        rule="minimum mean original-margin EER over held-out development groups; tie expert index",
+    )
+
+
 def refit(cfg, name, seed, train, width, epochs, reg):
     """Fixed epochs selected from development folds; never touch test during fitting."""
     out = Path(cfg["output"]) / "final" / f"{name}-seed{seed}"
@@ -300,11 +337,18 @@ def refit(cfg, name, seed, train, width, epochs, reg):
     model = build_model(dims, reg, name, width, seed).to(device)
     model.expert_identities = train.identities
     stats = ExpertStats.fit(*train.inputs(), role="fusion_train")
-    opt = torch.optim.AdamW(
-        model.parameters(),
-        lr=cfg["pilot"]["learning_rate"],
-        weight_decay=cfg["pilot"]["weight_decay"],
-    )
+    single_selection = None
+    if name == "best_single_expert":
+        single_selection = select_single_expert(train, cfg["experts"])
+        model.chosen_expert.fill_(single_selection["chosen"]["index"])
+        atomic_json(out / "expert-selection.json", single_selection)
+        opt, epochs = None, 0
+    else:
+        opt = torch.optim.AdamW(
+            model.parameters(),
+            lr=cfg["pilot"]["learning_rate"],
+            weight_decay=cfg["pilot"]["weight_decay"],
+        )
     history = []
     steps = 0
     for epoch in range(1, epochs + 1):
@@ -351,7 +395,10 @@ def refit(cfg, name, seed, train, width, epochs, reg):
             train_groups=sorted(set(train.groups)),
             val_groups=[],
             epochs=epochs,
-            selection_rule="fixed median best epoch from development folds; no test used",
+            selection_rule=single_selection["rule"]
+            if single_selection
+            else "fixed median best epoch from development folds; no test used",
+            single_expert_selection=single_selection,
             mode="integration_pretrained",
             history=history,
             device=str(device),
