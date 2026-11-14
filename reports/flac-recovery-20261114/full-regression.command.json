@@ -1,0 +1,13 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "pytest",
+    "-q"
+  ],
+  "exit_code": 0,
+  "started_utc": "2026-11-14T07:01:46.415186+00:00",
+  "elapsed_seconds": 36.54797625541687,
+  "log": "reports/flac-recovery-20261114/full-regression.log",
+  "pythonpath": "${EXTERNAL_PATH}"
+}

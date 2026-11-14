@@ -1,0 +1,14 @@
+{
+  "all_probes_valid": true,
+  "decode_readers": [
+    "ffmpeg_strict"
+  ],
+  "device": "cuda:0",
+  "expert_views": 336,
+  "failed": 0,
+  "postprocessing_note": "First postprocessing attempt used nonexistent mask attribute; corrected to EvidenceBatch.valid and revalidated saved real observations without rerunning inference",
+  "previous_decode_failures": 16,
+  "real_requests": 16,
+  "scope": "previously unreadable real input; no model selection or test EER tuning",
+  "status": "passed"
+}

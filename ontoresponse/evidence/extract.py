@@ -8,7 +8,7 @@ import torch
 import yaml
 
 from ..common import budget, file_info, read_jsonl, unique, write_jsonl
-from ..data.audio import quality, read_audio
+from ..data.audio import quality, read_audio_details
 from ..data.prepare import shard
 from ..experts.base import AudioInput, FrozenExpert
 from ..resources import resource_path
@@ -116,7 +116,7 @@ def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1, output=
     view_records = {}
     for r in rows:
         try:
-            x = read_audio(r["audio"])
+            x, audio_decode = read_audio_details(r["audio"])
             view_records[r["id"]] = []
             for p in [
                 {"id": "original", "family": "identity", "operation": "identity"}
@@ -157,6 +157,7 @@ def extract(cfg, manifest, max_origins=24, shard_index=0, shard_count=1, output=
                 {
                     "id": r["id"],
                     "status": "pending",
+                    "audio_decode": audio_decode,
                     "quality": quality(x),
                     "views": view_records[r["id"]],
                     "experts": {},

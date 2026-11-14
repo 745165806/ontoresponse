@@ -19,7 +19,7 @@
     },
     {
       "path": "PLANS.md",
-      "bytes": 6451
+      "bytes": 7427
     },
     {
       "path": "PUBLICATION.md",
@@ -35,7 +35,7 @@
     },
     {
       "path": "STATUS.md",
-      "bytes": 3236
+      "bytes": 3945
     },
     {
       "path": "STATUS_NEXT.md",
@@ -139,7 +139,7 @@
     },
     {
       "path": "docs/RUN_EXPERIMENTS.md",
-      "bytes": 10616
+      "bytes": 11085
     },
     {
       "path": "docs/SCRIPTS.md",
@@ -283,7 +283,7 @@
     },
     {
       "path": "ontoresponse/data/audio.py",
-      "bytes": 2932
+      "bytes": 4873
     },
     {
       "path": "ontoresponse/data/connected.py",
@@ -363,7 +363,7 @@
     },
     {
       "path": "ontoresponse/evidence/extract.py",
-      "bytes": 12141
+      "bytes": 12221
     },
     {
       "path": "ontoresponse/experts/__init__.py",
@@ -1964,6 +1964,42 @@
     {
       "path": "reports/expert-benchmark-20261111/summary.json",
       "bytes": 3115
+    },
+    {
+      "path": "reports/flac-recovery-20261114/REPORT.md",
+      "bytes": 3142
+    },
+    {
+      "path": "reports/flac-recovery-20261114/full-regression.command.json",
+      "bytes": 290
+    },
+    {
+      "path": "reports/flac-recovery-20261114/full-regression.log",
+      "bytes": 4436
+    },
+    {
+      "path": "reports/flac-recovery-20261114/real-decoder-validation.json",
+      "bytes": 513
+    },
+    {
+      "path": "reports/flac-recovery-20261114/real-extraction-validation.json",
+      "bytes": 494
+    },
+    {
+      "path": "reports/flac-recovery-20261114/real-extraction.command.json",
+      "bytes": 378
+    },
+    {
+      "path": "reports/flac-recovery-20261114/real-extraction.log",
+      "bytes": 718
+    },
+    {
+      "path": "reports/flac-recovery-20261114/relaunch.json",
+      "bytes": 760
+    },
+    {
+      "path": "reports/flac-recovery-20261114/resumed-parts-validation.json",
+      "bytes": 285
     },
     {
       "path": "reports/github-docs-20261111/old-predictions-recomputed.json",
@@ -3695,7 +3731,19 @@
     },
     {
       "path": "reports/round1-batch-20261113/REPORT.md",
-      "bytes": 3193
+      "bytes": 6815
+    },
+    {
+      "path": "reports/round1-batch-20261113/RESULTS.md",
+      "bytes": 1146
+    },
+    {
+      "path": "reports/round1-batch-20261113/TEST_EER.json",
+      "bytes": 5937
+    },
+    {
+      "path": "reports/round1-batch-20261113/TEST_EER.md",
+      "bytes": 1146
     },
     {
       "path": "reports/round1-batch-20261113/launch.json",
@@ -3708,6 +3756,10 @@
     {
       "path": "reports/round1-batch-20261113/regression.log",
       "bytes": 4436
+    },
+    {
+      "path": "reports/round1-batch-20261113/summary.json",
+      "bytes": 5937
     },
     {
       "path": "reports/round1-smoke/summary.json",
@@ -3944,6 +3996,10 @@
     {
       "path": "scripts/stage_run.py",
       "bytes": 1371
+    },
+    {
+      "path": "tests/test_audio_decode.py",
+      "bytes": 2642
     },
     {
       "path": "tests/test_connected_split.py",

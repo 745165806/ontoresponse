@@ -75,6 +75,8 @@ python -u -m scripts.round1_batch --config configs/round1-batch.yaml --test-only
 
 AASIST/SSL+AASIST/RawNet2实际推断batch分别32/32/64。每条录音的原始/六探针保持同样裁剪和聚合。批量输出与同batch原生上游精确一致，开发融合决策稳定；与batch1存在已记录的浮点差异，不保证测试EER逐位相同。已完成的观测块复用；临时缓存放本地NVMe SSD（/tmp/ontoresponse-round1-cache），打包后删除临时缓存，最终观测包和预测留项目目录。已有部分缓存可保留原位继续，或停止自己的任务后将其整体迁到SSD；缓存键和数值内容不变。只改变推断batch、任务调度和临时存储位置，不变更模型权重、crop、探针或阈值。实测吞吐及双卡验证见[批量加速报告](../reports/batch-throughput-20261114/REPORT.md)。
 
+音频先用soundfile读取。若FLAC解码报错，则调用现有FFmpeg严格解码，必须没有解码错误且帧数与原流元数据一致；保留原采样率和声道，随后按共同规则转mono。不会自动重采样或容忍截断文件。提取记录的`audio_decode`字段记录实际reader和原错误；2019完整结果及已有有效缓存继续复用。2021首批兼容验证见[解码修复报告](../reports/flac-recovery-20261114/REPORT.md)。
+
 完整EER汇总：`reports/round1-batch-20261113/TEST_EER.md`及.json。它仅接受2019=71237、2021 LA eval=148176、ITW=31779条完整覆盖、失败0的报告；每种方法三个seed齐全才汇总均值与样本标准差。未完成显示空白，不以开发EER或小子集EER代替。每个数据集的36份报告完成即自动同步小型结果到GitHub，最终状态或失败状态也同步。完整逐句logit留在本地tests/<dataset>/<model>-seed<seed>/。
 
 可手动重算汇总：

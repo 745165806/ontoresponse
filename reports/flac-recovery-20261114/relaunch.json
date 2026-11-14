@@ -1,0 +1,25 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-u",
+    "-m",
+    "scripts.round1_batch",
+    "--config",
+    "configs/round1-batch.yaml",
+    "--test-only",
+    "--workers-per-gpu",
+    "2",
+    "--scratch-dir",
+    "/tmp/ontoresponse-round1-cache",
+    "--batch-profile",
+    "reports/batch-throughput-20261114/selected-policy.json",
+    "--dynamic-queue"
+  ],
+  "initial_2021_decode_failures": 389,
+  "monitor_note": "Initial observer started before runner cleared prior failed stage and exited; restarted after current test_extraction stage was confirmed",
+  "monitor_pid": 482105,
+  "monitor_restarted_utc": "2026-11-14T07:08:00.719743+00:00",
+  "pid": 222701,
+  "preserved_complete_2019_reports": 36,
+  "started_utc": "2026-11-14T07:03:24.296874+00:00"
+}

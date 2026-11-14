@@ -1,0 +1,13 @@
+{
+  "completed_parts": 4,
+  "devices": [
+    "cuda:0",
+    "cuda:1"
+  ],
+  "expert_view_observations": 21504,
+  "failed": 0,
+  "recovered_flac_inputs": 389,
+  "requests": 1024,
+  "scope": "first four resumed full-test extraction parts; no partial EER reported",
+  "status": "passed"
+}

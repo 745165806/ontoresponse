@@ -1,0 +1,16 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "ontoresponse",
+    "extract",
+    "--config",
+    "reports/flac-recovery-20261114/real-extraction/config.yaml",
+    "--max-origins",
+    "16"
+  ],
+  "elapsed_seconds": 18.69045090675354,
+  "exit_code": 0,
+  "log": "reports/flac-recovery-20261114/real-extraction.log",
+  "started_utc": "2026-11-14T07:02:20.110913+00:00"
+}

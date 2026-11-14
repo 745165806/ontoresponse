@@ -1,17 +1,76 @@
+import subprocess
+
 import numpy as np
 import soundfile as sf
 import torch
 
 
-def read_audio(path):
-    x, sr = sf.read(path, dtype="float32", always_2d=True)
+def read_audio_details(path):
+    """Read native samples; strictly decode FLAC if libsndfile cannot read it."""
+    reader = "soundfile"
+    first_error = None
+    try:
+        x, sr = sf.read(path, dtype="float32", always_2d=True)
+    except sf.LibsndfileError as error:
+        info = sf.info(path)
+        if info.format != "FLAC":
+            raise
+        if info.samplerate != 16000:
+            raise ValueError(
+                "Expected 16000Hz; resampling must be explicit and common to all classes"
+            ) from error
+        decoded = subprocess.run(
+            [
+                "ffmpeg",
+                "-nostdin",
+                "-v",
+                "error",
+                "-xerror",
+                "-err_detect",
+                "explode",
+                "-i",
+                str(path),
+                "-map",
+                "0:a:0",
+                "-f",
+                "f32le",
+                "-c:a",
+                "pcm_f32le",
+                "pipe:1",
+            ],
+            capture_output=True,
+            timeout=60,
+        )
+        if decoded.returncode or decoded.stderr.strip():
+            raise ValueError(
+                "Strict FLAC decoding failed: "
+                + decoded.stderr.decode(errors="replace")[:2000]
+            ) from error
+        expected_bytes = info.frames * info.channels * 4
+        if info.frames <= 0 or len(decoded.stdout) != expected_bytes:
+            raise ValueError(
+                "Decoded FLAC frame count differs from stream metadata"
+            ) from error
+        x = np.frombuffer(decoded.stdout, dtype="<f4").reshape(
+            info.frames, info.channels
+        )
+        sr = info.samplerate
+        reader = "ffmpeg_strict"
+        first_error = str(error)
     if sr != 16000:
         raise ValueError(
             "Expected 16000Hz; resampling must be explicit and common to all classes"
         )
+    metadata = dict(reader=reader, samplerate=sr, channels=x.shape[1], frames=len(x))
+    if first_error is not None:
+        metadata["soundfile_error"] = first_error
     x = x.mean(1)
     validate_audio(x)
-    return x
+    return x, metadata
+
+
+def read_audio(path):
+    return read_audio_details(path)[0]
 
 
 def validate_audio(x):

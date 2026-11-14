@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "command": "read_audio_details versus independent SoX for all initial decode failures and 64 successful controls",
+  "started_utc": "2026-11-14T07:01:27.780782+00:00",
+  "elapsed_seconds": 1.2906193733215332,
+  "real_requests": 453,
+  "previous_failures": 389,
+  "controls": 64,
+  "strict_fallback_count": 389,
+  "all_frames_match": true,
+  "max_pcm_abs_difference": 0.0,
+  "resampling": false,
+  "exit_code": 0,
+  "records": "reports/flac-recovery-20261114/real-decoder-records.json"
+}
