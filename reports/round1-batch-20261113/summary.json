@@ -1,6 +1,6 @@
 {
   "status": {
-    "completed_models": 2,
+    "completed_models": 8,
     "dataset": "asv2021_la",
     "devices": [
       "cuda:0",
@@ -8,9 +8,9 @@
     ],
     "stage": "test_scoring",
     "total_models": 36,
-    "updated": 1794658109.8248174
+    "updated": 1794658153.5368981
   },
-  "checked_utc": "2026-11-14T12:08:37.609457+00:00",
+  "checked_utc": "2026-11-14T12:09:13.851562+00:00",
   "datasets": {
     "asv2019_eval": {
       "expected_requests": 71237,
@@ -25,7 +25,7 @@
     },
     "asv2021_la": {
       "expected_requests": 148176,
-      "full_model_seed_reports": 2,
+      "full_model_seed_reports": 8,
       "incomplete_or_invalid_reports": [],
       "extraction": {
         "packed_parts": 579,
@@ -60,6 +60,17 @@
           },
           "n": 71237,
           "failed": 0
+        },
+        "asv2021_la": {
+          "eer_percent_mean": 4.258909287257019,
+          "eer_percent_seed_std": 0.8952389764295985,
+          "per_seed_percent": {
+            "17": 3.3409827213822894,
+            "29": 5.129589632829374,
+            "43": 4.306155507559395
+          },
+          "n": 148176,
+          "failed": 0
         }
       }
     },
@@ -75,6 +86,17 @@
             "43": 0.6118286879673691
           },
           "n": 71237,
+          "failed": 0
+        },
+        "asv2021_la": {
+          "eer_percent_mean": 5.887072585482899,
+          "eer_percent_seed_std": 0.0,
+          "per_seed_percent": {
+            "17": 5.887072585482899,
+            "29": 5.887072585482899,
+            "43": 5.887072585482899
+          },
+          "n": 148176,
           "failed": 0
         }
       }

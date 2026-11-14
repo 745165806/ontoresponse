@@ -1,6 +1,6 @@
 {
   "aggregation": "EER (%) mean and sample standard deviation across three fixed seeds",
-  "checked_utc": "2026-11-14T12:08:37.609457+00:00",
+  "checked_utc": "2026-11-14T12:09:13.851562+00:00",
   "datasets": {
     "asv2019_eval": {
       "expected_requests": 71237,
@@ -21,7 +21,7 @@
         "packed_requests": 148176,
         "total_parts": 579
       },
-      "full_model_seed_reports": 2,
+      "full_model_seed_reports": 8,
       "incomplete_or_invalid_reports": []
     },
     "inthewild": {
@@ -54,6 +54,17 @@
             "29": 0.7075545537084005,
             "43": 0.42735042735042583
           }
+        },
+        "asv2021_la": {
+          "eer_percent_mean": 4.258909287257019,
+          "eer_percent_seed_std": 0.8952389764295985,
+          "failed": 0,
+          "n": 148176,
+          "per_seed_percent": {
+            "17": 3.3409827213822894,
+            "29": 5.129589632829374,
+            "43": 4.306155507559395
+          }
         }
       },
       "model": "all_views_mlp"
@@ -69,6 +80,17 @@
             "17": 0.6118286879673691,
             "29": 0.6118286879673691,
             "43": 0.6118286879673691
+          }
+        },
+        "asv2021_la": {
+          "eer_percent_mean": 5.887072585482899,
+          "eer_percent_seed_std": 0.0,
+          "failed": 0,
+          "n": 148176,
+          "per_seed_percent": {
+            "17": 5.887072585482899,
+            "29": 5.887072585482899,
+            "43": 5.887072585482899
           }
         }
       },
@@ -236,7 +258,7 @@
     }
   ],
   "status": {
-    "completed_models": 2,
+    "completed_models": 8,
     "dataset": "asv2021_la",
     "devices": [
       "cuda:0",
@@ -244,6 +266,6 @@
     ],
     "stage": "test_scoring",
     "total_models": 36,
-    "updated": 1794658109.8248174
+    "updated": 1794658153.5368981
   }
 }
