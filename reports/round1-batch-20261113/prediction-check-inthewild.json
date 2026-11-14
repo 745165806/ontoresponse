@@ -1,0 +1,280 @@
+{
+  "all_prediction_ids_and_protocol_fields_match": true,
+  "dataset": "inthewild",
+  "failed": 0,
+  "max_allowed_metric_error": 1e-12,
+  "model_seed_reports": 36,
+  "models": [
+    {
+      "auroc": 0.9672169686058681,
+      "eer_percent": 9.520988490182802,
+      "model_seed": "best_single_expert-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 9.52180266566947
+    },
+    {
+      "auroc": 0.9672169686058681,
+      "eer_percent": 9.520988490182802,
+      "model_seed": "best_single_expert-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 9.52180266566947
+    },
+    {
+      "auroc": 0.9672169686058681,
+      "eer_percent": 9.520988490182802,
+      "model_seed": "best_single_expert-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 9.52180266566947
+    },
+    {
+      "auroc": 0.9471694096502363,
+      "eer_percent": 11.701648048890448,
+      "model_seed": "score_mlp-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 11.703058283077587
+    },
+    {
+      "auroc": 0.9398926203218675,
+      "eer_percent": 12.5,
+      "model_seed": "score_mlp-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 12.499060762410458
+    },
+    {
+      "auroc": 0.9287559100110424,
+      "eer_percent": 13.910734859490056,
+      "model_seed": "score_mlp-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 13.912036353238596
+    },
+    {
+      "auroc": 0.9374124904431356,
+      "eer_percent": 11.027420446851721,
+      "model_seed": "original_mlp-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 11.026408715636453
+    },
+    {
+      "auroc": 0.9456560373827667,
+      "eer_percent": 10.181110358835477,
+      "model_seed": "original_mlp-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.17997059794201
+    },
+    {
+      "auroc": 0.9403601745320922,
+      "eer_percent": 10.570412999322954,
+      "model_seed": "original_mlp-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.569983336810202
+    },
+    {
+      "auroc": 0.9127829104018467,
+      "eer_percent": 16.0697289986475,
+      "model_seed": "all_views_mlp-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 16.070578785038037
+    },
+    {
+      "auroc": 0.849201841789165,
+      "eer_percent": 23.42586323628978,
+      "model_seed": "all_views_mlp-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 23.427102834895877
+    },
+    {
+      "auroc": 0.9594796221859457,
+      "eer_percent": 9.994922139471907,
+      "model_seed": "all_views_mlp-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 9.994205046092212
+    },
+    {
+      "auroc": 0.919605340631692,
+      "eer_percent": 13.284576466462955,
+      "model_seed": "response_mlp-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 13.285822424159033
+    },
+    {
+      "auroc": 0.9299159754788064,
+      "eer_percent": 13.041638456330396,
+      "model_seed": "response_mlp-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 13.042885049935474
+    },
+    {
+      "auroc": 0.9352566571956359,
+      "eer_percent": 12.232630366177428,
+      "model_seed": "response_mlp-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 12.230905569006115
+    },
+    {
+      "auroc": 0.935873389297621,
+      "eer_percent": 11.736712918899965,
+      "model_seed": "set_attention-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 11.73751691984267
+    },
+    {
+      "auroc": 0.9371806761771294,
+      "eer_percent": 11.000350648700095,
+      "model_seed": "set_attention-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 11.001190896455668
+    },
+    {
+      "auroc": 0.936775655138038,
+      "eer_percent": 10.53949807143215,
+      "model_seed": "set_attention-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.538029333617226
+    },
+    {
+      "auroc": 0.9341360308039066,
+      "eer_percent": 10.477318889641163,
+      "model_seed": "relation_tied-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.478352877671357
+    },
+    {
+      "auroc": 0.9319034242631197,
+      "eer_percent": 11.205730601612984,
+      "model_seed": "relation_tied-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 11.205438083474062
+    },
+    {
+      "auroc": 0.9364314905900222,
+      "eer_percent": 11.17129316181449,
+      "model_seed": "relation_tied-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 11.170979446708976
+    },
+    {
+      "auroc": 0.9335536356680983,
+      "eer_percent": 11.265841807343586,
+      "model_seed": "typed_response-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 11.265114539419931
+    },
+    {
+      "auroc": 0.9376084161250107,
+      "eer_percent": 10.339127385663478,
+      "model_seed": "typed_response-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.34051833061102
+    },
+    {
+      "auroc": 0.9391578062781074,
+      "eer_percent": 10.779942894354557,
+      "model_seed": "typed_response-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.780966707840786
+    },
+    {
+      "auroc": 0.9418266230746244,
+      "eer_percent": 10.263988378500226,
+      "model_seed": "wrong_family-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.264864873068664
+    },
+    {
+      "auroc": 0.93656603409605,
+      "eer_percent": 9.938386014126134,
+      "model_seed": "wrong_family-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 9.93703322371845
+    },
+    {
+      "auroc": 0.9276550243542971,
+      "eer_percent": 11.7467314531884,
+      "model_seed": "wrong_family-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 11.746757737426968
+    },
+    {
+      "auroc": 0.9410030573317577,
+      "eer_percent": 9.853228472674449,
+      "model_seed": "drop_anchor-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 9.852138948591794
+    },
+    {
+      "auroc": 0.9123747182965534,
+      "eer_percent": 14.395734597156395,
+      "model_seed": "drop_anchor-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 14.396184184817743
+    },
+    {
+      "auroc": 0.9409433645541476,
+      "eer_percent": 10.688896411645231,
+      "model_seed": "drop_anchor-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.68933624870194
+    },
+    {
+      "auroc": 0.9369328963558887,
+      "eer_percent": 10.468855788761001,
+      "model_seed": "drop_same_probe-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.469112060087058
+    },
+    {
+      "auroc": 0.9387107855694171,
+      "eer_percent": 10.274006912788659,
+      "model_seed": "drop_same_probe-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.274105690652963
+    },
+    {
+      "auroc": 0.9350011341225005,
+      "eer_percent": 12.628362470570556,
+      "model_seed": "drop_same_probe-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 12.627654491886497
+    },
+    {
+      "auroc": 0.9346771342488003,
+      "eer_percent": 10.80498923007564,
+      "model_seed": "drop_same_family-seed17",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.80618452702157
+    },
+    {
+      "auroc": 0.9291256720159105,
+      "eer_percent": 11.85680433310765,
+      "model_seed": "drop_same_family-seed29",
+      "n": 31779,
+      "nearest_det_eer_percent": 11.856869831734409
+    },
+    {
+      "auroc": 0.9388366785933803,
+      "eer_percent": 10.624655612883835,
+      "model_seed": "drop_same_family-seed43",
+      "n": 31779,
+      "nearest_det_eer_percent": 10.62292360874388
+    }
+  ],
+  "note": "ROC interpolation remains primary; upstream nearest-DET is a separately named convention. No test-based fitting or score reversal.",
+  "official_metric": "${EXTERNAL_PATH}",
+  "original_expert_margins": {
+    "aasist": {
+      "eer_percent": 39.202524670640685,
+      "nearest_det_eer_percent": 39.20180397377667
+    },
+    "rawnet2": {
+      "eer_percent": 50.0576065721585,
+      "nearest_det_eer_percent": 50.05842413915982
+    },
+    "ssl_aasist": {
+      "eer_percent": 9.520988490182802,
+      "nearest_det_eer_percent": 9.52180266566947
+    }
+  },
+  "requested": 31779,
+  "same_expert_observations_for_all_models": true,
+  "status": "passed"
+}

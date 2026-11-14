@@ -1,16 +1,15 @@
 {
   "status": {
-    "completed_models": 28,
-    "dataset": "inthewild",
-    "devices": [
-      "cuda:0",
-      "cuda:1"
+    "models": 36,
+    "stage": "completed",
+    "test_datasets": [
+      "asv2019_eval",
+      "asv2021_la",
+      "inthewild"
     ],
-    "stage": "test_scoring",
-    "total_models": 36,
-    "updated": 1794663791.0426173
+    "updated": 1794663804.5488591
   },
-  "checked_utc": "2026-11-14T13:43:13.124689+00:00",
+  "checked_utc": "2026-11-14T13:43:48.764436+00:00",
   "datasets": {
     "asv2019_eval": {
       "expected_requests": 71237,
@@ -36,7 +35,7 @@
     },
     "inthewild": {
       "expected_requests": 31779,
-      "full_model_seed_reports": 28,
+      "full_model_seed_reports": 36,
       "incomplete_or_invalid_reports": [],
       "extraction": {
         "packed_parts": 125,
@@ -413,6 +412,17 @@
           },
           "n": 148176,
           "failed": 0
+        },
+        "inthewild": {
+          "eer_percent_mean": 11.092187213010737,
+          "eer_percent_seed_std": 0.6038677948505229,
+          "per_seed_percent": {
+            "17": 11.736712918899965,
+            "29": 11.000350648700095,
+            "43": 10.53949807143215
+          },
+          "n": 31779,
+          "failed": 0
         }
       }
     },
@@ -440,6 +450,17 @@
           },
           "n": 148176,
           "failed": 0
+        },
+        "inthewild": {
+          "eer_percent_mean": 10.794970695787207,
+          "eer_percent_seed_std": 0.4635399453654439,
+          "per_seed_percent": {
+            "17": 11.265841807343586,
+            "29": 10.339127385663478,
+            "43": 10.779942894354557
+          },
+          "n": 31779,
+          "failed": 0
         }
       }
     },
@@ -466,6 +487,17 @@
             "43": 4.875524895021
           },
           "n": 148176,
+          "failed": 0
+        },
+        "inthewild": {
+          "eer_percent_mean": 10.64970194860492,
+          "eer_percent_seed_std": 0.9639032759392953,
+          "per_seed_percent": {
+            "17": 10.263988378500226,
+            "29": 9.938386014126134,
+            "43": 11.7467314531884
+          },
+          "n": 31779,
           "failed": 0
         }
       }

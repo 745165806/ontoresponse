@@ -1,0 +1,15 @@
+{
+  "command": [
+    "${EXTERNAL_PATH}",
+    "-m",
+    "scripts.report_round1_tests",
+    "--root",
+    "${EXTERNAL_PATH}",
+    "--verify-predictions",
+    "inthewild",
+    "--official-metric",
+    "${EXTERNAL_PATH}"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 9.187471866607666
+}

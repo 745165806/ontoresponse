@@ -1,6 +1,6 @@
 {
   "aggregation": "EER (%) mean and sample standard deviation across three fixed seeds",
-  "checked_utc": "2026-11-14T13:43:13.124689+00:00",
+  "checked_utc": "2026-11-14T13:43:48.764436+00:00",
   "datasets": {
     "asv2019_eval": {
       "expected_requests": 71237,
@@ -32,7 +32,7 @@
         "packed_requests": 31779,
         "total_parts": 125
       },
-      "full_model_seed_reports": 28,
+      "full_model_seed_reports": 36,
       "incomplete_or_invalid_reports": []
     }
   },
@@ -407,6 +407,17 @@
             "29": 4.5350929814037215,
             "43": 4.319654427645788
           }
+        },
+        "inthewild": {
+          "eer_percent_mean": 11.092187213010737,
+          "eer_percent_seed_std": 0.6038677948505229,
+          "failed": 0,
+          "n": 31779,
+          "per_seed_percent": {
+            "17": 11.736712918899965,
+            "29": 11.000350648700095,
+            "43": 10.53949807143215
+          }
         }
       },
       "model": "set_attention"
@@ -433,6 +444,17 @@
             "17": 5.244330453563715,
             "29": 4.7381209503239745,
             "43": 5.305075593952484
+          }
+        },
+        "inthewild": {
+          "eer_percent_mean": 10.794970695787207,
+          "eer_percent_seed_std": 0.4635399453654439,
+          "failed": 0,
+          "n": 31779,
+          "per_seed_percent": {
+            "17": 11.265841807343586,
+            "29": 10.339127385663478,
+            "43": 10.779942894354557
           }
         }
       },
@@ -461,20 +483,30 @@
             "29": 4.528887688984881,
             "43": 4.875524895021
           }
+        },
+        "inthewild": {
+          "eer_percent_mean": 10.64970194860492,
+          "eer_percent_seed_std": 0.9639032759392953,
+          "failed": 0,
+          "n": 31779,
+          "per_seed_percent": {
+            "17": 10.263988378500226,
+            "29": 9.938386014126134,
+            "43": 11.7467314531884
+          }
         }
       },
       "model": "wrong_family"
     }
   ],
   "status": {
-    "completed_models": 28,
-    "dataset": "inthewild",
-    "devices": [
-      "cuda:0",
-      "cuda:1"
+    "models": 36,
+    "stage": "completed",
+    "test_datasets": [
+      "asv2019_eval",
+      "asv2021_la",
+      "inthewild"
     ],
-    "stage": "test_scoring",
-    "total_models": 36,
-    "updated": 1794663791.0426173
+    "updated": 1794663804.5488591
   }
 }
