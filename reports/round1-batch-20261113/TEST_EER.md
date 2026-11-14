@@ -6,8 +6,18 @@
 
 | 方法 | 2019 LA eval | 2021 LA eval | In-the-Wild |
 |---|---:|---:|---:|
-
-尚无完成三个seed、满足全量覆盖的测试结果。开发验证EER不作为此表的测试结果。
+| all_views_mlp | 0.487071 ± 0.197515 | — | — |
+| best_single_expert | 0.611829 ± 0.000000 | — | — |
+| drop_anchor | 0.408992 ± 0.075426 | — | — |
+| drop_same_family | 0.333007 ± 0.048710 | — | — |
+| drop_same_probe | 0.316743 ± 0.109447 | — | — |
+| original_mlp | 0.288175 ± 0.089599 | — | — |
+| relation_tied | 0.343384 ± 0.076784 | — | — |
+| response_mlp | 0.216023 ± 0.012425 | — | — |
+| score_mlp | 0.346994 ± 0.023236 | — | — |
+| set_attention | 0.279157 ± 0.071724 | — | — |
+| typed_response | 0.348615 ± 0.125739 | — | — |
+| wrong_family | 0.387792 ± 0.183852 | — | — |
 
 完整样本数：2019 LA eval 71237；2021 LA eval阶段148176（不混入progress/hidden）；ITW 31779。
 
