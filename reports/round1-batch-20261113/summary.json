@@ -1,0 +1,15 @@
+{
+  "status": {
+    "error": "ValueError('optimizer got an empty parameter list')",
+    "stage": "failed",
+    "updated": 1794623306.620399
+  },
+  "updated_utc": "2026-11-14T02:28:45.980240+00:00",
+  "test_reports": [],
+  "limitations": [
+    "integration_pretrained; supervised exposure to ASV2019 development",
+    "RawNet2 training provenance unknown",
+    "Only two connected development groups",
+    "No failed requests silently excluded"
+  ]
+}
