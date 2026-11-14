@@ -217,8 +217,9 @@
     }
   ],
   "status": {
-    "error": "RuntimeError('Incomplete evidence; inspect extraction index: 2021LA:LA_E_1667136')",
-    "stage": "failed",
-    "updated": 1794639419.3342857
+    "dataset": "asv2021_la",
+    "requested": 148176,
+    "stage": "test_extraction",
+    "updated": 1794639809.4620335
   }
 }
